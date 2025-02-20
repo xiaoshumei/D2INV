@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring Trends and Extremes in Daily Weather Observations</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .section {
+      margin: 40px 0;
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+      overflow: hidden;
+    }
+    .section:last-child {
+      border-bottom: none;
+    }
+    .icon {
+      font-size: 50px;
+      float: left;
+      margin-right: 20px;
+      transition: all 0.3s ease;
+    }
+    .section:hover .icon {
+      color: #009688;
+      transform: scale(1.2);
+    }
+    .section h3 {
+      margin-top: 0;
+    }
+    .chart {
+      clear: both;
+      margin: 20px 0;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .cta a {
+      color: #fff;
+      background: #009688;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .cta a:hover {
+      background: #00796B;
+    }
+    .sources {
+      font-size: 12px;
+      text-align: center;
+      margin: 20px 0;
+      color: #aaa;
+    }
+    [data-aos] {
+      opacity: 0;
+      transition-property: opacity, transform;
+      &.aos-animate {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exploring Trends and Extremes in Daily Weather Observations</h1>
+    <h2>An analysis of daily weather patterns, extremes, and trends across New York and Seattle.</h2>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-cloud-showers-heavy icon"></i>
+      <h3>What is the maximum recorded precipitation in the dataset?</h3>
+      <p>The maximum recorded precipitation in the dataset is 118.9 millimeters.</p>
+      <div id="chart_1" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-temperature-high icon"></i>
+      <h3>How does the maximum temperature trend over the years?</h3>
+      <p>The trend of maximum recorded temperature shows seasonal patterns with peaks during the summer months.</p>
+      <div id="chart_2" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-cloud icon"></i>
+      <h3>What are the common weather conditions observed in this dataset?</h3>
+      <p>The most common weather conditions observed include rain and fog, among five different weather categories.</p>
+      <div id="chart_3" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-temperature-low icon"></i>
+      <h3>How does the minimum temperature vary between New York and Seattle?</h3>
+      <p>Minimum temperatures show variation with lower values recorded in New York compared to Seattle.</p>
+      <div id="chart_4" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-wind icon"></i>
+      <h3>What proportion of days experience high wind speeds?</h3>
+      <p>A smaller proportion of days experience high wind speeds, typically above 12 meters per second.</p>
+      <div id="chart_5" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <i class="fas fa-exclamation-circle icon"></i>
+      <h3>Are there outliers in temperature readings across the dataset?</h3>
+      <p>The dataset shows some extreme outliers in both maximum and minimum temperature readings.</p>
+      <div id="chart_6" class="chart"></div>
+      <div class="cta"><a href="#">Explore More</a></div>
+    </div>
+
+    <div class="sources">
+      <p>Sources: Daily weather data from NOAA and local meteorological stations.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

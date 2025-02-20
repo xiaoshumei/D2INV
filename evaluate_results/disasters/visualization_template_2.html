@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Century of Natural Disasters: Key Trends and Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --bg-1: #f0f8ff;
+            --bg-2: #e6f7ff;
+            --bg-3: #ccf2ff;
+            --text-primary: #003366;
+            --text-secondary: #336699;
+            --cta-bg: #ff6666;
+            --cta-hover: #ff4d4d;
+            --cta-text: #ffffff;
+        }
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0;
+            background-color: #f7f9fa;
+        }
+        header, section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        header {
+            background-color: var(--bg-1);
+        }
+        h1 {
+            color: var(--text-primary);
+            text-align: center;
+        }
+        h2 {
+            color: var(--text-secondary);
+        }
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .section-title {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 10px;
+        }
+        .cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--cta-bg);
+            color: var(--cta-text);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta:hover {
+            background-color: var(--cta-hover);
+        }
+    </style>
+</head>
+<body>
+    <header data-aos="fade-down">
+        <h1>A Century of Natural Disasters: Key Trends and Insights</h1>
+        <p class="subtitle">Analyzing over 100 years of fatalities caused by diverse natural disasters to uncover significant patterns and major events.</p>
+    </header>
+
+    <section data-aos="fade-up" style="background-color: var(--bg-2);">
+        <h2 class="section-title"><i class="fas fa-chart-line"></i> How have total fatalities from natural disasters changed over the last century?</h2>
+        <p>The data shows significant fluctuations in fatalities over time, with peaks in years such as 1931, 1920, and 1928 due to catastrophic events like floods and droughts. Despite technological advancements, certain years still saw large-scale fatalities, demonstrating the ongoing vulnerability to natural disasters.</p>
+        <div class="chart" id="chart_1"></div>
+    </section>
+
+    <section data-aos="fade-up" style="background-color: var(--bg-1);">
+        <h2 class="section-title"><i class="fas fa-layer-group"></i> Which types of natural disasters have been the deadliest overall?</h2>
+        <p>Floods, droughts, and epidemics stand out as the deadliest disaster types, with floods causing over 3.7 million deaths in 1931 alone. Meanwhile, droughts and epidemics have repeatedly caused millions of fatalities across multiple years.</p>
+        <div class="chart" id="chart_2"></div>
+        <a href="#chart_3" class="cta">Next Insight</a>
+    </section>
+
+    <section data-aos="fade-up" style="background-color: var(--bg-3);">
+        <h2 class="section-title"><i class="fas fa-calendar-alt"></i> What are the specific years and events that caused the highest fatalities?</h2>
+        <p>The deadliest years include 1931 (Chinese floods with 3.7 million fatalities), 1920 (droughts and epidemics with over 3 million deaths), and 1928 (droughts causing 3 million deaths). These years highlight the devastating impact of specific large-scale events.</p>
+        <div class="chart" id="chart_3"></div>
+        <a href="#chart_4" class="cta">Next Insight</a>
+    </section>
+
+    <section data-aos="fade-up" style="background-color: var(--bg-2);">
+        <h2 class="section-title"><i class="fas fa-chart-multi"></i> How have fatalities from specific disaster types evolved over time?</h2>
+        <p>Fatalities from droughts and epidemics were far more common in the early 20th century, while more recent decades have seen fatalities from extreme temperatures and weather taking a larger share. Technological advancements and early warning systems have mitigated impacts in certain areas but not universally.</p>
+        <div class="chart" id="chart_4"></div>
+        <a href="#chart_5" class="cta">Next Insight</a>
+    </section>
+
+    <section data-aos="fade-up" style="background-color: var(--bg-1);">
+        <h2 class="section-title"><i class="fas fa-thermometer-half"></i> How do extreme temperature events compare to other disasters in recent times?</h2>
+        <p>In recent decades, extreme temperature events like heatwaves have caused significant death tolls. For example, the European heatwave in 2003 caused over 70,000 deaths. These events are becoming more frequent and impactful, possibly linked to climate change.</p>
+        <div class="chart" id="chart_5"></div>
+    </section>
+
+    <footer data-aos="fade-up">
+        <p>Data sources and references: [Insert Links]</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

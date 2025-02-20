@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+        Global Demographic Shifts Infographic
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+             :root {
+                 --dark-bg: #0f172a;
+                 --light-bg: #ffffff;
+                 --accent-1: #0ea5e9;
+                 --accent-2: #7c3aed;
+                 --primary-text: #d1d5db;
+             }
+
+             body {
+                 margin: 0;
+                 padding: 0;
+                 font-family: 'Noto Sans', sans-serif;
+                 line-height: 1.6;
+                 color: #e2e8f0;
+                 background: var(--dark-bg);
+                 overflow-x: hidden;
+             }
+
+             .container {
+                 max-width: 1200px;
+                 margin: 0 auto;
+                 padding: 0 20px;
+                 position: relative;
+                 min-height: 100vh;
+             }
+
+             .backbone {
+                 position: absolute;
+                 top: 0;
+                 left: 50%;
+                 transform: translateX(-50%);
+                 height: 100%;
+                 width: 4px;
+                 background: linear-gradient(180deg, var(--accent-1), var(--accent-2), var(--accent-1));
+                 z-index: 1;
+             }
+
+             .header-section {
+                 text-align: center;
+                 padding: 50px 0;
+                 background: var(--dark-bg);
+             }
+
+             .header-section h1 {
+                 font-size: 36px;
+                 margin-bottom: 10px;
+                 color: var(--accent-1);
+                 text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+             }
+
+             .header-section h2 {
+                 font-size: 24px;
+                 color: var(--primary-text);
+                 opacity: 0.8;
+             }
+
+             .explainer {
+                 text-align: center;
+                 padding: 30px;
+                 background: rgba(0, 0, 0, 0.2);
+                 backdrop-filter: blur(8px);
+                 margin: 30px;
+                 border-radius: 15px;
+             }
+
+             .section {
+                 padding: 80px 20px;
+                 position: relative;
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 gap: 30px;
+                 min-height: 100vh;
+             }
+
+             .alternate-section {
+                 background: rgba(63, 63, 68, 1);
+             }
+
+             .section-title {
+                 color: var(--accent-1);
+                 font-size: 28px;
+                 margin-bottom: 8px;
+                 position: relative;
+                 display: inline-flex;
+                 align-items: center;
+                 gap: 15px;
+             }
+
+             .section-title img {
+                 height: 35px;
+                 width: 35px;
+                 filter: invert(1);
+             }
+
+             .section-description {
+                 max-width: 800px;
+                 text-align: justify;
+                 color: var(--primary-text);
+                 opacity: 0.8;
+             }
+
+             .visualization-placeholder {
+                 width: 100%;
+                 max-width: 1100px;
+                 height: 500px;
+                 background: rgba(255, 255, 255, 0.1);
+                 border-radius: 15px;
+                 padding: 15px;
+                 box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+             }
+
+             .call-to-action {
+                 position: absolute;
+                 bottom: 30px;
+                 left: 50%;
+                 transform: translateX(-50%);
+                 padding: 15px 30px;
+                 border-radius: 25px;
+                 background: var(--accent-2);
+                 color: var(--dark-bg);
+                 text-decoration: none;
+                 font-size: 18px;
+                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                 animation: pulse 2s infinite;
+             }
+
+             .sources {
+                 background: var(--dark-bg);
+                 padding: 50px 20px;
+                 border-top: 1px solid rgba(255, 255, 255, 0.2);
+                 text-align: center;
+             }
+
+             .sources ul {
+                 list-style: none;
+                 padding: 0;
+                 margin: 20px 0;
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+             }
+
+             .sources li {
+                 margin: 10px;
+                 color: var(--primary-text);
+                 opacity: 0.8;
+             }
+
+             @keyframes pulse {
+                 0% { transform: translateX(-50%) scale(1); }
+                 50% { transform: translateX(-50%) scale(1.05); }
+                 100% { transform: translateX(-50%) scale(1); }
+             }
+
+             @media (max-width: 768px) {
+                 .container {
+                     padding: 0 10px;
+                 }
+                 .section-title {
+                     font-size: 24px;
+                 }
+             }
+    </style>
+    <script src="https://unpkg.com/echarts@latest/dist/echarts.min.js">
+    </script>
+    <script src="https://unpkg.com/echarts@latest/dist/extension/dataTool.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+
+    <style>
+        #chart_1 {
+             width: 100%;
+             height: 500px;
+         }
+    </style>
+    <style>
+        #chart_2 {
+             width: 800px;
+             height: 600px;
+         }
+         /* Ensure text visibility on background */
+         #chart_2 .echarts-title {
+             color: #fff;
+         }
+         #chart_2 .echarts-axis-label, #chart_2 .echarts-legend-text {
+             color: #fff;
+         }
+    </style>
+    <style>
+        #chart_3 {
+             width: 800px;
+             height: 600px;
+         }
+         #chart_3 .legend {
+             color: white;
+         }
+    </style>
+    <style>
+        #chart_5 {
+             width: 800px;
+             height: 600px;
+         }
+    </style>
+    <script>
+        window.data = [{"_comment":"Data courtesy of Gapminder.org","year":1955,"fertility":7.42,"life_expect":43.88,"n_fertility":7.38,"n_life_expect":45.03,"country":"Afghanistan","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.38,"life_expect":45.03,"n_fertility":7.35,"n_life_expect":46.13,"country":"Afghanistan","p_fertility":7.42,"p_life_expect":43.88},{"_comment":null,"year":1965,"fertility":7.35,"life_expect":46.13,"n_fertility":7.4,"n_life_expect":47.08,"country":"Afghanistan","p_fertility":7.38,"p_life_expect":45.03},{"_comment":null,"year":1970,"fertility":7.4,"life_expect":47.08,"n_fertility":7.54,"n_life_expect":47.55,"country":"Afghanistan","p_fertility":7.35,"p_life_expect":46.13},{"_comment":null,"year":1975,"fertility":7.54,"life_expect":47.55,"n_fertility":7.59,"n_life_expect":43.68,"country":"Afghanistan","p_fertility":7.4,"p_life_expect":47.08},{"_comment":null,"year":1980,"fertility":7.59,"life_expect":43.68,"n_fertility":7.52,"n_life_expect":42.03,"country":"Afghanistan","p_fertility":7.54,"p_life_expect":47.55},{"_comment":null,"year":1985,"fertility":7.52,"life_expect":42.03,"n_fertility":7.57,"n_life_expect":53.83,"country":"Afghanistan","p_fertility":7.59,"p_life_expect":43.68},{"_comment":null,"year":1990,"fertility":7.57,"life_expect":53.83,"n_fertility":7.71,"n_life_expect":54.33,"country":"Afghanistan","p_fertility":7.52,"p_life_expect":42.03},{"_comment":null,"year":1995,"fertility":7.71,"life_expect":54.33,"n_fertility":7.53,"n_life_expect":54.73,"country":"Afghanistan","p_fertility":7.57,"p_life_expect":53.83},{"_comment":null,"year":2000,"fertility":7.53,"life_expect":54.73,"n_fertility":0.0,"n_life_expect":0.0,"country":"Afghanistan","p_fertility":7.71,"p_life_expect":54.33},{"_comment":null,"year":1955,"fertility":3.14,"life_expect":64.51,"n_fertility":3.08,"n_life_expect":65.26,"country":"Argentina","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.08,"life_expect":65.26,"n_fertility":3.06,"n_life_expect":66.13,"country":"Argentina","p_fertility":3.14,"p_life_expect":64.51},{"_comment":null,"year":1965,"fertility":3.06,"life_expect":66.13,"n_fertility":3.09,"n_life_expect":66.13,"country":"Argentina","p_fertility":3.08,"p_life_expect":65.26},{"_comment":null,"year":1970,"fertility":3.09,"life_expect":66.13,"n_fertility":3.3,"n_life_expect":68.03,"country":"Argentina","p_fertility":3.06,"p_life_expect":66.13},{"_comment":null,"year":1975,"fertility":3.3,"life_expect":68.03,"n_fertility":3.3,"n_life_expect":70.23,"country":"Argentina","p_fertility":3.09,"p_life_expect":66.13},{"_comment":null,"year":1980,"fertility":3.3,"life_expect":70.23,"n_fertility":3.1,"n_life_expect":71.73,"country":"Argentina","p_fertility":3.3,"p_life_expect":68.03},{"_comment":null,"year":1985,"fertility":3.1,"life_expect":71.73,"n_fertility":3.03,"n_life_expect":72.47,"country":"Argentina","p_fertility":3.3,"p_life_expect":70.23},{"_comment":null,"year":1990,"fertility":3.03,"life_expect":72.47,"n_fertility":2.86,"n_life_expect":73.44,"country":"Argentina","p_fertility":3.1,"p_life_expect":71.73},{"_comment":null,"year":1995,"fertility":2.86,"life_expect":73.44,"n_fertility":2.59,"n_life_expect":74.22,"country":"Argentina","p_fertility":3.03,"p_life_expect":72.47},{"_comment":null,"year":2000,"fertility":2.59,"life_expect":74.22,"n_fertility":0.0,"n_life_expect":0.0,"country":"Argentina","p_fertility":2.86,"p_life_expect":73.44},{"_comment":null,"year":1955,"fertility":3.27,"life_expect":70.34,"n_fertility":3.45,"n_life_expect":71.11,"country":"Australia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.45,"life_expect":71.11,"n_fertility":2.98,"n_life_expect":71.1,"country":"Australia","p_fertility":3.27,"p_life_expect":70.34},{"_comment":null,"year":1965,"fertility":2.98,"life_expect":71.1,"n_fertility":2.86,"n_life_expect":71.15,"country":"Australia","p_fertility":3.45,"p_life_expect":71.11},{"_comment":null,"year":1970,"fertility":2.86,"life_expect":71.15,"n_fertility":2.16,"n_life_expect":72.51,"country":"Australia","p_fertility":2.98,"p_life_expect":71.1},{"_comment":null,"year":1975,"fertility":2.16,"life_expect":72.51,"n_fertility":1.9,"n_life_expect":74.51,"country":"Australia","p_fertility":2.86,"p_life_expect":71.15},{"_comment":null,"year":1980,"fertility":1.9,"life_expect":74.51,"n_fertility":1.92,"n_life_expect":75.59,"country":"Australia","p_fertility":2.16,"p_life_expect":72.51},{"_comment":null,"year":1985,"fertility":1.92,"life_expect":75.59,"n_fertility":1.9,"n_life_expect":77.0,"country":"Australia","p_fertility":1.9,"p_life_expect":74.51},{"_comment":null,"year":1990,"fertility":1.9,"life_expect":77.0,"n_fertility":1.83,"n_life_expect":78.29,"country":"Australia","p_fertility":1.92,"p_life_expect":75.59},{"_comment":null,"year":1995,"fertility":1.83,"life_expect":78.29,"n_fertility":1.77,"n_life_expect":79.72,"country":"Australia","p_fertility":1.9,"p_life_expect":77.0},{"_comment":null,"year":2000,"fertility":1.77,"life_expect":79.72,"n_fertility":0.0,"n_life_expect":0.0,"country":"Australia","p_fertility":1.83,"p_life_expect":78.29},{"_comment":null,"year":1955,"fertility":2.29,"life_expect":67.68,"n_fertility":2.7,"n_life_expect":68.96,"country":"Austria","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.7,"life_expect":68.96,"n_fertility":2.7,"n_life_expect":70.09,"country":"Austria","p_fertility":2.29,"p_life_expect":67.68},{"_comment":null,"year":1965,"fertility":2.7,"life_expect":70.09,"n_fertility":2.3,"n_life_expect":70.21,"country":"Austria","p_fertility":2.7,"p_life_expect":68.96},{"_comment":null,"year":1970,"fertility":2.3,"life_expect":70.21,"n_fertility":1.82,"n_life_expect":71.44,"country":"Austria","p_fertility":2.7,"p_life_expect":70.09},{"_comment":null,"year":1975,"fertility":1.82,"life_expect":71.44,"n_fertility":1.65,"n_life_expect":72.84,"country":"Austria","p_fertility":2.3,"p_life_expect":70.21},{"_comment":null,"year":1980,"fertility":1.65,"life_expect":72.84,"n_fertility":1.48,"n_life_expect":74.26,"country":"Austria","p_fertility":1.82,"p_life_expect":71.44},{"_comment":null,"year":1985,"fertility":1.48,"life_expect":74.26,"n_fertility":1.46,"n_life_expect":75.97,"country":"Austria","p_fertility":1.65,"p_life_expect":72.84},{"_comment":null,"year":1990,"fertility":1.46,"life_expect":75.97,"n_fertility":1.44,"n_life_expect":77.03,"country":"Austria","p_fertility":1.48,"p_life_expect":74.26},{"_comment":null,"year":1995,"fertility":1.44,"life_expect":77.03,"n_fertility":1.36,"n_life_expect":78.49,"country":"Austria","p_fertility":1.46,"p_life_expect":75.97},{"_comment":null,"year":2000,"fertility":1.36,"life_expect":78.49,"n_fertility":0.0,"n_life_expect":0.0,"country":"Austria","p_fertility":1.44,"p_life_expect":77.03},{"_comment":null,"year":1955,"fertility":4.5,"life_expect":60.03,"n_fertility":4.74,"n_life_expect":61.93,"country":"Bahamas","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.74,"life_expect":61.93,"n_fertility":4.48,"n_life_expect":63.28,"country":"Bahamas","p_fertility":4.5,"p_life_expect":60.03},{"_comment":null,"year":1965,"fertility":4.48,"life_expect":63.28,"n_fertility":4.07,"n_life_expect":65.4,"country":"Bahamas","p_fertility":4.74,"p_life_expect":61.93},{"_comment":null,"year":1970,"fertility":4.07,"life_expect":65.4,"n_fertility":3.26,"n_life_expect":68.21,"country":"Bahamas","p_fertility":4.48,"p_life_expect":63.28},{"_comment":null,"year":1975,"fertility":3.26,"life_expect":68.21,"n_fertility":2.9,"n_life_expect":68.62,"country":"Bahamas","p_fertility":4.07,"p_life_expect":65.4},{"_comment":null,"year":1980,"fertility":2.9,"life_expect":68.62,"n_fertility":2.63,"n_life_expect":70.21,"country":"Bahamas","p_fertility":3.26,"p_life_expect":68.21},{"_comment":null,"year":1985,"fertility":2.63,"life_expect":70.21,"n_fertility":2.53,"n_life_expect":70.86,"country":"Bahamas","p_fertility":2.9,"p_life_expect":68.62},{"_comment":null,"year":1990,"fertility":2.53,"life_expect":70.86,"n_fertility":2.5,"n_life_expect":70.77,"country":"Bahamas","p_fertility":2.63,"p_life_expect":70.21},{"_comment":null,"year":1995,"fertility":2.5,"life_expect":70.77,"n_fertility":2.1,"n_life_expect":71.25,"country":"Bahamas","p_fertility":2.53,"p_life_expect":70.86},{"_comment":null,"year":2000,"fertility":2.1,"life_expect":71.25,"n_fertility":0.0,"n_life_expect":0.0,"country":"Bahamas","p_fertility":2.5,"p_life_expect":70.77},{"_comment":null,"year":1955,"fertility":6.49,"life_expect":41.87,"n_fertility":6.77,"n_life_expect":43.82,"country":"Bangladesh","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.77,"life_expect":43.82,"n_fertility":6.84,"n_life_expect":45.87,"country":"Bangladesh","p_fertility":6.49,"p_life_expect":41.87},{"_comment":null,"year":1965,"fertility":6.84,"life_expect":45.87,"n_fertility":6.88,"n_life_expect":42.2,"country":"Bangladesh","p_fertility":6.77,"p_life_expect":43.82},{"_comment":null,"year":1970,"fertility":6.88,"life_expect":42.2,"n_fertility":6.74,"n_life_expect":50.62,"country":"Bangladesh","p_fertility":6.84,"p_life_expect":45.87},{"_comment":null,"year":1975,"fertility":6.74,"life_expect":50.62,"n_fertility":6.32,"n_life_expect":53.22,"country":"Bangladesh","p_fertility":6.88,"p_life_expect":42.2},{"_comment":null,"year":1980,"fertility":6.32,"life_expect":53.22,"n_fertility":5.54,"n_life_expect":53.75,"country":"Bangladesh","p_fertility":6.74,"p_life_expect":50.62},{"_comment":null,"year":1985,"fertility":5.54,"life_expect":53.75,"n_fertility":4.48,"n_life_expect":58.19,"country":"Bangladesh","p_fertility":6.32,"p_life_expect":53.22},{"_comment":null,"year":1990,"fertility":4.48,"life_expect":58.19,"n_fertility":3.61,"n_life_expect":62.24,"country":"Bangladesh","p_fertility":5.54,"p_life_expect":53.75},{"_comment":null,"year":1995,"fertility":3.61,"life_expect":62.24,"n_fertility":3.22,"n_life_expect":65.47,"country":"Bangladesh","p_fertility":4.48,"p_life_expect":58.19},{"_comment":null,"year":2000,"fertility":3.22,"life_expect":65.47,"n_fertility":0.0,"n_life_expect":0.0,"country":"Bangladesh","p_fertility":3.61,"p_life_expect":62.24},{"_comment":null,"year":1955,"fertility":4.34,"life_expect":62.11,"n_fertility":4.33,"n_life_expect":66.14,"country":"Barbados","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.33,"life_expect":66.14,"n_fertility":3.96,"n_life_expect":68.23,"country":"Barbados","p_fertility":4.34,"p_life_expect":62.11},{"_comment":null,"year":1965,"fertility":3.96,"life_expect":68.23,"n_fertility":3.11,"n_life_expect":69.18,"country":"Barbados","p_fertility":4.33,"p_life_expect":66.14},{"_comment":null,"year":1970,"fertility":3.11,"life_expect":69.18,"n_fertility":2.39,"n_life_expect":70.33,"country":"Barbados","p_fertility":3.96,"p_life_expect":68.23},{"_comment":null,"year":1975,"fertility":2.39,"life_expect":70.33,"n_fertility":2.0,"n_life_expect":72.96,"country":"Barbados","p_fertility":3.11,"p_life_expect":69.18},{"_comment":null,"year":1980,"fertility":2.0,"life_expect":72.96,"n_fertility":1.83,"n_life_expect":73.95,"country":"Barbados","p_fertility":2.39,"p_life_expect":70.33},{"_comment":null,"year":1985,"fertility":1.83,"life_expect":73.95,"n_fertility":1.74,"n_life_expect":73.86,"country":"Barbados","p_fertility":2.0,"p_life_expect":72.96},{"_comment":null,"year":1990,"fertility":1.74,"life_expect":73.86,"n_fertility":1.73,"n_life_expect":73.9,"country":"Barbados","p_fertility":1.83,"p_life_expect":73.95},{"_comment":null,"year":1995,"fertility":1.73,"life_expect":73.9,"n_fertility":1.78,"n_life_expect":74.74,"country":"Barbados","p_fertility":1.74,"p_life_expect":73.86},{"_comment":null,"year":2000,"fertility":1.78,"life_expect":74.74,"n_fertility":0.0,"n_life_expect":0.0,"country":"Barbados","p_fertility":1.73,"p_life_expect":73.9},{"_comment":null,"year":1955,"fertility":2.4,"life_expect":68.8,"n_fertility":2.56,"n_life_expect":70.07,"country":"Belgium","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.56,"life_expect":70.07,"n_fertility":2.61,"n_life_expect":70.76,"country":"Belgium","p_fertility":2.4,"p_life_expect":68.8},{"_comment":null,"year":1965,"fertility":2.61,"life_expect":70.76,"n_fertility":2.25,"n_life_expect":71.1,"country":"Belgium","p_fertility":2.56,"p_life_expect":70.07},{"_comment":null,"year":1970,"fertility":2.25,"life_expect":71.1,"n_fertility":1.74,"n_life_expect":72.15,"country":"Belgium","p_fertility":2.61,"p_life_expect":70.76},{"_comment":null,"year":1975,"fertility":1.74,"life_expect":72.15,"n_fertility":1.68,"n_life_expect":73.33,"country":"Belgium","p_fertility":2.25,"p_life_expect":71.1},{"_comment":null,"year":1980,"fertility":1.68,"life_expect":73.33,"n_fertility":1.51,"n_life_expect":74.61,"country":"Belgium","p_fertility":1.74,"p_life_expect":72.15},{"_comment":null,"year":1985,"fertility":1.51,"life_expect":74.61,"n_fertility":1.62,"n_life_expect":76.15,"country":"Belgium","p_fertility":1.68,"p_life_expect":73.33},{"_comment":null,"year":1990,"fertility":1.62,"life_expect":76.15,"n_fertility":1.56,"n_life_expect":77.01,"country":"Belgium","p_fertility":1.51,"p_life_expect":74.61},{"_comment":null,"year":1995,"fertility":1.56,"life_expect":77.01,"n_fertility":1.66,"n_life_expect":78.04,"country":"Belgium","p_fertility":1.62,"p_life_expect":76.15},{"_comment":null,"year":2000,"fertility":1.66,"life_expect":78.04,"n_fertility":0.0,"n_life_expect":0.0,"country":"Belgium","p_fertility":1.56,"p_life_expect":77.01},{"_comment":null,"year":1955,"fertility":6.47,"life_expect":40.53,"n_fertility":6.44,"n_life_expect":43.0,"country":"Bolivia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.44,"life_expect":43.0,"n_fertility":6.26,"n_life_expect":46.17,"country":"Bolivia","p_fertility":6.47,"p_life_expect":40.53},{"_comment":null,"year":1965,"fertility":6.26,"life_expect":46.17,"n_fertility":6.0,"n_life_expect":50.09,"country":"Bolivia","p_fertility":6.44,"p_life_expect":43.0},{"_comment":null,"year":1970,"fertility":6.0,"life_expect":50.09,"n_fertility":5.79,"n_life_expect":53.66,"country":"Bolivia","p_fertility":6.26,"p_life_expect":46.17},{"_comment":null,"year":1975,"fertility":5.79,"life_expect":53.66,"n_fertility":5.47,"n_life_expect":56.76,"country":"Bolivia","p_fertility":6.0,"p_life_expect":50.09},{"_comment":null,"year":1980,"fertility":5.47,"life_expect":56.76,"n_fertility":5.19,"n_life_expect":59.14,"country":"Bolivia","p_fertility":5.79,"p_life_expect":53.66},{"_comment":null,"year":1985,"fertility":5.19,"life_expect":59.14,"n_fertility":4.89,"n_life_expect":61.69,"country":"Bolivia","p_fertility":5.47,"p_life_expect":56.76},{"_comment":null,"year":1990,"fertility":4.89,"life_expect":61.69,"n_fertility":4.41,"n_life_expect":64.02,"country":"Bolivia","p_fertility":5.19,"p_life_expect":59.14},{"_comment":null,"year":1995,"fertility":4.41,"life_expect":64.02,"n_fertility":3.99,"n_life_expect":66.53,"country":"Bolivia","p_fertility":4.89,"p_life_expect":61.69},{"_comment":null,"year":2000,"fertility":3.99,"life_expect":66.53,"n_fertility":0.0,"n_life_expect":0.0,"country":"Bolivia","p_fertility":4.41,"p_life_expect":64.02},{"_comment":null,"year":1955,"fertility":6.11,"life_expect":49.94,"n_fertility":6.1,"n_life_expect":52.44,"country":"Brazil","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.1,"life_expect":52.44,"n_fertility":5.69,"n_life_expect":54.83,"country":"Brazil","p_fertility":6.11,"p_life_expect":49.94},{"_comment":null,"year":1965,"fertility":5.69,"life_expect":54.83,"n_fertility":4.97,"n_life_expect":56.94,"country":"Brazil","p_fertility":6.1,"p_life_expect":52.44},{"_comment":null,"year":1970,"fertility":4.97,"life_expect":56.94,"n_fertility":4.42,"n_life_expect":59.78,"country":"Brazil","p_fertility":5.69,"p_life_expect":54.83},{"_comment":null,"year":1975,"fertility":4.42,"life_expect":59.78,"n_fertility":4.04,"n_life_expect":62.74,"country":"Brazil","p_fertility":4.97,"p_life_expect":56.94},{"_comment":null,"year":1980,"fertility":4.04,"life_expect":62.74,"n_fertility":3.47,"n_life_expect":64.61,"country":"Brazil","p_fertility":4.42,"p_life_expect":59.78},{"_comment":null,"year":1985,"fertility":3.47,"life_expect":64.61,"n_fertility":2.91,"n_life_expect":67.29,"country":"Brazil","p_fertility":4.04,"p_life_expect":62.74},{"_comment":null,"year":1990,"fertility":2.91,"life_expect":67.29,"n_fertility":2.58,"n_life_expect":69.17,"country":"Brazil","p_fertility":3.47,"p_life_expect":64.61},{"_comment":null,"year":1995,"fertility":2.58,"life_expect":69.17,"n_fertility":2.26,"n_life_expect":71.18,"country":"Brazil","p_fertility":2.91,"p_life_expect":67.29},{"_comment":null,"year":2000,"fertility":2.26,"life_expect":71.18,"n_fertility":0.0,"n_life_expect":0.0,"country":"Brazil","p_fertility":2.58,"p_life_expect":69.17},{"_comment":null,"year":1955,"fertility":3.82,"life_expect":70.33,"n_fertility":3.9,"n_life_expect":71.15,"country":"Canada","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.9,"life_expect":71.15,"n_fertility":3.14,"n_life_expect":71.9,"country":"Canada","p_fertility":3.82,"p_life_expect":70.33},{"_comment":null,"year":1965,"fertility":3.14,"life_expect":71.9,"n_fertility":2.33,"n_life_expect":72.76,"country":"Canada","p_fertility":3.9,"p_life_expect":71.15},{"_comment":null,"year":1970,"fertility":2.33,"life_expect":72.76,"n_fertility":1.85,"n_life_expect":73.63,"country":"Canada","p_fertility":3.14,"p_life_expect":71.9},{"_comment":null,"year":1975,"fertility":1.85,"life_expect":73.63,"n_fertility":1.74,"n_life_expect":75.21,"country":"Canada","p_fertility":2.33,"p_life_expect":72.76},{"_comment":null,"year":1980,"fertility":1.74,"life_expect":75.21,"n_fertility":1.67,"n_life_expect":76.38,"country":"Canada","p_fertility":1.85,"p_life_expect":73.63},{"_comment":null,"year":1985,"fertility":1.67,"life_expect":76.38,"n_fertility":1.81,"n_life_expect":77.43,"country":"Canada","p_fertility":1.74,"p_life_expect":75.21},{"_comment":null,"year":1990,"fertility":1.81,"life_expect":77.43,"n_fertility":1.68,"n_life_expect":78.12,"country":"Canada","p_fertility":1.67,"p_life_expect":76.38},{"_comment":null,"year":1995,"fertility":1.68,"life_expect":78.12,"n_fertility":1.49,"n_life_expect":79.36,"country":"Canada","p_fertility":1.81,"p_life_expect":77.43},{"_comment":null,"year":2000,"fertility":1.49,"life_expect":79.36,"n_fertility":0.0,"n_life_expect":0.0,"country":"Canada","p_fertility":1.68,"p_life_expect":78.12},{"_comment":null,"year":1955,"fertility":4.97,"life_expect":54.83,"n_fertility":4.92,"n_life_expect":54.2,"country":"Chile","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.92,"life_expect":54.2,"n_fertility":4.44,"n_life_expect":58.7,"country":"Chile","p_fertility":4.97,"p_life_expect":54.83},{"_comment":null,"year":1965,"fertility":4.44,"life_expect":58.7,"n_fertility":3.78,"n_life_expect":61.99,"country":"Chile","p_fertility":4.92,"p_life_expect":54.2},{"_comment":null,"year":1970,"fertility":3.78,"life_expect":61.99,"n_fertility":3.18,"n_life_expect":66.15,"country":"Chile","p_fertility":4.44,"p_life_expect":58.7},{"_comment":null,"year":1975,"fertility":3.18,"life_expect":66.15,"n_fertility":2.74,"n_life_expect":69.44,"country":"Chile","p_fertility":3.78,"p_life_expect":61.99},{"_comment":null,"year":1980,"fertility":2.74,"life_expect":69.44,"n_fertility":2.59,"n_life_expect":71.95,"country":"Chile","p_fertility":3.18,"p_life_expect":66.15},{"_comment":null,"year":1985,"fertility":2.59,"life_expect":71.95,"n_fertility":2.58,"n_life_expect":73.43,"country":"Chile","p_fertility":2.74,"p_life_expect":69.44},{"_comment":null,"year":1990,"fertility":2.58,"life_expect":73.43,"n_fertility":2.3,"n_life_expect":75.28,"country":"Chile","p_fertility":2.59,"p_life_expect":71.95},{"_comment":null,"year":1995,"fertility":2.3,"life_expect":75.28,"n_fertility":1.99,"n_life_expect":76.93,"country":"Chile","p_fertility":2.58,"p_life_expect":73.43},{"_comment":null,"year":2000,"fertility":1.99,"life_expect":76.93,"n_fertility":0.0,"n_life_expect":0.0,"country":"Chile","p_fertility":2.3,"p_life_expect":75.28},{"_comment":null,"year":1955,"fertility":6.16,"life_expect":53.92,"n_fertility":4.33,"n_life_expect":27.79,"country":"China","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.33,"life_expect":27.79,"n_fertility":6.53,"n_life_expect":58.47,"country":"China","p_fertility":6.16,"p_life_expect":53.92},{"_comment":null,"year":1965,"fertility":6.53,"life_expect":58.47,"n_fertility":6.09,"n_life_expect":60.88,"country":"China","p_fertility":4.33,"p_life_expect":27.79},{"_comment":null,"year":1970,"fertility":6.09,"life_expect":60.88,"n_fertility":3.57,"n_life_expect":62.81,"country":"China","p_fertility":6.53,"p_life_expect":58.47},{"_comment":null,"year":1975,"fertility":3.57,"life_expect":62.81,"n_fertility":2.74,"n_life_expect":64.41,"country":"China","p_fertility":6.09,"p_life_expect":60.88},{"_comment":null,"year":1980,"fertility":2.74,"life_expect":64.41,"n_fertility":2.63,"n_life_expect":66.59,"country":"China","p_fertility":3.57,"p_life_expect":62.81},{"_comment":null,"year":1985,"fertility":2.63,"life_expect":66.59,"n_fertility":2.51,"n_life_expect":68.09,"country":"China","p_fertility":2.74,"p_life_expect":64.41},{"_comment":null,"year":1990,"fertility":2.51,"life_expect":68.09,"n_fertility":1.59,"n_life_expect":69.75,"country":"China","p_fertility":2.63,"p_life_expect":66.59},{"_comment":null,"year":1995,"fertility":1.59,"life_expect":69.75,"n_fertility":1.63,"n_life_expect":71.33,"country":"China","p_fertility":2.51,"p_life_expect":68.09},{"_comment":null,"year":2000,"fertility":1.63,"life_expect":71.33,"n_fertility":0.0,"n_life_expect":0.0,"country":"China","p_fertility":1.59,"p_life_expect":69.75},{"_comment":null,"year":1955,"fertility":6.67,"life_expect":57.49,"n_fertility":6.75,"n_life_expect":59.26,"country":"Colombia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.75,"life_expect":59.26,"n_fertility":6.36,"n_life_expect":61.58,"country":"Colombia","p_fertility":6.67,"p_life_expect":57.49},{"_comment":null,"year":1965,"fertility":6.36,"life_expect":61.58,"n_fertility":5.28,"n_life_expect":65.93,"country":"Colombia","p_fertility":6.75,"p_life_expect":59.26},{"_comment":null,"year":1970,"fertility":5.28,"life_expect":65.93,"n_fertility":4.4,"n_life_expect":66.27,"country":"Colombia","p_fertility":6.36,"p_life_expect":61.58},{"_comment":null,"year":1975,"fertility":4.4,"life_expect":66.27,"n_fertility":3.86,"n_life_expect":68.92,"country":"Colombia","p_fertility":5.28,"p_life_expect":65.93},{"_comment":null,"year":1980,"fertility":3.86,"life_expect":68.92,"n_fertility":3.34,"n_life_expect":67.21,"country":"Colombia","p_fertility":4.4,"p_life_expect":66.27},{"_comment":null,"year":1985,"fertility":3.34,"life_expect":67.21,"n_fertility":3.08,"n_life_expect":71.45,"country":"Colombia","p_fertility":3.86,"p_life_expect":68.92},{"_comment":null,"year":1990,"fertility":3.08,"life_expect":71.45,"n_fertility":2.86,"n_life_expect":72.55,"country":"Colombia","p_fertility":3.34,"p_life_expect":67.21},{"_comment":null,"year":1995,"fertility":2.86,"life_expect":72.55,"n_fertility":2.57,"n_life_expect":74.23,"country":"Colombia","p_fertility":3.08,"p_life_expect":71.45},{"_comment":null,"year":2000,"fertility":2.57,"life_expect":74.23,"n_fertility":0.0,"n_life_expect":0.0,"country":"Colombia","p_fertility":2.86,"p_life_expect":72.55},{"_comment":null,"year":1955,"fertility":6.71,"life_expect":61.93,"n_fertility":6.86,"n_life_expect":65.35,"country":"Costa Rica","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.86,"life_expect":65.35,"n_fertility":6.04,"n_life_expect":65.49,"country":"Costa Rica","p_fertility":6.71,"p_life_expect":61.93},{"_comment":null,"year":1965,"fertility":6.04,"life_expect":65.49,"n_fertility":4.59,"n_life_expect":67.04,"country":"Costa Rica","p_fertility":6.86,"p_life_expect":65.35},{"_comment":null,"year":1970,"fertility":4.59,"life_expect":67.04,"n_fertility":3.8,"n_life_expect":71.6,"country":"Costa Rica","p_fertility":6.04,"p_life_expect":65.49},{"_comment":null,"year":1975,"fertility":3.8,"life_expect":71.6,"n_fertility":3.59,"n_life_expect":74.68,"country":"Costa Rica","p_fertility":4.59,"p_life_expect":67.04},{"_comment":null,"year":1980,"fertility":3.59,"life_expect":74.68,"n_fertility":3.51,"n_life_expect":75.71,"country":"Costa Rica","p_fertility":3.8,"p_life_expect":71.6},{"_comment":null,"year":1985,"fertility":3.51,"life_expect":75.71,"n_fertility":3.21,"n_life_expect":76.94,"country":"Costa Rica","p_fertility":3.59,"p_life_expect":74.68},{"_comment":null,"year":1990,"fertility":3.21,"life_expect":76.94,"n_fertility":2.8,"n_life_expect":76.53,"country":"Costa Rica","p_fertility":3.51,"p_life_expect":75.71},{"_comment":null,"year":1995,"fertility":2.8,"life_expect":76.53,"n_fertility":2.41,"n_life_expect":77.9,"country":"Costa Rica","p_fertility":3.21,"p_life_expect":76.94},{"_comment":null,"year":2000,"fertility":2.41,"life_expect":77.9,"n_fertility":0.0,"n_life_expect":0.0,"country":"Costa Rica","p_fertility":2.8,"p_life_expect":76.53},{"_comment":null,"year":1955,"fertility":2.57,"life_expect":60.23,"n_fertility":2.26,"n_life_expect":64.71,"country":"Croatia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.26,"life_expect":64.71,"n_fertility":2.21,"n_life_expect":67.64,"country":"Croatia","p_fertility":2.57,"p_life_expect":60.23},{"_comment":null,"year":1965,"fertility":2.21,"life_expect":67.64,"n_fertility":1.92,"n_life_expect":68.67,"country":"Croatia","p_fertility":2.26,"p_life_expect":64.71},{"_comment":null,"year":1970,"fertility":1.92,"life_expect":68.67,"n_fertility":1.96,"n_life_expect":70.58,"country":"Croatia","p_fertility":2.21,"p_life_expect":67.64},{"_comment":null,"year":1975,"fertility":1.96,"life_expect":70.58,"n_fertility":1.92,"n_life_expect":70.67,"country":"Croatia","p_fertility":1.92,"p_life_expect":68.67},{"_comment":null,"year":1980,"fertility":1.92,"life_expect":70.67,"n_fertility":1.82,"n_life_expect":71.32,"country":"Croatia","p_fertility":1.96,"p_life_expect":70.58},{"_comment":null,"year":1985,"fertility":1.82,"life_expect":71.32,"n_fertility":1.63,"n_life_expect":72.46,"country":"Croatia","p_fertility":1.92,"p_life_expect":70.67},{"_comment":null,"year":1990,"fertility":1.63,"life_expect":72.46,"n_fertility":1.63,"n_life_expect":73.01,"country":"Croatia","p_fertility":1.82,"p_life_expect":71.32},{"_comment":null,"year":1995,"fertility":1.63,"life_expect":73.01,"n_fertility":1.47,"n_life_expect":74.65,"country":"Croatia","p_fertility":1.63,"p_life_expect":72.46},{"_comment":null,"year":2000,"fertility":1.47,"life_expect":74.65,"n_fertility":0.0,"n_life_expect":0.0,"country":"Croatia","p_fertility":1.63,"p_life_expect":73.01},{"_comment":null,"year":1955,"fertility":3.82,"life_expect":67.12,"n_fertility":4.14,"n_life_expect":69.27,"country":"Cuba","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.14,"life_expect":69.27,"n_fertility":4.48,"n_life_expect":69.81,"country":"Cuba","p_fertility":3.82,"p_life_expect":67.12},{"_comment":null,"year":1965,"fertility":4.48,"life_expect":69.81,"n_fertility":4.0,"n_life_expect":70.78,"country":"Cuba","p_fertility":4.14,"p_life_expect":69.27},{"_comment":null,"year":1970,"fertility":4.0,"life_expect":70.78,"n_fertility":2.85,"n_life_expect":73.15,"country":"Cuba","p_fertility":4.48,"p_life_expect":69.81},{"_comment":null,"year":1975,"fertility":2.85,"life_expect":73.15,"n_fertility":1.62,"n_life_expect":73.57,"country":"Cuba","p_fertility":4.0,"p_life_expect":70.78},{"_comment":null,"year":1980,"fertility":1.62,"life_expect":73.57,"n_fertility":1.76,"n_life_expect":74.15,"country":"Cuba","p_fertility":2.85,"p_life_expect":73.15},{"_comment":null,"year":1985,"fertility":1.76,"life_expect":74.15,"n_fertility":1.8,"n_life_expect":75.01,"country":"Cuba","p_fertility":1.62,"p_life_expect":73.57},{"_comment":null,"year":1990,"fertility":1.8,"life_expect":75.01,"n_fertility":1.47,"n_life_expect":75.39,"country":"Cuba","p_fertility":1.76,"p_life_expect":74.15},{"_comment":null,"year":1995,"fertility":1.47,"life_expect":75.39,"n_fertility":1.58,"n_life_expect":77.01,"country":"Cuba","p_fertility":1.8,"p_life_expect":75.01},{"_comment":null,"year":2000,"fertility":1.58,"life_expect":77.01,"n_fertility":0.0,"n_life_expect":0.0,"country":"Cuba","p_fertility":1.47,"p_life_expect":75.39},{"_comment":null,"year":1955,"fertility":7.67,"life_expect":60.36,"n_fertility":7.56,"n_life_expect":61.92,"country":"Dominican Republic","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.56,"life_expect":61.92,"n_fertility":7.05,"n_life_expect":61.62,"country":"Dominican Republic","p_fertility":7.67,"p_life_expect":60.36},{"_comment":null,"year":1965,"fertility":7.05,"life_expect":61.62,"n_fertility":6.18,"n_life_expect":64.88,"country":"Dominican Republic","p_fertility":7.56,"p_life_expect":61.92},{"_comment":null,"year":1970,"fertility":6.18,"life_expect":64.88,"n_fertility":5.24,"n_life_expect":67.18,"country":"Dominican Republic","p_fertility":7.05,"p_life_expect":61.62},{"_comment":null,"year":1975,"fertility":5.24,"life_expect":67.18,"n_fertility":4.3,"n_life_expect":69.25,"country":"Dominican Republic","p_fertility":6.18,"p_life_expect":64.88},{"_comment":null,"year":1980,"fertility":4.3,"life_expect":69.25,"n_fertility":3.69,"n_life_expect":70.24,"country":"Dominican Republic","p_fertility":5.24,"p_life_expect":67.18},{"_comment":null,"year":1985,"fertility":3.69,"life_expect":70.24,"n_fertility":3.41,"n_life_expect":71.97,"country":"Dominican Republic","p_fertility":4.3,"p_life_expect":69.25},{"_comment":null,"year":1990,"fertility":3.41,"life_expect":71.97,"n_fertility":3.1,"n_life_expect":73.71,"country":"Dominican Republic","p_fertility":3.69,"p_life_expect":70.24},{"_comment":null,"year":1995,"fertility":3.1,"life_expect":73.71,"n_fertility":2.86,"n_life_expect":73.66,"country":"Dominican Republic","p_fertility":3.41,"p_life_expect":71.97},{"_comment":null,"year":2000,"fertility":2.86,"life_expect":73.66,"n_fertility":0.0,"n_life_expect":0.0,"country":"Dominican Republic","p_fertility":3.1,"p_life_expect":73.71},{"_comment":null,"year":1955,"fertility":6.75,"life_expect":53.94,"n_fertility":6.71,"n_life_expect":56.1,"country":"Ecuador","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.71,"life_expect":56.1,"n_fertility":6.56,"n_life_expect":59.75,"country":"Ecuador","p_fertility":6.75,"p_life_expect":53.94},{"_comment":null,"year":1965,"fertility":6.56,"life_expect":59.75,"n_fertility":6.14,"n_life_expect":61.35,"country":"Ecuador","p_fertility":6.71,"p_life_expect":56.1},{"_comment":null,"year":1970,"fertility":6.14,"life_expect":61.35,"n_fertility":5.43,"n_life_expect":64.09,"country":"Ecuador","p_fertility":6.56,"p_life_expect":59.75},{"_comment":null,"year":1975,"fertility":5.43,"life_expect":64.09,"n_fertility":4.73,"n_life_expect":67.01,"country":"Ecuador","p_fertility":6.14,"p_life_expect":61.35},{"_comment":null,"year":1980,"fertility":4.73,"life_expect":67.01,"n_fertility":4.2,"n_life_expect":69.88,"country":"Ecuador","p_fertility":5.43,"p_life_expect":64.09},{"_comment":null,"year":1985,"fertility":4.2,"life_expect":69.88,"n_fertility":3.74,"n_life_expect":71.95,"country":"Ecuador","p_fertility":4.73,"p_life_expect":67.01},{"_comment":null,"year":1990,"fertility":3.74,"life_expect":71.95,"n_fertility":3.4,"n_life_expect":73.63,"country":"Ecuador","p_fertility":4.2,"p_life_expect":69.88},{"_comment":null,"year":1995,"fertility":3.4,"life_expect":73.63,"n_fertility":3.1,"n_life_expect":74.46,"country":"Ecuador","p_fertility":3.74,"p_life_expect":71.95},{"_comment":null,"year":2000,"fertility":3.1,"life_expect":74.46,"n_fertility":0.0,"n_life_expect":0.0,"country":"Ecuador","p_fertility":3.4,"p_life_expect":73.63},{"_comment":null,"year":1955,"fertility":6.83,"life_expect":43.8,"n_fertility":6.75,"n_life_expect":46.87,"country":"Egypt","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.75,"life_expect":46.87,"n_fertility":6.5,"n_life_expect":50.67,"country":"Egypt","p_fertility":6.83,"p_life_expect":43.8},{"_comment":null,"year":1965,"fertility":6.5,"life_expect":50.67,"n_fertility":6.12,"n_life_expect":51.25,"country":"Egypt","p_fertility":6.75,"p_life_expect":46.87},{"_comment":null,"year":1970,"fertility":6.12,"life_expect":51.25,"n_fertility":5.8,"n_life_expect":54.43,"country":"Egypt","p_fertility":6.5,"p_life_expect":50.67},{"_comment":null,"year":1975,"fertility":5.8,"life_expect":54.43,"n_fertility":5.58,"n_life_expect":58.48,"country":"Egypt","p_fertility":6.12,"p_life_expect":51.25},{"_comment":null,"year":1980,"fertility":5.58,"life_expect":58.48,"n_fertility":5.16,"n_life_expect":60.12,"country":"Egypt","p_fertility":5.8,"p_life_expect":54.43},{"_comment":null,"year":1985,"fertility":5.16,"life_expect":60.12,"n_fertility":4.48,"n_life_expect":63.92,"country":"Egypt","p_fertility":5.58,"p_life_expect":58.48},{"_comment":null,"year":1990,"fertility":4.48,"life_expect":63.92,"n_fertility":3.84,"n_life_expect":66.38,"country":"Egypt","p_fertility":5.16,"p_life_expect":60.12},{"_comment":null,"year":1995,"fertility":3.84,"life_expect":66.38,"n_fertility":3.44,"n_life_expect":68.54,"country":"Egypt","p_fertility":4.48,"p_life_expect":63.92},{"_comment":null,"year":2000,"fertility":3.44,"life_expect":68.54,"n_fertility":0.0,"n_life_expect":0.0,"country":"Egypt","p_fertility":3.84,"p_life_expect":66.38},{"_comment":null,"year":1955,"fertility":6.47,"life_expect":48.83,"n_fertility":6.66,"n_life_expect":53.46,"country":"El Salvador","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.66,"life_expect":53.46,"n_fertility":6.65,"n_life_expect":56.44,"country":"El Salvador","p_fertility":6.47,"p_life_expect":48.83},{"_comment":null,"year":1965,"fertility":6.65,"life_expect":56.44,"n_fertility":6.18,"n_life_expect":57.81,"country":"El Salvador","p_fertility":6.66,"p_life_expect":53.46},{"_comment":null,"year":1970,"fertility":6.18,"life_expect":57.81,"n_fertility":5.68,"n_life_expect":62.42,"country":"El Salvador","p_fertility":6.65,"p_life_expect":56.44},{"_comment":null,"year":1975,"fertility":5.68,"life_expect":62.42,"n_fertility":5.11,"n_life_expect":63.81,"country":"El Salvador","p_fertility":6.18,"p_life_expect":57.81},{"_comment":null,"year":1980,"fertility":5.11,"life_expect":63.81,"n_fertility":4.35,"n_life_expect":65.59,"country":"El Salvador","p_fertility":5.68,"p_life_expect":62.42},{"_comment":null,"year":1985,"fertility":4.35,"life_expect":65.59,"n_fertility":3.95,"n_life_expect":69.8,"country":"El Salvador","p_fertility":5.11,"p_life_expect":63.81},{"_comment":null,"year":1990,"fertility":3.95,"life_expect":69.8,"n_fertility":3.58,"n_life_expect":71.59,"country":"El Salvador","p_fertility":4.35,"p_life_expect":65.59},{"_comment":null,"year":1995,"fertility":3.58,"life_expect":71.59,"n_fertility":3.14,"n_life_expect":73.07,"country":"El Salvador","p_fertility":3.95,"p_life_expect":69.8},{"_comment":null,"year":2000,"fertility":3.14,"life_expect":73.07,"n_fertility":0.0,"n_life_expect":0.0,"country":"El Salvador","p_fertility":3.58,"p_life_expect":71.59},{"_comment":null,"year":1955,"fertility":2.93,"life_expect":67.73,"n_fertility":2.72,"n_life_expect":69.22,"country":"Finland","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.72,"life_expect":69.22,"n_fertility":2.47,"n_life_expect":69.56,"country":"Finland","p_fertility":2.93,"p_life_expect":67.73},{"_comment":null,"year":1965,"fertility":2.47,"life_expect":69.56,"n_fertility":1.82,"n_life_expect":70.66,"country":"Finland","p_fertility":2.72,"p_life_expect":69.22},{"_comment":null,"year":1970,"fertility":1.82,"life_expect":70.66,"n_fertility":1.68,"n_life_expect":72.17,"country":"Finland","p_fertility":2.47,"p_life_expect":69.56},{"_comment":null,"year":1975,"fertility":1.68,"life_expect":72.17,"n_fertility":1.63,"n_life_expect":74.01,"country":"Finland","p_fertility":1.82,"p_life_expect":70.66},{"_comment":null,"year":1980,"fertility":1.63,"life_expect":74.01,"n_fertility":1.64,"n_life_expect":74.88,"country":"Finland","p_fertility":1.68,"p_life_expect":72.17},{"_comment":null,"year":1985,"fertility":1.64,"life_expect":74.88,"n_fertility":1.78,"n_life_expect":75.43,"country":"Finland","p_fertility":1.63,"p_life_expect":74.01},{"_comment":null,"year":1990,"fertility":1.78,"life_expect":75.43,"n_fertility":1.81,"n_life_expect":76.94,"country":"Finland","p_fertility":1.64,"p_life_expect":74.88},{"_comment":null,"year":1995,"fertility":1.81,"life_expect":76.94,"n_fertility":1.73,"n_life_expect":78.04,"country":"Finland","p_fertility":1.78,"p_life_expect":75.43},{"_comment":null,"year":2000,"fertility":1.73,"life_expect":78.04,"n_fertility":0.0,"n_life_expect":0.0,"country":"Finland","p_fertility":1.81,"p_life_expect":76.94},{"_comment":null,"year":1955,"fertility":2.7,"life_expect":69.33,"n_fertility":2.74,"n_life_expect":71.19,"country":"France","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.74,"life_expect":71.19,"n_fertility":2.82,"n_life_expect":71.83,"country":"France","p_fertility":2.7,"p_life_expect":69.33},{"_comment":null,"year":1965,"fertility":2.82,"life_expect":71.83,"n_fertility":2.5,"n_life_expect":72.6,"country":"France","p_fertility":2.74,"p_life_expect":71.19},{"_comment":null,"year":1970,"fertility":2.5,"life_expect":72.6,"n_fertility":1.95,"n_life_expect":73.34,"country":"France","p_fertility":2.82,"p_life_expect":71.83},{"_comment":null,"year":1975,"fertility":1.95,"life_expect":73.34,"n_fertility":1.96,"n_life_expect":74.68,"country":"France","p_fertility":2.5,"p_life_expect":72.6},{"_comment":null,"year":1980,"fertility":1.96,"life_expect":74.68,"n_fertility":1.82,"n_life_expect":75.77,"country":"France","p_fertility":1.95,"p_life_expect":73.34},{"_comment":null,"year":1985,"fertility":1.82,"life_expect":75.77,"n_fertility":1.78,"n_life_expect":77.21,"country":"France","p_fertility":1.96,"p_life_expect":74.68},{"_comment":null,"year":1990,"fertility":1.78,"life_expect":77.21,"n_fertility":1.71,"n_life_expect":78.19,"country":"France","p_fertility":1.82,"p_life_expect":75.77},{"_comment":null,"year":1995,"fertility":1.71,"life_expect":78.19,"n_fertility":1.88,"n_life_expect":79.19,"country":"France","p_fertility":1.78,"p_life_expect":77.21},{"_comment":null,"year":2000,"fertility":1.88,"life_expect":79.19,"n_fertility":0.0,"n_life_expect":0.0,"country":"France","p_fertility":1.71,"p_life_expect":78.19},{"_comment":null,"year":1955,"fertility":2.88,"life_expect":54.29,"n_fertility":2.95,"n_life_expect":59.25,"country":"Georgia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.95,"life_expect":59.25,"n_fertility":2.78,"n_life_expect":62.95,"country":"Georgia","p_fertility":2.88,"p_life_expect":54.29},{"_comment":null,"year":1965,"fertility":2.78,"life_expect":62.95,"n_fertility":2.67,"n_life_expect":65.36,"country":"Georgia","p_fertility":2.95,"p_life_expect":59.25},{"_comment":null,"year":1970,"fertility":2.67,"life_expect":65.36,"n_fertility":2.53,"n_life_expect":66.74,"country":"Georgia","p_fertility":2.78,"p_life_expect":62.95},{"_comment":null,"year":1975,"fertility":2.53,"life_expect":66.74,"n_fertility":2.33,"n_life_expect":68.54,"country":"Georgia","p_fertility":2.67,"p_life_expect":65.36},{"_comment":null,"year":1980,"fertility":2.33,"life_expect":68.54,"n_fertility":2.34,"n_life_expect":69.06,"country":"Georgia","p_fertility":2.53,"p_life_expect":66.74},{"_comment":null,"year":1985,"fertility":2.34,"life_expect":69.06,"n_fertility":2.31,"n_life_expect":68.53,"country":"Georgia","p_fertility":2.33,"p_life_expect":68.54},{"_comment":null,"year":1990,"fertility":2.31,"life_expect":68.53,"n_fertility":1.85,"n_life_expect":69.98,"country":"Georgia","p_fertility":2.34,"p_life_expect":69.06},{"_comment":null,"year":1995,"fertility":1.85,"life_expect":69.98,"n_fertility":1.6,"n_life_expect":70.68,"country":"Georgia","p_fertility":2.31,"p_life_expect":68.53},{"_comment":null,"year":2000,"fertility":1.6,"life_expect":70.68,"n_fertility":0.0,"n_life_expect":0.0,"country":"Georgia","p_fertility":1.85,"p_life_expect":69.98},{"_comment":null,"year":1955,"fertility":2.18,"life_expect":68.53,"n_fertility":2.39,"n_life_expect":69.41,"country":"Germany","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.39,"life_expect":69.41,"n_fertility":2.49,"n_life_expect":70.68,"country":"Germany","p_fertility":2.18,"p_life_expect":68.53},{"_comment":null,"year":1965,"fertility":2.49,"life_expect":70.68,"n_fertility":2.04,"n_life_expect":70.61,"country":"Germany","p_fertility":2.39,"p_life_expect":69.41},{"_comment":null,"year":1970,"fertility":2.04,"life_expect":70.61,"n_fertility":1.48,"n_life_expect":71.67,"country":"Germany","p_fertility":2.49,"p_life_expect":70.68},{"_comment":null,"year":1975,"fertility":1.48,"life_expect":71.67,"n_fertility":1.54,"n_life_expect":73.26,"country":"Germany","p_fertility":2.04,"p_life_expect":70.61},{"_comment":null,"year":1980,"fertility":1.54,"life_expect":73.26,"n_fertility":1.39,"n_life_expect":74.83,"country":"Germany","p_fertility":1.48,"p_life_expect":71.67},{"_comment":null,"year":1985,"fertility":1.39,"life_expect":74.83,"n_fertility":1.44,"n_life_expect":75.66,"country":"Germany","p_fertility":1.54,"p_life_expect":73.26},{"_comment":null,"year":1990,"fertility":1.44,"life_expect":75.66,"n_fertility":1.25,"n_life_expect":76.87,"country":"Germany","p_fertility":1.39,"p_life_expect":74.83},{"_comment":null,"year":1995,"fertility":1.25,"life_expect":76.87,"n_fertility":1.38,"n_life_expect":78.39,"country":"Germany","p_fertility":1.44,"p_life_expect":75.66},{"_comment":null,"year":2000,"fertility":1.38,"life_expect":78.39,"n_fertility":0.0,"n_life_expect":0.0,"country":"Germany","p_fertility":1.25,"p_life_expect":76.87},{"_comment":null,"year":1955,"fertility":2.38,"life_expect":71.5,"n_fertility":2.29,"n_life_expect":72.43,"country":"Greece","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.29,"life_expect":72.43,"n_fertility":2.34,"n_life_expect":73.01,"country":"Greece","p_fertility":2.38,"p_life_expect":71.5},{"_comment":null,"year":1965,"fertility":2.34,"life_expect":73.01,"n_fertility":2.47,"n_life_expect":73.82,"country":"Greece","p_fertility":2.29,"p_life_expect":72.43},{"_comment":null,"year":1970,"fertility":2.47,"life_expect":73.82,"n_fertility":2.44,"n_life_expect":74.63,"country":"Greece","p_fertility":2.34,"p_life_expect":73.01},{"_comment":null,"year":1975,"fertility":2.44,"life_expect":74.63,"n_fertility":2.32,"n_life_expect":75.3,"country":"Greece","p_fertility":2.47,"p_life_expect":73.82},{"_comment":null,"year":1980,"fertility":2.32,"life_expect":75.3,"n_fertility":1.78,"n_life_expect":75.86,"country":"Greece","p_fertility":2.44,"p_life_expect":74.63},{"_comment":null,"year":1985,"fertility":1.78,"life_expect":75.86,"n_fertility":1.49,"n_life_expect":77.23,"country":"Greece","p_fertility":2.32,"p_life_expect":75.3},{"_comment":null,"year":1990,"fertility":1.49,"life_expect":77.23,"n_fertility":1.39,"n_life_expect":77.75,"country":"Greece","p_fertility":1.78,"p_life_expect":75.86},{"_comment":null,"year":1995,"fertility":1.39,"life_expect":77.75,"n_fertility":1.33,"n_life_expect":78.44,"country":"Greece","p_fertility":1.49,"p_life_expect":77.23},{"_comment":null,"year":2000,"fertility":1.33,"life_expect":78.44,"n_fertility":0.0,"n_life_expect":0.0,"country":"Greece","p_fertility":1.39,"p_life_expect":77.75},{"_comment":null,"year":1955,"fertility":6.43,"life_expect":61.2,"n_fertility":6.74,"n_life_expect":64.11,"country":"Grenada","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.74,"life_expect":64.11,"n_fertility":5.6,"n_life_expect":65.58,"country":"Grenada","p_fertility":6.43,"p_life_expect":61.2},{"_comment":null,"year":1965,"fertility":5.6,"life_expect":65.58,"n_fertility":4.52,"n_life_expect":66.98,"country":"Grenada","p_fertility":6.74,"p_life_expect":64.11},{"_comment":null,"year":1970,"fertility":4.52,"life_expect":66.98,"n_fertility":4.02,"n_life_expect":69.02,"country":"Grenada","p_fertility":5.6,"p_life_expect":65.58},{"_comment":null,"year":1975,"fertility":4.02,"life_expect":69.02,"n_fertility":3.63,"n_life_expect":69.31,"country":"Grenada","p_fertility":4.52,"p_life_expect":66.98},{"_comment":null,"year":1980,"fertility":3.63,"life_expect":69.31,"n_fertility":3.54,"n_life_expect":69.55,"country":"Grenada","p_fertility":4.02,"p_life_expect":69.02},{"_comment":null,"year":1985,"fertility":3.54,"life_expect":69.55,"n_fertility":3.49,"n_life_expect":69.21,"country":"Grenada","p_fertility":3.63,"p_life_expect":69.31},{"_comment":null,"year":1990,"fertility":3.49,"life_expect":69.21,"n_fertility":2.99,"n_life_expect":70.7,"country":"Grenada","p_fertility":3.54,"p_life_expect":69.55},{"_comment":null,"year":1995,"fertility":2.99,"life_expect":70.7,"n_fertility":2.58,"n_life_expect":71.97,"country":"Grenada","p_fertility":3.49,"p_life_expect":69.21},{"_comment":null,"year":2000,"fertility":2.58,"life_expect":71.97,"n_fertility":0.0,"n_life_expect":0.0,"country":"Grenada","p_fertility":2.99,"p_life_expect":70.7},{"_comment":null,"year":1955,"fertility":6.26,"life_expect":43.97,"n_fertility":6.24,"n_life_expect":45.41,"country":"Haiti","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.24,"life_expect":45.41,"n_fertility":6.13,"n_life_expect":46.51,"country":"Haiti","p_fertility":6.26,"p_life_expect":43.97},{"_comment":null,"year":1965,"fertility":6.13,"life_expect":46.51,"n_fertility":5.87,"n_life_expect":47.96,"country":"Haiti","p_fertility":6.24,"p_life_expect":45.41},{"_comment":null,"year":1970,"fertility":5.87,"life_expect":47.96,"n_fertility":5.69,"n_life_expect":49.73,"country":"Haiti","p_fertility":6.13,"p_life_expect":46.51},{"_comment":null,"year":1975,"fertility":5.69,"life_expect":49.73,"n_fertility":5.65,"n_life_expect":51.28,"country":"Haiti","p_fertility":5.87,"p_life_expect":47.96},{"_comment":null,"year":1980,"fertility":5.65,"life_expect":51.28,"n_fertility":5.62,"n_life_expect":53.05,"country":"Haiti","p_fertility":5.69,"p_life_expect":49.73},{"_comment":null,"year":1985,"fertility":5.62,"life_expect":53.05,"n_fertility":5.48,"n_life_expect":54.57,"country":"Haiti","p_fertility":5.65,"p_life_expect":51.28},{"_comment":null,"year":1990,"fertility":5.48,"life_expect":54.57,"n_fertility":4.88,"n_life_expect":55.35,"country":"Haiti","p_fertility":5.62,"p_life_expect":53.05},{"_comment":null,"year":1995,"fertility":4.88,"life_expect":55.35,"n_fertility":4.39,"n_life_expect":57.43,"country":"Haiti","p_fertility":5.48,"p_life_expect":54.57},{"_comment":null,"year":2000,"fertility":4.39,"life_expect":57.43,"n_fertility":0.0,"n_life_expect":0.0,"country":"Haiti","p_fertility":4.88,"p_life_expect":55.35},{"_comment":null,"year":1955,"fertility":4.5,"life_expect":62.97,"n_fertility":5.09,"n_life_expect":66.24,"country":"Hong Kong, China","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.09,"life_expect":66.24,"n_fertility":4.87,"n_life_expect":69.63,"country":"Hong Kong, China","p_fertility":4.5,"p_life_expect":62.97},{"_comment":null,"year":1965,"fertility":4.87,"life_expect":69.63,"n_fertility":3.49,"n_life_expect":71.31,"country":"Hong Kong, China","p_fertility":5.09,"p_life_expect":66.24},{"_comment":null,"year":1970,"fertility":3.49,"life_expect":71.31,"n_fertility":2.7,"n_life_expect":73.61,"country":"Hong Kong, China","p_fertility":4.87,"p_life_expect":69.63},{"_comment":null,"year":1975,"fertility":2.7,"life_expect":73.61,"n_fertility":1.86,"n_life_expect":74.85,"country":"Hong Kong, China","p_fertility":3.49,"p_life_expect":71.31},{"_comment":null,"year":1980,"fertility":1.86,"life_expect":74.85,"n_fertility":1.5,"n_life_expect":76.6,"country":"Hong Kong, China","p_fertility":2.7,"p_life_expect":73.61},{"_comment":null,"year":1985,"fertility":1.5,"life_expect":76.6,"n_fertility":1.29,"n_life_expect":77.47,"country":"Hong Kong, China","p_fertility":1.86,"p_life_expect":74.85},{"_comment":null,"year":1990,"fertility":1.29,"life_expect":77.47,"n_fertility":1.3,"n_life_expect":79.15,"country":"Hong Kong, China","p_fertility":1.5,"p_life_expect":76.6},{"_comment":null,"year":1995,"fertility":1.3,"life_expect":79.15,"n_fertility":1.03,"n_life_expect":80.75,"country":"Hong Kong, China","p_fertility":1.29,"p_life_expect":77.47},{"_comment":null,"year":2000,"fertility":1.03,"life_expect":80.75,"n_fertility":0.0,"n_life_expect":0.0,"country":"Hong Kong, China","p_fertility":1.3,"p_life_expect":79.15},{"_comment":null,"year":1955,"fertility":4.08,"life_expect":72.71,"n_fertility":4.23,"n_life_expect":73.38,"country":"Iceland","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.23,"life_expect":73.38,"n_fertility":3.71,"n_life_expect":73.72,"country":"Iceland","p_fertility":4.08,"p_life_expect":72.71},{"_comment":null,"year":1965,"fertility":3.71,"life_expect":73.72,"n_fertility":2.82,"n_life_expect":73.93,"country":"Iceland","p_fertility":4.23,"p_life_expect":73.38},{"_comment":null,"year":1970,"fertility":2.82,"life_expect":73.93,"n_fertility":2.64,"n_life_expect":75.67,"country":"Iceland","p_fertility":3.71,"p_life_expect":73.72},{"_comment":null,"year":1975,"fertility":2.64,"life_expect":75.67,"n_fertility":2.48,"n_life_expect":76.49,"country":"Iceland","p_fertility":2.82,"p_life_expect":73.93},{"_comment":null,"year":1980,"fertility":2.48,"life_expect":76.49,"n_fertility":1.94,"n_life_expect":77.26,"country":"Iceland","p_fertility":2.64,"p_life_expect":75.67},{"_comment":null,"year":1985,"fertility":1.94,"life_expect":77.26,"n_fertility":2.29,"n_life_expect":78.11,"country":"Iceland","p_fertility":2.48,"p_life_expect":76.49},{"_comment":null,"year":1990,"fertility":2.29,"life_expect":78.11,"n_fertility":2.08,"n_life_expect":78.38,"country":"Iceland","p_fertility":1.94,"p_life_expect":77.26},{"_comment":null,"year":1995,"fertility":2.08,"life_expect":78.38,"n_fertility":2.07,"n_life_expect":80.35,"country":"Iceland","p_fertility":2.29,"p_life_expect":78.11},{"_comment":null,"year":2000,"fertility":2.07,"life_expect":80.35,"n_fertility":0.0,"n_life_expect":0.0,"country":"Iceland","p_fertility":2.08,"p_life_expect":78.38},{"_comment":null,"year":1955,"fertility":5.91,"life_expect":45.84,"n_fertility":5.91,"n_life_expect":45.75,"country":"India","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.91,"life_expect":45.75,"n_fertility":5.92,"n_life_expect":45.71,"country":"India","p_fertility":5.91,"p_life_expect":45.84},{"_comment":null,"year":1965,"fertility":5.92,"life_expect":45.71,"n_fertility":5.62,"n_life_expect":49.33,"country":"India","p_fertility":5.91,"p_life_expect":45.75},{"_comment":null,"year":1970,"fertility":5.62,"life_expect":49.33,"n_fertility":5.2,"n_life_expect":51.59,"country":"India","p_fertility":5.92,"p_life_expect":45.71},{"_comment":null,"year":1975,"fertility":5.2,"life_expect":51.59,"n_fertility":4.78,"n_life_expect":55.17,"country":"India","p_fertility":5.62,"p_life_expect":49.33},{"_comment":null,"year":1980,"fertility":4.78,"life_expect":55.17,"n_fertility":4.43,"n_life_expect":57.3,"country":"India","p_fertility":5.2,"p_life_expect":51.59},{"_comment":null,"year":1985,"fertility":4.43,"life_expect":57.3,"n_fertility":4.05,"n_life_expect":59.58,"country":"India","p_fertility":4.78,"p_life_expect":55.17},{"_comment":null,"year":1990,"fertility":4.05,"life_expect":59.58,"n_fertility":3.65,"n_life_expect":61.74,"country":"India","p_fertility":4.43,"p_life_expect":57.3},{"_comment":null,"year":1995,"fertility":3.65,"life_expect":61.74,"n_fertility":3.35,"n_life_expect":62.94,"country":"India","p_fertility":4.05,"p_life_expect":59.58},{"_comment":null,"year":2000,"fertility":3.35,"life_expect":62.94,"n_fertility":0.0,"n_life_expect":0.0,"country":"India","p_fertility":3.65,"p_life_expect":61.74},{"_comment":null,"year":1955,"fertility":5.46,"life_expect":45.7,"n_fertility":5.58,"n_life_expect":48.63,"country":"Indonesia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.58,"life_expect":48.63,"n_fertility":5.62,"n_life_expect":51.24,"country":"Indonesia","p_fertility":5.46,"p_life_expect":45.7},{"_comment":null,"year":1965,"fertility":5.62,"life_expect":51.24,"n_fertility":5.45,"n_life_expect":54.09,"country":"Indonesia","p_fertility":5.58,"p_life_expect":48.63},{"_comment":null,"year":1970,"fertility":5.45,"life_expect":54.09,"n_fertility":5.04,"n_life_expect":56.92,"country":"Indonesia","p_fertility":5.62,"p_life_expect":51.24},{"_comment":null,"year":1975,"fertility":5.04,"life_expect":56.92,"n_fertility":4.49,"n_life_expect":59.71,"country":"Indonesia","p_fertility":5.45,"p_life_expect":54.09},{"_comment":null,"year":1980,"fertility":4.49,"life_expect":59.71,"n_fertility":3.71,"n_life_expect":62.11,"country":"Indonesia","p_fertility":5.04,"p_life_expect":56.92},{"_comment":null,"year":1985,"fertility":3.71,"life_expect":62.11,"n_fertility":3.1,"n_life_expect":64.05,"country":"Indonesia","p_fertility":4.49,"p_life_expect":59.71},{"_comment":null,"year":1990,"fertility":3.1,"life_expect":64.05,"n_fertility":2.8,"n_life_expect":66.04,"country":"Indonesia","p_fertility":3.71,"p_life_expect":62.11},{"_comment":null,"year":1995,"fertility":2.8,"life_expect":66.04,"n_fertility":2.54,"n_life_expect":67.24,"country":"Indonesia","p_fertility":3.1,"p_life_expect":64.05},{"_comment":null,"year":2000,"fertility":2.54,"life_expect":67.24,"n_fertility":0.0,"n_life_expect":0.0,"country":"Indonesia","p_fertility":2.8,"p_life_expect":66.04},{"_comment":null,"year":1955,"fertility":6.99,"life_expect":41.21,"n_fertility":7.21,"n_life_expect":44.48,"country":"Iran","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.21,"life_expect":44.48,"n_fertility":7.07,"n_life_expect":48.71,"country":"Iran","p_fertility":6.99,"p_life_expect":41.21},{"_comment":null,"year":1965,"fertility":7.07,"life_expect":48.71,"n_fertility":6.71,"n_life_expect":54.51,"country":"Iran","p_fertility":7.21,"p_life_expect":44.48},{"_comment":null,"year":1970,"fertility":6.71,"life_expect":54.51,"n_fertility":6.01,"n_life_expect":61.47,"country":"Iran","p_fertility":7.07,"p_life_expect":48.71},{"_comment":null,"year":1975,"fertility":6.01,"life_expect":61.47,"n_fertility":6.58,"n_life_expect":64.7,"country":"Iran","p_fertility":6.71,"p_life_expect":54.51},{"_comment":null,"year":1980,"fertility":6.58,"life_expect":64.7,"n_fertility":6.26,"n_life_expect":66.31,"country":"Iran","p_fertility":6.01,"p_life_expect":61.47},{"_comment":null,"year":1985,"fertility":6.26,"life_expect":66.31,"n_fertility":4.86,"n_life_expect":66.68,"country":"Iran","p_fertility":6.58,"p_life_expect":64.7},{"_comment":null,"year":1990,"fertility":4.86,"life_expect":66.68,"n_fertility":2.89,"n_life_expect":70.37,"country":"Iran","p_fertility":6.26,"p_life_expect":66.31},{"_comment":null,"year":1995,"fertility":2.89,"life_expect":70.37,"n_fertility":2.02,"n_life_expect":71.94,"country":"Iran","p_fertility":4.86,"p_life_expect":66.68},{"_comment":null,"year":2000,"fertility":2.02,"life_expect":71.94,"n_fertility":0.0,"n_life_expect":0.0,"country":"Iran","p_fertility":2.89,"p_life_expect":70.37},{"_comment":null,"year":1955,"fertility":6.19,"life_expect":58.52,"n_fertility":5.54,"n_life_expect":60.49,"country":"Iraq","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.54,"life_expect":60.49,"n_fertility":6.96,"n_life_expect":61.13,"country":"Iraq","p_fertility":6.19,"p_life_expect":58.52},{"_comment":null,"year":1965,"fertility":6.96,"life_expect":61.13,"n_fertility":7.08,"n_life_expect":62.78,"country":"Iraq","p_fertility":5.54,"p_life_expect":60.49},{"_comment":null,"year":1970,"fertility":7.08,"life_expect":62.78,"n_fertility":6.88,"n_life_expect":64.23,"country":"Iraq","p_fertility":6.96,"p_life_expect":61.13},{"_comment":null,"year":1975,"fertility":6.88,"life_expect":64.23,"n_fertility":6.57,"n_life_expect":64.51,"country":"Iraq","p_fertility":7.08,"p_life_expect":62.78},{"_comment":null,"year":1980,"fertility":6.57,"life_expect":64.51,"n_fertility":6.25,"n_life_expect":62.73,"country":"Iraq","p_fertility":6.88,"p_life_expect":64.23},{"_comment":null,"year":1985,"fertility":6.25,"life_expect":62.73,"n_fertility":5.88,"n_life_expect":67.0,"country":"Iraq","p_fertility":6.57,"p_life_expect":64.51},{"_comment":null,"year":1990,"fertility":5.88,"life_expect":67.0,"n_fertility":5.4,"n_life_expect":67.16,"country":"Iraq","p_fertility":6.25,"p_life_expect":62.73},{"_comment":null,"year":1995,"fertility":5.4,"life_expect":67.16,"n_fertility":4.95,"n_life_expect":68.64,"country":"Iraq","p_fertility":5.88,"p_life_expect":67.0},{"_comment":null,"year":2000,"fertility":4.95,"life_expect":68.64,"n_fertility":0.0,"n_life_expect":0.0,"country":"Iraq","p_fertility":5.4,"p_life_expect":67.16},{"_comment":null,"year":1955,"fertility":3.41,"life_expect":68.52,"n_fertility":3.8,"n_life_expect":70.12,"country":"Ireland","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.8,"life_expect":70.12,"n_fertility":4.02,"n_life_expect":70.75,"country":"Ireland","p_fertility":3.41,"p_life_expect":68.52},{"_comment":null,"year":1965,"fertility":4.02,"life_expect":70.75,"n_fertility":3.85,"n_life_expect":71.23,"country":"Ireland","p_fertility":3.8,"p_life_expect":70.12},{"_comment":null,"year":1970,"fertility":3.85,"life_expect":71.23,"n_fertility":3.37,"n_life_expect":71.74,"country":"Ireland","p_fertility":4.02,"p_life_expect":70.75},{"_comment":null,"year":1975,"fertility":3.37,"life_expect":71.74,"n_fertility":3.2,"n_life_expect":72.69,"country":"Ireland","p_fertility":3.85,"p_life_expect":71.23},{"_comment":null,"year":1980,"fertility":3.2,"life_expect":72.69,"n_fertility":2.48,"n_life_expect":73.8,"country":"Ireland","p_fertility":3.37,"p_life_expect":71.74},{"_comment":null,"year":1985,"fertility":2.48,"life_expect":73.8,"n_fertility":2.11,"n_life_expect":74.98,"country":"Ireland","p_fertility":3.2,"p_life_expect":72.69},{"_comment":null,"year":1990,"fertility":2.11,"life_expect":74.98,"n_fertility":1.85,"n_life_expect":75.74,"country":"Ireland","p_fertility":2.48,"p_life_expect":73.8},{"_comment":null,"year":1995,"fertility":1.85,"life_expect":75.74,"n_fertility":1.89,"n_life_expect":76.77,"country":"Ireland","p_fertility":2.11,"p_life_expect":74.98},{"_comment":null,"year":2000,"fertility":1.89,"life_expect":76.77,"n_fertility":0.0,"n_life_expect":0.0,"country":"Ireland","p_fertility":1.85,"p_life_expect":75.74},{"_comment":null,"year":1955,"fertility":4.06,"life_expect":70.25,"n_fertility":4.0,"n_life_expect":71.82,"country":"Israel","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.0,"life_expect":71.82,"n_fertility":4.02,"n_life_expect":71.68,"country":"Israel","p_fertility":4.06,"p_life_expect":70.25},{"_comment":null,"year":1965,"fertility":4.02,"life_expect":71.68,"n_fertility":4.11,"n_life_expect":71.7,"country":"Israel","p_fertility":4.0,"p_life_expect":71.82},{"_comment":null,"year":1970,"fertility":4.11,"life_expect":71.7,"n_fertility":3.84,"n_life_expect":72.4,"country":"Israel","p_fertility":4.02,"p_life_expect":71.68},{"_comment":null,"year":1975,"fertility":3.84,"life_expect":72.4,"n_fertility":3.3,"n_life_expect":74.16,"country":"Israel","p_fertility":4.11,"p_life_expect":71.7},{"_comment":null,"year":1980,"fertility":3.3,"life_expect":74.16,"n_fertility":3.27,"n_life_expect":75.58,"country":"Israel","p_fertility":3.84,"p_life_expect":72.4},{"_comment":null,"year":1985,"fertility":3.27,"life_expect":75.58,"n_fertility":3.18,"n_life_expect":77.31,"country":"Israel","p_fertility":3.3,"p_life_expect":74.16},{"_comment":null,"year":1990,"fertility":3.18,"life_expect":77.31,"n_fertility":2.94,"n_life_expect":77.8,"country":"Israel","p_fertility":3.27,"p_life_expect":75.58},{"_comment":null,"year":1995,"fertility":2.94,"life_expect":77.8,"n_fertility":2.95,"n_life_expect":78.87,"country":"Israel","p_fertility":3.18,"p_life_expect":77.31},{"_comment":null,"year":2000,"fertility":2.95,"life_expect":78.87,"n_fertility":0.0,"n_life_expect":0.0,"country":"Israel","p_fertility":2.94,"p_life_expect":77.8},{"_comment":null,"year":1955,"fertility":2.31,"life_expect":68.43,"n_fertility":2.38,"n_life_expect":69.86,"country":"Italy","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.38,"life_expect":69.86,"n_fertility":2.59,"n_life_expect":70.87,"country":"Italy","p_fertility":2.31,"p_life_expect":68.43},{"_comment":null,"year":1965,"fertility":2.59,"life_expect":70.87,"n_fertility":2.39,"n_life_expect":71.81,"country":"Italy","p_fertility":2.38,"p_life_expect":69.86},{"_comment":null,"year":1970,"fertility":2.39,"life_expect":71.81,"n_fertility":2.17,"n_life_expect":72.86,"country":"Italy","p_fertility":2.59,"p_life_expect":70.87},{"_comment":null,"year":1975,"fertility":2.17,"life_expect":72.86,"n_fertility":1.64,"n_life_expect":74.2,"country":"Italy","p_fertility":2.39,"p_life_expect":71.81},{"_comment":null,"year":1980,"fertility":1.64,"life_expect":74.2,"n_fertility":1.42,"n_life_expect":75.79,"country":"Italy","p_fertility":2.17,"p_life_expect":72.86},{"_comment":null,"year":1985,"fertility":1.42,"life_expect":75.79,"n_fertility":1.33,"n_life_expect":77.16,"country":"Italy","p_fertility":1.64,"p_life_expect":74.2},{"_comment":null,"year":1990,"fertility":1.33,"life_expect":77.16,"n_fertility":1.19,"n_life_expect":78.22,"country":"Italy","p_fertility":1.42,"p_life_expect":75.79},{"_comment":null,"year":1995,"fertility":1.19,"life_expect":78.22,"n_fertility":1.25,"n_life_expect":79.64,"country":"Italy","p_fertility":1.33,"p_life_expect":77.16},{"_comment":null,"year":2000,"fertility":1.25,"life_expect":79.64,"n_fertility":0.0,"n_life_expect":0.0,"country":"Italy","p_fertility":1.19,"p_life_expect":78.22},{"_comment":null,"year":1955,"fertility":4.6,"life_expect":62.15,"n_fertility":5.54,"n_life_expect":65.14,"country":"Jamaica","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.54,"life_expect":65.14,"n_fertility":5.76,"n_life_expect":66.84,"country":"Jamaica","p_fertility":4.6,"p_life_expect":62.15},{"_comment":null,"year":1965,"fertility":5.76,"life_expect":66.84,"n_fertility":5.64,"n_life_expect":68.87,"country":"Jamaica","p_fertility":5.54,"p_life_expect":65.14},{"_comment":null,"year":1970,"fertility":5.64,"life_expect":68.87,"n_fertility":4.5,"n_life_expect":71.03,"country":"Jamaica","p_fertility":5.76,"p_life_expect":66.84},{"_comment":null,"year":1975,"fertility":4.5,"life_expect":71.03,"n_fertility":3.73,"n_life_expect":73.82,"country":"Jamaica","p_fertility":5.64,"p_life_expect":68.87},{"_comment":null,"year":1980,"fertility":3.73,"life_expect":73.82,"n_fertility":3.31,"n_life_expect":73.07,"country":"Jamaica","p_fertility":4.5,"p_life_expect":71.03},{"_comment":null,"year":1985,"fertility":3.31,"life_expect":73.07,"n_fertility":2.85,"n_life_expect":75.32,"country":"Jamaica","p_fertility":3.73,"p_life_expect":73.82},{"_comment":null,"year":1990,"fertility":2.85,"life_expect":75.32,"n_fertility":2.88,"n_life_expect":75.28,"country":"Jamaica","p_fertility":3.31,"p_life_expect":73.07},{"_comment":null,"year":1995,"fertility":2.88,"life_expect":75.28,"n_fertility":2.21,"n_life_expect":74.64,"country":"Jamaica","p_fertility":2.85,"p_life_expect":75.32},{"_comment":null,"year":2000,"fertility":2.21,"life_expect":74.64,"n_fertility":0.0,"n_life_expect":0.0,"country":"Jamaica","p_fertility":2.88,"p_life_expect":75.28},{"_comment":null,"year":1955,"fertility":2.41,"life_expect":66.12,"n_fertility":2.01,"n_life_expect":68.31,"country":"Japan","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.01,"life_expect":68.31,"n_fertility":2.12,"n_life_expect":70.86,"country":"Japan","p_fertility":2.41,"p_life_expect":66.12},{"_comment":null,"year":1965,"fertility":2.12,"life_expect":70.86,"n_fertility":2.09,"n_life_expect":72.65,"country":"Japan","p_fertility":2.01,"p_life_expect":68.31},{"_comment":null,"year":1970,"fertility":2.09,"life_expect":72.65,"n_fertility":1.94,"n_life_expect":74.77,"country":"Japan","p_fertility":2.12,"p_life_expect":70.86},{"_comment":null,"year":1975,"fertility":1.94,"life_expect":74.77,"n_fertility":1.75,"n_life_expect":76.57,"country":"Japan","p_fertility":2.09,"p_life_expect":72.65},{"_comment":null,"year":1980,"fertility":1.75,"life_expect":76.57,"n_fertility":1.74,"n_life_expect":78.16,"country":"Japan","p_fertility":1.94,"p_life_expect":74.77},{"_comment":null,"year":1985,"fertility":1.74,"life_expect":78.16,"n_fertility":1.53,"n_life_expect":79.41,"country":"Japan","p_fertility":1.75,"p_life_expect":76.57},{"_comment":null,"year":1990,"fertility":1.53,"life_expect":79.41,"n_fertility":1.42,"n_life_expect":80.24,"country":"Japan","p_fertility":1.74,"p_life_expect":78.16},{"_comment":null,"year":1995,"fertility":1.42,"life_expect":80.24,"n_fertility":1.37,"n_life_expect":81.57,"country":"Japan","p_fertility":1.53,"p_life_expect":79.41},{"_comment":null,"year":2000,"fertility":1.37,"life_expect":81.57,"n_fertility":0.0,"n_life_expect":0.0,"country":"Japan","p_fertility":1.42,"p_life_expect":80.24},{"_comment":null,"year":1955,"fertility":7.54,"life_expect":50.93,"n_fertility":7.71,"n_life_expect":54.29,"country":"Kenya","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.71,"life_expect":54.29,"n_fertility":8.04,"n_life_expect":56.31,"country":"Kenya","p_fertility":7.54,"p_life_expect":50.93},{"_comment":null,"year":1965,"fertility":8.04,"life_expect":56.31,"n_fertility":8.02,"n_life_expect":58.15,"country":"Kenya","p_fertility":7.71,"p_life_expect":54.29},{"_comment":null,"year":1970,"fertility":8.02,"life_expect":58.15,"n_fertility":7.88,"n_life_expect":60.24,"country":"Kenya","p_fertility":8.04,"p_life_expect":56.31},{"_comment":null,"year":1975,"fertility":7.88,"life_expect":60.24,"n_fertility":7.6,"n_life_expect":62.21,"country":"Kenya","p_fertility":8.02,"p_life_expect":58.15},{"_comment":null,"year":1980,"fertility":7.6,"life_expect":62.21,"n_fertility":6.98,"n_life_expect":63.39,"country":"Kenya","p_fertility":7.88,"p_life_expect":60.24},{"_comment":null,"year":1985,"fertility":6.98,"life_expect":63.39,"n_fertility":6.13,"n_life_expect":62.12,"country":"Kenya","p_fertility":7.6,"p_life_expect":62.21},{"_comment":null,"year":1990,"fertility":6.13,"life_expect":62.12,"n_fertility":5.37,"n_life_expect":57.04,"country":"Kenya","p_fertility":6.98,"p_life_expect":63.39},{"_comment":null,"year":1995,"fertility":5.37,"life_expect":57.04,"n_fertility":5.14,"n_life_expect":54.83,"country":"Kenya","p_fertility":6.13,"p_life_expect":62.12},{"_comment":null,"year":2000,"fertility":5.14,"life_expect":54.83,"n_fertility":0.0,"n_life_expect":0.0,"country":"Kenya","p_fertility":5.37,"p_life_expect":57.04},{"_comment":null,"year":1955,"fertility":5.78,"life_expect":62.08,"n_fertility":5.8,"n_life_expect":64.87,"country":"Lebanon","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":5.8,"life_expect":64.87,"n_fertility":5.63,"n_life_expect":66.56,"country":"Lebanon","p_fertility":5.78,"p_life_expect":62.08},{"_comment":null,"year":1965,"fertility":5.63,"life_expect":66.56,"n_fertility":5.17,"n_life_expect":67.59,"country":"Lebanon","p_fertility":5.8,"p_life_expect":64.87},{"_comment":null,"year":1970,"fertility":5.17,"life_expect":67.59,"n_fertility":4.56,"n_life_expect":62.04,"country":"Lebanon","p_fertility":5.63,"p_life_expect":66.56},{"_comment":null,"year":1975,"fertility":4.56,"life_expect":62.04,"n_fertility":4.03,"n_life_expect":69.41,"country":"Lebanon","p_fertility":5.17,"p_life_expect":67.59},{"_comment":null,"year":1980,"fertility":4.03,"life_expect":69.41,"n_fertility":3.59,"n_life_expect":65.13,"country":"Lebanon","p_fertility":4.56,"p_life_expect":62.04},{"_comment":null,"year":1985,"fertility":3.59,"life_expect":65.13,"n_fertility":3.3,"n_life_expect":69.92,"country":"Lebanon","p_fertility":4.03,"p_life_expect":69.41},{"_comment":null,"year":1990,"fertility":3.3,"life_expect":69.92,"n_fertility":2.78,"n_life_expect":73.15,"country":"Lebanon","p_fertility":3.59,"p_life_expect":65.13},{"_comment":null,"year":1995,"fertility":2.78,"life_expect":73.15,"n_fertility":2.5,"n_life_expect":74.82,"country":"Lebanon","p_fertility":3.3,"p_life_expect":69.92},{"_comment":null,"year":2000,"fertility":2.5,"life_expect":74.82,"n_fertility":0.0,"n_life_expect":0.0,"country":"Lebanon","p_fertility":2.78,"p_life_expect":73.15},{"_comment":null,"year":1955,"fertility":6.75,"life_expect":53.59,"n_fertility":6.77,"n_life_expect":57.15,"country":"Mexico","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.77,"life_expect":57.15,"n_fertility":6.81,"n_life_expect":59.87,"country":"Mexico","p_fertility":6.75,"p_life_expect":53.59},{"_comment":null,"year":1965,"fertility":6.81,"life_expect":59.87,"n_fertility":6.55,"n_life_expect":61.44,"country":"Mexico","p_fertility":6.77,"p_life_expect":57.15},{"_comment":null,"year":1970,"fertility":6.55,"life_expect":61.44,"n_fertility":5.79,"n_life_expect":64.21,"country":"Mexico","p_fertility":6.81,"p_life_expect":59.87},{"_comment":null,"year":1975,"fertility":5.79,"life_expect":64.21,"n_fertility":4.78,"n_life_expect":66.19,"country":"Mexico","p_fertility":6.55,"p_life_expect":61.44},{"_comment":null,"year":1980,"fertility":4.78,"life_expect":66.19,"n_fertility":4.09,"n_life_expect":68.62,"country":"Mexico","p_fertility":5.79,"p_life_expect":64.21},{"_comment":null,"year":1985,"fertility":4.09,"life_expect":68.62,"n_fertility":3.45,"n_life_expect":70.85,"country":"Mexico","p_fertility":4.78,"p_life_expect":66.19},{"_comment":null,"year":1990,"fertility":3.45,"life_expect":70.85,"n_fertility":3.04,"n_life_expect":72.35,"country":"Mexico","p_fertility":4.09,"p_life_expect":68.62},{"_comment":null,"year":1995,"fertility":3.04,"life_expect":72.35,"n_fertility":2.72,"n_life_expect":74.21,"country":"Mexico","p_fertility":3.45,"p_life_expect":70.85},{"_comment":null,"year":2000,"fertility":2.72,"life_expect":74.21,"n_fertility":0.0,"n_life_expect":0.0,"country":"Mexico","p_fertility":3.04,"p_life_expect":72.35},{"_comment":null,"year":1955,"fertility":3.04,"life_expect":72.62,"n_fertility":3.12,"n_life_expect":73.5,"country":"Netherlands","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.12,"life_expect":73.5,"n_fertility":3.02,"n_life_expect":73.69,"country":"Netherlands","p_fertility":3.04,"p_life_expect":72.62},{"_comment":null,"year":1965,"fertility":3.02,"life_expect":73.69,"n_fertility":2.57,"n_life_expect":73.73,"country":"Netherlands","p_fertility":3.12,"p_life_expect":73.5},{"_comment":null,"year":1970,"fertility":2.57,"life_expect":73.73,"n_fertility":1.67,"n_life_expect":74.68,"country":"Netherlands","p_fertility":3.02,"p_life_expect":73.69},{"_comment":null,"year":1975,"fertility":1.67,"life_expect":74.68,"n_fertility":1.6,"n_life_expect":75.88,"country":"Netherlands","p_fertility":2.57,"p_life_expect":73.73},{"_comment":null,"year":1980,"fertility":1.6,"life_expect":75.88,"n_fertility":1.51,"n_life_expect":76.49,"country":"Netherlands","p_fertility":1.67,"p_life_expect":74.68},{"_comment":null,"year":1985,"fertility":1.51,"life_expect":76.49,"n_fertility":1.61,"n_life_expect":77.16,"country":"Netherlands","p_fertility":1.6,"p_life_expect":75.88},{"_comment":null,"year":1990,"fertility":1.61,"life_expect":77.16,"n_fertility":1.54,"n_life_expect":77.69,"country":"Netherlands","p_fertility":1.51,"p_life_expect":76.49},{"_comment":null,"year":1995,"fertility":1.54,"life_expect":77.69,"n_fertility":1.72,"n_life_expect":78.28,"country":"Netherlands","p_fertility":1.61,"p_life_expect":77.16},{"_comment":null,"year":2000,"fertility":1.72,"life_expect":78.28,"n_fertility":0.0,"n_life_expect":0.0,"country":"Netherlands","p_fertility":1.54,"p_life_expect":77.69},{"_comment":null,"year":1955,"fertility":3.73,"life_expect":70.62,"n_fertility":4.06,"n_life_expect":71.22,"country":"New Zealand","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":4.06,"life_expect":71.22,"n_fertility":3.48,"n_life_expect":71.46,"country":"New Zealand","p_fertility":3.73,"p_life_expect":70.62},{"_comment":null,"year":1965,"fertility":3.48,"life_expect":71.46,"n_fertility":3.17,"n_life_expect":71.64,"country":"New Zealand","p_fertility":4.06,"p_life_expect":71.22},{"_comment":null,"year":1970,"fertility":3.17,"life_expect":71.64,"n_fertility":2.37,"n_life_expect":72.39,"country":"New Zealand","p_fertility":3.48,"p_life_expect":71.46},{"_comment":null,"year":1975,"fertility":2.37,"life_expect":72.39,"n_fertility":2.03,"n_life_expect":73.37,"country":"New Zealand","p_fertility":3.17,"p_life_expect":71.64},{"_comment":null,"year":1980,"fertility":2.03,"life_expect":73.37,"n_fertility":1.93,"n_life_expect":74.22,"country":"New Zealand","p_fertility":2.37,"p_life_expect":72.39},{"_comment":null,"year":1985,"fertility":1.93,"life_expect":74.22,"n_fertility":2.17,"n_life_expect":75.55,"country":"New Zealand","p_fertility":2.03,"p_life_expect":73.37},{"_comment":null,"year":1990,"fertility":2.17,"life_expect":75.55,"n_fertility":1.98,"n_life_expect":76.75,"country":"New Zealand","p_fertility":1.93,"p_life_expect":74.22},{"_comment":null,"year":1995,"fertility":1.98,"life_expect":76.75,"n_fertility":1.98,"n_life_expect":78.39,"country":"New Zealand","p_fertility":2.17,"p_life_expect":75.55},{"_comment":null,"year":2000,"fertility":1.98,"life_expect":78.39,"n_fertility":0.0,"n_life_expect":0.0,"country":"New Zealand","p_fertility":1.98,"p_life_expect":76.75},{"_comment":null,"year":1955,"fertility":6.38,"life_expect":45.86,"n_fertility":6.36,"n_life_expect":46.81,"country":"Nigeria","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.36,"life_expect":46.81,"n_fertility":6.36,"n_life_expect":48.15,"country":"Nigeria","p_fertility":6.38,"p_life_expect":45.86},{"_comment":null,"year":1965,"fertility":6.36,"life_expect":48.15,"n_fertility":6.47,"n_life_expect":49.05,"country":"Nigeria","p_fertility":6.36,"p_life_expect":46.81},{"_comment":null,"year":1970,"fertility":6.47,"life_expect":49.05,"n_fertility":6.77,"n_life_expect":52.01,"country":"Nigeria","p_fertility":6.36,"p_life_expect":48.15},{"_comment":null,"year":1975,"fertility":6.77,"life_expect":52.01,"n_fertility":6.85,"n_life_expect":54.06,"country":"Nigeria","p_fertility":6.47,"p_life_expect":49.05},{"_comment":null,"year":1980,"fertility":6.85,"life_expect":54.06,"n_fertility":6.62,"n_life_expect":54.91,"country":"Nigeria","p_fertility":6.77,"p_life_expect":52.01},{"_comment":null,"year":1985,"fertility":6.62,"life_expect":54.91,"n_fertility":6.46,"n_life_expect":54.69,"country":"Nigeria","p_fertility":6.85,"p_life_expect":54.06},{"_comment":null,"year":1990,"fertility":6.46,"life_expect":54.69,"n_fertility":6.27,"n_life_expect":54.63,"country":"Nigeria","p_fertility":6.62,"p_life_expect":54.91},{"_comment":null,"year":1995,"fertility":6.27,"life_expect":54.63,"n_fertility":6.12,"n_life_expect":54.63,"country":"Nigeria","p_fertility":6.46,"p_life_expect":54.69},{"_comment":null,"year":2000,"fertility":6.12,"life_expect":54.63,"n_fertility":0.0,"n_life_expect":0.0,"country":"Nigeria","p_fertility":6.27,"p_life_expect":54.63},{"_comment":null,"year":1955,"fertility":4.09,"life_expect":43.46,"n_fertility":3.82,"n_life_expect":47.62,"country":"North Korea","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.82,"life_expect":47.62,"n_fertility":3.62,"n_life_expect":52.29,"country":"North Korea","p_fertility":4.09,"p_life_expect":43.46},{"_comment":null,"year":1965,"fertility":3.62,"life_expect":52.29,"n_fertility":3.85,"n_life_expect":57.11,"country":"North Korea","p_fertility":3.82,"p_life_expect":47.62},{"_comment":null,"year":1970,"fertility":3.85,"life_expect":57.11,"n_fertility":3.05,"n_life_expect":61.11,"country":"North Korea","p_fertility":3.62,"p_life_expect":52.29},{"_comment":null,"year":1975,"fertility":3.05,"life_expect":61.11,"n_fertility":2.84,"n_life_expect":64.05,"country":"North Korea","p_fertility":3.85,"p_life_expect":57.11},{"_comment":null,"year":1980,"fertility":2.84,"life_expect":64.05,"n_fertility":2.58,"n_life_expect":66.17,"country":"North Korea","p_fertility":3.05,"p_life_expect":61.11},{"_comment":null,"year":1985,"fertility":2.58,"life_expect":66.17,"n_fertility":2.35,"n_life_expect":67.97,"country":"North Korea","p_fertility":2.84,"p_life_expect":64.05},{"_comment":null,"year":1990,"fertility":2.35,"life_expect":67.97,"n_fertility":2.16,"n_life_expect":61.83,"country":"North Korea","p_fertility":2.58,"p_life_expect":66.17},{"_comment":null,"year":1995,"fertility":2.16,"life_expect":61.83,"n_fertility":1.97,"n_life_expect":63.9,"country":"North Korea","p_fertility":2.35,"p_life_expect":67.97},{"_comment":null,"year":2000,"fertility":1.97,"life_expect":63.9,"n_fertility":0.0,"n_life_expect":0.0,"country":"North Korea","p_fertility":2.16,"p_life_expect":61.83},{"_comment":null,"year":1955,"fertility":2.77,"life_expect":73.21,"n_fertility":2.87,"n_life_expect":73.4,"country":"Norway","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.87,"life_expect":73.4,"n_fertility":2.94,"n_life_expect":73.64,"country":"Norway","p_fertility":2.77,"p_life_expect":73.21},{"_comment":null,"year":1965,"fertility":2.94,"life_expect":73.64,"n_fertility":2.52,"n_life_expect":74.25,"country":"Norway","p_fertility":2.87,"p_life_expect":73.4},{"_comment":null,"year":1970,"fertility":2.52,"life_expect":74.25,"n_fertility":1.98,"n_life_expect":75.12,"country":"Norway","p_fertility":2.94,"p_life_expect":73.64},{"_comment":null,"year":1975,"fertility":1.98,"life_expect":75.12,"n_fertility":1.72,"n_life_expect":75.96,"country":"Norway","p_fertility":2.52,"p_life_expect":74.25},{"_comment":null,"year":1980,"fertility":1.72,"life_expect":75.96,"n_fertility":1.68,"n_life_expect":76.35,"country":"Norway","p_fertility":1.98,"p_life_expect":75.12},{"_comment":null,"year":1985,"fertility":1.68,"life_expect":76.35,"n_fertility":1.93,"n_life_expect":76.86,"country":"Norway","p_fertility":1.72,"p_life_expect":75.96},{"_comment":null,"year":1990,"fertility":1.93,"life_expect":76.86,"n_fertility":1.87,"n_life_expect":78.04,"country":"Norway","p_fertility":1.68,"p_life_expect":76.35},{"_comment":null,"year":1995,"fertility":1.87,"life_expect":78.04,"n_fertility":1.85,"n_life_expect":78.9,"country":"Norway","p_fertility":1.93,"p_life_expect":76.86},{"_comment":null,"year":2000,"fertility":1.85,"life_expect":78.9,"n_fertility":0.0,"n_life_expect":0.0,"country":"Norway","p_fertility":1.87,"p_life_expect":78.04},{"_comment":null,"year":1955,"fertility":6.73,"life_expect":48.64,"n_fertility":6.75,"n_life_expect":51.32,"country":"Pakistan","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.75,"life_expect":51.32,"n_fertility":6.78,"n_life_expect":54.62,"country":"Pakistan","p_fertility":6.73,"p_life_expect":48.64},{"_comment":null,"year":1965,"fertility":6.78,"life_expect":54.62,"n_fertility":6.8,"n_life_expect":57.08,"country":"Pakistan","p_fertility":6.75,"p_life_expect":51.32},{"_comment":null,"year":1970,"fertility":6.8,"life_expect":57.08,"n_fertility":6.81,"n_life_expect":59.03,"country":"Pakistan","p_fertility":6.78,"p_life_expect":54.62},{"_comment":null,"year":1975,"fertility":6.81,"life_expect":59.03,"n_fertility":6.73,"n_life_expect":60.24,"country":"Pakistan","p_fertility":6.8,"p_life_expect":57.08},{"_comment":null,"year":1980,"fertility":6.73,"life_expect":60.24,"n_fertility":6.59,"n_life_expect":60.88,"country":"Pakistan","p_fertility":6.81,"p_life_expect":59.03},{"_comment":null,"year":1985,"fertility":6.59,"life_expect":60.88,"n_fertility":6.36,"n_life_expect":61.05,"country":"Pakistan","p_fertility":6.73,"p_life_expect":60.24},{"_comment":null,"year":1990,"fertility":6.36,"life_expect":61.05,"n_fertility":5.89,"n_life_expect":60.34,"country":"Pakistan","p_fertility":6.59,"p_life_expect":60.88},{"_comment":null,"year":1995,"fertility":5.89,"life_expect":60.34,"n_fertility":5.26,"n_life_expect":61.04,"country":"Pakistan","p_fertility":6.36,"p_life_expect":61.05},{"_comment":null,"year":2000,"fertility":5.26,"life_expect":61.04,"n_fertility":0.0,"n_life_expect":0.0,"country":"Pakistan","p_fertility":5.89,"p_life_expect":60.34},{"_comment":null,"year":1955,"fertility":6.92,"life_expect":43.67,"n_fertility":6.92,"n_life_expect":47.26,"country":"Peru","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.92,"life_expect":47.26,"n_fertility":6.75,"n_life_expect":54.12,"country":"Peru","p_fertility":6.92,"p_life_expect":43.67},{"_comment":null,"year":1965,"fertility":6.75,"life_expect":54.12,"n_fertility":6.32,"n_life_expect":48.63,"country":"Peru","p_fertility":6.92,"p_life_expect":47.26},{"_comment":null,"year":1970,"fertility":6.32,"life_expect":48.63,"n_fertility":5.71,"n_life_expect":63.4,"country":"Peru","p_fertility":6.75,"p_life_expect":54.12},{"_comment":null,"year":1975,"fertility":5.71,"life_expect":63.4,"n_fertility":5.04,"n_life_expect":65.1,"country":"Peru","p_fertility":6.32,"p_life_expect":48.63},{"_comment":null,"year":1980,"fertility":5.04,"life_expect":65.1,"n_fertility":4.46,"n_life_expect":65.94,"country":"Peru","p_fertility":5.71,"p_life_expect":63.4},{"_comment":null,"year":1985,"fertility":4.46,"life_expect":65.94,"n_fertility":3.91,"n_life_expect":69.24,"country":"Peru","p_fertility":5.04,"p_life_expect":65.1},{"_comment":null,"year":1990,"fertility":3.91,"life_expect":69.24,"n_fertility":3.32,"n_life_expect":71.49,"country":"Peru","p_fertility":4.46,"p_life_expect":65.94},{"_comment":null,"year":1995,"fertility":3.32,"life_expect":71.49,"n_fertility":2.85,"n_life_expect":74.61,"country":"Peru","p_fertility":3.91,"p_life_expect":69.24},{"_comment":null,"year":2000,"fertility":2.85,"life_expect":74.61,"n_fertility":0.0,"n_life_expect":0.0,"country":"Peru","p_fertility":3.32,"p_life_expect":71.49},{"_comment":null,"year":1955,"fertility":7.37,"life_expect":58.15,"n_fertility":7.15,"n_life_expect":61.26,"country":"Philippines","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.15,"life_expect":61.26,"n_fertility":6.78,"n_life_expect":62.55,"country":"Philippines","p_fertility":7.37,"p_life_expect":58.15},{"_comment":null,"year":1965,"fertility":6.78,"life_expect":62.55,"n_fertility":6.2,"n_life_expect":62.69,"country":"Philippines","p_fertility":7.15,"p_life_expect":61.26},{"_comment":null,"year":1970,"fertility":6.2,"life_expect":62.69,"n_fertility":5.6,"n_life_expect":64.11,"country":"Philippines","p_fertility":6.78,"p_life_expect":62.55},{"_comment":null,"year":1975,"fertility":5.6,"life_expect":64.11,"n_fertility":5.11,"n_life_expect":65.74,"country":"Philippines","p_fertility":6.2,"p_life_expect":62.69},{"_comment":null,"year":1980,"fertility":5.11,"life_expect":65.74,"n_fertility":4.65,"n_life_expect":66.51,"country":"Philippines","p_fertility":5.6,"p_life_expect":64.11},{"_comment":null,"year":1985,"fertility":4.65,"life_expect":66.51,"n_fertility":4.35,"n_life_expect":68.41,"country":"Philippines","p_fertility":5.11,"p_life_expect":65.74},{"_comment":null,"year":1990,"fertility":4.35,"life_expect":68.41,"n_fertility":4.04,"n_life_expect":69.77,"country":"Philippines","p_fertility":4.65,"p_life_expect":66.51},{"_comment":null,"year":1995,"fertility":4.04,"life_expect":69.77,"n_fertility":3.71,"n_life_expect":70.31,"country":"Philippines","p_fertility":4.35,"p_life_expect":68.41},{"_comment":null,"year":2000,"fertility":3.71,"life_expect":70.31,"n_fertility":0.0,"n_life_expect":0.0,"country":"Philippines","p_fertility":4.04,"p_life_expect":69.77},{"_comment":null,"year":1955,"fertility":3.55,"life_expect":63.42,"n_fertility":3.02,"n_life_expect":67.9,"country":"Poland","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.02,"life_expect":67.9,"n_fertility":2.51,"n_life_expect":69.66,"country":"Poland","p_fertility":3.55,"p_life_expect":63.42},{"_comment":null,"year":1965,"fertility":2.51,"life_expect":69.66,"n_fertility":2.26,"n_life_expect":70.17,"country":"Poland","p_fertility":3.02,"p_life_expect":67.9},{"_comment":null,"year":1970,"fertility":2.26,"life_expect":70.17,"n_fertility":2.28,"n_life_expect":71.14,"country":"Poland","p_fertility":2.51,"p_life_expect":69.66},{"_comment":null,"year":1975,"fertility":2.28,"life_expect":71.14,"n_fertility":2.25,"n_life_expect":70.54,"country":"Poland","p_fertility":2.26,"p_life_expect":70.17},{"_comment":null,"year":1980,"fertility":2.25,"life_expect":70.54,"n_fertility":2.32,"n_life_expect":70.8,"country":"Poland","p_fertility":2.28,"p_life_expect":71.14},{"_comment":null,"year":1985,"fertility":2.32,"life_expect":70.8,"n_fertility":2.05,"n_life_expect":71.08,"country":"Poland","p_fertility":2.25,"p_life_expect":70.54},{"_comment":null,"year":1990,"fertility":2.05,"life_expect":71.08,"n_fertility":1.63,"n_life_expect":72.0,"country":"Poland","p_fertility":2.32,"p_life_expect":70.8},{"_comment":null,"year":1995,"fertility":1.63,"life_expect":72.0,"n_fertility":1.37,"n_life_expect":73.9,"country":"Poland","p_fertility":2.05,"p_life_expect":71.08},{"_comment":null,"year":2000,"fertility":1.37,"life_expect":73.9,"n_fertility":0.0,"n_life_expect":0.0,"country":"Poland","p_fertility":1.63,"p_life_expect":72.0},{"_comment":null,"year":1955,"fertility":3.13,"life_expect":61.43,"n_fertility":3.16,"n_life_expect":64.73,"country":"Portugal","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.16,"life_expect":64.73,"n_fertility":3.16,"n_life_expect":65.9,"country":"Portugal","p_fertility":3.13,"p_life_expect":61.43},{"_comment":null,"year":1965,"fertility":3.16,"life_expect":65.9,"n_fertility":3.01,"n_life_expect":67.39,"country":"Portugal","p_fertility":3.16,"p_life_expect":64.73},{"_comment":null,"year":1970,"fertility":3.01,"life_expect":67.39,"n_fertility":2.75,"n_life_expect":69.32,"country":"Portugal","p_fertility":3.16,"p_life_expect":65.9},{"_comment":null,"year":1975,"fertility":2.75,"life_expect":69.32,"n_fertility":2.24,"n_life_expect":71.75,"country":"Portugal","p_fertility":3.01,"p_life_expect":67.39},{"_comment":null,"year":1980,"fertility":2.24,"life_expect":71.75,"n_fertility":1.73,"n_life_expect":73.26,"country":"Portugal","p_fertility":2.75,"p_life_expect":69.32},{"_comment":null,"year":1985,"fertility":1.73,"life_expect":73.26,"n_fertility":1.56,"n_life_expect":74.28,"country":"Portugal","p_fertility":2.24,"p_life_expect":71.75},{"_comment":null,"year":1990,"fertility":1.56,"life_expect":74.28,"n_fertility":1.41,"n_life_expect":75.47,"country":"Portugal","p_fertility":1.73,"p_life_expect":73.26},{"_comment":null,"year":1995,"fertility":1.41,"life_expect":75.47,"n_fertility":1.54,"n_life_expect":76.84,"country":"Portugal","p_fertility":1.56,"p_life_expect":74.28},{"_comment":null,"year":2000,"fertility":1.54,"life_expect":76.84,"n_fertility":0.0,"n_life_expect":0.0,"country":"Portugal","p_fertility":1.41,"p_life_expect":75.47},{"_comment":null,"year":1955,"fertility":8.09,"life_expect":38.94,"n_fertility":8.19,"n_life_expect":42.24,"country":"Rwanda","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":8.19,"life_expect":42.24,"n_fertility":8.2,"n_life_expect":42.85,"country":"Rwanda","p_fertility":8.09,"p_life_expect":38.94},{"_comment":null,"year":1965,"fertility":8.2,"life_expect":42.85,"n_fertility":8.23,"n_life_expect":43.58,"country":"Rwanda","p_fertility":8.19,"p_life_expect":42.24},{"_comment":null,"year":1970,"fertility":8.23,"life_expect":43.58,"n_fertility":8.22,"n_life_expect":45.02,"country":"Rwanda","p_fertility":8.2,"p_life_expect":42.85},{"_comment":null,"year":1975,"fertility":8.22,"life_expect":45.02,"n_fertility":8.19,"n_life_expect":48.43,"country":"Rwanda","p_fertility":8.23,"p_life_expect":43.58},{"_comment":null,"year":1980,"fertility":8.19,"life_expect":48.43,"n_fertility":7.73,"n_life_expect":51.49,"country":"Rwanda","p_fertility":8.22,"p_life_expect":45.02},{"_comment":null,"year":1985,"fertility":7.73,"life_expect":51.49,"n_fertility":6.87,"n_life_expect":50.01,"country":"Rwanda","p_fertility":8.19,"p_life_expect":48.43},{"_comment":null,"year":1990,"fertility":6.87,"life_expect":50.01,"n_fertility":6.32,"n_life_expect":46.41,"country":"Rwanda","p_fertility":7.73,"p_life_expect":51.49},{"_comment":null,"year":1995,"fertility":6.32,"life_expect":46.41,"n_fertility":5.92,"n_life_expect":50.51,"country":"Rwanda","p_fertility":6.87,"p_life_expect":50.01},{"_comment":null,"year":2000,"fertility":5.92,"life_expect":50.51,"n_fertility":0.0,"n_life_expect":0.0,"country":"Rwanda","p_fertility":6.32,"p_life_expect":46.41},{"_comment":null,"year":1955,"fertility":7.43,"life_expect":52.56,"n_fertility":7.52,"n_life_expect":54.34,"country":"Saudi Arabia","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":7.52,"life_expect":54.34,"n_fertility":7.61,"n_life_expect":56.93,"country":"Saudi Arabia","p_fertility":7.43,"p_life_expect":52.56},{"_comment":null,"year":1965,"fertility":7.61,"life_expect":56.93,"n_fertility":7.58,"n_life_expect":59.81,"country":"Saudi Arabia","p_fertility":7.52,"p_life_expect":54.34},{"_comment":null,"year":1970,"fertility":7.58,"life_expect":59.81,"n_fertility":7.37,"n_life_expect":63.63,"country":"Saudi Arabia","p_fertility":7.61,"p_life_expect":56.93},{"_comment":null,"year":1975,"fertility":7.37,"life_expect":63.63,"n_fertility":7.19,"n_life_expect":66.06,"country":"Saudi Arabia","p_fertility":7.58,"p_life_expect":59.81},{"_comment":null,"year":1980,"fertility":7.19,"life_expect":66.06,"n_fertility":6.7,"n_life_expect":67.54,"country":"Saudi Arabia","p_fertility":7.37,"p_life_expect":63.63},{"_comment":null,"year":1985,"fertility":6.7,"life_expect":67.54,"n_fertility":5.83,"n_life_expect":68.08,"country":"Saudi Arabia","p_fertility":7.19,"p_life_expect":66.06},{"_comment":null,"year":1990,"fertility":5.83,"life_expect":68.08,"n_fertility":4.95,"n_life_expect":69.4,"country":"Saudi Arabia","p_fertility":6.7,"p_life_expect":67.54},{"_comment":null,"year":1995,"fertility":4.95,"life_expect":69.4,"n_fertility":4.12,"n_life_expect":70.37,"country":"Saudi Arabia","p_fertility":5.83,"p_life_expect":68.08},{"_comment":null,"year":2000,"fertility":4.12,"life_expect":70.37,"n_fertility":0.0,"n_life_expect":0.0,"country":"Saudi Arabia","p_fertility":4.95,"p_life_expect":69.4},{"_comment":null,"year":1955,"fertility":6.2,"life_expect":53.04,"n_fertility":6.16,"n_life_expect":53.93,"country":"South Africa","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.16,"life_expect":53.93,"n_fertility":5.96,"n_life_expect":55.19,"country":"South Africa","p_fertility":6.2,"p_life_expect":53.04},{"_comment":null,"year":1965,"fertility":5.96,"life_expect":55.19,"n_fertility":5.63,"n_life_expect":56.69,"country":"South Africa","p_fertility":6.16,"p_life_expect":53.93},{"_comment":null,"year":1970,"fertility":5.63,"life_expect":56.69,"n_fertility":5.19,"n_life_expect":58.3,"country":"South Africa","p_fertility":5.96,"p_life_expect":55.19},{"_comment":null,"year":1975,"fertility":5.19,"life_expect":58.3,"n_fertility":4.78,"n_life_expect":59.52,"country":"South Africa","p_fertility":5.63,"p_life_expect":56.69},{"_comment":null,"year":1980,"fertility":4.78,"life_expect":59.52,"n_fertility":4.5,"n_life_expect":61.92,"country":"South Africa","p_fertility":5.19,"p_life_expect":58.3},{"_comment":null,"year":1985,"fertility":4.5,"life_expect":61.92,"n_fertility":3.72,"n_life_expect":64.18,"country":"South Africa","p_fertility":4.78,"p_life_expect":59.52},{"_comment":null,"year":1990,"fertility":3.72,"life_expect":64.18,"n_fertility":3.17,"n_life_expect":62.93,"country":"South Africa","p_fertility":4.5,"p_life_expect":61.92},{"_comment":null,"year":1995,"fertility":3.17,"life_expect":62.93,"n_fertility":2.41,"n_life_expect":55.58,"country":"South Africa","p_fertility":3.72,"p_life_expect":64.18},{"_comment":null,"year":2000,"fertility":2.41,"life_expect":55.58,"n_fertility":0.0,"n_life_expect":0.0,"country":"South Africa","p_fertility":3.17,"p_life_expect":62.93},{"_comment":null,"year":1955,"fertility":6.07,"life_expect":55.9,"n_fertility":6.0,"n_life_expect":59.11,"country":"South Korea","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.0,"life_expect":59.11,"n_fertility":5.02,"n_life_expect":61.36,"country":"South Korea","p_fertility":6.07,"p_life_expect":55.9},{"_comment":null,"year":1965,"fertility":5.02,"life_expect":61.36,"n_fertility":4.41,"n_life_expect":63.57,"country":"South Korea","p_fertility":6.0,"p_life_expect":59.11},{"_comment":null,"year":1970,"fertility":4.41,"life_expect":63.57,"n_fertility":3.41,"n_life_expect":65.73,"country":"South Korea","p_fertility":5.02,"p_life_expect":61.36},{"_comment":null,"year":1975,"fertility":3.41,"life_expect":65.73,"n_fertility":2.72,"n_life_expect":67.33,"country":"South Korea","p_fertility":4.41,"p_life_expect":63.57},{"_comment":null,"year":1980,"fertility":2.72,"life_expect":67.33,"n_fertility":1.75,"n_life_expect":69.87,"country":"South Korea","p_fertility":3.41,"p_life_expect":65.73},{"_comment":null,"year":1985,"fertility":1.75,"life_expect":69.87,"n_fertility":1.6,"n_life_expect":72.13,"country":"South Korea","p_fertility":2.72,"p_life_expect":67.33},{"_comment":null,"year":1990,"fertility":1.6,"life_expect":72.13,"n_fertility":1.63,"n_life_expect":74.34,"country":"South Korea","p_fertility":1.75,"p_life_expect":69.87},{"_comment":null,"year":1995,"fertility":1.63,"life_expect":74.34,"n_fertility":1.42,"n_life_expect":76.34,"country":"South Korea","p_fertility":1.6,"p_life_expect":72.13},{"_comment":null,"year":2000,"fertility":1.42,"life_expect":76.34,"n_fertility":0.0,"n_life_expect":0.0,"country":"South Korea","p_fertility":1.63,"p_life_expect":74.34},{"_comment":null,"year":1955,"fertility":2.56,"life_expect":66.66,"n_fertility":2.78,"n_life_expect":69.45,"country":"Spain","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.78,"life_expect":69.45,"n_fertility":2.88,"n_life_expect":70.94,"country":"Spain","p_fertility":2.56,"p_life_expect":66.66},{"_comment":null,"year":1965,"fertility":2.88,"life_expect":70.94,"n_fertility":2.83,"n_life_expect":72.02,"country":"Spain","p_fertility":2.78,"p_life_expect":69.45},{"_comment":null,"year":1970,"fertility":2.83,"life_expect":72.02,"n_fertility":2.77,"n_life_expect":73.59,"country":"Spain","p_fertility":2.88,"p_life_expect":70.94},{"_comment":null,"year":1975,"fertility":2.77,"life_expect":73.59,"n_fertility":2.21,"n_life_expect":75.51,"country":"Spain","p_fertility":2.83,"p_life_expect":72.02},{"_comment":null,"year":1980,"fertility":2.21,"life_expect":75.51,"n_fertility":1.64,"n_life_expect":76.45,"country":"Spain","p_fertility":2.77,"p_life_expect":73.59},{"_comment":null,"year":1985,"fertility":1.64,"life_expect":76.45,"n_fertility":1.36,"n_life_expect":76.96,"country":"Spain","p_fertility":2.21,"p_life_expect":75.51},{"_comment":null,"year":1990,"fertility":1.36,"life_expect":76.96,"n_fertility":1.16,"n_life_expect":78.09,"country":"Spain","p_fertility":1.64,"p_life_expect":76.45},{"_comment":null,"year":1995,"fertility":1.16,"life_expect":78.09,"n_fertility":1.22,"n_life_expect":79.47,"country":"Spain","p_fertility":1.36,"p_life_expect":76.96},{"_comment":null,"year":2000,"fertility":1.22,"life_expect":79.47,"n_fertility":0.0,"n_life_expect":0.0,"country":"Spain","p_fertility":1.16,"p_life_expect":78.09},{"_comment":null,"year":1955,"fertility":2.31,"life_expect":70.3,"n_fertility":2.46,"n_life_expect":71.76,"country":"Switzerland","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.46,"life_expect":71.76,"n_fertility":2.58,"n_life_expect":72.51,"country":"Switzerland","p_fertility":2.31,"p_life_expect":70.3},{"_comment":null,"year":1965,"fertility":2.58,"life_expect":72.51,"n_fertility":2.1,"n_life_expect":73.34,"country":"Switzerland","p_fertility":2.46,"p_life_expect":71.76},{"_comment":null,"year":1970,"fertility":2.1,"life_expect":73.34,"n_fertility":1.62,"n_life_expect":74.98,"country":"Switzerland","p_fertility":2.58,"p_life_expect":72.51},{"_comment":null,"year":1975,"fertility":1.62,"life_expect":74.98,"n_fertility":1.55,"n_life_expect":75.97,"country":"Switzerland","p_fertility":2.1,"p_life_expect":73.34},{"_comment":null,"year":1980,"fertility":1.55,"life_expect":75.97,"n_fertility":1.52,"n_life_expect":77.22,"country":"Switzerland","p_fertility":1.62,"p_life_expect":74.98},{"_comment":null,"year":1985,"fertility":1.52,"life_expect":77.22,"n_fertility":1.58,"n_life_expect":77.94,"country":"Switzerland","p_fertility":1.55,"p_life_expect":75.97},{"_comment":null,"year":1990,"fertility":1.58,"life_expect":77.94,"n_fertility":1.48,"n_life_expect":78.91,"country":"Switzerland","p_fertility":1.52,"p_life_expect":77.22},{"_comment":null,"year":1995,"fertility":1.48,"life_expect":78.91,"n_fertility":1.49,"n_life_expect":80.3,"country":"Switzerland","p_fertility":1.58,"p_life_expect":77.94},{"_comment":null,"year":2000,"fertility":1.49,"life_expect":80.3,"n_fertility":0.0,"n_life_expect":0.0,"country":"Switzerland","p_fertility":1.48,"p_life_expect":78.91},{"_comment":null,"year":1955,"fertility":6.49,"life_expect":47.32,"n_fertility":6.36,"n_life_expect":49.53,"country":"Turkey","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.36,"life_expect":49.53,"n_fertility":6.02,"n_life_expect":53.39,"country":"Turkey","p_fertility":6.49,"p_life_expect":47.32},{"_comment":null,"year":1965,"fertility":6.02,"life_expect":53.39,"n_fertility":5.63,"n_life_expect":57.13,"country":"Turkey","p_fertility":6.36,"p_life_expect":49.53},{"_comment":null,"year":1970,"fertility":5.63,"life_expect":57.13,"n_fertility":5.07,"n_life_expect":60.74,"country":"Turkey","p_fertility":6.02,"p_life_expect":53.39},{"_comment":null,"year":1975,"fertility":5.07,"life_expect":60.74,"n_fertility":4.43,"n_life_expect":64.06,"country":"Turkey","p_fertility":5.63,"p_life_expect":57.13},{"_comment":null,"year":1980,"fertility":4.43,"life_expect":64.06,"n_fertility":3.76,"n_life_expect":66.65,"country":"Turkey","p_fertility":5.07,"p_life_expect":60.74},{"_comment":null,"year":1985,"fertility":3.76,"life_expect":66.65,"n_fertility":3.13,"n_life_expect":68.75,"country":"Turkey","p_fertility":4.43,"p_life_expect":64.06},{"_comment":null,"year":1990,"fertility":3.13,"life_expect":68.75,"n_fertility":2.79,"n_life_expect":70.85,"country":"Turkey","p_fertility":3.76,"p_life_expect":66.65},{"_comment":null,"year":1995,"fertility":2.79,"life_expect":70.85,"n_fertility":2.51,"n_life_expect":74.73,"country":"Turkey","p_fertility":3.13,"p_life_expect":68.75},{"_comment":null,"year":2000,"fertility":2.51,"life_expect":74.73,"n_fertility":0.0,"n_life_expect":0.0,"country":"Turkey","p_fertility":2.79,"p_life_expect":70.85},{"_comment":null,"year":1955,"fertility":2.3,"life_expect":70.46,"n_fertility":2.73,"n_life_expect":71.17,"country":"United Kingdom","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":2.73,"life_expect":71.17,"n_fertility":2.88,"n_life_expect":71.65,"country":"United Kingdom","p_fertility":2.3,"p_life_expect":70.46},{"_comment":null,"year":1965,"fertility":2.88,"life_expect":71.65,"n_fertility":2.44,"n_life_expect":72.08,"country":"United Kingdom","p_fertility":2.73,"p_life_expect":71.17},{"_comment":null,"year":1970,"fertility":2.44,"life_expect":72.08,"n_fertility":1.81,"n_life_expect":72.78,"country":"United Kingdom","p_fertility":2.88,"p_life_expect":71.65},{"_comment":null,"year":1975,"fertility":1.81,"life_expect":72.78,"n_fertility":1.89,"n_life_expect":73.79,"country":"United Kingdom","p_fertility":2.44,"p_life_expect":72.08},{"_comment":null,"year":1980,"fertility":1.89,"life_expect":73.79,"n_fertility":1.79,"n_life_expect":74.81,"country":"United Kingdom","p_fertility":1.81,"p_life_expect":72.78},{"_comment":null,"year":1985,"fertility":1.79,"life_expect":74.81,"n_fertility":1.83,"n_life_expect":75.85,"country":"United Kingdom","p_fertility":1.89,"p_life_expect":73.79},{"_comment":null,"year":1990,"fertility":1.83,"life_expect":75.85,"n_fertility":1.71,"n_life_expect":76.84,"country":"United Kingdom","p_fertility":1.79,"p_life_expect":74.81},{"_comment":null,"year":1995,"fertility":1.71,"life_expect":76.84,"n_fertility":1.64,"n_life_expect":77.97,"country":"United Kingdom","p_fertility":1.83,"p_life_expect":75.85},{"_comment":null,"year":2000,"fertility":1.64,"life_expect":77.97,"n_fertility":0.0,"n_life_expect":0.0,"country":"United Kingdom","p_fertility":1.71,"p_life_expect":76.84},{"_comment":null,"year":1955,"fertility":3.47,"life_expect":69.86,"n_fertility":3.58,"n_life_expect":70.06,"country":"United States","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":3.58,"life_expect":70.06,"n_fertility":2.87,"n_life_expect":70.37,"country":"United States","p_fertility":3.47,"p_life_expect":69.86},{"_comment":null,"year":1965,"fertility":2.87,"life_expect":70.37,"n_fertility":2.47,"n_life_expect":70.93,"country":"United States","p_fertility":3.58,"p_life_expect":70.06},{"_comment":null,"year":1970,"fertility":2.47,"life_expect":70.93,"n_fertility":1.77,"n_life_expect":72.73,"country":"United States","p_fertility":2.87,"p_life_expect":70.37},{"_comment":null,"year":1975,"fertility":1.77,"life_expect":72.73,"n_fertility":1.83,"n_life_expect":73.96,"country":"United States","p_fertility":2.47,"p_life_expect":70.93},{"_comment":null,"year":1980,"fertility":1.83,"life_expect":73.96,"n_fertility":1.84,"n_life_expect":74.91,"country":"United States","p_fertility":1.77,"p_life_expect":72.73},{"_comment":null,"year":1985,"fertility":1.84,"life_expect":74.91,"n_fertility":2.07,"n_life_expect":75.72,"country":"United States","p_fertility":1.83,"p_life_expect":73.96},{"_comment":null,"year":1990,"fertility":2.07,"life_expect":75.72,"n_fertility":1.97,"n_life_expect":76.08,"country":"United States","p_fertility":1.84,"p_life_expect":74.91},{"_comment":null,"year":1995,"fertility":1.97,"life_expect":76.08,"n_fertility":2.05,"n_life_expect":77.03,"country":"United States","p_fertility":2.07,"p_life_expect":75.72},{"_comment":null,"year":2000,"fertility":2.05,"life_expect":77.03,"n_fertility":0.0,"n_life_expect":0.0,"country":"United States","p_fertility":1.97,"p_life_expect":76.08},{"_comment":null,"year":1955,"fertility":6.53,"life_expect":61.16,"n_fertility":6.42,"n_life_expect":65.17,"country":"Venezuela","p_fertility":0.0,"p_life_expect":0.0},{"_comment":null,"year":1960,"fertility":6.42,"life_expect":65.17,"n_fertility":6.03,"n_life_expect":66.03,"country":"Venezuela","p_fertility":6.53,"p_life_expect":61.16},{"_comment":null,"year":1965,"fertility":6.03,"life_expect":66.03,"n_fertility":5.32,"n_life_expect":66.51,"country":"Venezuela","p_fertility":6.42,"p_life_expect":65.17},{"_comment":null,"year":1970,"fertility":5.32,"life_expect":66.51,"n_fertility":4.69,"n_life_expect":67.6,"country":"Venezuela","p_fertility":6.03,"p_life_expect":66.03},{"_comment":null,"year":1975,"fertility":4.69,"life_expect":67.6,"n_fertility":4.2,"n_life_expect":69.66,"country":"Venezuela","p_fertility":5.32,"p_life_expect":66.51},{"_comment":null,"year":1980,"fertility":4.2,"life_expect":69.66,"n_fertility":3.79,"n_life_expect":71.56,"country":"Venezuela","p_fertility":4.69,"p_life_expect":67.6},{"_comment":null,"year":1985,"fertility":3.79,"life_expect":71.56,"n_fertility":3.45,"n_life_expect":72.44,"country":"Venezuela","p_fertility":4.2,"p_life_expect":69.66},{"_comment":null,"year":1990,"fertility":3.45,"life_expect":72.44,"n_fertility":3.08,"n_life_expect":72.61,"country":"Venezuela","p_fertility":3.79,"p_life_expect":71.56},{"_comment":null,"year":1995,"fertility":3.08,"life_expect":72.61,"n_fertility":2.82,"n_life_expect":74.17,"country":"Venezuela","p_fertility":3.45,"p_life_expect":72.44},{"_comment":null,"year":2000,"fertility":2.82,"life_expect":74.17,"n_fertility":0.0,"n_life_expect":0.0,"country":"Venezuela","p_fertility":3.08,"p_life_expect":72.61}]
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="backbone">
+    </div>
+    <section class="header-section">
+        <h1 data-aos="fade-up">
+            Global Demographic Shifts: Fertility, Life Expectancy, and Progress (1955-2000)
+        </h1>
+        <h2 data-aos="fade-up" data-aos-delay="200">
+            A Data-Driven Exploration of Population Trends Across Countries
+        </h2>
+        <div class="explainer" data-aos="fade-up" data-aos-delay="400">
+            Explore how populations have evolved through
+            time
+        </div>
+    </section>
+    <section class="section" data-aos="fade-in">
+        <div class="section-title">
+            <img alt="Chart Icon" src="https://icons8.com/icon/LLHVIz75PLFX/line-chart"/>
+            <h3>
+                How have global fertility rates changed over the past century?
+            </h3>
+        </div>
+        <div class="section-description">
+            <p>
+                From 1955 to 2000, global fertility rates declined significantly. For example, Afghanistan's fertility
+                rate dropped from 7.42 children per woman in 1955 to 7.53 in 2000, while countries like Japan saw a
+                sharper decline from 2.41 to 1.37. This trend reflects broader socioeconomic changes, including
+                urbanization, education, and family planning initiatives. Countries have navigated these shifts
+                unevenly, shaped by policy, cultural factors, and development status. Explore the chart to see regional
+                trends and country-specific trajectories.
+            </p>
+            <p class="credits">
+                Source: World Bank Database
+            </p>
+        </div>
+        <div class="visualization-placeholder" id="chart_1">
+        </div>
+        <a class="call-to-action" href="#section2">
+            Scroll to Explore Life Expectancy Improvements
+        </a>
+    </section>
+    <section class="section alternate-section" data-aos="fade-in" id="section2">
+        <div class="section-title">
+            <img alt="Chart Icon" src="https://icons8.com/icon/LLHVIz75PLFX/bar-chart"/>
+            <h3>
+                Which regions experienced the most drastic improvements in life expectancy?
+            </h3>
+        </div>
+        <div class="section-description">
+            <p>
+                Asia and South America saw remarkable gains in life expectancy. South Korea's life expectancy rose from
+                55.9 years in 1955 to 76.34 years in 2000, while Brazil improved from 62.97 years to 71.18 years. These
+                improvements correlate with economic development, healthcare advancements, and reduced child mortality.
+                Delve into the data to identify key drivers and regional disparities.
+            </p>
+            <p class="credits">
+                Source: World Health Organization
+            </p>
+        </div>
+        <div class="visualization-placeholder" id="chart_2">
+        </div>
+        <a class="call-to-action" href="#section3">
+            Scroll to Discover Policy Impacts
+        </a>
+    </section>
+    <section class="section" data-aos="fade-in" id="section3">
+        <div class="section-title">
+            <img alt="Chart Icon" src="https://icons8.com/icon/LLHVIz75PLFX/policy"/>
+            <h3>
+                How did policy changes impact fertility in specific countries?
+            </h3>
+        </div>
+        <div class="section-description">
+            <p>
+                China's fertility rate plummeted from 6.16 in 1955 to 1.63 in 2000, largely due to the one-child policy
+                introduced in the late 1970s. In contrast, countries like Niger (not in the dataset) maintained high
+                fertility rates due to limited family planning access. This divergence highlights the role of government
+                policies in demographic trends. Use the interactive chart to trace policy milestones and their
+                demographic effects.
+            </p>
+            <p class="credits">
+                Source: National Statistical Agencies
+            </p>
+        </div>
+        <div class="visualization-placeholder" id="chart_3">
+        </div>
+        <a class="call-to-action" href="#section4">
+            Scroll to Analyze Fertility-Life Expectancy Relationship
+        </a>
+    </section>
+    <section class="section" data-aos="fade-in" id="section5">
+        <div class="section-title">
+            <img alt="Chart Icon" src="https://icons8.com/icon/LLHVIz75PLFX/bars-chart"/>
+            <h3>
+                How do developed vs. developing countries compare in demographic trends?
+            </h3>
+        </div>
+        <div class="section-description">
+            <p>
+                Developed countries like Sweden (fertility: 2.3 → 1.85, life expectancy: 71.5 → 78.9) and the United
+                States
+                (fertility: 3.47 → 2.05, life expectancy: 69.86 → 77.03) show stable or declining fertility with rising
+                life expectancy. Developing nations like Kenya (fertility: 7.54 → 5.14, life expectancy: 50.93 → 54.83)
+                exhibit slower progress, with fertility remaining high and life expectancy improving but lagging.
+                Compare group averages and individual country performance in this grouped bar chart.
+            </p>
+            <p class="credits">
+                Source: World Population Prospects
+            </p>
+        </div>
+        <div class="visualization-placeholder" id="chart_5">
+        </div>
+        <a class="call-to-action" href="#sources">
+            Scroll to View Sources
+        </a>
+    </section>
+    <section class="sources" id="sources">
+        <h2>
+            Key Data Sources
+        </h2>
+        <ul>
+            <li>
+                <strong>
+                    World Bank Database
+                </strong>
+                - Fertility Rate Data (1955-2000)
+            </li>
+            <li>
+                <strong>
+                    World Health Organization
+                </strong>
+                - Life Expectancy Estimates (1955-2000)
+            </li>
+            <li>
+                <strong>
+                    National Statistical Agencies
+                </strong>
+                - Regional Demographic Trend Analysis
+            </li>
+            <li>
+                <strong>
+                    United Nations Demographic Yearbook
+                </strong>
+                - Global Population Reports
+            </li>
+            <li>
+                <strong>
+                    World Population Prospects
+                </strong>
+                - United Nations Annual Statistics
+            </li>
+        </ul>
+        <p class="note">
+            Explore the interactive version for more details and download options.
+        </p>
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js">
+</script>
+<script>
+    AOS.init({
+         duration: 800,
+         once: true,
+         disable: 'mobile'
+     });
+</script>
+<script>
+    function plot_1(data){
+         const myChart = echarts.init(document.getElementById('chart_1'), null, { renderer: 'svg' });
+
+         const selectedCountries = ["Afghanistan", "Japan", "United States"];
+         const filteredData = data.filter(d => selectedCountries.includes(d.country));
+
+         const groupedData = {};
+         filteredData.forEach(d => {
+             if (!groupedData[d.country]) {
+                 groupedData[d.country] = { years: [], values: [] };
+             }
+             groupedData[d.country].years.push(d.year);
+             groupedData[d.country].values.push(d.fertility.toFixed(2));
+         });
+
+         const series = Object.keys(groupedData).map(country => ({
+             name: country,
+             type: 'line',
+             smooth: true,
+             data: groupedData[country].values
+         }));
+
+         const option = {
+             title: {
+                 text: 'Fertility Rates Over Time',
+                 left: 'center'
+             },
+             tooltip: {
+                 trigger: 'axis'
+             },
+             legend: {
+                 data: selectedCountries,
+                 left: 'left'
+             },
+             xAxis: {
+                 type: 'category',
+                 boundaryGap: false,
+                 data: groupedData[selectedCountries[0]].years
+             },
+             yAxis: {
+                 type: 'value',
+                 axisLabel: {
+                     formatter: '{value}'
+                 }
+             },
+             series: series,
+             color: ['#ff6347', '#4682b4', '#3cb371']
+         };
+
+         myChart.setOption(option);
+     }
+     plot_1(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
+</script>
+<script>
+    function plot_2(data) {
+         const selectedYears = [1955, 2000];
+         const countriesOfInterest = ['South Korea', 'Brazil', 'China'];
+
+         const filteredData = data.filter(d => selectedYears.includes(d.year) && countriesOfInterest.includes(d.country));
+
+         const countries = Array.from(new Set(filteredData.map(d => d.country)));
+
+         const lifeExpectancy1955 = countries.map(country =>
+             filteredData.find(d => d.country === country && d.year === 1955)?.life_expect || 0
+         );
+
+         const lifeExpectancy2000 = countries.map(country =>
+             filteredData.find(d => d.country === country && d.year === 2000)?.life_expect || 0
+         );
+
+         const myChart = echarts.init(document.getElementById('chart_2'), null, { renderer: 'svg' });
+
+         const option = {
+             title: {
+                 text: 'Life Expectancy in 1955 vs. 2000',
+                 left: 'center',
+                 textStyle: { color: '#fff' }
+             },
+             tooltip: {
+                 trigger: 'axis'
+             },
+             legend: {
+                 data: ['1955', '2000'],
+                 left: 'right',
+                 textStyle: { color: '#fff' }
+             },
+             xAxis: {
+                 type: 'category',
+                 data: countries,
+                 axisLabel: {
+                     inside: false,
+                     rotate: 45,
+                     textStyle: {
+                         color: '#fff'
+                     }
+                 }
+             },
+             yAxis: {
+                 type: 'value',
+                 name: 'Life Expectancy',
+                 axisLabel: {
+                     textStyle: {
+                         color: '#fff'
+                     }
+                 }
+             },
+             series: [
+                 {
+                     name: '1955',
+                     type: 'bar',
+                     data: lifeExpectancy1955,
+                     itemStyle: {
+                         color: '#5470C6'
+                     }
+                 },
+                 {
+                     name: '2000',
+                     type: 'bar',
+                     data: lifeExpectancy2000,
+                     itemStyle: {
+                         color: '#91CC75'
+                     }
+                 }
+             ]
+         };
+
+         myChart.setOption(option);
+     }
+     plot_2(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
+</script>
+<script>
+    function plot_3(data){
+         const myChart = echarts.init(document.getElementById('chart_3'), null, { renderer: 'svg' });
+
+         var chinaData = data.filter(d => d.country === 'China');
+
+         var years = chinaData.map(d => d.year);
+         var fertilityRates = chinaData.map(d => d.fertility);
+         var lifeExpectancies = chinaData.map(d => d.life_expect);
+
+         var option = {
+             title: {
+                 text: 'Impact of Policy Changes on China\'s Fertility Rate and Life Expectancy',
+                 left: 'center',
+                 textStyle: {
+                     color: '#ffffff'
+                 }
+             },
+             tooltip: {
+                 trigger: 'axis'
+             },
+             legend: {
+                 data: ['Fertility Rate', 'Life Expectancy', 'One-Child Policy (1980)', 'Two-Child Policy (2016)'],
+                 textStyle: {
+                     color: '#ffffff'
+                 }
+             },
+             xAxis: [
+                 {
+                     type: 'category',
+                     data: years,
+                     axisLabel: {
+                         color: '#ffffff'
+                     }
+                 }
+             ],
+             yAxis: [
+                 {
+                     type: 'value',
+                     name: 'Fertility Rate',
+                     position: 'left',
+                     axisLabel: {
+                         formatter: '{value}',
+                         color: '#ffffff'
+                     }
+                 },
+                 {
+                     type: 'value',
+                     name: 'Life Expectancy',
+                     position: 'right',
+                     axisLabel: {
+                         formatter: '{value} years',
+                         color: '#ffffff'
+                     }
+                 }
+             ],
+             series: [
+                 {
+                     name: 'Fertility Rate',
+                     type: 'line',
+                     data: fertilityRates,
+                     markLine: {
+                         data: [
+                             { name: 'One-Child Policy (1980)', xAxis: '1980' },
+                             { name: 'Two-Child Policy (2016)', xAxis: '2016' }
+                         ],
+                         lineStyle: {
+                             color: '#ff0000'
+                         },
+                         label: {
+                             show: true,
+                             formatter: '{b}',
+                             position: 'insideEndTop',
+                             color: '#ffffff'
+                         }
+                     }
+                 },
+                 {
+                     name: 'Life Expectancy',
+                     type: 'line',
+                     yAxisIndex: 1,
+                     data: lifeExpectancies
+                 }
+             ]
+         };
+
+         myChart.setOption(option);
+     }
+     plot_3(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
+</script>
+<script>
+    function plot_5(data){
+         const myChart = echarts.init(document.getElementById('chart_5'), null, { renderer: 'svg' });
+
+         const countries = ["Sweden", "United States", "Kenya", "India"];
+         const years = [1955, 2000];
+
+         const seriesDataFertility = countries.map((country) => ({
+             name: country,
+             type: 'bar',
+             stack: 'fertility',
+             data: years.map((year) => {
+                 return data.filter(d => d.year === year && d.country === country)[0]?.fertility || 0;
+             })
+         }));
+
+         const seriesDataLifeExpect = countries.map((country) => ({
+             name: country,
+             type: 'bar',
+             stack: 'life',
+             data: years.map((year) => {
+                 return data.filter(d => d.year === year && d.country === country)[0]?.life_expect || 0;
+             })
+         }));
+
+         myChart.setOption({
+             title: {
+                 text: 'Demographic Trends: Developed vs. Developing Countries (1955 vs 2000)'
+             },
+             tooltip: {
+                 trigger: 'axis',
+                 axisPointer: {
+                     type: 'shadow'
+                 }
+             },
+             legend: {
+                 data: countries
+             },
+             xAxis: [
+                 {
+                     type: 'category',
+                     data: ['Fertility (1955)', 'Fertility (2000)', 'Life Expectancy (1955)', 'Life Expectancy (2000)'],
+                     axisPointer: {
+                         type: 'shadow'
+                     }
+                 }
+             ],
+             yAxis: [
+                 {
+                     type: 'value',
+                     name: 'Rates'
+                 }
+             ],
+             series: [...seriesDataFertility, ...seriesDataLifeExpect],
+             color: ['#5470C6', '#91CC75', '#FAC858', '#EE6666']
+         });
+     }
+     plot_5(data)
+</script>
+</body>
+</html>

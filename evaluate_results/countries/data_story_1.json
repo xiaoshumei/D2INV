@@ -1,0 +1,26 @@
+{
+    "story_title": "Global Demographic Shifts: Fertility, Life Expectancy, and Progress (1955-2000)",
+    "story_subtitle": "A Data-Driven Exploration of Population Trends Across Countries",
+    "story_pieces": [
+        {
+            "question": "How have global fertility rates changed over the past century?",
+            "narration": "From 1955 to 2000, global fertility rates declined significantly. For example, Afghanistan's fertility rate dropped from 7.42 children per woman in 1955 to 7.53 in 2000, while countries like Japan saw a sharper decline from 2.41 to 1.37. This trend reflects broader socioeconomic changes, including urbanization, education, and family planning initiatives.",
+            "visualization": "Line chart showing fertility rates over time for selected countries (e.g., Afghanistan, Japan, United States) with a focus on the downward trajectory."
+        },
+        {
+            "question": "Which regions experienced the most drastic improvements in life expectancy?",
+            "narration": "Asia and South America saw remarkable gains in life expectancy. South Korea's life expectancy rose from 55.9 years in 1955 to 76.34 years in 2000, while Brazil improved from 62.97 years to 71.18 years. These improvements correlate with economic development, healthcare advancements, and reduced child mortality.",
+            "visualization": "Bar chart comparing life expectancy in 1955 vs. 2000 for countries with the largest increases (e.g., South Korea, Brazil, China)."
+        },
+        {
+            "question": "How did policy changes impact fertility in specific countries?",
+            "narration": "China's fertility rate plummeted from 6.16 in 1955 to 1.63 in 2000, largely due to the one-child policy introduced in the late 1970s. In contrast, countries like Niger (not in the dataset) maintained high fertility rates due to limited family planning access. This divergence highlights the role of government policies in demographic trends.",
+            "visualization": "Dual-axis line chart overlaying China's fertility rate with its life expectancy, annotated with policy milestones (e.g., one-child policy implementation)."
+        },
+        {
+            "question": "How do developed vs. developing countries compare in demographic trends?",
+            "narration": "Developed countries like Sweden (fertility: 2.3 → 1.85, life expectancy: 71.5 → 78.9) and the United States (fertility: 3.47 → 2.05, life expectancy: 69.86 → 77.03) show stable or declining fertility with rising life expectancy. Developing nations like Kenya (fertility: 7.54 → 5.14, life expectancy: 50.93 → 54.83) exhibit slower progress, with fertility remaining high and life expectancy improving but lagging.",
+            "visualization": "Grouped bar chart comparing 1955 and 2000 metrics for developed (Sweden, United States) and developing (Kenya, India) countries, segmented by fertility and life expectancy."
+        }
+    ]
+}

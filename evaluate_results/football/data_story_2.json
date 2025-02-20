@@ -1,0 +1,31 @@
+{
+  "story_title": "Understanding the Dynamics of European Football Leagues",
+  "story_subtitle": "An analysis of match outcomes across various European football divisions from 2013 to 2017.",
+  "story_pieces": [
+    {
+      "question": "Which league has witnessed the highest number of goals in matches?",
+      "narration": "The English Premier League appears to have the highest scoring matches, with several games surpassing 5 goals combined. Notably, matches like Manchester City vs. Tottenham Hotspur ended with a 5-3 scoreline on January 1, 2015.",
+      "visualization": "Bar charts comparing total goals scored in each league to show distribution and identify which league had the most dynamic matches."
+    },
+    {
+      "question": "How did home advantage affect match outcomes across different leagues?",
+      "narration": "Home teams won slightly more games than away teams, with an evident advantage in leagues like the Österreichische Bundesliga. For instance, SK Rapid Wien secured a victory against FK Austria Wien at home on multiple occasions.",
+      "visualization": "Pie charts or stacked bar charts illustrating win-loss ratios for home vs away teams in each league."
+    },
+    {
+      "question": "Are there particular teams that perform consistently better across seasons?",
+      "narration": "Teams like Barcelona and Juventus show consistent high performance, often dominating both home and away games. Barcelona maintained victories in high-stake matches such as their 5-2 win over Rayo on October 18, 2015.",
+      "visualization": "Line charts tracking the seasonal outcomes of top-performing teams to highlight consistency in performance over time."
+    },
+    {
+      "question": "What is the frequency of drawn matches in each league?",
+      "narration": "Draws are common in Serie A, with a notable number of matches ending without a winner, such as the 1-1 draw between Udinese and Milan on January 22, 2017.",
+      "visualization": "Histograms showing the distribution of match results for each league, emphasizing the number of draws."
+    },
+    {
+      "question": "How do match outcomes vary for notable rivalries?",
+      "narration": "Rivalries like El Clasico between Real Madrid and Barcelona often lead to closely contested matches, frequently resulting in high goal tallies. An example includes Real Madrid's 3-1 victory over Barcelona on October 25, 2014.",
+      "visualization": "Dual-axis charts focusing on outcomes of hallmark rivalry games to capture the essence of these intense encounters."
+    }
+  ]
+}

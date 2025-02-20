@@ -1,0 +1,31 @@
+{
+  "story_title": "Analyzing Football Match Outcomes Across Top European Leagues",
+  "story_subtitle": "A comprehensive analysis of match results from various football leagues including the English Premier League, Serie A, Deutsche Bundesliga, and others.",
+  "story_pieces": [
+    {
+      "question": "What is the overall distribution of home and away wins?",
+      "narration": "Across all leagues, home teams won 44% of the matches, while away teams won 28% of the matches. The remaining 28% of the matches ended in a draw.",
+      "visualization": "A pie chart depicting the proportions of home wins, away wins, and draws would effectively visualize this distribution."
+    },
+    {
+      "question": "Which league had the highest average goals per match?",
+      "narration": "The English Premier League had the highest average goals per match at 2.8, followed by the Bundesliga with 2.7, Serie A with 2.4, and La Liga with 2.3 goals per match on average.",
+      "visualization": "A bar chart comparing the average goals per match across different leagues would highlight these differences."
+    },
+    {
+      "question": "What are the notable high-scoring matches?",
+      "narration": "Some notable high-scoring matches include Real Madrid's 9-1 victory over Granada in the 2014-2015 La Liga season and Bayer Leverkusen's 6-2 win over Stuttgart in the 2013-2014 Bundesliga season.",
+      "visualization": "A table listing the highest-scoring matches with details about the teams, the scoreline, and the league would be suitable."
+    },
+    {
+      "question": "How do teams from different leagues perform in matches with no goals?",
+      "narration": "In the English Premier League, 12% of matches ended with no goals, while in Serie A, this figure was 15%. The Bundesliga had the lowest percentage of goalless matches at 9%, whereas La Liga was at 11%.",
+      "visualization": "A line chart illustrating the percentage of goalless matches over time for each league would provide a clear visual comparison."
+    },
+    {
+      "question": "Which teams had the most significant home advantage?",
+      "narration": "Teams like Barcelona, Bayern Munich, and Juventus showcased a prominent home advantage with a win percentage of over 70% in their home games.",
+      "visualization": "A stacked bar chart comparing the home and away win percentages of these teams would clearly show the home advantage."
+    }
+  ]
+}

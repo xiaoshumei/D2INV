@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Human Toll of Natural Disasters</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Define color palette */
+        :root {
+            --primary-color: #264653;
+            --secondary-color: #2a9d8f;
+            --accent-color: #e76f51;
+            --background-color: #f4a261;
+            --text-color: #ffffff;
+            --cta-hover-color: #e9c46a;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+
+        .section {
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+        }
+
+        .narration {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .chart {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta:hover {
+            background-color: var(--cta-hover-color);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Human Toll of Natural Disasters</h1>
+        <h2>An analysis of mortality trends caused by natural disasters from 1900 to 2017</h2>
+    </header>
+
+    <main>
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> What are the overall trends in deaths caused by natural disasters over the years?</h2>
+            <p class="narration">From 1900 to 2017, the number of deaths from natural disasters shows substantial variability. While certain years experienced catastrophic mortality spikes due to events such as droughts and epidemics (e.g., 1920 with over 3.2 million deaths), more recent years exhibit a significant decline in total fatalities, attributed to improved disaster preparedness and response.</p>
+            <div class="chart" id="chart_1"></div>
+            <a href="#next-section" class="cta">Next Insight</a>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> Which types of disasters have caused the most fatalities over time?</h2>
+            <p class="narration">Droughts and epidemics are the leading causes of deaths among natural disasters throughout history. For example, droughts in 1928 and 1965 caused over 3 million and 1.5 million deaths respectively, while epidemics like the one in 1920 resulted in 2.5 million fatalities.</p>
+            <div class="chart" id="chart_2"></div>
+            <a href="#next-section" class="cta">Next Insight</a>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-clock"></i> Are there specific years or decades that were particularly deadly due to specific disaster events?</h2>
+            <p class="narration">Yes, several years stand out due to severe mortality caused by specific disasters: 1931 marked by massive floods resulting in over 3.7 million deaths, and 1917 with 2.5 million fatalities due to an epidemic. These spikes emphasize how single catastrophic events have historically driven fatality rates.</p>
+            <div class="chart" id="chart_3"></div>
+            <a href="#next-section" class="cta">Next Insight</a>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-wave-square"></i> How have fatalities from earthquakes evolved over time?</h2>
+            <p class="narration">Earthquakes show a recurring pattern of high mortality events, such as the 1923 Great Kanto earthquake causing over 152,000 deaths, and the 2004 Indian Ocean Tsunami leaving over 227,000 dead. However, improved building codes and early warning systems in recent years have reduced fatalities in more developed regions.</p>
+            <div class="chart" id="chart_4"></div>
+            <a href="#next-section" class="cta">Next Insight</a>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-chart-bar"></i> How do the trends in fatalities reflect improvements in disaster management over the century?</h2>
+            <p class="narration">The significant decline in disaster-related fatalities in recent decades reflects advancements in technology, better disaster preparedness, early warning systems, and international humanitarian intervention. Events in the 21st century generally caused fewer deaths compared to the catastrophic mortality spikes in the early 20th century.</p>
+            <div class="chart" id="chart_5"></div>
+            <a href="#footer" class="cta">View Sources</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data and sources: Contact relevant authorities or research organizations for detailed datasets.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>
+</body>
+</html>

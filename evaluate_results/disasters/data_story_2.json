@@ -1,0 +1,31 @@
+{
+  "story_title": "A Century of Natural Disasters: Key Trends and Insights",
+  "story_subtitle": "Analyzing over 100 years of fatalities caused by diverse natural disasters to uncover significant patterns and major events.",
+  "story_pieces": [
+    {
+      "question": "How have total fatalities from natural disasters changed over the last century?",
+      "narration": "The data shows significant fluctuations in fatalities over time, with peaks in years such as 1931, 1920, and 1928 due to catastrophic events like floods and droughts. Despite technological advancements, certain years still saw large-scale fatalities, demonstrating the ongoing vulnerability to natural disasters.",
+      "visualization": "Line chart showing total fatalities per year to highlight trends and significant peaks."
+    },
+    {
+      "question": "Which types of natural disasters have been the deadliest overall?",
+      "narration": "Floods, droughts, and epidemics stand out as the deadliest disaster types, with floods causing over 3.7 million deaths in 1931 alone. Meanwhile, droughts and epidemics have repeatedly caused millions of fatalities across multiple years.",
+      "visualization": "Stacked bar chart comparing total fatalities by disaster type to emphasize their relative impacts."
+    },
+    {
+      "question": "What are the specific years and events that caused the highest fatalities?",
+      "narration": "The deadliest years include 1931 (Chinese floods with 3.7 million fatalities), 1920 (droughts and epidemics with over 3 million deaths), and 1928 (droughts causing 3 million deaths). These years highlight the devastating impact of specific large-scale events.",
+      "visualization": "Annotated timeline marking the highest fatality years and the associated events."
+    },
+    {
+      "question": "How have fatalities from specific disaster types evolved over time?",
+      "narration": "Fatalities from droughts and epidemics were far more common in the early 20th century, while more recent decades have seen fatalities from extreme temperatures and weather taking a larger share. Technological advancements and early warning systems have mitigated impacts in certain areas but not universally.",
+      "visualization": "Multi-line chart showing trends in fatalities for different disaster types over time."
+    },
+    {
+      "question": "How do extreme temperature events compare to other disasters in recent times?",
+      "narration": "In recent decades, extreme temperature events like heatwaves have caused significant death tolls. For example, the European heatwave in 2003 caused over 70,000 deaths. These events are becoming more frequent and impactful, possibly linked to climate change.",
+      "visualization": "Bar chart comparing fatalities from extreme temperature events to other disaster types in the 21st century."
+    }
+  ]
+}

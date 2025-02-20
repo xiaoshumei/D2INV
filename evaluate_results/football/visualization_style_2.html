@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Infographic storytelling the dynamics of European football leagues with engaging visuals, insights, and animations.">
+  <title>Understanding the Dynamics of European Football Leagues</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMNzs3Pp3JdCTtepRJwcJg6n9YPPV57Shxj3jk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    :root {
+      --background-color: #f8f9fa;
+      --primary-color: #1e73be;
+      --secondary-color: #ff4b5c;
+      --accent-color: #ff9f1c;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.2em 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0.8em 0 0;
+    }
+
+    section {
+      padding: 3em 1em;
+      margin: 1em auto;
+      max-width: 900px;
+      border-bottom: 3px solid var(--accent-color);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1em;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .section-title i {
+      margin-right: 0.5em;
+    }
+
+    .narration {
+      text-align: center;
+      font-size: 1rem;
+      margin: 1em 0 2em;
+      color: var(--text-color);
+    }
+
+    .chart {
+      height: 400px;
+      background: #eceff1;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      color: var(--accent-color);
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 0.8em 1.5em;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      margin: 2em auto;
+      display: block;
+      max-width: 200px;
+    }
+
+    .cta:hover {
+      background: var(--primary-color);
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.5em 1em;
+    }
+
+    footer small {
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Understanding the Dynamics of European Football Leagues</h1>
+    <p>An analysis of match outcomes across various European football divisions from 2013 to 2017.</p>
+  </header>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-futbol"></i> Which league has witnessed the highest number of goals in matches?</h2>
+    <p class="narration">
+      The English Premier League appears to have the highest scoring matches, with several games surpassing 5 goals combined. Notably, matches like Manchester City vs. Tottenham Hotspur ended with a 5-3 scoreline on January 1, 2015.
+    </p>
+    <div class="chart" id="chart_1">Bar Chart Placeholder</div>
+    <a href="#next-section" class="cta">Next Insight</a>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-home"></i> How did home advantage affect match outcomes across different leagues?</h2>
+    <p class="narration">
+      Home teams won slightly more games than away teams, with an evident advantage in leagues like the Österreichische Bundesliga. For instance, SK Rapid Wien secured a victory against FK Austria Wien at home on multiple occasions.
+    </p>
+    <div class="chart" id="chart_2">Pie Chart Placeholder</div>
+    <a href="#next-section" class="cta">Next Insight</a>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-chart-line"></i> Are there particular teams that perform consistently better across seasons?</h2>
+    <p class="narration">
+      Teams like Barcelona and Juventus show consistent high performance, often dominating both home and away games. Barcelona maintained victories in high-stake matches such as their 5-2 win over Rayo on October 18, 2015.
+    </p>
+    <div class="chart" id="chart_3">Line Chart Placeholder</div>
+    <a href="#next-section" class="cta">Next Insight</a>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-ruler-horizontal"></i> What is the frequency of drawn matches in each league?</h2>
+    <p class="narration">
+      Draws are common in Serie A, with a notable number of matches ending without a winner, such as the 1-1 draw between Udinese and Milan on January 22, 2017.
+    </p>
+    <div class="chart" id="chart_4">Histogram Placeholder</div>
+    <a href="#next-section" class="cta">Next Insight</a>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2 class="section-title"><i class="fas fa-users"></i> How do match outcomes vary for notable rivalries?</h2>
+    <p class="narration">
+      Rivalries like El Clasico between Real Madrid and Barcelona often lead to closely contested matches, frequently resulting in high goal tallies. An example includes Real Madrid's 3-1 victory over Barcelona on October 25, 2014.
+    </p>
+    <div class="chart" id="chart_5">Dual-Axis Chart Placeholder</div>
+    <a href="#next-section" class="cta">Next Insight</a>
+  </section>
+
+  <footer>
+    <small>Data sourced from various European football leagues (2013–2017). Charts are placeholders and illustrative.</small>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
+</body>
+</html>

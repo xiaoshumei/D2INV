@@ -1,0 +1,115 @@
+{
+  "name": "Global Countries Demographics",
+  "file_name": "countries.json",
+  "description": "This dataset contains demographic data for various countries, specifically focusing on fertility rates and life expectancy over different years. The data is derived from Gapminder.org.",
+  "fields": [
+    {
+      "column": "_comment",
+      "properties": {
+        "dtype": "category",
+        "samples": ["Data courtesy of Gapminder.org"],
+        "num_unique_values": 1,
+        "semantic_type": "note",
+        "description": "A comment providing acknowledgment to Gapminder.org for the data."
+      }
+    },
+    {
+      "column": "year",
+      "properties": {
+        "dtype": "int64",
+        "samples": [1995],
+        "num_unique_values": 10,
+        "semantic_type": "year",
+        "description": "The year in which the data was recorded."
+      }
+    },
+    {
+      "column": "fertility",
+      "properties": {
+        "dtype": "number",
+        "std": 1.9267510307845213,
+        "min": 1.03,
+        "max": 8.23,
+        "samples": [5.17],
+        "num_unique_values": 378,
+        "semantic_type": "fertility rate",
+        "description": "The average number of children born to a woman over her lifetime."
+      }
+    },
+    {
+      "column": "life_expect",
+      "properties": {
+        "dtype": "number",
+        "std": 9.517361302749565,
+        "min": 27.79,
+        "max": 81.57,
+        "samples": [59.81],
+        "num_unique_values": 562,
+        "semantic_type": "life expectancy",
+        "description": "The average number of years a person is expected to live from birth."
+      }
+    },
+    {
+      "column": "n_fertility",
+      "properties": {
+        "dtype": "number",
+        "std": 1.901656499173114,
+        "min": 1.03,
+        "max": 8.23,
+        "samples": [6.96],
+        "num_unique_values": 356,
+        "semantic_type": "normalized fertility rate",
+        "description": "Normalized fertility rate data adjusted for analysis."
+      }
+    },
+    {
+      "column": "n_life_expect",
+      "properties": {
+        "dtype": "number",
+        "std": 9.063328247420158,
+        "min": 27.79,
+        "max": 81.57,
+        "samples": [54.83],
+        "num_unique_values": 509,
+        "semantic_type": "normalized life expectancy",
+        "description": "Normalized life expectancy data adjusted for analysis."
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": ["Poland"],
+        "num_unique_values": 62,
+        "semantic_type": "country",
+        "description": "The name of the country to which the data pertains."
+      }
+    },
+    {
+      "column": "p_fertility",
+      "properties": {
+        "dtype": "number",
+        "std": 1.9295063309686522,
+        "min": 1.16,
+        "max": 8.23,
+        "samples": [6.58],
+        "num_unique_values": 360,
+        "semantic_type": "projected fertility rate",
+        "description": "Projected future fertility rate."
+      }
+    },
+    {
+      "column": "p_life_expect",
+      "properties": {
+        "dtype": "number",
+        "std": 9.457951486714167,
+        "min": 27.79,
+        "max": 80.24,
+        "samples": [72.4],
+        "num_unique_values": 516,
+        "semantic_type": "projected life expectancy",
+        "description": "Projected future life expectancy."
+      }
+    }
+  ]
+}

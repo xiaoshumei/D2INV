@@ -1,0 +1,31 @@
+{
+  "story_title": "The Human Toll of Natural Disasters",
+  "story_subtitle": "An analysis of mortality trends caused by natural disasters from 1900 to 2017",
+  "story_pieces": [
+    {
+      "question": "What are the overall trends in deaths caused by natural disasters over the years?",
+      "narration": "From 1900 to 2017, the number of deaths from natural disasters shows substantial variability. While certain years experienced catastrophic mortality spikes due to events such as droughts and epidemics (e.g., 1920 with over 3.2 million deaths), more recent years exhibit a significant decline in total fatalities, attributed to improved disaster preparedness and response.",
+      "visualization": "A line chart showing the annual death toll from natural disasters over the years, with annotations for the years with the most notable spikes."
+    },
+    {
+      "question": "Which types of disasters have caused the most fatalities over time?",
+      "narration": "Droughts and epidemics are the leading causes of deaths among natural disasters throughout history. For example, droughts in 1928 and 1965 caused over 3 million and 1.5 million deaths respectively, while epidemics like the one in 1920 resulted in 2.5 million fatalities.",
+      "visualization": "A stacked bar chart breaking down total fatalities by disaster type (e.g., droughts, earthquakes, epidemics) for key decades or years."
+    },
+    {
+      "question": "Are there specific years or decades that were particularly deadly due to specific disaster events?",
+      "narration": "Yes, several years stand out due to severe mortality caused by specific disasters: 1931 marked by massive floods resulting in over 3.7 million deaths, and 1917 with 2.5 million fatalities due to an epidemic. These spikes emphasize how single catastrophic events have historically driven fatality rates.",
+      "visualization": "A timeline annotation plot highlighting the most deadly years and the corresponding disaster types."
+    },
+    {
+      "question": "How have fatalities from earthquakes evolved over time?",
+      "narration": "Earthquakes show a recurring pattern of high mortality events, such as the 1923 Great Kanto earthquake causing over 152,000 deaths, and the 2004 Indian Ocean Tsunami leaving over 227,000 dead. However, improved building codes and early warning systems in recent years have reduced fatalities in more developed regions.",
+      "visualization": "A scatter plot organizing earthquake fatalities by year, with event annotations for the deadliest occurrences."
+    },
+    {
+      "question": "How do the trends in fatalities reflect improvements in disaster management over the century?",
+      "narration": "The significant decline in disaster-related fatalities in recent decades reflects advancements in technology, better disaster preparedness, early warning systems, and international humanitarian intervention. Events in the 21st century generally caused fewer deaths compared to the catastrophic mortality spikes in the early 20th century.",
+      "visualization": "A comparative bar chart comparing death tolls by disaster type for the periods 1900-1950, 1951-2000, and 2001-2017."
+    }
+  ]
+}

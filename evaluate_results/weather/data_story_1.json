@@ -1,0 +1,42 @@
+{
+    "story_title": "Exploring Trends and Extremes in Daily Weather Observations",
+    "story_subtitle": "An analysis of daily weather patterns, extremes, and trends across New York and Seattle.",
+    "story_pieces": [
+        {
+            "question": "What is the maximum recorded precipitation in the dataset?",
+            "fact_type": "value",
+            "visualization": "Bar chart showing the maximum precipitation across dates.",
+            "narration": "The maximum recorded precipitation in the dataset is 118.9 millimeters."
+        },
+        {
+            "question": "How does the maximum temperature trend over the years?",
+            "fact_type": "trend",
+            "visualization": "Line chart of temp_max over date.",
+            "narration": "The trend of maximum recorded temperature shows seasonal patterns with peaks during the summer months."
+        },
+        {
+            "question": "What are the common weather conditions observed in this dataset?",
+            "fact_type": "categorization",
+            "visualization": "Pie chart of weather occurrences.",
+            "narration": "The most common weather conditions observed include rain and fog, among five different weather categories."
+        },
+        {
+            "question": "How does the minimum temperature vary between New York and Seattle?",
+            "fact_type": "difference",
+            "visualization": "Box plot of temp_min for New York and Seattle.",
+            "narration": "Minimum temperatures show variation with lower values recorded in New York compared to Seattle."
+        },
+        {
+            "question": "What proportion of days experience high wind speeds?",
+            "fact_type": "proportion",
+            "visualization": "Histogram of wind speeds showing a threshold for high speeds.",
+            "narration": "A smaller proportion of days experience high wind speeds, typically above 12 meters per second."
+        },
+        {
+            "question": "Are there outliers in temperature readings across the dataset?",
+            "fact_type": "outlier",
+            "visualization": "Scatter plot highlighting temperature outliers over dates.",
+            "narration": "The dataset shows some extreme outliers in both maximum and minimum temperature readings."
+        }
+    ]
+}

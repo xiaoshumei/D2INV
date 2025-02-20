@@ -1,0 +1,91 @@
+{
+  "name": "Daily Weather Data",
+  "file_name": "weather.csv",
+  "description": "This dataset contains daily weather observations over a range of dates in various locations, including measures of precipitation, temperature, wind speed, and general weather conditions.",
+  "fields": [
+    {
+      "column": "location",
+      "properties": {
+        "dtype": "category",
+        "samples": ["New York", "Seattle"],
+        "num_unique_values": 2,
+        "semantic_type": "city",
+        "description": "The city where the weather observation was recorded."
+      }
+    },
+    {
+      "column": "date",
+      "properties": {
+        "dtype": "date",
+        "min": "2012-01-01",
+        "max": "2015-12-31",
+        "samples": ["2014-06-11", "2015-01-10"],
+        "num_unique_values": 1461,
+        "semantic_type": "date",
+        "description": "The date when the weather observation was recorded."
+      }
+    },
+    {
+      "column": "precipitation",
+      "properties": {
+        "dtype": "number",
+        "std": 7.695285593485594,
+        "min": 0.0,
+        "max": 118.9,
+        "samples": [40.1, 3.6],
+        "num_unique_values": 144,
+        "semantic_type": "number",
+        "description": "The amount of precipitation observed (in millimeters) on the given date."
+      }
+    },
+    {
+      "column": "temp_max",
+      "properties": {
+        "dtype": "number",
+        "std": 8.644595796891469,
+        "min": -7.7,
+        "max": 37.8,
+        "samples": [22.2, 11.1],
+        "num_unique_values": 90,
+        "semantic_type": "number",
+        "description": "The maximum recorded temperature (in degrees Celsius) on the given date."
+      }
+    },
+    {
+      "column": "temp_min",
+      "properties": {
+        "dtype": "number",
+        "std": 7.51177636370836,
+        "min": -16.0,
+        "max": 26.7,
+        "samples": [21.1, 8.3],
+        "num_unique_values": 95,
+        "semantic_type": "number",
+        "description": "The minimum recorded temperature (in degrees Celsius) on the given date."
+      }
+    },
+    {
+      "column": "wind",
+      "properties": {
+        "dtype": "number",
+        "std": 1.88079050163059,
+        "min": 0.4,
+        "max": 16.2,
+        "samples": [11.4, 2.2],
+        "num_unique_values": 113,
+        "semantic_type": "number",
+        "description": "The average wind speed (in meters per second) on the given date."
+      }
+    },
+    {
+      "column": "weather",
+      "properties": {
+        "dtype": "category",
+        "samples": ["rain", "fog"],
+        "num_unique_values": 5,
+        "semantic_type": "weather_condition",
+        "description": "The general weather condition observed (e.g., rain, fog) on the given date."
+      }
+    }
+  ]
+}

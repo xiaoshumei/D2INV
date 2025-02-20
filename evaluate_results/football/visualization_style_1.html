@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Match Outcomes Infographic</title>
+    <!-- Include AOS CSS -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: white;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #fcdc00;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        /* Explainer Section */
+        .explainer {
+            background: #1a1a1a;
+            color: #eeeeee;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            margin: 0 0 3rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Content Section */
+        .content {
+            display: grid;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .card {
+            background: #222;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-main {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            font-size: 3rem;
+            color: #fcdc00;
+        }
+
+        .card-text {
+            flex: 1;
+        }
+
+        .card-text h3 {
+            font-size: 1.5rem;
+            color: #fcdc00;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text p {
+            color: #d1d1d1;
+        }
+
+        .visualization {
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        #explore-btn {
+            background: linear-gradient(135deg, #ff4500, #00aced);
+            background-size: 200% 200%;
+            animation: gradientHover 2s ease infinite;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        #explore-btn:hover {
+            animation-play-state: paused;
+            transform: translateY(-2px);
+        }
+
+        @keyframes gradientHover {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Sources Section */
+        .sources {
+            text-align: center;
+            margin: 2rem 0;
+            color: #888;
+        }
+
+        /* Vertical Backbone Line */
+        .container::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, #ff4500, #00aced, #ff4500);
+            opacity: 0.8;
+        }
+
+        /* AOS Animations */
+        [data-aos] {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        [data-aos="fade-up"]:not(.aos-init) {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        [data-aos="zoom-in-up"] {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        [data-aos="zoom-in-up"]:not(.aos-init) {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .cta {
+            position: sticky;
+            bottom: 2rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>ANALYZING FOOTBALL MATCH OUTCOMES</h1>
+        <h2>Top European Leagues in Focus</h2>
+    </header>
+    <div class="explainer">
+        <p>This infographic examines football match outcomes across key European leagues, spotlighting trends in wins,
+            goals, high-scoring matches, goalless ties, and home advantage.</p>
+    </div>
+    <div class="content">
+        <!-- Story Piece 1 -->
+        <div class="card animate__animated animate__fadeInUp" data-aos="fade-up">
+            <div class="card-main">
+                <i class="fas fa-futbol icon"></i>
+                <div class="card-text">
+                    <h3>What is the overall distribution of home and away wins?</h3>
+                    <p>Across all leagues, home teams won 44% of the matches, while away teams won 28% of the matches.
+                        The remaining 28% of the matches ended in a draw.</p>
+                </div>
+            </div>
+            <div class="visualization" id="chart_1"></div>
+        </div>
+
+        <!-- Story Piece 2 -->
+        <div class="card animate__animated animate__fadeInUp" data-aos="fade-up">
+            <div class="card-main">
+                <i class="fas fa-futbol icon"></i>
+                <div class="card-text">
+                    <h3>Which league had the highest average goals per match?</h3>
+                    <p>The English Premier League had the highest average goals per match at 2.8, followed by the
+                        Bundesliga with 2.7, Serie A with 2.4, and La Liga with 2.3 goals per match on average.</p>
+                </div>
+            </div>
+            <div class="visualization" id="chart_2"></div>
+        </div>
+
+        <!-- Story Piece 3 -->
+        <div class="card animate__animated animate__fadeInUp" data-aos="fade-up">
+            <div class="card-main">
+                <i class="fas fa-futbol icon"></i>
+                <div class="card-text">
+                    <h3>What are the notable high-scoring matches?</h3>
+                    <p>Some notable high-scoring matches include Real Madrid's 9-1 victory over Granada in the 2014-2015
+                        La Liga season and Bayer Leverkusen's 6-2 win over Stuttgart in the 2013-2014 Bundesliga
+                        season.</p>
+                </div>
+            </div>
+            <div class="visualization" id="chart_3"></div>
+        </div>
+
+        <!-- Story Piece 4 -->
+        <div class="card animate__animated animate__fadeInUp" data-aos="fade-up">
+            <div class="card-main">
+                <i class="fas fa-futbol icon"></i>
+                <div class="card-text">
+                    <h3>How do teams from different leagues perform in matches with no goals?</h3>
+                    <p>In the English Premier League, 12% of matches ended with no goals, while in Serie A, this figure
+                        was 15%. The Bundesliga had the lowest percentage of goalless matches at 9%, whereas La Liga was
+                        at 11%.</p>
+                </div>
+            </div>
+            <div class="visualization" id="chart_4"></div>
+        </div>
+
+        <!-- Story Piece 5 -->
+        <div class="card animate__animated animate__fadeInUp" data-aos="fade-up">
+            <div class="card-main">
+                <i class="fas fa-futbol icon"></i>
+                <div class="card-text">
+                    <h3>Which teams had the most significant home advantage?</h3>
+                    <p>Teams like Barcelona, Bayern Munich, and Juventus showcased a prominent home advantage with a win
+                        percentage of over 70% in their home games.</p>
+                </div>
+            </div>
+            <div class="visualization" id="chart_5"></div>
+        </div>
+    </div>
+    <!-- Call to Action -->
+    <div class="cta" data-aos="zoom-in-up">
+        <button id="explore-btn">
+            EXPLORE MORE FOOTBALL INSIGHTS
+        </button>
+    </div>
+    <!-- Sources -->
+    <div class="sources">
+        <p>Data sources: Official League Statistics • ESPN FC • Soccerway</p>
+    </div>
+</div>
+<!-- Include AOS JS -->
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+</script>
+</body>
+</html>

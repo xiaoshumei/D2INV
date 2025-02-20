@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Radar Chart Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            height: 600px;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            gap: 30px;
+        }
+        #radarChart {
+            flex: 1;
+            height: 100%;
+        }
+        .panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .dimension-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dimension-item.selected {
+            border-color: #5470C6;
+            background: rgba(84, 112, 198, 0.05);
+        }
+        .dimension-info {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .stars {
+            color: #FFA500;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #5470C6;
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+        .rationale {
+            display: none;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .dimension-item.selected .rationale {
+            display: block;
+        }
+        h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="radarChart"></div>
+    <div class="panel" id="dimensionPanel"></div>
+</div>
+
+<script>
+    const data = [
+    {
+        "dimension": "engagement",
+        "score": 6,
+        "rationale": "Basic interactivity via hover effects on call-to-action buttons and fade-in animations, but lacks deeper data exploration features like filtering/drilling. Limited emotional engagement through simple transitions."
+    },
+    {
+        "dimension": "usefulness",
+        "score": 8,
+        "rationale": "Clearly communicates the data story with relevant visualizations aligned to questions. Insights are meaningful, though data sources are vaguely cited as 'various manufacturers' without specifics."
+    },
+    {
+        "dimension": "legibility",
+        "score": 7,
+        "rationale": "Text is readable with appropriate font sizes and contrast. Chart clarity depends on script loading (e.g., ECharts), but structural hierarchy is well-organized. Consistent color usage enhances legibility."
+    },
+    {
+        "dimension": "design",
+        "score": 7,
+        "rationale": "Logical layout with responsive sections and balanced visual elements. Effective whitespace usage. Charts have fixed dimensions which may hinder full responsiveness on smaller screens."
+    },
+    {
+        "dimension": "aesthetics",
+        "score": 7,
+        "rationale": "Visually appealing color scheme with smooth fade-in animations. Typography is readable, but chart styling is basic. Limited complex visual enhancements beyond foundational aesthetics."
+    }
+];
+
+    // Initialize radar chart
+    const chartDom = document.getElementById('radarChart');
+    const myChart = echarts.init(chartDom);
+
+    const radarOption = {
+        title: { text: 'Dimension Analysis', left: 'center' },
+        radar: {
+            shape: 'polygon',
+            indicator: data.map(item => ({
+                name: item.dimension,
+                max: 10
+            })),
+            axisName: {
+                color: '#666'
+            }
+        },
+        series: [{
+            type: 'radar',
+            data: [{
+                value: data.map(item => item.score),
+                name: 'Scores',
+                areaStyle: { color: 'rgba(84, 112, 198, 0.2)' },
+                lineStyle: { color: '#5470C6' },
+                itemStyle: { color: '#5470C6' }
+            }]
+        }]
+    };
+
+    // Create panel items
+    const panel = document.getElementById('dimensionPanel');
+    data.forEach((item, index) => {
+        const element = document.createElement('div');
+        element.className = 'dimension-item';
+        element.innerHTML = `
+            <div class="dimension-info">
+                <h3>${item.dimension}</h3>
+                <div class="stars">${'★'.repeat(item.score/2)}${'☆'.repeat(5 - item.score/2)}</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${item.score * 10}%"></div>
+                </div>
+            </div>
+            <div class="rationale">${item.rationale}</div>
+        `;
+
+        element.addEventListener('click', () => {
+            // Remove previous selections
+            document.querySelectorAll('.dimension-item').forEach(el => {
+                el.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            // Highlight corresponding radar axis
+            myChart.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: index
+            });
+        });
+        panel.appendChild(element);
+    });
+
+    // Initialize chart
+    myChart.setOption(radarOption);
+
+    // Add chart click handler
+    myChart.on('click', params => {
+        if (params.componentType === 'radar') {
+            const index = params.dataIndex;
+            const items = document.querySelectorAll('.dimension-item');
+            items.forEach((item, i) => {
+                item.classList.toggle('selected', i === index);
+            });
+        }
+    });
+</script>
+</body>
+</html>

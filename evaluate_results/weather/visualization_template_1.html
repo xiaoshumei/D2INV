@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Patterns in Seattle and New York</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41a359cbf0.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: #ffeb3b;
+            font-weight: bold;
+        }
+        .section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+        }
+        .question {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .narration {
+            color: #7f8c8d;
+        }
+        .visualization {
+            min-height: 300px;
+            border: 2px dashed #e74c3c;
+            margin: 20px 0;
+            text-align: center;
+            padding: 30px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #34495e;
+            color: white;
+            font-size: 0.9em;
+        }
+        .icon {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .backbone {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 80%;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<div class="backbone"></div>
+<div class="container">
+    <div class="header">
+        <h1>Weather Patterns in Seattle and New York (2012-2015)</h1>
+        <h4>A Comparative Analysis of Climate Trends and Extreme Events</h4>
+        <div class="explainer">Explore the contrasting climates of the West Coast and the East Coast!</div>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+        <div class="question">
+            <i class="fas fa-cloud-rain icon"></i>
+            Which city experienced more rainfall annually?
+        </div>
+        <div class="narration">
+            Seattle consistently recorded higher annual precipitation than New York. For example, Seattle had 1,171.5mm
+            of rain in 2012, while New York had 788.3mm. This trend persisted across all four years, with Seattle
+            averaging 1,072.8mm annually vs. New York's 745.6mm.
+        </div>
+        <div class="visualization" id="chart_1">
+            <div class="loader">Bar chart comparing annual precipitation totals for Seattle and New York from
+                2012-2015
+            </div>
+        </div>
+        <div class="cta">
+            <button onclick="window.location.href='#section2'">Next: Temperature Extremes</button>
+        </div>
+    </div>
+
+    <div class="section" id="section2" data-aos="fade-up">
+        <div class="question">
+            <i class="fas fa-temperature-high icon"></i>
+            How did temperature extremes compare between the two cities?
+        </div>
+        <div class="narration">
+            New York experienced more extreme temperature variations. In January 2012, New York recorded a low of
+            -10.6°C, while Seattle's lowest temperature was -4.9°C. Conversely, New York hit 37.2°C in July 2012,
+            compared to Seattle's 33.9°C maximum.
+        </div>
+        <div class="visualization" id="chart_2">
+            <div class="loader">Line chart showing monthly average temperatures for both cities</div>
+        </div>
+        <div class="cta">
+            <button onclick="window.location.href='#section3'">Next: Seasonal Weather Patterns</button>
+        </div>
+    </div>
+
+    <div class="section" id="section3" data-aos="fade-up">
+        <div class="question">
+            <i class="fas fa-sun icon"></i>
+            What seasonal weather patterns emerged?
+        </div>
+        <div class="narration">
+            Seattle showed consistent rainfall across all seasons, with no dry months. New York had distinct wet
+            (June-September) and dry (November-March) seasons. Snowfall was significant in New York during winter
+            months, with 33.5cm in January 2012, while Seattle saw minimal snow.
+        </div>
+        <div class="visualization" id="chart_3">
+            <div class="loader">Heatmap of monthly precipitation and temperature ranges</div>
+        </div>
+        <div class="cta">
+            <button onclick="window.location.href='#section4'">Next: Extreme Weather Events</button>
+        </div>
+    </div>
+
+    <div class="section" id="section4" data-aos="fade-up">
+        <div class="question">
+            <i class="fas fa-bolt icon"></i>
+            Were there notable extreme weather events?
+        </div>
+        <div class="narration">
+            New York experienced a major snowstorm in January 2012 (33.5cm snowfall) and severe rain in May 2012 (54.4mm
+            in one day). Seattle's most extreme event was a 53.6mm rainday in December 2012.
+        </div>
+        <div class="visualization" id="chart_4">
+            <div class="loader">Timeline of extreme weather events with annotations</div>
+        </div>
+        <div class="cta">
+            <button onclick="window.location.href='#section5'">Next: Wind Patterns</button>
+        </div>
+    </div>
+
+    <div class="section" id="section5" data-aos="fade-up">
+        <div class="question">
+            <i class="fas fa-wind icon"></i>
+            How did wind patterns differ?
+        </div>
+        <div class="narration">
+            New York had stronger average wind speeds (4.3 m/s) compared to Seattle (3.1 m/s). However, Seattle
+            experienced more consistent wind patterns year-round, while New York's winds peaked during winter storms.
+        </div>
+        <div class="visualization" id="chart_5">
+            <div class="loader">Box plot comparing wind speed distributions for both cities</div>
+        </div>
+        <div class="cta">
+            <button onclick="window.location.href='#sources'">Sources & Conclusion</button>
+        </div>
+    </div>
+
+    <div class="footer" id="sources">
+        <p>Sources:
+            <a href="https://noaa.gov/">NOAA</a> |
+            <a href="https://climate.gov/">Climate.gov</a>
+        </p>
+        <p>Icons by <a href="https://icons8.com/">Icons8</a> | Animated with <a
+                href="https://michalsnik.github.io/aos/">AOS</a></p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
