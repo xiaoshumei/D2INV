@@ -52,7 +52,7 @@ class Evaluate:
         return postprocess_response(content)
 
     def evaluation_visualize(self, evaluate_result):
-        system_prompt = """Generate an HTML visualization using ECharts that displays the given JSON data in a radar chart. I also want interactive elements on the right side, with each dimension showing a star rating and progress bar in one row. The height of radar chart and  interactive elements should be equal. Additionally, when a dimension is selected, its details should appear while others disappear. """
+        system_prompt = """Generate an HTML visualization using ECharts that displays the given JSON data in a radar chart. I also want interactive elements on the right side, with each dimension showing a star rating and progress bar in one row. The height of radar chart and  interactive elements should be equal. Additionally, when a dimension is selected, its details should appear while others disappear. Only return the HTML content and don't explain anything"""
         messages = [
             {"role": "system", "content": system_prompt},
             {

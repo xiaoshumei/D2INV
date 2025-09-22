@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   New York's Climate Chronicles: 2012-2015 Weather Insights
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .infographic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .explainer {
+            padding: 30px;
+            text-align: center;
+            background: var(--light);
+            font-size: 1.1em;
+            border-bottom: 3px dashed var(--secondary);
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+        
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .section-content {
+            width: 45%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .section:nth-child(even) .section-content {
+            margin-left: auto;
+        }
+        
+        .section-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px var(--secondary), 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .section:nth-child(odd) .section-icon {
+            right: -30px;
+        }
+        
+        .section:nth-child(even) .section-icon {
+            left: -30px;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .section-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .chart-container {
+            margin: 20px 0;
+        }
+        
+        #chart_1, #chart_2, #chart_3, #chart_4, #chart_5, #chart_6 {
+            /* No height set - will be determined by children */
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 20px;
+            margin: 30px 0;
+            background: var(--light);
+            border-radius: 10px;
+            font-style: italic;
+            color: var(--dark);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .sources {
+            padding: 30px;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .section-content {
+                width: 85%;
+                margin-left: 70px !important;
+            }
+            
+            .section-icon {
+                left: 0 !important;
+                right: auto;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="infographic-container">
+   <header class="header" data-aos="fade-down">
+    <h1 class="title">
+     New York's Climate Chronicles: 2012-2015 Weather Insights
+    </h1>
+    <p class="subtitle">
+     Exploring Precipitation Peaks, Temperature Trends, and Windy Days in New York from 2012 to 2015
+    </p>
+   </header>
+   <div class="explainer" data-aos="fade-up">
+    Discover how New York's weather patterns unfolded from 2012 to 2015 through key climate metrics and extreme weather events
+   </div>
+   <div class="timeline">
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Rain icon" height="30" src="https://img.icons8.com/ios-filled/50/3498db/heavy-rain.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Extreme Precipitation Event
+      </h3>
+      <p class="section-description">
+       New York experienced its highest daily precipitation of 118.9 mm on April 30, 2014, highlighting the city's capacity for intense rainfall.
+      </p>
+      <div class="chart-container" id="chart_1">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     Continue reading to discover more extreme weather patterns in New York
+    </div>
+    <div class="section" data-aos="fade-left">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Hot temperature icon" height="30" src="https://img.icons8.com/ios-filled/50/e74c3c/hot.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Record High Temperature
+      </h3>
+      <p class="section-description">
+       The warmest day recorded was July 18, 2013, with a maximum temperature of 37.8°C, showcasing a notable peak in summer heat.
+      </p>
+      <div class="chart-container" id="chart_2">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     The temperature extremes tell an interesting story about New York's climate
+    </div>
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Snow icon" height="30" src="https://img.icons8.com/ios-filled/50/2c3e50/snow.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Record Low Temperature
+      </h3>
+      <p class="section-description">
+       The coldest day occurred on January 4, 2014, with a minimum temperature of -16.0°C, reflecting a rare dip into freezing conditions.
+      </p>
+      <div class="chart-container" id="chart_3">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     Winter weather patterns varied significantly across these years
+    </div>
+    <div class="section" data-aos="fade-left">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Snowstorm icon" height="30" src="https://img.icons8.com/ios-filled/50/3498db/snow-storm.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Annual Snow Day Variations
+      </h3>
+      <p class="section-description">
+       Snow days varied across the years: 25 in 2012, 5 in 2013, 19 in 2014, and 20 in 2015, illustrating year-to-year variability in winter weather.
+      </p>
+      <div class="chart-container" id="chart_4">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     Wind patterns also played a significant role in New York's weather
+    </div>
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Wind icon" height="30" src="https://img.icons8.com/ios-filled/50/2c3e50/wind.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Wind Speed Analysis
+      </h3>
+      <p class="section-description">
+       The average wind speed across the period was 4.91 km/h, with the windiest day reaching 12.6 km/h on March 13, 2014.
+      </p>
+      <div class="chart-container" id="chart_5">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     Finally, let's examine annual precipitation trends
+    </div>
+    <div class="section" data-aos="fade-left">
+     <div class="section-content">
+      <div class="section-icon">
+       <img alt="Rain catchment icon" height="30" src="https://img.icons8.com/ios-filled/50/e74c3c/rainwater-catchment.png" width="30"/>
+      </div>
+      <h3 class="section-title">
+       Annual Precipitation Comparison
+      </h3>
+      <p class="section-description">
+       2012 remained the rainiest year with 1146.4 mm of total precipitation, emphasizing its exceptionally wet conditions compared to subsequent years.
+      </p>
+      <div class="chart-container" id="chart_6">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sources" data-aos="fade-up">
+    <p>
+     Data Source: New York Weather Station Records 2012-2015
+    </p>
+    <p>
+     Icons by Icons8 | Design: Climate Insights Infographic
+    </p>
+   </div>
+  </div>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out'
+            });
+        });
+  </script>
+ </body>
+</html>
