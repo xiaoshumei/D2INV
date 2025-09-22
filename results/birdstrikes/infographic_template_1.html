@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Strikes on Aircraft Infographic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #ff9a3c;
+            --accent-light: #ffc93c;
+            --light: #f5f0e1;
+            --dark: #132a13;
+            --highlight: #e63946;
+            --wildlife: #8cb369;
+            --damage: #bc4b51;
+            --sky: #8ecae6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .infographic-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Wildlife pattern background */
+        .wildlife-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q40,5 60,20 T100,20" fill="none" stroke="%238cb369" stroke-width="0.3" opacity="0.08"/><circle cx="30" cy="70" r="5" fill="%23ff9a3c" opacity="0.05"/><path d="M10,50 Q25,65 40,50 T70,50" fill="none" stroke="%234f772d" stroke-width="0.3" opacity="0.08"/></svg>');
+            background-size: 200px;
+            z-index: 0;
+        }
+        
+        /* Backbone styling */
+        .backbone {
+            position: absolute;
+            left: 60px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            z-index: 1;
+            border-radius: 3px;
+        }
+        
+        .backbone-point {
+            position: absolute;
+            left: 52px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            border: 4px solid white;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .backbone-point:hover {
+            transform: scale(1.2);
+            background: var(--accent);
+        }
+        
+        /* Header styles */
+        .header {
+            text-align: center;
+            padding: 60px 30px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            z-index: 5;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>');
+            opacity: 0.15;
+            background-size: contain;
+        }
+        
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+        }
+        
+        .header h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .explainer {
+            max-width: 800px;
+            margin: 20px auto 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent);
+        }
+        
+        /* Section styles */
+        .section {
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: var(--wildlife);
+        }
+        
+        .section:nth-child(odd) {
+            background: linear-gradient(to right, rgba(245, 240, 225, 0.3), white);
+        }
+        
+        .section:nth-child(even) {
+            background: linear-gradient(to right, rgba(143, 202, 230, 0.1), white);
+        }
+        
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .section-title i {
+            font-size: 2.2rem;
+            margin-right: 20px;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-light);
+            border-radius: 50%;
+            color: var(--primary);
+            padding: 12px;
+            box-shadow: 0 5px 15px rgba(255, 154, 60, 0.3);
+        }
+        
+        .section-title h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.4;
+        }
+        
+        .section-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        
+        .description {
+            flex: 1;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            border-left: 4px solid var(--wildlife);
+        }
+        
+        .description p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+
+        .chart-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .chart-placeholder i {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .chart-placeholder p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* CTA styles */
+        .cta {
+            text-align: center;
+            padding: 30px;
+            margin: 30px 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--dark);
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 25px rgba(255, 154, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            z-index: 5;
+        }
+        
+        .cta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 154, 60, 0.5);
+        }
+        
+        .cta i {
+            margin-left: 15px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-12px);}
+            60% {transform: translateY(-6px);}
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.1) 0%, 
+                rgba(255,255,255,0.3) 50%, 
+                rgba(255,255,255,0.1) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        
+        .cta:hover::before {
+            transform: translateX(100%);
+        }
+        
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            border-radius: 15px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer p:first-child {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .sources {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="3" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="3" fill="white" opacity="0.1"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        /* Progress indicator */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .section-content {
+                flex-direction: column;
+            }
+            
+            .backbone {
+                left: 30px;
+            }
+            
+            .backbone-point {
+                left: 22px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="infographic-container">
+    <div class="wildlife-pattern"></div>
+    <div class="backbone"></div>
+
+    <header class="header" data-aos="fade-down" data-aos-duration="1000">
+        <h1>Wildlife Strikes on Aircraft</h1>
+        <h2>Analyzing Wildlife Strikes Across Airports, Aircraft, and Flight Phases</h2>
+    </header>
+
+    <div class="explainer" data-aos="fade-up" data-aos-delay="300">
+        Understanding patterns in wildlife-aircraft collisions to improve aviation safety and wildlife management
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">1</div>
+        <div class="section-title">
+            <i class="fas fa-crash"></i>
+            <h3>What is the distribution of damage levels caused by wildlife strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>The vast majority of wildlife strikes (85.7%) result in no damage to the aircraft, while a small
+                    fraction (10.7%) cause minor damage, and (3.6%) cause medium damage.</p>
+            </div>
+        </div>
+        <div id="chart_1"></div>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">2</div>
+        <div class="section-title">
+            <i class="fas fa-plane-alt"></i>
+            <h3>During which phases of flight do wildlife strikes most commonly occur?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>Most wildlife strikes occur during approach (53.6%) and climb (21.4%) phases of flight, with fewer
+                    incidents during take-off run (14.3%) and descent (7.1%).</p>
+            </div>
+        </div>
+        <div id="chart_2"></div>
+    </div>
+
+    <div class="cta" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-binoculars"></i> Explore Wildlife Characteristics <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">3</div>
+        <div class="section-title">
+            <i class="fas fa-kiwi-bird"></i>
+            <h3>What sizes and species of wildlife are most frequently involved in strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>Small wildlife (41.1%) and medium-sized wildlife (51.8%) are the most common sizes involved in
+                    strikes, with large wildlife accounting for 7.1%. Unknown medium birds account for 39.3% of all
+                    strikes.</p>
+            </div>
+        </div>
+        <div id="chart_3"></div>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">4</div>
+        <div class="section-title">
+            <i class="fas fa-map-location-dot"></i>
+            <h3>Which airports experience the highest frequency of wildlife strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>George Bush Intercontinental Airport (5 strikes), Memphis International Airport (5 strikes), and
+                    Washington Dulles International Airport (4 strikes) report the highest number of wildlife strikes
+                    among the dataset.</p>
+            </div>
+        </div>
+        <div id="chart_4"></div>
+    </div>
+
+    <div class="cta" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-plane-engines"></i> Discover Vulnerable Aircraft <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">5</div>
+        <div class="section-title">
+            <i class="fas fa-plane"></i>
+            <h3>Which airlines and aircraft models are most frequently involved in wildlife strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>Delta Air Lines (10 strikes), Southwest Airlines (7 strikes), and American Airlines (6 strikes)
+                    aircraft are most commonly involved in wildlife strikes, with B-757-200 (6 strikes) and B-737-300 (5
+                    strikes) being the most frequent models.</p>
+            </div>
+        </div>
+        <div id="chart_5"></div>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">6</div>
+        <div class="section-title">
+            <i class="fas fa-sun"></i>
+            <h3>How does the time of day affect the frequency of wildlife strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>Wildlife strikes predominantly occur during daylight (53.6%), with fewer incidents at night (35.7%)
+                    and minimal occurrences at dawn/dusk (10.7%).</p>
+            </div>
+        </div>
+        <div id="chart_6"></div>
+    </div>
+
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
+        <div class="backbone-point" style="top: 80px;" data-aos="zoom-in">7</div>
+        <div class="section-title">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Which states have the highest frequency of wildlife strikes?</h3>
+        </div>
+        <div class="section-content">
+            <div class="description">
+                <p>Texas (10 strikes), DC (5 strikes), and Tennessee (5 strikes) have the highest incidence of wildlife
+                    strikes among US states, accounting for 35.7% of all incidents.</p>
+            </div>
+        </div>
+        <div id="chart_7"></div>
+    </div>
+
+    <div class="cta" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-shield-alt"></i> Enhance Your Airport's Wildlife Management Today
+    </div>
+
+    <footer class="footer" data-aos="fade-up" data-aos-delay="200">
+        <p>Wildlife strikes pose significant safety and economic risks to aviation</p>
+        <p class="sources">Data Source: FAA Wildlife Strike Database | Icons by Font Awesome | Visualization by Aviation
+            Safety Institute</p>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-back'
+        });
+
+        // Set up progress bar
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+
+        // Add hover effect to sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.zIndex = 15;
+            });
+            section.addEventListener('mouseleave', function() {
+                this.style.zIndex = 10;
+            });
+        });
+    });
+</script>
+</body>
+</html>

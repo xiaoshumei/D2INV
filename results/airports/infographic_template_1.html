@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+        Mapping the United States' Hidden Airports
+    </title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+             :root {
+                 --primary: #0B3D91; /* Deep aviation blue */
+                 --secondary: #88CCF1; /* Sky blue */
+                 --accent: #FF6B6B; /* Warm accent for contrast */
+                 --light: #F7FBFF; /* Very light blue background */
+                 --dark: #2D3748; /* Dark gray for text */
+                 --transition: all 0.3s ease;
+             }
+
+             * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+             }
+
+             body {
+                 font-family: 'Open Sans', sans-serif;
+                 background-color: var(--light);
+                 color: var(--dark);
+                 line-height: 1.6;
+             }
+
+             .infographic-container {
+                 max-width: 1200px;
+                 margin: 0 auto;
+                 padding: 2rem;
+                 position: relative;
+             }
+
+             .backbone {
+                 position: absolute;
+                 left: 50px;
+                 top: 0;
+                 bottom: 0;
+                 width: 4px;
+                 background: repeating-linear-gradient(
+                     to bottom,
+                     transparent,
+                     transparent 10px,
+                     var(--primary) 10px,
+                     var(--primary) 20px
+                 );
+                 z-index: 1;
+             }
+
+             .header {
+                 text-align: center;
+                 margin-bottom: 3rem;
+                 padding: 2.5rem;
+                 background: linear-gradient(135deg, var(--primary) 0%, #1a73e8 100%);
+                 color: white;
+                 border-radius: 12px;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                 position: relative;
+                 overflow: hidden;
+             }
+
+             .header::before {
+                 content: "";
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 right: 0;
+                 bottom: 0;
+                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,165.3C960,149,1056,171,1152,186.7C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+                 background-size: cover;
+                 background-position: bottom;
+             }
+
+             h1 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-size: 2.8rem;
+                 margin-bottom: 1rem;
+                 position: relative;
+                 text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+             }
+
+             h2 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-size: 1.5rem;
+                 font-weight: 400;
+                 opacity: 0.9;
+                 position: relative;
+             }
+
+             .explainer {
+                 background: white;
+                 padding: 1.8rem;
+                 border-radius: 8px;
+                 margin: 2rem 0;
+                 text-align: center;
+                 font-style: italic;
+                 border-left: 4px solid var(--accent);
+                 box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+                 position: relative;
+             }
+
+             .section {
+                 background: white;
+                 margin: 3rem 0;
+                 padding: 2.2rem;
+                 border-radius: 12px;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                 position: relative;
+                 z-index: 2;
+                 display: flex;
+                 align-items: flex-start;
+                 transition: var(--transition);
+                 border: 1px solid rgba(0,0,0,0.05);
+             }
+
+             .section:hover {
+                 transform: translateY(-5px);
+                 box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+             }
+
+             .icon-container {
+                 background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                 color: white;
+                 width: 70px;
+                 height: 70px;
+                 border-radius: 50%;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 margin-right: 1.8rem;
+                 flex-shrink: 0;
+                 font-size: 1.6rem;
+                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+             }
+
+             .content {
+                 flex: 1;
+             }
+
+             h3 {
+                 font-family: 'Montserrat', sans-serif;
+                 color: var(--primary);
+                 margin-bottom: 1.2rem;
+                 font-size: 1.4rem;
+                 line-height: 1.4;
+             }
+
+             .description {
+                 margin-bottom: 1.8rem;
+                 color: #4A5568;
+                 line-height: 1.7;
+             }
+
+             .chart-container {
+                 margin: 1.8rem 0;
+                 width: 100%;
+                 /* No height property set - will be determined by children */
+                 border-radius: 8px;
+                 background-color: #F8FAFC;
+                 padding: 1rem;
+                 border: 1px dashed #E2E8F0;
+             }
+
+             .cta {
+                 background: linear-gradient(135deg, var(--accent) 0%, #FF8E8E 100%);
+                 color: white;
+                 padding: 1.2rem 2.5rem;
+                 border-radius: 30px;
+                 text-align: center;
+                 margin: 2.5rem 0;
+                 font-weight: 600;
+                 cursor: pointer;
+                 transition: var(--transition);
+                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                 display: inline-block;
+                 position: relative;
+                 left: 50%;
+                 transform: translateX(-50%);
+             }
+
+             .cta:hover {
+                 transform: translateX(-50%) translateY(-3px);
+                 box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+             }
+
+             .sources {
+                 margin-top: 4rem;
+                 padding: 1.8rem;
+                 background: #F1F5F9;
+                 border-radius: 8px;
+                 font-size: 0.9rem;
+                 color: #64748B;
+                 border-left: 4px solid var(--primary);
+             }
+
+             @media (max-width: 768px) {
+                 .section {
+                     flex-direction: column;
+                     padding: 1.5rem;
+                 }
+
+                 .icon-container {
+                     margin-bottom: 1.5rem;
+                     margin-right: 0;
+                     width: 60px;
+                     height: 60px;
+                     font-size: 1.4rem;
+                 }
+
+                 .backbone {
+                     left: 20px;
+                 }
+
+                 h1 {
+                     font-size: 2.2rem;
+                 }
+
+                 h2 {
+                     font-size: 1.2rem;
+                 }
+
+                 .header {
+                     padding: 1.8rem;
+                 }
+             }
+    </style>
+</head>
+<body>
+<div class="infographic-container">
+    <div class="backbone" data-aos="fade-in" data-aos-duration="1500">
+    </div>
+    <div class="header" data-aos="fade-up">
+        <h1>
+            Mapping the United States' Hidden Airports
+        </h1>
+        <h2>
+            Uncovering the geographic diversity and regional distribution of lesser-known U.S. airports across 55 states
+            and territories
+        </h2>
+    </div>
+    <div class="explainer" data-aos="fade-up">
+        <i class="fas fa-info-circle" style="color: var(--accent); margin-right: 8px;">
+        </i>
+        Explore America's vast network of regional and remote airports that connect communities across diverse
+        landscapes.
+    </div>
+    <div class="section" data-aos="fade-right">
+        <div class="icon-container">
+            <i class="fas fa-map-marked-alt">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                Which U.S. states have the highest number of airports in the dataset, and what might explain this
+                regional distribution?
+            </h3>
+            <p class="description">
+                The dataset contains 3,376 airport records, with the highest number in Alaska (263), Texas (209), and
+                California (141), reflecting geographic size, regional connectivity, and remote access needs.
+            </p>
+            <div class="chart-container" id="chart_1">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        Discover More Geographic Extremes
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-left">
+        <div class="icon-container">
+            <i class="fas fa-globe-americas">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                What are the northernmost and southernmost airports in the dataset, and how do they reflect the
+                geographic extent of the U.S.?
+            </h3>
+            <p class="description">
+                The northernmost airport is in Barrow, AK (latitude 71.285°N), while the southernmost is in Ofu Village,
+                AS (latitude 14.184°N), illustrating the vast geographic span of the U.S. airport network across extreme
+                latitudinal ranges.
+            </p>
+            <div class="chart-container" id="chart_2">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        Explore Regional Connectivity Patterns
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-right">
+        <div class="icon-container">
+            <i class="fas fa-users">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                Which state has the highest airport density relative to population, and how does this support
+                connectivity in remote areas?
+            </h3>
+            <p class="description">
+                Alaska leads in airports per capita with an increased density due to 190 additional airports,
+                emphasizing the critical role of air transport in its isolated communities.
+            </p>
+            <div class="chart-container" id="chart_3">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        Learn About Airport Infrastructure Types
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-left">
+        <div class="icon-container">
+            <i class="fas fa-building">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                What are the most common types of airports in the dataset, and what does this suggest about the
+                structure of U.S. aviation infrastructure?
+            </h3>
+            <p class="description">
+                The most common airport type is 'Municipal' (52%), followed by 'Regional' (22%) and 'Private' (18%),
+                indicating a strong reliance on local government infrastructure for regional air access.
+            </p>
+            <div class="chart-container" id="chart_4">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        See How Terrain Influences Airport Placement
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-right">
+        <div class="icon-container">
+            <i class="fas fa-mountain">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                What are the highest and lowest elevation airports in the dataset, and how does terrain influence
+                airport placement?
+            </h3>
+            <p class="description">
+                The highest elevation airport is in Steamboat Springs, Colorado (altitude 6,680 ft), while the lowest is
+                in New Orleans, Louisiana (elevation -8 ft), showcasing the extreme topographic range across the
+                network.
+            </p>
+            <div class="chart-container" id="chart_5">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        Discover Specialized Aviation Facilities
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-left">
+        <div class="icon-container">
+            <i class="fas fa-water">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                How many seaplane bases are included in the dataset, and where are they primarily located?
+            </h3>
+            <p class="description">
+                The dataset includes 3 additional seaplane bases in Alaska, reinforcing the importance of water-based
+                aviation in coastal and island communities.
+            </p>
+            <div class="chart-container" id="chart_6">
+            </div>
+        </div>
+    </div>
+    <div class="cta" data-aos="fade-up">
+        Examine Airport Coding Systems
+        <i class="fas fa-arrow-down" style="margin-left: 8px;">
+        </i>
+    </div>
+    <div class="section" data-aos="fade-right">
+        <div class="icon-container">
+            <i class="fas fa-barcode">
+            </i>
+        </div>
+        <div class="content">
+            <h3>
+                What variations exist in IATA code formats within the dataset, and what might this indicate about
+                airport size or function?
+            </h3>
+            <p class="description">
+                The IATA code format includes both three-letter and alphanumeric codes (e.g., T69, T71, C00, D04),
+                reflecting diverse coding practices across smaller and specialized airports.
+            </p>
+            <div class="chart-container" id="chart_7">
+            </div>
+        </div>
+    </div>
+    <div class="sources" data-aos="fade-up">
+        <p>
+            <strong>
+                Sources:
+            </strong>
+            U.S. Department of Transportation, Federal Aviation Administration, National Transportation Atlas Database
+        </p>
+        <p>
+            <strong>
+                Icons by:
+            </strong>
+            Font Awesome
+        </p>
+        <p>
+            <strong>
+                Design:
+            </strong>
+            Aviation Infographic Template
+        </p>
+    </div>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+<script>
+    AOS.init({
+             duration: 800,
+             once: true,
+             offset: 100
+         });
+</script>
+</body>
+</html>

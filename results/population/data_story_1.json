@@ -1,0 +1,31 @@
+{
+  "story_title": "Demographic Evolution: 1850-2000 Population Insights",
+  "story_subtitle": "Analyzing Age, Sex, and Temporal Trends Over 150 Years",
+  "story_pieces": [
+    {
+      "narration": "The total population increased from approximately 20 million in 1850 to over 281 million in 2000, with the most rapid growth occurring in the 20th century, particularly post-1950.",
+      "question": "How has the overall population size changed over the decades?",
+      "visualization": "bar chart race (total population by year)"
+    },
+    {
+      "narration": "The age distribution shifted from a pyramid shape in 1850 to a more rectangular form by 2000, indicating an aging population with a decreasing proportion of youth and increasing elderly.",
+      "question": "How has the age structure of the population evolved over time?",
+      "visualization": "animated population pyramid (age groups over years)"
+    },
+    {
+      "narration": "Males outnumbered females at younger ages (e.g., age 0 in 1850: 1.48M males vs. 1.45M females), but females had higher survival rates, leading to a female majority in older age groups by 2000 (e.g., age 90: 336K males vs. 1.06M females).",
+      "question": "What are the sex disparities across different age groups and how have they changed?",
+      "visualization": "line chart (sex ratio by age and year)"
+    },
+    {
+      "narration": "A significant baby boom occurred around 1950, with over 16 million infants (age 0) recorded, compared to lower numbers in earlier decades like 1850 with about 2.9 million.",
+      "question": "When did the baby boom occur and how did it impact population dynamics?",
+      "visualization": "line chart (number of births over years)"
+    },
+    {
+      "narration": "The elderly population (age 65 and above) grew substantially, from around 516,000 in 1850 to over 35 million in 2000, reflecting improvements in healthcare and life expectancy.",
+      "question": "How has the elderly population grown over time?",
+      "visualization": "bar chart race (population aged 65+ by year)"
+    }
+  ]
+}

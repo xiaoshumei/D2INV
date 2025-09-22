@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+        Barley Yield Dynamics: Varietal Performance Across Sites and Years
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap"
+          rel="stylesheet"/>
+    <style>
+        * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+             }
+
+             body {
+                 font-family: 'Open Sans', sans-serif;
+                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                 color: #2d3a3a;
+                 line-height: 1.6;
+             }
+
+             .infographic-container {
+                 max-width: 1200px;
+                 margin: 0 auto;
+                 padding: 30px 20px;
+                 background: white;
+                 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                 position: relative;
+             }
+
+             .header {
+                 text-align: center;
+                 margin-bottom: 40px;
+                 padding-bottom: 30px;
+                 border-bottom: 3px solid #8a9a5b;
+                 background: linear-gradient(135deg, #4a7c59 0%, #8a9a5b 100%);
+                 padding: 40px 20px;
+                 border-radius: 10px;
+                 color: white;
+             }
+
+             h1 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 800;
+                 font-size: 2.8rem;
+                 margin-bottom: 15px;
+                 text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+             }
+
+             h2 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 600;
+                 font-size: 1.4rem;
+                 opacity: 0.9;
+             }
+
+             .explainer {
+                 background: #f8f9fa;
+                 padding: 25px;
+                 border-radius: 8px;
+                 margin: 30px 0;
+                 border-left: 5px solid #8a9a5b;
+                 font-size: 1.1rem;
+             }
+
+             .story-section {
+                 margin: 50px 0;
+                 padding: 30px;
+                 border-radius: 10px;
+                 background: white;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                 position: relative;
+                 overflow: hidden;
+             }
+
+             .story-section:nth-child(even) {
+                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+             }
+
+             .section-header {
+                 display: flex;
+                 align-items: center;
+                 margin-bottom: 20px;
+             }
+
+             .section-icon {
+                 background: #8a9a5b;
+                 width: 60px;
+                 height: 60px;
+                 border-radius: 50%;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 margin-right: 20px;
+                 color: white;
+                 font-size: 1.5rem;
+             }
+
+             .section-title {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 700;
+                 font-size: 1.5rem;
+                 color: #4a7c59;
+             }
+
+             .section-description {
+                 margin-bottom: 25px;
+                 font-size: 1.1rem;
+                 padding: 0 10px;
+                 background: rgba(138, 154, 91, 0.1);
+                 padding: 15px;
+                 border-radius: 8px;
+             }
+
+             .chart-container {
+                 margin: 20px 0;
+                 border: 1px solid #e9ecef;
+                 border-radius: 8px;
+                 padding: 15px;
+                 background: white;
+             }
+
+             .backbone {
+                 position: absolute;
+                 left: 30px;
+                 top: 0;
+                 bottom: 0;
+                 width: 4px;
+                 background: linear-gradient(to bottom, #4a7c59, #8a9a5b);
+                 z-index: 0;
+             }
+
+             .cta {
+                 text-align: center;
+                 padding: 40px;
+                 margin: 40px 0;
+                 background: linear-gradient(135deg, #4a7c59 0%, #8a9a5b 100%);
+                 border-radius: 10px;
+                 color: white;
+             }
+
+             .cta-button {
+                 display: inline-block;
+                 padding: 15px 35px;
+                 background: white;
+                 color: #4a7c59;
+                 border-radius: 50px;
+                 font-weight: 700;
+                 text-decoration: none;
+                 margin-top: 20px;
+                 transition: all 0.3s ease;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+             }
+
+             .cta-button:hover {
+                 transform: translateY(-3px);
+                 box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+             }
+
+             .sources {
+                 font-size: 0.9rem;
+                 text-align: center;
+                 margin-top: 50px;
+                 padding-top: 20px;
+                 border-top: 1px solid #e9ecef;
+                 color: #6c757d;
+             }
+
+             @media (max-width: 768px) {
+                 .infographic-container {
+                     padding: 15px;
+                 }
+
+                 h1 {
+                     font-size: 2.2rem;
+                 }
+
+                 .story-section {
+                     padding: 20px;
+                 }
+
+                 .section-header {
+                     flex-direction: column;
+                     align-items: flex-start;
+                 }
+
+                 .section-icon {
+                     margin-bottom: 15px;
+                 }
+
+                 .backbone {
+                     display: none;
+                 }
+             }
+    </style>
+</head>
+<body>
+<div class="infographic-container">
+    <div class="backbone">
+    </div>
+    <header class="header" data-aos="fade-down">
+        <h1>
+            Barley Yield Dynamics: Varietal Performance Across Sites and Years
+        </h1>
+        <h2>
+            Analyzing Yield Variations, Site Suitability, and Annual Trends in 1930s Barley Cultivation
+        </h2>
+    </header>
+    <div class="explainer" data-aos="fade-up">
+        <i class="fas fa-seedling" style="color: #8a9a5b; font-size: 1.5rem; margin-right: 10px;">
+        </i>
+        Explore how different barley varieties performed across various locations and years during the 1930s, revealing
+        patterns in agricultural productivity and resilience.
+    </div>
+    <section class="story-section" data-aos="fade-right">
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fas fa-map-marked-alt">
+                </i>
+            </div>
+            <h3 class="section-title">
+                How do average yields vary by site, and which locations are most and least productive?
+            </h3>
+        </div>
+        <p class="section-description">
+            Waseca yields the highest average (49.0), while Grand Rapids has the lowest (25.2), indicating strong site
+            influence on productivity.
+        </p>
+        <div class="chart-container" id="chart_1"></div>
+    </section>
+    <section class="story-section" data-aos="fade-left">
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fas fa-chart-bar">
+                </i>
+            </div>
+            <h3 class="section-title">
+                Which barley varieties achieve the highest and lowest average yields across all sites and years?
+            </h3>
+        </div>
+        <p class="section-description">
+            Trebi (42.5) and No. 462 (42.3) show the highest average yields, while No. 475 (32.1) and Manchuria (32.7)
+            are the lowest performers.
+        </p>
+        <div class="chart-container" id="chart_2"></div>
+    </section>
+    <div class="cta" data-aos="zoom-in">
+        <h3>
+            Discover How Environmental Factors Impact Crop Yields
+        </h3>
+        <p>
+            Continue reading to understand annual variations and extreme yield conditions
+        </p>
+        <a class="cta-button" href="#">
+            Explore More Data
+        </a>
+    </div>
+    <section class="story-section" data-aos="fade-right">
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fas fa-calendar-alt">
+                </i>
+            </div>
+            <h3 class="section-title">
+                How did yields change between 1931 and 1932, and was the decline consistent across all varieties?
+            </h3>
+        </div>
+        <p class="section-description">
+            Yields dropped significantly in 1932, with average falling from 38.5 to 31.4, an 18.4% decrease, affecting
+            all varieties and sites.
+        </p>
+        <div class="chart-container" id="chart_3"></div>
+    </section>
+    <section class="story-section" data-aos="fade-left">
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fas fa-exclamation-triangle">
+                </i>
+            </div>
+            <h3 class="section-title">
+                What are the extreme yield values, and under which variety-site-year conditions did they occur?
+            </h3>
+        </div>
+        <p class="section-description">
+            No. 462 at Waseca in 1931 achieved the highest single yield (65.8), while No. 475 at Grand Rapids in 1932
+            had the lowest (15.2).
+        </p>
+        <div class="chart-container" id="chart_4"></div>
+    </section>
+    <section class="story-section" data-aos="fade-right">
+        <div class="section-header">
+            <div class="section-icon">
+                <i class="fas fa-shield-alt">
+                </i>
+            </div>
+            <h3 class="section-title">
+                Which varieties were most and least affected by the yield drop from 1931 to 1932?
+            </h3>
+        </div>
+        <p class="section-description">
+            Wisconsin No. 38 shows a yield decline of 12.7% year-over-year, while Glabron dropped 26.5%, indicating
+            varietal resilience differences.
+        </p>
+        <div class="chart-container" id="chart_5"></div>
+    </section>
+    <div class="cta" data-aos="zoom-in">
+        <h3>
+            Want to Learn More About Agricultural Resilience?
+        </h3>
+        <p>
+            Download our full research paper on historical crop performance patterns
+        </p>
+        <a class="cta-button" href="#">
+            Download Research
+        </a>
+    </div>
+    <div class="sources">
+        <p>
+            Sources: University of Minnesota Agricultural Experiment Station, 1930s Barley Yield Trials | Visualization:
+            Agricultural Data Insights Group
+        </p>
+    </div>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+             AOS.init({
+                 duration: 1000,
+                 once: true,
+                 offset: 100
+             });
+         });
+</script>
+</body>
+</html>

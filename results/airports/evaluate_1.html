@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Interactive Radar Chart - INV Evaluation</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f5f7fa;
+          color: #333;
+          padding: 20px;
+        }
+
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          height: 100vh;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .radar-chart {
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .controls {
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          padding: 20px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .dimension-item {
+          border-bottom: 1px solid #eee;
+          padding-bottom: 12px;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+
+        .dimension-item:hover {
+          background-color: #f0f5ff;
+        }
+
+        .dimension-item.active {
+          background-color: #e3f2fd;
+          border-left: 4px solid #2196f3;
+        }
+
+        .dimension-header {
+          font-weight: 600;
+          font-size: 1.1em;
+          margin-bottom: 6px;
+          color: #1a3d6f;
+        }
+
+        .stars {
+          display: flex;
+          color: #ffc107;
+          font-size: 1.1em;
+          margin-bottom: 6px;
+        }
+
+        .progress-container {
+          width: 100%;
+          height: 8px;
+          background-color: #e0e0e0;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+
+        .progress-bar {
+          height: 100%;
+          background-color: #2196f3;
+          width: 0%;
+          transition: width 0.5s ease;
+        }
+
+        .rationale {
+          margin-top: 10px;
+          font-size: 0.95em;
+          color: #555;
+          line-height: 1.5;
+          display: none;
+        }
+
+        .rationale.active {
+          display: block;
+        }
+
+        .legend {
+          font-size: 0.8em;
+          color: #888;
+          text-align: center;
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Radar Chart -->
+    <div class="radar-chart">
+        <div id="radar" style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <!-- Interactive Controls -->
+    <div class="controls">
+        <div id="dimension-list"></div>
+        <div class="legend">Click a dimension to view its rationale</div>
+    </div>
+</div>
+
+<script>
+    // Your JSON data
+    const data = [
+      {
+        dimension: "engagement",
+        score: 9,
+        rationale: "The interactive narrative visualization (INV) excels in engagement through thoughtful use of interactive features. Each section includes a CTA (Call to Action) button with a downward arrow icon that triggers a smooth scroll to the next section, creating a natural narrative flow. The AOS (Animate On Scroll) library is effectively used to animate elements as the user scrolls, enhancing immersion. Interactive charts powered by ECharts provide dynamic visualizations with tooltips, hover effects, and zoom capabilities (e.g., the map of U.S. airports and scatter plots). The use of color coding, emphasis on extreme values (e.g., red dots for northernmost/southernmost airports), and animated transitions when data loads evoke curiosity and guide the user through the story. The narrative is structured as a sequence of discovery questions, each answered with a relevant interactive chart, encouraging users to explore deeper. The only minor limitation is the lack of direct user-driven filtering or drill-down functionality beyond scrolling, which would elevate engagement further."
+      },
+      {
+        dimension: "usefulness",
+        score: 10,
+        rationale: "The INV is exceptionally useful in communicating a clear and insightful data story. It effectively answers a series of well-structured, meaningful questions about U.S. airports—such as regional distribution, geographic extremes, population density, infrastructure types, terrain influence, specialized facilities, and coding patterns—each supported by accurate, relevant, and well-visualized data. The use of real data (from FAA and DOT sources) and transparent sourcing enhances credibility. The insights are not only informative but also reveal deeper patterns: e.g., Alaska’s dominance in airport density due to remoteness, or the prevalence of 'Municipal' airports indicating local government involvement. The visualizations are purpose-built to answer each question, avoiding unnecessary clutter. The narrative builds logically from broad to specific, making complex data accessible to non-expert audiences while still offering depth for informed users."
+      },
+      {
+        dimension: "legibility",
+        score: 9,
+        rationale: "Legibility is strong throughout the INV. Text is clear, with appropriate font sizes, high contrast between text and background, and consistent spacing. Headings use a clear hierarchy (H1, H2, H3) with distinct font weights and sizes. The use of italicized explanatory text in the 'explainer' section improves readability by framing the narrative. Chart labels, axis titles, and tooltips are well-formatted and easy to read. The color scheme ensures that text remains legible even on colored backgrounds (e.g., gradient headers). The only minor issue is that on very small screens, the x-axis labels in the bar chart (plot_3) may become slightly compressed due to the 45-degree rotation, but this is a minor trade-off for responsive design. Overall, the layout and typography are highly effective for both readability and comprehension."
+      },
+      {
+        dimension: "design",
+        score: 9,
+        rationale: "The design is logical, intuitive, and visually cohesive. The central 'backbone' line acts as a visual spine, guiding the user through the narrative in a clear top-to-bottom flow. Sections are consistently structured with icon containers, content, and interactive charts, creating a predictable and user-friendly experience. The use of whitespace is balanced—sufficient to avoid clutter but not excessive. Interactive elements (CTAs, hover effects, AOS animations) are well-integrated and enhance, rather than distract from, the narrative. The layout is responsive, adapting smoothly to mobile devices with repositioned elements and adjusted font sizes. The color palette is consistent and thematically appropriate (aviation blue and sky tones). The only small improvement could be adding subtle visual cues (e.g., small numbers or progress indicators) to show the user's position in the story, but this is not essential."
+      },
+      {
+        dimension: "aesthetics",
+        score: 9,
+        rationale: "The aesthetic quality is outstanding. The color scheme—deep aviation blue, sky blue, and warm accents—creates a professional, aviation-themed look that is both modern and inviting. The use of gradients, subtle SVG background patterns in the header, and carefully chosen icons (Font Awesome) enhances visual appeal. Animations via AOS are smooth and purposeful, adding a sense of motion without being distracting. The charts are visually rich and polished, with well-chosen color palettes and consistent styling. The icon containers with gradient backgrounds and shadow effects are stylish and contribute to the overall premium feel. The only reason the score isn't a 10 is that the animations, while effective, are not overly dynamic or playful—there’s no micro-interaction beyond hover and scroll. However, this restraint aligns well with the data-driven, serious tone of the content, making the design appropriate and elegant."
+      }
+    ];
+
+    // Initialize ECharts Radar Chart
+    const radarChart = echarts.init(document.getElementById('radar'));
+
+    const option = {
+      tooltip: {
+        trigger: 'item'
+      },
+      radar: {
+        indicator: data.map(d => ({ name: d.dimension, max: 10 })),
+        center: ['50%', '50%'],
+        radius: '80%',
+        splitArea: {
+          show: true,
+          areaStyle: { color: 'rgba(255,255,255,0.1)' }
+        },
+        splitLine: {
+          lineStyle: { color: 'rgba(0,0,0,0.1)' }
+        },
+        axisLine: {
+          lineStyle: { color: '#ccc' }
+        },
+        axisLabel: {
+          color: '#666'
+        }
+      },
+      series: [{
+        type: 'radar',
+        data: [{
+          value: data.map(d => d.score),
+          name: 'Score',
+          label: { show: true, formatter: '{c}' },
+          itemStyle: { color: '#2196f3' },
+          areaStyle: {
+            color: 'rgba(33, 150, 243, 0.2)',
+            opacity: 0.6
+          },
+          lineStyle: { color: '#2196f3' }
+        }],
+        emphasis: {
+          label: { show: true }
+        }
+      }]
+    };
+
+    radarChart.setOption(option);
+
+    // Render dimension list
+    const dimensionList = document.getElementById('dimension-list');
+
+    data.forEach((item, index) => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'dimension-item';
+      itemDiv.dataset.index = index;
+
+      const stars = '★'.repeat(Math.floor(item.score)) + '☆'.repeat(10 - Math.floor(item.score));
+
+      itemDiv.innerHTML = `
+        <div class="dimension-header">${item.dimension}</div>
+        <div class="stars">${stars}</div>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: ${item.score * 10}%"></div>
+        </div>
+        <div class="rationale">${item.rationale}</div>
+      `;
+
+      dimensionList.appendChild(itemDiv);
+
+      // Add click event
+      itemDiv.addEventListener('click', function () {
+        // Remove active class from all items
+        document.querySelectorAll('.dimension-item').forEach(el => el.classList.remove('active'));
+        // Add active to clicked
+        this.classList.add('active');
+
+        // Hide all rationales
+        document.querySelectorAll('.rationale').forEach(el => el.classList.remove('active'));
+        // Show selected rationale
+        this.querySelector('.rationale').classList.add('active');
+      });
+    });
+
+    // Default: show first item
+    document.querySelector('.dimension-item').click();
+
+    // Make height responsive
+    window.addEventListener('resize', () => {
+      radarChart.resize();
+    });
+</script>
+
+</body>
+</html>
+
+---
+
+### 📌 How to Use:
+1. Copy the entire code above.
+2. Paste it into a file named `inv-evaluation.html`.
+3. Open it in any modern browser (Chrome, Firefox, etc.).
+4. Click on any dimension to see its rationale — others disappear.
+5. Radar chart updates automatically based on scores.
+
+---
+
+### 🎯 Notes:
+- Uses **CDN-hosted ECharts** (no local install needed).
+- Fully responsive and mobile-friendly.
+- Clean, professional UI with subtle animations.
+- You can easily extend this with export, printing, or dark mode later.
+
+Let me know if you want a **dark mode version**, **export to image**, or **animated transitions**! ✨

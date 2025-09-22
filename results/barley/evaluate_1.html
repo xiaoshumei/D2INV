@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimension Analysis Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .dashboard-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .chart-container {
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #eaeaea;
+            min-height: 500px;
+        }
+        
+        #radar-chart {
+            width: 100%;
+            height: 460px;
+        }
+        
+        .details-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dimension-list {
+            flex: 1;
+        }
+        
+        .dimension-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #eaeaea;
+        }
+        
+        .dimension-item:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .dimension-item.active {
+            background-color: #e8f4fd;
+            border-color: #2196f3;
+        }
+        
+        .dimension-name {
+            font-weight: 600;
+            width: 120px;
+            color: #444;
+            text-transform: capitalize;
+        }
+        
+        .stars {
+            display: flex;
+            margin: 0 15px;
+        }
+        
+        .star {
+            color: #ddd;
+            font-size: 18px;
+            margin-right: 2px;
+        }
+        
+        .star.filled {
+            color: #ffc107;
+        }
+        
+        .progress-container {
+            flex: 1;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .rationale-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            min-height: 200px;
+            display: none;
+        }
+        
+        .rationale-container.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .rationale-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2196f3;
+            text-transform: capitalize;
+        }
+        
+        .rationale-text {
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 900px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+            
+            .chart-container {
+                border-right: none;
+                border-bottom: 1px solid #eaeaea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dashboard-title">Dimension Analysis Dashboard</h1>
+    
+    <div class="dashboard-container">
+        <div class="chart-container">
+            <div id="radar-chart"></div>
+        </div>
+        
+        <div class="details-container">
+            <div class="dimension-list" id="dimension-list">
+                <!-- Dimension items will be generated here -->
+            </div>
+            
+            <div class="rationale-container" id="rationale-container">
+                <div class="rationale-title" id="rationale-title"></div>
+                <div class="rationale-text" id="rationale-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data from the user
+        const data = [
+            { "dimension": "engagement", "score": 3, "rationale": "The visualization uses basic hover tooltips in charts but lacks advanced interactive features like click interactions, filtering, or drilling down, which limits user engagement. Scroll animations (AOS) add minor engagement but do not evoke strong emotions or allow deeper exploration. Interactive elements are minimal and do not fully align with a dynamic narrative flow." },
+            { "dimension": "usefulness", "score": 9, "rationale": "Effectively communicates the intended message about barley yield variations with clear insights, such as identifying high and low performers. Presented in an easy-to-understand manner for non-experts, with reliable data sources cited. Provides meaningful educational value on agricultural productivity trends." },
+            { "dimension": "legibility", "score": 9, "rationale": "Text is easy to read with appropriate font sizes, high contrast, and good spacing. Charts are clear and interpretable, with titles and labels. Hierarchy of information is well-organized through sections and subheadings. Colors and typography are consistent throughout, enhancing readability." },
+            { "dimension": "design", "score": 8, "rationale": "Layout is logical and intuitive, guiding the viewer through the narrative with a visual backbone. Visual elements are aligned and balanced, with effective use of whitespace to avoid clutter. Interactive elements (tooltips) are functional, and the design is responsive, adapting well to different screen sizes." },
+            { "dimension": "aesthetics", "score": 7, "rationale": "Color scheme is visually appealing and appropriate for the agricultural topic, with greens and blues. Visuals like icons and charts enhance the aesthetic. Typography is stylish yet readable. Animations (scroll-based) are smooth and pleasing, but not extensive, keeping the score above the threshold for no animations." }
+        ];
+
+        // Initialize the radar chart
+        const chartDom = document.getElementById('radar-chart');
+        const myChart = echarts.init(chartDom);
+        
+        // Prepare data for the radar chart
+        const indicators = data.map(item => {
+            return { name: item.dimension, max: 10 };
+        });
+        
+        const scores = data.map(item => item.score);
+        
+        const option = {
+            title: {
+                text: 'Dimension Scores',
+                left: 'center',
+                textStyle: {
+                    color: '#2c3e50',
+                    fontSize: 18
+                }
+            },
+            tooltip: {},
+            radar: {
+                indicator: indicators,
+                shape: 'polygon',
+                splitNumber: 5,
+                axisName: {
+                    color: '#555'
+                },
+                splitArea: {
+                    areaStyle: {
+                        color: ['rgba(25, 118, 210, 0.03)', 'rgba(25, 118, 210, 0.05)', 
+                                'rgba(25, 118, 210, 0.07)', 'rgba(25, 118, 210, 0.09)', 
+                                'rgba(25, 118, 210, 0.1)']
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            },
+            series: [{
+                name: 'Dimension Scores',
+                type: 'radar',
+                data: [{
+                    value: scores,
+                    name: 'Scores',
+                    symbolSize: 8,
+                    lineStyle: {
+                        width: 2,
+                        color: '#2196f3'
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [
+                            { color: 'rgba(33, 150, 243, 0.3)', offset: 0 },
+                            { color: 'rgba(33, 150, 243, 0.1)', offset: 1 }
+                        ])
+                    }
+                }]
+            }],
+            color: ['#2196f3']
+        };
+        
+        myChart.setOption(option);
+        
+        // Generate dimension list items
+        const dimensionList = document.getElementById('dimension-list');
+        const rationaleContainer = document.getElementById('rationale-container');
+        const rationaleTitle = document.getElementById('rationale-title');
+        const rationaleText = document.getElementById('rationale-text');
+        
+        data.forEach(item => {
+            const dimensionItem = document.createElement('div');
+            dimensionItem.className = 'dimension-item';
+            dimensionItem.setAttribute('data-dimension', item.dimension);
+            
+            // Set progress bar color based on score
+            let progressColor;
+            if (item.score <= 3) progressColor = '#f44336';
+            else if (item.score <= 6) progressColor = '#ff9800';
+            else progressColor = '#4caf50';
+            
+            dimensionItem.innerHTML = `
+                <div class="dimension-name">${item.dimension}</div>
+                <div class="stars">
+                    ${generateStars(item.score)}
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${item.score * 10}%; background-color: ${progressColor};"></div>
+                </div>
+            `;
+            
+            dimensionItem.addEventListener('click', function() {
+                // Remove active class from all items
+                document.querySelectorAll('.dimension-item').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Show rationale
+                rationaleTitle.textContent = item.dimension + ' Rationale';
+                rationaleText.textContent = item.rationale;
+                rationaleContainer.classList.add('active');
+                
+                // Highlight corresponding dimension on radar chart
+                myChart.dispatchAction({
+                    type: 'highlight',
+                    seriesIndex: 0,
+                    dataIndex: data.findIndex(d => d.dimension === item.dimension)
+                });
+            });
+            
+            dimensionList.appendChild(dimensionItem);
+        });
+        
+        // Function to generate star rating
+        function generateStars(score) {
+            let starsHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                if (i <= score) {
+                    starsHTML += '<span class="star filled">★</span>';
+                } else {
+                    starsHTML += '<span class="star">☆</span>';
+                }
+            }
+            return starsHTML;
+        }
+        
+        // Make chart responsive
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

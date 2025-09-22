@@ -1,0 +1,31 @@
+{
+  "story_title": "Barley Yield Dynamics: Varietal Performance Across Sites and Years",
+  "story_subtitle": "Analyzing Yield Variations, Site Suitability, and Annual Trends in 1930s Barley Cultivation",
+  "story_pieces": [
+    {
+      "narration": "Waseca yields the highest average (49.0), while Grand Rapids has the lowest (25.2), indicating strong site influence on productivity.",
+      "question": "How do average yields vary by site, and which locations are most and least productive?",
+      "visualization": "bar chart (sites vs. average yield)"
+    },
+    {
+      "narration": "Trebi (42.5) and No. 462 (42.3) show the highest average yields, while No. 475 (32.1) and Manchuria (32.7) are the lowest performers.",
+      "question": "Which barley varieties achieve the highest and lowest average yields across all sites and years?",
+      "visualization": "bar chart (varieties vs. average yield)"
+    },
+    {
+      "narration": "Yields dropped significantly in 1932, with average falling from 38.5 to 31.4, an 18.4% decrease, affecting all varieties and sites.",
+      "question": "How did yields change between 1931 and 1932, and was the decline consistent across all varieties?",
+      "visualization": "grouped bar chart (year vs. average yield per variety)"
+    },
+    {
+      "narration": "No. 462 at Waseca in 1931 achieved the highest single yield (65.8), while No. 475 at Grand Rapids in 1932 had the lowest (15.2).",
+      "question": "What are the extreme yield values, and under which variety-site-year conditions did they occur?",
+      "visualization": "scatter plot (yield values with variety/site/year labels for outliers)"
+    },
+    {
+      "narration": "Wisconsin No. 38 shows a yield decline of 12.7% year-over-year, while Glabron dropped 26.5%, indicating varietal resilience differences.",
+      "question": "Which varieties were most and least affected by the yield drop from 1931 to 1932?",
+      "visualization": "line chart (year vs. yield for each variety)"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "story_title": "Tech Stock Evolution: 2000-2010",
+  "story_subtitle": "A Decade of Market Dynamics, Bubble Bursts, and Financial Crises",
+  "story_pieces": [
+    {
+      "narration": "From January 2000 to March 2010, Apple's stock price surged by approximately 760%, while Microsoft's declined by about 28%, Amazon increased by around 100%, and IBM rose by nearly 25%.",
+      "question": "How did the percentage growth of major tech stocks compare over the decade?",
+      "visualization": "bar chart (stocks vs. percentage change from 2000 to 2010)"
+    },
+    {
+      "narration": "During the dot-com bubble burst, Amazon's stock price plummeted from $64.56 in January 2000 to a low of $5.97 in September 2001, a drop of over 90%.",
+      "question": "What was the extent of Amazon's stock price decline during the dot-com bubble?",
+      "visualization": "area chart (Amazon's price over time with highlighted drop period)"
+    },
+    {
+      "narration": "The 2008 financial crisis caused a significant drop in tech stocks, with Microsoft falling from $35.03 in October 2007 to $16.63 in January 2009, and similar declines observed in others.",
+      "question": "How did the financial crisis impact the stock prices of tech companies?",
+      "visualization": "multi-line chart (all stocks' prices during 2007-2009)"
+    },
+    {
+      "narration": "Google, after its IPO in 2004, saw its stock price rise from $102.37 to $560.19 by March 2010, demonstrating robust growth despite market volatilities.",
+      "question": "What was Google's stock performance trajectory since its initial public offering?",
+      "visualization": "line chart (Google's price from 2004 to 2010)"
+    },
+    {
+      "narration": "The ranking of stock prices shifted over the decade; in 2000, IBM led with the highest price, but by 2010, Apple and Google dominated, reflecting changing market leadership.",
+      "question": "How did the relative price rankings of these tech stocks evolve monthly from 2000 to 2010?",
+      "visualization": "bar chart race (monthly rankings of stocks by price)"
+    }
+  ]
+}

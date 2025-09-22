@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Assessment</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 500px;
+        }
+        
+        .chart-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #eaeaea;
+        }
+        
+        #radar-chart {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .details-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .dimension {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .dimension:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .dimension.active {
+            border-color: #4b6cb7;
+            background: #eef2f9;
+        }
+        
+        .dimension-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .dimension-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        
+        .progress-container {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        }
+        
+        .score {
+            text-align: right;
+            font-weight: 600;
+            color: #4b6cb7;
+        }
+        
+        .rationale {
+            display: none;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+        
+        .dimension.active .rationale {
+            display: block;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            border-top: 1px solid #eaeaea;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .chart-container {
+                border-right: none;
+                border-bottom: 1px solid #eaeaea;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Data Visualization Assessment</h1>
+        <p class="subtitle">Interactive radar chart with dimension details</p>
+    </header>
+
+    <div class="content">
+        <div class="chart-container">
+            <div id="radar-chart"></div>
+        </div>
+
+        <div class="details-container" id="dimensions-container">
+            <!-- Dimension elements will be generated here -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Select a dimension to view detailed rationale. Hover over the radar chart for more information.</p>
+    </div>
+</div>
+
+<script>
+    // Data from the user
+    const data = [
+        {
+            "dimension": "engagement",
+            "score": 6,
+            "rationale": "The visualization uses hover tooltips in charts and scroll animations (via AOS) to engage users, and the bar chart race in plot_5 has a timed animation that evokes curiosity. However, it lacks interactive features like click-based filtering, drilling down, or zooming, which limits deeper exploration and emotional depth in engagement. The narrative flow is guided by sections, but interactions are basic and do not fully align with a dynamic data story."
+        },
+        {
+            "dimension": "usefulness",
+            "score": 9,
+            "rationale": "Effectively communicates the intended cross-league analysis with clear messages in each section, such as average goals and home win percentages. It is easy to understand for non-experts due to descriptive text and labeled charts. Data sources are clearly cited at the end, and it provides meaningful insights into team performance and seasonal trends across leagues."
+        },
+        {
+            "dimension": "legibility",
+            "score": 8,
+            "rationale": "Text is easy to read with appropriate font sizes, contrast, and spacing in CSS. Charts are clear and interpretable with axes labels and tooltips. The hierarchy of information is well-organized with numbered sections and titles. Colors and typography are consistent throughout, using a defined palette and Montserrat font."
+        },
+        {
+            "dimension": "design",
+            "score": 8,
+            "rationale": "The layout is logical and intuitive, with sections guiding the viewer through the narrative. Visual elements like league badges and charts are aligned and balanced. Whitespace is used effectively to avoid clutter. Interactive elements (tooltips) are functional, and the design is responsive with media queries for different screen sizes."
+        },
+        {
+            "dimension": "aesthetics",
+            "score": 7,
+            "rationale": "The color scheme is visually appealing and appropriate with league-specific colors. Visuals like icons and charts enhance the overall aesthetic. Typography is stylish yet readable. Animations (scroll effects and bar chart race) are smooth and pleasing, but some charts could be more visually polished, keeping the score from being higher."
+        }
+    ];
+
+    // Initialize the radar chart
+    const chartDom = document.getElementById('radar-chart');
+    const myChart = echarts.init(chartDom);
+
+    // Prepare data for radar chart
+    const indicators = data.map(item => {
+        return { name: item.dimension, max: 10 };
+    });
+
+    const scores = data.map(item => item.score);
+
+    const option = {
+        title: {
+            text: 'Visualization Assessment',
+            left: 'center',
+            textStyle: {
+                color: '#333',
+                fontSize: 18
+            }
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        radar: {
+            indicator: indicators,
+            shape: 'circle',
+            splitNumber: 5,
+            axisName: {
+                color: '#333',
+                backgroundColor: '#eee',
+                borderRadius: 3,
+                padding: [3, 5]
+            },
+            splitArea: {
+                areaStyle: {
+                    color: ['rgba(75, 108, 183, 0.05)', 'rgba(75, 108, 183, 0.1)',
+                            'rgba(75, 108, 183, 0.15)', 'rgba(75, 108, 183, 0.2)',
+                            'rgba(75, 108, 183, 0.25)']
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'rgba(75, 108, 183, 0.5)'
+                }
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(75, 108, 183, 0.5)'
+                }
+            }
+        },
+        series: [{
+            name: 'Score',
+            type: 'radar',
+            data: [{
+                value: scores,
+                name: 'Assessment Score',
+                areaStyle: {
+                    color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [
+                        { color: 'rgba(75, 108, 183, 0.3)', offset: 0 },
+                        { color: 'rgba(75, 108, 183, 0.1)', offset: 1 }
+                    ])
+                },
+                lineStyle: {
+                    width: 2,
+                    color: '#4b6cb7'
+                },
+                itemStyle: {
+                    color: '#182848'
+                }
+            }]
+        }]
+    };
+
+    myChart.setOption(option);
+
+    // Create dimension elements
+    const dimensionsContainer = document.getElementById('dimensions-container');
+
+    data.forEach((item, index) => {
+        const dimensionEl = document.createElement('div');
+        dimensionEl.className = 'dimension';
+        dimensionEl.dataset.index = index;
+
+        // Generate star rating HTML
+        const fullStars = Math.floor(item.score / 2);
+        const halfStar = item.score % 2 >= 1 ? 1 : 0;
+        const emptyStars = 5 - fullStars - halfStar;
+
+        let starsHTML = '';
+        for (let i = 0; i < fullStars; i++) starsHTML += '★';
+        if (halfStar) starsHTML += '½';
+        for (let i = 0; i < emptyStars; i++) starsHTML += '☆';
+
+        dimensionEl.innerHTML = `
+            <div class="dimension-header">
+                <div class="dimension-name">${item.dimension}</div>
+                <div class="stars">${starsHTML}</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" style="width: ${item.score * 10}%"></div>
+            </div>
+            <div class="score">${item.score}/10</div>
+            <div class="rationale">${item.rationale}</div>
+        `;
+
+        dimensionsContainer.appendChild(dimensionEl);
+
+        // Add click event to show rationale
+        dimensionEl.addEventListener('click', function() {
+            // Remove active class from all dimensions
+            document.querySelectorAll('.dimension').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Add active class to clicked dimension
+            this.classList.add('active');
+
+            // Highlight corresponding radar indicator
+            myChart.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: index
+            });
+
+            // Show tooltip for the corresponding indicator
+            myChart.dispatchAction({
+                type: 'showTip',
+                seriesIndex: 0,
+                dataIndex: index
+            });
+        });
+    });
+
+    // Make first dimension active by default
+    document.querySelector('.dimension').classList.add('active');
+
+    // Handle window resize for responsive chart
+    window.addEventListener('resize', function() {
+        myChart.resize();
+    });
+</script>
+</body>
+</html>
+
+## Features of this Implementation:
+
+1. **Interactive Radar Chart**: Shows all dimensions and scores in a visually appealing radar format with gradient coloring.
+
+2. **Dimension Details Panel**:
+- Each dimension shows as a separate box with:
+- Star rating visualization (with half-stars for odd scores)
+- Progress bar showing the score out of 10
+- Score displayed numerically
+
+3. **Interactive Elements**:
+- Click on any dimension to view its detailed rationale
+- When a dimension is selected, the radar chart highlights that specific dimension
+- Hover effects on dimension boxes for better user feedback
+
+4. **Responsive Design**:
+- Works well on both desktop and mobile devices
+- The chart and details panel stack vertically on smaller screens
+
+5. **Visual Appeal**:
+- Clean, modern design with a professional color scheme
+- Smooth transitions and visual effects
+- Consistent styling throughout the interface
+
+Simply copy and paste this code into an HTML file and open it in any modern browser to see the interactive visualization.

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Tech Stock Evolution: 2000-2010
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   :root {
+            --primary: #1a365d;
+            --secondary: #2a4a7f;
+            --accent: #ecc94b;
+            --success: #48bb78;
+            --danger: #e53e3e;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --tech-blue: #3182ce;
+            --tech-purple: #805ad5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(120deg, var(--primary), var(--tech-blue));
+            color: white;
+            margin-bottom: 0;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .header-graphic {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: 0.1;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .explainer {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: var(--light);
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .explainer-icon {
+            font-size: 2.5rem;
+            color: var(--tech-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        
+        .section {
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            position: relative;
+        }
+        
+        .section:nth-child(odd) {
+            background: var(--light);
+        }
+        
+        .section-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--tech-blue), var(--tech-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .section-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px dashed #e2e8f0;
+            margin: 1rem 0;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(90deg, var(--tech-blue), var(--tech-purple));
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cta-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .sources {
+            padding: 3rem 2rem;
+            background: var(--primary);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .sources h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .sources p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                grid-template-columns: 1fr;
+                padding: 4rem 3rem;
+            }
+            
+            h1 {
+                font-size: 4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <header data-aos="fade-down">
+    <div class="header-content">
+     <h1>
+      Tech Stock Evolution: 2000-2010
+     </h1>
+     <h2>
+      A Decade of Market Dynamics, Bubble Bursts, and Financial Crises
+     </h2>
+    </div>
+    <div class="header-graphic">
+     <i class="fas fa-chart-line" style="font-size: 300px;">
+     </i>
+    </div>
+   </header>
+   <div class="explainer" data-aos="fade-up">
+    <div class="explainer-icon">
+     <i class="fas fa-analytics">
+     </i>
+    </div>
+    <p>
+     Explore the dramatic shifts in tech stock performances during the tumultuous first decade of the 21st century, featuring market leaders Apple, Microsoft, Amazon, IBM, and Google.
+    </p>
+   </div>
+   <div class="content-grid">
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-header">
+       <div class="section-icon">
+        <i class="fas fa-chart-bar">
+        </i>
+       </div>
+       <h3>
+        How did the percentage growth of major tech stocks compare over the decade?
+       </h3>
+      </div>
+      <p class="section-description">
+       From January 2000 to March 2010, Apple's stock price surged by approximately 760%, while Microsoft's declined by about 28%, Amazon increased by around 100%, and IBM rose by nearly 25%.
+      </p>
+      <div class="chart-container" id="chart_1">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     <div class="cta-icon">
+      <i class="fas fa-arrow-down">
+      </i>
+     </div>
+     <p>
+      Continue to discover the dot-com bubble impact
+     </p>
+    </div>
+    <div class="section" data-aos="fade-left">
+     <div class="section-content">
+      <div class="section-header">
+       <div class="section-icon">
+        <i class="fas fa-arrow-trend-down">
+        </i>
+       </div>
+       <h3>
+        What was the extent of Amazon's stock price decline during the dot-com bubble?
+       </h3>
+      </div>
+      <p class="section-description">
+       During the dot-com bubble burst, Amazon's stock price plummeted from $64.56 in January 2000 to a low of $5.97 in September 2001, a drop of over 90%.
+      </p>
+      <div class="chart-container" id="chart_2">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     <div class="cta-icon">
+      <i class="fas fa-arrow-down">
+      </i>
+     </div>
+     <p>
+      See how the 2008 financial crisis affected tech stocks
+     </p>
+    </div>
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-header">
+       <div class="section-icon">
+        <i class="fas fa-exclamation-triangle">
+        </i>
+       </div>
+       <h3>
+        How did the financial crisis impact the stock prices of tech companies?
+       </h3>
+      </div>
+      <p class="section-description">
+       The 2008 financial crisis caused a significant drop in tech stocks, with Microsoft falling from $35.03 in October 2007 to $16.63 in January 2009, and similar declines observed in others.
+      </p>
+      <div class="chart-container" id="chart_3">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     <div class="cta-icon">
+      <i class="fas fa-arrow-down">
+      </i>
+     </div>
+     <p>
+      Explore Google's impressive growth trajectory
+     </p>
+    </div>
+    <div class="section" data-aos="fade-left">
+     <div class="section-content">
+      <div class="section-header">
+       <div class="section-icon">
+        <i class="fas fa-rocket">
+        </i>
+       </div>
+       <h3>
+        What was Google's stock performance trajectory since its initial public offering?
+       </h3>
+      </div>
+      <p class="section-description">
+       Google, after its IPO in 2004, saw its stock price rise from $102.37 to $560.19 by March 2010, demonstrating robust growth despite market volatilities.
+      </p>
+      <div class="chart-container" id="chart_4">
+      </div>
+     </div>
+    </div>
+    <div class="cta" data-aos="zoom-in">
+     <div class="cta-icon">
+      <i class="fas fa-arrow-down">
+      </i>
+     </div>
+     <p>
+      Witness the shifting rankings of tech giants
+     </p>
+    </div>
+    <div class="section" data-aos="fade-right">
+     <div class="section-content">
+      <div class="section-header">
+       <div class="section-icon">
+        <i class="fas fa-trophy">
+        </i>
+       </div>
+       <h3>
+        How did the relative price rankings of these tech stocks evolve monthly from 2000 to 2010?
+       </h3>
+      </div>
+      <p class="section-description">
+       The ranking of stock prices shifted over the decade; in 2000, IBM led with the highest price, but by 2010, Apple and Google dominated, reflecting changing market leadership.
+      </p>
+      <div class="chart-container" id="chart_5">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sources" data-aos="fade-up">
+    <h3>
+     Sources
+    </h3>
+    <p>
+     Historical stock price data from Yahoo Finance and NASDAQ. Analysis based on adjusted closing prices from January 2000 to March 2010.
+    </p>
+    <p>
+     Icons by Font Awesome | Design by Financial Insights Team
+    </p>
+   </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        });
+  </script>
+ </body>
+</html>

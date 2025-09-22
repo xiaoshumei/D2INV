@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Demographic Evolution: 1850-2000 Population Insights
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/icons@1.10.0/font/icons.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .explainer {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .explainer-points {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .point {
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+        }
+        
+        .section-content {
+            padding: 20px;
+        }
+        
+        .description {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .chart-container {
+            margin: 25px 0;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+        
+        #chart_1, #chart_2, #chart_3, #chart_4, #chart_5 {
+            /* No height specified - will be determined by children */
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: linear-gradient(120deg, var(--secondary), var(--accent));
+            color: white;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: var(--secondary);
+            vertical-align: middle;
+        }
+        
+        .timeline-connector {
+            height: 40px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-connector::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: var(--dark);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .sources {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .explainer-points {
+                flex-direction: column;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <header data-aos="fade-down">
+    <h1>
+     Demographic Evolution: 1850-2000 Population Insights
+    </h1>
+    <p class="subtitle">
+     Analyzing Age, Sex, and Temporal Trends Over 150 Years
+    </p>
+   </header>
+   <div class="explainer" data-aos="fade-right">
+    <span>
+     150 Years of Demographic Transformation
+    </span>
+    <div class="explainer-points">
+     <div class="point">
+      <i class="icon icon-population">
+      </i>
+      <p>
+       Population Growth
+      </p>
+     </div>
+     <div class="point">
+      <i class="icon icon-age">
+      </i>
+      <p>
+       Age Structure Shifts
+      </p>
+     </div>
+     <div class="point">
+      <i class="icon icon-gender">
+      </i>
+      <p>
+       Gender Distribution
+      </p>
+     </div>
+    </div>
+   </div>
+   <section class="section" data-aos="fade-up">
+    <div class="section-content">
+     <h2>
+      <i class="icon icon-chart">
+      </i>
+      How has the overall population size changed over the decades?
+     </h2>
+     <p class="description">
+      The total population increased from approximately 20 million in 1850 to over 281 million in 2000, with the most rapid growth occurring in the 20th century, particularly post-1950.
+     </p>
+     <div class="chart-container">
+      <div id="chart_1">
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="timeline-connector" data-aos="fade-in">
+   </div>
+   <div class="cta" data-aos="zoom-in">
+    <i class="icon icon-arrow-down">
+    </i>
+    Continue exploring demographic shifts
+   </div>
+   <section class="section" data-aos="fade-up">
+    <div class="section-content">
+     <h2>
+      <i class="icon icon-pyramid">
+      </i>
+      How has the age structure of the population evolved over time?
+     </h2>
+     <p class="description">
+      The age distribution shifted from a pyramid shape in 1850 to a more rectangular form by 2000, indicating an aging population with a decreasing proportion of youth and increasing elderly.
+     </p>
+     <div class="chart-container">
+      <div id="chart_2">
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="timeline-connector" data-aos="fade-in">
+   </div>
+   <div class="cta" data-aos="zoom-in">
+    <i class="icon icon-arrow-down">
+    </i>
+    Discover gender distribution patterns
+   </div>
+   <section class="section" data-aos="fade-up">
+    <div class="section-content">
+     <h2>
+      <i class="icon icon-ratio">
+      </i>
+      What are the sex disparities across different age groups and how have they changed?
+     </h2>
+     <p class="description">
+      Males outnumbered females at younger ages (e.g., age 0 in 1850: 1.48M males vs. 1.45M females), but females had higher survival rates, leading to a female majority in older age groups by 2000 (e.g., age 90: 336K males vs. 1.06M females).
+     </p>
+     <div class="chart-container">
+      <div id="chart_3">
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="timeline-connector" data-aos="fade-in">
+   </div>
+   <div class="cta" data-aos="zoom-in">
+    <i class="icon icon-arrow-down">
+    </i>
+    Explore the baby boom phenomenon
+   </div>
+   <section class="section" data-aos="fade-up">
+    <div class="section-content">
+     <h2>
+      <i class="icon icon-baby">
+      </i>
+      When did the baby boom occur and how did it impact population dynamics?
+     </h2>
+     <p class="description">
+      A significant baby boom occurred around 1950, with over 16 million infants (age 0) recorded, compared to lower numbers in earlier decades like 1850 with about 2.9 million.
+     </p>
+     <div class="chart-container">
+      <div id="chart_4">
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="timeline-connector" data-aos="fade-in">
+   </div>
+   <div class="cta" data-aos="zoom-in">
+    <i class="icon icon-arrow-down">
+    </i>
+    Understand elderly population growth
+   </div>
+   <section class="section" data-aos="fade-up">
+    <div class="section-content">
+     <h2>
+      <i class="icon icon-elderly">
+      </i>
+      How has the elderly population grown over time?
+     </h2>
+     <p class="description">
+      The elderly population (age 65 and above) grew substantially, from around 516,000 in 1850 to over 35 million in 2000, reflecting improvements in healthcare and life expectancy.
+     </p>
+     <div class="chart-container">
+      <div id="chart_5">
+      </div>
+     </div>
+    </div>
+   </section>
+   <footer data-aos="fade-in">
+    <p>
+     Data Source: U.S. Census Bureau Historical Demographic Data, 1850-2000 Decennial Censuses
+    </p>
+    <p class="sources">
+     Icons by Icons8 | Visualization by Demographic Insights Team | Methodology: Standardized population estimates
+    </p>
+   </footer>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out'
+            });
+        });
+  </script>
+ </body>
+</html>

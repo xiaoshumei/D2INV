@@ -1,0 +1,26 @@
+{
+  "story_title": "Demographic Transformations: 1955-2005",
+  "story_subtitle": "Exploring Global Trends in Population, Life Expectancy, and Fertility Across Country Clusters",
+  "story_pieces": [
+    {
+      "narration": "Global population surged from approximately 2.5 billion in 1955 to over 6.5 billion in 2005, with China and India contributing the largest absolute increases, while clusters 0 and 2 showed rapid growth rates.",
+      "question": "Which countries and clusters experienced the most dramatic population growth over the 50-year period?",
+      "visualization": "bar chart race (countries vs. population over time, colored by cluster)"
+    },
+    {
+      "narration": "Life expectancy improved worldwide, rising from an average of 52 years in 1955 to 68 years in 2005, with countries like Japan (cluster 4) and Switzerland (cluster 1) achieving the highest gains, exceeding 80 years by 2005.",
+      "question": "How did life expectancy trends vary between country clusters, and which clusters led in improvements?",
+      "visualization": "line chart (year vs. life expectancy, faceted by cluster)"
+    },
+    {
+      "narration": "Fertility rates declined significantly across all clusters, with cluster 1 nations dropping below replacement level (2.1) by the 1970s, while clusters 0 and 2 maintained higher rates above 5.0 in 2005.",
+      "question": "What patterns emerge in fertility rate reductions, and how do they correlate with economic or regional clusters?",
+      "visualization": "scatter plot (fertility rate vs. year, colored by cluster, with trend lines)"
+    },
+    {
+      "narration": "Notable deviations occurred, such as in Afghanistan where life expectancy plummeted to 42.03 years in 1985 amid conflict, before rebounding, and in Iran where fertility dropped sharply from 7.21 in 1960 to 1.78 in 2005.",
+      "question": "How did geopolitical events or policies cause anomalies in demographic indicators for specific countries?",
+      "visualization": "animated line chart (year vs. life expectancy or fertility for select countries with event annotations)"
+    }
+  ]
+}

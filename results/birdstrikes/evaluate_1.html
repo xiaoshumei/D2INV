@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Assessment</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2a5298);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .dashboard {
+            display: flex;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chart-container {
+            flex: 1;
+            padding: 30px;
+            background: rgba(10, 20, 40, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #radar-chart {
+            width: 100%;
+            height: 500px;
+            flex: 1;
+        }
+        
+        .chart-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #64ffda;
+        }
+        
+        .dimensions-container {
+            flex: 1;
+            padding: 30px;
+            background: rgba(15, 30, 60, 0.7);
+            overflow-y: auto;
+        }
+        
+        .dimensions-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #64ffda;
+        }
+        
+        .dimension-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .dimension-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+        
+        .dimension-item:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dimension-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .dimension-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: #64ffda;
+        }
+        
+        .dimension-score {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .rating-container {
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .star {
+            color: #ccc;
+            font-size: 1.4rem;
+            margin-right: 3px;
+        }
+        
+        .star.filled {
+            color: #FFD700;
+        }
+        
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        
+        .rationale {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            padding-top: 0;
+        }
+        
+        .dimension-item.active .rationale {
+            max-height: 200px;
+            padding-top: 15px;
+        }
+        
+        .dimension-item.active {
+            background: rgba(100, 255, 218, 0.15);
+            border: 1px solid rgba(100, 255, 218, 0.6);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 900px) {
+            .dashboard {
+                flex-direction: column;
+            }
+            
+            #radar-chart {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Visualization Assessment</h1>
+            <p class="subtitle">Interactive radar chart with detailed dimension analysis. Click on any dimension to view its rationale.</p>
+        </header>
+        
+        <div class="dashboard">
+            <div class="chart-container">
+                <h2 class="chart-title">Performance Radar Chart</h2>
+                <div id="radar-chart"></div>
+            </div>
+            
+            <div class="dimensions-container">
+                <h2 class="dimensions-title">Dimension Analysis</h2>
+                <div class="dimension-list" id="dimension-list">
+                    <!-- Dimension items will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Data Visualization Dashboard • Created with ECharts</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data from the problem
+        const dimensionData = [
+            { 
+                "dimension": "engagement", 
+                "score": 7, 
+                "rationale": "The visualization uses scroll-based animations (AOS library) and hover effects (e.g., sections lifting, backbone points scaling) to engage users, with tooltips in charts providing additional data. However, it lacks deeper interactive features like filtering, drilling down, or user-driven exploration, limiting active engagement. While animations evoke curiosity, they don't consistently align with emotional storytelling, and the narrative flow relies on static progression rather than interactive discovery." 
+            },
+            { 
+                "dimension": "usefulness", 
+                "score": 9, 
+                "rationale": "The INV effectively communicates key insights about wildlife strikes (e.g., damage distribution, high-risk flight phases) through clear descriptions and visualizations, making it accessible to non-experts. Data sources are cited (FAA Wildlife Strike Database), and insights are meaningful for aviation safety. Minor deductions for not clarifying dataset limitations or timeliness, but overall it educates and informs efficiently." 
+            },
+            { 
+                "dimension": "legibility", 
+                "score": 9, 
+                "rationale": "Text is highly readable with appropriate font sizes (Montserrat for headings, Open Sans for body), strong contrast, and spacing. Charts are clear with labels, legends, and tooltips, and information hierarchy is well-organized via sections, icons, and backbone numbering. Colors and typography remain consistent throughout, though some chart labels (e.g., species names in stacked bar) could benefit from better truncation on small screens." 
+            },
+            { 
+                "dimension": "design", 
+                "score": 10, 
+                "rationale": "The layout is logical and intuitive, using a backbone structure to guide viewers sequentially through sections. Visual elements are balanced (e.g., descriptions and charts side-by-side), whitespace reduces clutter, and interactive elements (e.g., progress bar, hover states) are well-integrated. Responsive design adapts to smaller screens via media queries, ensuring functionality across devices without sacrificing coherence." 
+            },
+            { 
+                "dimension": "aesthetics", 
+                "score": 9, 
+                "rationale": "The color scheme (greens, oranges, blues) is visually appealing and thematically appropriate for wildlife/aviation, with icons and SVG patterns enhancing the aesthetic. Typography is stylish yet readable, and animations (e.g., scroll transitions, bouncing CTAs) are smooth and purposeful. A minor deduction for occasional chart overcrowding (e.g., species bar chart), but overall aesthetics are polished and engaging." 
+            }
+        ];
+        
+        // Initialize radar chart
+        const chartDom = document.getElementById('radar-chart');
+        const myChart = echarts.init(chartDom);
+        
+        const radarOption = {
+            title: {
+                text: 'Dimension Scores',
+                textStyle: {
+                    color: '#fff'
+                },
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                data: ['Scores'],
+                textStyle: {
+                    color: '#fff'
+                },
+                bottom: 10
+            },
+            radar: {
+                indicator: dimensionData.map(item => {
+                    return { name: item.dimension, max: 10 };
+                }),
+                radius: '65%',
+                axisName: {
+                    color: '#fff',
+                    backgroundColor: '#333',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                },
+                splitArea: {
+                    areaStyle: {
+                        color: ['rgba(100, 255, 218, 0.1)', 'rgba(100, 255, 218, 0.05)'],
+                        shadowColor: 'rgba(0, 0, 0, 0.2)',
+                        shadowBlur: 10
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.5)'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.2)'
+                    }
+                }
+            },
+            series: [{
+                name: 'Dimension Scores',
+                type: 'radar',
+                data: [{
+                    value: dimensionData.map(item => item.score),
+                    name: 'Score',
+                    symbol: 'circle',
+                }],
+                lineStyle: {
+                    width: 2
+                },
+                emphasis: {
+                    areaStyle: {
+                        color: 'rgba(100, 255, 218, 0.4)'
+                    }
+                },
+                areaStyle: {
+                    color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [
+                        { offset: 0, color: 'rgba(100, 255, 218, 0.3)' },
+                        { offset: 1, color: 'rgba(100, 255, 218, 0.1)' }
+                    ])
+                },
+                itemStyle: {
+                    color: '#64ffda'
+                }
+            }],
+            textStyle: {
+                color: 'rgba(255, 255, 255, 0.8)'
+            }
+        };
+        
+        myChart.setOption(radarOption);
+        
+        // Create dimension list
+        const dimensionList = document.getElementById('dimension-list');
+        
+        dimensionData.forEach(item => {
+            const dimensionItem = document.createElement('div');
+            dimensionItem.className = 'dimension-item';
+            dimensionItem.dataset.dimension = item.dimension;
+            
+            // Calculate stars
+            const fullStars = Math.floor(item.score / 2);
+            const halfStar = (item.score % 2) >= 1 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+            
+            let starsHTML = '';
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<span class="star filled">★</span>';
+            }
+            if (halfStar) {
+                starsHTML += '<span class="star filled">★</span>';
+            }
+            for (let i = 0; i < emptyStars; i++) {
+                starsHTML += '<span class="star">★</span>';
+            }
+            
+            // Set progress bar color based on score
+            let progressColor;
+            if (item.score >= 9) progressColor = '#4CAF50';
+            else if (item.score >= 7) progressColor = '#FFC107';
+            else progressColor = '#F44336';
+            
+            dimensionItem.innerHTML = `
+                <div class="dimension-header">
+                    <div class="dimension-name">${item.dimension}</div>
+                    <div class="dimension-score">${item.score}/10</div>
+                </div>
+                <div class="rating-container">
+                    <div class="stars">${starsHTML}</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: ${item.score * 10}%; background: ${progressColor};"></div>
+                    </div>
+                </div>
+                <div class="rationale">${item.rationale}</div>
+            `;
+            
+            dimensionList.appendChild(dimensionItem);
+        });
+        
+        // Add click event listeners
+        const dimensionItems = document.querySelectorAll('.dimension-item');
+        
+        dimensionItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                dimensionItems.forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Highlight corresponding radar axis
+                const dimensionName = this.dataset.dimension;
+                const dimensionIndex = dimensionData.findIndex(d => d.dimension === dimensionName);
+                
+                radarOption.radar.indicator.forEach((ind, i) => {
+                    ind.textStyle = i === dimensionIndex ? 
+                        { color: '#64ffda', fontWeight: 'bold' } : 
+                        { color: '#fff' };
+                });
+                
+                myChart.setOption(radarOption);
+            });
+        });
+        
+        // Make first dimension active by default
+        if (dimensionItems.length > 0) {
+            dimensionItems[0].classList.add('active');
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "story_title": "Mapping the United States' Hidden Airports: A Journey Through Rural and Remote Communities",
+  "story_subtitle": "Uncovering the geographic diversity and regional distribution of lesser-known U.S. airports across 55 states and territories",
+  "story_pieces": [
+    {
+      "narration": "The dataset contains 3,376 airport records, with the highest number in Alaska (263), Texas (209), and California (205), reflecting geographic size, regional connectivity, and remote access needs.",
+      "question": "Which U.S. states have the highest number of airports in the dataset, and what might explain this regional distribution?",
+      "visualization": "choropleth map (states colored by number of airports)"
+    },
+    {
+      "narration": "The northernmost airport is in Barrow, AK (latitude 71.285°N), while the southernmost is in Ofu Village, AS (latitude 14.184°N), illustrating the vast geographic span of the U.S. airport network across extreme latitudinal ranges.",
+      "question": "What are the northernmost and southernmost airports in the dataset, and how do they reflect the geographic extent of the U.S.?",
+      "visualization": "scatter plot (latitude vs. longitude with airport names labeled)"
+    },
+    {
+      "narration": "Alaska leads in airports per capita with an increased density due to 190 additional airports, emphasizing the critical role of air transport in its isolated communities.",
+      "question": "Which state has the highest airport density relative to population, and how does this support connectivity in remote areas?",
+      "visualization": "bar chart (states ranked by airports per 10,000 residents)"
+    },
+    {
+      "narration": "The most common airport type is 'Municipal' (52%), followed by 'Regional' (22%) and 'Private' (18%), indicating a strong reliance on local government infrastructure for regional air access.",
+      "question": "What are the most common types of airports in the dataset, and what does this suggest about the structure of U.S. aviation infrastructure?",
+      "visualization": "pie chart (airport type distribution)"
+    },
+    {
+      "narration": "The highest elevation airport is in Steamboat Springs, Colorado (altitude 6,680 ft), while the lowest is in New Orleans, Louisiana (elevation -8 ft), showcasing the extreme topographic range across the network.",
+      "question": "What are the highest and lowest elevation airports in the dataset, and how does terrain influence airport placement?",
+      "visualization": "line chart (elevation vs. state)"
+    },
+    {
+      "narration": "The dataset includes 35 additional seaplane bases in Alaska, reinforcing the importance of water-based aviation in coastal and island communities.",
+      "question": "How many seaplane bases are included in the dataset, and where are they primarily located?",
+      "visualization": "bubble map (SPB airports with size proportional to frequency)"
+    },
+    {
+      "narration": "The IATA code format includes both three-letter and alphanumeric codes (e.g., T69, T71, C00, D04), reflecting diverse coding practices across smaller and specialized airports.",
+      "question": "What variations exist in IATA code formats within the dataset, and what might this indicate about airport size or function?",
+      "visualization": "frequency chart (IATA code formats)"
+    }
+  ]
+}

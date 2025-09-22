@@ -1,0 +1,41 @@
+{
+  "story_title": "Wildlife Strikes on Aircraft: Patterns and Impacts",
+  "story_subtitle": "Analyzing Wildlife Strikes Across Airports, Aircraft, and Flight Phases",
+  "story_pieces": [
+    {
+      "narration": "The vast majority of wildlife strikes (85.7%) result in no damage to the aircraft, while a small fraction (10.7%) cause minor damage, and (3.6%) cause medium damage.",
+      "question": "What is the distribution of damage levels caused by wildlife strikes?",
+      "visualization": "pie chart (damage levels vs. percentage)"
+    },
+    {
+      "narration": "Most wildlife strikes occur during approach (53.6%) and climb (21.4%) phases of flight, with fewer incidents during take-off run (14.3%) and descent (7.1%).",
+      "question": "During which phases of flight do wildlife strikes most commonly occur?",
+      "visualization": "bar chart (flight phases vs. strike counts)"
+    },
+    {
+      "narration": "Small wildlife (41.1%) and medium-sized wildlife (51.8%) are the most common sizes involved in strikes, with large wildlife accounting for 7.1%. Unknown medium birds account for 39.3% of all strikes.",
+      "question": "What sizes and species of wildlife are most frequently involved in strikes?",
+      "visualization": "stacked bar chart (wildlife size vs. species counts)"
+    },
+    {
+      "narration": "George Bush Intercontinental Airport (5 strikes), Memphis International Airport (5 strikes), and Washington Dulles International Airport (4 strikes) report the highest number of wildlife strikes among the dataset.",
+      "question": "Which airports experience the highest frequency of wildlife strikes?",
+      "visualization": "horizontal bar chart (airports vs. strike counts)"
+    },
+    {
+      "narration": "Delta Air Lines (10 strikes), Southwest Airlines (7 strikes), and American Airlines (6 strikes) aircraft are most commonly involved in wildlife strikes, with B-757-200 (6 strikes) and B-737-300 (5 strikes) being the most frequent models.",
+      "question": "Which airlines and aircraft models are most frequently involved in wildlife strikes?",
+      "visualization": "grouped bar chart (airlines vs. aircraft models)"
+    },
+    {
+      "narration": "Wildlife strikes predominantly occur during daylight (53.6%), with fewer incidents at night (35.7%) and minimal occurrences at dawn/dusk (10.7%).",
+      "question": "How does the time of day affect the frequency of wildlife strikes?",
+      "visualization": "pie chart (time of day vs. strike counts)"
+    },
+    {
+      "narration": "Texas (10 strikes), DC (5 strikes), and Tennessee (5 strikes) have the highest incidence of wildlife strikes among US states, accounting for 35.7% of all incidents.",
+      "question": "Which states have the highest frequency of wildlife strikes?",
+      "visualization": "choropleth map (states vs. strike counts)"
+    }
+  ]
+}

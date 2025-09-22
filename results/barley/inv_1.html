@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Barley Yield Dynamics: Varietal Performance Across Sites and Years
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   * {
+                 margin: 0;
+                 padding: 0;
+                 box-sizing: border-box;
+             }
+
+             body {
+                 font-family: 'Open Sans', sans-serif;
+                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                 color: #2d3a3a;
+                 line-height: 1.6;
+             }
+
+             .infographic-container {
+                 max-width: 1200px;
+                 margin: 0 auto;
+                 padding: 30px 20px;
+                 background: white;
+                 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                 position: relative;
+             }
+
+             .header {
+                 text-align: center;
+                 margin-bottom: 40px;
+                 padding-bottom: 30px;
+                 border-bottom: 3px solid #8a9a5b;
+                 background: linear-gradient(135deg, #4a7c59 0%, #8a9a5b 100%);
+                 padding: 40px 20px;
+                 border-radius: 10px;
+                 color: white;
+             }
+
+             h1 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 800;
+                 font-size: 2.8rem;
+                 margin-bottom: 15px;
+                 text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+             }
+
+             h2 {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 600;
+                 font-size: 1.4rem;
+                 opacity: 0.9;
+             }
+
+             .explainer {
+                 background: #f8f9fa;
+                 padding: 25px;
+                 border-radius: 8px;
+                 margin: 30px 0;
+                 border-left: 5px solid #8a9a5b;
+                 font-size: 1.1rem;
+             }
+
+             .story-section {
+                 margin: 50px 0;
+                 padding: 30px;
+                 border-radius: 10px;
+                 background: white;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                 position: relative;
+                 overflow: hidden;
+             }
+
+             .story-section:nth-child(even) {
+                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+             }
+
+             .section-header {
+                 display: flex;
+                 align-items: center;
+                 margin-bottom: 20px;
+             }
+
+             .section-icon {
+                 background: #8a9a5b;
+                 width: 60px;
+                 height: 60px;
+                 border-radius: 50%;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 margin-right: 20px;
+                 color: white;
+                 font-size: 1.5rem;
+             }
+
+             .section-title {
+                 font-family: 'Montserrat', sans-serif;
+                 font-weight: 700;
+                 font-size: 1.5rem;
+                 color: #4a7c59;
+             }
+
+             .section-description {
+                 margin-bottom: 25px;
+                 font-size: 1.1rem;
+                 padding: 0 10px;
+                 background: rgba(138, 154, 91, 0.1);
+                 padding: 15px;
+                 border-radius: 8px;
+             }
+
+             .chart-container {
+                 margin: 20px 0;
+                 border: 1px solid #e9ecef;
+                 border-radius: 8px;
+                 padding: 15px;
+                 background: white;
+             }
+
+             .backbone {
+                 position: absolute;
+                 left: 30px;
+                 top: 0;
+                 bottom: 0;
+                 width: 4px;
+                 background: linear-gradient(to bottom, #4a7c59, #8a9a5b);
+                 z-index: 0;
+             }
+
+             .cta {
+                 text-align: center;
+                 padding: 40px;
+                 margin: 40px 0;
+                 background: linear-gradient(135deg, #4a7c59 0%, #8a9a5b 100%);
+                 border-radius: 10px;
+                 color: white;
+             }
+
+             .cta-button {
+                 display: inline-block;
+                 padding: 15px 35px;
+                 background: white;
+                 color: #4a7c59;
+                 border-radius: 50px;
+                 font-weight: 700;
+                 text-decoration: none;
+                 margin-top: 20px;
+                 transition: all 0.3s ease;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+             }
+
+             .cta-button:hover {
+                 transform: translateY(-3px);
+                 box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+             }
+
+             .sources {
+                 font-size: 0.9rem;
+                 text-align: center;
+                 margin-top: 50px;
+                 padding-top: 20px;
+                 border-top: 1px solid #e9ecef;
+                 color: #6c757d;
+             }
+
+             @media (max-width: 768px) {
+                 .infographic-container {
+                     padding: 15px;
+                 }
+
+                 h1 {
+                     font-size: 2.2rem;
+                 }
+
+                 .story-section {
+                     padding: 20px;
+                 }
+
+                 .section-header {
+                     flex-direction: column;
+                     align-items: flex-start;
+                 }
+
+                 .section-icon {
+                     margin-bottom: 15px;
+                 }
+
+                 .backbone {
+                     display: none;
+                 }
+             }
+  </style>
+  <script src="https://unpkg.com/echarts@latest/dist/echarts.min.js">
+  </script>
+  <script src="https://unpkg.com/echarts@latest/dist/extension/dataTool.min.js">
+  </script>
+  <style>
+   #chart_1 {
+        width: 1000px;
+        height: 600px;
+    }
+  </style>
+  <style>
+   #chart_2 {
+        width: 100%;
+        height: 500px;
+    }
+  </style>
+  <style>
+   #chart_3 {
+        width: 100%;
+        height: 600px;
+    }
+  </style>
+  <style>
+   #chart_4 {
+        width: 100%;
+        height: 600px;
+    }
+  </style>
+  <style>
+   #chart_5 {
+        width: 100%;
+        height: 400px;
+    }
+  </style>
+  <script>
+   window.data = [{"yield":27.0,"variety":"Manchuria","year":1931,"site":"University Farm"},{"yield":48.86667,"variety":"Manchuria","year":1931,"site":"Waseca"},{"yield":27.43334,"variety":"Manchuria","year":1931,"site":"Morris"},{"yield":39.93333,"variety":"Manchuria","year":1931,"site":"Crookston"},{"yield":32.96667,"variety":"Manchuria","year":1931,"site":"Grand Rapids"},{"yield":28.96667,"variety":"Manchuria","year":1931,"site":"Duluth"},{"yield":43.06666,"variety":"Glabron","year":1931,"site":"University Farm"},{"yield":55.2,"variety":"Glabron","year":1931,"site":"Waseca"},{"yield":28.76667,"variety":"Glabron","year":1931,"site":"Morris"},{"yield":38.13333,"variety":"Glabron","year":1931,"site":"Crookston"},{"yield":29.13333,"variety":"Glabron","year":1931,"site":"Grand Rapids"},{"yield":29.66667,"variety":"Glabron","year":1931,"site":"Duluth"},{"yield":35.13333,"variety":"Svansota","year":1931,"site":"University Farm"},{"yield":47.33333,"variety":"Svansota","year":1931,"site":"Waseca"},{"yield":25.76667,"variety":"Svansota","year":1931,"site":"Morris"},{"yield":40.46667,"variety":"Svansota","year":1931,"site":"Crookston"},{"yield":29.66667,"variety":"Svansota","year":1931,"site":"Grand Rapids"},{"yield":25.7,"variety":"Svansota","year":1931,"site":"Duluth"},{"yield":39.9,"variety":"Velvet","year":1931,"site":"University Farm"},{"yield":50.23333,"variety":"Velvet","year":1931,"site":"Waseca"},{"yield":26.13333,"variety":"Velvet","year":1931,"site":"Morris"},{"yield":41.33333,"variety":"Velvet","year":1931,"site":"Crookston"},{"yield":23.03333,"variety":"Velvet","year":1931,"site":"Grand Rapids"},{"yield":26.3,"variety":"Velvet","year":1931,"site":"Duluth"},{"yield":36.56666,"variety":"Trebi","year":1931,"site":"University Farm"},{"yield":63.8333,"variety":"Trebi","year":1931,"site":"Waseca"},{"yield":43.76667,"variety":"Trebi","year":1931,"site":"Morris"},{"yield":46.93333,"variety":"Trebi","year":1931,"site":"Crookston"},{"yield":29.76667,"variety":"Trebi","year":1931,"site":"Grand Rapids"},{"yield":33.93333,"variety":"Trebi","year":1931,"site":"Duluth"},{"yield":43.26667,"variety":"No. 457","year":1931,"site":"University Farm"},{"yield":58.1,"variety":"No. 457","year":1931,"site":"Waseca"},{"yield":28.7,"variety":"No. 457","year":1931,"site":"Morris"},{"yield":45.66667,"variety":"No. 457","year":1931,"site":"Crookston"},{"yield":32.16667,"variety":"No. 457","year":1931,"site":"Grand Rapids"},{"yield":33.6,"variety":"No. 457","year":1931,"site":"Duluth"},{"yield":36.6,"variety":"No. 462","year":1931,"site":"University Farm"},{"yield":65.7667,"variety":"No. 462","year":1931,"site":"Waseca"},{"yield":30.36667,"variety":"No. 462","year":1931,"site":"Morris"},{"yield":48.56666,"variety":"No. 462","year":1931,"site":"Crookston"},{"yield":24.93334,"variety":"No. 462","year":1931,"site":"Grand Rapids"},{"yield":28.1,"variety":"No. 462","year":1931,"site":"Duluth"},{"yield":32.76667,"variety":"Peatland","year":1931,"site":"University Farm"},{"yield":48.56666,"variety":"Peatland","year":1931,"site":"Waseca"},{"yield":29.86667,"variety":"Peatland","year":1931,"site":"Morris"},{"yield":41.6,"variety":"Peatland","year":1931,"site":"Crookston"},{"yield":34.7,"variety":"Peatland","year":1931,"site":"Grand Rapids"},{"yield":32.0,"variety":"Peatland","year":1931,"site":"Duluth"},{"yield":24.66667,"variety":"No. 475","year":1931,"site":"University Farm"},{"yield":46.76667,"variety":"No. 475","year":1931,"site":"Waseca"},{"yield":22.6,"variety":"No. 475","year":1931,"site":"Morris"},{"yield":44.1,"variety":"No. 475","year":1931,"site":"Crookston"},{"yield":19.7,"variety":"No. 475","year":1931,"site":"Grand Rapids"},{"yield":33.06666,"variety":"No. 475","year":1931,"site":"Duluth"},{"yield":39.3,"variety":"Wisconsin No. 38","year":1931,"site":"University Farm"},{"yield":58.8,"variety":"Wisconsin No. 38","year":1931,"site":"Waseca"},{"yield":29.46667,"variety":"Wisconsin No. 38","year":1931,"site":"Morris"},{"yield":49.86667,"variety":"Wisconsin No. 38","year":1931,"site":"Crookston"},{"yield":34.46667,"variety":"Wisconsin No. 38","year":1931,"site":"Grand Rapids"},{"yield":31.6,"variety":"Wisconsin No. 38","year":1931,"site":"Duluth"},{"yield":26.9,"variety":"Manchuria","year":1932,"site":"University Farm"},{"yield":33.46667,"variety":"Manchuria","year":1932,"site":"Waseca"},{"yield":34.36666,"variety":"Manchuria","year":1932,"site":"Morris"},{"yield":32.96667,"variety":"Manchuria","year":1932,"site":"Crookston"},{"yield":22.13333,"variety":"Manchuria","year":1932,"site":"Grand Rapids"},{"yield":22.56667,"variety":"Manchuria","year":1932,"site":"Duluth"},{"yield":36.8,"variety":"Glabron","year":1932,"site":"University Farm"},{"yield":37.73333,"variety":"Glabron","year":1932,"site":"Waseca"},{"yield":35.13333,"variety":"Glabron","year":1932,"site":"Morris"},{"yield":26.16667,"variety":"Glabron","year":1932,"site":"Crookston"},{"yield":14.43333,"variety":"Glabron","year":1932,"site":"Grand Rapids"},{"yield":25.86667,"variety":"Glabron","year":1932,"site":"Duluth"},{"yield":27.43334,"variety":"Svansota","year":1932,"site":"University Farm"},{"yield":38.5,"variety":"Svansota","year":1932,"site":"Waseca"},{"yield":35.03333,"variety":"Svansota","year":1932,"site":"Morris"},{"yield":20.63333,"variety":"Svansota","year":1932,"site":"Crookston"},{"yield":16.63333,"variety":"Svansota","year":1932,"site":"Grand Rapids"},{"yield":22.23333,"variety":"Svansota","year":1932,"site":"Duluth"},{"yield":26.8,"variety":"Velvet","year":1932,"site":"University Farm"},{"yield":37.4,"variety":"Velvet","year":1932,"site":"Waseca"},{"yield":38.83333,"variety":"Velvet","year":1932,"site":"Morris"},{"yield":32.06666,"variety":"Velvet","year":1932,"site":"Crookston"},{"yield":32.23333,"variety":"Velvet","year":1932,"site":"Grand Rapids"},{"yield":22.46667,"variety":"Velvet","year":1932,"site":"Duluth"},{"yield":29.06667,"variety":"Trebi","year":1932,"site":"University Farm"},{"yield":49.2333,"variety":"Trebi","year":1932,"site":"Waseca"},{"yield":46.63333,"variety":"Trebi","year":1932,"site":"Morris"},{"yield":41.83333,"variety":"Trebi","year":1932,"site":"Crookston"},{"yield":20.63333,"variety":"Trebi","year":1932,"site":"Grand Rapids"},{"yield":30.6,"variety":"Trebi","year":1932,"site":"Duluth"},{"yield":26.43334,"variety":"No. 457","year":1932,"site":"University Farm"},{"yield":42.2,"variety":"No. 457","year":1932,"site":"Waseca"},{"yield":43.53334,"variety":"No. 457","year":1932,"site":"Morris"},{"yield":34.33333,"variety":"No. 457","year":1932,"site":"Crookston"},{"yield":19.46667,"variety":"No. 457","year":1932,"site":"Grand Rapids"},{"yield":22.7,"variety":"No. 457","year":1932,"site":"Duluth"},{"yield":25.56667,"variety":"No. 462","year":1932,"site":"University Farm"},{"yield":44.7,"variety":"No. 462","year":1932,"site":"Waseca"},{"yield":47.0,"variety":"No. 462","year":1932,"site":"Morris"},{"yield":30.53333,"variety":"No. 462","year":1932,"site":"Crookston"},{"yield":19.9,"variety":"No. 462","year":1932,"site":"Grand Rapids"},{"yield":22.5,"variety":"No. 462","year":1932,"site":"Duluth"},{"yield":28.06667,"variety":"Peatland","year":1932,"site":"University Farm"},{"yield":36.03333,"variety":"Peatland","year":1932,"site":"Waseca"},{"yield":43.2,"variety":"Peatland","year":1932,"site":"Morris"},{"yield":25.23333,"variety":"Peatland","year":1932,"site":"Crookston"},{"yield":26.76667,"variety":"Peatland","year":1932,"site":"Grand Rapids"},{"yield":31.36667,"variety":"Peatland","year":1932,"site":"Duluth"},{"yield":30.0,"variety":"No. 475","year":1932,"site":"University Farm"},{"yield":41.26667,"variety":"No. 475","year":1932,"site":"Waseca"},{"yield":44.23333,"variety":"No. 475","year":1932,"site":"Morris"},{"yield":32.13333,"variety":"No. 475","year":1932,"site":"Crookston"},{"yield":15.23333,"variety":"No. 475","year":1932,"site":"Grand Rapids"},{"yield":27.36667,"variety":"No. 475","year":1932,"site":"Duluth"},{"yield":38.0,"variety":"Wisconsin No. 38","year":1932,"site":"University Farm"},{"yield":58.16667,"variety":"Wisconsin No. 38","year":1932,"site":"Waseca"},{"yield":47.16667,"variety":"Wisconsin No. 38","year":1932,"site":"Morris"},{"yield":35.9,"variety":"Wisconsin No. 38","year":1932,"site":"Crookston"},{"yield":20.66667,"variety":"Wisconsin No. 38","year":1932,"site":"Grand Rapids"},{"yield":29.33333,"variety":"Wisconsin No. 38","year":1932,"site":"Duluth"}]
+  </script>
+ </head>
+ <body>
+  <div class="infographic-container">
+   <div class="backbone">
+   </div>
+   <header class="header" data-aos="fade-down">
+    <h1>
+     Barley Yield Dynamics: Varietal Performance Across Sites and Years
+    </h1>
+    <h2>
+     Analyzing Yield Variations, Site Suitability, and Annual Trends in 1930s Barley Cultivation
+    </h2>
+   </header>
+   <div class="explainer" data-aos="fade-up">
+    <i class="fas fa-seedling" style="color: #8a9a5b; font-size: 1.5rem; margin-right: 10px;">
+    </i>
+    Explore how different barley varieties performed across various locations and years during the 1930s, revealing
+        patterns in agricultural productivity and resilience.
+   </div>
+   <section class="story-section" data-aos="fade-right">
+    <div class="section-header">
+     <div class="section-icon">
+      <i class="fas fa-map-marked-alt">
+      </i>
+     </div>
+     <h3 class="section-title">
+      How do average yields vary by site, and which locations are most and least productive?
+     </h3>
+    </div>
+    <p class="section-description">
+     Waseca yields the highest average (49.0), while Grand Rapids has the lowest (25.2), indicating strong site
+            influence on productivity.
+    </p>
+    <div class="chart-container" id="chart_1">
+    </div>
+   </section>
+   <section class="story-section" data-aos="fade-left">
+    <div class="section-header">
+     <div class="section-icon">
+      <i class="fas fa-chart-bar">
+      </i>
+     </div>
+     <h3 class="section-title">
+      Which barley varieties achieve the highest and lowest average yields across all sites and years?
+     </h3>
+    </div>
+    <p class="section-description">
+     Trebi (42.5) and No. 462 (42.3) show the highest average yields, while No. 475 (32.1) and Manchuria (32.7)
+            are the lowest performers.
+    </p>
+    <div class="chart-container" id="chart_2">
+    </div>
+   </section>
+   <div class="cta" data-aos="zoom-in">
+    <h3>
+     Discover How Environmental Factors Impact Crop Yields
+    </h3>
+    <p>
+     Continue reading to understand annual variations and extreme yield conditions
+    </p>
+    <a class="cta-button" href="#">
+     Explore More Data
+    </a>
+   </div>
+   <section class="story-section" data-aos="fade-right">
+    <div class="section-header">
+     <div class="section-icon">
+      <i class="fas fa-calendar-alt">
+      </i>
+     </div>
+     <h3 class="section-title">
+      How did yields change between 1931 and 1932, and was the decline consistent across all varieties?
+     </h3>
+    </div>
+    <p class="section-description">
+     Yields dropped significantly in 1932, with average falling from 38.5 to 31.4, an 18.4% decrease, affecting
+            all varieties and sites.
+    </p>
+    <div class="chart-container" id="chart_3">
+    </div>
+   </section>
+   <section class="story-section" data-aos="fade-left">
+    <div class="section-header">
+     <div class="section-icon">
+      <i class="fas fa-exclamation-triangle">
+      </i>
+     </div>
+     <h3 class="section-title">
+      What are the extreme yield values, and under which variety-site-year conditions did they occur?
+     </h3>
+    </div>
+    <p class="section-description">
+     No. 462 at Waseca in 1931 achieved the highest single yield (65.8), while No. 475 at Grand Rapids in 1932
+            had the lowest (15.2).
+    </p>
+    <div class="chart-container" id="chart_4">
+    </div>
+   </section>
+   <section class="story-section" data-aos="fade-right">
+    <div class="section-header">
+     <div class="section-icon">
+      <i class="fas fa-shield-alt">
+      </i>
+     </div>
+     <h3 class="section-title">
+      Which varieties were most and least affected by the yield drop from 1931 to 1932?
+     </h3>
+    </div>
+    <p class="section-description">
+     Wisconsin No. 38 shows a yield decline of 12.7% year-over-year, while Glabron dropped 26.5%, indicating
+            varietal resilience differences.
+    </p>
+    <div class="chart-container" id="chart_5">
+    </div>
+   </section>
+   <div class="cta" data-aos="zoom-in">
+    <h3>
+     Want to Learn More About Agricultural Resilience?
+    </h3>
+    <p>
+     Download our full research paper on historical crop performance patterns
+    </p>
+    <a class="cta-button" href="#">
+     Download Research
+    </a>
+   </div>
+   <div class="sources">
+    <p>
+     Sources: University of Minnesota Agricultural Experiment Station, 1930s Barley Yield Trials | Visualization:
+            Agricultural Data Insights Group
+    </p>
+   </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+             AOS.init({
+                 duration: 1000,
+                 once: true,
+                 offset: 100
+             });
+         });
+  </script>
+  <script>
+   function plot_1(data){
+        document.getElementById('chart_1').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_1'), null, { renderer: 'svg' });
+
+        // Process data: Calculate average yield per site
+        const siteData = {};
+        data.forEach(item => {
+            if (!siteData[item.site]) {
+                siteData[item.site] = { sum: 0, count: 0 };
+            }
+            siteData[item.site].sum += item.yield;
+            siteData[item.site].count += 1;
+        });
+
+        const sites = Object.keys(siteData);
+        const avgYields = sites.map(site => 
+            parseFloat((siteData[site].sum / siteData[site].count).toFixed(2))
+        );
+
+        // Sort by average yield (descending)
+        const sortedIndices = avgYields.map((_, i) => i)
+            .sort((a, b) => avgYields[b] - avgYields[a]);
+        const sortedSites = sortedIndices.map(i => sites[i]);
+        const sortedYields = sortedIndices.map(i => avgYields[i]);
+
+        const option = {
+            title: {
+                text: 'Average Barley Yield by Site',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: function(params) {
+                    return params[0].name + ': ' + params[0].value.toFixed(2);
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: sortedSites,
+                axisLabel: { rotate: 45 }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Yield'
+            },
+            series: [{
+                type: 'bar',
+                data: sortedYields,
+                itemStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: '#5C7BD9' },
+                        { offset: 1, color: '#2C4DA0' }
+                    ])
+                },
+                markPoint: {
+                    data: [
+                        { type: 'max', name: 'Max' },
+                        { type: 'min', name: 'Min' }
+                    ]
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_1(data)
+  </script>
+  <script>
+   function plot_2(data){
+        document.getElementById('chart_2').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_2'), null, { renderer: 'svg' });
+
+        // Calculate average yield per variety
+        const varietyAverages = {};
+        data.forEach(item => {
+            if (!varietyAverages[item.variety]) {
+                varietyAverages[item.variety] = { sum: 0, count: 0 };
+            }
+            varietyAverages[item.variety].sum += item.yield;
+            varietyAverages[item.variety].count += 1;
+        });
+
+        // Convert to array and calculate averages
+        const chartData = Object.keys(varietyAverages).map(variety => ({
+            variety: variety,
+            average: parseFloat((varietyAverages[variety].sum / varietyAverages[variety].count).toFixed(2))
+        }));
+
+        // Sort by average yield (descending)
+        chartData.sort((a, b) => b.average - a.average);
+
+        const option = {
+            title: {
+                text: 'Average Barley Yield by Variety',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: '{b}: {c}'
+            },
+            xAxis: {
+                type: 'category',
+                data: chartData.map(item => item.variety),
+                axisLabel: {
+                    rotate: 45
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Average Yield'
+            },
+            series: [{
+                data: chartData.map(item => item.average),
+                type: 'bar',
+                label: {
+                    show: true,
+                    position: 'top',
+                    formatter: '{c}'
+                },
+                itemStyle: {
+                    color: function(params) {
+                        // Color highest green, lowest red, others blue
+                        if (params.dataIndex === 0) return '#4CAF50';
+                        if (params.dataIndex === chartData.length - 1) return '#F44336';
+                        return '#2196F3';
+                    }
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_2(data);
+  </script>
+  <script>
+   function plot_3(data){
+        document.getElementById('chart_3').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_3'), null, { renderer: 'svg' });
+
+        // Process data to get average yield per variety per year
+        const yearData = {};
+        data.forEach(item => {
+            const key = `${item.variety}-${item.year}`;
+            if (!yearData[key]) yearData[key] = { sum: 0, count: 0 };
+            yearData[key].sum += item.yield;
+            yearData[key].count++;
+        });
+
+        // Calculate averages and organize by variety
+        const varieties = [...new Set(data.map(d => d.variety))];
+        const years = [1931, 1932];
+        const seriesData = years.map(year => ({
+            name: year.toString(),
+            type: 'bar',
+            data: varieties.map(variety => {
+                const key = `${variety}-${year}`;
+                return yearData[key] ? parseFloat((yearData[key].sum / yearData[key].count).toFixed(2)) : 0;
+            })
+        }));
+
+        // Set chart options
+        const option = {
+            title: {
+                text: 'Average Yield by Variety (1931 vs 1932)',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: { type: 'shadow' }
+            },
+            legend: {
+                data: ['1931', '1932'],
+                top: '10%'
+            },
+            xAxis: {
+                type: 'category',
+                data: varieties,
+                name: 'Variety',
+                nameLocation: 'middle',
+                nameGap: 30
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Average Yield',
+                nameLocation: 'middle',
+                nameGap: 40
+            },
+            series: seriesData
+        };
+
+        myChart.setOption(option);
+    }
+    plot_3(data)
+  </script>
+  <script>
+   function plot_4(data){
+        document.getElementById('chart_4').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_4'), null, { renderer: 'svg' });
+
+        // Sort data by yield and identify outliers
+        const sortedData = [...data].sort((a, b) => a.yield - b.yield);
+        const outlierIndices = new Set([
+            ...sortedData.slice(0, 5).map(d => d.variety + d.site + d.year + d.yield),
+            ...sortedData.slice(-5).map(d => d.variety + d.site + d.year + d.yield)
+        ]);
+
+        // Prepare scatter data with embedded information
+        const seriesData = data.map(d => {
+            const isOutlier = outlierIndices.has(d.variety + d.site + d.year + d.yield);
+            return {
+                value: [d.variety, d.yield],
+                itemStyle: { color: isOutlier ? '#ff0000' : '#5470c6' },
+                isOutlier: isOutlier,
+                site: d.site,
+                year: d.year,
+                variety: d.variety,
+                yield: parseFloat(d.yield.toFixed(2))
+            };
+        });
+
+        const option = {
+            tooltip: {
+                formatter: params => {
+                    return `Yield: ${params.data.yield.toFixed(2)}<br/>
+                            Variety: ${params.data.variety}<br/>
+                            Site: ${params.data.site}<br/>
+                            Year: ${params.data.year}`;
+                }
+            },
+            xAxis: {
+                type: 'category',
+                name: 'Variety',
+                data: [...new Set(data.map(d => d.variety))],
+                axisLabel: { rotate: 45 }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Yield',
+                scale: true
+            },
+            series: [{
+                type: 'scatter',
+                data: seriesData,
+                symbolSize: 8,
+                label: {
+                    show: true,
+                    formatter: params => params.data.isOutlier ? 
+                        `${params.data.site} (${params.data.year})` : '',
+                    position: 'top'
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_4(data);
+  </script>
+  <script>
+   function plot_5(data){
+        document.getElementById('chart_5').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_5'), null, { renderer: 'svg' });
+
+        const varieties = [...new Set(data.map(item => item.variety))];
+        const years = [1931, 1932];
+        
+        const seriesData = varieties.map(variety => {
+            const values = years.map(year => {
+                const yields = data.filter(d => d.variety === variety && d.year === year)
+                                 .map(d => d.yield);
+                return parseFloat((yields.reduce((a, b) => a + b, 0) / yields.length).toFixed(2));
+            });
+            return {
+                name: variety,
+                type: 'line',
+                data: values,
+                showSymbol: true,
+                smooth: true
+            };
+        });
+
+        const changes = varieties.map(variety => {
+            const y1931 = seriesData.find(s => s.name === variety).data[0];
+            const y1932 = seriesData.find(s => s.name === variety).data[1];
+            const changeVal = y1932 - y1931;
+            return {
+                variety: variety,
+                change: changeVal,
+                changeFormatted: changeVal.toFixed(2)
+            };
+        }).sort((a, b) => Math.abs(b.change) - Math.abs(a.change));
+
+        const option = {
+            title: {
+                text: 'Barley Yield Change (1931-1932)',
+                subtext: `Most affected: ${changes[0].variety} (${changes[0].changeFormatted})\nLeast affected: ${changes[changes.length-1].variety} (${changes[changes.length-1].changeFormatted})`,
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (params) {
+                    return params[0].name + '<br/>' + params.map(p => p.seriesName + ': ' + p.value.toFixed(2)).join('<br/>');
+                }
+            },
+            legend: {
+                data: varieties,
+                bottom: 0
+            },
+            xAxis: {
+                type: 'category',
+                data: years
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Yield'
+            },
+            series: seriesData
+        };
+
+        myChart.setOption(option);
+    }
+    plot_5(data)
+  </script>
+ </body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Demographic Transformations: 1955-2005
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+   <link href="https://cdn.icons8.com/material-icons/4.8.0/iconfont/material-icons.min.css" rel="stylesheet"/>
+   <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: #243b53;
+            line-height: 1.6;
+        }
+        
+        .infographic-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .global-backbone {
+            position: absolute;
+            left: 90px;
+            top: 200px;
+            bottom: 100px;
+            width: 4px;
+            background: linear-gradient(to bottom, #4a90e2, #2b5a99);
+            z-index: 1;
+            border-radius: 2px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #4a90e2 0%, #2b5a99 100%);
+            border-radius: 10px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .header h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.2rem;
+            padding: 0 20px;
+            color: #334e68;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            background: #f7f9fc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .section {
+            margin: 70px 0;
+            padding: 35px 35px 35px 100px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 2;
+            border-left: 3px solid #4a90e2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 3px solid #e67e22;
+        }
+        
+        .section:nth-child(3) {
+            border-left: 3px solid #27ae60;
+        }
+        
+        .section:nth-child(5) {
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .section-icon {
+            background: #4a90e2;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+            position: absolute;
+            left: -35px;
+            top: 30px;
+            z-index: 3;
+        }
+        
+        .section:nth-child(even) .section-icon {
+            background: #e67e22;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+        
+        .section:nth-child(3) .section-icon {
+            background: #27ae60;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .section:nth-child(5) .section-icon {
+            background: #e74c3c;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            color: #243b53;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #334e68;
+            padding: 0 10px;
+            line-height: 1.7;
+        }
+        
+        .chart-container {
+            margin: 25px 0;
+            border-radius: 8px;
+            background: #f8fafc;
+            padding: 15px;
+            border: 1px solid #e1e8ef;
+        }
+        
+        #chart_1, #chart_2, #chart_3, #chart_4 {
+            /* No height set - will be determined by children */
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #4a90e2 0%, #2b5a99 100%);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+        }
+        
+        .sources {
+            margin-top: 70px;
+            padding: 25px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #486581;
+            position: relative;
+            z-index: 2;
+            border-top: 2px dashed #b8c2cc;
+        }
+        
+        .backbone-node {
+            position: absolute;
+            left: 88px;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 3px solid #4a90e2;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        @media (max-width: 900px) {
+            .infographic-container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            .global-backbone {
+                left: 40px;
+            }
+            
+            .backbone-node {
+                left: 38px;
+            }
+            
+            .section {
+                padding: 30px 30px 30px 60px;
+            }
+            
+            .section-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                left: -25px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .global-backbone {
+                display: none;
+            }
+            
+            .backbone-node {
+                display: none;
+            }
+            
+            .section {
+                padding: 25px;
+                margin: 50px 0;
+            }
+            
+            .section-icon {
+                position: relative;
+                left: 0;
+                top: 0;
+                margin-bottom: 20px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+   </style>
+  </link>
+ </head>
+ <body>
+  <div class="infographic-container">
+   <div class="global-backbone">
+   </div>
+   <div class="backbone-node" style="top: 240px;">
+   </div>
+   <div class="backbone-node" style="top: 530px;">
+   </div>
+   <div class="backbone-node" style="top: 820px;">
+   </div>
+   <div class="backbone-node" style="top: 1110px;">
+   </div>
+   <div class="backbone-node" style="top: 1400px;">
+   </div>
+   <div class="header" data-aos="fade-down" data-aos-duration="1200">
+    <h1>
+     Demographic Transformations: 1955-2005
+    </h1>
+    <h2>
+     Exploring Global Trends in Population, Life Expectancy, and Fertility Across Country Clusters
+    </h2>
+   </div>
+   <div class="intro-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+    A half-century journey through humanity's most significant demographic shifts, revealing patterns of growth, health, and family dynamics across world regions.
+   </div>
+   <div class="section" data-aos="fade-right" data-aos-duration="900">
+    <div class="section-icon">
+     <i class="material-icons">
+      group_add
+     </i>
+    </div>
+    <div class="section-header">
+     <h3 class="section-title">
+      Which countries and clusters experienced the most dramatic population growth over the 50-year period?
+     </h3>
+    </div>
+    <p class="section-description">
+     Global population surged from approximately 2.5 billion in 1955 to over 6.5 billion in 2005, with China and India contributing the largest absolute increases, while clusters 0 and 2 showed rapid growth rates.
+    </p>
+    <div class="chart-container" id="chart_1">
+    </div>
+   </div>
+   <div class="cta" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
+    <i class="material-icons" style="vertical-align: middle; margin-right: 10px;">
+     arrow_downward
+    </i>
+    Continue exploring how life expectancy transformed across the globe
+   </div>
+   <div class="section" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
+    <div class="section-icon">
+     <i class="material-icons">
+      healing
+     </i>
+    </div>
+    <div class="section-header">
+     <h3 class="section-title">
+      How did life expectancy trends vary between country clusters, and which clusters led in improvements?
+     </h3>
+    </div>
+    <p class="section-description">
+     Life expectancy improved worldwide, rising from an average of 52 years in 1955 to 68 years in 2005, with countries like Japan (cluster 4) and Switzerland (cluster 1) achieving the highest gains, exceeding 80 years by 2005.
+    </p>
+    <div class="chart-container" id="chart_2">
+    </div>
+   </div>
+   <div class="cta" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
+    <i class="material-icons" style="vertical-align: middle; margin-right: 10px;">
+     arrow_downward
+    </i>
+    Discover how fertility rates evolved across different economic regions
+   </div>
+   <div class="section" data-aos="fade-right" data-aos-delay="100" data-aos-duration="900">
+    <div class="section-icon">
+     <i class="material-icons">
+      family_restroom
+     </i>
+    </div>
+    <div class="section-header">
+     <h3 class="section-title">
+      What patterns emerge in fertility rate reductions, and how do they correlate with economic or regional clusters?
+     </h3>
+    </div>
+    <p class="section-description">
+     Fertility rates declined significantly across all clusters, with cluster 1 nations dropping below replacement level (2.1) by the 1970s, while clusters 0 and 2 maintained higher rates above 5.0 in 2005.
+    </p>
+    <div class="chart-container" id="chart_3">
+    </div>
+   </div>
+   <div class="cta" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
+    <i class="material-icons" style="vertical-align: middle; margin-right: 10px;">
+     arrow_downward
+    </i>
+    Explore how historical events shaped demographic anomalies
+   </div>
+   <div class="section" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
+    <div class="section-icon">
+     <i class="material-icons">
+      warning
+     </i>
+    </div>
+    <div class="section-header">
+     <h3 class="section-title">
+      How did geopolitical events or policies cause anomalies in demographic indicators for specific countries?
+     </h3>
+    </div>
+    <p class="section-description">
+     Notable deviations occurred, such as in Afghanistan where life expectancy plummeted to 42.03 years in 1985 amid conflict, before rebounding, and in Iran where fertility dropped sharply from 7.21 in 1960 to 1.78 in 2005.
+    </p>
+    <div class="chart-container" id="chart_4">
+    </div>
+   </div>
+   <div class="sources" data-aos="fade-up" data-aos-duration="1000">
+    <p>
+     <strong>
+      Data Sources:
+     </strong>
+     World Bank Development Indicators, United Nations Population Division, Gapminder Foundation
+    </p>
+    <p>
+     <strong>
+      Icons by:
+     </strong>
+     Icons8
+    </p>
+    <p>
+     <strong>
+      Design Inspiration:
+     </strong>
+     Demographic Transition Theory, United Nations Population Reports
+    </p>
+   </div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+  </script>
+ </body>
+</html>

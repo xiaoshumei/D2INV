@@ -1,0 +1,31 @@
+{
+  "story_title": "2013-2017 Football Season: A Cross-League Analysis",
+  "story_subtitle": "Exploring Team Dominance, Goal Trends, and Performance Metrics Across Top European Leagues",
+  "story_pieces": [
+    {
+      "narration": "FC Bayern München had an average of 2.64 goals per game in the Deutsche Bundesliga, with a record 8-0 victory over Hamburger SV. In Serie A, Juventus averaged 2.8 goals per game with several high-scoring performances, including a 4-1 win over Sampdoria.",
+      "question": "Which team had the highest average goals per game in the Deutsche Bundesliga, and what was their most lopsided win?",
+      "visualization": "horizontal bar chart (teams vs. average goals per game) with annotated peak"
+    },
+    {
+      "narration": "Home teams won 47% of matches across all leagues, with the English Premier League showing the strongest home advantage at 49% win rate, and Serie A at 48% home win rate.",
+      "question": "How does the home win percentage vary between leagues, and which league has the highest home advantage?",
+      "visualization": "grouped bar chart (leagues vs. home win percentage)"
+    },
+    {
+      "narration": "The match between FC Bayern München and Hamburger SV in the Deutsche Bundesliga had the highest total goals of 8-0, while in Serie A, matches like Bologna vs Napoli (1-7) also reached 8 goals. Overall, matches averaged 2.86 goals per game, with Serie A averaging 3.03 goals per game.",
+      "question": "Which individual match had the highest goal tally, and what is the overall average goals per match?",
+      "visualization": "scatter plot (matches vs. total goals) with highlighted outliers"
+    },
+    {
+      "narration": "Goal scoring increased over the season, with average goals rising from 2.6 in early months to 3.1 in the final matches, particularly in the English Premier League, and a similar trend was observed in Serie A with an increase from 2.8 to 3.2.",
+      "question": "How did the average goals per match evolve throughout the season, and which league saw the most significant increase?",
+      "visualization": "line chart with multiple series (date vs. average goals per league)"
+    },
+    {
+      "narration": "FC Bayern München and Real Madrid dominated their respective leagues with the highest goal differences, exceeding +60 over the season, while in Serie A, Juventus led with a goal difference of +50.",
+      "question": "Which teams had the best goal differences in the top leagues, and how did they compare?",
+      "visualization": "bar chart race (teams vs. cumulative goal difference over time)"
+    }
+  ]
+}
