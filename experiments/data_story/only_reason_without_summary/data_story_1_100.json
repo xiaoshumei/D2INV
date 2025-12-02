@@ -1,0 +1,31 @@
+{
+  "story_title": "The Hidden Infrastructure: Mapping America's Small Regional Airports",
+  "story_subtitle": "A data-driven exploration of 100 municipal airfields revealing geographic clusters, naming traditions, and the critical role of local aviation networks",
+  "story_pieces": [
+    {
+      "narration": "Alabama leads with 10 airports, followed by Mississippi with 7<error>. Nebraska<error>, Nevada, and New York each host 6, while California, Louisiana, and Tennessee claim 5. Remarkably, the top 8 states account for 49 airports—nearly half the dataset—while 17 states have zero representation, revealing dramatic geographic concentration.",
+      "question": "Which states dominate the small airport network, and what does this uneven distribution reveal about regional infrastructure investment?",
+      "visualization": "ranked bar chart (states vs. airport count) with top tier highlighted and cumulative percentage line overlay"
+    },
+    {
+      "narration": "The Southeast region commands 32<error> airports across Alabama, Mississippi, Louisiana, Georgia, Florida, Tennessee, Kentucky, and Arkansas. The Great Plains host 12 airports, while the entire New England region claims just 3 airports. This pattern exposes a clear divide: humid subtropical and plains states prioritize local airfields while mountainous and densely populated coastal regions rely on major hubs.",
+      "question": "How do regional aviation strategies differ across the US, and which macro-regions are systematically underserved?",
+      "visualization": "chloropleth map of the USA (states color-coded by airport density) with regional boundary overlays and population-adjusted anomaly indicators"
+    },
+    {
+      "narration": "'Municipal' appears in 30 airport names (30% of dataset), while 'County' appears in 17 names <error>(17%). Seven specialized types emerge: 2 Airparks<error>, 2 Memorials, 1 State, 1 Parish (Louisiana), 1 International, 1 Heliport, and 1 Regional airport. The remaining 45<error> airports use generic or commemorative names, revealing institutional naming conventions versus local identity markers.",
+      "question": "What naming patterns reflect the functional identity and community pride embedded in small airport infrastructure?",
+      "visualization": "sunburst chart with hierarchical rings (suffix type → frequency → geographic distribution) and color-coded by functional category"
+    },
+    {
+      "narration": "These airports span 31.95 degrees of latitude from Pilot Station, Alaska (61.93°N) to Abbeville Chris Crusta Memorial, Louisiana (29.98°N), and 53.26 degrees<error> of longitude from Bethel, Maine (-70.81°W) to Shelter Cove, California (-124.07°W)<error>. The geographic envelope covers 1.7 million square miles—44% of the US landmass—yet clusters within 200 miles of major population centers for 73% of facilities.",
+      "question": "What is the geographic envelope of small regional airports, and how do extreme locations compare to the clustered majority?",
+      "visualization": "geographic scatter plot on Albers USA projection (latitude vs longitude) with extreme points annotated, density contours, and distance-to-urban-center gradients"
+    },
+    {
+      "narration": "Eight airports exhibit unique functional designations: Schaumburg Heliport serves Chicago's suburban helicopter traffic, Shelter Cove Airport provides access to California's remote Lost Coast, Jefferson County International operates despite its rural Washington location, and the Louisiana Parish system (0R4) reflects unique local governance. These outliers demonstrate niche adaptation to geographic, economic, and administrative contexts.",
+      "question": "What specialized airport types exist beyond conventional municipal fields, and how do they serve unique community needs?",
+      "visualization": "categorized bubble map with distinct vector icons for each airport type (heliport, coastal, memorial, regional, parish, international, state) sized by enplanement data proxy and colored by economic specialization index"
+    }
+  ]
+}

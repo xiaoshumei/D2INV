@@ -1,0 +1,131 @@
+{
+  "fields": [
+    {
+      "column": "iata",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "0R7",
+          "0F9",
+          "0M5"
+        ],
+        "num_unique_values": 100
+      }
+    },
+    {
+      "column": "name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Red River",
+          "Tishomingo Airpark",
+          "Humphreys County"
+        ],
+        "num_unique_values": 100
+      }
+    },
+    {
+      "column": "city",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Headland",
+          "Montague",
+          "Owyhee"
+        ],
+        "num_unique_values": 98
+      }
+    },
+    {
+      "column": "state",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "PA",
+          "ND",
+          "KS"
+        ],
+        "num_unique_values": 36,
+        "distribution_unique_values": {
+          "AL": 10,
+          "MS": 8,
+          "NE": 8,
+          "NY": 6,
+          "NV": 6,
+          "LA": 5,
+          "CA": 5,
+          "TN": 5,
+          "IL": 4,
+          "TX": 4,
+          "OK": 3,
+          "OH": 3,
+          "CO": 2,
+          "MI": 2,
+          "ND": 2,
+          "NM": 2,
+          "SD": 2,
+          "GA": 2,
+          "IN": 2,
+          "MN": 2,
+          "WA": 2,
+          "AK": 1,
+          "WI": 1,
+          "MO": 1,
+          "FL": 1,
+          "DC": 1,
+          "VT": 1,
+          "ME": 1,
+          "KY": 1,
+          "KS": 1,
+          "MA": 1,
+          "AR": 1,
+          "IA": 1,
+          "VA": 1,
+          "AZ": 1,
+          "PA": 1
+        }
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "USA"
+        ],
+        "num_unique_values": 1,
+        "distribution_unique_values": {
+          "USA": 100
+        }
+      }
+    },
+    {
+      "column": "latitude",
+      "properties": {
+        "dtype": "number",
+        "std": 5.434136651507874,
+        "min": 29.97576083,
+        "max": 61.93396417,
+        "mean": 38.3192117557,
+        "samples": [
+          31.99071694
+        ],
+        "num_unique_values": 100
+      }
+    },
+    {
+      "column": "longitude",
+      "properties": {
+        "dtype": "number",
+        "std": 14.533185225091374,
+        "min": -162.8929358,
+        "max": -70.80784778,
+        "mean": -94.1498501324,
+        "samples": [
+          -93.30739306
+        ],
+        "num_unique_values": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "story_title": "The Hidden Geography of American Aviation: Small Airports Across the Nation",
+  "story_subtitle": "Exploring the distribution, naming conventions, and regional patterns of 700+ regional airports, heliports, and seaplane bases",
+  "story_pieces": [
+    {
+      "narration": "Texas dominates with 57 airports<error>, followed by Oklahoma (41)<error> and Alaska (38)<error>. This top three states account for 19%<error> of all facilities, revealing how vast geographies and dispersed populations drive aviation infrastructure. Texas and Oklahoma's oil industry legacy and Alaska's remoteness make small airports critical for economic connectivity.",
+      "question": "Which states host the most small/regional airports, and what geographic patterns emerge?",
+      "visualization": "choropleth map of the United States with states shaded by airport count, using a quantize color scale from light blue to dark blue"
+    },
+    {
+      "narration": "'Municipal' appears in 186<error> airport names (26%<error> of the dataset), 'County' in 94<error> names (13%)<error>, and 'Regional' in 28<error> names (4%). This naming hierarchy reflects governance structures: municipal for city-owned, county for county-operated, and regional for multi-jurisdictional facilities. The prevalence of 'Municipal' signals local government as the primary operator of small airports.",
+      "question": "What do airport naming patterns reveal about ownership and administrative structures?",
+      "visualization": "horizontal bar chart showing the frequency of top 10 terms in airport names, sorted descending"
+    },
+    {
+      "narration": "The dataset contains 9 seaplane bases, 7 heliports, and 14 airparks. 67% of seaplane bases cluster in Alaska and Washington, serving remote coastal communities. Heliports concentrate in metropolitan areas like New York, Chicago, and Dallas-Fort Worth for business and emergency transport. Airparks populate suburban regions, catering to recreational pilots and small aircraft owners.",
+      "question": "How are specialized aviation facilities distributed, and what purposes do they serve?",
+      "visualization": "symbol map with distinct icons (seaplane, helicopter, and propeller symbols) showing geographic distribution of specialized facilities"
+    },
+    {
+      "narration": "America's small airport network spans from 18.45°N (Arecibo, Puerto Rico) to 68.07°N (Chandalar Shelf, Alaska)—a 49.6° latitude range. Longitudinally, it extends from Kotlik, Alaska (-163.53°W)<error> to Maine's Columbia County (-73.71°W)<error>. This 90° longitudinal span covers nine time zones, highlighting aviation's role in connecting remote territories.",
+      "question": "What are the geographic extremes of the small airport network, and how does this reflect infrastructure priorities?",
+      "visualization": "scatter plot on an Albers projection map with extreme points annotated and connected by bounding box overlay"
+    },
+    {
+      "narration": "Three aviation superclusters emerge: Great Lakes (156 airports), Southeast (138 airports), and Texas-Oklahoma (98 airports). Great Lakes airports support manufacturing and agricultural supply chains. Southeast clusters reflect population density and tourism. The Texas-Oklahoma corridor enables energy industry logistics. These clusters show airports don't just follow population—they follow economic activity hubs.",
+      "question": "Where do airports cluster regionally, and what economic activities drive these patterns?",
+      "visualization": "hexbin density map with 100km radius hexagons, showing hot spots in red and cold spots in blue, with major clusters outlined and labeled"
+    }
+  ]
+}

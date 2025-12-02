@@ -36,7 +36,7 @@ def get_data_files():
 def experiments():
     data_list = get_data_files()
     for data_file in data_list:
-        if data_file != "stocks.csv":
+        if data_file != "airports.csv":
             continue
         print(f"data_file:{data_file} start")
         dataset_name = data_file.split(".")[0]

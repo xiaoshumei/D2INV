@@ -1,0 +1,31 @@
+{
+  "story_title": "America's Regional Aviation Network: A Geographic Analysis of 100<error> Local Airports",
+  "story_subtitle": "Uncovering distribution patterns, systematic coding conventions, and spatial clusters across small-market airports",
+  "story_pieces": [
+    {
+      "narration": "Alabama dominates the dataset with 9 airports, while five states—California, Nevada, Nebraska, New York, and Mississippi<error>—each host 5 airports. The Southeast region commands 18% of all airports (18 across AL, MS, TN, GA, FL<error>), revealing a significant concentration. In contrast, 14 states<error> have only a single airport represented, showing stark geographic imbalance.",
+      "question": "Which states have the highest concentration of regional airports, and what geographic clusters emerge?",
+      "visualization": "interactive choropleth map with graduated color intensity by state count"
+    },
+    {
+      "narration": "All 100 airports<error> share a defining characteristic: IATA codes beginning with '0' (zero), a systematic pattern for regional airports. Sub-groupings reveal geographic logic—the '0L' series (0L5, 0L7, 0L9) exclusively serves Nevada, while '0O' and '0Q' codes (0O3, 0O4, 0O5, 0Q5, 0Q6) cluster in California. The '0A' series spans 4 states<error>, showing less regional coherence.",
+      "question": "What hidden structure exists in the IATA coding system for these airports?",
+      "visualization": "treemap with hierarchical drill-down: first character → second character → individual airports, colored by geographic region"
+    },
+    {
+      "narration": "California's airports form a 270-mile north-south corridor from Davis (0O5) to Shelter Cove (0Q5), with Shingletown (0Q6) branching eastward. Despite spanning different climate zones (Mediterranean to coastal), they share similar code structures. The state's 5 airports represent diverse functions: university-adjacent (0O5), municipal (0O4), and remote community access (0Q5, 0Q6).",
+      "question": "How do California's airports connect spatially, and what functional patterns exist?",
+      "visualization": "zoomed-in geographic map with animated flight path connections and dual-layer overlay showing elevation and population density"
+    },
+    {
+      "narration": "Naming conventions reveal administrative hierarchies: 28%<error> include 'Municipal' (public ownership), 13% contain 'County' (regional jurisdiction), and 3% are named after individuals (William R Pogue, Col. Dyke). Functional descriptors vary from 'Airpark' (2%)<error> to 'Regional' (1%), while geographic markers like 'Capitol' and 'University' suggest specific locational purposes.",
+      "question": "What do airport naming patterns tell us about ownership, function, and geographic identity?",
+      "visualization": "sunburst chart with concentric rings: root → naming type (Municipal/County/Personal/etc.) → individual airport names"
+    },
+    {
+      "narration": "The network spans extreme geographic boundaries: Pilot Station, Alaska (0AK) at 61.93°N latitude is the northernmost; Jekyll Island, Georgia (09J) at 31.07°N is the southernmost<error>. The westernmost point, Shelter Cove, California (0Q5) at -124.07°W<error>, sits 2,400 miles from the easternmost in Columbia, Mississippi (0R0) at -89.81°W<error>. Notable outliers include Washington DC's sole airport (09W) and four airports within a 50-mile radius in southern Nevada.",
+      "question": "Which airports represent the geographic extremes of this network, and where do tight clusters form?",
+      "visualization": "annotated geographic map with heatmap overlay showing airport density, plus highlighted extreme points and 50-mile radius circles around major clusters"
+    }
+  ]
+}

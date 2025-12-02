@@ -1,0 +1,151 @@
+{
+  "fields": [
+    {
+      "column": "iata",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "IKK",
+          "3ND0",
+          "E15"
+        ],
+        "num_unique_values": 2000
+      }
+    },
+    {
+      "column": "name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Cleveland Municipal",
+          "Columbus Municipal",
+          "Marlboro County"
+        ],
+        "num_unique_values": 1935
+      }
+    },
+    {
+      "column": "city",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Hilo",
+          "Jackman",
+          "St Paul"
+        ],
+        "num_unique_values": 1678
+      }
+    },
+    {
+      "column": "state",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "CA",
+          "AL",
+          "WA"
+        ],
+        "num_unique_values": 55,
+        "distribution_unique_values": {
+          "AK": 170,
+          "TX": 131,
+          "OK": 75,
+          "GA": 69,
+          "OH": 67,
+          "CA": 64,
+          "NY": 64,
+          "MI": 61,
+          "AL": 60,
+          "IL": 59,
+          "NE": 53,
+          "KS": 52,
+          "MN": 51,
+          "IA": 50,
+          "MT": 48,
+          "AR": 45,
+          "WI": 44,
+          "NC": 43,
+          "FL": 42,
+          "MO": 41,
+          "MS": 41,
+          "IN": 41,
+          "KY": 39,
+          "SC": 39,
+          "CO": 37,
+          "LA": 35,
+          "PA": 34,
+          "TN": 34,
+          "ND": 33,
+          "SD": 33,
+          "OR": 30,
+          "AZ": 30,
+          "NM": 29,
+          "WA": 28,
+          "ME": 22,
+          "VA": 21,
+          "NV": 20,
+          "MA": 20,
+          "NJ": 17,
+          "WY": 17,
+          "WV": 17,
+          "UT": 16,
+          "MD": 13,
+          "CT": 12,
+          "ID": 11,
+          "NH": 9,
+          "VT": 9,
+          "HI": 8,
+          "DE": 5,
+          "PR": 3,
+          "CQ": 2,
+          "DC": 1,
+          "RI": 1,
+          "AS": 1,
+          "GU": 1
+        }
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "USA"
+        ],
+        "num_unique_values": 1,
+        "distribution_unique_values": {
+          "USA": 2000
+        }
+      }
+    },
+    {
+      "column": "latitude",
+      "properties": {
+        "dtype": "number",
+        "std": 8.184859869425939,
+        "min": 13.48345,
+        "max": 71.2854475,
+        "mean": 40.267296038925004,
+        "samples": [
+          41.07140417
+        ],
+        "num_unique_values": 2000
+      }
+    },
+    {
+      "column": "longitude",
+      "properties": {
+        "dtype": "number",
+        "std": 21.2439501697937,
+        "min": -176.6460306,
+        "max": -65.30432444,
+        "mean": -98.06147798098002,
+        "samples": [
+          -87.84626861
+        ],
+        "num_unique_values": 2000
+      }
+    }
+  ]
+}
+

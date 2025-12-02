@@ -1,0 +1,36 @@
+{
+  "story_title": "America's Hidden Runways: Mapping the Nation's Small Airport Network",
+  "story_subtitle": "A Geographic and Demographic Analysis of 100 Community Airports Across 36 States",
+  "story_pieces": [
+    {
+      "narration": "Alabama leads America's small airport network with 10 facilities, followed by Mississippi and Nebraska with 8 each. Southern states dominate the top rankings, suggesting a strong reliance on local aviation infrastructure in rural southern communities for connectivity and economic access.",
+      "question": "Which states host the most small airports, and what does this reveal about regional aviation dependencies?",
+      "visualization": "animated choropleth map with ranked state bar chart race"
+    },
+    {
+      "narration": "Pilot Station Airport (0AK) stands as the dataset's geographic outlier at 61.9°N latitude and -162.9°W longitude, making it simultaneously the northernmost and westernmost airport. This single Alaskan entry represents a 3,000-mile disconnect from the continental cluster, highlighting Alaska's unique aviation dependencies and extreme isolation.",
+      "question": "How does Alaska's small airport infrastructure differ geographically from the continental United States?",
+      "visualization": "interactive US map with zoomed geographic inset and isolation distance annotation"
+    },
+    {
+      "narration": "While airports span 92 degrees of longitude from Maine to Alaska, a clear concentration emerges in the central corridor between -100° and -85° longitude. This 'heartland aviation belt' encompasses the Great Plains and Mississippi River Basin, where over half of all airports serve America's agricultural and industrial core.",
+      "question": "What longitudinal patterns reveal America's small airport 'heartland'?",
+      "visualization": "longitude histogram with overlaid distribution curve and map corridor highlighting"
+    },
+    {
+      "narration": "A significant portion of airports include 'Municipal' or 'County' in their names (e.g., 'Livingston Municipal', 'Bibb County'), while others honor local figures like 'William R Pogue Municipal'. This naming pattern reflects their fundamental role as community assets rather than commercial hubs, emphasizing public service over profit.",
+      "question": "How do naming conventions reveal the community-oriented nature of small airports?",
+      "visualization": "word cloud of airport name components combined with treemap of naming categories"
+    },
+    {
+      "narration": "The airports span nearly 32 degrees of latitude from Louisiana's subtropical south (29.98°N) to Alaska's subarctic wilderness (61.93°N), but the majority concentrate in the temperate 35-42°N band where most Americans live. This distribution mirrors population density patterns, showing infrastructure follows settlement rather than spanning uniformly across geographic extremes.",
+      "question": "How does latitude distribution correlate with America's settlement patterns and climate zones?",
+      "visualization": "latitude histogram overlaid with population density curve and climate zone bands"
+    },
+    {
+      "narration": "With 98 unique cities hosting 100 airports, only two metropolitan areas—Chicago/Schaumburg and Washington, DC—have multiple facilities. This 98% uniqueness rate demonstrates that small airports function as a capillary network, reaching nearly every community individually rather than consolidating in urban hubs like major commercial airports.",
+      "question": "How does the geographic uniqueness of small airports compare to the hub-and-spoke model of commercial aviation?",
+      "visualization": "dot density map with satellite view of multi-airport metro areas"
+    }
+  ]
+}

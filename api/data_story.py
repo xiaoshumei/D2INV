@@ -95,6 +95,41 @@ class DataStory:
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
 
+    def check_data_fact(self, data_summary, narration):
+        code_scaffold = """
+        import pandas as pd
+        def data_fact_validate(df):
+            # calculations ...
+
+            results = {
+                ...
+            }
+
+            return results """
+        system_prompt = f"Given a narration and a data summary, generate Python + pandas code to compute and validate the data facts based on a preloaded df. Just fill in the following code template:\n{code_scaffold}"
+        messages = [
+            {
+                "role": "system",
+                "content": system_prompt,
+            },
+            {
+                "role": "user",
+                "content": f"The data summary is \n{data_summary}\n The data fact is \n{narration}\n",
+            },
+        ]
+        if os.getenv("USE_OPENAI") == "False":
+            data_fata_check_code = self.requests_llm.chat(messages)
+        else:
+            completion = self.llm.client.chat.completions.create(
+                model=self.llm.model,
+                messages=messages,
+                stream=False,
+                temperature=1.0,
+            )
+            data_fata_check_code = completion.choices[0].message.content
+        data_fata_check_result = eval(data_fata_check_code)
+        return data_fata_check_result
+
     def reflection(self, data_summary):
         self.messages += [
             {

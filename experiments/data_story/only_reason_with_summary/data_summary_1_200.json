@@ -1,0 +1,137 @@
+{
+  "fields": [
+    {
+      "column": "iata",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "10U",
+          "06A",
+          "09J"
+        ],
+        "num_unique_values": 200
+      }
+    },
+    {
+      "column": "name",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "David G Joyce",
+          "Moton  Municipal",
+          "Todd Field"
+        ],
+        "num_unique_values": 199
+      }
+    },
+    {
+      "column": "city",
+      "properties": {
+        "dtype": "string",
+        "samples": [
+          "Plymouth",
+          "Nunapitchuk",
+          "Chicago/Schaumburg"
+        ],
+        "num_unique_values": 197
+      }
+    },
+    {
+      "column": "state",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "OK",
+          "ND",
+          "MO"
+        ],
+        "num_unique_values": 42,
+        "distribution_unique_values": {
+          "AL": 15,
+          "MS": 14,
+          "OK": 12,
+          "NY": 10,
+          "NE": 10,
+          "OH": 8,
+          "IL": 8,
+          "TN": 8,
+          "CA": 8,
+          "TX": 7,
+          "LA": 7,
+          "GA": 7,
+          "NV": 7,
+          "SD": 6,
+          "MN": 6,
+          "NJ": 5,
+          "AK": 5,
+          "MO": 4,
+          "KY": 4,
+          "WA": 4,
+          "CO": 4,
+          "MI": 4,
+          "ND": 3,
+          "KS": 3,
+          "IN": 3,
+          "NM": 3,
+          "PA": 2,
+          "FL": 2,
+          "ME": 2,
+          "MA": 2,
+          "ID": 2,
+          "VT": 2,
+          "AZ": 2,
+          "AR": 2,
+          "UT": 2,
+          "WI": 1,
+          "DC": 1,
+          "IA": 1,
+          "VA": 1,
+          "OR": 1,
+          "NC": 1,
+          "MT": 1
+        }
+      }
+    },
+    {
+      "column": "country",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "USA"
+        ],
+        "num_unique_values": 1,
+        "distribution_unique_values": {
+          "USA": 200
+        }
+      }
+    },
+    {
+      "column": "latitude",
+      "properties": {
+        "dtype": "number",
+        "std": 5.849909314720233,
+        "min": 29.97576083,
+        "max": 61.93396417,
+        "mean": 38.765546122349996,
+        "samples": [
+          41.95323306
+        ],
+        "num_unique_values": 200
+      }
+    },
+    {
+      "column": "longitude",
+      "properties": {
+        "dtype": "number",
+        "std": 15.795204743825328,
+        "min": -162.8929358,
+        "max": -69.23976722,
+        "mean": -94.49837814934999,
+        "samples": [
+          -116.1876014
+        ],
+        "num_unique_values": 200
+      }
+    }
+  ]
+}

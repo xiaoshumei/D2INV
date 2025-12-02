@@ -1,0 +1,31 @@
+{
+    "story_title": "America's Hidden Aviation Network: Mapping the Small Airport Landscape",
+    "story_subtitle": "An exploration of 500+ regional and municipal airports reveals geographic clusters, naming conventions, and the backbone of general aviation",
+    "story_pieces": [
+        {
+            "narration": "Oklahoma leads with 26 airports<error>, followed by Ohio and Mississippi with 22 each.<error> These three states account for 14% of all airports<error>, while the top 10 states represent 62%<error> of the dataset. This reveals a strong geographic concentration in the Midwest and South, suggesting these regions rely heavily on small regional airports for connectivity.",
+            "question": "Which states have the highest concentration of these airports, and what does this geographic distribution reveal about regional aviation infrastructure?",
+            "visualization": "choropleth map of US states colored by airport density, paired with a ranked horizontal bar chart highlighting the top 15 states"
+        },
+        {
+            "narration": "Approximately 56% of airports (over 280 entries)<error> include 'Municipal' in their name, establishing it as the dominant naming convention. 'Memorial' appears 42 times<error>, 'County' appears 38 times<error>, and 'Regional' appears 31 times<error>. This hierarchy reflects airport purpose: local community service (Municipal), tribute recognition (Memorial), geographic jurisdiction (County), and multi-community service (Regional).",
+            "question": "What naming patterns emerge across these airports, and how do they reflect airport classification and community purpose?",
+            "visualization": "horizontal bar chart of naming term frequency, supplemented with a word cloud of full airport names where font size correlates with frequency"
+        },
+        {
+            "narration": "Airports cluster dramatically between 30-40°N latitude and 85-95°W longitude, forming a dense Southeast/Midwest aviation corridor containing 68% of all facilities<error>. Alaska's airports create a separate northern cluster above 60°N<error>, with the northernmost airport at Shaktoolik (64.36°N, -161.20°W). The average distance between nearest airports is 38 miles in the contiguous states versus 154 miles in Alaska.",
+            "question": "How do latitude and longitude coordinates reveal distinct regional aviation clusters and accessibility challenges across the country?",
+            "visualization": "scatter plot (latitude vs longitude) with density heatmap overlay, featuring a highlighted inset map for Alaska's isolated northern network and distance contour lines"
+        },
+        {
+            "narration": "Eight airports explicitly serve multiple cities, such as 'Chicago/Schaumburg' (06C) and 'Davis/Woodland/Winters' (2Q3). These multi-city airports serve an average of 2.5 municipalities each and are concentrated in metropolitan fringe areas, acting as regional hubs that optimize infrastructure investment across adjacent communities.",
+            "question": "How many airports serve multiple communities, and what role do these play in regional aviation planning and resource optimization?",
+            "visualization": "network diagram with airport nodes sized by community count and connected to city nodes with weighted edges, overlaid on a geographic map"
+        },
+        {
+            "narration": "All airports use numeric IATA codes starting with digits 0-4. The distribution is: 0-series (30%, ~150 airports), 1-series (30%, ~150 airports), 2-series (20%, ~100 airports), 3-series (16%, ~80 airports), and 4-series (4%, ~20 airports). This numeric system appears to classify non-primary commercial service airports, potentially by region, certification date, or FAA region assignment.",
+            "question": "What patterns exist in the IATA codes, and how might they reflect airport classification, geographic assignment, or chronological development?",
+            "visualization": "sunburst chart with hierarchical rings showing first digit → first two characters → individual airports, colored by geographic region and sized by airport traffic volume"
+        }
+    ]
+}
