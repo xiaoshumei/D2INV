@@ -1,9 +1,9 @@
 import json
 import os
-
+from datetime import datetime
 import pandas as pd
 
-from summarize import batch_summary
+from api.summarize import batch_summary
 from tools.config import (
     r1_max_tokens,
     r2_max_tokens,
@@ -11,28 +11,38 @@ from tools.config import (
     r4_max_tokens,
     max_prompts_tokens_3R,
 )
-from tools.llm import LLM, RequestsLLM
+from tools.llm import LLM
 from tools.utils import postprocess_response
 from transformers import AutoTokenizer
 
 
-def calculate_text_tokens(prompts):
+def calculate_text_tokens(text):
     tokenizer = AutoTokenizer.from_pretrained(
         "./tokenizer", trust_remote_code=False, use_fast=True
     )
-    tokens = tokenizer.encode(prompts, add_special_tokens=False)
+    tokens = tokenizer.encode(text, add_special_tokens=False)
 
     return len(tokens)
 
 
 class DataStory:
-    def __init__(self, dataset_name, data_df: pd.DataFrame):
+    def __init__(
+        self,
+        dataset_name,
+        data_df: pd.DataFrame,
+        write_stages=None,
+    ):
+        if write_stages is None:
+            write_stages = ["reason", "revalidate", "reflect", "final"]
         self.messages = []
         self.result = ""
         self.dataset_name = dataset_name
         self.data = data_df
         self.llm = LLM()
-        self.requests_llm = RequestsLLM()
+        self.write_stages = write_stages
+        self.data_fact_check_results = []
+        self.reason_results = ""
+        self.reflect_results = ""
         self.example = {
             "story_title": "COVID-19: A Global Pandemic in Numbers",
             "story_subtitle": "A Comprehensive Analysis of Infection Rates, Vaccination Trends, and Mortality Patterns Across Countries",
@@ -60,7 +70,7 @@ class DataStory:
             "content": "You are a data analyst who excels at mining data insights and data stories from datasets. When given a dataset, you just return a json and don't explain anything. Do not include any comments or additional text in json.",
         }
 
-    def calc_data_tokens(self):
+    def calc_3r_tokens(self):
         remain_tokens = (
             self.llm.max_tokens
             - max_prompts_tokens_3R
@@ -68,7 +78,7 @@ class DataStory:
         )
         return remain_tokens
 
-    def reason(self, data_samples):
+    def reason(self, data_samples, data_summary=""):
         """
         Generate a data story from the provided dataset using reasoning llm.
         """
@@ -76,28 +86,34 @@ class DataStory:
             self.reason_system_prompt,
             {
                 "role": "user",
-                "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(data_samples, ensure_ascii=False)}\n The data story must includes story_title, story_subtitle, and multiple story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
+                "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(data_samples, ensure_ascii=False)}\n {data_summary} The data story must includes story_title, story_subtitle, and five story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-                max_tokens=r1_max_tokens,
-                response_format={"type": "json_object"},
-            )
-            content = completion.choices[0].message.content
+        start_time = datetime.now()
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+            max_tokens=r1_max_tokens,
+            response_format={"type": "json_object"},
+        )
+        elapsed_time = (datetime.now() - start_time).total_seconds()
+        content = completion.choices[0].message.content
         print("reason:\n", content)
+        content = postprocess_response(content)
+        self.reason_results = content
+        self.result = content
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
+        return {
+            "content": content,
+            "usage": completion.usage,
+            "elapsed_time": elapsed_time,
+        }
 
-    def check_data_fact(self, data_summary, narration):
+    def check_data_fact(self, data, data_summary, narration):
         code_scaffold = """
-        import pandas as pd
         def data_fact_validate(df):
             # calculations ...
 
@@ -105,8 +121,8 @@ class DataStory:
                 ...
             }
 
-            return results """
-        system_prompt = f"Given a narration and a data summary, generate Python + pandas code to compute and validate the data facts based on a preloaded df. Just fill in the following code template:\n{code_scaffold}"
+            return results"""
+        system_prompt = f"Given a narration and a data summary, generate Python + pandas code to compute and validate the data facts based on a preloaded df. Just fill in the following code template:\n{code_scaffold}, don't do any explanation"
         messages = [
             {
                 "role": "system",
@@ -117,45 +133,50 @@ class DataStory:
                 "content": f"The data summary is \n{data_summary}\n The data fact is \n{narration}\n",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            data_fata_check_code = self.requests_llm.chat(messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=messages,
-                stream=False,
-                temperature=1.0,
-            )
-            data_fata_check_code = completion.choices[0].message.content
-        data_fata_check_result = eval(data_fata_check_code)
-        return data_fata_check_result
 
-    def reflection(self, data_summary):
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=1.0,
+        )
+        data_fata_check_code = completion.choices[0].message.content
+        content = postprocess_response(data_fata_check_code)
+        ns = {"pd": pd}
+        try:
+            exec(content, ns)
+            data_fata_check_result = ns["data_fact_validate"](pd.DataFrame(data))
+            return data_fata_check_result
+        except Exception as e:
+            print(e)
+            return {}
+
+    def reflection(self, data_summary, data_fact_check_results=None):
+        if data_fact_check_results is None:
+            data_fact_check_results = []
         self.messages += [
             {
                 "role": "system",
-                "content": f"""Based on the given data summary, reflect on whether the data story above contains any subjective and objective issues. Subjective issues include aspects such as logical consistency, narrative flow, the overall appeal of the story, and whether all visualizations are too uniform in type. Objective issues relate to data accuracy, whether the `visualization` in each story accurately and thoroughly fulfills the requirements outlined in the `question`, whether the referenced columns exist, and other verifiable facts. The data summary includes the data type, data samples, statistical information, and the count of unique values for each column in the dataset. For columns with the data type 'category', it also provides the frequency of each enumerated value. To verify whether the data facts described in the narration are accurate, examine metrics such as the mean, maximum, minimum, standard deviation, number of unique values, and the distribution of enumerated values in the data summary. Only return the issues and don't do any revision.""",
+                "content": f"""Based on the given data summary and data fact validation results, reflect on whether the data story above contains any subjective and objective issues. Subjective issues include aspects such as logical consistency, narrative flow, the overall appeal of the story, and whether all visualizations are too uniform in type. Objective issues relate to data accuracy, whether the `visualization` in each story accurately and thoroughly fulfills the requirements outlined in the `question`, whether the referenced columns exist, and other verifiable facts. The data summary includes the data type, data samples, statistical information, and the count of unique values for each column in the dataset. For columns with the data type 'category', it also provides the frequency of each enumerated value. provide accurate calculations generated for the narration of each story piece and can be used to verify whether the narration is accurate. Only return the issues and don't do any revision.""",
             },
             {
                 "role": "user",
-                "content": f"The data summary is \n{data_summary}\nLet the reflection begin now. If the data in the narration are correct, no need to tell me they’re fine. Treat any numeric difference ≤ ±0.05 (or ≤ ±0.1 %) as insignificant; do not flag it as an error. If the data summary does not contain the information described in the narration, assume by default that the narration is correct.",
+                "content": f"Do not output any confirmation when the narration is correct. Treat all numeric deviations within ±0.05 (or ±0.1%) as negligible and do not classify them as errors. If it is not possible to determine the correctness of the narration from the provided information, assume it is correct by default and do not flag it as an error. The data summary is \n{data_summary}\n The data fact validation results are \n{data_fact_check_results}\nLet the reflection begin now. ",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-                max_tokens=r2_max_tokens,
-            )
-            content = completion.choices[0].message.content
-            print(self.messages, "\n", completion.choices[0])
-        print("reflect:\n", content, "\ndata_summary:\n", data_summary)
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+            max_tokens=r2_max_tokens,
+        )
+        content = completion.choices[0].message.content
+        print("reflect:\n", content)
+        self.reflect_results = content
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
+        return True if content else False
 
     def refine(self):
         self.messages.append(
@@ -164,20 +185,24 @@ class DataStory:
                 "content": "Fix only clearly identifiable errors in the narration, do not attempt to correct unverifiable objective issues. And provide a new data story in json format. Don't do any explanation.",
             }
         )
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-                max_tokens=r3_max_tokens,
-            )
-            content = completion.choices[0].message.content
+        start_time = datetime.now()
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+            max_tokens=r3_max_tokens,
+        )
+        elapsed_time = (datetime.now() - start_time).total_seconds()
+        content = completion.choices[0].message.content
         content = postprocess_response(content)
         print("refine:\n", content)
         self.result = content
+        return {
+            "content": content,
+            "usage": completion.usage,
+            "elapsed_time": elapsed_time,
+        }
 
     def revalidate(self, data_samples, data_summary):
         messages = [
@@ -190,18 +215,16 @@ class DataStory:
                 "content": f"The supplementary data consists of:\n{json.dumps(data_samples, ensure_ascii=False)}\n. The corresponding data summary is \n{data_summary}\n. The content of the current data story is: {self.result}. Validate the current data story and return the data story after update. Don't do any explanation and do not show any calculation process in the new data story.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
-        print(messages)
-        print("revalidate:\n", content, data_summary)
+
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=1.0,
+            max_tokens=r4_max_tokens,
+        )
+        content = completion.choices[0].message.content
+        print("revalidate:\n", content)
         self.result = postprocess_response(content)
 
     def write(self):
@@ -209,12 +232,34 @@ class DataStory:
         exist_count = len(
             list(filter(lambda x: x.startswith("data_story_"), os.listdir(dist)))
         )
-        with open(
-            f"{dist}/data_story_{exist_count + 1}.json",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(self.result)
+        if "final" in self.write_stages:
+            with open(
+                f"{dist}/data_story_{exist_count + 1}.json",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(self.result)
+        if "reason" in self.write_stages:
+            with open(
+                f"{dist}/data_story_{exist_count + 1}_reason.json",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(self.reason_results)
+        if "revalidate" in self.write_stages:
+            with open(
+                f"{dist}/data_story_{exist_count + 1}_revalidate.json",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(json.dumps(self.data_fact_check_results, default=str, indent=4))
+        if "reflect" in self.write_stages:
+            with open(
+                f"{dist}/data_story_{exist_count + 1}_reflect.json",
+                "w",
+                encoding="utf-8",
+            ) as f:
+                f.write(self.reflect_results)
 
     def get_datas_by_tokens(self, start_index, remain_tokens):
         """
@@ -226,7 +271,7 @@ class DataStory:
             line = line.to_dict()
             if index < start_index:
                 continue
-            line_tokens = calculate_text_tokens(json.dumps(line, ensure_ascii=False))
+            line_tokens = self.llm.calc_tokens(json.dumps(line, ensure_ascii=False))
             if line_tokens > remain_tokens:
                 stop_index = index
                 break
@@ -236,9 +281,38 @@ class DataStory:
             stop_index = len(self.data)
         return data_samples, stop_index
 
-    def run(self):
+    def run_4r(self):
         first_batch_data, stop_index = self.get_datas_by_tokens(
-            0, remain_tokens=self.calc_data_tokens()
+            0, remain_tokens=self.calc_3r_tokens()
+        )
+        first_batch_summary = batch_summary(first_batch_data)
+        print(
+            f"dataset_name:{self.dataset_name}, module: data story generation, phase:4R start"
+        )
+        self.reason(first_batch_data)
+        data_fact_check_results = []
+        for story_piece in json.loads(self.reason_results)["story_pieces"]:
+            check_result = self.check_data_fact(
+                first_batch_data, first_batch_summary, story_piece["narration"]
+            )
+            data_fact_check_results.append(check_result)
+        print("data fact check results: ", data_fact_check_results)
+        self.data_fact_check_results = data_fact_check_results
+        reflection_not_null = self.reflection(
+            first_batch_summary, data_fact_check_results
+        )
+        if reflection_not_null:
+            self.refine()
+        print("batch end index: ", stop_index)
+        print(
+            f"dataset_name:{self.dataset_name}, module: data story generation, phase:4R finish"
+        )
+        self.write()
+        return self.result
+
+    def run_3r_1r(self):
+        first_batch_data, stop_index = self.get_datas_by_tokens(
+            0, remain_tokens=self.calc_3r_tokens()
         )
         first_batch_summary = batch_summary(first_batch_data)
         print(
@@ -283,17 +357,14 @@ class DataStory:
             },
         ]
 
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=messages,
-                stream=False,
-                temperature=0.7,
-                response_format={"type": "json_object"},
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=0.7,
+            response_format={"type": "json_object"},
+        )
+        content = completion.choices[0].message.content
 
         content = postprocess_response(content)
         print("edit:\n", content)

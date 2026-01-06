@@ -1,6 +1,6 @@
 import os
 
-from tools.llm import LLM, RequestsLLM
+from tools.llm import LLM
 from tools.utils import postprocess_response
 
 
@@ -13,7 +13,6 @@ class Visualization:
         self.goal = goal
         self.llm = LLM()
         self.library = library
-        self.requests_llm = RequestsLLM()
 
     def reason(
         self,
@@ -53,24 +52,20 @@ class Visualization:
             },
             {
                 "role": "system",
-                "content": f"The data summary is\n:{data_summary}\n The code template is: {template} \n All mathematical calculation results must retain only two decimal places. When generating code that requires any map, you must load the corresponding GeoJSON file only from:\n ```js\nfetch('/tools/maps/<filename>')\nwhere <filename> is one of the exact names listed below:\n{os.listdir('./tools/maps')}\nDo not use any other path, CDN, or additional checks/explanations.\n",
+                "content": f"The data summary is\n:{data_summary}\n The code template is: {template} \n All mathematical calculation results must retain only two decimal places. When generating code that requires any map, you must load the corresponding GeoJSON file only from:\n ```js\nfetch('/maps/<filename>')\nwhere <filename> is one of the exact names listed below:\n{os.listdir('./web/maps')}\nDo not use any other path, CDN, or additional checks/explanations.\n",
             },
             {
                 "role": "user",
                 "content": f"Generate a {self.library} chart ({visualization}) that addresses this goal: {question}.",
             },
         ]
-
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         print("reason\n", content)
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
@@ -82,16 +77,13 @@ class Visualization:
                 "content": f"Reflect on whether there are any issues with the above visualization code—for example, syntax errors, references to columns not mentioned in the data summary, incorrect usage of column value types, reliance on deprecated {self.library} APIs, CSS in the style tag that alters ancestor elements’ styles, or failure to round mathematical calculation results to two decimal places.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         print("reflection\n", content)
 
         # add response into chat history
@@ -104,16 +96,13 @@ class Visualization:
                 "content": "Fix the above issues and provide a new visualization code. Don't do any explanation.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         print("refine\n", content)
         # TODO: Detect whether the chart height is invalid, such as unset height, height of 0, or height of 100%
         self.result = postprocess_response(content)

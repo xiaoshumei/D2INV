@@ -1,5 +1,5 @@
 import os
-from tools.llm import LLM, RequestsLLM
+from tools.llm import LLM
 from tools.utils import postprocess_response
 
 
@@ -8,7 +8,6 @@ class Evaluate:
         self.dataset_name = dataset_name
         self.inv = inv
         self.llm = LLM()
-        self.requests_llm = RequestsLLM()
 
     def evaluate_inv(self):
         system_prompt = """
@@ -38,17 +37,14 @@ class Evaluate:
             },
         ]
 
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(messages)
-        else:
-            chat_completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=messages,
-                stream=False,
-                temperature=1.3,
-                response_format={"type": "json_object"},
-            )
-            content = chat_completion.choices[0].message.content
+        chat_completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=1.3,
+            response_format={"type": "json_object"},
+        )
+        content = chat_completion.choices[0].message.content
         return postprocess_response(content)
 
     def evaluation_visualize(self, evaluate_result):
@@ -61,15 +57,15 @@ class Evaluate:
             },
         ]
 
-        if os.getenv("USE_OPENAI") == "False":
-            evaluate_visualize_result = self.requests_llm.chat(messages)
-        else:
-            chat_completion = self.llm.client.chat.completions.create(
-                model=self.llm.model, messages=messages, stream=False, temperature=1.3
-            )
-            evaluate_visualize_result = chat_completion.choices[0].message.content
+        chat_completion = self.llm.client.chat.completions.create(
+            model=self.llm.model, messages=messages, stream=False, temperature=1.3
+        )
+        evaluate_visualize_result = chat_completion.choices[0].message.content
         result = postprocess_response(evaluate_visualize_result)
+        # remove content after </html> tag
+        result = result[: result.find("</html>")]
         self.write(result)
+        return result
 
     def write(self, result):
         dist = f"./results/{self.dataset_name}"
@@ -85,4 +81,4 @@ class Evaluate:
 
     def run(self):
         evaluate_result = self.evaluate_inv()
-        self.evaluation_visualize(evaluate_result)
+        return self.evaluation_visualize(evaluate_result)

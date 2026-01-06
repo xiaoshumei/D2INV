@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>D2INV - Automated Interactive Narrative Visualization</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>D2INV - Automated Interactive Narrative Visualization</h1>
+        <p>
+            Automatically convert data into interactive narrative visualizations
+        </p>
+    </header>
+
+    <main>
+        <!-- Upload and control section -->
+        <section class="control-section">
+            <div class="upload-area">
+                <h2>Upload Dataset</h2>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="datasetFile">Upload your dataset file:</label>
+                        <input type="file" id="datasetFile" accept=".csv,.json,.xlsx"/>
+                        <label for="datasetPath">Choose from available files:</label>
+                        <select id="datasetPath" class="dataset-select">
+                            <option value="">
+                                Select a dataset...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <button id="startBtn" class="primary-btn">Start Generation</button>
+            </div>
+
+            <!-- Progress indicator -->
+            <div class="progress-section">
+                <h3>Processing Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Data Summary</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Data Story</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Infographic Template</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-label">Visualization Generation</span>
+                    </div>
+                    <div class="progress-step" data-step="5">
+                        <span class="step-number">5</span>
+                        <span class="step-label">Self Evaluation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results display area -->
+        <div class="results-container">
+
+            <!-- Data Summary section -->
+            <section class="result-section" id="dataSummarySection">
+                <h2>Data Summary Result</h2>
+                <div class="result-content">
+                    <pre id="dataSummary"></pre>
+                </div>
+            </section>
+
+            <!-- Data Story section -->
+            <section class="result-section" id="dataStorySection">
+                <h2>Data Story Result</h2>
+                <div class="result-content">
+                    <pre id="dataStory"></pre>
+                </div>
+            </section>
+
+            <!-- HTML template section -->
+            <section class="result-section" id="htmlTemplateSection">
+                <h2>HTML Template</h2>
+                <div class="result-content">
+                    <iframe id="htmlTemplateFrame" srcdoc=""></iframe>
+                </div>
+            </section>
+
+            <!-- Final Inv section -->
+            <section class="result-section" id="finalInvSection">
+                <h2>Final INV Result</h2>
+                <div class="result-content">
+                    <iframe id="finalInvFrame" srcdoc=""></iframe>
+                </div>
+            </section>
+
+            <!-- Self Evaluate section -->
+            <section class="result-section" id="selfEvaluateSection">
+                <h2>Self Evaluate Result</h2>
+                <div class="result-content">
+                    <iframe id="selfEvaluateFrame" srcdoc=""></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<!-- Loading animation -->
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Processing dataset, please wait...</p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

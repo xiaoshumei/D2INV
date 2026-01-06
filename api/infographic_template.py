@@ -1,4 +1,4 @@
-from tools.llm import LLM, RequestsLLM
+from tools.llm import LLM
 from tools.utils import postprocess_response
 import os
 from bs4 import BeautifulSoup
@@ -34,7 +34,6 @@ class InfographicTemplate:
         self.dataset_name = dataset_name
         self.data_story = data_story
         self.llm = LLM()
-        self.requests_llm = RequestsLLM()
 
     def reason(self):
         self.messages.append(
@@ -44,16 +43,13 @@ class InfographicTemplate:
             }
         )
 
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
 
@@ -64,16 +60,13 @@ class InfographicTemplate:
                 "content": "Analyze the issues in the above html infographic. Check if each story_piece has an empty div element with a unique id but without height set through external CSS or inline CSS. Besides, reflect on whether the aesthetic indicators—color, font, icons, animations, layout, and structure—meet the required standards.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         # add response into chat history
         self.messages.append({"role": "assistant", "content": content})
 
@@ -84,16 +77,13 @@ class InfographicTemplate:
                 "content": "Fix the above issues and provide a new infographic-style template in HTML format. Don't do any explanation.",
             },
         ]
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(self.messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=self.messages,
-                stream=False,
-                temperature=1.0,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=self.messages,
+            stream=False,
+            temperature=1.0,
+        )
+        content = completion.choices[0].message.content
         self.result = postprocess_response(content)
         # Parse the HTML template string into a BeautifulSoup object for manipulation
         soup = BeautifulSoup(self.result, "html.parser")
@@ -138,18 +128,18 @@ class InfographicTemplate:
             },
         ]
 
-        if os.getenv("USE_OPENAI") == "False":
-            content = self.requests_llm.chat(messages)
-        else:
-            completion = self.llm.client.chat.completions.create(
-                model=self.llm.model,
-                messages=messages,
-                stream=False,
-                temperature=0.7,
-            )
-            content = completion.choices[0].message.content
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=0.7,
+        )
+        content = completion.choices[0].message.content
 
         content = postprocess_response(content)
+
+        # remove content after </html> tag
+        content = content[: content.find("</html>")]
         print("edit:\n", content)
 
         # Parse the HTML template string into a BeautifulSoup object for manipulation

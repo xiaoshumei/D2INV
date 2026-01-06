@@ -210,13 +210,13 @@
             <h1>Data Visualization Assessment</h1>
             <p class="subtitle">Interactive radar chart with detailed dimension analysis. Click on any dimension to view its rationale.</p>
         </header>
-        
+
         <div class="dashboard">
             <div class="chart-container">
                 <h2 class="chart-title">Performance Radar Chart</h2>
                 <div id="radar-chart"></div>
             </div>
-            
+
             <div class="dimensions-container">
                 <h2 class="dimensions-title">Dimension Analysis</h2>
                 <div class="dimension-list" id="dimension-list">
@@ -224,7 +224,7 @@
                 </div>
             </div>
         </div>
-        
+
         <footer>
             <p>Data Visualization Dashboard • Created with ECharts</p>
         </footer>
@@ -233,37 +233,37 @@
     <script>
         // Data from the problem
         const dimensionData = [
-            { 
-                "dimension": "engagement", 
-                "score": 7, 
-                "rationale": "The visualization uses scroll-based animations (AOS library) and hover effects (e.g., sections lifting, backbone points scaling) to engage users, with tooltips in charts providing additional data. However, it lacks deeper interactive features like filtering, drilling down, or user-driven exploration, limiting active engagement. While animations evoke curiosity, they don't consistently align with emotional storytelling, and the narrative flow relies on static progression rather than interactive discovery." 
+            {
+                "dimension": "engagement",
+                "score": 7,
+                "rationale": "The visualization uses scroll-based animations (AOS library) and hover effects (e.g., sections lifting, backbone points scaling) to engage users, with tooltips in charts providing additional data. However, it lacks deeper interactive features like filtering, drilling down, or user-driven exploration, limiting active engagement. While animations evoke curiosity, they don't consistently align with emotional storytelling, and the narrative flow relies on static progression rather than interactive discovery."
             },
-            { 
-                "dimension": "usefulness", 
-                "score": 9, 
-                "rationale": "The INV effectively communicates key insights about wildlife strikes (e.g., damage distribution, high-risk flight phases) through clear descriptions and visualizations, making it accessible to non-experts. Data sources are cited (FAA Wildlife Strike Database), and insights are meaningful for aviation safety. Minor deductions for not clarifying dataset limitations or timeliness, but overall it educates and informs efficiently." 
+            {
+                "dimension": "usefulness",
+                "score": 9,
+                "rationale": "The INV effectively communicates key insights about wildlife strikes (e.g., damage distribution, high-risk flight phases) through clear descriptions and visualizations, making it accessible to non-experts. Data sources are cited (FAA Wildlife Strike Database), and insights are meaningful for aviation safety. Minor deductions for not clarifying dataset limitations or timeliness, but overall it educates and informs efficiently."
             },
-            { 
-                "dimension": "legibility", 
-                "score": 9, 
-                "rationale": "Text is highly readable with appropriate font sizes (Montserrat for headings, Open Sans for body), strong contrast, and spacing. Charts are clear with labels, legends, and tooltips, and information hierarchy is well-organized via sections, icons, and backbone numbering. Colors and typography remain consistent throughout, though some chart labels (e.g., species names in stacked bar) could benefit from better truncation on small screens." 
+            {
+                "dimension": "legibility",
+                "score": 9,
+                "rationale": "Text is highly readable with appropriate font sizes (Montserrat for headings, Open Sans for body), strong contrast, and spacing. Charts are clear with labels, legends, and tooltips, and information hierarchy is well-organized via sections, icons, and backbone numbering. Colors and typography remain consistent throughout, though some chart labels (e.g., species names in stacked bar) could benefit from better truncation on small screens."
             },
-            { 
-                "dimension": "design", 
-                "score": 10, 
-                "rationale": "The layout is logical and intuitive, using a backbone structure to guide viewers sequentially through sections. Visual elements are balanced (e.g., descriptions and charts side-by-side), whitespace reduces clutter, and interactive elements (e.g., progress bar, hover states) are well-integrated. Responsive design adapts to smaller screens via media queries, ensuring functionality across devices without sacrificing coherence." 
+            {
+                "dimension": "design",
+                "score": 10,
+                "rationale": "The layout is logical and intuitive, using a backbone structure to guide viewers sequentially through sections. Visual elements are balanced (e.g., descriptions and charts side-by-side), whitespace reduces clutter, and interactive elements (e.g., progress bar, hover states) are well-integrated. Responsive design adapts to smaller screens via media queries, ensuring functionality across devices without sacrificing coherence."
             },
-            { 
-                "dimension": "aesthetics", 
-                "score": 9, 
-                "rationale": "The color scheme (greens, oranges, blues) is visually appealing and thematically appropriate for wildlife/aviation, with icons and SVG patterns enhancing the aesthetic. Typography is stylish yet readable, and animations (e.g., scroll transitions, bouncing CTAs) are smooth and purposeful. A minor deduction for occasional chart overcrowding (e.g., species bar chart), but overall aesthetics are polished and engaging." 
+            {
+                "dimension": "aesthetics",
+                "score": 9,
+                "rationale": "The color scheme (greens, oranges, blues) is visually appealing and thematically appropriate for wildlife/aviation, with icons and SVG patterns enhancing the aesthetic. Typography is stylish yet readable, and animations (e.g., scroll transitions, bouncing CTAs) are smooth and purposeful. A minor deduction for occasional chart overcrowding (e.g., species bar chart), but overall aesthetics are polished and engaging."
             }
         ];
-        
+
         // Initialize radar chart
         const chartDom = document.getElementById('radar-chart');
         const myChart = echarts.init(chartDom);
-        
+
         const radarOption = {
             title: {
                 text: 'Dimension Scores',
@@ -341,22 +341,22 @@
                 color: 'rgba(255, 255, 255, 0.8)'
             }
         };
-        
+
         myChart.setOption(radarOption);
-        
+
         // Create dimension list
         const dimensionList = document.getElementById('dimension-list');
-        
+
         dimensionData.forEach(item => {
             const dimensionItem = document.createElement('div');
             dimensionItem.className = 'dimension-item';
             dimensionItem.dataset.dimension = item.dimension;
-            
+
             // Calculate stars
             const fullStars = Math.floor(item.score / 2);
             const halfStar = (item.score % 2) >= 1 ? 1 : 0;
             const emptyStars = 5 - fullStars - halfStar;
-            
+
             let starsHTML = '';
             for (let i = 0; i < fullStars; i++) {
                 starsHTML += '<span class="star filled">★</span>';
@@ -367,13 +367,13 @@
             for (let i = 0; i < emptyStars; i++) {
                 starsHTML += '<span class="star">★</span>';
             }
-            
+
             // Set progress bar color based on score
             let progressColor;
             if (item.score >= 9) progressColor = '#4CAF50';
             else if (item.score >= 7) progressColor = '#FFC107';
             else progressColor = '#F44336';
-            
+
             dimensionItem.innerHTML = `
                 <div class="dimension-header">
                     <div class="dimension-name">${item.dimension}</div>
@@ -387,42 +387,42 @@
                 </div>
                 <div class="rationale">${item.rationale}</div>
             `;
-            
+
             dimensionList.appendChild(dimensionItem);
         });
-        
+
         // Add click event listeners
         const dimensionItems = document.querySelectorAll('.dimension-item');
-        
+
         dimensionItems.forEach(item => {
             item.addEventListener('click', function() {
                 // Remove active class from all items
                 dimensionItems.forEach(i => {
                     i.classList.remove('active');
                 });
-                
+
                 // Add active class to clicked item
                 this.classList.add('active');
-                
+
                 // Highlight corresponding radar axis
                 const dimensionName = this.dataset.dimension;
                 const dimensionIndex = dimensionData.findIndex(d => d.dimension === dimensionName);
-                
+
                 radarOption.radar.indicator.forEach((ind, i) => {
-                    ind.textStyle = i === dimensionIndex ? 
-                        { color: '#64ffda', fontWeight: 'bold' } : 
+                    ind.textStyle = i === dimensionIndex ?
+                        { color: '#64ffda', fontWeight: 'bold' } :
                         { color: '#fff' };
                 });
-                
+
                 myChart.setOption(radarOption);
             });
         });
-        
+
         // Make first dimension active by default
         if (dimensionItems.length > 0) {
             dimensionItems[0].classList.add('active');
         }
-        
+
         // Handle window resize
         window.addEventListener('resize', function() {
             myChart.resize();

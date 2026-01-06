@@ -4,7 +4,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 from tools.utils import filter_dataframe
-from visualization import visualize_data_story
+from api.visualization import visualize_data_story
 
 
 class INV:
@@ -30,9 +30,7 @@ class INV:
             src="https://unpkg.com/echarts@latest/dist/extension/dataTool.min.js",
         )
         soup.head.append(script_tag)
-        # data_samples = (
-        #     self.data.iloc[0:10].to_json(orient="records", force_ascii=False),
-        # )
+
         visualization_codes = visualize_data_story(self.data_story, self.data_summary)
         for code in visualization_codes:
             code_soup = BeautifulSoup(code, "html.parser")
@@ -71,4 +69,4 @@ class INV:
     def run(self):
         [inv, inv_no_data] = self.generate_interactive_narrative_visualization()
         self.write(inv)
-        return inv_no_data
+        return [inv, inv_no_data]

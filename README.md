@@ -8,15 +8,16 @@ supports multiple dataset formats and provides an automated pipeline for summari
 - Data Summarization
 - Automatic Data Story Generation
 - Visualization Template Generation
-- Evaluation of Generated Stories
-- Extensible for various visualization libraries
+- Automatic Data Visualization
+- Evaluation of Generated INVs
 
 ## Main Pipeline Overview
 
-The main execution flow in `api/main.py` consists of the following steps:
+The main execution flow in `api/app.py` consists of the following steps:
 
 1. **Environment Setup**  
    Loads environment variables and configuration from `.env` to initialize API keys and parameters.
+
 2. **Result Directory Preparation**  
    For each dataset, creates a dedicated results folder to store outputs.
 
@@ -75,7 +76,7 @@ pip install -r requirements.txt
 ## Start a local server to preview the generated INVs
 
 ```sh
-python -m http.server 8000
+python api_server.py
 ```
 
 Then open http://localhost:8000 in your browser.
