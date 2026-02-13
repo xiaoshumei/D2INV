@@ -5,11 +5,7 @@ import pandas as pd
 
 from api.summarize import batch_summary
 from tools.config import (
-    r1_max_tokens,
-    r2_max_tokens,
-    r3_max_tokens,
-    r4_max_tokens,
-    max_prompts_tokens_3R,
+    max_output_tokens,
 )
 from tools.llm import LLM
 from tools.utils import postprocess_response
@@ -33,7 +29,7 @@ class DataStory:
         write_stages=None,
     ):
         if write_stages is None:
-            write_stages = ["reason", "revalidate", "reflect", "final"]
+            write_stages = ["final"]
         self.messages = []
         self.result = ""
         self.dataset_name = dataset_name
@@ -70,32 +66,28 @@ class DataStory:
             "content": "You are a data analyst who excels at mining data insights and data stories from datasets. When given a dataset, you just return a json and don't explain anything. Do not include any comments or additional text in json.",
         }
 
-    def calc_3r_tokens(self):
-        remain_tokens = (
-            self.llm.max_tokens
-            - max_prompts_tokens_3R
-            - (r1_max_tokens + r2_max_tokens + r3_max_tokens)
-        )
+    def calc_available_tokens(self):
+        remain_tokens = self.llm.max_tokens - max_output_tokens
         return remain_tokens
 
-    def reason(self, data_samples, data_summary=""):
+    def reason(self, data_samples, data_summary=None):
         """
         Generate a data story from the provided dataset using reasoning llm.
         """
-        self.messages += [
+        messages = [
             self.reason_system_prompt,
             {
                 "role": "user",
-                "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(data_samples, ensure_ascii=False)}\n {data_summary} The data story must includes story_title, story_subtitle, and five story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
+                "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(data_samples, ensure_ascii=False)}\n A summary of the dataset is \n{json.dumps(data_summary,ensure_ascii=False) if data_summary else ''}\n The data story must includes story_title, story_subtitle, and five story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
             },
         ]
         start_time = datetime.now()
         completion = self.llm.client.chat.completions.create(
             model=self.llm.model,
-            messages=self.messages,
+            messages=messages,
             stream=False,
             temperature=1.0,
-            max_tokens=r1_max_tokens,
+            max_output_tokens=max_output_tokens,
             response_format={"type": "json_object"},
         )
         elapsed_time = (datetime.now() - start_time).total_seconds()
@@ -154,22 +146,21 @@ class DataStory:
     def reflection(self, data_summary, data_fact_check_results=None):
         if data_fact_check_results is None:
             data_fact_check_results = []
-        self.messages += [
+        messages = [
             {
                 "role": "system",
-                "content": f"""Based on the given data summary and data fact validation results, reflect on whether the data story above contains any subjective and objective issues. Subjective issues include aspects such as logical consistency, narrative flow, the overall appeal of the story, and whether all visualizations are too uniform in type. Objective issues relate to data accuracy, whether the `visualization` in each story accurately and thoroughly fulfills the requirements outlined in the `question`, whether the referenced columns exist, and other verifiable facts. The data summary includes the data type, data samples, statistical information, and the count of unique values for each column in the dataset. For columns with the data type 'category', it also provides the frequency of each enumerated value. provide accurate calculations generated for the narration of each story piece and can be used to verify whether the narration is accurate. Only return the issues and don't do any revision.""",
+                "content": f"""Based on the given data summary and data fact validation results, reflect on whether a data story contains any subjective and objective issues. Subjective issues include aspects such as logical consistency, narrative flow, the overall appeal of the story, and whether all visualizations are too uniform in type. Objective issues relate to data accuracy, whether the `visualization` in each story accurately and thoroughly fulfills the requirements outlined in the `question`, whether the referenced columns exist, and other verifiable facts. The data summary includes the data type, data samples, statistical information, and the count of unique values for each column in the dataset. For columns with the data type 'category', it also provides the frequency of each enumerated value. provide accurate calculations generated for the narration of each story piece and can be used to verify whether the narration is accurate. Only return the issues and don't do any revision.""",
             },
             {
                 "role": "user",
-                "content": f"Do not output any confirmation when the narration is correct. Treat all numeric deviations within ±0.05 (or ±0.1%) as negligible and do not classify them as errors. If it is not possible to determine the correctness of the narration from the provided information, assume it is correct by default and do not flag it as an error. The data summary is \n{data_summary}\n The data fact validation results are \n{data_fact_check_results}\nLet the reflection begin now. ",
+                "content": f"Do not output any confirmation when the narration is correct. Treat all numeric deviations within ±0.05 (or ±0.1%) as negligible and do not classify them as errors. If it is not possible to determine the correctness of the narration from the provided information, assume it is correct by default and do not flag it as an error. The data story is \n{self.reason_results}\n The data summary is \n{data_summary}\n The data fact validation results are \n{data_fact_check_results}\n Let the reflection begin now. ",
             },
         ]
         completion = self.llm.client.chat.completions.create(
             model=self.llm.model,
-            messages=self.messages,
+            messages=messages,
             stream=False,
             temperature=1.0,
-            max_tokens=r2_max_tokens,
         )
         content = completion.choices[0].message.content
         print("reflect:\n", content)
@@ -191,7 +182,6 @@ class DataStory:
             messages=self.messages,
             stream=False,
             temperature=1.0,
-            max_tokens=r3_max_tokens,
         )
         elapsed_time = (datetime.now() - start_time).total_seconds()
         content = completion.choices[0].message.content
@@ -221,7 +211,7 @@ class DataStory:
             messages=messages,
             stream=False,
             temperature=1.0,
-            max_tokens=r4_max_tokens,
+            max_tokens=max_output_tokens,
         )
         content = completion.choices[0].message.content
         print("revalidate:\n", content)
@@ -283,13 +273,13 @@ class DataStory:
 
     def run_4r(self):
         first_batch_data, stop_index = self.get_datas_by_tokens(
-            0, remain_tokens=self.calc_3r_tokens()
+            0, remain_tokens=self.calc_available_tokens()
         )
         first_batch_summary = batch_summary(first_batch_data)
         print(
             f"dataset_name:{self.dataset_name}, module: data story generation, phase:4R start"
         )
-        self.reason(first_batch_data)
+        self.reason(first_batch_data, first_batch_summary)
         data_fact_check_results = []
         for story_piece in json.loads(self.reason_results)["story_pieces"]:
             check_result = self.check_data_fact(
@@ -331,7 +321,7 @@ class DataStory:
             )
             while stop_index < len(self.data):
                 validation_batch_data, stop_index = self.get_datas_by_tokens(
-                    stop_index, remain_tokens=self.llm.max_tokens - r4_max_tokens
+                    stop_index, remain_tokens=self.llm.max_tokens - max_output_tokens
                 )
                 print("batch end index: ", stop_index)
                 validation_batch_summary = batch_summary(validation_batch_data)

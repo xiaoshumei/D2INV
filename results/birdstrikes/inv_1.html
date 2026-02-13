@@ -1225,7 +1225,7 @@
          };
 
          // Load USA map
-         fetch('/tools/maps/usa.json')
+         fetch('/maps/usa.json')
              .then(response => response.json())
              .then(usaJson => {
                  echarts.registerMap('USA', usaJson);

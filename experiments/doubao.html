@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Airport Data Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <!-- Inline Data Section -->
+    <script>
+        // Sample Data
+        const sampleData = [
+            {"iata": "00M", "name": "Thigpen", "city": "Bay Springs", "state": "MS", "country": "USA", "latitude": 31.95376472, "longitude": -89.23450472},
+            {"iata": "00R", "name": "Livingston Municipal", "city": "Livingston", "state": "TX", "country": "USA", "latitude": 30.68586111, "longitude": -95.01792778},
+            {"iata": "00V", "name": "Meadow Lake", "city": "Colorado Springs", "state": "CO", "country": "USA", "latitude": 38.94574889, "longitude": -104.5698933},
+            {"iata": "01G", "name": "Perry-Warsaw", "city": "Perry", "state": "NY", "country": "USA", "latitude": 42.74134667, "longitude": -78.05208056},
+            {"iata": "01J", "name": "Hilliard Airpark", "city": "Hilliard", "state": "FL", "country": "USA", "latitude": 30.6880125, "longitude": -81.90594389},
+            {"iata": "01M", "name": "Tishomingo County", "city": "Belmont", "state": "MS", "country": "USA", "latitude": 34.49166667, "longitude": -88.20111111},
+            {"iata": "02A", "name": "Gragg-Wade", "city": "Clanton", "state": "AL", "country": "USA", "latitude": 32.85048667, "longitude": -86.61145333},
+            {"iata": "02C", "name": "Capitol", "city": "Brookfield", "state": "WI", "country": "USA", "latitude": 43.08751, "longitude": -88.17786917},
+            {"iata": "02G", "name": "Columbiana County", "city": "East Liverpool", "state": "OH", "country": "USA", "latitude": 40.67331278, "longitude": -80.64140639},
+            {"iata": "03D", "name": "Memphis Memorial", "city": "Memphis", "state": "MO", "country": "USA", "latitude": 40.44725889, "longitude": -92.22696056}
+        ];
+
+        // U.S. State Airport Distribution Data (Top 15)
+        const stateData = {
+            "labels": ["AK", "TX", "CA", "OK", "OH", "FL", "GA", "NY", "MI", "MN", "IL", "WI", "KS", "IA", "MO"],
+            "data": [263, 209, 205, 102, 100, 100, 97, 97, 94, 89, 88, 84, 78, 78, 74]
+        };
+
+        // Country Distribution Data
+        const countryData = {
+            "labels": ["USA", "Thailand", "Palau", "N Mariana Islands", "Federated States of Micronesia"],
+            "data": [3372, 1, 1, 1, 1]
+        };
+
+        // Statistical Summary
+        const statsSummary = {
+            "total_airports": 3376,
+            "us_airports": 3372,
+            "international_airports": 4,
+            "states_count": 56,
+            "avg_airports_per_state": 60.21,
+            "missing_data_count": 12,
+            "latitude_range": [7.367222, 71.2854475],
+            "longitude_range": [-176.6460306, 145.621384],
+            "geographic_center": [40.036524, -98.621205]
+        };
+
+        // Geographic Distribution Data (Sampled)
+        const geoData = [
+            {"latitude": 31.95376472, "longitude": -89.23450472, "name": "Thigpen", "city": "Bay Springs", "state": "MS", "country": "USA"},
+            {"latitude": 30.68586111, "longitude": -95.01792778, "name": "Livingston Municipal", "city": "Livingston", "state": "TX", "country": "USA"},
+            {"latitude": 38.94574889, "longitude": -104.5698933, "name": "Meadow Lake", "city": "Colorado Springs", "state": "CO", "country": "USA"},
+            {"latitude": 42.74134667, "longitude": -78.05208056, "name": "Perry-Warsaw", "city": "Perry", "state": "NY", "country": "USA"},
+            {"latitude": 30.6880125, "longitude": -81.90594389, "name": "Hilliard Airpark", "city": "Hilliard", "state": "FL", "country": "USA"},
+            {"latitude": 34.49166667, "longitude": -88.20111111, "name": "Tishomingo County", "city": "Belmont", "state": "MS", "country": "USA"},
+            {"latitude": 32.85048667, "longitude": -86.61145333, "name": "Gragg-Wade", "city": "Clanton", "state": "AL", "country": "USA"},
+            {"latitude": 43.08751, "longitude": -88.17786917, "name": "Capitol", "city": "Brookfield", "state": "WI", "country": "USA"},
+            {"latitude": 40.67331278, "longitude": -80.64140639, "name": "Columbiana County", "city": "East Liverpool", "state": "OH", "country": "USA"},
+            {"latitude": 40.44725889, "longitude": -92.22696056, "name": "Memphis Memorial", "city": "Memphis", "state": "MO", "country": "USA"}
+        ];
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">
+                    <i class="fas fa-plane-departure text-blue-600 mr-3"></i>
+                    Global Airport Data Analysis Report
+                </h1>
+                <p class="text-lg text-gray-600">In-depth Analysis and Visualization of 3,376 Airport Records</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8 space-y-8">
+        <!-- Data Overview Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Airports</p>
+                        <p class="text-3xl font-bold text-blue-600" id="totalAirports">3,376</p>
+                    </div>
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-plane text-blue-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">U.S. Airports</p>
+                        <p class="text-3xl font-bold text-red-600" id="usAirports">3,372</p>
+                    </div>
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <i class="fas fa-flag-usa text-red-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">States/Territories</p>
+                        <p class="text-3xl font-bold text-green-600" id="statesCount">56</p>
+                    </div>
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-map-marked-alt text-green-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Avg Airports per State</p>
+                        <p class="text-3xl font-bold text-purple-600" id="avgPerState">60.21</p>
+                    </div>
+                    <div class="bg-purple-100 p-3 rounded-full">
+                        <i class="fas fa-chart-bar text-purple-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Data Table -->
+        <section class="bg-white rounded-xl shadow-lg border border-gray-200">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                    <i class="fas fa-table text-blue-600 mr-3"></i>
+                    Sample Data
+                </h2>
+                <p class="text-gray-600 mt-2">Showing the first 10 airport records</p>
+            </div>
+            <div class="p-6">
+                <div class="overflow-x-auto">
+                    <table class="w-full table-auto">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IATA Code</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Airport Name</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">City</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">State</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Country</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Latitude</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Longitude</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sampleDataTable" class="bg-white divide-y divide-gray-200">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Charts Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- U.S. State Airport Distribution -->
+            <section class="bg-white rounded-xl shadow-lg border border-gray-200">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                        <i class="fas fa-chart-column text-green-600 mr-3"></i>
+                        U.S. State Airport Distribution (Top 15)
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <canvas id="stateChart" width="400" height="300"></canvas>
+                </div>
+            </section>
+
+            <!-- Country Distribution Pie Chart -->
+            <section class="bg-white rounded-xl shadow-lg border border-gray-200">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                        <i class="fas fa-chart-pie text-purple-600 mr-3"></i>
+                        Airport Country Distribution
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <canvas id="countryChart" width="400" height="300"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <!-- Geographic Distribution Scatter Plot -->
+        <section class="bg-white rounded-xl shadow-lg border border-gray-200">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                    <i class="fas fa-map-marked-alt text-blue-600 mr-3"></i>
+                    Airport Geographic Distribution
+                </h2>
+                <p class="text-gray-600 mt-2">Showing global geographic distribution of airports (sampled data)</p>
+            </div>
+            <div class="p-6">
+                <canvas id="geoChart" width="800" height="400"></canvas>
+            </div>
+        </section>
+
+        <!-- Data Analysis Summary -->
+        <section class="bg-white rounded-xl shadow-lg border border-gray-200">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-600 mr-3"></i>
+                    Data Analysis Summary
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Findings</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    The dataset covers 3,376 airports worldwide, with 99.9% (3,372) located in the United States
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    Alaska has the highest number of airports (263), reflecting its vast geography and aviation importance
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    Texas (209) and California (205) follow closely behind Alaska
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    Covers 56 U.S. states/territories with an average of 60.21 airports per state
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Geographic Characteristics</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-globe-americas text-blue-500 mr-2 mt-1"></i>
+                                    Geographic center located in central U.S.: 40.04° N, 98.62° W
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-globe-americas text-blue-500 mr-2 mt-1"></i>
+                                    Latitude range: 7.37° - 71.29°, covering tropical to Arctic Circle regions
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-globe-americas text-blue-500 mr-2 mt-1"></i>
+                                    Longitude range: -176.65° - 145.62°, spanning the International Date Line
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-yellow-500 mr-2 mt-1"></i>
+                                    12 airports lack city/state information and require further data improvement
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-2">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Data Quality Assessment
+                        </h3>
+                        <p class="text-blue-800">
+                            Overall data quality is excellent, with 99.6% of records containing complete city and state information. 
+                            The data is primarily concentrated in the United States, with relatively few international airport records. 
+                            It is recommended to supplement more international airport data to improve the representativeness of global coverage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 Airport Data Analysis Report | Data-Driven Insights</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Populate Sample Data Table
+        function populateSampleTable() {
+            const tableBody = document.getElementById('sampleDataTable');
+            sampleData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-gray-50 transition-colors duration-200';
+                tr.innerHTML = `
+                    <td class="px-4 py-3 text-sm font-medium text-gray-900">${row.iata}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.name}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.city}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.state}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.country}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.latitude.toFixed(4)}</td>
+                    <td class="px-4 py-3 text-sm text-gray-700">${row.longitude.toFixed(4)}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Create U.S. State Airport Distribution Bar Chart
+        function createStateChart() {
+            const ctx = document.getElementById('stateChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: stateData.labels,
+                    datasets: [{
+                        label: 'Number of Airports',
+                        data: stateData.data,
+                        backgroundColor: 'rgba(34, 197, 94, 0.8)',
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Number of Airports'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'U.S. States (Abbreviations)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create Country Distribution Pie Chart
+        function createCountryChart() {
+            const ctx = document.getElementById('countryChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: countryData.labels,
+                    datasets: [{
+                        data: countryData.data,
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(245, 158, 11, 0.8)',
+                            'rgba(239, 68, 68, 0.8)',
+                            'rgba(139, 92, 246, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(245, 158, 11, 1)',
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(139, 92, 246, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    return `${label}: ${value} airports (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create Geographic Distribution Scatter Plot
+        function createGeoChart() {
+            const ctx = document.getElementById('geoChart').getContext('2d');
+            
+            // Prepare scatter plot data
+            const scatterData = geoData.map(point => ({
+                x: point.longitude,
+                y: point.latitude,
+                label: `${point.name} (${point.city}, ${point.state})`
+            }));
+
+            new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Airport Locations',
+                        data: scatterData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.6)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw.label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Longitude'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Latitude'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Number Animation Effect
+        function animateNumbers() {
+            const totalAirportsEl = document.getElementById('totalAirports');
+            const usAirportsEl = document.getElementById('usAirports');
+            const statesCountEl = document.getElementById('statesCount');
+            const avgPerStateEl = document.getElementById('avgPerState');
+
+            animateValue(totalAirportsEl, 0, statsSummary.total_airports, 2000);
+            animateValue(usAirportsEl, 0, statsSummary.us_airports, 2000);
+            animateValue(statesCountEl, 0, statsSummary.states_count, 1500);
+            animateValue(avgPerStateEl, 0, statsSummary.avg_airports_per_state, 1500, true);
+        }
+
+        function animateValue(element, start, end, duration, isDecimal = false) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = isDecimal ? 
+                    (start + (end - start) * progress).toFixed(2) :
+                    Math.floor(start + (end - start) * progress).toLocaleString();
+                element.textContent = current;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Initialize after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            populateSampleTable();
+            createStateChart();
+            createCountryChart();
+            createGeoChart();
+            
+            // Delay number animation start
+            setTimeout(animateNumbers, 500);
+        });
+    </script>
+</body>
+</html>

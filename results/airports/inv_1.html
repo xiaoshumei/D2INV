@@ -563,7 +563,7 @@
              value: count
          }));
 
-         fetch('/tools/maps/usa.json')
+         fetch('/maps/usa.json')
              .then(response => response.json())
              .then(usaJson => {
                  echarts.registerMap('USA', usaJson);
@@ -888,7 +888,7 @@ plot_4(data);
          };
 
          // Load the world map and then set the chart option
-         fetch('/tools/maps/world.json')
+         fetch('/maps/world.json')
              .then(response => response.json())
              .then(worldJson => {
                  echarts.registerMap('world', worldJson);
@@ -924,7 +924,7 @@ plot_4(data);
          }));
 
          // Load USA map and create chart
-         fetch('/tools/maps/usa.json')
+         fetch('/maps/usa.json')
              .then(response => response.json())
              .then(usaJson => {
                  echarts.registerMap('USA', usaJson);

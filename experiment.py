@@ -7,17 +7,14 @@ from dotenv import load_dotenv
 import json
 
 
+#
 def reason_without_summary():
-    data_file = "cars.json"
-    dataset_name = data_file.split(".")[0]
-
-    [data_summary, data] = file_summary(data_file)
-    end_index_list = [10, 20, 40, 80, 100, 200, 400, 800, 1600]
-    for end_index in end_index_list:
+    data_files = os.listdir("datasets")
+    for data_file in data_files[0:10]:
+        dataset_name = data_file.split(".")[0]
+        [data_summary, data] = file_summary(data_file)
         data_story = DataStory(dataset_name, data, write_stages=[])
-        story = data_story.reason(
-            data[0:end_index].to_dict(),
-        )
+        story = data_story.reason(data.to_dict())
         data_fact_check_results = []
         for story_piece in json.loads(story["content"])["story_pieces"]:
             check_result = data_story.check_data_fact(
@@ -29,21 +26,30 @@ def reason_without_summary():
             exist_ok=True,
         )
         with open(
-            f"./experiments/data_story/reason_without_summary/{dataset_name}/1_{end_index}.json",
+            f"./experiments/data_story/reason_without_summary/{dataset_name}/reason.json",
             "w",
             encoding="utf-8",
         ) as f:
             f.write(story["content"])
         with open(
-            f"./experiments/data_story/reason_without_summary/{dataset_name}/1_{end_index}_revalidate.json",
+            f"./experiments/data_story/reason_without_summary/{dataset_name}/revalidate.json",
             "w",
             encoding="utf-8",
         ) as f:
-            f.write(json.dumps(data_fact_check_results, default=str, indent=4))
+            f.write(
+                json.dumps(
+                    {
+                        "data_summary": data_summary,
+                        "revalidate_results": data_fact_check_results,
+                    },
+                    default=str,
+                    indent=4,
+                )
+            )
         pd.DataFrame(
             [
                 {
-                    "name": f"{dataset_name}_1_{end_index}",
+                    "name": f"{dataset_name}",
                     "prompt_tokens": story["usage"].prompt_tokens,
                     "completion_tokens": story["usage"].completion_tokens,
                     "total_tokens": story["usage"].total_tokens,

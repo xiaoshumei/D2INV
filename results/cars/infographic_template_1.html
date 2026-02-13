@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Automotive Evolution Infographic
+  </title>
+  <!-- AOS CSS for animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <!-- Font Awesome icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1931, #1a3a5f, #2a5a8c);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .infographic {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+        }
+        /* Backbone: simplified timeline road */
+        .backbone {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #e74c3c, #3498db, #2ecc71, #f1c40f, #9b59b6);
+            border-radius: 3px;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 3;
+            padding-left: 80px;
+        }
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(90deg, #1a237e, #0d47a1);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 800;
+        }
+        .header .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        /* Explainer */
+        .explainer {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #2c3e50;
+            padding: 25px;
+            background: #ecf0f1;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 6px solid #e74c3c;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        /* Sections */
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            border-color: #3498db;
+            transform: translateY(-3px);
+        }
+        .section:nth-child(odd) {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+        }
+        .section:nth-child(even) {
+            background: linear-gradient(to right, #ffffff, #f1f8ff);
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 40px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            z-index: 4;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            font-size: 1.8rem;
+            color: #1a237e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title i {
+            color: #e74c3c;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .section-description {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 3px solid #2ecc71;
+            padding-left: 15px;
+        }
+        .chart-placeholder {
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px dashed #3498db;
+            padding: 10px;
+            margin-top: 15px;
+            /* NO HEIGHT PROPERTIES - charts will determine height */
+            display: block;
+        }
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            padding: 25px;
+            margin: 30px 0;
+            background: linear-gradient(90deg, #e67e22, #d35400);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.6);
+        }
+        .cta i {
+            margin-left: 10px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+        }
+        /* Sources */
+        .sources {
+            text-align: center;
+            padding: 25px;
+            background: #1a237e;
+            color: white;
+            border-radius: 12px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .sources a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .sources a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content { padding-left: 20px; }
+            .backbone { left: 20px; width: 4px; }
+            .section::before { left: -30px; width: 20px; height: 20px; }
+            .header h1 { font-size: 2.5rem; }
+            .header .subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 1.5rem; }
+            .explainer { font-size: 1.1rem; padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .infographic { padding: 15px; }
+            .header { padding: 30px 15px 20px; }
+            .header h1 { font-size: 2rem; }
+            .section { padding: 20px; }
+            .section-title { font-size: 1.3rem; }
+            .section-description { font-size: 1rem; }
+            .cta { font-size: 1.2rem; padding: 20px; }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="infographic" data-aos="fade-up">
+   <div class="backbone">
+   </div>
+   <div class="content">
+    <!-- Header -->
+    <div class="header" data-aos="zoom-in">
+     <h1>
+      Automotive Evolution: A Decade of Change in Car Performance
+     </h1>
+     <div class="subtitle">
+      Analyzing Fuel Efficiency, Power, and Regional Differences from 1970 to 1982
+     </div>
+    </div>
+    <!-- Explainer -->
+    <div class="explainer" data-aos="fade-right">
+     A Visual Journey Through Automotive Transformation During a Pivotal Era
+    </div>
+    <!-- Section 1 -->
+    <div class="section" data-aos="fade-up">
+     <div class="section-title">
+      <i class="fas fa-chart-line">
+      </i>
+      How did average fuel efficiency evolve over the years, and what key events influenced this trend?
+     </div>
+     <div class="section-description">
+      From 1970 to 1982, average Miles per Gallon increased from around 15 to over 35, with a sharp rise after 1975, driven by fuel crises and regulatory changes.
+     </div>
+     <div class="chart-placeholder" id="chart_1">
+      <!-- Line chart will be rendered here -->
+     </div>
+    </div>
+    <!-- CTA 1 -->
+    <div class="cta" data-aos="flip-up" onclick="scrollToNext('section2')">
+     Discover Regional Fuel Efficiency Leaders
+     <i class="fas fa-arrow-down">
+     </i>
+    </div>
+    <!-- Section 2 -->
+    <div class="section" data-aos="fade-up" id="section2">
+     <div class="section-title">
+      <i class="fas fa-globe-americas">
+      </i>
+      Which car origins led in fuel efficiency throughout the period, and how did regional disparities change?
+     </div>
+     <div class="section-description">
+      Japanese and European cars consistently outperformed American cars in fuel efficiency, with Japanese models averaging over 30 MPG by 1980, while American cars remained below 20 MPG on average.
+     </div>
+     <div class="chart-placeholder" id="chart_2">
+      <!-- Bar chart race will be rendered here -->
+     </div>
+    </div>
+    <!-- CTA 2 -->
+    <div class="cta" data-aos="flip-up" onclick="scrollToNext('section3')">
+     Uncover the Key Factors Behind Efficiency Differences
+     <i class="fas fa-arrow-down">
+     </i>
+    </div>
+    <!-- Section 3 -->
+    <div class="section" data-aos="fade-up" id="section3">
+     <div class="section-title">
+      <i class="fas fa-weight-hanging">
+      </i>
+      What are the key factors driving fuel efficiency differences, and how do weight and cylinders interact?
+     </div>
+     <div class="section-description">
+      Fuel efficiency shows a strong inverse correlation with weight and cylinder count; cars with 4 cylinders and weights under 2500 lbs achieve MPG above 30, whereas 8-cylinder cars over 4000 lbs average below 15 MPG.
+     </div>
+     <div class="chart-placeholder" id="chart_3">
+      <!-- Scatter plot matrix will be rendered here -->
+     </div>
+    </div>
+    <!-- CTA 3 -->
+    <div class="cta" data-aos="flip-up" onclick="scrollToNext('section4')">
+     Explore the Power vs. Economy Trade-off
+     <i class="fas fa-arrow-down">
+     </i>
+    </div>
+    <!-- Section 4 -->
+    <div class="section" data-aos="fade-up" id="section4">
+     <div class="section-title">
+      <i class="fas fa-horse-head">
+      </i>
+      How did horsepower trends compare to fuel efficiency improvements, and what does this reveal about design priorities?
+     </div>
+     <div class="section-description">
+      Horsepower declined slightly from an average of 150 in 1970 to around 100 by 1982, coinciding with the rise in fuel efficiency, indicating a trade-off between power and economy.
+     </div>
+     <div class="chart-placeholder" id="chart_4">
+      <!-- Dual-axis line chart will be rendered here -->
+     </div>
+    </div>
+    <!-- CTA 4 -->
+    <div class="cta" data-aos="flip-up" onclick="scrollToNext('section5')">
+     Examine Acceleration Trends in the Efficiency Era
+     <i class="fas fa-arrow-down">
+     </i>
+    </div>
+    <!-- Section 5 -->
+    <div class="section" data-aos="fade-up" id="section5">
+     <div class="section-title">
+      <i class="fas fa-tachometer-alt">
+      </i>
+      How did acceleration performance change over time in relation to horsepower and fuel efficiency?
+     </div>
+     <div class="section-description">
+      Acceleration times improved modestly despite lower horsepower, with average acceleration decreasing from 15 seconds in 1970 to 17 seconds by 1982, suggesting efficiency gains in engine technology.
+     </div>
+     <div class="chart-placeholder" id="chart_5">
+      <!-- Bubble chart will be rendered here -->
+     </div>
+    </div>
+    <!-- Final CTA -->
+    <div class="cta" data-aos="flip-up" style="background: linear-gradient(90deg, #27ae60, #229954);">
+     <i class="fas fa-car">
+     </i>
+     Explore More Automotive Data Insights
+     <i class="fas fa-external-link-alt">
+     </i>
+    </div>
+    <!-- Sources -->
+    <div class="sources" data-aos="fade-in">
+     <p>
+      Data Source: Automotive performance analysis 1970-1982 | Icons: Font Awesome | Design: Infographic Visualization
+     </p>
+     <p style="margin-top: 8px; font-size: 0.8rem;">
+      Created for educational purposes. Chart placeholders will be populated with data visualizations.
+     </p>
+    </div>
+   </div>
+  </div>
+  <!-- AOS JS for animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({
+            duration: 800,
+            once: false,
+            offset: 100
+        });
+        function scrollToNext(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+  </script>
+ </body>
+</html>

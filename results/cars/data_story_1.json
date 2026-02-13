@@ -1,0 +1,31 @@
+{
+  "story_title": "Automotive Evolution: A Decade of Change in Car Performance",
+  "story_subtitle": "Analyzing Fuel Efficiency, Power, and Regional Differences from 1970 to 1982",
+  "story_pieces": [
+    {
+      "narration": "From 1970 to 1982, average Miles per Gallon increased from around 15 to over 35, with a sharp rise after 1975, driven by fuel crises and regulatory changes.",
+      "question": "How did average fuel efficiency evolve over the years, and what key events influenced this trend?",
+      "visualization": "line chart with annotations (year vs. average MPG, highlighting 1973 oil crisis)"
+    },
+    {
+      "narration": "Japanese and European cars consistently outperformed American cars in fuel efficiency, with Japanese models averaging over 30 MPG by 1980, while American cars remained below 20 MPG on average.",
+      "question": "Which car origins led in fuel efficiency throughout the period, and how did regional disparities change?",
+      "visualization": "bar chart race (origin vs. average MPG per year, dynamically showing shifts)"
+    },
+    {
+      "narration": "Fuel efficiency shows a strong inverse correlation with weight and cylinder count; cars with 4 cylinders and weights under 2500 lbs achieve MPG above 30, whereas 8-cylinder cars over 4000 lbs average below 15 MPG.",
+      "question": "What are the key factors driving fuel efficiency differences, and how do weight and cylinders interact?",
+      "visualization": "scatter plot matrix (MPG vs. weight, cylinders, and displacement, colored by origin)"
+    },
+    {
+      "narration": "Horsepower declined slightly from an average of 150 in 1970 to around 100 by 1982, coinciding with the rise in fuel efficiency, indicating a trade-off between power and economy.",
+      "question": "How did horsepower trends compare to fuel efficiency improvements, and what does this reveal about design priorities?",
+      "visualization": "dual-axis line chart (year vs. average horsepower and average MPG)"
+    },
+    {
+      "narration": "Acceleration times improved modestly despite lower horsepower, with average acceleration decreasing from 15 seconds in 1970 to 17 seconds by 1982, suggesting efficiency gains in engine technology.",
+      "question": "How did acceleration performance change over time in relation to horsepower and fuel efficiency?",
+      "visualization": "bubble chart (year vs. acceleration, with bubble size representing horsepower and color for MPG)"
+    }
+  ]
+}
