@@ -1,0 +1,71 @@
+{
+  "name": "driving.json",
+  "fields": [
+    {
+      "column": "side",
+      "properties": {
+        "dtype": "category",
+        "samples": [
+          "right",
+          "top",
+          "left"
+        ],
+        "num_unique_values": 4,
+        "distribution_unique_values": {
+          "right": 19,
+          "bottom": 17,
+          "left": 12,
+          "top": 7
+        }
+      }
+    },
+    {
+      "column": "year",
+      "properties": {
+        "dtype": "number",
+        "std": 16,
+        "min": 1956,
+        "max": 2010,
+        "mean": 1983,
+        "samples": [
+          1987,
+          1961,
+          1988
+        ],
+        "num_unique_values": 55
+      }
+    },
+    {
+      "column": "miles",
+      "properties": {
+        "dtype": "number",
+        "std": 2160,
+        "min": 3675,
+        "max": 10067,
+        "mean": 7164,
+        "samples": [
+          7770,
+          3977,
+          8089
+        ],
+        "num_unique_values": 55
+      }
+    },
+    {
+      "column": "gas",
+      "properties": {
+        "dtype": "number",
+        "std": 0.45800239659437947,
+        "min": 1.3900000000000001,
+        "max": 3.31,
+        "mean": 2.1650909090909094,
+        "samples": [
+          1.6400000000000001,
+          1.76,
+          1.6800000000000002
+        ],
+        "num_unique_values": 46
+      }
+    }
+  ]
+}

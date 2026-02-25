@@ -1,0 +1,31 @@
+{
+  "story_title": "A Century of Natural Disasters: Humanity’s Deadliest Encounters",
+  "story_subtitle": "From mega-droughts to shaking earth—how 117 years of catastrophes reshaped global mortality patterns",
+  "story_pieces": [
+    {
+      "narration": "Drought dominates the deadliest single-year events: China’s 1931 flood (3.7 M deaths) is the only non-drought entry in the top-5; the other four are droughts—1928 China (3 M), 1920 China (2.5 M), 1943 India (1.9 M) and 1942 India (1.5 M). These five years together account for ≈16.6 M deaths, about 25 % of all 1900-2017 disaster fatalities.",
+      "question": "Which specific disasters and years produced the highest death tolls in recorded history?",
+      "visualization": "annotated bar race (1900-2017) showing annual deaths by disaster type with the top-5 events highlighted and pinned"
+    },
+    {
+      "narration": "Before 1950 drought and epidemic spikes drove extreme annual variability (σ ≈ 643 k deaths); after 1950 variability fell but remained substantial (σ ≈ 154 k) while earthquake, flood and storm fatalities became the main contributors to remaining risk.",
+      "question": "How has the nature of disaster mortality shifted before vs after the mid-20th-century?",
+      "visualization": "layered area chart (1900-2017) with pre-1950 and post-1950 bands coloured by disaster type and annotated standard-deviation bands"
+    },
+    {
+      "narration": "Earthquake deaths cluster in three seismic mega-years—1923 Great Kantō (152 k), 1976 Tangshan (277 k) and 2004 Sumatra–Andaman (227 k)—each producing sharp jumps versus adjacent decades, illustrating episodic extreme risk rather than a declining trend.",
+      "question": "Do earthquake fatalities show a declining trend or episodic extreme spikes?",
+      "visualization": "ridge-line histogram of annual earthquake deaths with three prominent 3-D pillars for 1923, 1976 and 2004"
+    },
+    {
+      "narration": "While drought killed > 12 M people inside China and India between 1900-1965, post-1980 global drought mortality stayed below 1 000 in 75 % of years, yet single-country episodes (1983 Ethiopia, 2010 Somalia) still briefly drive five-digit tolls, demonstrating that vulnerability remains locally acute even as global frequency falls.",
+      "question": "Is the global drop in drought deaths uniform or do localized high-mortality events still occur?",
+      "visualization": "choropleth world map (1980-2017) with drought-death heat-map and insets zooming on 1983 Ethiopia and 2010 Somalia spikes"
+    },
+    {
+      "narration": "The 2000s mark a mortality transition: total disaster deaths average 84 k yr⁻¹ versus 53 k yr⁻¹ in the 1990s, while economic losses soared, suggesting adaptation (early-warning, building codes) is saving fewer lives than exposure of assets rises, a decoupling that accelerates after 2004.",
+      "question": "Has the relationship between disaster mortality and societal exposure changed in the 21st century?",
+      "visualization": "dual-axis scatter plot with loess smoother: annual deaths (left-axis) vs reported economic loss (right-axis) 1990-2017, coloured by decade and annotated with 2004 breakpoint"
+    }
+  ]
+}

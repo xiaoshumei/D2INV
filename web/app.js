@@ -42,7 +42,7 @@ async function startProcess() {
     return;
   }
 
-  showLoading(true);
+  showLoading("dataStorySection", true);
   resetProgress();
 
   // Add button animation
@@ -64,36 +64,42 @@ async function startProcess() {
 
     switch (data.stage) {
       case "data_summary":
-        displayDataSummary({ data_summary: data.data_summary });
+//        displayDataSummary({ data_summary: data.data_summary });
         updateProgress(1, "Completed");
         showNotification("Data summary completed", "success");
         updateProgress(2, "Processing");
         break;
 
       case "data_story":
-        showLoading(false);
+        showLoading("dataStorySection", false);
         updateProgress(2, "Completed");
         displayDataStory({ data_story: data.data_story });
         showNotification("Data story generated", "success");
         updateProgress(3, "Processing");
+        showLoading("htmlTemplateSection", true);
         break;
 
       case "html_template":
+        showLoading("htmlTemplateSection", false);
         updateProgress(3, "Completed");
         displayHtmlTemplate({ html_template: data.html_template });
         showNotification("HTML template generated", "success");
         updateProgress(4, "Processing");
+        showLoading("finalInvSection", true);
         break;
 
       case "inv":
+        showLoading("finalInvSection", false);
         updateProgress(4, "Completed");
         // 生成图表
         displayINV({ inv: data.inv })
         showNotification("INV generated", "success");
         updateProgress(5, "Processing");
+        showLoading("selfEvaluateSection", true);
         break;
 
       case "evaluation":
+        showLoading("selfEvaluateSection", false);
         displaySelfEvaluation({ self_evaluation: data.self_evaluation })
         updateProgress(5, "Completed");
         showNotification("All processing completed!", "success");
@@ -199,11 +205,17 @@ function resetProgress() {
 }
 
 // Show/hide loading animation
-function showLoading(show) {
-  if (show) {
-    loadingOverlay.classList.add("show");
-  } else {
-    loadingOverlay.classList.remove("show");
+function showLoading(sectionId, show) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const loadingOverlay = section.querySelector('.loading-overlay');
+    if (loadingOverlay) {
+      if (show) {
+        loadingOverlay.classList.add("show");
+      } else {
+        loadingOverlay.classList.remove("show");
+      }
+    }
   }
 }
 

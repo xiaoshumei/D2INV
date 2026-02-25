@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   American Road Tales: How Gas Prices Steered the Wheel of Driving from the Space Race to the Tech Era
+  </title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+   :root {
+      --road: #1E2D24;
+      --cheap-era: #4DA167;
+      --oil-shock: #F34213;
+      --good-times: #1176C8;
+      --post-rally: #FF8C00;
+      --bg: #F7F7F7;
+      --text: #333;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, var(--road) 0%, var(--cheap-era) 100%);
+      color: #fff;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 0;
+      opacity: .9;
+    }
+    .explainer {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--road);
+    }
+    .cta {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      background: var(--bg);
+      border-left: 5px solid var(--oil-shock);
+      font-weight: 600;
+      color: var(--road);
+      border-radius: 4px;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 70px auto;
+      padding: 0 20px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--cheap-era);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+    .source {
+      text-align: center;
+      font-size: .8rem;
+      color: #888;
+      margin: 60px 20px 40px;
+    }
+    .road-backbone {
+      width: 100%;
+      height: 4px;
+      margin: 50px 0;
+      background: var(--road);
+      border-radius: 2px;
+      position: relative;
+    }
+    .road-backbone::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-image: repeating-linear-gradient(90deg, #fff 0, #fff 12px, transparent 12px, transparent 18px);
+      opacity: .6;
+    }
+    @media(max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .section-title { font-size: 1.5rem; }
+      .section-desc { font-size: .95rem; }
+    }
+  </style>
+ </head>
+ <body>
+  <header data-aos="fade-down">
+   <h1>
+    American Road Tales
+   </h1>
+   <p>
+    How Gas Prices Steered the Wheel of Driving from the Space Race to the Tech Era
+   </p>
+  </header>
+  <div class="explainer" data-aos="fade-up">
+   A 55-year journey of miles driven and fuel costs that reveals the hidden forces shaping the American commute
+  </div>
+  <div class="section" data-aos="fade-up">
+   <h2 class="section-title">
+    <img alt="USA" src="https://img.icons8.com/material-outlined/48/4DA167/usa-map.png"/>
+    Did gas-price spikes slow the long-term rise in miles driven?
+   </h2>
+   <p class="section-desc">
+    Between 1956 and 2005 the total miles driven climbed almost every year—from 3,675 miles to over 10,000—except for four dips in 1974 (-3.4%), 1979 (-2.2%), 1980 (-0.4%) and 2008 (-1.5%), each immediately following steep gas-price spikes, proving high fuel prices can still slam the brakes on the American road.
+   </p>
+   <div id="chart_1">
+   </div>
+  </div>
+  <div class="cta" data-aos="fade-up">
+   Scroll to see the four-decade cycle that made those spikes happen ↓
+  </div>
+  <div class="road-backbone">
+  </div>
+  <div class="section" data-aos="fade-up">
+   <h2 class="section-title">
+    <img alt="Pump" src="https://img.icons8.com/material-outlined/48/F34213/gas-station.png"/>
+    What decades-long price cycles did Americans face at the pump?
+   </h2>
+   <p class="section-desc">
+    Inflation-adjusted gasoline prices cycled through four clear phases: the Cheap-Era low from 1956-1973 (mean $1.85), "Oil-Shock Surge" 1974-1981 (peak $3.30 in 1980-81, up +54%), the "Good-Times Slide" through 1998 back to $1.39, and the "Post-2000 Rally" that re-climbed all the way to $3.31 in 2008.
+   </p>
+   <div id="chart_2">
+   </div>
+  </div>
+  <div class="cta" data-aos="fade-up">
+   Witness 2008, when price &amp; mileage crossed paths ↓
+  </div>
+  <div class="road-backbone">
+  </div>
+  <div class="section" data-aos="fade-up">
+   <h2 class="section-title">
+    <img alt="Lines" src="https://img.icons8.com/material-outlined/48/1176C8/line-chart.png"/>
+    During the 2008 spike did higher prices dent driving more than ever in the series?
+   </h2>
+   <p class="section-desc">
+    2008 alone shows a textbook demand response: prices leapt 12% year-over-year to the dataset maximum of $3.31 and mileage simultaneously fell 1.6%—a large price jump and the largest mileage drop co-moving, creating a visible cross-over point in the line chart.
+   </p>
+   <div id="chart_3">
+   </div>
+  </div>
+  <div class="cta" data-aos="fade-up">
+   Discover the hidden geography behind the numbers ↓
+  </div>
+  <div class="road-backbone">
+  </div>
+  <div class="section" data-aos="fade-up">
+   <h2 class="section-title">
+    <img alt="Compass" src="https://img.icons8.com/material-outlined/48/4DA167/compass.png"/>
+    Are the dominant "side" labels just data artifacts and do they shift over decades?
+   </h2>
+   <p class="section-desc">
+    Within the spatial side attribute (right 35%, bottom 31%, left 22%, top 13%) the right-hand category dominates after 1971 while the bottom segment surged in the early 1960s, hinting at systematic geospatial or categorical recording changes that pre-date modern ABS data bases.
+   </p>
+   <div id="chart_4">
+   </div>
+  </div>
+  <div class="cta" data-aos="fade-up">
+   One last stop: see cheap gas fuel a mileage boom ↓
+  </div>
+  <div class="road-backbone">
+  </div>
+  <div class="section" data-aos="fade-up">
+   <h2 class="section-title">
+    <img alt="Rocket" src="https://img.icons8.com/material-outlined/48/FF8C00/rocket.png"/>
+    Did cheaper gas in the mid-1980s actually translate to measurably higher driving?
+   </h2>
+   <p class="section-desc">
+    1986 saw oil-market deregulation drop prices to $1.76 (-48% since 1980) while miles-driven elasticity kicked in: mileage jumped 3.3% that year and kept rising &gt;3% per year through 1988, illustrating one of the few clear price-down, miles-up events in half a century of data.
+   </p>
+   <div id="chart_5">
+   </div>
+  </div>
+  <div class="source">
+   Sources: Federal Highway Administration &amp; U.S. Energy Information Administration (inflation-adjusted data)
+   <br/>
+   Icons via Icons8, animated with AOS · Design template for narrative data-story insertion
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({once:true, offset:90});
+  </script>
+ </body>
+</html>

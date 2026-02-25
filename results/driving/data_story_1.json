@@ -1,0 +1,31 @@
+{
+  "story_title": "American Road Tales: How Gas Prices Steered the Wheel of Driving from the Space Race to the Tech Era",
+  "story_subtitle": "A 55-year journey of miles driven and fuel costs that reveals the hidden forces shaping the American commute",
+  "story_pieces": [
+    {
+      "narration": "Between 1956 and 2005 the total miles driven climbed almost every year—from 3,675 miles to over 10,000—except for four dips in 1974 (-3.4%), 1979 (-2.2%), 1980 (-0.4%) and 2008 (-1.5%), each immediately following steep gas-price spikes, proving high fuel prices can still slam the brakes on the American road.",
+      "question": "How did changes in gas price affect the long-term rise in the number of miles driven?",
+      "visualization": "bar-chart-race (mileage bar moving upward from 1956-2005; dip bars pulled down at 1974, 1979, 1980, 2008)"
+    },
+    {
+      "narration": "Inflation-adjusted gasoline prices cycled through four clear phases: the Cheap-Era low from 1956-1973 (mean $1.85), 'Oil-Shock Surge' 1974-1981 (peak $3.30 in 1980-81, up +54%), the 'Good-Times Slide' through 1998 back to $1.39, and the 'Post-2000 Rally' that re-climbed all the way to $3.31 in 2008.",
+      "question": "What decades-long price cycles did Americans face at the pump?",
+      "visualization": "step-area chart coloring each phase with price line overlay"
+    },
+    {
+      "narration": "2008 alone shows a textbook demand response: prices leapt 12% year-over-year to the dataset maximum of $3.31 and mileage simultaneously fell 1.6%—a large price jump and the largest mileage drop co-moving, creating a visible cross-over point in the line chart.",
+      "question": "During the 2008 spike did higher prices dent driving more than ever in the series?",
+      "visualization": "dual-axis line (left: price, right: miles) with cross-over annotation for 2008"
+    },
+    {
+      "narration": "Within the spatial side attribute (right 35%, bottom 31%, left 22%, top 13%) the right-hand category dominates after 1971 while the bottom segment surged in the early 1960s, hinting at systematic geospatial or categorical recording changes that pre-date modern ABS data bases.",
+      "question": "Are the dominant 'side' labels just data artifacts and do they shift over decades?",
+      "visualization": "stacked-area percentage time-line for each side category"
+    },
+    {
+      "narration": "1986 saw oil-market deregulation drop prices to $1.76 (-48% since 1980) while miles-driven elasticity kicked in: mileage jumped 3.3% that year and kept rising >3% per year through 1988, illustrating one of the few clear price-down, miles-up events in half a century of data.",
+      "question": "Did cheaper gas in the mid-1980s actually translate to measurably higher driving?",
+      "visualization": "scatter-bubble diagram (x = %Δ gas price, y = %Δ miles) sized by elastic response with 1986–1988 bubbles highlighted"
+    }
+  ]
+}

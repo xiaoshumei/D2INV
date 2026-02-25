@@ -10,36 +10,31 @@ import json
 class LLM:
     def __init__(
         self,
-        api_url="https://api.moonshot.cn/v1",
-        model="kimi-k2-0905-preview",
         llm_vendor="kimi",
         content_length=256,
     ):
         assert llm_vendor in ["kimi", "deepseek", "openai", "vllm"]
         self.llm_vendor = llm_vendor
-        self.api_url = api_url
         if llm_vendor == "kimi":
-            base_url = "https://api.moonshot.cn/v1"
+            self.base_url = "https://api.moonshot.cn/v1"
             self.model = "kimi-k2-0905-preview"
             self.max_tokens = 256 * 1024
         elif llm_vendor == "deepseek":
-            base_url = "https://api.deepseek.com"
+            self.base_url = "https://api.deepseek.com"
             self.model = "deepseek-chat"
             self.max_tokens = 128 * 1024
         elif llm_vendor == "openai":
-            base_url = ""
+            self.base_url = ""
             self.model = "gpt-5.2"
             self.max_tokens = 400000
         else:
-            assert api_url, "api url must be provided when llm_vendor is 'vllm'"
-            base_url = api_url + "/v1"
+            self.base_url = "http://jb-aionlineinferenceservice-149881696782669824-8000-default.incluster-prod.dros-new.zhejianglab.cn/v1"
             self.max_tokens = content_length * 1024
-            assert model, "model must be provided when llm_vendor is 'vllm'"
-            self.model = model
+            self.model = "Qwen3-8B"
 
         self.client = OpenAI(
             api_key=os.getenv("LLM_API_KEY") if llm_vendor != "vllm" else "",
-            base_url=base_url,
+            base_url=self.base_url,
         )
 
     def calc_tokens(self, text):
@@ -81,7 +76,7 @@ class LLM:
             return len(enc.encode(text))
 
         else:
-            api_url = self.api_url + "/tokenize"
+            api_url = self.base_url.replace("/v1", "/tokenize")
             payload = {
                 "prompt": text,
                 "add_special_tokens": True,

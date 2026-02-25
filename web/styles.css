@@ -45,7 +45,7 @@ body::before {
 header {
   text-align: center;
   margin-bottom: 40px;
-  padding: 40px;
+  padding: 20px;
   background: var(--primary-gradient);
   color: white;
   border-radius: var(--border-radius);
@@ -85,7 +85,6 @@ header p {
   opacity: 0.9;
   position: relative;
   z-index: 2;
-  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -235,7 +234,7 @@ main {
 /* 进度指示器 */
 .progress-section h3 {
   color: #2c3e50;
-  margin-bottom: 25px;
+  margin: 25px 0;
   font-size: 1.3rem;
   display: flex;
   align-items: center;
@@ -384,6 +383,7 @@ main {
 .result-section h2:nth-child(4)::before { content: '📖'; }
 
 .result-content {
+  position: relative;
   height: 600px;
   overflow: auto;
   border-radius: 10px;
@@ -491,46 +491,57 @@ main {
   100% { transform: translateX(100%); }
 }
 
-/* 加载动画 */
 .loading-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%);
-  display: none;
-  align-items: center;
-  justify-content: center;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
   flex-direction: column;
-  z-index: 10000;
-  color: white;
-  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
 }
 
 .loading-overlay.show {
-  display: flex;
-  animation: fadeIn 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-overlay .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.loading-overlay p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 5px solid rgba(255,255,255,0.3);
-  border-top: 5px solid #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 25px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* 响应式调整 */

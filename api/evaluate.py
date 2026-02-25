@@ -41,7 +41,7 @@ class Evaluate:
             model=self.llm.model,
             messages=messages,
             stream=False,
-            temperature=1.3,
+            temperature=1.0,
             response_format={"type": "json_object"},
         )
         content = chat_completion.choices[0].message.content
@@ -58,7 +58,7 @@ class Evaluate:
         ]
 
         chat_completion = self.llm.client.chat.completions.create(
-            model=self.llm.model, messages=messages, stream=False, temperature=1.3
+            model=self.llm.model, messages=messages, stream=False, temperature=1.0
         )
         evaluate_visualize_result = chat_completion.choices[0].message.content
         result = postprocess_response(evaluate_visualize_result)

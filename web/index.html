@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -27,9 +27,7 @@
                         <input type="file" id="datasetFile" accept=".csv,.json,.xlsx"/>
                         <label for="datasetPath">Choose from available files:</label>
                         <select id="datasetPath" class="dataset-select">
-                            <option value="">
-                                Select a dataset...
-                            </option>
+                            <option value="">Select a dataset...</option>
                         </select>
                     </div>
                 </div>
@@ -66,54 +64,63 @@
 
         <!-- Results display area -->
         <div class="results-container">
-
             <!-- Data Summary section -->
-            <section class="result-section" id="dataSummarySection">
-                <h2>Data Summary Result</h2>
-                <div class="result-content">
-                    <pre id="dataSummary"></pre>
-                </div>
-            </section>
+            <!--            <section class="result-section" id="dataSummarySection">-->
+            <!--                <h2>Data Summary Result</h2>-->
+            <!--                <div class="result-content">-->
+            <!--                    <pre id="dataSummary"></pre>-->
+            <!--                </div>-->
+            <!--            </section>-->
 
             <!-- Data Story section -->
             <section class="result-section" id="dataStorySection">
-                <h2>Data Story Result</h2>
+                <h2>Data Story</h2>
                 <div class="result-content">
+                    <div class="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Processing, please wait...</p>
+                    </div>
                     <pre id="dataStory"></pre>
                 </div>
             </section>
 
             <!-- HTML template section -->
             <section class="result-section" id="htmlTemplateSection">
-                <h2>HTML Template</h2>
+                <h2>Story Visualization Template</h2>
                 <div class="result-content">
+                    <div class="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Processing, please wait...</p>
+                    </div>
                     <iframe id="htmlTemplateFrame" srcdoc=""></iframe>
                 </div>
             </section>
 
             <!-- Final Inv section -->
             <section class="result-section" id="finalInvSection">
-                <h2>Final INV Result</h2>
+                <h2>Final INV</h2>
                 <div class="result-content">
+                    <div class="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Processing, please wait...</p>
+                    </div>
                     <iframe id="finalInvFrame" srcdoc=""></iframe>
                 </div>
             </section>
 
             <!-- Self Evaluate section -->
             <section class="result-section" id="selfEvaluateSection">
-                <h2>Self Evaluate Result</h2>
+                <h2>Self Evaluate</h2>
                 <div class="result-content">
+                    <div class="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Processing, please wait...</p>
+                    </div>
                     <iframe id="selfEvaluateFrame" srcdoc=""></iframe>
                 </div>
             </section>
         </div>
     </main>
-</div>
-
-<!-- Loading animation -->
-<div id="loadingOverlay" class="loading-overlay">
-    <div class="spinner"></div>
-    <p>Processing dataset, please wait...</p>
 </div>
 
 <script src="app.js"></script>
