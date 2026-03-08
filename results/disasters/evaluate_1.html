@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0;height:100%;font-family:Arial,Helvetica,sans-serif;background:#f5f5f5}
+    #wrap{display:flex;height:100%}
+    #radar{flex:1}
+    #panel{width:340px;background:#fff;border-left:1px solid #ddd;display:flex;flex-direction:column}
+    .item{padding:12px 18px;border-bottom:1px solid #eee;cursor:pointer;transition:.25s}
+    .item:hover{background:#fafafa}
+    .item.sel{background:#eef4ff}
+    .dim{font-weight:600;margin-bottom:6px}
+    .stars{font-size:18px;color:#ffa500;letter-spacing:2px}
+    .bar{height:6px;background:#e0e0e0;border-radius:3px;margin-top:6px;overflow:hidden}
+    .fill{height:100%;background:#4f81e8;border-radius:3px;transition:.3s}
+    .detail{padding:0 18px;font-size:14px;color:#333;max-height:0;overflow:hidden;transition:.3s}
+    .detail.show{max-height:200px;padding:12px 18px}
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <div id="radar"></div>
+  <div id="panel"></div>
+</div>
+<script>
+  const raw=[{"dimension":"engagement","score":5,"rationale":"Great engagement via visuals."},{"dimension":"clarity","score":4,"rationale":"Clear structure with minor gaps."},{"dimension":"accuracy","score":3,"rationale":"Some data inconsistencies noted."},{"dimension":"aesthetics","score":5,"rationale":"Polished, modern design."},{"dimension":"speed","score":2,"rationale":"Slow initial load times."}];
+
+  // Init radar
+  const radarChart=echarts.init(document.getElementById('radar'));
+  const names=raw.map(d=>d.dimension);
+  const values=raw.map(d=>d.score);
+  radarChart.setOption({
+    radar:{
+      indicator: names.map(n=>({name:n,max:5})),
+      radius:'70%',
+      splitNumber:5,
+      axisName:{fontSize:14,color:'#333'},
+      splitArea:{areaStyle:{color:['#fff','#f8f8f8']}},
+      splitLine:{lineStyle:{color:'#ddd'}}
+    },
+    series:[{
+      type:'radar',
+      data:[{value:values,name:'Score',areaStyle:{color:'rgba(79,129,232,.25)'},lineStyle:{color:'#4f81e8',width:2},symbol:'circle',symbolSize:6}],
+      animationDuration:800
+    }]
+  });
+
+  // Build panel
+  const panel=document.getElementById('panel');
+  raw.forEach((d,i)=>{
+    const it=document.createElement('div');it.className='item';it.dataset.idx=i;
+    it.innerHTML=`
+      <div class="dim">${d.dimension}</div>
+      <div class="stars">${'★'.repeat(d.score)}${'☆'.repeat(5-d.score)}</div>
+      <div class="bar"><div class="fill" style="width:${d.score*20}%"></div></div>
+      <div class="detail">${d.rationale}</div>`;
+    panel.appendChild(it);
+  });
+
+  // Interaction
+  let cur=null;
+  panel.addEventListener('click',e=>{
+    const el=e.target.closest('.item');if(!el)return;
+    panel.querySelectorAll('.item').forEach(x=>x.classList.remove('sel'));
+    panel.querySelectorAll('.detail').forEach(x=>x.classList.remove('show'));
+    if(cur===el){cur=null;return}
+    el.classList.add('sel');el.querySelector('.detail').classList.add('show');cur=el;
+  });
+
+  window.addEventListener('resize',()=>radarChart.resize());
+</script>
+</body>

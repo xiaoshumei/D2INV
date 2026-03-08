@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Natural Disasters Infographic
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+            --color-primary: #1c1c1c;
+            --color-accent: #ff4d4d;
+            --color-warm: #ff9a3d;
+            --color-earth: #7d4e57;
+            --color-water: #3a7ca5;
+            --color-shock: #f05d5e;
+            --color-light: #f6f6f6;
+            --color-bg: #ffffff;
+            --color-gray: #888;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5em;
+        }
+        section, header, footer, .cta {
+            padding: 3.5em 1.5em;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-earth) 100%);
+            color: #fff;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-top: 40px solid var(--color-earth);
+        }
+        header h1 { font-size: 2.6rem; margin-bottom: 0.3em; letter-spacing: -0.02em; }
+        header h2 { font-size: 1.1rem; font-family: 'Barlow', sans-serif; font-weight: 400; color: rgba(255,255,255,.9); }
+        .explainer { font-size: 1.15rem; margin-bottom: 2em; color: var(--color-gray); }
+        .divider {
+            height: 1px;
+            background: #ddd;
+            margin: 3em auto;
+            max-width: 300px;
+            border: none;
+        }
+        .story-section {
+            position: relative;
+            padding: 2em 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5em;
+            align-items: flex-start;
+        }
+        .story-section:nth-child(even) { background: var(--color-light); border-radius: 20px; margin: 1em -10px; padding: 2em 1.5em; }
+        .story-icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,.15);
+        }
+        .story-content { flex: 1 1 60%; min-width: 250px; }
+        .story-content h3 { margin-bottom: 0.8em; font-size: 1.5rem; }
+        .story-content p { margin-bottom: 1.2em; }
+        .chart-placeholder {
+            width: 100%;
+            margin-top: 1.8em;
+            border-radius: 12px;
+            background: #fafafa;
+            border: 2px dashed var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+        .cta {
+            text-align: center;
+            padding: 3em 1.5em;
+            background: var(--color-water);
+            color: #fff;
+            border-radius: 25px;
+            margin: 4em auto;
+        }
+        .cta h3 { font-size: 1.8rem; margin-bottom: 0.6em; color: #fff; }
+        .cta p { margin-bottom: 1.3em; font-size: 1.1rem; }
+        .cta a {
+            display: inline-block;
+            padding: 0.9em 1.8em;
+            background: #fff;
+            color: var(--color-water);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        .cta a:hover { transform: translateY(-3px); }
+        footer {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            text-align: center;
+            margin-top: 2em;
+        }
+        footer img { width: 60px; margin-bottom: 0.9em; }
+        #timeline-guide {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--color-accent);
+            opacity: 0.15;
+        }
+        #timeline-guide:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0%;
+            background: var(--color-warm);
+            animation: draw 3s ease-out infinite forwards;
+        }
+        @keyframes draw { to { height: 100%; } }
+  </style>
+  <script src="https://unpkg.com/echarts@latest/dist/echarts.min.js">
+  </script>
+  <script src="https://unpkg.com/echarts@latest/dist/extension/dataTool.min.js">
+  </script>
+  <style>
+   #chart_1 {
+        width: 100%;
+        height: 600px;
+    }
+  </style>
+  <style>
+   #chart_2 {
+                width: 100%;
+                height: 600px;
+            }
+            #chart_2 .emphasis {
+                font-weight: bold;
+            }
+  </style>
+  <style>
+   #chart_3 {
+        width: 900px;
+        height: 500px;
+        margin: 0 auto;
+    }
+  </style>
+  <style>
+   #chart_4 {
+    width: 98%;
+    height: 500px;
+    margin: auto;
+  }
+  @media (min-width: 768px) {
+    #chart_4 {
+      height: 600px;
+    }
+  }
+  </style>
+  <style>
+   #chart_5 {
+        width: 900px;
+        height: 500px;
+        margin: 0 auto;
+    }
+  </style>
+  <script>
+   window.data = [{"Entity":"All natural disasters","Year":1900,"Deaths":1267360},{"Entity":"All natural disasters","Year":1901,"Deaths":200018},{"Entity":"All natural disasters","Year":1902,"Deaths":46037},{"Entity":"All natural disasters","Year":1903,"Deaths":6506},{"Entity":"All natural disasters","Year":1905,"Deaths":22758},{"Entity":"All natural disasters","Year":1906,"Deaths":42970},{"Entity":"All natural disasters","Year":1907,"Deaths":1325641},{"Entity":"All natural disasters","Year":1908,"Deaths":75033},{"Entity":"All natural disasters","Year":1909,"Deaths":1511524},{"Entity":"All natural disasters","Year":1910,"Deaths":148233},{"Entity":"All natural disasters","Year":1911,"Deaths":102408},{"Entity":"All natural disasters","Year":1912,"Deaths":52093},{"Entity":"All natural disasters","Year":1913,"Deaths":882},{"Entity":"All natural disasters","Year":1914,"Deaths":289},{"Entity":"All natural disasters","Year":1915,"Deaths":32167},{"Entity":"All natural disasters","Year":1916,"Deaths":300},{"Entity":"All natural disasters","Year":1917,"Deaths":2523507},{"Entity":"All natural disasters","Year":1918,"Deaths":461113},{"Entity":"All natural disasters","Year":1919,"Deaths":5500},{"Entity":"All natural disasters","Year":1920,"Deaths":3204224},{"Entity":"All natural disasters","Year":1921,"Deaths":1200000},{"Entity":"All natural disasters","Year":1922,"Deaths":101243},{"Entity":"All natural disasters","Year":1923,"Deaths":255701},{"Entity":"All natural disasters","Year":1924,"Deaths":303009},{"Entity":"All natural disasters","Year":1925,"Deaths":5832},{"Entity":"All natural disasters","Year":1926,"Deaths":427852},{"Entity":"All natural disasters","Year":1927,"Deaths":215160},{"Entity":"All natural disasters","Year":1928,"Deaths":3004895},{"Entity":"All natural disasters","Year":1929,"Deaths":8377},{"Entity":"All natural disasters","Year":1930,"Deaths":10572},{"Entity":"All natural disasters","Year":1931,"Deaths":3706227},{"Entity":"All natural disasters","Year":1932,"Deaths":73296},{"Entity":"All natural disasters","Year":1933,"Deaths":34296},{"Entity":"All natural disasters","Year":1934,"Deaths":21087},{"Entity":"All natural disasters","Year":1935,"Deaths":272817},{"Entity":"All natural disasters","Year":1936,"Deaths":5301},{"Entity":"All natural disasters","Year":1937,"Deaths":12025},{"Entity":"All natural disasters","Year":1938,"Deaths":2225},{"Entity":"All natural disasters","Year":1939,"Deaths":563178},{"Entity":"All natural disasters","Year":1940,"Deaths":23023},{"Entity":"All natural disasters","Year":1941,"Deaths":10195},{"Entity":"All natural disasters","Year":1942,"Deaths":1608235},{"Entity":"All natural disasters","Year":1943,"Deaths":1910322},{"Entity":"All natural disasters","Year":1944,"Deaths":15906},{"Entity":"All natural disasters","Year":1945,"Deaths":10376},{"Entity":"All natural disasters","Year":1946,"Deaths":35490},{"Entity":"All natural disasters","Year":1947,"Deaths":17647},{"Entity":"All natural disasters","Year":1948,"Deaths":120131},{"Entity":"All natural disasters","Year":1949,"Deaths":120370},{"Entity":"All natural disasters","Year":1950,"Deaths":6728},{"Entity":"All natural disasters","Year":1951,"Deaths":15042},{"Entity":"All natural disasters","Year":1952,"Deaths":8965},{"Entity":"All natural disasters","Year":1953,"Deaths":12956},{"Entity":"All natural disasters","Year":1954,"Deaths":41872},{"Entity":"All natural disasters","Year":1955,"Deaths":6026},{"Entity":"All natural disasters","Year":1956,"Deaths":7737},{"Entity":"All natural disasters","Year":1957,"Deaths":10603},{"Entity":"All natural disasters","Year":1958,"Deaths":3950},{"Entity":"All natural disasters","Year":1959,"Deaths":2013242},{"Entity":"All natural disasters","Year":1960,"Deaths":39188},{"Entity":"All natural disasters","Year":1961,"Deaths":17341},{"Entity":"All natural disasters","Year":1962,"Deaths":17370},{"Entity":"All natural disasters","Year":1963,"Deaths":37746},{"Entity":"All natural disasters","Year":1964,"Deaths":12892},{"Entity":"All natural disasters","Year":1965,"Deaths":1565517},{"Entity":"All natural disasters","Year":1966,"Deaths":17181},{"Entity":"All natural disasters","Year":1967,"Deaths":10103},{"Entity":"All natural disasters","Year":1968,"Deaths":21461},{"Entity":"All natural disasters","Year":1969,"Deaths":11687},{"Entity":"All natural disasters","Year":1970,"Deaths":387507},{"Entity":"All natural disasters","Year":1971,"Deaths":18086},{"Entity":"All natural disasters","Year":1972,"Deaths":20045},{"Entity":"All natural disasters","Year":1973,"Deaths":110555},{"Entity":"All natural disasters","Year":1974,"Deaths":87504},{"Entity":"All natural disasters","Year":1975,"Deaths":14858},{"Entity":"All natural disasters","Year":1976,"Deaths":280469},{"Entity":"All natural disasters","Year":1977,"Deaths":22406},{"Entity":"All natural disasters","Year":1978,"Deaths":38096},{"Entity":"All natural disasters","Year":1979,"Deaths":7341},{"Entity":"All natural disasters","Year":1980,"Deaths":23089},{"Entity":"All natural disasters","Year":1981,"Deaths":119697},{"Entity":"All natural disasters","Year":1982,"Deaths":13973},{"Entity":"All natural disasters","Year":1983,"Deaths":461561},{"Entity":"All natural disasters","Year":1984,"Deaths":16273},{"Entity":"All natural disasters","Year":1985,"Deaths":60232},{"Entity":"All natural disasters","Year":1986,"Deaths":10349},{"Entity":"All natural disasters","Year":1987,"Deaths":21533},{"Entity":"All natural disasters","Year":1988,"Deaths":57464},{"Entity":"All natural disasters","Year":1989,"Deaths":12611},{"Entity":"All natural disasters","Year":1990,"Deaths":53141},{"Entity":"All natural disasters","Year":1991,"Deaths":189707},{"Entity":"All natural disasters","Year":1992,"Deaths":18911},{"Entity":"All natural disasters","Year":1993,"Deaths":21821},{"Entity":"All natural disasters","Year":1994,"Deaths":15590},{"Entity":"All natural disasters","Year":1995,"Deaths":27166},{"Entity":"All natural disasters","Year":1996,"Deaths":31595},{"Entity":"All natural disasters","Year":1997,"Deaths":30124},{"Entity":"All natural disasters","Year":1998,"Deaths":62672},{"Entity":"All natural disasters","Year":1999,"Deaths":76886},{"Entity":"All natural disasters","Year":2000,"Deaths":16667},{"Entity":"All natural disasters","Year":2001,"Deaths":39493},{"Entity":"All natural disasters","Year":2002,"Deaths":21342},{"Entity":"All natural disasters","Year":2003,"Deaths":113558},{"Entity":"All natural disasters","Year":2004,"Deaths":244772},{"Entity":"All natural disasters","Year":2005,"Deaths":93566},{"Entity":"All natural disasters","Year":2006,"Deaths":29893},{"Entity":"All natural disasters","Year":2007,"Deaths":22422},{"Entity":"All natural disasters","Year":2008,"Deaths":242236},{"Entity":"All natural disasters","Year":2009,"Deaths":16037},{"Entity":"All natural disasters","Year":2010,"Deaths":329900},{"Entity":"All natural disasters","Year":2011,"Deaths":34143},{"Entity":"All natural disasters","Year":2012,"Deaths":11619},{"Entity":"All natural disasters","Year":2013,"Deaths":22225},{"Entity":"All natural disasters","Year":2014,"Deaths":20882},{"Entity":"All natural disasters","Year":2015,"Deaths":23893},{"Entity":"All natural disasters","Year":2016,"Deaths":10201},{"Entity":"All natural disasters","Year":2017,"Deaths":2087},{"Entity":"Drought","Year":1900,"Deaths":1261000},{"Entity":"Drought","Year":1910,"Deaths":85000},{"Entity":"Drought","Year":1920,"Deaths":524000},{"Entity":"Drought","Year":1921,"Deaths":1200000},{"Entity":"Drought","Year":1928,"Deaths":3000000},{"Entity":"Drought","Year":1940,"Deaths":20000},{"Entity":"Drought","Year":1942,"Deaths":1500000},{"Entity":"Drought","Year":1943,"Deaths":1900000},{"Entity":"Drought","Year":1946,"Deaths":30000},{"Entity":"Drought","Year":1964,"Deaths":50},{"Entity":"Drought","Year":1965,"Deaths":1502000},{"Entity":"Drought","Year":1966,"Deaths":8000},{"Entity":"Drought","Year":1967,"Deaths":600},{"Entity":"Drought","Year":1973,"Deaths":100000},{"Entity":"Drought","Year":1974,"Deaths":19000},{"Entity":"Drought","Year":1978,"Deaths":63},{"Entity":"Drought","Year":1979,"Deaths":18},{"Entity":"Drought","Year":1981,"Deaths":103000},{"Entity":"Drought","Year":1982,"Deaths":280},{"Entity":"Drought","Year":1983,"Deaths":450520},{"Entity":"Drought","Year":1984,"Deaths":230},{"Entity":"Drought","Year":1986,"Deaths":84},{"Entity":"Drought","Year":1987,"Deaths":1317},{"Entity":"Drought","Year":1988,"Deaths":1600},{"Entity":"Drought","Year":1989,"Deaths":237},{"Entity":"Drought","Year":1991,"Deaths":2000},{"Entity":"Drought","Year":1997,"Deaths":732},{"Entity":"Drought","Year":1998,"Deaths":20},{"Entity":"Drought","Year":1999,"Deaths":361},{"Entity":"Drought","Year":2000,"Deaths":80},{"Entity":"Drought","Year":2001,"Deaths":99},{"Entity":"Drought","Year":2002,"Deaths":588},{"Entity":"Drought","Year":2003,"Deaths":9},{"Entity":"Drought","Year":2004,"Deaths":80},{"Entity":"Drought","Year":2005,"Deaths":149},{"Entity":"Drought","Year":2006,"Deaths":134},{"Entity":"Drought","Year":2008,"Deaths":8},{"Entity":"Drought","Year":2010,"Deaths":20000},{"Entity":"Drought","Year":2015,"Deaths":35},{"Entity":"Earthquake","Year":1901,"Deaths":18},{"Entity":"Earthquake","Year":1902,"Deaths":6747},{"Entity":"Earthquake","Year":1903,"Deaths":6000},{"Entity":"Earthquake","Year":1905,"Deaths":22500},{"Entity":"Earthquake","Year":1906,"Deaths":31966},{"Entity":"Earthquake","Year":1907,"Deaths":25641},{"Entity":"Earthquake","Year":1908,"Deaths":75000},{"Entity":"Earthquake","Year":1909,"Deaths":5146},{"Entity":"Earthquake","Year":1910,"Deaths":1762},{"Entity":"Earthquake","Year":1912,"Deaths":923},{"Entity":"Earthquake","Year":1913,"Deaths":150},{"Entity":"Earthquake","Year":1914,"Deaths":149},{"Entity":"Earthquake","Year":1915,"Deaths":29986},{"Entity":"Earthquake","Year":1917,"Deaths":19450},{"Entity":"Earthquake","Year":1918,"Deaths":10379},{"Entity":"Earthquake","Year":1920,"Deaths":180000},{"Entity":"Earthquake","Year":1922,"Deaths":1100},{"Entity":"Earthquake","Year":1923,"Deaths":152362},{"Entity":"Earthquake","Year":1924,"Deaths":767},{"Entity":"Earthquake","Year":1925,"Deaths":5013},{"Entity":"Earthquake","Year":1926,"Deaths":12},{"Entity":"Earthquake","Year":1927,"Deaths":206142},{"Entity":"Earthquake","Year":1928,"Deaths":635},{"Entity":"Earthquake","Year":1929,"Deaths":3317},{"Entity":"Earthquake","Year":1930,"Deaths":5081},{"Entity":"Earthquake","Year":1931,"Deaths":1537},{"Entity":"Earthquake","Year":1932,"Deaths":70006},{"Entity":"Earthquake","Year":1933,"Deaths":16180},{"Entity":"Earthquake","Year":1934,"Deaths":15496},{"Entity":"Earthquake","Year":1935,"Deaths":66110},{"Entity":"Earthquake","Year":1936,"Deaths":26},{"Entity":"Earthquake","Year":1938,"Deaths":166},{"Entity":"Earthquake","Year":1939,"Deaths":63094},{"Entity":"Earthquake","Year":1940,"Deaths":1275},{"Entity":"Earthquake","Year":1941,"Deaths":189},{"Entity":"Earthquake","Year":1942,"Deaths":7235},{"Entity":"Earthquake","Year":1943,"Deaths":4332},{"Entity":"Earthquake","Year":1944,"Deaths":14984},{"Entity":"Earthquake","Year":1945,"Deaths":5961},{"Entity":"Earthquake","Year":1946,"Deaths":5153},{"Entity":"Earthquake","Year":1947,"Deaths":633},{"Entity":"Earthquake","Year":1948,"Deaths":115618},{"Entity":"Earthquake","Year":1949,"Deaths":6486},{"Entity":"Earthquake","Year":1950,"Deaths":1833},{"Entity":"Earthquake","Year":1951,"Deaths":1554},{"Entity":"Earthquake","Year":1952,"Deaths":2432},{"Entity":"Earthquake","Year":1953,"Deaths":2717},{"Entity":"Earthquake","Year":1954,"Deaths":3344},{"Entity":"Earthquake","Year":1955,"Deaths":959},{"Entity":"Earthquake","Year":1956,"Deaths":763},{"Entity":"Earthquake","Year":1957,"Deaths":6993},{"Entity":"Earthquake","Year":1958,"Deaths":227},{"Entity":"Earthquake","Year":1959,"Deaths":103},{"Entity":"Earthquake","Year":1960,"Deaths":19395},{"Entity":"Earthquake","Year":1961,"Deaths":60},{"Entity":"Earthquake","Year":1962,"Deaths":12209},{"Entity":"Earthquake","Year":1963,"Deaths":1700},{"Entity":"Earthquake","Year":1964,"Deaths":335},{"Entity":"Earthquake","Year":1965,"Deaths":683},{"Entity":"Earthquake","Year":1966,"Deaths":2752},{"Entity":"Earthquake","Year":1967,"Deaths":1013},{"Entity":"Earthquake","Year":1968,"Deaths":10858},{"Entity":"Earthquake","Year":1969,"Deaths":3353},{"Entity":"Earthquake","Year":1970,"Deaths":78599},{"Entity":"Earthquake","Year":1971,"Deaths":1107},{"Entity":"Earthquake","Year":1972,"Deaths":15170},{"Entity":"Earthquake","Year":1973,"Deaths":552},{"Entity":"Earthquake","Year":1974,"Deaths":24808},{"Entity":"Earthquake","Year":1975,"Deaths":12632},{"Entity":"Earthquake","Year":1976,"Deaths":276994},{"Entity":"Earthquake","Year":1977,"Deaths":3098},{"Entity":"Earthquake","Year":1978,"Deaths":25162},{"Entity":"Earthquake","Year":1979,"Deaths":2100},{"Entity":"Earthquake","Year":1980,"Deaths":7730},{"Entity":"Earthquake","Year":1981,"Deaths":4206},{"Entity":"Earthquake","Year":1982,"Deaths":2120},{"Entity":"Earthquake","Year":1983,"Deaths":2148},{"Entity":"Earthquake","Year":1984,"Deaths":57},{"Entity":"Earthquake","Year":1985,"Deaths":9853},{"Entity":"Earthquake","Year":1986,"Deaths":1181},{"Entity":"Earthquake","Year":1987,"Deaths":5160},{"Entity":"Earthquake","Year":1988,"Deaths":27049},{"Entity":"Earthquake","Year":1989,"Deaths":650},{"Entity":"Earthquake","Year":1990,"Deaths":42853},{"Entity":"Earthquake","Year":1991,"Deaths":2454},{"Entity":"Earthquake","Year":1992,"Deaths":4033},{"Entity":"Earthquake","Year":1993,"Deaths":10088},{"Entity":"Earthquake","Year":1994,"Deaths":1242},{"Entity":"Earthquake","Year":1995,"Deaths":7739},{"Entity":"Earthquake","Year":1996,"Deaths":576},{"Entity":"Earthquake","Year":1997,"Deaths":3159},{"Entity":"Earthquake","Year":1998,"Deaths":9573},{"Entity":"Earthquake","Year":1999,"Deaths":21869},{"Entity":"Earthquake","Year":2000,"Deaths":217},{"Entity":"Earthquake","Year":2001,"Deaths":21348},{"Entity":"Earthquake","Year":2002,"Deaths":1639},{"Entity":"Earthquake","Year":2003,"Deaths":29617},{"Entity":"Earthquake","Year":2004,"Deaths":227290},{"Entity":"Earthquake","Year":2005,"Deaths":76241},{"Entity":"Earthquake","Year":2006,"Deaths":6692},{"Entity":"Earthquake","Year":2007,"Deaths":780},{"Entity":"Earthquake","Year":2008,"Deaths":87918},{"Entity":"Earthquake","Year":2009,"Deaths":1893},{"Entity":"Earthquake","Year":2010,"Deaths":226733},{"Entity":"Earthquake","Year":2011,"Deaths":20946},{"Entity":"Earthquake","Year":2012,"Deaths":711},{"Entity":"Earthquake","Year":2013,"Deaths":1120},{"Entity":"Earthquake","Year":2014,"Deaths":774},{"Entity":"Earthquake","Year":2015,"Deaths":9550},{"Entity":"Earthquake","Year":2016,"Deaths":1311},{"Entity":"Earthquake","Year":2017,"Deaths":49},{"Entity":"Epidemic","Year":1900,"Deaths":30},{"Entity":"Epidemic","Year":1901,"Deaths":200000},{"Entity":"Epidemic","Year":1907,"Deaths":1300000},{"Entity":"Epidemic","Year":1909,"Deaths":1500040},{"Entity":"Epidemic","Year":1910,"Deaths":60000},{"Entity":"Epidemic","Year":1917,"Deaths":2500000},{"Entity":"Epidemic","Year":1918,"Deaths":449700},{"Entity":"Epidemic","Year":1920,"Deaths":2500000},{"Entity":"Epidemic","Year":1923,"Deaths":100000},{"Entity":"Epidemic","Year":1924,"Deaths":300000},{"Entity":"Epidemic","Year":1926,"Deaths":423000},{"Entity":"Epidemic","Year":1932,"Deaths":16},{"Entity":"Epidemic","Year":1935,"Deaths":2000},{"Entity":"Epidemic","Year":1940,"Deaths":1500},{"Entity":"Epidemic","Year":1947,"Deaths":10276},{"Entity":"Epidemic","Year":1953,"Deaths":481},{"Entity":"Epidemic","Year":1963,"Deaths":1000},{"Entity":"Epidemic","Year":1964,"Deaths":617},{"Entity":"Epidemic","Year":1965,"Deaths":816},{"Entity":"Epidemic","Year":1966,"Deaths":200},{"Entity":"Epidemic","Year":1967,"Deaths":3137},{"Entity":"Epidemic","Year":1968,"Deaths":177},{"Entity":"Epidemic","Year":1969,"Deaths":3520},{"Entity":"Epidemic","Year":1970,"Deaths":939},{"Entity":"Epidemic","Year":1971,"Deaths":2313},{"Entity":"Epidemic","Year":1972,"Deaths":35},{"Entity":"Epidemic","Year":1974,"Deaths":1500},{"Entity":"Epidemic","Year":1976,"Deaths":396},{"Entity":"Epidemic","Year":1977,"Deaths":1184},{"Entity":"Epidemic","Year":1978,"Deaths":3060},{"Entity":"Epidemic","Year":1979,"Deaths":486},{"Entity":"Epidemic","Year":1980,"Deaths":1685},{"Entity":"Epidemic","Year":1981,"Deaths":2497},{"Entity":"Epidemic","Year":1982,"Deaths":2912},{"Entity":"Epidemic","Year":1983,"Deaths":1219},{"Entity":"Epidemic","Year":1984,"Deaths":7016},{"Entity":"Epidemic","Year":1985,"Deaths":5854},{"Entity":"Epidemic","Year":1986,"Deaths":3046},{"Entity":"Epidemic","Year":1987,"Deaths":2592},{"Entity":"Epidemic","Year":1988,"Deaths":15216},{"Entity":"Epidemic","Year":1989,"Deaths":1870},{"Entity":"Epidemic","Year":1990,"Deaths":2207},{"Entity":"Epidemic","Year":1991,"Deaths":30682},{"Entity":"Epidemic","Year":1992,"Deaths":6675},{"Entity":"Epidemic","Year":1993,"Deaths":651},{"Entity":"Epidemic","Year":1994,"Deaths":2505},{"Entity":"Epidemic","Year":1995,"Deaths":4428},{"Entity":"Epidemic","Year":1996,"Deaths":16887},{"Entity":"Epidemic","Year":1997,"Deaths":10674},{"Entity":"Epidemic","Year":1998,"Deaths":12931},{"Entity":"Epidemic","Year":1999,"Deaths":6293},{"Entity":"Epidemic","Year":2000,"Deaths":6980},{"Entity":"Epidemic","Year":2001,"Deaths":8515},{"Entity":"Epidemic","Year":2002,"Deaths":8762},{"Entity":"Epidemic","Year":2003,"Deaths":3522},{"Entity":"Epidemic","Year":2004,"Deaths":3245},{"Entity":"Epidemic","Year":2005,"Deaths":3909},{"Entity":"Epidemic","Year":2006,"Deaths":6402},{"Entity":"Epidemic","Year":2007,"Deaths":5484},{"Entity":"Epidemic","Year":2008,"Deaths":6904},{"Entity":"Epidemic","Year":2009,"Deaths":4895},{"Entity":"Epidemic","Year":2010,"Deaths":12143},{"Entity":"Epidemic","Year":2011,"Deaths":3174},{"Entity":"Epidemic","Year":2012,"Deaths":1887},{"Entity":"Epidemic","Year":2013,"Deaths":529},{"Entity":"Epidemic","Year":2014,"Deaths":12911},{"Entity":"Epidemic","Year":2015,"Deaths":1032},{"Entity":"Epidemic","Year":2016,"Deaths":1520},{"Entity":"Epidemic","Year":2017,"Deaths":386},{"Entity":"Extreme temperature","Year":1936,"Deaths":1693},{"Entity":"Extreme temperature","Year":1951,"Deaths":69},{"Entity":"Extreme temperature","Year":1953,"Deaths":669},{"Entity":"Extreme temperature","Year":1955,"Deaths":107},{"Entity":"Extreme temperature","Year":1958,"Deaths":651},{"Entity":"Extreme temperature","Year":1961,"Deaths":400},{"Entity":"Extreme temperature","Year":1962,"Deaths":50},{"Entity":"Extreme temperature","Year":1963,"Deaths":162},{"Entity":"Extreme temperature","Year":1965,"Deaths":100},{"Entity":"Extreme temperature","Year":1966,"Deaths":262},{"Entity":"Extreme temperature","Year":1968,"Deaths":153},{"Entity":"Extreme temperature","Year":1971,"Deaths":400},{"Entity":"Extreme temperature","Year":1972,"Deaths":110},{"Entity":"Extreme temperature","Year":1973,"Deaths":283},{"Entity":"Extreme temperature","Year":1975,"Deaths":140},{"Entity":"Extreme temperature","Year":1978,"Deaths":150},{"Entity":"Extreme temperature","Year":1979,"Deaths":470},{"Entity":"Extreme temperature","Year":1980,"Deaths":1389},{"Entity":"Extreme temperature","Year":1981,"Deaths":300},{"Entity":"Extreme temperature","Year":1982,"Deaths":400},{"Entity":"Extreme temperature","Year":1983,"Deaths":205},{"Entity":"Extreme temperature","Year":1984,"Deaths":290},{"Entity":"Extreme temperature","Year":1985,"Deaths":456},{"Entity":"Extreme temperature","Year":1986,"Deaths":50},{"Entity":"Extreme temperature","Year":1987,"Deaths":1220},{"Entity":"Extreme temperature","Year":1988,"Deaths":644},{"Entity":"Extreme temperature","Year":1989,"Deaths":381},{"Entity":"Extreme temperature","Year":1990,"Deaths":979},{"Entity":"Extreme temperature","Year":1991,"Deaths":835},{"Entity":"Extreme temperature","Year":1992,"Deaths":388},{"Entity":"Extreme temperature","Year":1993,"Deaths":106},{"Entity":"Extreme temperature","Year":1994,"Deaths":341},{"Entity":"Extreme temperature","Year":1995,"Deaths":1730},{"Entity":"Extreme temperature","Year":1996,"Deaths":300},{"Entity":"Extreme temperature","Year":1997,"Deaths":604},{"Entity":"Extreme temperature","Year":1998,"Deaths":3269},{"Entity":"Extreme temperature","Year":1999,"Deaths":771},{"Entity":"Extreme temperature","Year":2000,"Deaths":941},{"Entity":"Extreme temperature","Year":2001,"Deaths":1787},{"Entity":"Extreme temperature","Year":2002,"Deaths":3369},{"Entity":"Extreme temperature","Year":2003,"Deaths":74698},{"Entity":"Extreme temperature","Year":2004,"Deaths":255},{"Entity":"Extreme temperature","Year":2005,"Deaths":1550},{"Entity":"Extreme temperature","Year":2006,"Deaths":4826},{"Entity":"Extreme temperature","Year":2007,"Deaths":1086},{"Entity":"Extreme temperature","Year":2008,"Deaths":1688},{"Entity":"Extreme temperature","Year":2009,"Deaths":1386},{"Entity":"Extreme temperature","Year":2010,"Deaths":57188},{"Entity":"Extreme temperature","Year":2011,"Deaths":435},{"Entity":"Extreme temperature","Year":2012,"Deaths":1834},{"Entity":"Extreme temperature","Year":2013,"Deaths":1821},{"Entity":"Extreme temperature","Year":2014,"Deaths":1168},{"Entity":"Extreme temperature","Year":2015,"Deaths":7425},{"Entity":"Extreme temperature","Year":2016,"Deaths":490},{"Entity":"Extreme temperature","Year":2017,"Deaths":130},{"Entity":"Extreme weather","Year":1900,"Deaths":6000},{"Entity":"Extreme weather","Year":1902,"Deaths":600},{"Entity":"Extreme weather","Year":1903,"Deaths":163},{"Entity":"Extreme weather","Year":1905,"Deaths":240},{"Entity":"Extreme weather","Year":1906,"Deaths":10298},{"Entity":"Extreme weather","Year":1909,"Deaths":713},{"Entity":"Extreme weather","Year":1910,"Deaths":30},{"Entity":"Extreme weather","Year":1911,"Deaths":1000},{"Entity":"Extreme weather","Year":1912,"Deaths":51170},{"Entity":"Extreme weather","Year":1913,"Deaths":732},{"Entity":"Extreme weather","Year":1915,"Deaths":2125},{"Entity":"Extreme weather","Year":1916,"Deaths":300},{"Entity":"Extreme weather","Year":1917,"Deaths":4057},{"Entity":"Extreme weather","Year":1918,"Deaths":34},{"Entity":"Extreme weather","Year":1919,"Deaths":500},{"Entity":"Extreme weather","Year":1920,"Deaths":224},{"Entity":"Extreme weather","Year":1922,"Deaths":100000},{"Entity":"Extreme weather","Year":1923,"Deaths":3139},{"Entity":"Extreme weather","Year":1924,"Deaths":2242},{"Entity":"Extreme weather","Year":1925,"Deaths":819},{"Entity":"Extreme weather","Year":1926,"Deaths":3568},{"Entity":"Extreme weather","Year":1927,"Deaths":5772},{"Entity":"Extreme weather","Year":1928,"Deaths":4224},{"Entity":"Extreme weather","Year":1930,"Deaths":4082},{"Entity":"Extreme weather","Year":1931,"Deaths":3200},{"Entity":"Extreme weather","Year":1932,"Deaths":3244},{"Entity":"Extreme weather","Year":1933,"Deaths":63},{"Entity":"Extreme weather","Year":1934,"Deaths":5091},{"Entity":"Extreme weather","Year":1935,"Deaths":62707},{"Entity":"Extreme weather","Year":1936,"Deaths":3309},{"Entity":"Extreme weather","Year":1937,"Deaths":11231},{"Entity":"Extreme weather","Year":1938,"Deaths":905},{"Entity":"Extreme weather","Year":1939,"Deaths":3},{"Entity":"Extreme weather","Year":1940,"Deaths":123},{"Entity":"Extreme weather","Year":1941,"Deaths":5006},{"Entity":"Extreme weather","Year":1942,"Deaths":101000},{"Entity":"Extreme weather","Year":1943,"Deaths":5000},{"Entity":"Extreme weather","Year":1944,"Deaths":726},{"Entity":"Extreme weather","Year":1945,"Deaths":4415},{"Entity":"Extreme weather","Year":1946,"Deaths":337},{"Entity":"Extreme weather","Year":1947,"Deaths":4738},{"Entity":"Extreme weather","Year":1948,"Deaths":2971},{"Entity":"Extreme weather","Year":1949,"Deaths":2804},{"Entity":"Extreme weather","Year":1950,"Deaths":873},{"Entity":"Extreme weather","Year":1951,"Deaths":2861},{"Entity":"Extreme weather","Year":1952,"Deaths":6277},{"Entity":"Extreme weather","Year":1953,"Deaths":1814},{"Entity":"Extreme weather","Year":1954,"Deaths":2969},{"Entity":"Extreme weather","Year":1955,"Deaths":3895},{"Entity":"Extreme weather","Year":1956,"Deaths":3114},{"Entity":"Extreme weather","Year":1957,"Deaths":1139},{"Entity":"Extreme weather","Year":1958,"Deaths":2620},{"Entity":"Extreme weather","Year":1959,"Deaths":9695},{"Entity":"Extreme weather","Year":1960,"Deaths":9164},{"Entity":"Extreme weather","Year":1961,"Deaths":12852},{"Entity":"Extreme weather","Year":1962,"Deaths":1860},{"Entity":"Extreme weather","Year":1963,"Deaths":29965},{"Entity":"Extreme weather","Year":1964,"Deaths":10655},{"Entity":"Extreme weather","Year":1965,"Deaths":59932},{"Entity":"Extreme weather","Year":1966,"Deaths":2327},{"Entity":"Extreme weather","Year":1967,"Deaths":2255},{"Entity":"Extreme weather","Year":1968,"Deaths":1669},{"Entity":"Extreme weather","Year":1969,"Deaths":3252},{"Entity":"Extreme weather","Year":1970,"Deaths":304495},{"Entity":"Extreme weather","Year":1971,"Deaths":10811},{"Entity":"Extreme weather","Year":1972,"Deaths":1427},{"Entity":"Extreme weather","Year":1973,"Deaths":4344},{"Entity":"Extreme weather","Year":1974,"Deaths":11861},{"Entity":"Extreme weather","Year":1975,"Deaths":1041},{"Entity":"Extreme weather","Year":1976,"Deaths":1763},{"Entity":"Extreme weather","Year":1977,"Deaths":15298},{"Entity":"Extreme weather","Year":1978,"Deaths":3676},{"Entity":"Extreme weather","Year":1979,"Deaths":2623},{"Entity":"Extreme weather","Year":1980,"Deaths":1379},{"Entity":"Extreme weather","Year":1981,"Deaths":3790},{"Entity":"Extreme weather","Year":1982,"Deaths":2782},{"Entity":"Extreme weather","Year":1983,"Deaths":3656},{"Entity":"Extreme weather","Year":1984,"Deaths":5468},{"Entity":"Extreme weather","Year":1985,"Deaths":17165},{"Entity":"Extreme weather","Year":1986,"Deaths":1939},{"Entity":"Extreme weather","Year":1987,"Deaths":2900},{"Entity":"Extreme weather","Year":1988,"Deaths":3335},{"Entity":"Extreme weather","Year":1989,"Deaths":4256},{"Entity":"Extreme weather","Year":1990,"Deaths":4604},{"Entity":"Extreme weather","Year":1991,"Deaths":146297},{"Entity":"Extreme weather","Year":1992,"Deaths":1342},{"Entity":"Extreme weather","Year":1993,"Deaths":2965},{"Entity":"Extreme weather","Year":1994,"Deaths":4239},{"Entity":"Extreme weather","Year":1995,"Deaths":3763},{"Entity":"Extreme weather","Year":1996,"Deaths":4581},{"Entity":"Extreme weather","Year":1997,"Deaths":6150},{"Entity":"Extreme weather","Year":1998,"Deaths":24935},{"Entity":"Extreme weather","Year":1999,"Deaths":12270},{"Entity":"Extreme weather","Year":2000,"Deaths":1354},{"Entity":"Extreme weather","Year":2001,"Deaths":1911},{"Entity":"Extreme weather","Year":2002,"Deaths":1382},{"Entity":"Extreme weather","Year":2003,"Deaths":1049},{"Entity":"Extreme weather","Year":2004,"Deaths":6547},{"Entity":"Extreme weather","Year":2005,"Deaths":5251},{"Entity":"Extreme weather","Year":2006,"Deaths":4329},{"Entity":"Extreme weather","Year":2007,"Deaths":6035},{"Entity":"Extreme weather","Year":2008,"Deaths":140985},{"Entity":"Extreme weather","Year":2009,"Deaths":3287},{"Entity":"Extreme weather","Year":2010,"Deaths":1564},{"Entity":"Extreme weather","Year":2011,"Deaths":3103},{"Entity":"Extreme weather","Year":2012,"Deaths":3105},{"Entity":"Extreme weather","Year":2013,"Deaths":8603},{"Entity":"Extreme weather","Year":2014,"Deaths":1424},{"Entity":"Extreme weather","Year":2015,"Deaths":1270},{"Entity":"Extreme weather","Year":2016,"Deaths":1760},{"Entity":"Extreme weather","Year":2017,"Deaths":394},{"Entity":"Flood","Year":1900,"Deaths":300},{"Entity":"Flood","Year":1903,"Deaths":250},{"Entity":"Flood","Year":1906,"Deaths":6},{"Entity":"Flood","Year":1909,"Deaths":72},{"Entity":"Flood","Year":1910,"Deaths":1379},{"Entity":"Flood","Year":1911,"Deaths":100000},{"Entity":"Flood","Year":1926,"Deaths":1000},{"Entity":"Flood","Year":1927,"Deaths":3246},{"Entity":"Flood","Year":1928,"Deaths":36},{"Entity":"Flood","Year":1931,"Deaths":3700000},{"Entity":"Flood","Year":1933,"Deaths":18053},{"Entity":"Flood","Year":1935,"Deaths":142000},{"Entity":"Flood","Year":1936,"Deaths":200},{"Entity":"Flood","Year":1937,"Deaths":248},{"Entity":"Flood","Year":1938,"Deaths":954},{"Entity":"Flood","Year":1939,"Deaths":500010},{"Entity":"Flood","Year":1940,"Deaths":125},{"Entity":"Flood","Year":1943,"Deaths":990},{"Entity":"Flood","Year":1947,"Deaths":2000},{"Entity":"Flood","Year":1948,"Deaths":917},{"Entity":"Flood","Year":1949,"Deaths":97000},{"Entity":"Flood","Year":1950,"Deaths":3808},{"Entity":"Flood","Year":1951,"Deaths":5666},{"Entity":"Flood","Year":1952,"Deaths":199},{"Entity":"Flood","Year":1953,"Deaths":7125},{"Entity":"Flood","Year":1954,"Deaths":34436},{"Entity":"Flood","Year":1955,"Deaths":584},{"Entity":"Flood","Year":1956,"Deaths":3613},{"Entity":"Flood","Year":1957,"Deaths":2471},{"Entity":"Flood","Year":1958,"Deaths":400},{"Entity":"Flood","Year":1959,"Deaths":2003396},{"Entity":"Flood","Year":1960,"Deaths":10577},{"Entity":"Flood","Year":1961,"Deaths":3863},{"Entity":"Flood","Year":1962,"Deaths":1180},{"Entity":"Flood","Year":1963,"Deaths":1031},{"Entity":"Flood","Year":1964,"Deaths":1123},{"Entity":"Flood","Year":1965,"Deaths":1401},{"Entity":"Flood","Year":1966,"Deaths":1923},{"Entity":"Flood","Year":1967,"Deaths":2446},{"Entity":"Flood","Year":1968,"Deaths":7306},{"Entity":"Flood","Year":1969,"Deaths":1544},{"Entity":"Flood","Year":1970,"Deaths":3246},{"Entity":"Flood","Year":1971,"Deaths":2404},{"Entity":"Flood","Year":1972,"Deaths":2548},{"Entity":"Flood","Year":1973,"Deaths":1835},{"Entity":"Flood","Year":1974,"Deaths":29431},{"Entity":"Flood","Year":1975,"Deaths":848},{"Entity":"Flood","Year":1976,"Deaths":960},{"Entity":"Flood","Year":1977,"Deaths":2568},{"Entity":"Flood","Year":1978,"Deaths":5897},{"Entity":"Flood","Year":1979,"Deaths":1038},{"Entity":"Flood","Year":1980,"Deaths":10466},{"Entity":"Flood","Year":1981,"Deaths":5283},{"Entity":"Flood","Year":1982,"Deaths":4648},{"Entity":"Flood","Year":1983,"Deaths":2082},{"Entity":"Flood","Year":1984,"Deaths":2930},{"Entity":"Flood","Year":1985,"Deaths":4376},{"Entity":"Flood","Year":1986,"Deaths":1782},{"Entity":"Flood","Year":1987,"Deaths":6766},{"Entity":"Flood","Year":1988,"Deaths":8504},{"Entity":"Flood","Year":1989,"Deaths":4716},{"Entity":"Flood","Year":1990,"Deaths":2251},{"Entity":"Flood","Year":1991,"Deaths":5852},{"Entity":"Flood","Year":1992,"Deaths":5315},{"Entity":"Flood","Year":1993,"Deaths":6150},{"Entity":"Flood","Year":1994,"Deaths":6771},{"Entity":"Flood","Year":1995,"Deaths":7956},{"Entity":"Flood","Year":1996,"Deaths":8047},{"Entity":"Flood","Year":1997,"Deaths":7685},{"Entity":"Flood","Year":1998,"Deaths":10653},{"Entity":"Flood","Year":1999,"Deaths":34807},{"Entity":"Flood","Year":2000,"Deaths":6025},{"Entity":"Flood","Year":2001,"Deaths":5014},{"Entity":"Flood","Year":2002,"Deaths":4236},{"Entity":"Flood","Year":2003,"Deaths":3910},{"Entity":"Flood","Year":2004,"Deaths":6982},{"Entity":"Flood","Year":2005,"Deaths":5754},{"Entity":"Flood","Year":2006,"Deaths":5843},{"Entity":"Flood","Year":2007,"Deaths":8607},{"Entity":"Flood","Year":2008,"Deaths":4007},{"Entity":"Flood","Year":2009,"Deaths":3627},{"Entity":"Flood","Year":2010,"Deaths":8356},{"Entity":"Flood","Year":2011,"Deaths":6163},{"Entity":"Flood","Year":2012,"Deaths":3544},{"Entity":"Flood","Year":2013,"Deaths":9836},{"Entity":"Flood","Year":2014,"Deaths":3532},{"Entity":"Flood","Year":2015,"Deaths":3495},{"Entity":"Flood","Year":2016,"Deaths":4720},{"Entity":"Flood","Year":2017,"Deaths":648},{"Entity":"Landslide","Year":1909,"Deaths":53},{"Entity":"Landslide","Year":1922,"Deaths":100},{"Entity":"Landslide","Year":1923,"Deaths":200},{"Entity":"Landslide","Year":1926,"Deaths":128},{"Entity":"Landslide","Year":1930,"Deaths":40},{"Entity":"Landslide","Year":1931,"Deaths":190},{"Entity":"Landslide","Year":1932,"Deaths":30},{"Entity":"Landslide","Year":1934,"Deaths":500},{"Entity":"Landslide","Year":1936,"Deaths":73},{"Entity":"Landslide","Year":1938,"Deaths":200},{"Entity":"Landslide","Year":1941,"Deaths":5000},{"Entity":"Landslide","Year":1948,"Deaths":525},{"Entity":"Landslide","Year":1949,"Deaths":12000},{"Entity":"Landslide","Year":1950,"Deaths":130},{"Entity":"Landslide","Year":1951,"Deaths":92},{"Entity":"Landslide","Year":1952,"Deaths":28},{"Entity":"Landslide","Year":1954,"Deaths":1086},{"Entity":"Landslide","Year":1955,"Deaths":478},{"Entity":"Landslide","Year":1956,"Deaths":236},{"Entity":"Landslide","Year":1958,"Deaths":52},{"Entity":"Landslide","Year":1959,"Deaths":48},{"Entity":"Landslide","Year":1960,"Deaths":52},{"Entity":"Landslide","Year":1961,"Deaths":166},{"Entity":"Landslide","Year":1962,"Deaths":71},{"Entity":"Landslide","Year":1963,"Deaths":2033},{"Entity":"Landslide","Year":1964,"Deaths":108},{"Entity":"Landslide","Year":1965,"Deaths":204},{"Entity":"Landslide","Year":1966,"Deaths":604},{"Entity":"Landslide","Year":1967,"Deaths":590},{"Entity":"Landslide","Year":1968,"Deaths":1196},{"Entity":"Landslide","Year":1969,"Deaths":18},{"Entity":"Landslide","Year":1970,"Deaths":186},{"Entity":"Landslide","Year":1971,"Deaths":1020},{"Entity":"Landslide","Year":1972,"Deaths":755},{"Entity":"Landslide","Year":1973,"Deaths":3541},{"Entity":"Landslide","Year":1974,"Deaths":904},{"Entity":"Landslide","Year":1975,"Deaths":195},{"Entity":"Landslide","Year":1976,"Deaths":315},{"Entity":"Landslide","Year":1977,"Deaths":40},{"Entity":"Landslide","Year":1978,"Deaths":86},{"Entity":"Landslide","Year":1979,"Deaths":338},{"Entity":"Landslide","Year":1980,"Deaths":300},{"Entity":"Landslide","Year":1981,"Deaths":421},{"Entity":"Landslide","Year":1982,"Deaths":640},{"Entity":"Landslide","Year":1983,"Deaths":1159},{"Entity":"Landslide","Year":1984,"Deaths":228},{"Entity":"Landslide","Year":1985,"Deaths":377},{"Entity":"Landslide","Year":1986,"Deaths":501},{"Entity":"Landslide","Year":1987,"Deaths":1204},{"Entity":"Landslide","Year":1988,"Deaths":952},{"Entity":"Landslide","Year":1989,"Deaths":445},{"Entity":"Landslide","Year":1990,"Deaths":98},{"Entity":"Landslide","Year":1991,"Deaths":728},{"Entity":"Landslide","Year":1992,"Deaths":712},{"Entity":"Landslide","Year":1993,"Deaths":1418},{"Entity":"Landslide","Year":1994,"Deaths":307},{"Entity":"Landslide","Year":1995,"Deaths":1521},{"Entity":"Landslide","Year":1996,"Deaths":1155},{"Entity":"Landslide","Year":1997,"Deaths":801},{"Entity":"Landslide","Year":1998,"Deaths":1141},{"Entity":"Landslide","Year":1999,"Deaths":445},{"Entity":"Landslide","Year":2000,"Deaths":1012},{"Entity":"Landslide","Year":2001,"Deaths":786},{"Entity":"Landslide","Year":2002,"Deaths":1100},{"Entity":"Landslide","Year":2003,"Deaths":706},{"Entity":"Landslide","Year":2004,"Deaths":313},{"Entity":"Landslide","Year":2005,"Deaths":664},{"Entity":"Landslide","Year":2006,"Deaths":1638},{"Entity":"Landslide","Year":2007,"Deaths":271},{"Entity":"Landslide","Year":2008,"Deaths":504},{"Entity":"Landslide","Year":2009,"Deaths":723},{"Entity":"Landslide","Year":2010,"Deaths":3427},{"Entity":"Landslide","Year":2011,"Deaths":309},{"Entity":"Landslide","Year":2012,"Deaths":501},{"Entity":"Landslide","Year":2013,"Deaths":235},{"Entity":"Landslide","Year":2014,"Deaths":943},{"Entity":"Landslide","Year":2015,"Deaths":1006},{"Entity":"Landslide","Year":2016,"Deaths":361},{"Entity":"Landslide","Year":2017,"Deaths":405},{"Entity":"Mass movement (dry)","Year":1903,"Deaths":76},{"Entity":"Mass movement (dry)","Year":1905,"Deaths":18},{"Entity":"Mass movement (dry)","Year":1908,"Deaths":33},{"Entity":"Mass movement (dry)","Year":1910,"Deaths":62},{"Entity":"Mass movement (dry)","Year":1915,"Deaths":56},{"Entity":"Mass movement (dry)","Year":1937,"Deaths":40},{"Entity":"Mass movement (dry)","Year":1955,"Deaths":3},{"Entity":"Mass movement (dry)","Year":1962,"Deaths":2000},{"Entity":"Mass movement (dry)","Year":1963,"Deaths":150},{"Entity":"Mass movement (dry)","Year":1965,"Deaths":26},{"Entity":"Mass movement (dry)","Year":1970,"Deaths":42},{"Entity":"Mass movement (dry)","Year":1971,"Deaths":31},{"Entity":"Mass movement (dry)","Year":1980,"Deaths":50},{"Entity":"Mass movement (dry)","Year":1982,"Deaths":59},{"Entity":"Mass movement (dry)","Year":1983,"Deaths":466},{"Entity":"Mass movement (dry)","Year":1985,"Deaths":300},{"Entity":"Mass movement (dry)","Year":1987,"Deaths":183},{"Entity":"Mass movement (dry)","Year":1988,"Deaths":157},{"Entity":"Mass movement (dry)","Year":1989,"Deaths":55},{"Entity":"Mass movement (dry)","Year":1990,"Deaths":116},{"Entity":"Mass movement (dry)","Year":1991,"Deaths":86},{"Entity":"Mass movement (dry)","Year":1992,"Deaths":323},{"Entity":"Mass movement (dry)","Year":1993,"Deaths":341},{"Entity":"Mass movement (dry)","Year":2000,"Deaths":11},{"Entity":"Mass movement (dry)","Year":2002,"Deaths":60},{"Entity":"Mass movement (dry)","Year":2004,"Deaths":44},{"Entity":"Mass movement (dry)","Year":2006,"Deaths":11},{"Entity":"Mass movement (dry)","Year":2008,"Deaths":120},{"Entity":"Mass movement (dry)","Year":2009,"Deaths":36},{"Entity":"Mass movement (dry)","Year":2012,"Deaths":16},{"Entity":"Mass movement (dry)","Year":2013,"Deaths":46},{"Entity":"Mass movement (dry)","Year":2015,"Deaths":13},{"Entity":"Volcanic activity","Year":1900,"Deaths":30},{"Entity":"Volcanic activity","Year":1902,"Deaths":38690},{"Entity":"Volcanic activity","Year":1903,"Deaths":17},{"Entity":"Volcanic activity","Year":1906,"Deaths":700},{"Entity":"Volcanic activity","Year":1909,"Deaths":5500},{"Entity":"Volcanic activity","Year":1911,"Deaths":1335},{"Entity":"Volcanic activity","Year":1914,"Deaths":140},{"Entity":"Volcanic activity","Year":1919,"Deaths":5000},{"Entity":"Volcanic activity","Year":1926,"Deaths":144},{"Entity":"Volcanic activity","Year":1929,"Deaths":5000},{"Entity":"Volcanic activity","Year":1930,"Deaths":1369},{"Entity":"Volcanic activity","Year":1931,"Deaths":1300},{"Entity":"Volcanic activity","Year":1937,"Deaths":506},{"Entity":"Volcanic activity","Year":1944,"Deaths":26},{"Entity":"Volcanic activity","Year":1948,"Deaths":100},{"Entity":"Volcanic activity","Year":1949,"Deaths":2000},{"Entity":"Volcanic activity","Year":1950,"Deaths":84},{"Entity":"Volcanic activity","Year":1951,"Deaths":4800},{"Entity":"Volcanic activity","Year":1952,"Deaths":29},{"Entity":"Volcanic activity","Year":1953,"Deaths":150},{"Entity":"Volcanic activity","Year":1954,"Deaths":37},{"Entity":"Volcanic activity","Year":1963,"Deaths":1705},{"Entity":"Volcanic activity","Year":1964,"Deaths":4},{"Entity":"Volcanic activity","Year":1965,"Deaths":355},{"Entity":"Volcanic activity","Year":1966,"Deaths":1088},{"Entity":"Volcanic activity","Year":1968,"Deaths":90},{"Entity":"Volcanic activity","Year":1975,"Deaths":2},{"Entity":"Volcanic activity","Year":1976,"Deaths":41},{"Entity":"Volcanic activity","Year":1977,"Deaths":215},{"Entity":"Volcanic activity","Year":1979,"Deaths":268},{"Entity":"Volcanic activity","Year":1980,"Deaths":90},{"Entity":"Volcanic activity","Year":1981,"Deaths":192},{"Entity":"Volcanic activity","Year":1982,"Deaths":130},{"Entity":"Volcanic activity","Year":1984,"Deaths":37},{"Entity":"Volcanic activity","Year":1985,"Deaths":21800},{"Entity":"Volcanic activity","Year":1986,"Deaths":1746},{"Entity":"Volcanic activity","Year":1988,"Deaths":7},{"Entity":"Volcanic activity","Year":1990,"Deaths":33},{"Entity":"Volcanic activity","Year":1991,"Deaths":683},{"Entity":"Volcanic activity","Year":1992,"Deaths":1},{"Entity":"Volcanic activity","Year":1993,"Deaths":99},{"Entity":"Volcanic activity","Year":1994,"Deaths":101},{"Entity":"Volcanic activity","Year":1996,"Deaths":4},{"Entity":"Volcanic activity","Year":1997,"Deaths":53},{"Entity":"Volcanic activity","Year":2002,"Deaths":200},{"Entity":"Volcanic activity","Year":2004,"Deaths":2},{"Entity":"Volcanic activity","Year":2005,"Deaths":3},{"Entity":"Volcanic activity","Year":2006,"Deaths":5},{"Entity":"Volcanic activity","Year":2007,"Deaths":11},{"Entity":"Volcanic activity","Year":2008,"Deaths":16},{"Entity":"Volcanic activity","Year":2010,"Deaths":323},{"Entity":"Volcanic activity","Year":2011,"Deaths":3},{"Entity":"Volcanic activity","Year":2014,"Deaths":102},{"Entity":"Wildfire","Year":1911,"Deaths":73},{"Entity":"Wildfire","Year":1918,"Deaths":1000},{"Entity":"Wildfire","Year":1922,"Deaths":43},{"Entity":"Wildfire","Year":1929,"Deaths":60},{"Entity":"Wildfire","Year":1939,"Deaths":71},{"Entity":"Wildfire","Year":1944,"Deaths":170},{"Entity":"Wildfire","Year":1949,"Deaths":80},{"Entity":"Wildfire","Year":1956,"Deaths":11},{"Entity":"Wildfire","Year":1966,"Deaths":25},{"Entity":"Wildfire","Year":1967,"Deaths":62},{"Entity":"Wildfire","Year":1968,"Deaths":12},{"Entity":"Wildfire","Year":1977,"Deaths":3},{"Entity":"Wildfire","Year":1978,"Deaths":2},{"Entity":"Wildfire","Year":1981,"Deaths":8},{"Entity":"Wildfire","Year":1982,"Deaths":2},{"Entity":"Wildfire","Year":1983,"Deaths":106},{"Entity":"Wildfire","Year":1984,"Deaths":17},{"Entity":"Wildfire","Year":1985,"Deaths":51},{"Entity":"Wildfire","Year":1986,"Deaths":20},{"Entity":"Wildfire","Year":1987,"Deaths":191},{"Entity":"Wildfire","Year":1989,"Deaths":1},{"Entity":"Wildfire","Year":1991,"Deaths":90},{"Entity":"Wildfire","Year":1992,"Deaths":122},{"Entity":"Wildfire","Year":1993,"Deaths":3},{"Entity":"Wildfire","Year":1994,"Deaths":84},{"Entity":"Wildfire","Year":1995,"Deaths":29},{"Entity":"Wildfire","Year":1996,"Deaths":45},{"Entity":"Wildfire","Year":1997,"Deaths":266},{"Entity":"Wildfire","Year":1998,"Deaths":150},{"Entity":"Wildfire","Year":1999,"Deaths":70},{"Entity":"Wildfire","Year":2000,"Deaths":47},{"Entity":"Wildfire","Year":2001,"Deaths":33},{"Entity":"Wildfire","Year":2002,"Deaths":6},{"Entity":"Wildfire","Year":2003,"Deaths":47},{"Entity":"Wildfire","Year":2004,"Deaths":14},{"Entity":"Wildfire","Year":2005,"Deaths":45},{"Entity":"Wildfire","Year":2006,"Deaths":13},{"Entity":"Wildfire","Year":2007,"Deaths":148},{"Entity":"Wildfire","Year":2008,"Deaths":86},{"Entity":"Wildfire","Year":2009,"Deaths":190},{"Entity":"Wildfire","Year":2010,"Deaths":166},{"Entity":"Wildfire","Year":2011,"Deaths":10},{"Entity":"Wildfire","Year":2012,"Deaths":21},{"Entity":"Wildfire","Year":2013,"Deaths":35},{"Entity":"Wildfire","Year":2014,"Deaths":16},{"Entity":"Wildfire","Year":2015,"Deaths":67},{"Entity":"Wildfire","Year":2016,"Deaths":39},{"Entity":"Wildfire","Year":2017,"Deaths":75}]
+  </script>
+ </head>
+ <body>
+  <div id="timeline-guide">
+  </div>
+  <header data-aos="fade-up">
+   <h1>
+    🔥 A Century of Natural Disasters
+   </h1>
+   <h2>
+    From mega-droughts to shaking earth—how 117 years of catastrophes reshaped global mortality patterns
+   </h2>
+  </header>
+  <section data-aos="fade-up">
+   <p class="explainer">
+    Explore humanity's deadliest encounters: drought-fuelled famines, seismic shocks and rising storm losses across 1900–2017.
+   </p>
+  </section>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-trophy">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Which specific disasters and years produced the highest death tolls in recorded history?
+    </h3>
+    <p>
+     Drought dominates the deadliest single-year events: China’s 1931 flood (3.7 M deaths) is the only non-drought entry in the top-5; the other four are droughts—1928 China (3 M), 1920 China (2.5 M), 1943 India (1.9 M) and 1942 India (1.5 M). These five years together account for ≈16.6 M deaths, about 25 % of all 1900-2017 disaster fatalities.
+    </p>
+    <div class="chart-placeholder" id="chart_1">
+     [Annotated Bar Race will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-chart-area">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     How has the nature of disaster mortality shifted before vs after the mid-20th-century?
+    </h3>
+    <p>
+     Before 1950 drought and epidemic spikes drove extreme annual variability (σ ≈ 643 k deaths); after 1950 variability fell but remained substantial (σ ≈ 154 k) while earthquake, flood and storm fatalities became the main contributors to remaining risk.
+    </p>
+    <div class="chart-placeholder" id="chart_2">
+     [Layered Area Chart with bands will render here]
+    </div>
+   </div>
+  </section>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    Curious how quakes stack up?
+   </h3>
+   <p>
+    Scroll to reveal deadly seismic mega-years.
+   </p>
+   <a href="#anchor3">
+    Next Insight ↓
+   </a>
+  </div>
+  <section class="story-section" data-aos="fade-up" id="anchor3">
+   <div class="story-icon">
+    <i class="las la-bolt">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Do earthquake fatalities show a declining trend or episodic extreme spikes?
+    </h3>
+    <p>
+     Earthquake deaths cluster in three seismic mega-years—1923 Great Kantō (152 k), 1976 Tangshan (277 k) and 2004 Sumatra–Andaman (227 k)—each producing sharp jumps versus adjacent decades, illustrating episodic extreme risk rather than a declining trend.
+    </p>
+    <div class="chart-placeholder" id="chart_3">
+     [Ridge-line histogram with 3-D pillars will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-globe-africa">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Is the global drop in drought deaths uniform or do localized high-mortality events still occur?
+    </h3>
+    <p>
+     While drought killed &gt; 12 M people inside China and India between 1900-1965, post-1980 global drought mortality stayed below 1,000 in 75 % of years, yet single-country episodes (1983 Ethiopia, 2010 Somalia) still briefly drive five-digit tolls, demonstrating that vulnerability remains locally acute even as global frequency falls.
+    </p>
+    <div class="chart-placeholder" id="chart_4">
+     [Choropleth world map with zoom-inset will render here]
+    </div>
+   </div>
+  </section>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    See how exposure is shifting
+   </h3>
+   <p>
+    Dig into today’s mortality vs. economic loss trade-off.
+   </p>
+   <a href="#anchor5">
+    Final Insight ↓
+   </a>
+  </div>
+  <section class="story-section" data-aos="fade-up" id="anchor5">
+   <div class="story-icon">
+    <i class="las la-chart-line">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Has the relationship between disaster mortality and societal exposure changed in the 21st century?
+    </h3>
+    <p>
+     The 2000s mark a mortality transition: total disaster deaths average 84 k yr⁻¹ versus 53 k yr⁻¹ in the 1990s, while economic losses soared, suggesting adaptation (early-warning, building codes) is saving fewer lives than exposure of assets rises, a decoupling that accelerates after 2004.
+    </p>
+    <div class="chart-placeholder" id="chart_5">
+     [Dual-axis scatter plot with breakpoint will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    Act on insights
+   </h3>
+   <p>
+    Share this infographic to raise awareness of disaster risk reduction.
+   </p>
+   <a href="javascript:window.print()">
+    Download / Print
+   </a>
+  </div>
+  <footer data-aos="fade-up">
+   <i class="las la-copyright">
+   </i>
+   Sources: CRED EM-DAT (1900-2017) and peer-reviewed publications. Visualizations are conceptual placeholders; replace with live charts using D3 or Plotly next.
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({ duration: 800 });
+  </script>
+  <script>
+   function plot_1(data) {
+        document.getElementById('chart_1').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_1'), null, { renderer: 'svg' });
+
+        const raw = window.data;
+        const groups = {};
+        raw.forEach(d => {
+            const y = +d.Year;
+            if (!groups[y]) groups[y] = [];
+            groups[y].push({ name: d.Entity, value: +d.Deaths, year: y });
+        });
+
+        const maxYearData = [];
+        const top5Records = [];
+        for (const y in groups) {
+            const list = groups[y].sort((a, b) => b.value - a.value).slice(0, 5);
+            maxYearData.push({ year: +y, data: list });
+            list.forEach(d => top5Records.push({ year: y, name: d.name, value: d.value }));
+        }
+        const globalMax = top5Records.reduce((p, c) => c.value > p.value ? c : p, top5Records[0]);
+
+        const years = Object.keys(groups).sort((a, b) => a - b).map(Number);
+        const categorySet = new Set(raw.map(d => d.Entity));
+        const allCategories = [...categorySet];
+
+        const colors = [
+            '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae',
+            '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'
+        ];
+        const colorMap = {};
+        allCategories.forEach((c, i) => colorMap[c] = colors[i % colors.length]);
+
+        const optionSeries = [];
+        years.forEach(year => {
+            const top5 = maxYearData.find(d => d.year === year).data;
+            optionSeries.push({
+                series: [{
+                    data: top5.map(d => ({
+                        name: d.name,
+                        value: d.value,
+                        itemStyle: { color: colorMap[d.name] },
+                        label: (globalMax.year == year && globalMax.name == d.name)
+                                ? { show: true, position: 'right', formatter: ' {b} \n最高纪录' }
+                                : { show: true, position: 'right' }
+                    }))
+                }]
+            });
+        });
+
+        const option = {
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    data: years,
+                    autoPlay: true,
+                    playInterval: 1000,
+                    bottom: 20,
+                    label: { formatter: '{value}' }
+                },
+                grid: { left: '15%', right: '10%', top: '15%', bottom: '15%', containLabel: true },
+                xAxis: { type: 'value', name: 'Deaths', nameLocation: 'middle', nameGap: 30 },
+                yAxis: { type: 'category', inverse: true, axisLabel: { fontSize: 12 } },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow' },
+                    formatter: p => {
+                        const d = p[0];
+                        return `${d.name}<br/>Year ${d.data.year}<br/>Deaths: ${d.value.toLocaleString()}`;
+                    }
+                },
+                graphic: {
+                    type: 'text',
+                    left: '52%',
+                    top: '8%',
+                    style: {
+                        text: `历史最高：${globalMax.name} (${globalMax.year})\n死亡：${Math.round(globalMax.value).toLocaleString()}`,
+                        font: '14px sans-serif',
+                        fill: '#900'
+                    }
+                },
+                series: [{
+                    type: 'bar',
+                    realtimeSort: true,
+                    encode: { x: 'value', y: 'name' },
+                    label: { show: true, position: 'right', formatter: '{c}' }
+                }]
+            },
+            options: optionSeries
+        };
+
+        myChart.setOption(option);
+    }
+
+    plot_1(data);
+  </script>
+  <script>
+   function plot_2(data){
+                document.getElementById('chart_2').innerHTML = '';
+                const myChart = echarts.init(document.getElementById('chart_2'), null, { renderer: 'svg' });
+
+                const colorMap = {
+                    'All natural disasters':'#5470c6',
+                    'Earthquake':'#91cc75',
+                    'Extreme weather':'#fac858',
+                    'Flood':'#ee6666',
+                    'Landslide':'#73c0de',
+                    'Epidemic':'#3ba272',
+                    'Extreme temperature':'#fc8452',
+                    'Volcanic activity':'#9a60b4',
+                    'Wildfire':'#ea7ccc',
+                    'Drought':'#ff9f7f',
+                    'Mass movement (dry)':'#87ceeb'
+                };
+
+                const preStats = {};
+                const postStats = {};
+                const series = [];
+                const allDeaths = {};
+                const allYears = {};
+
+                data.forEach(d=>{
+                    const type = d.Entity;
+                    const year = +d.Year;
+                    const deaths = +d.Deaths;
+                    if(!allDeaths[type]) allDeaths[type] = [];
+                    if(!allYears[type]) allYears[type] = [];
+                    allDeaths[type].push(deaths);
+                    allYears[type].push(year);
+                    if(year < 1950){
+                        if(!preStats[type]) preStats[type] = [];
+                        preStats[type].push(deaths);
+                    } else {
+                        if(!postStats[type]) postStats[type] = [];
+                        postStats[type].push(deaths);
+                    }
+                });
+
+                Object.keys(preStats).forEach(t=>{
+                    const arr = preStats[t];
+                    const mean = (arr.reduce((a,b)=>a+b,0)/arr.length).toFixed(2);
+                    const std = (Math.sqrt(arr.reduce((sq,v)=>sq+Math.pow(v-mean,2),0)/arr.length)).toFixed(2);
+                    preStats[t] = {mean,std};
+                });
+                Object.keys(postStats).forEach(t=>{
+                    const arr = postStats[t];
+                    const mean = (arr.reduce((a,b)=>a+b,0)/arr.length).toFixed(2);
+                    const std = (Math.sqrt(arr.reduce((sq,v)=>sq+Math.pow(v-mean,2),0)/arr.length)).toFixed(2);
+                    postStats[t] = {mean,std};
+                });
+
+                Object.keys(allYears).sort().forEach(type=>{
+                    const years = allYears[type];
+                    const deaths = allDeaths[type];
+                    const preData = [];
+                    const postData = [];
+                    years.forEach((y,i)=>{
+                        const pair = [y,deaths[i]];
+                        if(y<1950) preData.push(pair); else postData.push(pair);
+                    });
+                    if(preData.length){
+                        series.push({
+                            name:type+' (pre-1950)',
+                            type:'line',
+                            areaStyle:{opacity:0.5},
+                            lineStyle:{width:0},
+                            data:preData,
+                            itemStyle:{color:colorMap[type]}
+                        });
+                    }
+                    if(postData.length){
+                        series.push({
+                            name:type+' (post-1950)',
+                            type:'line',
+                            areaStyle:{opacity:0.7},
+                            lineStyle:{width:0},
+                            data:postData,
+                            itemStyle:{color:colorMap[type]}
+                        });
+                    }
+                });
+
+                const markLineData = [];
+                Object.keys(preStats).forEach(t=>{
+                    markLineData.push({
+                        yAxis:parseFloat(preStats[t].mean),
+                        label:{formatter:`${t} pre μ±σ: ${preStats[t].mean} ± ${preStats[t].std}`},
+                        lineStyle:{color:colorMap[t],type:'dashed'}
+                    });
+                });
+                Object.keys(postStats).forEach(t=>{
+                    markLineData.push({
+                        yAxis:parseFloat(postStats[t].mean),
+                        label:{formatter:`${t} post μ±σ: ${postStats[t].mean} ± ${postStats[t].std}`},
+                        lineStyle:{color:colorMap[t],type:'dashed'}
+                    });
+                });
+
+                if(series.length){
+                    series[0].markLine={
+                        silent:false,
+                        data:markLineData,
+                        symbol:'none'
+                    };
+                }
+
+                const option = {
+                    title:{
+                        text:'Disaster Deaths Before vs After 1950',
+                        subtext:'Layered area chart with std annotations',
+                        left:'center'
+                    },
+                    tooltip:{
+                        trigger:'axis',
+                        formatter:params=>{
+                            const year = params[0].axisValue;
+                            const lines = params.map(p=>`${p.seriesName}: ${p.value[1]}`);
+                            return `Year: ${year}<br/>`+lines.join('<br/>');
+                        }
+                    },
+                    legend:{
+                        top:40,
+                        type:'scroll'
+                    },
+                    grid:{
+                        left:'10%',
+                        right:'10%',
+                        bottom:'15%'
+                    },
+                    xAxis:{
+                        type:'value',
+                        name:'Year',
+                        min:1900,
+                        max:2017
+                    },
+                    yAxis:{
+                        type:'value',
+                        name:'Deaths',
+                        scale:true
+                    },
+                    series:series,
+                    graphic:[
+                        {type:'line',shape:{x1:'50%',y1:0,x2:'50%',y2:'100%'},style:{stroke:'#333',lineDash:[5,5]}},
+                        {type:'text',left:'25%',top:'10%',style:{text:'Pre-1950',fontSize:14,fill:'#666'}},
+                        {type:'text',left:'65%',top:'10%',style:{text:'Post-1950',fontSize:14,fill:'#666'}}
+                    ]
+                };
+
+                myChart.setOption(option);
+            }
+            plot_2(data);
+  </script>
+  <script>
+   function plot_3(data){
+        document.getElementById('chart_3').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_3'), null, { renderer: 'svg' });
+
+        const quakeData = data.filter(d => d.Entity === 'Earthquake');
+
+        const bins = {};
+        for (let yr = 1900; yr <= 2010; yr += 10) bins[yr] = 0;
+        quakeData.forEach(d => {
+            const bin = Math.floor(d.Year / 10) * 10;
+            bins[bin] += d.Deaths;
+        });
+        const histSeries = Object.entries(bins).map(([k, v]) => [Number(k), v]);
+
+        const marks = quakeData.filter(d => [1923, 1976, 2004].includes(d.Year))
+                               .map(d => ({ name: String(d.Year), value: [d.Year, d.Deaths] }));
+
+        const option = {
+            backgroundColor: '#fff',
+            tooltip: {
+                trigger: 'axis',
+                formatter: p => {
+                    const [pt] = p;
+                    return `${pt.value[0]}<br/>Deaths: ${pt.value[1].toLocaleString()}`;
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: histSeries.map(d => d[0]),
+                name: 'Year',
+                nameLocation: 'middle',
+                nameGap: 30
+            },
+            yAxis: { type: 'value', name: 'Deaths' },
+            series: [
+                {
+                    name: 'Earthquake deaths',
+                    type: 'bar',
+                    data: histSeries.map(d => d[1]),
+                    barWidth: '80%',
+                    itemStyle: { color: '#5470c6' },
+                    emphasis: { itemStyle: { color: '#91cc75' } }
+                },
+                {
+                    name: 'Extreme years',
+                    type: 'scatter',
+                    data: marks.map(m => m.value),
+                    symbolSize: 60,
+                    itemStyle: {
+                        color: 'rgba(255,126,95,0.85)',
+                        borderColor: '#ff4d4f',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: p => String(p.value[0]),
+                        fontSize: 12,
+                        fontWeight: 'bold'
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_3(data)
+  </script>
+  <script>
+   async function plot_4(data) {
+    document.getElementById('chart_4').innerHTML = '';
+    const myChart = echarts.init(document.getElementById('chart_4'), null, { renderer: 'svg' });
+
+    const drought = data.filter(d => d.Entity === 'Drought' && d.Year >= 1980 && d.Year <= 2017);
+    const isoMap = { Ethiopia: 'ETH', Somalia: 'SOM' };
+    const countryYearDeaths = {};
+    drought.forEach(d => {
+      let code = isoMap[d.Entity] || null;
+      if (!code) return;
+      const key = `${code}|${d.Year}`;
+      countryYearDeaths[key] = (countryYearDeaths[key] || 0) + (+d.Deaths || 0);
+    });
+
+    const countryTotal = {};
+    Object.entries(countryYearDeaths).forEach(([key, deaths]) => {
+      const code = key.split('|')[0];
+      countryTotal[code] = (countryTotal[code] || 0) + deaths;
+    });
+    const mapData = Object.entries(countryTotal).map(([code, deaths]) => ({
+      name: code,
+      value: Number(deaths.toFixed(2))
+    }));
+
+    const eth83 = (countryYearDeaths['ETH|1983'] || 0).toFixed(2);
+    const som10 = (countryYearDeaths['SOM|2010'] || 0).toFixed(2);
+
+    const worldGeo = await fetch('/maps/world.json').then(res => res.json());
+    echarts.registerMap('world', worldGeo);
+
+    const option = {
+      backgroundColor: '#fff',
+      title: {
+        text: 'Drought Deaths 1980-2017',
+        subtext: `Global drop not uniform: Ethiopia 1983 (${eth83}) & Somalia 2010 (${som10}) spikes`,
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: p => `${p.name}<br/>Total deaths: ${p.value.toLocaleString()}`
+      },
+      visualMap: {
+        min: 0,
+        max: Math.max(...mapData.map(d => d.value), 1),
+        text: ['High', 'Low'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+          color: ['#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695']
+        },
+        left: 'left'
+      },
+      series: [{
+        name: 'Drought Deaths',
+        type: 'map',
+        map: 'world',
+        roam: true,
+        emphasis: {
+          label: { show: true }
+        },
+        data: mapData
+      }],
+      graphic: [
+        {
+          type: 'group',
+          left: '60%',
+          top: '15%',
+          children: [
+            {
+              type: 'rect',
+              shape: { width: 140, height: 80 },
+              style: { fill: '#fff', stroke: '#333', lineWidth: 1 }
+            },
+            {
+              type: 'text',
+              style: {
+                text: `Ethiopia 1983\n${eth83} deaths`,
+                font: '14px sans-serif',
+                textAlign: 'center',
+                x: 70,
+                y: 30
+              }
+            }
+          ]
+        },
+        {
+          type: 'group',
+          left: '60%',
+          top: '45%',
+          children: [
+            {
+              type: 'rect',
+              shape: { width: 140, height: 80 },
+              style: { fill: '#fff', stroke: '#333', lineWidth: 1 }
+            },
+            {
+              type: 'text',
+              style: {
+                text: `Somalia 2010\n${som10} deaths`,
+                font: '14px sans-serif',
+                textAlign: 'center',
+                x: 70,
+                y: 30
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  }
+  plot_4(data);
+  </script>
+  <script>
+   function plot_5(data){
+        document.getElementById('chart_5').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_5'), null, { renderer: 'svg' });
+
+        const filtered = data.filter(d => d.Year >= 1990 && d.Year <= 2017);
+        const yearDeaths = {};
+        filtered.forEach(d => {
+            if (!yearDeaths[d.Year]) yearDeaths[d.Year] = 0;
+            yearDeaths[d.Year] += d.Deaths;
+        });
+
+        const scatter = Object.keys(yearDeaths)
+            .map(y => ({ year: +y, deaths: yearDeaths[y] }))
+            .sort((a,b) => a.year - b.year);
+
+        const decadeColor = { 1990: '#5470c6', 2000: '#91cc75', 2010: '#fac858' };
+        scatter.forEach(d => {
+            const decade = Math.floor(d.year / 10) * 10;
+            d.itemStyle = { color: decadeColor[decade] };
+        });
+
+        const loess = [];
+        for (let i = 2; i < scatter.length - 2; i++) {
+            const win = scatter.slice(i - 2, i + 3);
+            const avg = win.reduce((s, v) => s + v.deaths, 0) / 5;
+            loess.push([scatter[i].year, Math.round(avg * 100) / 100]);
+        }
+
+        const option = {
+            title: { text: 'Annual Disaster Deaths (1990-2017)', left: 'center' },
+            tooltip: {
+                trigger: 'item',
+                formatter: p => {
+                    if (p.seriesName === 'Deaths') {
+                        const d = p.data;
+                        return `${d.year}<br/>Deaths: ${d.deaths.toLocaleString()}`;
+                    }
+                    return `${p.data[0]}<br/>LOESS: ${(+p.data[1]).toLocaleString()}`;
+                }
+            },
+            legend: { data: ['Deaths', 'LOESS', '2004 Breakpoint'], bottom: 10 },
+            xAxis: { type: 'category', name: 'Year', nameLocation: 'middle', nameGap: 30 },
+            yAxis: {
+                type: 'log',
+                name: 'Annual Deaths',
+                nameLocation: 'middle',
+                nameGap: 50,
+                logBase: 10
+            },
+            series: [
+                {
+                    name: 'Deaths',
+                    type: 'scatter',
+                    data: scatter.map(d => ({ value: [d.year, Math.max(d.deaths, 1)], year: d.year, deaths: d.deaths, itemStyle: d.itemStyle })),
+                    symbolSize: 8
+                },
+                {
+                    name: 'LOESS',
+                    type: 'line',
+                    data: loess.map(v => [v[0], Math.max(v[1], 1)]),
+                    smooth: true,
+                    lineStyle: { width: 3, color: '#ee6666' },
+                    symbol: 'none'
+                },
+                {
+                    name: '2004 Breakpoint',
+                    type: 'line',
+                    markLine: {
+                        silent: true,
+                        symbol: 'none',
+                        lineStyle: { type: 'dashed', color: '#d94e4e', width: 2 },
+                        data: [{ xAxis: 2004 }]
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_5(data);
+  </script>
+ </body>
+</html>

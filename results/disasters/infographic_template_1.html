@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Natural Disasters Infographic
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+            --color-primary: #1c1c1c;
+            --color-accent: #ff4d4d;
+            --color-warm: #ff9a3d;
+            --color-earth: #7d4e57;
+            --color-water: #3a7ca5;
+            --color-shock: #f05d5e;
+            --color-light: #f6f6f6;
+            --color-bg: #ffffff;
+            --color-gray: #888;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5em;
+        }
+        section, header, footer, .cta {
+            padding: 3.5em 1.5em;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-earth) 100%);
+            color: #fff;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-top: 40px solid var(--color-earth);
+        }
+        header h1 { font-size: 2.6rem; margin-bottom: 0.3em; letter-spacing: -0.02em; }
+        header h2 { font-size: 1.1rem; font-family: 'Barlow', sans-serif; font-weight: 400; color: rgba(255,255,255,.9); }
+        .explainer { font-size: 1.15rem; margin-bottom: 2em; color: var(--color-gray); }
+        .divider {
+            height: 1px;
+            background: #ddd;
+            margin: 3em auto;
+            max-width: 300px;
+            border: none;
+        }
+        .story-section {
+            position: relative;
+            padding: 2em 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5em;
+            align-items: flex-start;
+        }
+        .story-section:nth-child(even) { background: var(--color-light); border-radius: 20px; margin: 1em -10px; padding: 2em 1.5em; }
+        .story-icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,.15);
+        }
+        .story-content { flex: 1 1 60%; min-width: 250px; }
+        .story-content h3 { margin-bottom: 0.8em; font-size: 1.5rem; }
+        .story-content p { margin-bottom: 1.2em; }
+        .chart-placeholder {
+            width: 100%;
+            margin-top: 1.8em;
+            border-radius: 12px;
+            background: #fafafa;
+            border: 2px dashed var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+        .cta {
+            text-align: center;
+            padding: 3em 1.5em;
+            background: var(--color-water);
+            color: #fff;
+            border-radius: 25px;
+            margin: 4em auto;
+        }
+        .cta h3 { font-size: 1.8rem; margin-bottom: 0.6em; color: #fff; }
+        .cta p { margin-bottom: 1.3em; font-size: 1.1rem; }
+        .cta a {
+            display: inline-block;
+            padding: 0.9em 1.8em;
+            background: #fff;
+            color: var(--color-water);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        .cta a:hover { transform: translateY(-3px); }
+        footer {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            text-align: center;
+            margin-top: 2em;
+        }
+        footer img { width: 60px; margin-bottom: 0.9em; }
+        #timeline-guide {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--color-accent);
+            opacity: 0.15;
+        }
+        #timeline-guide:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0%;
+            background: var(--color-warm);
+            animation: draw 3s ease-out infinite forwards;
+        }
+        @keyframes draw { to { height: 100%; } }
+  </style>
+ </head>
+ <body>
+  <div id="timeline-guide">
+  </div>
+  <header data-aos="fade-up">
+   <h1>
+    🔥 A Century of Natural Disasters
+   </h1>
+   <h2>
+    From mega-droughts to shaking earth—how 117 years of catastrophes reshaped global mortality patterns
+   </h2>
+  </header>
+  <section data-aos="fade-up">
+   <p class="explainer">
+    Explore humanity's deadliest encounters: drought-fuelled famines, seismic shocks and rising storm losses across 1900–2017.
+   </p>
+  </section>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-trophy">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Which specific disasters and years produced the highest death tolls in recorded history?
+    </h3>
+    <p>
+     Drought dominates the deadliest single-year events: China’s 1931 flood (3.7 M deaths) is the only non-drought entry in the top-5; the other four are droughts—1928 China (3 M), 1920 China (2.5 M), 1943 India (1.9 M) and 1942 India (1.5 M). These five years together account for ≈16.6 M deaths, about 25 % of all 1900-2017 disaster fatalities.
+    </p>
+    <div class="chart-placeholder" id="chart_1">
+     [Annotated Bar Race will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-chart-area">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     How has the nature of disaster mortality shifted before vs after the mid-20th-century?
+    </h3>
+    <p>
+     Before 1950 drought and epidemic spikes drove extreme annual variability (σ ≈ 643 k deaths); after 1950 variability fell but remained substantial (σ ≈ 154 k) while earthquake, flood and storm fatalities became the main contributors to remaining risk.
+    </p>
+    <div class="chart-placeholder" id="chart_2">
+     [Layered Area Chart with bands will render here]
+    </div>
+   </div>
+  </section>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    Curious how quakes stack up?
+   </h3>
+   <p>
+    Scroll to reveal deadly seismic mega-years.
+   </p>
+   <a href="#anchor3">
+    Next Insight ↓
+   </a>
+  </div>
+  <section class="story-section" data-aos="fade-up" id="anchor3">
+   <div class="story-icon">
+    <i class="las la-bolt">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Do earthquake fatalities show a declining trend or episodic extreme spikes?
+    </h3>
+    <p>
+     Earthquake deaths cluster in three seismic mega-years—1923 Great Kantō (152 k), 1976 Tangshan (277 k) and 2004 Sumatra–Andaman (227 k)—each producing sharp jumps versus adjacent decades, illustrating episodic extreme risk rather than a declining trend.
+    </p>
+    <div class="chart-placeholder" id="chart_3">
+     [Ridge-line histogram with 3-D pillars will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <section class="story-section" data-aos="fade-up">
+   <div class="story-icon">
+    <i class="las la-globe-africa">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Is the global drop in drought deaths uniform or do localized high-mortality events still occur?
+    </h3>
+    <p>
+     While drought killed &gt; 12 M people inside China and India between 1900-1965, post-1980 global drought mortality stayed below 1,000 in 75 % of years, yet single-country episodes (1983 Ethiopia, 2010 Somalia) still briefly drive five-digit tolls, demonstrating that vulnerability remains locally acute even as global frequency falls.
+    </p>
+    <div class="chart-placeholder" id="chart_4">
+     [Choropleth world map with zoom-inset will render here]
+    </div>
+   </div>
+  </section>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    See how exposure is shifting
+   </h3>
+   <p>
+    Dig into today’s mortality vs. economic loss trade-off.
+   </p>
+   <a href="#anchor5">
+    Final Insight ↓
+   </a>
+  </div>
+  <section class="story-section" data-aos="fade-up" id="anchor5">
+   <div class="story-icon">
+    <i class="las la-chart-line">
+    </i>
+   </div>
+   <div class="story-content">
+    <h3>
+     Has the relationship between disaster mortality and societal exposure changed in the 21st century?
+    </h3>
+    <p>
+     The 2000s mark a mortality transition: total disaster deaths average 84 k yr⁻¹ versus 53 k yr⁻¹ in the 1990s, while economic losses soared, suggesting adaptation (early-warning, building codes) is saving fewer lives than exposure of assets rises, a decoupling that accelerates after 2004.
+    </p>
+    <div class="chart-placeholder" id="chart_5">
+     [Dual-axis scatter plot with breakpoint will render here]
+    </div>
+   </div>
+  </section>
+  <div class="divider">
+  </div>
+  <div class="cta" data-aos="fade-up">
+   <h3>
+    Act on insights
+   </h3>
+   <p>
+    Share this infographic to raise awareness of disaster risk reduction.
+   </p>
+   <a href="javascript:window.print()">
+    Download / Print
+   </a>
+  </div>
+  <footer data-aos="fade-up">
+   <i class="las la-copyright">
+   </i>
+   Sources: CRED EM-DAT (1900-2017) and peer-reviewed publications. Visualizations are conceptual placeholders; replace with live charts using D3 or Plotly next.
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({ duration: 800 });
+  </script>
+ </body>
+</html>
