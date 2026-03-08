@@ -1,0 +1,20 @@
+[
+    {},
+    {
+        "fossil_fuel_percentage_change": -33.48070175438597,
+        "renewables_percentage_change": 106.06325184322856,
+        "fossil_fuel_decline_valid": "False",
+        "renewables_growth_valid": "False"
+    },
+    {},
+    {
+        "2008_peak_valid": false,
+        "2016_value_valid": false,
+        "percentage_decrease_valid": false,
+        "overall_valid": false
+    },
+    {
+        "fossil_decrease_2016": "False",
+        "renewables_increase_2009": "False"
+    }
+]

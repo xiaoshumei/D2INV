@@ -1,0 +1,35 @@
+[
+    {
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_unique_count_correct": true,
+        "miles_max_correct": "True",
+        "miles_mean_correct": "False",
+        "miles_std_correct": "False",
+        "miles_unique_count_correct": true,
+        "peak_year_correct": true
+    },
+    {
+        "max_gas_value_correct": "True",
+        "min_gas_value_correct": "False",
+        "max_gas_in_2008": true,
+        "min_gas_in_1998": true
+    },
+    {
+        "correlation_coefficient": -0.17433205594404674,
+        "is_valid": "True"
+    },
+    {
+        "right_count": "19",
+        "bottom_count": "17",
+        "right_most_frequent": "True",
+        "right_correct": "True",
+        "bottom_correct": "True"
+    },
+    {
+        "has_1973_1980": "True",
+        "has_2007_2008": "True",
+        "has_1990s": "True",
+        "is_not_bimodal": true
+    }
+]

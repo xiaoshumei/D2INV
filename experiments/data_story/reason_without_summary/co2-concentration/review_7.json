@@ -1,0 +1,27 @@
+[
+    {
+        "adjusted_CO2_std_lower_than_CO2": "True",
+        "adjusted_CO2_mean_close_to_CO2": "True",
+        "adjusted_CO2_min_higher_than_CO2": "True",
+        "adjusted_CO2_max_lower_than_CO2": "True"
+    },
+    {
+        "acceleration_positive": "True",
+        "avg_rate_1990s": 1.6315867983826846,
+        "avg_rate_2000s": 1.9894973901777997,
+        "avg_rate_2010s": 2.4892750918127735
+    },
+    {
+        "raw_std": 28.52004862059201,
+        "adjusted_std": 28.442895350913698,
+        "seasonal_variation_less_in_adjusted": "True"
+    },
+    {
+        "adjusted_std_less_than_co2": "True",
+        "1960s_70s_co2_higher_variability": "True"
+    },
+    {
+        "max_co2_in_2020": "True",
+        "most_dramatic_increase_in_2010s": true
+    }
+]

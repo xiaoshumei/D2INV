@@ -1,0 +1,26 @@
+[
+    {
+        "high_income_health_mean": 78.14515625000001,
+        "low_income_health_mean": 68.30577235772357,
+        "is_high_health_better": "True"
+    },
+    {
+        "sub_saharan_africa_lowest_health": "False",
+        "sub_saharan_africa_highest_income_inequality": false,
+        "europe_central_asia_highest_health": "False",
+        "europe_central_asia_lowest_income_inequality": false
+    },
+    {
+        "gdp_condition": "True",
+        "pop_condition": "False"
+    },
+    {
+        "sub_saharan_health_lower": "True",
+        "high_health_high_income_low_pop_exists": true
+    },
+    {
+        "min_health_in_sub_saharan": "True",
+        "sub_saharan_mean_lower_than_overall": "True",
+        "overall_min_health_in_sub_saharan": "True"
+    }
+]

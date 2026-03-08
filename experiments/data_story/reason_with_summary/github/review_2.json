@@ -1,0 +1,31 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "spike_date_valid": true
+    },
+    {
+        "peak_hours_higher": "False",
+        "max_hour_in_peak": false,
+        "peak_mean_higher_than_overall": "False"
+    },
+    {
+        "increasing_trend_jan_apr": "False",
+        "decline_in_may": "True",
+        "overall_trend_matches_fact": "False"
+    },
+    {
+        "unique_count_values": 26,
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "high_count_days": "9"
+    },
+    {
+        "weekday_mean": 2.452830188679245,
+        "weekend_mean": 2.9661654135338344,
+        "weekday_peak_mean": 2.737024221453287,
+        "weekend_peak_mean": 2.3833333333333333
+    }
+]

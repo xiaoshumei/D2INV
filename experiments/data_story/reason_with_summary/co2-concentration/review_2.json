@@ -1,0 +1,25 @@
+[
+    {
+        "CO2_min_correct": "True",
+        "CO2_max_correct": "True",
+        "earliest_date_CO2_correct": "False",
+        "latest_date_CO2_correct": "True",
+        "CO2_increasing": "False"
+    },
+    {
+        "baseline_lower": "False",
+        "trend_matches": "True",
+        "std_similarity": "True"
+    },
+    {},
+    {
+        "mean_1980s_growth_rate": 1.5805555555555517,
+        "mean_2010s_growth_rate": 2.4135000000000106,
+        "is_valid": "True"
+    },
+    {
+        "adjusted_CO2_smaller_std": "True",
+        "adjusted_CO2_min_within_range": "True",
+        "adjusted_CO2_mean_close_to_original": "True"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "correlation": 0.6464,
+        "is_strong_correlation": "False",
+        "top_income_countries": [
+            {
+                "country": "Qatar",
+                "income": 132877,
+                "health": 82.0
+            },
+            {
+                "country": "Luxembourg",
+                "income": 88314,
+                "health": 81.1
+            },
+            {
+                "country": "Kuwait",
+                "income": 82633,
+                "health": 80.7
+            },
+            {
+                "country": "Singapore",
+                "income": 80794,
+                "health": 82.1
+            },
+            {
+                "country": "Brunei",
+                "income": 73003,
+                "health": 78.7
+            }
+        ],
+        "bottom_income_countries": [
+            {
+                "country": "Central African Republic",
+                "income": 599,
+                "health": 53.8
+            },
+            {
+                "country": "Somalia",
+                "income": 624,
+                "health": 58.7
+            },
+            {
+                "country": "Burundi",
+                "income": 777,
+                "health": 60.4
+            },
+            {
+                "country": "Malawi",
+                "income": 799,
+                "health": 60.22
+            },
+            {
+                "country": "Congo, Dem. Rep.",
+                "income": 809,
+                "health": 58.3
+            }
+        ],
+        "top_health_mean": 80.92,
+        "bottom_health_mean": 58.28,
+        "higher_health_top": "True"
+    },
+    {
+        "max_income_region": "middle_east_north_africa",
+        "min_income_region": "sub_saharan_africa",
+        "max_health_region": "europe_central_asia",
+        "min_health_region": "sub_saharan_africa",
+        "east_asia_pacific_income_mean": 16327.222222222223,
+        "east_asia_pacific_health_mean": 71.74444444444444,
+        "sub_saharan_africa_income_mean": 4932.770833333333,
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "europe_central_asia_income_mean": 27714.42,
+        "europe_central_asia_health_mean": 77.4606,
+        "middle_east_north_africa_income_mean": 29392.8,
+        "middle_east_north_africa_health_mean": 75.7895
+    },
+    {
+        "countries_present": true,
+        "income_above_50k": {
+            "United States": "True",
+            "Qatar": "True",
+            "Luxembourg": "True"
+        },
+        "health_top_10_percent": {
+            "United States": "False",
+            "Qatar": "True",
+            "Luxembourg": "True"
+        }
+    },
+    {
+        "health_above_82": "True",
+        "income_above_mean": "True"
+    },
+    {
+        "correlation_population_health": 0.016516985698437566,
+        "sub_saharan_africa_health_lower": "True",
+        "sub_saharan_africa_population_higher": "False",
+        "correlation_weak": "True"
+    }
+]

@@ -1,0 +1,31 @@
+[
+    {
+        "Black_fatality_count": 25,
+        "total_fatality_count": 54,
+        "Black_proportion": 0.46296296296296297
+    },
+    {
+        "homicide_count": "36",
+        "officer_count": "10",
+        "homicide_match": "True",
+        "officer_match": "True"
+    },
+    {
+        "Vermont Square fatalities": "False",
+        "Watts fatalities": false,
+        "highest_concentrations": false
+    },
+    {
+        "under_25_count": 21,
+        "males_under_25_count": 20,
+        "males_15_30_count": 30,
+        "under_25_matches_fact": false
+    },
+    {
+        "age_87_exists": false,
+        "age_68_exists": false,
+        "elderly_count": 3,
+        "black_elderly": "1",
+        "white_elderly": "1"
+    }
+]

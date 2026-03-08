@@ -1,0 +1,30 @@
+[
+    {
+        "max_miles_correct": "True",
+        "year_range_complete": "True",
+        "year_unique_count": true,
+        "year_2005_exists": true
+    },
+    {
+        "gas_min_correct": "True",
+        "gas_max_correct": "True",
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_mean_correct": "True",
+        "year_std_correct": "False",
+        "gas_mean_correct": "True",
+        "gas_std_correct": "True"
+    },
+    {
+        "right_count_correct": "True",
+        "top_count_correct": "True"
+    },
+    {
+        "correlation": -0.17433205594404674,
+        "is_valid": "False"
+    },
+    {
+        "decline_1970_1973": "False",
+        "increase_2000s_vs_1990s": "False"
+    }
+]

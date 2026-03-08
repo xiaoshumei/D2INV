@@ -1,0 +1,24 @@
+[
+    {
+        "valid": false,
+        "reason": "Incomplete year range"
+    },
+    {
+        "peak_value": "True",
+        "peak_year": "True",
+        "gen_2017": "False",
+        "reduction": "False"
+    },
+    {
+        "nuclear_generation_min": "True",
+        "nuclear_generation_max": "False",
+        "nuclear_contribution_less_15%": "True"
+    },
+    {
+        "renewables_2001_share": 3.534968389461514,
+        "fossil_2001_share": 86.98678999286611,
+        "renewables_2017_share": 38.83596571995184,
+        "fossil_2017_share": 51.931794036404845
+    },
+    {}
+]

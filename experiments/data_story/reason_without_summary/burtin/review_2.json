@@ -1,0 +1,28 @@
+[
+    {
+        "gram_neg_median": 100.0,
+        "gram_pos_median": 0.005,
+        "ratio": 20000.0
+    },
+    {
+        "Salmonella typhosa has Streptomycin 0.4 and Neomycin 0.008": false,
+        "Salmonella schottmuelleri has balanced resistance": true
+    },
+    {
+        "gram_positive_higher": "True",
+        "strep_40x_other": "False"
+    },
+    {
+        "Neomycin_most_variably_distributed": "False",
+        "Gram_negative_low_resistance": "True",
+        "Streptococcus_14x_ratio": "False"
+    },
+    {
+        "max_neg_check": "True",
+        "max_pos_check": "False",
+        "ratio_check": "False",
+        "aerobacter_check": "True",
+        "klebsiella_check": "True",
+        "staphylococcus_check": "True"
+    }
+]

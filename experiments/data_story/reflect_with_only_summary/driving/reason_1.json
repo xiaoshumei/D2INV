@@ -1,0 +1,31 @@
+{
+  "story_title": "Decades of Driving Trends and Fuel Costs",
+  "story_subtitle": "Analyzing mileages and gas prices across decades and directional categories",
+  "story_pieces": [
+    {
+      "narration": "Miles driven annually increased from 3,675 in 1956 to over 10,000 by 2005, reflecting growing transportation needs and population expansion.",
+      "question": "How have annual miles driven evolved over the decades?",
+      "visualization": "line chart (year vs. miles)"
+    },
+    {
+      "narration": "Gas prices fluctuated dramatically, peaking at $3.31 in 1980 during the oil crisis and hitting a low of $1.39 in 1998, showing economic and geopolitical impacts.",
+      "question": "What patterns emerge in gas price trends over time?",
+      "visualization": "line chart (year vs. gas)"
+    },
+    {
+      "narration": "An inverse correlation exists between gas prices and miles driven, with higher fuel costs coinciding with slower growth in annual mileage.",
+      "question": "Is there a relationship between gas prices and miles driven?",
+      "visualization": "scatter plot (gas vs. miles)"
+    },
+    {
+      "narration": "Directional categories showed variability in average mileage, with some categories exhibiting higher mean values than others.",
+      "question": "How do directional categories influence average mileage?",
+      "visualization": "bar chart (side vs. mean miles)"
+    },
+    {
+      "narration": "Gas prices varied across directional categories, with bottom-side data showing the lowest range (1.39–2.36) and right-side data showing the widest spread (1.76–3.31).",
+      "question": "How do gas prices differ across directional categories?",
+      "visualization": "box plot (side vs. gas)"
+    }
+  ]
+}

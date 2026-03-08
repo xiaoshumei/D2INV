@@ -1,0 +1,34 @@
+[
+    {
+        "max_count_is_54": "True",
+        "has_target_time": "True"
+    },
+    {
+        "time_min_valid": false,
+        "time_max_valid": false,
+        "count_mean_valid": "False",
+        "count_std_valid": "False",
+        "count_min_valid": "True",
+        "count_max_valid": "True",
+        "count_unique_valid": true
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "percentage_between_1_4": 0.881675392670157,
+        "percentage_over_10": 0.033507853403141365
+    },
+    {
+        "hour_0_mean": 2.5813953488372094,
+        "hour_22_mean": 1.6904761904761905,
+        "hour_0_higher": "False",
+        "hour_22_higher": "False"
+    },
+    {
+        "mean_beginning_week": 2.455547346692566,
+        "mean_latter_week": 2.717976740927561,
+        "is_valid": "True"
+    }
+]

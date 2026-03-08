@@ -1,0 +1,39 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "valid": true
+    },
+    {
+        "short_signal_mean": 3.294586302264926,
+        "long_signal_mean": -0.9586682802713222,
+        "ret_range": 26.3341710399882,
+        "ret_std": 6.194040535850076,
+        "short_mean_valid": "False",
+        "long_mean_valid": "False"
+    },
+    {
+        "max_return_value": 15.4907975460123,
+        "max_return_date": "2009-06-22",
+        "max_return_signal": "short",
+        "max_return_valid": "False",
+        "min_return_value": -10.8433734939759,
+        "min_return_date": "2009-07-17",
+        "min_return_signal": "long",
+        "min_return_valid": "False"
+    },
+    {
+        "max_range": 5.41,
+        "peak_date": "2009-06-08 00:00:00",
+        "is_peak_date_correct": true,
+        "is_range_exceed_10": "False"
+    },
+    {
+        "exists": true,
+        "ret_zero": "True",
+        "price_movement_minimal": "False"
+    }
+]

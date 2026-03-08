@@ -1,0 +1,25 @@
+[
+    {
+        "race_black_count": "28",
+        "total_rows": 63,
+        "race_distribution_sum": 63
+    },
+    {
+        "valid": false,
+        "message": "Age column contains missing values"
+    },
+    {
+        "homicide_count": 36,
+        "officer_shooting_count": 10
+    },
+    {
+        "concentration_percentage": 0.0,
+        "total_deaths": 8,
+        "hotspot_deaths": 0
+    },
+    {
+        "april_may_deaths_gt_other_months": "True",
+        "april_may_deaths_gt_after_may_months": "True",
+        "all_after_may_months_lower": "True"
+    }
+]

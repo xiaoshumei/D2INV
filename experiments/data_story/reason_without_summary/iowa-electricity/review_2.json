@@ -1,0 +1,22 @@
+[
+    {},
+    {
+        "Renewables_2001_min": "True",
+        "Renewables_2017_max": "True",
+        "Renewables_2017_over_other": "False"
+    },
+    {
+        "peak_2008": "False",
+        "range_4500_5500": "False"
+    },
+    {
+        "fossil_fuel_majority": "False",
+        "renewables_2017": "True"
+    },
+    {
+        "fossil_fuel_growth": -0.17058341110262717,
+        "renewables_growth": 14.263048016701461,
+        "growth_ratio": -83.61333569605112,
+        "is_valid": "False"
+    }
+]

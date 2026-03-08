@@ -1,0 +1,30 @@
+[
+    {
+        "signal_distribution": true,
+        "mean_return": "True",
+        "std_return": "True"
+    },
+    {
+        "signal_unique": true,
+        "signal_counts": true,
+        "short_pos_neg": "True",
+        "long_positive_mean": "False",
+        "neutral_zero_returns": "True"
+    },
+    {
+        "ret_min_correct": "True",
+        "ret_max_correct": "True",
+        "max_ret_signal_short": true,
+        "min_ret_signal_short": false
+    },
+    {
+        "long_signal_on_20090615": false,
+        "majority_short_after_20090615": "False"
+    },
+    {
+        "max_return_value": 15.4907975460123,
+        "max_return_date": "2009-06-22",
+        "min_return_value": -10.8433734939759,
+        "min_return_date": "2009-07-17"
+    }
+]

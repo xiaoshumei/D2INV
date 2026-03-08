@@ -1,0 +1,28 @@
+[
+    {
+        "max_yield_exists": "True",
+        "year_1931": "True",
+        "site_waseca": "True",
+        "varieties_present": false
+    },
+    {
+        "most_varieties_uni_farm_higher": false,
+        "trebi_waseca_1931_higher": "True",
+        "no462_waseca_1931_higher": "True"
+    },
+    {
+        "all_varieties_declined": true,
+        "manchuria_top": false,
+        "svansota_top": false
+    },
+    {
+        "Velvet_less": "True",
+        "Manchuria_less": "True",
+        "Trebi_more": "True",
+        "Wisconsin_No_38_more": "True"
+    },
+    {
+        "grand_rapids_lowest_mean": "True",
+        "crookston_highest_variability": "False"
+    }
+]

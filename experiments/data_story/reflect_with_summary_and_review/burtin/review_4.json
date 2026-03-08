@@ -1,0 +1,29 @@
+[
+    {
+        "penicillin_max_correct": "True",
+        "penicillin_min_correct": "True",
+        "aerobacter_penicillin": "True",
+        "bacillus_penicillin": "True"
+    },
+    {
+        "gram_negative_count": "9",
+        "neomycin_max_value": 40.0,
+        "gram_negative_percentage": 56.25,
+        "gram_positive_count": "7",
+        "neomycin_has_40": true
+    },
+    {
+        "Streptomycin_mean": 3.065,
+        "Streptomycin_std": 4.5026910472146175,
+        "Neomycin_mean": 4.0891875,
+        "Neomycin_std": 10.13316450880474,
+        "data_fact_valid": "True"
+    },
+    {
+        "salmonella_mean_in_range": "True",
+        "salmonella_lower_than_others": "True"
+    },
+    {
+        "top5_penicillin_bacteria": false
+    }
+]

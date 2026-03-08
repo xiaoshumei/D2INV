@@ -1,0 +1,24 @@
+[
+    {
+        "top_countries": false,
+        "income_above_30k": true,
+        "japan_health_score": "True"
+    },
+    {
+        "Japan_Switzerland_Iceland_health_above_82": true,
+        "Lesotho_South_Sudan_health_below_50": false,
+        "health_income_correlation": 0.6464345423584741
+    },
+    {
+        "East Asia-Pacific regions dominate both income and health rankings": "False",
+        "Europe-Central Asia regions show strong economic development but mixed health outcomes": "False"
+    },
+    {
+        "top_10_percentage": 23.067071185964597,
+        "bottom_50_percentage": 17.099241321208982
+    },
+    {
+        "income_per_capita_comparison": "False",
+        "health_comparability": "True"
+    }
+]

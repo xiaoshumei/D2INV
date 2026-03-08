@@ -1,0 +1,23 @@
+[
+    {
+        "Trebi_1931_average": "False",
+        "Trebi_1932_average": "False",
+        "No_475_1931_average": "False",
+        "No_475_1932_average": "False"
+    },
+    {
+        "waseca_most_high": true,
+        "grand_rapids_most_low": false,
+        "velvet_avg_waseca": "False",
+        "trebi_avg_waseca": "False"
+    },
+    {},
+    {
+        "waseca_max": true,
+        "grand_rapids_min": true
+    },
+    {
+        "trebi_1932_range": 28.59997,
+        "no475_1931_range": 27.06667
+    }
+]

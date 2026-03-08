@@ -1,0 +1,35 @@
+[
+    {
+        "max_yield_in_waseca_1931": 65.7667,
+        "max_yield_equal_to_65_7667": "True",
+        "varieties_with_max_yield": [
+            "No. 462"
+        ],
+        "varieties_match_fact": false
+    },
+    {
+        "university_farm_higher": "False",
+        "waseca_1931_trebi_higher": "True",
+        "waseca_1931_462_higher": "True"
+    },
+    {
+        "all_varieties_declined": "True",
+        "top_two_varieties": {
+            "No. 457": 8.805555000000002,
+            "Glabron": 7.972221666666673
+        },
+        "manchuria_drop": 5.46111333333333,
+        "svansota_drop": 7.266668333333332,
+        "top_varieties_match": false
+    },
+    {
+        "velvet_lower_mean": "True",
+        "manchuria_lower_mean": "True",
+        "trebi_higher_mean": "True",
+        "wisconsin_higher_mean": "True"
+    },
+    {
+        "grand_rapids_lowest_yield": "True",
+        "crookston_highest_variability": "False"
+    }
+]

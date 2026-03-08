@@ -1,0 +1,43 @@
+[
+    {
+        "income_min_matches": "True",
+        "income_max_matches": "True",
+        "income_mean_matches": "False",
+        "income_std_matches": "False",
+        "has_high_income_countries": "True",
+        "has_low_income_countries": "True"
+    },
+    {
+        "health_min": 48.5,
+        "health_max": 84.1,
+        "health_mean": 71.67326203208557,
+        "health_std": 7.748959108094907,
+        "health_unique": 140,
+        "income_min": "599",
+        "income_max": "132877",
+        "income_mean": 17232.24064171123,
+        "income_std": 19310.632882242568,
+        "income_unique": 187,
+        "health_income_corr": 0.6464345423584741,
+        "health_stats_valid": true,
+        "income_stats_valid": "False",
+        "health_income_corr_valid": "False"
+    },
+    {
+        "sub_saharan_africa_health_mean": 62.15,
+        "europe_central_asia_health_mean": 77.46,
+        "sub_saharan_africa_valid": "False",
+        "europe_central_asia_valid": "False",
+        "overall_data_fact_valid": "False"
+    },
+    {
+        "China_health": "True",
+        "China_population": "False",
+        "India_health": "True",
+        "India_population": "False"
+    },
+    {
+        "andorra_outlier": true,
+        "rwanda_outlier": false
+    }
+]

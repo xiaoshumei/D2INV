@@ -1,0 +1,31 @@
+[
+    {
+        "count_min": "True",
+        "count_max": "True",
+        "count_mean": "False",
+        "has_54_spikes": "True",
+        "has_24_spikes": "True"
+    },
+    {
+        "max_count_correct": "True",
+        "date_counts_correct": "False",
+        "percentage_correct": "False"
+    },
+    {
+        "peak_hours_match": false,
+        "average_peak": 0,
+        "average_non_peak": 0,
+        "ratio_40": false
+    },
+    {
+        "max_count_valid": "True",
+        "spike1_exists": true,
+        "spike2_exists": false
+    },
+    {
+        "percent_low_frequency": 55.811518324607334,
+        "percent_bursts": 3.9790575916230364,
+        "is_burst_percentage_around_12": "False",
+        "is_uneven_distribution": "True"
+    }
+]

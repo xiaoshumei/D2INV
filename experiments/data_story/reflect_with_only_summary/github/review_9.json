@@ -1,0 +1,29 @@
+[
+    {
+        "max_count": "54",
+        "mean_count": 2.5958115183246075,
+        "has_spike_on_march_15": true
+    },
+    {
+        "daily_cycle_valid": "False"
+    },
+    {
+        "max_hour": 12.0,
+        "max_mean": 4.375,
+        "min_hour": 22.0,
+        "min_mean": 1.6904761904761905,
+        "data_fact_valid": "False"
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "skewness": 6.457538325087614,
+        "proportion_between_1_5": 0.9130890052356021
+    },
+    {
+        "mean_before_march_15": 2.660377358490566,
+        "mean_after_march_15": 2.5313807531380754
+    }
+]

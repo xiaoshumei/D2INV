@@ -1,0 +1,37 @@
+[
+    {
+        "race_Black_count": "True",
+        "race_Latino_count": "True",
+        "race_White_count": "True",
+        "race_Asian_count": "True",
+        "total_incidents": "True"
+    },
+    {
+        "Homicide": "36",
+        "Officer-involved shooting": "10",
+        "Not riot-related": "9",
+        "Death": "8",
+        "valid": true
+    },
+    {
+        "total_15_24": "21",
+        "under_18": "6",
+        "valid": "True"
+    },
+    {
+        "Compton_incidents": "4",
+        "Watts_incidents": "3",
+        "Koreatown_incidents": "4",
+        "Altadena_incidents": "1",
+        "Valley_Glen_incidents": "1",
+        "Compton_fact_valid": "True",
+        "Watts_fact_valid": "True",
+        "Koreatown_fact_valid": "False",
+        "Altadena_fact_valid": "True",
+        "Valley_Glen_fact_valid": "True"
+    },
+    {
+        "max_date_in_nov_1993": true,
+        "most_incidents_in_apr_may_1992": "True"
+    }
+]

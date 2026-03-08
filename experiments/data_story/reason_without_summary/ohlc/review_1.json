@@ -1,0 +1,30 @@
+[
+    {
+        "max_ret_short": "False",
+        "second_max_ret_short": "False",
+        "date_max_ret_short": true,
+        "date_second_max_ret_short": true
+    },
+    {
+        "long_severe_losses": false,
+        "min_long_return": -10.8433734939759,
+        "global_min_return": -10.8433734939759,
+        "has_date1": false,
+        "has_date2": false
+    },
+    {
+        "short_dominates": "True",
+        "long_increase_in_july": "True"
+    },
+    {
+        "short_avg_return": 3.294586302264926,
+        "long_avg_return": -0.9586682802713222,
+        "short_valid": "False",
+        "long_valid": "False",
+        "overall_valid": "False"
+    },
+    {
+        "highest_volatility_date": "True",
+        "lowest_volatility_date": "False"
+    }
+]

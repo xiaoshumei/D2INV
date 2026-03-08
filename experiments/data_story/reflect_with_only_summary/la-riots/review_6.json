@@ -1,0 +1,40 @@
+[
+    {
+        "race_distribution_matches": true,
+        "total_deaths": "63",
+        "expected_total_deaths": 63
+    },
+    {
+        "gender_male_count": "True",
+        "gender_female_count": "True",
+        "gender_total_count": "True"
+    },
+    {
+        "Homicide count": "36",
+        "Officer-involved shooting count": "10",
+        "Death count": "8",
+        "Not riot-related count": "9",
+        "Total rows": 63,
+        "Homicide correct": "True",
+        "Officer-involved shooting correct": "True",
+        "Death correct": "True",
+        "Not riot-related correct": "True",
+        "Total rows correct": true
+    },
+    {
+        "neighborhoods_exist": true,
+        "death_counts": {
+            "Compton": 0,
+            "Watts": 0,
+            "Koreatown": 0
+        },
+        "total_deaths": 8,
+        "data_fact_total": 10
+    },
+    {
+        "age_concentration_youth": "False",
+        "sum_ages": "13",
+        "total_fatalities": 63,
+        "percentage": 0.20634920634920634
+    }
+]

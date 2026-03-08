@@ -1,0 +1,39 @@
+[
+    {
+        "max_count": "54",
+        "peak_time_correct": true,
+        "mean_count": 2.5958115183246075,
+        "mean_count_correct": "True"
+    },
+    {
+        "overall_mean": 2.5958115183246075,
+        "specific_hours_mean": 2.351374207188161,
+        "other_hours_mean": 2.6389075163955993,
+        "std_dev": 4.100414567944033
+    },
+    {
+        "mean_count_matches_fact": "False",
+        "daily_average_range_valid": "False",
+        "spikes_present": "False"
+    },
+    {
+        "excess_days_count": 2,
+        "excess_days_dates": [
+            "2015-03-15",
+            "2015-05-11"
+        ],
+        "sum_20150315": null,
+        "sum_20150511": null,
+        "valid": false
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "max_count": "54",
+        "skew_count": 6.457538325087614,
+        "mean_valid": "True",
+        "std_valid": "False",
+        "max_valid": "False",
+        "skew_valid": "True"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "valid": true
+    },
+    {
+        "average_return": 1.3830766802091614,
+        "volatility": 6.194040535850076
+    },
+    {
+        "max_return_value_correct": "False",
+        "min_return_value_correct": "False",
+        "max_return_date_correct": true,
+        "min_return_date_correct": false
+    },
+    {
+        "both_positive_negative_returns": "True",
+        "june_19_gain": "True",
+        "june_11_loss": "True"
+    },
+    {
+        "has_negative_returns": "True",
+        "has_positive_returns": "True",
+        "min_return_long": -10.8433734939759,
+        "max_return_long": 7.83645655877341,
+        "mean_return_long": -0.9586682802713222
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "high_income_health_mean": 78.14515625000001,
+        "low_income_health_mean": 68.30577235772357,
+        "is_higher": "True"
+    },
+    {
+        "sub_saharan_africa_health_mean": "False",
+        "europe_central_asia_health_mean": "False",
+        "sub_saharan_africa_income_std_max": "False",
+        "europe_central_asia_income_std_min": "False"
+    },
+    {
+        "income_share_top10": 0.23107258530754285,
+        "population_share_top10": 0.05317679693985675,
+        "income_fact_valid": "False",
+        "population_fact_valid": "True"
+    },
+    {
+        "ssa_mean_health_lower": "True",
+        "top_ssa_pop_low_health": "True",
+        "high_income_high_health": "True",
+        "high_income_low_pop": "True"
+    },
+    {
+        "min_health_sub_saharan": 48.5,
+        "min_health_global": 48.5,
+        "lesotho_in_sub_saharan": true,
+        "lesotho_health": 48.5,
+        "south_sudan_in_sub_saharan": true,
+        "south_sudan_health": 58.0
+    }
+]

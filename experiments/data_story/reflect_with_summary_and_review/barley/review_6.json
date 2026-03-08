@@ -1,0 +1,38 @@
+[
+    {
+        "top_varieties": [
+            "Trebi",
+            "Wisconsin No. 38"
+        ],
+        "lowest_variety": "Svansota",
+        "top_varieties_match": true,
+        "lowest_variety_match": true
+    },
+    {
+        "waseca_mean_yield": 48.108331500000006,
+        "other_sites_mean_yields": {
+            "Crookston": 37.4199985,
+            "Duluth": 27.996667000000002,
+            "Grand Rapids": 24.931667,
+            "Morris": 35.4000005,
+            "University Farm": 32.6666675
+        },
+        "is_fact_valid": true
+    },
+    {
+        "all_varieties_decreased_1932_vs_1931": "True"
+    },
+    {
+        "variety_distribution_even": true
+    },
+    {
+        "max_yield_matches": "True",
+        "min_yield_matches": "True",
+        "trebi_variety_present": true,
+        "waseca_site_present": true,
+        "year_1931_present": true,
+        "glabron_variety_present": true,
+        "grand_rapids_site_present": true,
+        "year_1932_present": true
+    }
+]

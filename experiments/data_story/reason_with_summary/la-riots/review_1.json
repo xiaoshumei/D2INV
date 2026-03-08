@@ -1,0 +1,33 @@
+[
+    {
+        "black_count": "28",
+        "total_rows": 63,
+        "homicide_officer_count": "46",
+        "latino_count": "19",
+        "white_count": "14"
+    },
+    {
+        "majority_male_percentage": 88.89,
+        "age_concentration_15_40_percentage": 67.74,
+        "homicide_officer_top_types": {
+            "homicide_in_top": true,
+            "officer_in_top": true
+        }
+    },
+    {
+        "death_count_fact": true,
+        "unique_neighborhoods_fact": true,
+        "neighborhoods_present_fact": "True",
+        "top_death_counts_fact": false
+    },
+    {
+        "death_incidents_in_april_1992": 5,
+        "total_death_incidents": 8,
+        "death_incidents_in_1993": 0
+    },
+    {
+        "male_percentage_fact": "False",
+        "primary_causes_fact": "True",
+        "female_death_fact": false
+    }
+]

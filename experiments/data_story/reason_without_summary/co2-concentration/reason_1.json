@@ -1,0 +1,12 @@
+{
+
+"story_title": "Rising CO2 Levels: A Decades-Long Climate Challenge", 
+"story_subtitle": "Analyzing the historical trajectory of atmospheric carbon dioxide from 1958 to 2020, including raw measurements and adjusted data for accuracy", 
+"story_pieces": [ 
+{"narration": "The raw CO2 levels show a consistent upward trend, increasing from 315.7 ppm in 1958 to 416.18 ppm in 2020, reflecting accelerated industrial activity and fossil fuel use. The adjusted CO2 data closely mirrors this trend but with smoother fluctuations, indicating refined measurement corrections.", "question": "What is the overall trend in CO2 levels over the past 60 years, and how do raw vs adjusted measurements compare?", "visualization": "dual-axis line chart (raw CO2 vs adjusted CO2 over time)"}, 
+{"narration": "The adjusted CO2 data reveals a subtle but consistent annual cycle, with higher concentrations in late winter and lower levels in late autumn, likely due to seasonal plant respiration and human activity patterns.", "question": "Are there seasonal variations in CO2 levels, and what factors contribute to these patterns?", "visualization": "line chart with monthly aggregation (CO2 levels by season)"}, 
+{"narration": "The rate of CO2 increase has accelerated over decades, with the 2010s showing the steepest rise (over 2.5 ppm/year) compared to the 1960s (1.5 ppm/year), highlighting intensifying emissions from fossil fuels and deforestation.", "question": "How has the rate of CO2 increase changed across different decades, and what might explain these differences?", "visualization": "bar chart (decade-wise average annual increase in CO2)"}, 
+{"narration": "The adjusted CO2 data shows a smoother trajectory than raw measurements, reducing noise from short-term variability while preserving the long-term upward trend, making it more suitable for climate modeling and policy analysis.", "question": "Why is the adjusted CO2 dataset considered more reliable for long-term climate studies?", "visualization": "side-by-side line charts (raw vs adjusted CO2 with highlighted smoothing effect)"}, 
+{"narration": "The CO2 concentration surpassed 400 ppm in 2015, a threshold not seen in millions of years, and has continued to rise, with the 2010s marking the fastest rate of increase in recorded history.", "question": "When did CO2 levels cross critical thresholds, and what does this imply for climate change mitigation?", "visualization": "area chart (CO2 levels with threshold markers)"}
+] 
+}

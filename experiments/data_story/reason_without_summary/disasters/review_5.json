@@ -1,0 +1,41 @@
+[
+    {
+        "year_1917_exists": true,
+        "max_death_count": "3706227",
+        "data_fact_death_is_max": "False",
+        "death_1917_is_max": "False",
+        "drought_exists": true,
+        "extreme_weather_exists": true,
+        "data_fact_valid": "False"
+    },
+    {
+        "Drought_deaths_percentage": 17.379676022445565,
+        "Deadliest_event": false
+    },
+    {
+        "is_fact_correct": false,
+        "max_deaths": "3706227",
+        "second_max_deaths": "3700000",
+        "top1_entity": "All natural disasters",
+        "top1_year": "1931",
+        "top1_deaths": "3706227",
+        "top2_entity": "Flood",
+        "top2_year": "1931",
+        "top2_deaths": "3700000"
+    },
+    {
+        "max_death_1910s": "2500000",
+        "avg_death_1910s": 1003233.3333333334,
+        "max_death_2010s": "12911",
+        "avg_death_2010s": 4197.75,
+        "max_death_in_epidemics": "2500000",
+        "is_1918_pandemic_deadliest": "False",
+        "is_2010s_lower": "True",
+        "is_2010s_avg_lower": "True"
+    },
+    {
+        "increase_in_mortality": "True",
+        "twenty_twenty_10": "False",
+        "twenty_seventeen": "False"
+    }
+]

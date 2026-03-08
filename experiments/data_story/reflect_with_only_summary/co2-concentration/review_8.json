@@ -1,0 +1,30 @@
+[
+    {
+        "CO2_min_matches_fact": "True",
+        "CO2_max_matches_fact": "True",
+        "CO2_mean_matches_fact": "True",
+        "CO2_std_matches_fact": "True",
+        "adjusted_CO2_min_matches_fact": "True",
+        "adjusted_CO2_max_matches_fact": "True",
+        "adjusted_CO2_std_matches_fact": "True",
+        "adjusted_CO2_smoothness": "True"
+    },
+    {
+        "winter_mean": 355.6503666490393,
+        "summer_mean": 355.48174863387976,
+        "winter_higher": "True"
+    },
+    {
+        "accelerated_21st_century": "True",
+        "mean_1960s_1980s": 1.2313333333333332,
+        "mean_21st_century": 2.333000000000001
+    },
+    {
+        "adjusted_std_lower": "True"
+    },
+    {
+        "fact1": "True",
+        "fact2": "True",
+        "fact3": true
+    }
+]

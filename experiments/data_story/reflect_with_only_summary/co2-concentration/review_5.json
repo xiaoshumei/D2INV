@@ -1,0 +1,30 @@
+[
+    {
+        "min_adjusted_CO2": 314.44,
+        "max_adjusted_CO2": 413.35,
+        "earliest_date_min_check": "True",
+        "latest_date_max_check": "True",
+        "percentage_increase": 31.455921638468396,
+        "percentage_check": "True"
+    },
+    {
+        "adjusted_mean": 355.3041565452092,
+        "adjusted_std": 28.442895350913698,
+        "adjusted_min": 314.44,
+        "adjusted_max": 413.35,
+        "avg_annual_increase": 1.5943852459016392
+    },
+    {
+        "seasonal_variation": "True",
+        "annual_cycle_amplitude": 102.97000000000003,
+        "annual_cycle_valid": "False"
+    },
+    {
+        "first_period_rate": 1.0887500000000017,
+        "second_period_rate": 2.2531666666666696
+    },
+    {
+        "CO2 exceeded 350 ppm since 1990": "True",
+        "2020 adjusted CO2 level reached 413.35 ppm": true
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "correlation_positive": "True",
+        "norway_valid": true,
+        "singapore_valid": true,
+        "burundi_valid": true,
+        "somalia_valid": true
+    },
+    {
+        "middle_east_north_africa_avg": 29392.8,
+        "europe_central_asia_avg": 27714.42,
+        "sub_saharan_africa_avg": 4932.770833333333,
+        "value_matches": {
+            "middle_east_north_africa": "False",
+            "europe_central_asia": "False",
+            "sub_saharan_africa": "False"
+        },
+        "order_matches": false
+    },
+    {
+        "population_health_correlation": 0.016516985698437566
+    },
+    {
+        "mean_health_sub_saharan_correct": "False",
+        "population_variance_sub_saharan_correct": false
+    },
+    {
+        "health_max_matches": "True",
+        "income_max_matches": "True",
+        "health_mean_matches": "True",
+        "health_std_matches": "True",
+        "unique_countries": true,
+        "unique_regions": true,
+        "health_min_matches": "True",
+        "income_min_matches": "True"
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "max_count": "54",
+        "spike_on_march_15": true
+    },
+    {
+        "peak_hours_higher_than_midday": "False",
+        "peak_mean": 2.5015768600070927,
+        "midday_mean": 3.122227997227997
+    },
+    {
+        "trend_increase_jan_apr": false,
+        "trend_decrease_may": false
+    },
+    {
+        "unique_count_values": 26,
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "days_exceeding_20": 9
+    },
+    {
+        "weekday_mean": 2.452830188679245,
+        "weekend_mean": 2.9661654135338344,
+        "peak_hour_mean": 2.6332518337408315,
+        "non_peak_hour_mean": 2.567765567765568
+    }
+]

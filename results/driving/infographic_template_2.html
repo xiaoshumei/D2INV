@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   55 Years of American Driving: Miles Traveled vs. Gas Prices
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   :root {
+            --road: #2c3e50;
+            --asphalt: #1e2a38;
+            --mile: #00c9b7;
+            --fuel: #ff7e5f;
+            --bg-light: #f7fafc;
+            --bg-dark: #ffffff;
+            --text: #111;
+            --muted: #666;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: var(--bg-light); color: var(--text); line-height: 1.6; }
+        header { background: var(--asphalt); color: #fff; padding: 3rem 2rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+        header::after { content: ""; position: absolute; bottom: -4px; left: 0; right: 0; height: 8px; background: repeating-linear-gradient(45deg, #fff 0 4px, transparent 4px 8px); }
+        header h1 { font-size: 2.5rem; letter-spacing: 1px; }
+        header .sub { font-size: 1.1rem; margin-top: 0.5rem; color: #dfe6e9; }
+        .intro { padding: 2rem 1.5rem; text-align: center; background: var(--bg-dark); }
+        .intro p { max-width: 700px; margin: 0 auto; font-size: 1rem; color: var(--muted); }
+        .timeline { position: relative; padding: 2rem 1.5rem 4rem; }
+        .timeline::before { content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; background: var(--road); top: 0; bottom: 0; }
+        section.module { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 4rem; position: relative; }
+        section.module:nth-child(odd) { flex-direction: row-reverse; }
+        .icon-lane { flex: 0 0 60px; display: flex; justify-content: center; position: relative; }
+        .icon-lane i { background: var(--bg-dark); color: var(--road); padding: 12px; border-radius: 50%; border: 3px solid var(--mile); z-index: 2; }
+        .content { flex: 1 1 260px; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.05); margin: 0 10px; }
+        .content h2 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--road); }
+        .content p { color: var(--muted); margin-bottom: 1rem; font-size: .95rem; }
+        .cta { text-align: center; padding: 2.5rem 1rem; background: var(--fuel); color: #fff; }
+        .cta h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .cta p { font-size: 1rem; }
+        footer { font-size: .75rem; text-align: center; padding: 2rem 1rem; background: var(--asphalt); color: #bbb; }
+        @media(max-width:700px) {
+            .timeline::before { left: 24px; }
+            .icon-lane { flex: 0 0 54px; }
+            section.module, section.module:nth-child(odd) { flex-direction: column; align-items: flex-start; }
+            .content { margin: 0; }
+        }
+  </style>
+ </head>
+ <body>
+  <header data-aos="fade-down">
+   <h1>
+    55 Years of American Driving
+   </h1>
+   <div class="sub">
+    Miles Traveled vs. Gas Prices (1956-2010)
+   </div>
+  </header>
+  <div class="intro" data-aos="fade-up">
+   <p>
+    <strong>
+     Explainer:
+    </strong>
+    Watch how the nation’s appetite for the road collided with volatile pump prices—and see which way the needle really moved.
+   </p>
+  </div>
+  <div class="timeline">
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-flag-usa">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      How did the long cheap-fuel era shape America’s driving habit up to the first oil shock?
+     </h2>
+     <p>
+      Between 1956 and 1973, vehicle-miles climbed steadily from 3,675 B to 6,154 B while gas prices drifted down from $2.38 to $1.90 per gallon (2021-corrected dollars), creating a classic cheap-fuel boom that rewarded every extra mile.
+     </p>
+     <div id="chart_1">
+     </div>
+    </div>
+   </section>
+   <section class="cta" data-aos="fade-up">
+    <h3>
+     Keep cruising with the data
+    </h3>
+    <p>
+     Scroll to witness the shocks that slammed the brakes on growth.
+    </p>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-gas-pump">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      What happened to driving distance and price the moment oil-supply security cracked?
+     </h2>
+     <p>
+      The 1973-74 embargo flipped the script: miles dropped 3.4 % in 1974 and prices spiked 23 % to $2.34—still the fastest single-year cost jump in the series—revealing immediate elasticity once pain at the pump arrived.
+     </p>
+     <div id="chart_2">
+     </div>
+    </div>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-oil-can">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      Did the second oil crisis finally force Americans to curb mileage growth?
+     </h2>
+     <p>
+      From 1978 to 1981, miles inched up only 4 % while gas rocketed from $2.23 to $3.30, producing the steepest price-to-miles ratio (3.2×) of any three-year window and marking the first sustained conservation period.
+     </p>
+     <div id="chart_3">
+     </div>
+    </div>
+   </section>
+   <section class="cta" data-aos="fade-up">
+    <h3>
+     Fast-forward to the 2000s
+    </h3>
+    <p>
+     See if drivers really forgot the sting of high prices.
+    </p>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-road">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      Does driving still react to price spikes once memories of crisis fade?
+     </h2>
+     <p>
+      After 1986’s price collapse to $1.76, miles resumed growth; yet sharp price spikes in 2005 and 2008 again trimmed mileage—2008’s $3.31 peak coincided with a rare year-over-year decline, proving price sensitivity never went away.
+     </p>
+     <div id="chart_4">
+     </div>
+    </div>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-chart-line">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      In the very long run, did higher gas prices meaningfully slow the growth of driving?
+     </h2>
+     <p>
+      Over the full 55-year span, cumulative miles expanded 2.7× while real gas prices rose only 10 %, yielding an almost vertical long-run supply curve—implying that, barring acute shocks, Americans choose mobility almost regardless of gradual price creep.
+     </p>
+     <div id="chart_5">
+     </div>
+    </div>
+   </section>
+  </div>
+  <section class="cta" data-aos="fade-up">
+   <h3>
+    Take the wheel
+   </h3>
+   <p>
+    Share this journey, explore cleaner mobility options, and keep questioning the road ahead.
+   </p>
+  </section>
+  <footer>
+   Sources: U.S. FHWA Highway Statistics &amp; BP Statistical Review (price deflated via BLS CPI 2021). | Icons via FontAwesome.
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({ duration: 700, once: true });
+  </script>
+ </body>
+</html>

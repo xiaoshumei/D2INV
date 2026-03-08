@@ -3,6 +3,9 @@ import re
 import pandas as pd
 import logging
 from tools.config import data_dir
+import ast
+import json
+import pyarrow.ipc as ipc
 
 logger = logging.getLogger("D2INV")
 
@@ -72,6 +75,13 @@ def filter_dataframe(df: pd.DataFrame) -> str:
     return data
 
 
+def read_arrow_file(file_location):
+    reader = ipc.open_file(file_location)
+    arrow_table = reader.read_all()
+    df = arrow_table.to_pandas()
+    return df
+
+
 def read_dataframe(file_name, encoding: str = "utf-8") -> pd.DataFrame:
     """
     Read a dataframe from a given file location and clean its column names.
@@ -105,6 +115,7 @@ def read_dataframe(file_name, encoding: str = "utf-8") -> pd.DataFrame:
         "parquet": lambda: pd.read_parquet(file_location, engine="pyarrow"),
         "feather": lambda: pd.read_feather(file_location),
         "tsv": lambda: pd.read_csv(file_location, sep="\t", encoding=encoding),
+        "arrow": lambda: read_arrow_file(file_location),
     }
     if file_extension not in read_funcs:
         raise ValueError("Unsupported file type")
@@ -146,3 +157,13 @@ def read_dataframe(file_name, encoding: str = "utf-8") -> pd.DataFrame:
             raise
 
     return cleaned_df
+
+
+def fix_json(json_string):
+    """
+    Fix single-quoted JSON using Python's ast module
+    """
+    try:
+        return json.dumps(ast.literal_eval(json_string))
+    except:
+        return json_string

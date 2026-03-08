@@ -1,0 +1,39 @@
+[
+    {
+        "highest_variety": "Trebi",
+        "highest_avg_yield": 39.399993333333335,
+        "lowest_variety": "Svansota",
+        "lowest_avg_yield": 30.377777499999997,
+        "years": [
+            1931,
+            1932
+        ]
+    },
+    {
+        "manchuria_1931": 34.194446666666664,
+        "manchuria_1932": 28.733333333333334,
+        "manchuria_decline": 5.46111333333333,
+        "trebi_1931": 42.46666,
+        "trebi_1932": 36.333326666666665,
+        "trebi_decline": 6.133333333333333,
+        "max_decline_variety": "No. 457",
+        "min_decline_variety": "No. 475",
+        "statement_valid": false
+    },
+    {
+        "University_Farm_max": false,
+        "Grand_Rapids_min": true,
+        "University_Farm_avg": 32.6666675,
+        "Grand_Rapids_avg": 24.931667
+    },
+    {
+        "count_waseca_1931": "10",
+        "count_morris_1932": "6",
+        "most_varieties_1931": "True",
+        "several_varieties_1932": "True"
+    },
+    {
+        "Grand Rapids std matches": "True",
+        "University Farm std matches": "True"
+    }
+]

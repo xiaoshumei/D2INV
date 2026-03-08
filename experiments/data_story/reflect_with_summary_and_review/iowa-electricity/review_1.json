@@ -1,0 +1,22 @@
+[
+    {
+        "Fossil Fuels dominated from 2001 to 2008": true,
+        "Peak in 2008 was 42734 GWh": "False",
+        "No decline after 2008": "True"
+    },
+    {},
+    {},
+    {
+        "Fossil_Fuels_max_year": "False",
+        "Renewables_max_year": "False",
+        "Nuclear_Energy_max_year": "False"
+    },
+    {
+        "total_generation_2001": "0",
+        "total_generation_2017": "0",
+        "renewables_2001": "0",
+        "renewables_2017": "0",
+        "total_increased": "False",
+        "renewables_increased": "False"
+    }
+]

@@ -1,0 +1,32 @@
+{
+
+"story_title": "Iowa's Energy Transition: From Fossil Fuels to Renewables", 
+"story_subtitle": "Analyzing electricity generation trends from fossil fuels, nuclear energy, and renewables between 2001 and 2017", 
+"story_pieces": [
+    {
+        "narration": "Fossil Fuels dominated Iowa's electricity generation from 2001 to 2008, peaking at 42,734 GWh in 2008, followed by a decline until 2017.", 
+        "question": "How did fossil fuel generation trends evolve over time, and what factors might explain the decline?", 
+        "visualization": "line chart (year vs. net_generation for Fossil Fuels)"
+    }, 
+    {
+        "narration": "Renewables experienced exponential growth, increasing from 1,437 GWh in 2001 to 21,933 GWh in 2017, outpacing growth in other sources.", 
+        "question": "What drove the rapid growth of renewable energy generation, and how does it compare to other sources?", 
+        "visualization": "line chart (year vs. net_generation for Renewables)"
+    }, 
+    {
+        "narration": "Nuclear Energy maintained relatively stable generation between 3,853 GWh and 5,282 GWh, with a slight decline in 2017.", 
+        "question": "How does nuclear energy's contribution compare to fossil fuels and renewables over time?", 
+        "visualization": "stacked area chart (year vs. net_generation by source)"
+    }, 
+    {
+        "narration": "Fossil Fuels reached their highest generation in 2008, Renewables in 2017, and Nuclear Energy in 2008, highlighting shifting energy dynamics.", 
+        "question": "Which source achieved its peak generation in each year, and how did these peaks evolve?", 
+        "visualization": "bar chart race (year vs. net_generation by source)"
+    }, 
+    {
+        "narration": "Total electricity generation in Iowa rose from 40,287 GWh in 2001 to 59,224 GWh in 2017, driven primarily by renewable expansion.", 
+        "question": "How has the total generation changed over time, and what role did each source play in this growth?", 
+        "visualization": "line chart (year vs. total net_generation)"
+    }
+]
+}

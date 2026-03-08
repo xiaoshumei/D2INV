@@ -1,0 +1,37 @@
+[
+    {
+        "correlation": 0.646434542358474,
+        "moderate_correlation": "True",
+        "positive_correlation": "True",
+        "exceptions_exist": true
+    },
+    {
+        "europe_central_asia_health_mean": 77.4606,
+        "east_asia_pacific_health_mean": 71.74444444444444,
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "overall_health_mean": 71.67326203208557,
+        "health_mean_data_summary": 71.67326203208557,
+        "europe_central_asia_income_mean": 27714.42,
+        "east_asia_pacific_income_mean": 16327.222222222223,
+        "sub_saharan_africa_income_mean": 4932.770833333333,
+        "overall_income_mean": 17232.24064171123,
+        "income_mean_data_summary": 17232
+    },
+    {
+        "top_health_correct": false,
+        "bottom_health_correct": false
+    },
+    {
+        "china_and_india_top_two_population": true,
+        "china_health_score": 76.9,
+        "india_health_score": 66.8,
+        "china_health_close_to_76_9": "True",
+        "india_health_close_to_66_8": "True",
+        "higher_health_in_wealthier_countries": "True"
+    },
+    {
+        "wealthiest_population_vary": "True",
+        "lower_income_high_population": "True",
+        "lower_income_has_high_pop": "False"
+    }
+]

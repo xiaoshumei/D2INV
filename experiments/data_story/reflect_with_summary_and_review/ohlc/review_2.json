@@ -1,0 +1,34 @@
+[
+    {
+        "total_rows": 44,
+        "num_unique_dates": 44,
+        "signal_short_count": "24",
+        "signal_long_count": "19",
+        "signal_neutral_count": "1"
+    },
+    {
+        "max_return_value_correct": "True",
+        "min_return_value_correct": "True",
+        "max_return_date_and_signal_correct": "True",
+        "min_return_date_and_signal_correct": "True"
+    },
+    {
+        "short_mean_return": 3.294586302264926,
+        "long_mean_return": -0.9586682802713222,
+        "long_volatility": 5.7256971602516264,
+        "short_volatility": 6.135575589404347,
+        "is_short_positive": "True",
+        "is_long_negative": "True",
+        "is_long_more_volatile": "False"
+    },
+    {
+        "neutral_count": 1,
+        "date_correct": true,
+        "ret_zero": "True"
+    },
+    {
+        "short_std_matches": "False",
+        "long_std_matches": "False",
+        "overall_std_matches": "False"
+    }
+]

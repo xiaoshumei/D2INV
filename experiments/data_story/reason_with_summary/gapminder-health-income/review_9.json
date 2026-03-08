@@ -1,0 +1,36 @@
+[
+    {
+        "income_max_correct": "True",
+        "income_min_correct": "True",
+        "income_mean_correct": "False",
+        "income_std_correct": "False"
+    },
+    {
+        "health_min": 48.5,
+        "health_max": 84.1,
+        "income_min": "599",
+        "income_max": "132877",
+        "correlation": 0.646434542358474,
+        "is_strong_positive_correlation": "False"
+    },
+    {
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "europe_central_asia_health_mean": 77.4606,
+        "africa_valid": "False",
+        "europe_valid": "False"
+    },
+    {
+        "max_population_check": "True",
+        "top_pop_health_scores": [
+            76.9,
+            66.8
+        ],
+        "mean_health": 71.67326203208557,
+        "std_health": 7.748959108094907,
+        "are_scores_moderate": true
+    },
+    {
+        "andorra_outlier": true,
+        "rwanda_outlier": false
+    }
+]

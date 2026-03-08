@@ -1,0 +1,26 @@
+[
+    {
+        "max_miles_correct": "True",
+        "peak_in_2005": true,
+        "trend_1956_to_2005": "True",
+        "trend_2005_to_2010": "True"
+    },
+    {
+        "gas_min_value_correct": "True",
+        "gas_max_value_correct": "True",
+        "gas_min_year_1998": true,
+        "gas_max_year_2008": true
+    },
+    {
+        "correlation_gas_miles": -0.17433205594404674,
+        "inverse_relationship": "False"
+    },
+    {
+        "side_distribution_correct": true
+    },
+    {
+        "gas_min_correct": "True",
+        "gas_max_correct": "True",
+        "percentage_increase_correct": "True"
+    }
+]

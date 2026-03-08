@@ -1,0 +1,28 @@
+[
+    {
+        "1931": true,
+        "1932": true,
+        "overall_valid": true
+    },
+    {
+        "fluctuation": "False",
+        "trend_across_varieties": true
+    },
+    {
+        "valid": true,
+        "count": 10,
+        "total_varieties": 10
+    },
+    {
+        "Variability in yields was most pronounced in Waseca": "True"
+    },
+    {
+        "max_yield": 65.7667,
+        "top_varieties": [
+            "No. 462"
+        ],
+        "wisconsin_no_38_in_top": false,
+        "trebi_in_top": false,
+        "data_fact_valid": true
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "Black_count": "True",
+        "Latino_count": "True",
+        "White_count": "True",
+        "Asian_count": "True",
+        "total_deaths": "True"
+    },
+    {
+        "valid": true,
+        "details": {
+            "type_counts": {
+                "Homicide": 36,
+                "Officer-involved shooting": 10,
+                "Not riot-related": 9,
+                "Death": 8
+            },
+            "expected": {
+                "Homicide": 36,
+                "Officer-involved shooting": 10,
+                "Not riot-related": 9,
+                "Death": 8
+            }
+        }
+    },
+    {},
+    {
+        "compton_victim_count": "4",
+        "compton_count_valid": "False"
+    },
+    {
+        "april_may_1992_deaths": false
+    }
+]

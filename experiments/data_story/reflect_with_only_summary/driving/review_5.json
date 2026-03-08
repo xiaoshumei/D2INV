@@ -1,0 +1,40 @@
+[
+    {
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_unique_correct": true,
+        "miles_min_correct": "True",
+        "miles_max_correct": "True",
+        "miles_mean_correct": "False",
+        "miles_std_correct": "False",
+        "miles_unique_correct": true,
+        "max_miles_year_correct": "False"
+    },
+    {
+        "gas_price_peak": "True",
+        "gas_price_drop": "False",
+        "year_range": "True"
+    },
+    {
+        "correlation_gas_miles": -0.17433205594404674,
+        "is_negative": "True",
+        "is_strong": "False"
+    },
+    {
+        "actual_right_count": "19",
+        "expected_right_count": 19,
+        "is_right_correct": "True",
+        "actual_bottom_count": "17",
+        "expected_bottom_count": 17,
+        "is_bottom_correct": "True"
+    },
+    {
+        "high_period_1_mean": 2.43,
+        "high_period_2_mean": 3.13,
+        "low_period_mean": 1.6350000000000002,
+        "overall_mean": 2.1650909090909094,
+        "high_period_1_higher": "True",
+        "high_period_2_higher": "True",
+        "low_period_lower": "True"
+    }
+]

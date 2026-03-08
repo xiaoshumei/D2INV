@@ -1,0 +1,36 @@
+[
+    {
+        "max_miles": "10067",
+        "min_miles": "3675",
+        "min_year": "1956",
+        "max_year": "2010",
+        "mean_miles": 7164.909090909091,
+        "std_miles": 2160.081670890206,
+        "mean_year": 1983.0,
+        "data_fact_valid": "False"
+    },
+    {
+        "gas_peak": "True",
+        "gas_low": "True",
+        "gas_mean": "True"
+    },
+    {
+        "right_mean": 7089.0,
+        "left_mean": 8090.0,
+        "bottom_mean": 6581.0,
+        "top_mean": 7203.0,
+        "right_is_highest": false,
+        "right_correct": false,
+        "left_correct": false,
+        "bottom_correct": false,
+        "top_correct": false
+    },
+    {
+        "gas_miles_correlation": -0.17433205594404674
+    },
+    {
+        "gas_1973": true,
+        "miles_1973": true,
+        "miles_1974": true
+    }
+]

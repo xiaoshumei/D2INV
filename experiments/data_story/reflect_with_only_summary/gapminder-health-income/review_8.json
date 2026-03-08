@@ -1,0 +1,39 @@
+[
+    {
+        "health_max_valid": "True",
+        "top_income_health_valid": true,
+        "mean_health_valid": "True"
+    },
+    {
+        "min_health_sub_saharan": 48.5,
+        "has_income_range_sub_saharan": "True",
+        "health_valid": "True"
+    },
+    {
+        "europe_central_asia_mean": 27714.42,
+        "sub_saharan_africa_mean": 4932.77,
+        "europe_central_asia_mean_matches_fact": "False",
+        "sub_saharan_africa_mean_matches_fact": "False"
+    },
+    {
+        "max_population_correct": "True",
+        "china_pop_max": "True",
+        "china_income_correct": "True",
+        "china_health_correct": "True",
+        "andorra_exists": true,
+        "andorra_income_correct": "True",
+        "andorra_health_correct": "True",
+        "max_health_correct": "True",
+        "andorra_max_health": "True"
+    },
+    {
+        "Middle_East_North_Africa_health": 75.79,
+        "Middle_East_North_Africa_income": 29392.8,
+        "Europe_central_asia_health": 77.46,
+        "Europe_central_asia_income": 27714.42,
+        "Middle_East_North_Africa_health_valid": "False",
+        "Europe_central_asia_health_valid": "False",
+        "Middle_East_North_Africa_income_valid": "False",
+        "Europe_central_asia_income_valid": "False"
+    }
+]

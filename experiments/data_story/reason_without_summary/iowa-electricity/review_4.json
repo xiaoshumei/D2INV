@@ -1,0 +1,34 @@
+[
+    {
+        "renewables_2001": true,
+        "renewables_2017": true,
+        "nuclear_2017": true,
+        "surpassed_nuclear_2017": true
+    },
+    {
+        "Fossil Fuels average": 37726.375,
+        "Fossil Fuels average ok": "True",
+        "Nuclear Energy min": "3853",
+        "Nuclear Energy max": "5282",
+        "Nuclear Energy range ok": "True"
+    },
+    {
+        "peak_2008": "False",
+        "val_2017": "False",
+        "reduction_50_percent": "False"
+    },
+    {
+        "Nuclear Energy 2001 low": "True",
+        "Nuclear Energy 2008 high": "True",
+        "Nuclear max < Renewables 2017": "True"
+    },
+    {
+        "outpaced_both": "False",
+        "over_39_percent": "False",
+        "renewables_2017": "21933",
+        "fossil_2017": "29329",
+        "nuclear_2017": "5214",
+        "total_2017": "56476",
+        "percentage_2017": 0.38835965719951837
+    }
+]

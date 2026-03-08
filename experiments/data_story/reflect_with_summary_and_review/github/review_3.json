@@ -1,0 +1,33 @@
+[
+    {
+        "max_count": "54",
+        "mean_count": 2.5958115183246075
+    },
+    {
+        "standard_deviation": 4.100414567944033,
+        "mean_count": 2.5958115183246075,
+        "min_count": "1",
+        "max_count": "54",
+        "num_unique_counts": 26,
+        "skewness": 6.457538325087614,
+        "percentage_low_counts": 83.66492146596859
+    },
+    {
+        "april_may_avg": 2.22160127066298,
+        "overall_mean": 2.5958115183246075,
+        "seasonal_trend": "True"
+    },
+    {
+        "hourly_std": 0.5436504417300654,
+        "overall_std": 4.100414567944033,
+        "max_hourly_mean": 4.375,
+        "min_hourly_mean": 1.6904761904761905,
+        "unique_hours": 24
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "max_count": "54",
+        "is_outlier": "True"
+    }
+]

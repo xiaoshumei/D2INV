@@ -1,0 +1,35 @@
+[
+    {
+        "penicillin_min": 0.001,
+        "penicillin_max": 870.0,
+        "penicillin_mean": 217.8780625,
+        "penicillin_std": 373.49506012805915,
+        "penicillin_num_unique": 11,
+        "gram_negative_count": "9",
+        "gram_positive_count": "7",
+        "penicillin_samples_present": "True"
+    },
+    {
+        "Pseudomonas aeruginosa": "False",
+        "Brucella abortus": "False",
+        "gram_negative_higher": false
+    },
+    {
+        "Salmonella_count": "2",
+        "Neomycin_0_008_exists": "True",
+        "Streptomycin_0_8_exists": "True",
+        "Salmonella_typhosa_exists": "False",
+        "S_schottmuelleri_exists": "False"
+    },
+    {
+        "Neomycin_max_correct": "True",
+        "Neomycin_min_correct": "True",
+        "Other_genus_max_correct": "False"
+    },
+    {
+        "Streptomycin_max": "True",
+        "Streptomycin_min": "True",
+        "Streptomycin_samples": true,
+        "Bacteria_presence": false
+    }
+]

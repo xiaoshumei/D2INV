@@ -1,0 +1,32 @@
+{
+
+"story_title": "Mileage and Fuel Costs Over Decades: A Historical Perspective",
+"story_subtitle": "Analyzing trends in vehicle miles driven and gasoline prices from 1956 to 2010",
+"story_pieces": [
+    {
+        "narration": "Vehicle miles driven showed consistent growth from 1956 to 2010, with a peak of 10,067 miles in 2005, followed by a slight decline in later years.",
+        "question": "How has the total mileage driven evolved over the decades, and what patterns are evident in the data?",
+        "visualization": "line chart (year vs. miles)"
+    },
+    {
+        "narration": "Gasoline prices fluctuated significantly, reaching a peak of $3.30 in 1980 and 2008, with a notable drop to $1.50 in the mid-1990s and early 2000s.",
+        "question": "What historical patterns can be observed in gasoline price trends over time?",
+        "visualization": "line chart (year vs. gas)"
+    },
+    {
+        "narration": "A negative correlation appears between gas prices and miles driven, as evidenced by dips in mileage during periods of high gas prices, such as 1980 and 2008.",
+        "question": "Is there a relationship between gasoline prices and vehicle mileage, and how does it manifest over time?",
+        "visualization": "scatter plot (gas vs. miles with trendline)"
+    },
+    {
+        "narration": "The 'bottom' side consistently contributed the most miles across decades, while 'left' and 'right' sides showed more volatile trends, with 'top' side having fewer data points.",
+        "question": "How do mileage trends vary by side, and what might account for these differences?",
+        "visualization": "bar chart race (yearly mileage by side)"
+    },
+    {
+        "narration": "The most significant drop in mileage occurred in 1986 ($1.76 gas) and 1998 ($1.39 gas), while the highest mileage was recorded in 2005 ($2.53 gas).",
+        "question": "What key moments in gas price history had the most notable impact on mileage trends?",
+        "visualization": "area chart (gas prices with milestone highlights)"
+    }
+]
+}

@@ -1,231 +1,171 @@
 import os
+import json
 
-import pandas as pd
 from api.data_story import DataStory
 from api.summarize import file_summary
 from dotenv import load_dotenv
-import json
 
 
-#
-def reason_without_summary():
-    data_files = os.listdir("datasets")
-    for data_file in data_files[0:10]:
+data_files = [
+    "barley.json",
+    "burtin.json",
+    "co2-concentration.csv",
+    "disasters.csv",
+    "driving.json",
+    "gapminder-health-income.csv",
+    "github.csv",
+    "iowa-electricity.csv",
+    "la-riots.csv",
+    "ohlc.json",
+]
+
+
+def reason_without_summary(index):
+    for data_file in data_files:
         dataset_name = data_file.split(".")[0]
         [data_summary, data] = file_summary(data_file)
-        data_story = DataStory(dataset_name, data, write_stages=[])
-        story = data_story.reason(data.to_dict())
-        data_fact_check_results = []
-        for story_piece in json.loads(story["content"])["story_pieces"]:
-            check_result = data_story.check_data_fact(
-                data, data_summary, story_piece["narration"]
-            )
-            data_fact_check_results.append(check_result)
-        os.makedirs(
-            f"./experiments/data_story/reason_without_summary/{dataset_name}",
-            exist_ok=True,
-        )
-        with open(
-            f"./experiments/data_story/reason_without_summary/{dataset_name}/reason.json",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(story["content"])
-        with open(
-            f"./experiments/data_story/reason_without_summary/{dataset_name}/revalidate.json",
-            "w",
-            encoding="utf-8",
-        ) as f:
-            f.write(
-                json.dumps(
-                    {
-                        "data_summary": data_summary,
-                        "revalidate_results": data_fact_check_results,
-                    },
-                    default=str,
-                    indent=4,
-                )
-            )
-        pd.DataFrame(
-            [
-                {
-                    "name": f"{dataset_name}",
-                    "prompt_tokens": story["usage"].prompt_tokens,
-                    "completion_tokens": story["usage"].completion_tokens,
-                    "total_tokens": story["usage"].total_tokens,
-                    "elapsed_time": story["elapsed_time"],
-                }
-            ]
-        ).to_json(
-            "./experiments/data_story/reason_without_summary/logs.jsonl",
-            lines=True,
-            orient="records",
-            mode="a",
-        )
-
-
-def reason_with_summary():
-    data_file = "cars.json"
-    dataset_name = data_file.split(".")[0]
-
-    [data_summary, data] = file_summary(data_file)
-    end_index_list = [10, 20, 40, 80, 100, 200, 400, 800, 1600]
-    for end_index in end_index_list:
-        data_story = DataStory(dataset_name, data, write_stages=[])
-        story = data_story.reason(
-            data[0:end_index].to_dict(), data_summary=data_summary
-        )
+        data_story = DataStory(dataset_name, data, data_summary, write_stages=[])
+        story = data_story.reason()
         data_fact_check_results = []
         for story_piece in json.loads(story)["story_pieces"]:
-            check_result = data_story.check_data_fact(
-                data, data_summary, story_piece["narration"]
-            )
+            check_result = data_story.check_data_fact(story_piece["narration"])
             data_fact_check_results.append(check_result)
+        dist_dir = f"./experiments/data_story/reason_without_summary/{dataset_name}"
         os.makedirs(
-            f"./experiments/data_story/reason_with_summary/{dataset_name}",
+            dist_dir,
             exist_ok=True,
         )
         with open(
-            f"./experiments/data_story/reason_with_summary/{dataset_name}/1_{end_index}.json",
+            f"{dist_dir}/reason_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
-            f.write(story["content"])
+            f.write(story)
         with open(
-            f"./experiments/data_story/reason_with_summary/{dataset_name}/1_{end_index}_revalidate.json",
+            f"{dist_dir}/review_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
             f.write(json.dumps(data_fact_check_results, default=str, indent=4))
-        pd.DataFrame(
-            [
-                {
-                    "name": f"{dataset_name}_1_{end_index}",
-                    "prompt_tokens": story["usage"].prompt_tokens,
-                    "completion_tokens": story["usage"].completion_tokens,
-                    "total_tokens": story["usage"].total_tokens,
-                    "elapsed_time": story["elapsed_time"],
-                }
-            ]
-        ).to_json(
-            "./experiments/data_story/reason_with_summary/logs.jsonl",
-            lines=True,
-            orient="records",
-            mode="a",
-        )
 
 
-def reflect_with_summary():
-    data_file = "cars.json"
-    dataset_name = data_file.split(".")[0]
-
-    [data_summary, data] = file_summary(data_file)
-    end_index_list = [10, 20, 40, 80, 100, 200, 400, 800, 1600]
-    for end_index in end_index_list:
-        data_story = DataStory(dataset_name, data, write_stages=[])
-        story = data_story.reason(data[0:end_index].to_dict())
+def reason_with_summary(index):
+    for data_file in data_files:
+        dataset_name = data_file.split(".")[0]
+        [data_summary, data] = file_summary(data_file)
+        data_story = DataStory(dataset_name, data, data_summary, write_stages=[])
+        story = data_story.reason(data_summary=data_summary)
         data_fact_check_results = []
         for story_piece in json.loads(story)["story_pieces"]:
-            check_result = data_story.check_data_fact(
-                data, data_summary, story_piece["narration"]
-            )
+            check_result = data_story.check_data_fact(story_piece["narration"])
             data_fact_check_results.append(check_result)
-        print("data fact check results: ", data_fact_check_results)
-        reflection_not_null = data_story.reflection(data_summary)
+        dist_dir = f"./experiments/data_story/reason_with_summary/{dataset_name}"
+        os.makedirs(
+            dist_dir,
+            exist_ok=True,
+        )
+        with open(
+            f"{dist_dir}/reason_{index}.json",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(story)
+        print(data_fact_check_results)
+        with open(
+            f"{dist_dir}/review_{index}.json",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(json.dumps(data_fact_check_results, default=str, indent=4))
+
+
+def reflect_with_only_summary(index):
+    for data_file in data_files:
+        dataset_name = data_file.split(".")[0]
+        [data_summary, data] = file_summary(data_file)
+        data_story = DataStory(dataset_name, data, data_summary, write_stages=[])
+        with open(
+            f"experiments/data_story/reason_with_summary/{dataset_name}/reason_{index}.json",
+            "r",
+            encoding="utf-8",
+        ) as f:
+            story = json.load(f)
+            data_story.reason_results = story
+        data_fact_check_results = []
+        reflection_not_null = data_story.reflection()
         if reflection_not_null:
             story = data_story.refine()
+        dist_dir = f"./experiments/data_story/reflect_with_only_summary/{dataset_name}"
         os.makedirs(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}",
+            dist_dir,
             exist_ok=True,
         )
         with open(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}/1_{end_index}.json",
+            f"{dist_dir}/reason_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
-            f.write(story["content"])
+            f.write(story)
+        for story_piece in json.loads(story)["story_pieces"]:
+            check_result = data_story.check_data_fact(story_piece["narration"])
+            data_fact_check_results.append(check_result)
         with open(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}/1_{end_index}_revalidate.json",
+            f"{dist_dir}/review_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
             f.write(json.dumps(data_fact_check_results, default=str, indent=4))
-        pd.DataFrame(
-            [
-                {
-                    "name": f"{dataset_name}_1_{end_index}",
-                    "prompt_tokens": story["usage"].prompt_tokens,
-                    "completion_tokens": story["usage"].completion_tokens,
-                    "total_tokens": story["usage"].total_tokens,
-                    "elapsed_time": story["elapsed_time"],
-                }
-            ]
-        ).to_json(
-            "./experiments/data_story/reflect_with_summary/logs.jsonl",
-            lines=True,
-            orient="records",
-            mode="a",
-        )
 
 
-def reflect_with_summary_and_revalidate():
-    data_file = "cars.json"
-    dataset_name = data_file.split(".")[0]
-
-    [data_summary, data] = file_summary(data_file)
-    end_index_list = [10, 20, 40, 80, 100, 200, 400, 800, 1600]
-    for end_index in end_index_list:
-        data_story = DataStory(dataset_name, data, write_stages=[])
-        story = data_story.reason(data[0:end_index].to_dict())
+def reflect_with_summary_and_review(index):
+    for data_file in data_files:
+        dataset_name = data_file.split(".")[0]
+        [data_summary, data] = file_summary(data_file)
+        data_story = DataStory(dataset_name, data, data_summary, write_stages=[])
+        with open(
+            f"experiments/data_story/reason_with_summary/{dataset_name}/reason_{index}.json",
+            "r",
+            encoding="utf-8",
+        ) as f:
+            story = json.load(f)
+            data_story.reason_results = story
         data_fact_check_results = []
-        for story_piece in json.loads(story)["story_pieces"]:
-            check_result = data_story.check_data_fact(
-                data, data_summary, story_piece["narration"]
-            )
+        for story_piece in story["story_pieces"]:
+            check_result = data_story.check_data_fact(story_piece["narration"])
             data_fact_check_results.append(check_result)
-        print("data fact check results: ", data_fact_check_results)
-        reflection_not_null = data_story.reflection(
-            data_summary, data_fact_check_results
-        )
+        reflection_not_null = data_story.reflection(data_fact_check_results)
         if reflection_not_null:
             story = data_story.refine()
+        dist_dir = (
+            f"./experiments/data_story/reflect_with_summary_and_review/{dataset_name}"
+        )
         os.makedirs(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}",
+            dist_dir,
             exist_ok=True,
         )
         with open(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}/1_{end_index}.json",
+            f"{dist_dir}/reason_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
-            f.write(story["content"])
+            f.write(story)
+        # check the final data facts
+        check_results = []
+        for story_piece in json.loads(story)["story_pieces"]:
+            check_result = data_story.check_data_fact(story_piece["narration"])
+            check_results.append(check_result)
         with open(
-            f"./experiments/data_story/reflect_with_summary/{dataset_name}/1_{end_index}_revalidate.json",
+            f"{dist_dir}/review_{index}.json",
             "w",
             encoding="utf-8",
         ) as f:
-            f.write(json.dumps(data_fact_check_results, default=str, indent=4))
-        pd.DataFrame(
-            [
-                {
-                    "name": f"{dataset_name}_1_{end_index}",
-                    "prompt_tokens": story["usage"].prompt_tokens,
-                    "completion_tokens": story["usage"].completion_tokens,
-                    "total_tokens": story["usage"].total_tokens,
-                    "elapsed_time": story["elapsed_time"],
-                }
-            ]
-        ).to_json(
-            "./experiments/data_story/reflect_with_summary/logs.jsonl",
-            lines=True,
-            orient="records",
-            mode="a",
-        )
+            f.write(json.dumps(check_results, default=str, indent=4))
 
 
 if __name__ == "__main__":
     load_dotenv()
-    reason_without_summary()
-    # reason_with_summary()
-    # reflect_with_summary()
-    # reflect_with_summary_and_revalidate()
+    for i in range(9, 11):
+        reason_without_summary(i)
+        reason_with_summary(i)
+        reflect_with_only_summary(i)
+        reflect_with_summary_and_review(i)

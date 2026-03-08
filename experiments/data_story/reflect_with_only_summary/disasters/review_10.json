@@ -1,0 +1,29 @@
+[
+    {
+        "max_deaths_equals_3_7m": "True",
+        "flood_1931_is_max": "False",
+        "next_highest_less_than_3_7m": "True"
+    },
+    {
+        "Droughts_deadliest": "False",
+        "Flood_1931_outlier": true,
+        "Earthquakes_significant": "False",
+        "Epidemics_significant": "True"
+    },
+    {
+        "earthquake_max_in_1920s": "False",
+        "t\u014dhoku_2011_in_top_5_21st_century": false,
+        "t\u014dhoku_2011_lower_than_1920s_max": false,
+        "overall_trend_decreasing": "True"
+    },
+    {
+        "epidemic_avg_higher": "True",
+        "epidemic_has_max_death": "False"
+    },
+    {
+        "valid": "True",
+        "before_1990_mean": 11953.036144578313,
+        "nineteen_nineties_mean": 21114.6,
+        "after_2000_mean": 10741.833333333334
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "trebi_avg_yield": 39.4,
+        "no_475_avg_yield": 31.76,
+        "trebi_max": "False",
+        "no_475_min": "False"
+    },
+    {
+        "overall_max_matches": "True",
+        "site_with_max_matches": true,
+        "grand_rapids_max_matches": "False",
+        "waseca_variety_matches": false,
+        "grand_rapids_variety_matches": false
+    },
+    {
+        "decline_count": "10",
+        "decline_most_varieties": "True",
+        "manchuria_decrease": 15.970760944223489,
+        "manchuria_valid": "False",
+        "wisconsin_decrease": 5.859001812771996,
+        "wisconsin_valid": "False"
+    },
+    {
+        "mean_yield_correct": "True",
+        "std_yield_correct": "True",
+        "skewness_correct": "True"
+    },
+    {
+        "percentage_diff": 16.68,
+        "is_valid": "False"
+    }
+]

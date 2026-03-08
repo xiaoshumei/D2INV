@@ -1,0 +1,33 @@
+[
+    {
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698
+    },
+    {
+        "winter_mean": 355.685346377578,
+        "autumn_mean": 355.31602679358366,
+        "winter_higher": "True"
+    },
+    {
+        "rate_1960s": 0.8569444444444483,
+        "rate_2010s": 2.399351851851855
+    },
+    {
+        "std_diff_raw": 1.255217983433254,
+        "std_diff_adjusted": 0.32464652483900314,
+        "mean_raw": 355.3109311740891,
+        "mean_adjusted": 355.3041565452092,
+        "is_smaller_std": "True",
+        "is_similar_mean": "True"
+    },
+    {
+        "CO2_surpassed_400_in_2015": "True",
+        "2010s_highest_increase_rate": "False"
+    }
+]

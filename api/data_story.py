@@ -1,10 +1,9 @@
 import json
 import os
-from datetime import datetime
 import pandas as pd
 
 from tools.llm import LLM
-from tools.utils import postprocess_response
+from tools.utils import postprocess_response, fix_json
 
 
 class DataStory:
@@ -57,6 +56,7 @@ class DataStory:
         """
         Generate a data story from the provided dataset using reasoning llm.
         """
+        # First, analyze the dataset and identify potential user concerns. Then, recommend a suitable visualization for each question. Finally, extract the most critical data facts for each question.
         messages = [
             self.reason_system_prompt,
             {
@@ -64,7 +64,6 @@ class DataStory:
                 "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(self.data.to_dict(orient='records'), ensure_ascii=False)}\n A summary of the dataset is \n{json.dumps(data_summary,ensure_ascii=False) if data_summary else ''}\n The data story must includes story_title, story_subtitle, and five story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
             },
         ]
-        start_time = datetime.now()
         completion = self.llm.client.chat.completions.create(
             model=self.llm.model,
             messages=messages,
@@ -72,19 +71,16 @@ class DataStory:
             temperature=1.0,
             response_format={"type": "json_object"},
         )
-        elapsed_time = (datetime.now() - start_time).total_seconds()
         content = completion.choices[0].message.content
         print("reason:\n", content)
         content = postprocess_response(content)
+        content = fix_json(content)
         self.reason_results = content
         self.result = content
-        return {
-            "content": content,
-            "usage": completion.usage,
-            "elapsed_time": elapsed_time,
-        }
+        return content
 
     def check_data_fact(self, narration):
+        try_max = 3
         code_scaffold = """
         def data_fact_validate(df):
             # calculations ...
@@ -94,7 +90,7 @@ class DataStory:
             }
 
             return results"""
-        system_prompt = f"Given a narration and a data summary, generate Python + pandas code to compute and validate the data facts based on a preloaded df. Just fill in the following code template:\n{code_scaffold}, don't do any explanation"
+        system_prompt = f"Given a narration and a data summary, generate Python + pandas code to compute and validate the data facts based on a preloaded df. Just fill in the following code template:\n{code_scaffold}, don't do any explanation."
         messages = [
             {
                 "role": "system",
@@ -105,23 +101,39 @@ class DataStory:
                 "content": f"The data summary is \n{self.data_summary}\n The data fact is \n{narration}\n",
             },
         ]
-
-        completion = self.llm.client.chat.completions.create(
-            model=self.llm.model,
-            messages=messages,
-            stream=False,
-            temperature=1.0,
-        )
-        data_fata_check_code = completion.choices[0].message.content
-        content = postprocess_response(data_fata_check_code)
-        ns = {"pd": pd}
-        try:
-            exec(content, ns)
-            data_fata_check_result = ns["data_fact_validate"](self.data)
-            return data_fata_check_result
-        except Exception as e:
-            print(e)
-            return {}
+        while try_max:
+            try:
+                completion = self.llm.client.chat.completions.create(
+                    model=self.llm.model,
+                    messages=messages,
+                    stream=False,
+                    temperature=1.0,
+                )
+                data_fata_check_code = completion.choices[0].message.content
+                content = postprocess_response(data_fata_check_code)
+                ns = {"pd": pd}
+                exec(content, ns)
+                data_fata_check_result = ns["data_fact_validate"](self.data)
+                fixed_result = {}
+                for key in data_fata_check_result.keys():
+                    # sometimes, key will be a dict
+                    if isinstance(key, tuple):
+                        fixed_result["_".join(str(x) for x in key)] = (
+                            data_fata_check_result[key]
+                        )
+                    else:
+                        fixed_result[key] = data_fata_check_result[key]
+                return fixed_result
+            except Exception as e:
+                print(
+                    "Error on generating review code, remaining retry times: ",
+                    try_max - 1,
+                    "Error is: ",
+                    e,
+                )
+                try_max -= 1
+        print("Fail to generate review code for current story piece")
+        return {}
 
     def reflection(self, data_fact_check_results=None):
         if data_fact_check_results is None:
@@ -167,8 +179,10 @@ class DataStory:
         )
         content = completion.choices[0].message.content
         content = postprocess_response(content)
+        content = fix_json(content)
         print("refine:\n", content)
         self.result = content
+        return content
 
     def write(self):
         dist = f"./results/{self.dataset_name}"

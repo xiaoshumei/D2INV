@@ -1,0 +1,30 @@
+[
+    {
+        "co2_min_valid": "True",
+        "co2_max_valid": "True",
+        "adjusted_co2_min_valid": "True",
+        "adjusted_co2_max_valid": "True",
+        "co2_percentage_increase": 32.88,
+        "percentage_increase_valid": "False"
+    },
+    {
+        "1960s_growth_rate": 0.8569444444444483,
+        "2010s_growth_rate": 2.399351851851855,
+        "1960s_growth_rate_valid": "True",
+        "2010s_growth_rate_valid": "False"
+    },
+    {
+        "seasonal_pattern": {
+            "peaks_in_may": "False",
+            "troughs_in_oct": "False"
+        },
+        "amplitude_increasing": false
+    },
+    {
+        "adjusted_CO2_smaller_std": "True"
+    },
+    {
+        "difference_2010_to_2020": 27.629999999999995,
+        "is_valid": "False"
+    }
+]

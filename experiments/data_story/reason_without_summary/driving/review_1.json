@@ -1,0 +1,38 @@
+[
+    {
+        "miles_mean_correct": "False",
+        "miles_max_correct": "True",
+        "miles_std_correct": "False",
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_unique_correct": true,
+        "year_2005_exists": "True",
+        "max_miles_in_2005": "True"
+    },
+    {
+        "gas_peak_matches": "True",
+        "gas_drop_matches": "True",
+        "year_range_valid": "True"
+    },
+    {
+        "negative_correlation": "True",
+        "1980_gas_higher": "True",
+        "1980_miles_lower": "True",
+        "2008_gas_higher": "True",
+        "2008_miles_lower": "False"
+    },
+    {
+        "bottom_most_miles": false,
+        "left_right_volatility": "False",
+        "top_fewer_points": true
+    },
+    {
+        "year_1986_exists": "True",
+        "gas_1986_1_76": true,
+        "year_1998_exists": "True",
+        "gas_1998_1_39": false,
+        "most_significant_drop_in_1986": false,
+        "most_significant_drop_in_1998": false,
+        "highest_mileage_2005_gas_2_53": false
+    }
+]

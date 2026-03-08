@@ -1,0 +1,41 @@
+[
+    {
+        "year_min": "1956",
+        "year_max": "2010",
+        "year_mean": 1983.0,
+        "year_std": 16.020819787597222,
+        "year_unique": 55,
+        "miles_min": "3675",
+        "miles_max": "10067",
+        "miles_mean": 7164.909090909091,
+        "miles_std": 2160.081670890206,
+        "miles_unique": 55
+    },
+    {
+        "gas_min_correct": "False",
+        "gas_max_correct": "True",
+        "gas_mean_correct": "True",
+        "gas_std_correct": "True",
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_unique_count_correct": true,
+        "years_1998_2008_present": "True",
+        "gas_values_1998_2008_present": "True"
+    },
+    {
+        "correlation_gas_miles": -0.1743,
+        "is_negative": "True",
+        "is_moderate": "False"
+    },
+    {
+        "bottom_lower_gas_mean": "True",
+        "left_higher_gas_spikes": "True",
+        "top_stable_miles": "False"
+    },
+    {
+        "gas_decline": "True",
+        "miles_increase": "False",
+        "gas_1998_min": "True",
+        "mileage_1998_min_since_1985": "False"
+    }
+]

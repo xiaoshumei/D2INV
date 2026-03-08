@@ -1,0 +1,27 @@
+[
+    {
+        "valid": false,
+        "reason": "Drought deaths in 1928 not over 3 million"
+    },
+    {
+        "highest_decade": "1920",
+        "max_deaths": "17452586",
+        "is_1930s_highest": "False"
+    },
+    {
+        "has_tangshan": true,
+        "is_deadliest": false
+    },
+    {
+        "epidemic_deaths_early_20th_century": "3060070",
+        "fact_valid": "False"
+    },
+    {
+        "total_deaths_1930s": "9402048",
+        "total_deaths_2010s": "909888",
+        "extreme_weather_2010s": "21223",
+        "extreme_weather_1930s": "93835",
+        "decline_in_deaths": "True",
+        "increase_in_extreme_weather_2010s": "False"
+    }
+]

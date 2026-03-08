@@ -1,0 +1,42 @@
+[
+    {
+        "qatar_income": "132877",
+        "qatar_health": 82.0,
+        "cfar_income": "599",
+        "cfar_health": 53.8,
+        "correlation_positive": "True",
+        "qatar_valid": "True",
+        "cfar_valid": "True"
+    },
+    {
+        "europe_central_asia_income": 27714.4,
+        "europe_central_asia_health": 77.5,
+        "sub_saharan_africa_income": 4932.8,
+        "sub_saharan_africa_health": 62.2,
+        "europe_central_asia_income_valid": "False",
+        "europe_central_asia_health_valid": "False",
+        "sub_saharan_africa_income_valid": "False",
+        "sub_saharan_africa_health_valid": "False"
+    },
+    {
+        "top_10_health_countries_include": true,
+        "health_values_match": true,
+        "high_income_levels": true
+    },
+    {
+        "bottom_10_health_countries_include_lesotho": true,
+        "bottom_10_health_countries_include_central_african_republic": true,
+        "bottom_10_health_countries_include_somalia": false,
+        "lesotho_region": "sub_saharan_africa",
+        "central_african_republic_region": "sub_saharan_africa",
+        "somalia_region": "sub_saharan_africa",
+        "sub_saharan_africa_count_in_bottom_10": 9
+    },
+    {
+        "mena_income_avg_correct": "False",
+        "mena_health_avg_correct": "False",
+        "eap_corr_strong": "False",
+        "eap_max_income_correct": "False",
+        "eap_max_health_correct": "False"
+    }
+]

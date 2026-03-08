@@ -1,0 +1,45 @@
+[
+    {
+        "co2_increase_over_100": "True",
+        "adjusted_max_less_than_co2_max": "True",
+        "adjusted_std_less_than_co2_std": "True"
+    },
+    {
+        "winter_mean": 355.6503666490393,
+        "summer_mean": 355.48174863387976,
+        "is_valid": "True"
+    },
+    {
+        "std_check": "True",
+        "mean_check": "True",
+        "unique_check": true,
+        "min_check": "True",
+        "max_check": "True"
+    },
+    {
+        "mean_annual_change_1970s": 1.2229166666666687,
+        "mean_annual_change_1980s": 1.6058333333333281,
+        "mean_annual_change_2020s": 3.0424999999999613
+    },
+    {
+        "Date": {
+            "min": true,
+            "max": true,
+            "num_unique_values": true
+        },
+        "CO2": {
+            "min": "True",
+            "max": "True",
+            "mean": "True",
+            "std": "True",
+            "num_unique_values": true
+        },
+        "adjusted_CO2": {
+            "min": "True",
+            "max": "True",
+            "mean": "True",
+            "std": "True",
+            "num_unique_values": true
+        }
+    }
+]

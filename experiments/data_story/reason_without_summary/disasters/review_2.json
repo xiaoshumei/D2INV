@@ -1,0 +1,34 @@
+[
+    {
+        "deadliest_drought": "True",
+        "drought_1928": true,
+        "earthquake_1976": true,
+        "epidemic_1918": true
+    },
+    {
+        "epidemic_count_matches": true,
+        "year_1917_exists": true,
+        "year_1918_exists": true,
+        "deaths_1917_match": "True",
+        "deaths_1918_match": "True",
+        "early_20th_max_in_1917_1918": true
+    },
+    {
+        "Drought_max_3m": "True",
+        "Earthquake_max_less_than_Drought": "True",
+        "Drought_mean_higher": "True",
+        "Overall_max_3_706_227": "True",
+        "Earthquake_higher_std": "False"
+    },
+    {
+        "Flood_2010_death": "8356",
+        "Extreme_Temperature_2010_death": "57188",
+        "Trend_increase": "False"
+    },
+    {
+        "max_volcanic_deaths": "True",
+        "max_wildfire_deaths": "True",
+        "volcanic_1902": "True",
+        "wildfire_1918": "True"
+    }
+]

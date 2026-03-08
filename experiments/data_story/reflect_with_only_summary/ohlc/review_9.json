@@ -1,0 +1,35 @@
+[
+    {
+        "short": "False",
+        "long": "False",
+        "neutral": "True"
+    },
+    {
+        "max_ret_correct": "True",
+        "max_date_correct": "True",
+        "max_signal_correct": "True",
+        "min_ret_correct": "True",
+        "min_date_correct": "True",
+        "min_signal_correct": "True"
+    },
+    {
+        "ret_std_matches": "True",
+        "ret_mean_matches": "True",
+        "ret_skew_significant": "False"
+    },
+    {
+        "short_count": "24",
+        "long_count": "19",
+        "neutral_count": "1",
+        "short_match": "True",
+        "long_match": "True",
+        "neutral_match": "True",
+        "total_signals": "44",
+        "expected_total": 44
+    },
+    {
+        "neutral_count": 1,
+        "neutral_date": true,
+        "neutral_ret": "True"
+    }
+]

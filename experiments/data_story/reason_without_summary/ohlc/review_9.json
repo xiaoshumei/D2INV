@@ -1,0 +1,26 @@
+[
+    {
+        "short_count": "24",
+        "long_count": "19",
+        "neutral_count": "1",
+        "majority_short": "True"
+    },
+    {
+        "max_ret_value_correct": "True",
+        "max_ret_date_signal_correct": "True"
+    },
+    {
+        "mixed_returns": "True",
+        "std_long": 5.7256971602516264
+    },
+    {
+        "neutral_date": "2009-07-15 00:00:00"
+    },
+    {
+        "total_rows_correct": true,
+        "cumulative_returns_positive": "True",
+        "mean_return_positive": "True",
+        "std_return_high": "True",
+        "num_unique_returns": true
+    }
+]

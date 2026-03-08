@@ -1,0 +1,12 @@
+{
+
+"story_title": "Natural Disasters and Epidemics: A Century of Human Impact", 
+"story_subtitle": "Analyzing the deadliest events, their temporal trends, and comparative mortality across disaster types from 1900 to 2017", 
+"story_pieces": [ 
+{"narration": "The 1976 Nicaragua earthquake, with 276,994 deaths, stands as the single deadliest natural disaster in the dataset, surpassing all other individual events.", "question": "Which specific natural disaster event caused the highest number of deaths in the dataset?", "visualization": "bar chart (events vs. deaths) with top 5 highlighted"}, 
+{"narration": "Total deaths from all natural disasters peaked in 1917 (2.5 million) and 1907 (1.3 million), declining to around 200,000 by 2017, showing a long-term downward trend.", "question": "How has the total mortality from all natural disasters changed over the 20th and 21st centuries?", "visualization": "line chart (years vs. cumulative deaths) with trendline"}, 
+{"narration": "Epidemics accounted for 82% of total deaths from all natural disasters (1900-2017), with the 1918 Spanish flu pandemic alone causing 449,700 deaths, dwarfing other disaster types.", "question": "How do epidemics compare to other natural disaster types in terms of mortality contribution?", "visualization": "stacked bar chart (disaster types vs. deaths) with epidemic highlighted"}, 
+{"narration": "The 1931 China flood (3.7 million deaths) and 1928 global drought (3 million deaths) represent the most extreme mortality events in the dataset, far exceeding even the deadliest earthquakes.", "question": "Which disaster type and year produced the highest death tolls in the dataset?", "visualization": "scatter plot (disaster type vs. deaths) with year annotations"}, 
+{"narration": "While epidemic mortality declined sharply after 1945, extreme weather events like the 2010 Russian heatwave (55,000 deaths) and 2015-2016 global extreme temperatures (74,250 deaths) show modern climate-related risks.", "question": "How have mortality patterns shifted between epidemics and extreme weather in recent decades?", "visualization": "grouped bar chart (decades vs. epidemic deaths/extreme weather deaths)"} 
+] 
+}

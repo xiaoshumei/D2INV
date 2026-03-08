@@ -1,0 +1,28 @@
+[
+    {
+        "is_max_yield_correct": "True",
+        "is_max_in_Trebi_Waseca_1931": false
+    },
+    {
+        "higher_mean_1931": "True",
+        "variability_diff": "True"
+    },
+    {
+        "Trebi": "True",
+        "Wisconsin No. 38": "True",
+        "most_varieties": "True",
+        "count_waseca": "10",
+        "total_varieties": 10
+    },
+    {
+        "min_yield_no_475": 15.23333,
+        "min_yield_correct": "False",
+        "grand_rapids_1931_correct": "False"
+    },
+    {
+        "mean_yield": 34.42,
+        "std_yield": 10.33,
+        "mean_match": "True",
+        "std_match": "True"
+    }
+]

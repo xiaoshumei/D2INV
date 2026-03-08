@@ -1,0 +1,36 @@
+[
+    {
+        "max_count_correct": "False",
+        "date_correct": true,
+        "next_max_correct": "False",
+        "ratio_correct": "False"
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "percent_less_3": 75.49738219895288,
+        "percent_ge_10": 3.9790575916230364,
+        "mean_valid": "False",
+        "percent_less_3_valid": "False",
+        "percent_ge_10_valid": "False"
+    },
+    {
+        "highest_hourly_count": false,
+        "most_frequent_times": false
+    },
+    {
+        "num_days_10_plus": 106,
+        "sum_specific_days": "198",
+        "total_events": "2479"
+    },
+    {
+        "january_total": "557",
+        "march_total": "655",
+        "may_total": "406",
+        "is_may_higher": "False",
+        "monthly_trend": [
+            "557",
+            "655",
+            "406"
+        ]
+    }
+]

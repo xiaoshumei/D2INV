@@ -1,0 +1,30 @@
+[
+    {
+        "black_count": "28",
+        "total_fatalities": 63,
+        "data_fact_correct": false
+    },
+    {
+        "homicide_count": "36",
+        "officer_shooting_count": "10",
+        "total_type_entries": "63"
+    },
+    {
+        "Vermont Square deaths": "3",
+        "Watts deaths": 0,
+        "total_fatalities": 44
+    },
+    {
+        "under_25_count": "22",
+        "under_25_correct": "False",
+        "young_males_count": 30,
+        "significant_young_males": false
+    },
+    {
+        "has_elderly_individuals": true,
+        "has_black_female": true,
+        "has_white_male": true,
+        "elderly_count": 3,
+        "total_entries": 63
+    }
+]

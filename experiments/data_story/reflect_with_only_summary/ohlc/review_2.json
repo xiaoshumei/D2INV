@@ -1,0 +1,37 @@
+[
+    {
+        "num_rows": 44,
+        "unique_dates": 44,
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        }
+    },
+    {
+        "max_return_valid": "True",
+        "min_return_valid": "True",
+        "max_return_value": 15.4907975460123,
+        "min_return_value": -10.8433734939759,
+        "max_return_date": "2009-06-22",
+        "max_return_signal": "short",
+        "min_return_date": "2009-07-17",
+        "min_return_signal": "long"
+    },
+    {
+        "short_mean_positive": "True",
+        "short_mean_close_to_1_38": "False",
+        "long_mean_similar_to_short": "False",
+        "long_higher_volatility": "False"
+    },
+    {
+        "neutral_count": 1,
+        "date_match": true,
+        "ret_zero": "True"
+    },
+    {
+        "short_std": 6.135575589404347,
+        "long_std": 5.725697160251627,
+        "is_short_higher": "True"
+    }
+]

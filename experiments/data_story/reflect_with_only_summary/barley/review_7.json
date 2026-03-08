@@ -1,0 +1,32 @@
+[
+    {
+        "yearly_mean_equal": "False",
+        "overall_mean_correct": "True",
+        "num_sites_increase": "1",
+        "num_sites_decrease": "5",
+        "num_sites_no_change": "0"
+    },
+    {
+        "Trebi_max_yields_1931_Waseca": "False",
+        "No_475_min_yields_1932_Grand_Rapids": "False",
+        "Wisconsin_No_38_above_30": "False"
+    },
+    {
+        "max_yield_no462_1931": "True",
+        "max_yield_waseca": "True",
+        "min_yield_grandrapids": "True",
+        "grand_rapids_lowest_mean": "False"
+    },
+    {
+        "top_varieties_1931_correct": true,
+        "bottom_varieties_1931_correct": true,
+        "stability_varieties_1932_correct": false,
+        "mean_1932_lower_than_1931": "True"
+    },
+    {
+        "std_dev_yield_ok": "True",
+        "no462_max_ok": "True",
+        "no462_min_ok": "False",
+        "no475_1932_min_ok": "False"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {},
+    {},
+    {
+        "max_count_54": "True",
+        "has_count_24": "True",
+        "has_count_1": "True",
+        "count_1_majority": "True"
+    },
+    {},
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "percentage_1_5": 91.30890052356021
+    }
+]

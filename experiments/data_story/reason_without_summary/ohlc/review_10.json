@@ -1,0 +1,32 @@
+[
+    {
+        "short_cumulative_return": 108.93749948523875,
+        "long_cumulative_return": -19.233960123568473
+    },
+    {
+        "june_short_percent": 72.72727272727273,
+        "july_long_percent": 59.09090909090909,
+        "june_short_percent_valid": "False",
+        "july_long_percent_valid": "False"
+    },
+    {
+        "max_ret_valid": "False",
+        "min_ret_valid": "False",
+        "max_date_valid": false,
+        "min_date_valid": false
+    },
+    {
+        "neutral_percentage": 2.272727272727273,
+        "is_neutral_percentage_6": false,
+        "neutral_dates_in_july": "True"
+    },
+    {
+        "valid": false,
+        "cumulative_return_peak_june_8_12": 10.318361918338615,
+        "cumulative_return_late_june": 35.91176347572056,
+        "cumulative_return_july_31": 79.07007125435821,
+        "drawdown_valid": "True",
+        "final_return_valid": "False",
+        "trend_upward": "False"
+    }
+]

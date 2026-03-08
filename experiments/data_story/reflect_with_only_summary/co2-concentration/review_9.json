@@ -1,0 +1,27 @@
+[
+    {
+        "CO2_min_valid": "True",
+        "CO2_max_valid": "True",
+        "CO2_mean_valid": "True",
+        "CO2_std_valid": "True",
+        "CO2_trend_upward": "True"
+    },
+    {
+        "min_month": "September",
+        "max_month": "April",
+        "is_valid": false
+    },
+    {
+        "adjusted_std_less_than_co2": "True",
+        "means_close": "True"
+    },
+    {
+        "early_avg_annual_increase": 1.2933333333333332,
+        "recent_avg_annual_increase": 2.364545454545454,
+        "acceleration_observed": "True"
+    },
+    {
+        "increasing_trend": true,
+        "max_increase_in_2010s": false
+    }
+]

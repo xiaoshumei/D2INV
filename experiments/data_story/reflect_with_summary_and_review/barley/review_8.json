@@ -1,0 +1,27 @@
+[
+    {
+        "max_yield_correct": "True",
+        "trebi_has_max_yield": "False",
+        "waseca_trebi_1931_correct": "False",
+        "waseca_average_higher": "True"
+    },
+    {
+        "year_1931_higher": "True",
+        "glabron_decline": "True"
+    },
+    {
+        "count_varieties_with_waseca_max": "10",
+        "total_varieties": 10,
+        "is_most_varieties": "True",
+        "trebi_included": "True",
+        "wisconsin_included": "True"
+    },
+    {
+        "specific_data_point_exists": true,
+        "sites_with_min_yield": 6
+    },
+    {
+        "mean_yield_matches": "True",
+        "std_yield_matches": "True"
+    }
+]

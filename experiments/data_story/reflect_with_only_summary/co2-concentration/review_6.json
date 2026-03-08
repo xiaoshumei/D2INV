@@ -1,0 +1,26 @@
+[
+    {
+        "co2_min_matches_fact": "False",
+        "co2_max_matches_fact": "False",
+        "adjusted_co2_min_matches_summary": "True",
+        "adjusted_co2_max_matches_summary": "True",
+        "adjusted_lower_than_co2": "False"
+    },
+    {
+        "seasonal_peak_spring": "True",
+        "max_co2_in_spring": true,
+        "min_co2_in_autumn": true
+    },
+    {
+        "sixties_avg_growth": -0.1160000000000025,
+        "two_thousands_avg_growth": 1.1819999999999993
+    },
+    {
+        "mean_diff": 0.006774628879892627,
+        "std_diff": 2.1017192419807644,
+        "is_offset_correct": "False"
+    },
+    {
+        "co2_increase_2010_2020_over_15ppm": "True"
+    }
+]

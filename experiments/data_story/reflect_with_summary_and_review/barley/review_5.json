@@ -1,0 +1,35 @@
+[
+    {
+        "Trebi_1931_avg": 42.46666,
+        "Trebi_1932_avg": 36.333326666666665,
+        "No_475_1931_avg": 31.816666666666663,
+        "No_475_1932_avg": 31.705555,
+        "Trebi_1931_match": "False",
+        "Trebi_1932_match": "False",
+        "No_475_1931_match": "False",
+        "No_475_1932_match": "False"
+    },
+    {
+        "waseca_velvet_avg": 50.23333,
+        "grand_rapids_velvet_avg": 23.03333,
+        "waseca_trebi_avg": 63.8333,
+        "grand_rapids_trebi_avg": 29.76667,
+        "velvet_avg_range": "True",
+        "trebi_avg_range": "True",
+        "most_varieties_waseca_higher": true,
+        "grand_rapids_lowest_most_varieties": true
+    },
+    {
+        "most_varieties_increased": "False",
+        "glabron_improvement": "False",
+        "no457_decline": "False"
+    },
+    {
+        "waseca_max": true,
+        "grand_rapids_min": true
+    },
+    {
+        "Trebi_range_valid": "False",
+        "No_475_1931_range_valid": "True"
+    }
+]

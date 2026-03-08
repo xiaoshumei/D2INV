@@ -55,18 +55,6 @@ cd D2INV
 python api/app.py --dataset datasets/example.csv
 ```
 
-## Project Structure
-
-```
-.env
-requirements.txt
-api/
-datasets/
-results/
-tokenizer/
-tools/
-```
-
 ## Installation
 
 ```sh
@@ -80,3 +68,5 @@ python api_server.py
 ```
 
 Then open http://localhost:8000 in your browser.
+
+Open http://127.0.0.1:8000/gallery/ to browser the Example Gallery.

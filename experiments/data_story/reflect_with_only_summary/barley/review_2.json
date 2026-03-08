@@ -1,0 +1,38 @@
+[
+    {
+        "max_yield_correct": "True",
+        "trebi_details_correct": false,
+        "mean_yield_correct": "True",
+        "wisconsin_mean_above_avg": "True",
+        "wisconsin_multiple_sites": true
+    },
+    {
+        "waseca_mean_1931": 54.346666000000006,
+        "university_mean_1931": 35.826666,
+        "grand_rapids_mean_1931": 29.053335000000004,
+        "duluth_mean_1931": 30.293333,
+        "waseca_avg_matches": "False",
+        "waseca_higher": "True",
+        "university_higher": "True",
+        "grand_rapids_lower": "True",
+        "duluth_lower": "True"
+    },
+    {
+        "manchuria_decline": "False",
+        "svansota_decline": "False",
+        "trebi_resilient": "False",
+        "most_varieties_decline": "True"
+    },
+    {
+        "yield_std_correct": "True",
+        "yield_min_correct": "True",
+        "yield_max_correct": "True",
+        "has_glabron": true,
+        "has_no462": true,
+        "has_grandrapids": true
+    },
+    {
+        "max_yields_correct": false,
+        "min_yields_correct": "False"
+    }
+]

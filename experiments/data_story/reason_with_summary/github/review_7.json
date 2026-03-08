@@ -1,0 +1,32 @@
+[
+    {
+        "max_count_correct": "True",
+        "max_count_time_correct": false
+    },
+    {
+        "daily_total_check": "False",
+        "midday_concentration_check": false
+    },
+    {
+        "low_activity_hours_mean": 2.3081939081939082,
+        "midday_hour_mean": 4.375,
+        "overall_mean": 2.5958115183246075,
+        "low_activity_valid": "True",
+        "midday_valid": "True"
+    },
+    {
+        "max_count": "54",
+        "has_54_spike_on_march_15": true
+    },
+    {
+        "count_mean": 2.5958115183246075,
+        "count_std": 4.100414567944033,
+        "count_min": "1",
+        "count_max": "54",
+        "count_unique": 26,
+        "time_min": "2015-01-01 01:00:00",
+        "time_max": "2015-05-30 11:00:00",
+        "time_unique": 955,
+        "percent_1_5": 0.9130890052356021
+    }
+]

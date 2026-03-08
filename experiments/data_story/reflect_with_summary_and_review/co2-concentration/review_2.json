@@ -1,0 +1,26 @@
+[
+    {
+        "co2_min_correct": "True",
+        "co2_max_correct": "True",
+        "co2_mean_correct": "True",
+        "earliest_date_co2_matches_min": "False",
+        "latest_date_co2_matches_max": "True"
+    },
+    {
+        "baseline_valid": "False",
+        "trend_valid": "True"
+    },
+    {
+        "seasonal_fluctuation": "True",
+        "positive_trend": "True",
+        "trend_dominant": "False"
+    },
+    {
+        "rate_1980s": 1.4509999999999992,
+        "rate_2010s": 2.330000000000001
+    },
+    {
+        "adjusted_CO2_std_lower": "True",
+        "means_close": "True"
+    }
+]

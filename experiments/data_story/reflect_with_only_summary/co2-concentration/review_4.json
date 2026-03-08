@@ -1,0 +1,50 @@
+[
+    {
+        "date_min": "1958-03-01",
+        "date_max": "2020-04-01",
+        "date_ok": true,
+        "co2_min": 313.21,
+        "co2_max": 416.18,
+        "co2_mean": 355.3109311740891,
+        "co2_std": 28.52004862059201,
+        "co2_ok": "True",
+        "adj_co2_min": 314.44,
+        "adj_co2_max": 413.35,
+        "adj_co2_mean": 355.3041565452092,
+        "adj_co2_std": 28.442895350913698,
+        "adj_co2_ok": "True",
+        "std_ok": "True",
+        "co2_corr": 0.9888777895527548,
+        "co2_corr_ok": "True",
+        "adj_co2_corr": 0.9908488183627188,
+        "adj_co2_corr_ok": "True"
+    },
+    {
+        "seasonal_pattern_validated": false,
+        "min_month": 9.0,
+        "max_month": 4.0,
+        "min_mean": 351.7785483870968,
+        "max_mean": 358.4185483870968
+    },
+    {
+        "standard_deviation_check": "True",
+        "mean_consistency_check": "True"
+    },
+    {
+        "accelerated_rate": "True",
+        "mean_before_2000": 1.2921646341463413,
+        "mean_recent": 2.2011904761904773
+    },
+    {
+        "mean_CO2": 355.3109311740891,
+        "mean_adjusted": 355.3041565452092,
+        "std_CO2": 28.52004862059201,
+        "std_adjusted": 28.442895350913698,
+        "max_CO2": 416.18,
+        "max_adjusted": 413.35,
+        "mean_diff": 0.006774628879892627,
+        "corr": 0.9882299112414674,
+        "max_date_CO2": 416.18,
+        "min_date_CO2": 315.7
+    }
+]

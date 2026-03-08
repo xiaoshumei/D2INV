@@ -1,0 +1,35 @@
+[
+    {
+        "gram_negative_min_correct": "False",
+        "gram_positive_min_correct": "True",
+        "gram_negative_max_correct": "False",
+        "gram_positive_max_correct": "True",
+        "gram_negative_higher": "True"
+    },
+    {
+        "Streptomycin_max_correct": "True",
+        "Streptomycin_min_correct": "True",
+        "Streptomycin_mean_correct": "True",
+        "Streptomycin_std_correct": "True",
+        "has_11_0": "True",
+        "has_0_001": "False",
+        "has_diplococcus_pneumoniae": "True",
+        "has_streptococcus_hemolyticus": "False"
+    },
+    {
+        "max_neomycin_correct": "True",
+        "strep_viridans_correct": true,
+        "min_neomycin_correct": "False",
+        "brucella_correct": false
+    },
+    {
+        "penicillin_max_in_klebsiella": "False",
+        "penicillin_min_in_bacillus": "True",
+        "penicillin_max_value": 870.0,
+        "penicillin_min_value": 0.001
+    },
+    {
+        "fact1": "True",
+        "fact2": "True"
+    }
+]

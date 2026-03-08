@@ -1,0 +1,31 @@
+{
+  "story_title": "Racial and Spatial Disparities in Death Incidents During the 1992 LA Riots",
+  "story_subtitle": "Analyzing patterns of violence, race, and geography in Los Angeles during a pivotal period of unrest",
+  "story_pieces": [
+    {
+      "narration": "Black individuals accounted for 28 of the 63 deaths, with over half linked to homicides and officer-involved shootings, while Latino and White populations had significantly fewer recorded incidents. This highlights racial disparities in exposure to violent encounters.",
+      "question": "How does race correlate with the type of death incident during this period?",
+      "visualization": "stacked bar chart (race vs. death type)"
+    },
+    {
+      "narration": "Males comprised 88.89% of victims, with ages concentrated between 15-40 years. Homicide and officer-involved shootings disproportionately affected younger demographics, raising questions about systemic vulnerabilities, including socioeconomic disparities and historical tensions in these communities.",
+      "question": "What age groups are most affected by death incidents, and how does this relate to the type of incident?",
+      "visualization": "histogram (age distribution) grouped by death type"
+    },
+    {
+      "narration": "Neighborhoods such as Compton, Watts, and South Park experienced the highest incident density, with a concentration of deaths in these areas. This reflects localized patterns of violence during the riots.",
+      "question": "Which neighborhoods in LA were most affected by death incidents during this time?",
+      "visualization": "choropleth map (neighborhoods colored by incident count)"
+    },
+    {
+      "narration": "Death incidents spiked in April 1992, aligning with the onset of the riots, and declined afterward. The 1993 incident involving Wallace Tope suggests lingering unrest in certain areas.",
+      "question": "How did the number of death incidents change over time, and was there a correlation with the riots?",
+      "visualization": "line chart (monthly incident count with date ranges)"
+    },
+    {
+      "narration": "Males comprised 88.89% of victims, with homicides and officer-involved shootings being the primary causes. Females were largely unaffected, with only 7 deaths categorized as 'Death' without specific incident details, highlighting the predominance of male victims in violent incidents.",
+      "question": "How does gender influence the type and frequency of death incidents?",
+      "visualization": "grouped bar chart (gender vs. death type)"
+    }
+  ]
+}

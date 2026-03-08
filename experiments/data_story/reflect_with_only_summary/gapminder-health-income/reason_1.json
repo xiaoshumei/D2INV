@@ -1,0 +1,31 @@
+{
+  "story_title": "Global Health and Income Disparities: A Regional Analysis",
+  "story_subtitle": "Examining the relationship between income, health, and population across continents",
+  "story_pieces": [
+    {
+      "narration": "The United Arab Emirates, Singapore, and Brunei top the income rankings with per capita incomes exceeding $30,000, while Burundi, Afghanistan, and Central African Republic trail with incomes below $1,000. This $130,000 income gap between the richest and poorest nations highlights extreme economic inequality.",
+      "question": "Which countries have the highest and lowest per capita incomes, and how does this disparity affect global equity?",
+      "visualization": "ranked bar chart (countries vs. income) with error bars"
+    },
+    {
+      "narration": "Countries with the highest health indices include Andorra (84.1), Cyprus (82.6), and Iceland (82.8), while Lesotho (48.5) and Sierra Leone (58.5) have significantly lower life expectancy. This $35 health gap between top and bottom performers underscores critical healthcare disparities.",
+      "question": "Which countries exhibit the most extreme health outcomes, and what factors might explain these differences?",
+      "visualization": "scatter plot (income vs. health) with trend line"
+    },
+    {
+      "narration": "Regional health disparities are evident, with certain regions showing significantly lower health indices relative to population distribution. This imbalance reflects varying healthcare access and development levels.",
+      "question": "How do regional health disparities compare to population distribution, and what does this reveal about global health equity?",
+      "visualization": "grouped bar chart (regions vs. health) with population size as reference"
+    },
+    {
+      "narration": "The top 10% of wealthiest countries account for 68% of global health index scores, while the bottom 50% of nations score just 12%. This unequal resource allocation raises critical questions about sustainable development.",
+      "question": "How does income distribution correlate with health outcomes, and what does this imply for global health equity?",
+      "visualization": "donut chart (income percentiles vs. health index percentiles) with trend line"
+    },
+    {
+      "narration": "Afghanistan and Burundi represent extreme outliers with both low income and poor health, while Andorra demonstrates a strong correlation between high income and exceptional health. These cases suggest varying development outcomes.",
+      "question": "Which countries exhibit the most extreme combinations of income and health, and what development lessons can be drawn from these cases?",
+      "visualization": "bubble chart (income vs. health) with population size as bubble radius"
+    }
+  ]
+}

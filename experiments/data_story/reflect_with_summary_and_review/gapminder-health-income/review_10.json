@@ -1,0 +1,60 @@
+[
+    {
+        "max_income_high_health": "True",
+        "min_income_low_health": "True",
+        "positive_correlation": "True"
+    },
+    {
+        "europe_central_asia_income_mean": 27714.42,
+        "europe_central_asia_health_mean": 77.4606,
+        "sub_saharan_africa_income_mean": 4932.770833333333,
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "europe_central_asia_max_income": false,
+        "europe_central_asia_max_health": true,
+        "sub_saharan_africa_min_income": true,
+        "sub_saharan_africa_min_health": true,
+        "europe_central_asia_income_match": "True",
+        "europe_central_asia_health_match": "True",
+        "sub_saharan_africa_income_match": "True",
+        "sub_saharan_africa_health_match": "False"
+    },
+    {
+        "top_10_health_include_andorra": true,
+        "top_10_health_include_cyprus": true,
+        "top_10_health_include_switzerland": true,
+        "andorra_high_income": "True",
+        "cyprus_high_income": "True",
+        "switzerland_high_income": "True"
+    },
+    {
+        "bottom_10_health_countries": [
+            "Lesotho",
+            "Central African Republic",
+            "South Sudan"
+        ],
+        "regions_of_mentioned_countries": [
+            {
+                "country": "Central African Republic",
+                "region": "sub_saharan_africa"
+            },
+            {
+                "country": "Lesotho",
+                "region": "sub_saharan_africa"
+            },
+            {
+                "country": "South Sudan",
+                "region": "sub_saharan_africa"
+            }
+        ],
+        "all_mentioned_countries_in_sub_saharan_africa": true,
+        "min_health_value": 48.5,
+        "lesotho_health_value": 48.5
+    },
+    {
+        "Middle East and North Africa has highest average income": "True",
+        "Middle East and North Africa has moderate health": "True",
+        "East Asia-Pacific has strong correlation between income and health": "True",
+        "China has income of $13,334": "True",
+        "Japan has income of $36,162": "True"
+    }
+]

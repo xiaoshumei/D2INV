@@ -1,0 +1,45 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "total_returns": {
+            "long": -18.21469732515512,
+            "neutral": 0.0,
+            "short": 79.07007125435823
+        },
+        "std_returns": {
+            "long": 5.725697160251627,
+            "neutral": NaN,
+            "short": 6.135575589404347
+        },
+        "short_dominant": true,
+        "higher_cumulative_return_short": true,
+        "higher_volatility_long": false
+    },
+    {
+        "max_ret_matches_fact": "False",
+        "min_ret_matches_fact": "False",
+        "max_date_matches_fact": true,
+        "min_date_matches_fact": false
+    },
+    {
+        "short": false,
+        "long": false,
+        "neutral": true
+    },
+    {
+        "sum_short": 79.07007125435823,
+        "sum_long": -18.21469732515512,
+        "net_return": 60.855373929203104,
+        "is_positive_net_return": "True",
+        "is_short_outweigh_long": "True"
+    },
+    {
+        "neutral_signal_count": 0,
+        "ret_value": null,
+        "ret_zero": false
+    }
+]

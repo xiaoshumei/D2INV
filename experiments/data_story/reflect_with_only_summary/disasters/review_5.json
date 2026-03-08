@@ -1,0 +1,27 @@
+[
+    {
+        "peak_in_1931": "False",
+        "highest_mortality_1900s": "True"
+    },
+    {
+        "drought_total_deaths": "11731294",
+        "epidemic_total_deaths": "9596463",
+        "drought_surpasses_others": "False",
+        "drought_over_25m": "False",
+        "epidemic_over_10m": "False"
+    },
+    {
+        "deadliest_year_1931": false,
+        "epidemic_1917": "True",
+        "combined_1920": "True"
+    },
+    {
+        "1930s_total_deaths_over_10m": "False",
+        "2000s_total_deaths_under_2m": "True"
+    },
+    {
+        "total_deaths_2000_2017": "2589860",
+        "total_deaths_1900_1999": "62624440",
+        "trend_decreasing": "True"
+    }
+]

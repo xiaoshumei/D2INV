@@ -1,0 +1,19 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "monthly_mean": 2.5836228452933514,
+        "monthly_std": 0.4409281023515264,
+        "is_variability": "True",
+        "is_monthly_variability": "False"
+    },
+    {},
+    {},
+    {},
+    {
+        "skewness": 6.457538325087614,
+        "mean": 2.5958115183246075,
+        "median": 1.0,
+        "is_right_skewed": "True"
+    }
+]

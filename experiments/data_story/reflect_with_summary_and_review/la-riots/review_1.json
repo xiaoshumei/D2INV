@@ -1,0 +1,33 @@
+[
+    {
+        "black_count": "28",
+        "violent_types_count": "46",
+        "latino_count": "19",
+        "white_count": "14"
+    },
+    {
+        "male_percentage": 88.88888888888889,
+        "age_concentration_percentage": 77.77777777777779,
+        "homicide_count": "36",
+        "officer_shooting_count": "10"
+    },
+    {
+        "south_park_deaths": "True",
+        "compton_deaths": true,
+        "watts_deaths": true,
+        "total_deaths": 8
+    },
+    {
+        "earliest_death_in_apr_1992": true,
+        "latest_death_in_nov_1993": false,
+        "spike_in_apr_1992": false
+    },
+    {
+        "male_percentage": 88.88888888888889,
+        "male_percentage_expected": 88.89,
+        "primary_causes_percentage": 73.01587301587301,
+        "primary_causes_percentage_expected": 73.01,
+        "death_count": "8",
+        "death_count_expected": 8
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "year_check": "False",
+        "deaths_check": "False",
+        "epidemic_check": "True",
+        "drought_check": "True"
+    },
+    {
+        "Epidemics_over_50_percent": "False",
+        "1917_1918_surpass_3m": "False",
+        "Drought_Extreme_weather_significant": "False"
+    },
+    {
+        "decline_in_20th_century_deaths": "False",
+        "earthquake_1976_deaths": "True"
+    },
+    {
+        "earthquake_deaths_over_4_5_million": "False",
+        "tangshan_deadliest": "False"
+    },
+    {
+        "is_less_frequent": "False",
+        "has_1928_drought": "True",
+        "has_1942_drought": "True"
+    }
+]

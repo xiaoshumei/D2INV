@@ -1,0 +1,24 @@
+[
+    {
+        "fossil_max_ok": "False",
+        "fossil_2016_ok": "True",
+        "renewables_2001_ok": "True",
+        "renewables_2017_ok": "True"
+    },
+    {
+        "highest_growth_renewables": "True",
+        "renewables_tripling_growth": "True"
+    },
+    {
+        "percentage_increase": 30.74222668004012,
+        "contribution_range_valid": "False"
+    },
+    {},
+    {
+        "renewables_2017": 0,
+        "nuclear_2017": 0,
+        "renewables_surpassed_nuclear": false,
+        "renewables_fact_match": false,
+        "nuclear_fact_match": false
+    }
+]

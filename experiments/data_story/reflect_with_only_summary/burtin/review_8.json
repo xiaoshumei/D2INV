@@ -1,0 +1,29 @@
+[
+    {
+        "Penicillin_min": 0.001,
+        "Penicillin_max": 870.0,
+        "Penicillin_mean": 217.8780625,
+        "Penicillin_std": 373.49506012805915,
+        "Bacteria_samples_present": true,
+        "Penicillin_samples_present": true
+    },
+    {
+        "Neomycin_max_in_Streptococcus": "True",
+        "Neomycin_min_in_Staphylococcus": "True"
+    },
+    {
+        "gram_negative_dominate": "True",
+        "penicillin_inconsistent": "True"
+    },
+    {
+        "Salmonella typhosa exists": false,
+        "Salmonella schottmuelleri exists": true,
+        "Salmonella typhosa has Streptomycin 0.4 and Neomycin 0.008": false,
+        "Salmonella schottmuelleri has Neomycin 0.09": true
+    },
+    {
+        "max_neomycin_40": "True",
+        "has_neomycin_10": true,
+        "has_both_gram_staining": false
+    }
+]

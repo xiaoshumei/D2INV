@@ -1,0 +1,46 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "mean_check": "False",
+        "max_count": "54",
+        "max_check": "True",
+        "peak_occurrence_check": true,
+        "peak_time": "2015/03/15 05:00:00",
+        "time_check": true
+    },
+    {
+        "target_hours_mean": {
+            "0": 2.5813953488372094,
+            "4": 2.2,
+            "20": 2.272727272727273
+        },
+        "overall_mean": 2,
+        "is_elevated": true
+    },
+    {
+        "count_mean": 2.5958115183246075,
+        "count_std": 4.100414567944033,
+        "count_min": "1",
+        "count_max": "54",
+        "count_unique": 26,
+        "spike_1_date_exists": true,
+        "spike_1_count": "54",
+        "spike_2_date_exists": true,
+        "spike_2_count": "1",
+        "spike_1_valid": "True",
+        "spike_2_valid": "False"
+    },
+    {
+        "num_days_over_50": 2,
+        "day1_in_days_over_50": false,
+        "day2_in_days_over_50": false
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "max_count": "54",
+        "mean_ok": "False",
+        "std_ok": "False",
+        "max_ok": "True"
+    }
+]

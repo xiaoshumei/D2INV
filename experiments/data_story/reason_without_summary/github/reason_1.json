@@ -1,0 +1,32 @@
+{
+
+"story_title": "Event Occurrences: Analyzing Daily, Weekly, and Monthly Trends",
+"story_subtitle": "Exploring peaks, patterns, and anomalies in event counts across different timeframes",
+"story_pieces": [
+    {
+        "narration": "The highest single event count of 54 occurred on 2015/03/15 at 05:00:00, followed by a spike of 48 on 2015/04/11 at 12:00:00. These extreme values indicate potential anomalies or significant events.",
+        "question": "What are the highest single-count events and when did they occur?",
+        "visualization": "ranked bar chart (events vs. count)"
+    },
+    {
+        "narration": "Counts show a gradual increase from January to April, peaking in March, then a decline in May. This suggests a possible seasonal trend or external factors influencing the events.",
+        "question": "How do counts vary across months?",
+        "visualization": "area chart (month vs. average daily count)"
+    },
+    {
+        "narration": "The highest hourly counts occur between 10:00:00 and 12:00:00, with 22 events on 2015/03/30 at 18:00:00 and 2015/03/27 at 17:00:00. This indicates a possible peak during midday.",
+        "question": "Which hours of the day show the highest event occurrences?",
+        "visualization": "bar chart (hour vs. count)"
+    },
+    {
+        "narration": "Monday and Friday have the highest counts, while Sunday shows the lowest. This weekly pattern could be influenced by routine activities or external factors.",
+        "question": "Are there weekly patterns in event occurrences?",
+        "visualization": "bar chart (day of week vs. average daily count)"
+    },
+    {
+        "narration": "The dataset shows a significant rise in counts from March to April, followed by a decline in May. This suggests a possible trend related to specific events or seasonal changes.",
+        "question": "What is the overall trend in event occurrences across the dataset period?",
+        "visualization": "line chart (month vs. total count)"
+    }
+] 
+}

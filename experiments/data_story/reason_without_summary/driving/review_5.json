@@ -1,0 +1,31 @@
+[
+    {
+        "miles_max_over_10000": "True",
+        "miles_mean": "False",
+        "miles_std": "False",
+        "year_min": "True",
+        "year_max": "True",
+        "year_mean": "True",
+        "year_std": "False"
+    },
+    {
+        "gas_min_correct": "True",
+        "gas_max_correct": "True",
+        "gas_mean_correct": "True",
+        "gas_std_correct": "True",
+        "gas_fluctuations_supported": "True"
+    },
+    {
+        "inverse_relationship_between_gas_and_miles": "True"
+    },
+    {
+        "bottom_min_gas": "True",
+        "left_max_gas": "True",
+        "has_bottom_1994_159": false,
+        "has_left_2008_331": true
+    },
+    {
+        "1973_oil_crisis": true,
+        "2008_financial_crisis": false
+    }
+]

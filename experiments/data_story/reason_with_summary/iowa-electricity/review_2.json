@@ -1,0 +1,22 @@
+[
+    {},
+    {
+        "renewables_2001": "True",
+        "renewables_2017": "True",
+        "nuclear_2017": "True"
+    },
+    {
+        "nuclear_range_valid": "False",
+        "nuclear_lower_than_fossil": "True"
+    },
+    {
+        "fossil_fuels_2009": "True",
+        "renewables_2009": "True",
+        "renewables_increase": "False"
+    },
+    {
+        "total_generation_increase_percent": 38.92893163759809,
+        "fossil_fuel_increase_percent": -17.058341110262717,
+        "renewables_increase_percent": 1426.3048016701462
+    }
+]

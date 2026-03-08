@@ -1,0 +1,33 @@
+[
+    {
+        "strong_positive_correlation": "False",
+        "max_health_not_max_income": true,
+        "max_income_health_below_mean": "False"
+    },
+    {
+        "europe_health": "False",
+        "east_asia_health": false,
+        "sub_saharan_health": "False"
+    },
+    {
+        "top_three_health_countries": false,
+        "top_three_health_scores": false,
+        "bottom_three_health_countries": false,
+        "bottom_three_health_scores": false
+    },
+    {
+        "china_population_top": true,
+        "china_health_score": "True",
+        "india_health_score": "True",
+        "andorra_health_score": "True",
+        "singapore_health_score": "True",
+        "andorra_income_higher": "True",
+        "singapore_income_higher": "True",
+        "singapore_income_higher_india": "True",
+        "all_countries_exist": true
+    },
+    {
+        "wealthy_countries_vary_population": true,
+        "large_populations_low_income": "True"
+    }
+]

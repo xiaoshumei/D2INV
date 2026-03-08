@@ -1,0 +1,28 @@
+[
+    {
+        "correlation_strength": 0.646434542358474,
+        "has_exceptions": true
+    },
+    {
+        "europe_high_health": false,
+        "east_asia_high_health": false,
+        "sub_saharan_low_health": false,
+        "top_two_regions": false,
+        "lowest_region": true
+    },
+    {
+        "max_health_correct": "True",
+        "top_three_health_correct": "False",
+        "min_health_correct": "True",
+        "bottom_three_health_correct": "False"
+    },
+    {
+        "China_health_lower_than_Andorra": "True",
+        "India_health_lower_than_Singapore": "True",
+        "Population_not_direct_determinant": "True"
+    },
+    {
+        "wealthier_countries_varied_population": true,
+        "lower_income_countries_large_population": true
+    }
+]

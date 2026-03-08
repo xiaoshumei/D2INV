@@ -1,0 +1,32 @@
+[
+    {
+        "min_year": "1956",
+        "max_year": "2010",
+        "max_miles": "10067",
+        "num_unique_years": 55
+    },
+    {
+        "volatility_during_1970s": "True",
+        "missing_1970": false,
+        "missing_1971": false
+    },
+    {
+        "left_avg_miles": 8090.0,
+        "bottom_avg_miles": 6581.0,
+        "top_avg_miles": 7203.0,
+        "right_avg_miles": 7089.0,
+        "left_higher_than_others": "True",
+        "left_avg_match_fact": "False",
+        "bottom_avg_match_fact": "False",
+        "top_avg_match_fact": "False"
+    },
+    {
+        "gas_miles_correlation": -0.17433205594404674,
+        "correlation_matches": "True"
+    },
+    {
+        "gas_price_1973": "True",
+        "miles_1973": "True",
+        "miles_1974": "True"
+    }
+]

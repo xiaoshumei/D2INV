@@ -1,0 +1,25 @@
+[
+    {
+        "year_1917_deadliest": "False",
+        "deaths_over_2_5_million": "True",
+        "next_closest_year_significantly_lower": "False",
+        "epidemic_responsible": false
+    },
+    {
+        "drought_1928_event": true,
+        "drought_is_deadliest_category": false
+    },
+    {
+        "earthquake_1976_exists": true,
+        "earthquake_1976_deaths_over_276k": "True",
+        "earthquake_1976_is_deadliest": "True"
+    },
+    {
+        "Epidemic_1918_death_toll": "False",
+        "Epidemic_1918_max": "False"
+    },
+    {
+        "max_death_value": "True",
+        "flood_event_correct": false
+    }
+]

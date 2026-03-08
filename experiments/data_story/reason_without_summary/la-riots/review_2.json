@@ -1,0 +1,30 @@
+[
+    {
+        "fact_valid": "False",
+        "latino_count": "19",
+        "black_count": "28",
+        "white_count": "14"
+    },
+    {
+        "over_60_percent_male": "True",
+        "majority_20_40": true,
+        "median_age_30": "False"
+    },
+    {
+        "Compton": 0,
+        "Watts": 0,
+        "Koreatown": 0,
+        "Hollywood": "3"
+    },
+    {
+        "officer_involved_shooting_count": "10",
+        "homicide_count": "36",
+        "fact_officer_involved": "False",
+        "fact_homicide": "False"
+    },
+    {
+        "death_incident_count": "8",
+        "all_in_la": true,
+        "death_fact_valid": "False"
+    }
+]

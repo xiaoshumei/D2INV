@@ -1,0 +1,27 @@
+[
+    {
+        "1900s_high_mortality": "True",
+        "no_consistent_decline_latter_half": true,
+        "1900s_in_top3": true
+    },
+    {
+        "drought_deaths_total": "11731294",
+        "earthquake_deaths_total": "2576801",
+        "extreme_weather_deaths_total": "1396601",
+        "drought_exceeds_25m": "False"
+    },
+    {
+        "1917_epidemic_deaths": "True",
+        "1920_combined_deaths": "True"
+    },
+    {
+        "total_deaths_1930s": "9402048",
+        "total_deaths_1930s_less_10m": "True",
+        "entity_contribution_varies": true
+    },
+    {
+        "mean_2000s_deaths": 16799.72,
+        "mean_2010s_deaths": 12637.333333333334,
+        "is_decreasing": "True"
+    }
+]

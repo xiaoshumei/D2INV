@@ -1,0 +1,25 @@
+[
+    {
+        "trebi_max_yield_waseca_1931": "False",
+        "no475_min_yield_grandrapids_1931": "True"
+    },
+    {
+        "trebi_decline_percent": 22.87207460682747,
+        "no462_increase_percent": -32.032472360632354
+    },
+    {
+        "most_varieties_university_higher": "False",
+        "trebi_university_yield": 36.56666,
+        "trebi_waseca_yield": 63.8333,
+        "trebi_uni_match": "False",
+        "trebi_waseca_match": "False"
+    },
+    {
+        "no_475_lowest_1932": "False",
+        "wisconsin_resilient_1932": "False"
+    },
+    {
+        "wisconsin_stable": "False",
+        "manchuria_variability": "False"
+    }
+]

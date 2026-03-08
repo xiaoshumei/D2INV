@@ -1,0 +1,38 @@
+[
+    {
+        "overall_mean_correct": "True",
+        "trebi_max_correct": "False",
+        "trebi_record_correct": "False",
+        "wisc_avg_higher": "True",
+        "wisc_multiple_sites": true
+    },
+    {
+        "overall_mean_check": "True",
+        "waseca_1931_mean": 54.34666599999999,
+        "grand_rapids_1931_mean": 29.053335000000004,
+        "duluth_1931_mean": 30.293333,
+        "waseca_mean_check": "False",
+        "grand_rapids_check": "True",
+        "duluth_check": "True"
+    },
+    {
+        "Manchuria_20_percent_drop": "False",
+        "Svansota_20_percent_drop": "False",
+        "Trebi_resilient": "False",
+        "Most_varieties_declined": "True"
+    },
+    {
+        "std_dev_match": "True",
+        "min_yield_match": "True",
+        "glabron_outlier_present": "True",
+        "no462_outlier_present": "True"
+    },
+    {
+        "max_yield_correct": "True",
+        "waseca_max_correct": "True",
+        "waseca_second_correct": "False",
+        "grandrapids_min_correct": "True",
+        "grandrapids_second_correct": "False",
+        "min_yield_correct": "True"
+    }
+]

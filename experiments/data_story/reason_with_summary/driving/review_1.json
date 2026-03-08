@@ -1,0 +1,27 @@
+[
+    {
+        "miles_min_correct": "True",
+        "miles_max_over_10k": "True",
+        "year_min_correct": "True",
+        "year_max_correct": "True"
+    },
+    {
+        "max_gas_price": "True",
+        "min_gas_price": "False",
+        "year_1980_present": true,
+        "year_1998_present": true
+    },
+    {
+        "gas_miles_correlation": -0.17433205594404674
+    },
+    {
+        "right_count_valid": "True",
+        "top_count_valid": "True",
+        "right_mean_max": "False",
+        "top_std_max": "True"
+    },
+    {
+        "bottom_range_correct": "False",
+        "right_range_correct": "False"
+    }
+]

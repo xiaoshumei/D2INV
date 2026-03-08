@@ -1,0 +1,30 @@
+[
+    {
+        "max_CO2": "True",
+        "max_CO2_date": "True",
+        "min_CO2": "True",
+        "min_adjusted_CO2": "True",
+        "max_adjusted_CO2": "True",
+        "mean_CO2": "True",
+        "mean_adjusted_CO2": "True"
+    },
+    {
+        "std_diff": "True",
+        "range_diff": "True"
+    },
+    {
+        "adjusted_std_lower": "True",
+        "adjusted_range_smaller": "True",
+        "adjusted_unique_less": true
+    },
+    {
+        "350_ppm_crossed_in_1980": false,
+        "400_ppm_reached_in_2015": false,
+        "415_ppm_crossed_in_2019": false
+    },
+    {
+        "average_annual_increase_1958_1980": 1.0699999999999983,
+        "average_annual_increase_1980_2010": 1.7200000000000009,
+        "average_annual_increase_2010_2020": 2.6370000000000005
+    }
+]

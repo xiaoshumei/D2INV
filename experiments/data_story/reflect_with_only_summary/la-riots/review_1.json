@@ -1,0 +1,47 @@
+[
+    {
+        "race_distribution_valid": true,
+        "type_distribution_valid": true,
+        "homicides_officer_sum_valid": true
+    },
+    {
+        "male_percentage": 88.89,
+        "age_between_15_40_percentage": 79.03,
+        "homicide_avg_age": 32.91,
+        "officer_avg_age": 24.5,
+        "overall_avg_age": 32.37
+    },
+    {
+        "Compton_exists": true,
+        "Watts_exists": true,
+        "South_Park_exists": true,
+        "Death_incidents_count": 8,
+        "Compton_rank": null,
+        "Watts_rank": null,
+        "South_Park_rank": 1,
+        "top_neighborhoods": [
+            "South Park",
+            "Hollywood",
+            "Harvard Park",
+            "Chesterfield Square"
+        ]
+    },
+    {
+        "april_1992_death_count": "5",
+        "is_april_1992_max": false,
+        "declined_after_april": "True",
+        "has_1993_deaths": "False"
+    },
+    {
+        "male_percentage": 88.89,
+        "homicide_count": "36",
+        "officer_shooting_count": "10",
+        "not_riot_count": "9",
+        "death_count": "8",
+        "female_count": "7",
+        "homicide_matches_summary": "True",
+        "officer_shooting_matches_summary": "True",
+        "death_count_matches_summary": "True",
+        "female_count_matches_summary": "True"
+    }
+]

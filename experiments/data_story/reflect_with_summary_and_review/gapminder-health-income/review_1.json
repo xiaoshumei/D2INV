@@ -1,0 +1,34 @@
+[
+    {
+        "max_income_correct": "True",
+        "min_income_correct": "True",
+        "top_three_income_over_30k": true,
+        "bottom_three_income_below_1000": true,
+        "income_gap_correct": "True"
+    },
+    {
+        "health_max_correct": "True",
+        "health_min_correct": "True",
+        "health_mean_correct": "True",
+        "health_unique_count": true,
+        "health_gap_correct": "True"
+    },
+    {
+        "sub_saharan_africa_mean_health": 62.15,
+        "east_asia_pacific_mean_health": 71.74,
+        "sub_saharan_africa_population_percent": 13.687836530896428,
+        "east_asia_pacific_population_percent": 30.82167299399178
+    },
+    {
+        "top_10_percent_health_expenditure": 10.801393728222994,
+        "bottom_50_percent_health_expenditure": 46.03026210745435
+    },
+    {
+        "afghanistan_low_income": "True",
+        "afghanistan_low_health": "True",
+        "burundi_low_income": "True",
+        "burundi_low_health": "True",
+        "andorra_high_income": "True",
+        "andorra_high_health": "True"
+    }
+]

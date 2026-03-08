@@ -1,0 +1,34 @@
+[
+    {
+        "high_income_health": 82.0,
+        "low_income_health": 53.8,
+        "condition_met": "True"
+    },
+    {
+        "sub_saharan_health_avg": 62.153124999999996,
+        "europe_western_health_avg": 77.4606,
+        "sub_saharan_income_std": 6655.212761723854,
+        "europe_western_income_std": 17032.19987479897,
+        "sub_saharan_income_std_is_max": "False",
+        "europe_western_income_std_less": "False"
+    },
+    {
+        "population_percentage": 5.317679693985675,
+        "gdp_percentage": 20.096019733230552
+    },
+    {
+        "sub_saharan_health_mean_lower": "True",
+        "sub_saharan_max_population_health_low": "True",
+        "high_income_countries_health_higher": "True"
+    },
+    {
+        "overall_min_health": 48.5,
+        "sub_saharan_min_health": 48.5,
+        "sub_saharan_avg_health": 62.153124999999996,
+        "global_avg_health": 71.67326203208557,
+        "avg_diff": 9.520137032085579,
+        "avg_diff_percentage": 13.28268975371004,
+        "overall_min_valid": "True",
+        "sub_saharan_min_valid": "True"
+    }
+]

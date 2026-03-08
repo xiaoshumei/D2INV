@@ -1,0 +1,29 @@
+[
+    {
+        "dominant_2001_2008": true,
+        "peak_2008": "True",
+        "decline_after_2008": "False"
+    },
+    {
+        "renewables_2001_value": "1437",
+        "renewables_2017_value": "21933",
+        "renewables_2001_matches_fact": "True",
+        "renewables_2017_matches_fact": "True"
+    },
+    {
+        "range_check": "False",
+        "decline_check": "False"
+    },
+    {
+        "Fossil Fuels": false,
+        "Renewables": false,
+        "Nuclear Energy": false
+    },
+    {
+        "total_2001": "40651",
+        "total_2017": "56476",
+        "total_2001_matches_fact": "False",
+        "total_2017_matches_fact": "False",
+        "total_increase": "True"
+    }
+]

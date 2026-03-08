@@ -1,0 +1,27 @@
+[
+    {
+        "all_above_30k": "False",
+        "peak_value_correct": "False",
+        "peak_year_correct": false,
+        "declined_in_2017": "True"
+    },
+    {
+        "Renewables_2001_1437": "True",
+        "Renewables_2017_21933": "True",
+        "Nuclear_2017_5214": "True",
+        "Renewables_surpassed_Nuclear": "True"
+    },
+    {
+        "nuclear_min": "3853",
+        "nuclear_max": "5321",
+        "nuclear_mean": 4711.941176470588,
+        "fossil_mean": 36478.17647058824,
+        "nuclear_within_range": "False",
+        "nuclear_lower_than_fossil": "True"
+    },
+    {
+        "fossil_fuel_2009_generation": false,
+        "renewables_2009_generation": false
+    },
+    {}
+]

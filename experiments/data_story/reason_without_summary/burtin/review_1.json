@@ -1,0 +1,18 @@
+[
+    {
+        "mean_penicillin_gram_negative_higher": "True",
+        "aerobacter_aerogenes_penicillin_870": true,
+        "klebsiella_pneumoniae_penicillin_850": true
+    },
+    {
+        "Neomycin_max_correct": "True",
+        "Neomycin_min_correct": "True",
+        "Neomycin_mean_correct": "True",
+        "Neomycin_std_correct": "True",
+        "Neomycin_variability": "True"
+    },
+    {
+        "gram_negative_lower_mean": "True",
+        "salmonella_lower_than_streptococcus": "True"
+    }
+]

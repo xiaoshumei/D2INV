@@ -1,0 +1,37 @@
+[
+    {
+        "num_rows": 44,
+        "unique_dates": 44,
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "signal_match": true,
+        "rows_match": true,
+        "dates_match": true
+    },
+    {
+        "mean_ret": 1.3830766802091614,
+        "min_ret": -10.8433734939759,
+        "max_ret": 15.4907975460123,
+        "std_ret": 6.194040535850076
+    },
+    {
+        "highest_return_matches": "True",
+        "worst_loss_matches": "True",
+        "data_fact_valid": "True"
+    },
+    {
+        "short_average_return": 3.294586302264926,
+        "long_average_return": -0.9586682802713222,
+        "short_valid": "True",
+        "long_valid": "True",
+        "data_fact_valid": "True"
+    },
+    {
+        "transition_exists": false,
+        "ret_on_june15": 3.4920634920635,
+        "is_outlier": false
+    }
+]

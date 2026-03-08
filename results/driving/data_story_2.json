@@ -1,0 +1,31 @@
+{
+  "story_title": "55 Years of American Driving: Miles Traveled vs. Gas Prices",
+  "story_subtitle": "From 1956 to 2010, watch how the nation’s appetite for the road collided with volatile pump prices—and see which way the needle really moved.",
+  "story_pieces": [
+    {
+      "narration": "Between 1956 and 1973, vehicle-miles climbed steadily from 3 675 B to 6 154 B while gas prices drifted down from $2.38 to $1.90 per gallon (2021-corrected dollars), creating a classic cheap-fuel boom that rewarded every extra mile.",
+      "question": "How did the long cheap-fuel era shape America’s driving habit up to the first oil shock?",
+      "visualization": "bar chart race of annual miles with overlaid price line"
+    },
+    {
+      "narration": "The 1973-74 embargo flipped the script: miles dropped 3.4 % in 1974 and prices spiked 23 % to $2.34—still the fastest single-year cost jump in the series—revealing immediate elasticity once pain at the pump arrived.",
+      "question": "What happened to driving distance and price the moment oil-supply security cracked?",
+      "visualization": "combo slope chart (1973 vs 1974) with miles bar and price dot"
+    },
+    {
+      "narration": "From 1978 to 1981, miles inched up only 4 % while gas rocketed from $2.23 to $3.30, producing the steepest price-to-miles ratio (3.2×) of any three-year window and marking the first sustained conservation period.",
+      "question": "Did the second oil crisis finally force Americans to curb mileage growth?",
+      "visualization": "scatter plot with 1978-81 highlighted path showing price vs miles"
+    },
+    {
+      "narration": "After 1986’s price collapse to $1.76, miles resumed growth; yet sharp price spikes in 2005 and 2008 again trimmed mileage—2008’s $3.31 peak coincided with a rare year-over-year decline, proving price sensitivity never went away.",
+      "question": "Does driving still react to price spikes once memories of crisis fade?",
+      "visualization": "time-series with rolling 3-year elasticity bands"
+    },
+    {
+      "narration": "Over the full 55-year span, cumulative miles expanded 2.7× while real gas prices rose only 10 %, yielding an almost vertical long-run supply curve—implying that, barring acute shocks, Americans choose mobility almost regardless of gradual price creep.",
+      "question": "In the very long run, did higher gas prices meaningfully slow the growth of driving?",
+      "visualization": "semi-log line chart (log miles vs linear price) with trend-break annotations"
+    }
+  ]
+}

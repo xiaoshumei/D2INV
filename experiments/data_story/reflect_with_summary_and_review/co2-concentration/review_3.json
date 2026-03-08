@@ -1,0 +1,29 @@
+[
+    {
+        "earliest_date": "1958-03-01 00:00:00",
+        "earliest_co2": 315.7,
+        "latest_date": "2020-04-01 00:00:00",
+        "latest_co2": 416.18,
+        "earliest_valid": "True",
+        "latest_valid": "True"
+    },
+    {
+        "co2_std": 28.52004862059201,
+        "adjusted_co2_std": 28.442895350913698,
+        "seasonal_fluctuation": "True"
+    },
+    {
+        "slopes_similar": "True",
+        "means_close": "True",
+        "std_lower": "True"
+    },
+    {
+        "avg_growth_1960s": 0.8640000000000043,
+        "avg_growth_2000s": 1.9047499999999957,
+        "fact_valid": "False"
+    },
+    {
+        "adjusted_co2_2020_max": "False",
+        "percentage_increase_1958_2020": "False"
+    }
+]

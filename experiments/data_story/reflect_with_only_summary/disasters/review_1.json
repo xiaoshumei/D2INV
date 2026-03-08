@@ -1,0 +1,27 @@
+[
+    {
+        "peak_years_in_early_20th_century": true,
+        "recent_deaths_lower_than_early_century": "True",
+        "earthquake_2004_death_count": "True"
+    },
+    {
+        "earthquake_percentage_over_20": "False",
+        "drought_massive_losses_in_1931_1932": false
+    },
+    {
+        "1931 Drought": false,
+        "1917 Epidemic": false,
+        "2004 Earthquake": true,
+        "1976 Earthquake": true
+    },
+    {
+        "early_20th_century_avg_annual_deaths": 1104080.2666666666,
+        "late_20th_century_avg_annual_deaths": 127720.19047619047,
+        "extreme_weather_events_increase": false
+    },
+    {
+        "total_extreme_weather_related_deaths": "20265491",
+        "avg_extreme_temp_21st_century": 9478.588235294117,
+        "avg_extreme_temp_20th_century": 564.9473684210526
+    }
+]

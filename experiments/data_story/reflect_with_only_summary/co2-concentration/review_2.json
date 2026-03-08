@@ -1,0 +1,46 @@
+[
+    {
+        "earliest_date_co2": 315.7,
+        "latest_date_co2": 416.18,
+        "co2_min": 313.21,
+        "co2_max": 416.18,
+        "earliest_co2_valid": "False",
+        "latest_co2_valid": "True",
+        "co2_min_valid": "True",
+        "co2_max_valid": "True",
+        "trend_increasing": "False"
+    },
+    {
+        "date_type_ok": false,
+        "co2_min_ok": "True",
+        "co2_max_ok": "True",
+        "co2_mean_ok": "True",
+        "co2_std_ok": "True",
+        "co2_unique_ok": true,
+        "adj_co2_min_ok": "True",
+        "adj_co2_max_ok": "True",
+        "adj_co2_mean_ok": "True",
+        "adj_co2_std_ok": "True",
+        "adj_co2_unique_ok": true,
+        "samples_present_ok": "False"
+    },
+    {
+        "seasonal_fluctuation_present": true,
+        "spring_peak_month": "April",
+        "fall_trough_month": "September",
+        "is_spring_peak_valid": true,
+        "is_fall_trough_valid": true,
+        "trend_dominant": "True",
+        "mean_CO2": 355.3109311740891,
+        "std_CO2": 28.52004862059201
+    },
+    {
+        "1980s_average_annual_increase": 1.4224999999999965,
+        "2010s_average_annual_increase": 2.1594166666666696
+    },
+    {
+        "adjusted_std_lower": "True",
+        "means_similar": "True",
+        "adjusted_range_within_co2": "True"
+    }
+]

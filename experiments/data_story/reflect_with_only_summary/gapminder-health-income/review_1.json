@@ -1,0 +1,59 @@
+[
+    {
+        "top_countries_income_above_30k": true,
+        "bottom_countries_income_below_1k": false,
+        "income_gap_130k": false
+    },
+    {
+        "max_health": 84.1,
+        "min_health": 48.5,
+        "gap": 35.599999999999994,
+        "andorra_health": 84.1,
+        "cyprus_health": 82.6,
+        "iceland_health": 82.8,
+        "lesotho_health": 48.5,
+        "sierra_leone_health": 58.5,
+        "max_health_is_84.1": "True",
+        "min_health_is_48.5": "True",
+        "andorra_health_is_84.1": "True",
+        "cyprus_health_is_82.6": "True",
+        "iceland_health_is_82.8": "True",
+        "lesotho_health_is_48.5": "True",
+        "sierra_leone_health_is_58.5": "True",
+        "gap_is_35_6": "True"
+    },
+    {
+        "overall_health_mean": 71.67326203208557,
+        "regional_health_means": {
+            "america": 74.56470588235294,
+            "east_asia_pacific": 71.74444444444444,
+            "europe_central_asia": 77.4606,
+            "middle_east_north_africa": 75.7895,
+            "south_asia": 69.80375,
+            "sub_saharan_africa": 62.153124999999996
+        },
+        "region_with_highest_population": "europe_central_asia",
+        "health_mean_highest_population_region": 77.4606,
+        "min_regional_health": 62.153124999999996,
+        "max_regional_health": 77.4606
+    },
+    {
+        "top_10_percent_of_health": 10.801393728222994,
+        "bottom_50_percent_of_health": 46.030262107454355
+    },
+    {
+        "Afghanistan_income_below_mean": "True",
+        "Afghanistan_health_below_mean": "True",
+        "Burundi_income_below_mean": "True",
+        "Burundi_health_below_mean": "True",
+        "Andorra_income_above_mean": "True",
+        "Andorra_health_above_mean": "True",
+        "Afghanistan_income_min": "False",
+        "Afghanistan_health_min": "False",
+        "Burundi_income_min": "False",
+        "Burundi_health_min": "False",
+        "Andorra_income_max": "False",
+        "Andorra_health_max": "True",
+        "countries_exist": true
+    }
+]

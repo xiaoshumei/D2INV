@@ -1,0 +1,29 @@
+[
+    {
+        "max_miles_valid": "True",
+        "trend_increasing": false
+    },
+    {
+        "gas_max_correct": "True",
+        "peak_year_2008": true,
+        "no_dip_1990s": "False"
+    },
+    {
+        "right_count": "19",
+        "top_count": "7",
+        "right_count_correct": "True",
+        "top_count_correct": "True"
+    },
+    {
+        "correlation_gas_miles_1980s": -0.9208007536746193,
+        "negative_correlation": "True"
+    },
+    {
+        "right_count": "19",
+        "max_count": "19",
+        "unique_sides": 4,
+        "is_right_max": "True",
+        "right_count_equals_19": "True",
+        "max_count_equals_19": "True"
+    }
+]

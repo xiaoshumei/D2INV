@@ -1,0 +1,27 @@
+[
+    {
+        "Fossil_Fuels_over_30k_annually": "False",
+        "Peak_in_2007_41389": "False",
+        "2017_less_than_peak": "True"
+    },
+    {
+        "renew_2001_correct": "True",
+        "renew_2017_correct": "True",
+        "nuclear_2017_correct": "True",
+        "surpass_correct": "True"
+    },
+    {
+        "nuclear_range_ok": "False",
+        "nuclear_lower_than_fossil": "True"
+    },
+    {
+        "fossil_fuel_2009": "True",
+        "renewables_2009": "True",
+        "renewables_increase_22": "False"
+    },
+    {
+        "total_increase_percent": 38.92893163759809,
+        "renewable_increase_percent": 1426.3048016701462,
+        "fossil_increase_percent": -17.058341110262717
+    }
+]

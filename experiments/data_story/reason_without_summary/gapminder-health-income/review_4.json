@@ -1,0 +1,34 @@
+[
+    {
+        "qatar_max_income": "True",
+        "brunei_income": "True",
+        "uae_income": "True"
+    },
+    {
+        "top_regions_contain_europe_east_asia": false,
+        "has_cyprus": false,
+        "has_switzerland": true,
+        "has_japan": true,
+        "min_health_is_lesotho": true,
+        "south_sudan_health": 58.0,
+        "south_sudan_health_equals_58": "True"
+    },
+    {
+        "max_population_check": "False",
+        "max_population_in_south_asia": false,
+        "region_population_order_check": true
+    },
+    {
+        "correlation": 0.646434542358474,
+        "r_squared": 0.41787761755420966,
+        "is_positive_correlation": "True",
+        "r_squared_meets_fact": "False"
+    },
+    {
+        "min_income_correct": "True",
+        "min_health_correct": "True",
+        "sub_saharan_count_correct": "True",
+        "eca_income_higher": "True",
+        "eca_health_higher": "True"
+    }
+]

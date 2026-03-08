@@ -1,0 +1,31 @@
+[
+    {
+        "Black_victims": "28",
+        "total_incidents": 63,
+        "fact_valid": false
+    },
+    {
+        "Homicide": "True",
+        "Officer-involved shooting": "True",
+        "Not riot-related": "True",
+        "Death": "True"
+    },
+    {
+        "total_15_24": 21,
+        "under_18": 5,
+        "fact_15_24_correct": false,
+        "fact_under_18_correct": false
+    },
+    {
+        "Compton_count_5": "False",
+        "Watts_count_4": "False",
+        "Koreatown_exists": "True",
+        "Altadena_count_1": "True",
+        "Valley_Glen_count_1": "True"
+    },
+    {
+        "incident_count_1992_april_may": "58",
+        "incident_count_correct": "False",
+        "max_date_valid": true
+    }
+]

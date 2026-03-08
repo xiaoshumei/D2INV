@@ -1,0 +1,54 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "short_count": 24,
+        "long_count": 19,
+        "neutral_count": 1
+    },
+    {
+        "short_signal_mean": 3.294586302264926,
+        "long_signal_mean": -0.9586682802713222,
+        "neutral_signal_mean": 0.0,
+        "short_correct": "True",
+        "long_correct": "True",
+        "neutral_correct": "True",
+        "overall_correct": true
+    },
+    {
+        "max_return_value": 15.4907975460123,
+        "max_return_value_matches_fact": "False",
+        "max_return_date": "2009-06-22",
+        "max_return_date_matches_fact": "True",
+        "max_return_signal": "short",
+        "max_return_signal_matches_fact": "True",
+        "min_return_value": -10.8433734939759,
+        "min_return_value_matches_fact": "False",
+        "min_return_date": "2009-07-17",
+        "min_return_date_matches_fact": "True",
+        "min_return_signal": "long",
+        "min_return_signal_matches_fact": "True"
+    },
+    {
+        "june_mean_return": 1.8627782157397084,
+        "july_mean_return": 0.9033751446786149,
+        "june_higher_than_july": "True",
+        "june_std": 6.627824613016645,
+        "july_std": 5.843717436252319,
+        "june_max_return": 15.4907975460123,
+        "june_min_return": -10.4234527687296,
+        "july_max_return": 8.64779874213836,
+        "july_min_return": -10.8433734939759,
+        "june_count": 22,
+        "july_count": 22
+    },
+    {
+        "mean_ret": 1.3830766802091614,
+        "std_ret": 6.194040535850076,
+        "mean_valid": "True",
+        "std_valid": "True"
+    }
+]

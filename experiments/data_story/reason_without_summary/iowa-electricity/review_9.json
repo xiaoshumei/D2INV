@@ -1,0 +1,29 @@
+[
+    {},
+    {
+        "renewables_min_match": "True",
+        "renewables_max_match": "True",
+        "renewables_increase_match": "False",
+        "renewables_growth_rate_higher": "True"
+    },
+    {
+        "Nuclear 2001 generation": "True",
+        "Nuclear 2013 generation": "True",
+        "Nuclear max 6% of total": "False"
+    },
+    {
+        "total_renewables_2009_2017": "141805",
+        "total_nuclear_2009_2017": "43325",
+        "renewables_2009_generation": "8560",
+        "renewables_2017_generation": "21933",
+        "nuclear_2009_generation": "4679",
+        "nuclear_2017_generation": "5214",
+        "renewables_growth_percent": 156.2266355140187,
+        "nuclear_growth_percent": 11.434067108356487,
+        "renewables_surpassed_nuclear": "True"
+    },
+    {
+        "2017_renewables_percentage": 38.83596571995184,
+        "2017_fossil_decline_percent": 82.94165888973728
+    }
+]

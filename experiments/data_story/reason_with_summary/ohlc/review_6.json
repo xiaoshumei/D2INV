@@ -1,0 +1,32 @@
+[
+    {
+        "signal_counts_correct": "True",
+        "ret_mean_correct": "True",
+        "ret_std_correct": "True"
+    },
+    {
+        "max_ret": 15.4907975460123,
+        "min_ret": -10.8433734939759,
+        "max_ret_matches": "False",
+        "min_ret_matches": "False",
+        "max_ret_date": "2009-06-22",
+        "min_ret_date": "2009-07-17",
+        "max_ret_date_matches": true,
+        "min_ret_date_matches": true
+    },
+    {
+        "short_avg_return": 3.2946,
+        "long_avg_return": -0.9587,
+        "neutral_avg_return": 0.0
+    },
+    {
+        "ret_std_matches": "True",
+        "right_skewed": "False",
+        "has_extreme_negative_returns": "True"
+    },
+    {
+        "total_signal_distribution_correct": true,
+        "short_in_first_period_more": "True",
+        "long_in_second_period_more": "True"
+    }
+]

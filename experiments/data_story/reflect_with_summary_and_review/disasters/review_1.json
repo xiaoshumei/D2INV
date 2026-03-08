@@ -1,0 +1,28 @@
+[
+    {
+        "has_2004_earthquake_death_count": true,
+        "early_20th_century_higher_mean": "True",
+        "recent_decades_lower_mean": "True"
+    },
+    {
+        "earthquake_total_is_highest": "False",
+        "drought_max_greater_than_mean": "True"
+    },
+    {
+        "1931 Extreme weather": true,
+        "1917 Epidemic": true,
+        "2004 Earthquake": true
+    },
+    {
+        "early_20th_mortality": 1025442.8979591837,
+        "late_20th_mortality": 247554.76,
+        "extreme_weather_frequency_increase": "False"
+    },
+    {
+        "total_deaths_extreme_temp_and_flood": "7137596",
+        "recent_total_deaths_extreme_temp_and_flood": "305876",
+        "earlier_total_deaths_extreme_temp_and_flood": "6831720",
+        "percentage_increase": -95.52270877612081,
+        "is_increase": "False"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "overall_correlation": 0.646434542358474,
+        "region_correlations": {
+            "america": 0.5241123927758605,
+            "east_asia_pacific": 0.7454867092714632,
+            "europe_central_asia": 0.7218676763147833,
+            "middle_east_north_africa": 0.5879723369948266,
+            "south_asia": 0.791809244678434,
+            "sub_saharan_africa": 0.3124794230803483
+        },
+        "strong_positive_correlation": "False",
+        "specified_regions_in_top_correlation_regions": false
+    },
+    {
+        "top_income_regions_include_europe_eastasia": false,
+        "top_health_regions_include_europe_eastasia": false,
+        "sub_saharan_africa_bottom_income": true,
+        "sub_saharan_africa_bottom_health": true
+    },
+    {
+        "qatar_income_max": "True",
+        "cyprus_health_outlier": true,
+        "burundi_income_min": true,
+        "lesotho_health_min": true,
+        "health_min": "True",
+        "income_min": "True"
+    },
+    {
+        "correlation_population_income": -0.038490148006576706,
+        "correlation_population_health": 0.016516985698437566,
+        "has_china": true,
+        "has_andorra": true
+    },
+    {
+        "top_20_income_share": 0.556417224398117,
+        "is_valid": "False"
+    }
+]

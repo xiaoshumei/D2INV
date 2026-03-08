@@ -1,0 +1,24 @@
+[
+    {
+        "is_drought_highest_in_1928": false,
+        "is_over_3_million": "True"
+    },
+    {
+        "highest_decade": "1920",
+        "highest_total": "17452586",
+        "is_1930s_highest": "False"
+    },
+    {
+        "earthquake_1976_deaths_over_270k": "True",
+        "max_earthquake_deaths": "276994",
+        "is_max_earthquake": "True"
+    },
+    {
+        "Epidemic_deaths_early_20th": "9332770",
+        "fact_valid": "False"
+    },
+    {
+        "overall_decline": "True",
+        "extreme_weather_increase_2010s": "False"
+    }
+]

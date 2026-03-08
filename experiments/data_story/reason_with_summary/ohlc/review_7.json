@@ -1,0 +1,32 @@
+[
+    {
+        "short_count": "24",
+        "long_count": "19",
+        "neutral_count": "1"
+    },
+    {
+        "ret_mean": 1.3830766802091614,
+        "ret_std": 6.194040535850076,
+        "validation": {
+            "ret_mean_matches": "True",
+            "ret_std_matches": "True"
+        }
+    },
+    {
+        "max_ret_correct": "False",
+        "min_ret_correct": "False",
+        "max_date_correct": true,
+        "min_date_correct": false
+    },
+    {
+        "has_positive_returns_short": "True",
+        "has_negative_returns_short": "True",
+        "has_gain_june": "True",
+        "has_loss_june": "True"
+    },
+    {
+        "long_signals_have_positive_returns": "True",
+        "long_signals_have_negative_returns": "True",
+        "mixed_returns": "True"
+    }
+]

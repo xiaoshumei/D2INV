@@ -27,13 +27,11 @@ def d2inv(dataset_dir):
         "message": "Data summary generated successfully",
     }
     print(f"dataset_name:{dataset_name}, start to generate data story")
-    # data_story = DataStory(
-    #     dataset_name, data, data_summary
-    # ).run_4r()
-    with open(
-        f"./results/{dataset_name}/data_story_1.json", "r", encoding="utf-8"
-    ) as f:
-        data_story = json.load(f)
+    data_story = DataStory(dataset_name, data, data_summary).run_4r()
+    # with open(
+    #     f"./results/{dataset_name}/data_story_1.json", "r", encoding="utf-8"
+    # ) as f:
+    #     data_story = json.load(f)
     yield {
         "stage": "data_story",
         "dataset_name": dataset_name,

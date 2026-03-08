@@ -1,0 +1,48 @@
+[
+    {
+        "trebi_highest_mean": "True",
+        "trebi_mean_correct": "False",
+        "no462_lower": "True",
+        "glabron_lower": "True"
+    },
+    {
+        "specific_trebi_yield": "False",
+        "specific_velvet_yield": "False",
+        "proportion_valid_varieties": 1.0,
+        "valid_varieties": [
+            "Manchuria",
+            "Glabron",
+            "Svansota",
+            "Velvet",
+            "Trebi",
+            "No. 457",
+            "No. 462",
+            "Peatland",
+            "No. 475",
+            "Wisconsin No. 38"
+        ],
+        "total_varieties": 10
+    },
+    {
+        "most_varieties_declined": "True",
+        "glabron_declined": "True",
+        "svansota_declined": "True",
+        "glabron_1931_match": "False",
+        "glabron_1932_match": "False",
+        "glabron_top_drop": true,
+        "svansota_top_drop": false
+    },
+    {
+        "Trebi_Waseca_exists_in_1931": true,
+        "No_462_Waseca_exists_in_1931": true,
+        "Trebi_Waseca_yields_above_mean_1931": "True",
+        "No_462_Waseca_yields_above_mean_1931": "True"
+    },
+    {
+        "year_check": true,
+        "site_check": true,
+        "variety_check": true,
+        "glabron_yield_check": "False",
+        "no475_yield_check": "False"
+    }
+]

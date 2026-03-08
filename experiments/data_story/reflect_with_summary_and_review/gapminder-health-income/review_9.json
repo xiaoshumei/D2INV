@@ -1,0 +1,31 @@
+[
+    {
+        "income_max_matches": "True",
+        "income_min_matches": "True",
+        "income_mean_matches": "False",
+        "income_std_matches": "False"
+    },
+    {
+        "correlation_coefficient": 0.6464345423584741,
+        "correlation_matches_fact": "True"
+    },
+    {
+        "regions_present": "True",
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "europe_central_asia_health_mean": 77.4606
+    },
+    {
+        "china_health_in_range": "True",
+        "india_health_in_range": "True",
+        "health_mean": 71.67326203208557,
+        "health_std": 7.748959108094907,
+        "china_population": "1376048943",
+        "india_population": "1311050527"
+    },
+    {
+        "health_max_valid": "True",
+        "andorra_income_valid": "True",
+        "andorra_health_valid": "True",
+        "rwanda_health_invalid": false
+    }
+]

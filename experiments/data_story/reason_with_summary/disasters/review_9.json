@@ -1,0 +1,25 @@
+[
+    {
+        "max_year_check": "False",
+        "second_max_year_check": "False"
+    },
+    {
+        "earthquake_death_percentage": 3.9512821574409296,
+        "total_deaths": "65214300",
+        "earthquake_deaths": "2576801"
+    },
+    {
+        "Drought_fact": false,
+        "Extreme_temperature_fact": true
+    },
+    {
+        "Epidemic_1918_over_25m": "False",
+        "Epidemic_1917_over_2_5m": "True",
+        "Epidemic_1918_exists": true,
+        "Epidemic_1917_exists": true
+    },
+    {
+        "has_2010_event": false,
+        "total_extreme_weather_deaths": "1396601"
+    }
+]

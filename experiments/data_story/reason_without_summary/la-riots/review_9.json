@@ -1,0 +1,25 @@
+[
+    {
+        "race_black_latino_percentage": 74.6,
+        "male_percentage": 88.89,
+        "fact1_valid": "False",
+        "fact2_valid": "True"
+    },
+    {
+        "under_30_percentage": 46.03174603174603,
+        "young_males_percentage": 40.917107583774246,
+        "male_percentage": 88.88888888888889
+    },
+    {
+        "Compton_Koreatown_Watts_percentage": 17.46031746031746,
+        "Compton_incidents": 4
+    },
+    {
+        "death_percentage_april_1992": 57.14285714285714,
+        "officer_shootings_may_1992": 3
+    },
+    {
+        "population_proportion": 74.60317460317461,
+        "death_proportion": 100.0
+    }
+]

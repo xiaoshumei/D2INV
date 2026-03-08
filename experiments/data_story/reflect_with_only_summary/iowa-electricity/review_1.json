@@ -1,0 +1,31 @@
+[
+    {
+        "Fossil Fuels dominated 2001-2008": true,
+        "Fossil Fuels peak in 2008": "False",
+        "Decline after 2008": false
+    },
+    {
+        "renewables_2001": "1437",
+        "renewables_2017": "21933",
+        "growth_renewables": 14.263048016701461,
+        "growth_fossil": -0.17058341110262717,
+        "growth_nuclear": 0.3532312483778874,
+        "fact_valid": "True"
+    },
+    {
+        "min_net_generation_in_range": "True",
+        "max_net_generation_in_range": "False",
+        "decline_in_2017": "False"
+    },
+    {
+        "Fossil Fuels highest year": false,
+        "Renewables highest year": false,
+        "Nuclear Energy highest year": false
+    },
+    {
+        "total_2001": "40651",
+        "total_2017": "56476",
+        "total_2001_matches_fact": "False",
+        "total_2017_matches_fact": "False"
+    }
+]

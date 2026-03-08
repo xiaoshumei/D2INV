@@ -1,0 +1,34 @@
+[
+    {
+        "peak_year_1931": "True",
+        "peak_over_3_7m": "True",
+        "entities_present": false
+    },
+    {
+        "Epidemic_death_1918": "False",
+        "Earthquake_count": "True",
+        "Drought_count": "True"
+    },
+    {
+        "flood_present": true,
+        "max_death_value": "True",
+        "specific_events_missing": true,
+        "extreme_weather_count": 111,
+        "flood_count": 89,
+        "extreme_weather_count_correct": true,
+        "flood_count_correct": true
+    },
+    {
+        "max_death_value": "3706227",
+        "max_death_year_in_early_20th": "True",
+        "max_death_entity_relevant": "False",
+        "max_death_matches_summary_max": "True"
+    },
+    {
+        "trend_decreasing": "True",
+        "extreme_weather_mean": 12581.990990990991,
+        "epidemic_mean": 139079.1739130435,
+        "overall_mean": 81213.32503113325,
+        "significant_mortality": "False"
+    }
+]

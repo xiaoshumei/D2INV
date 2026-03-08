@@ -1,0 +1,58 @@
+[
+    {
+        "gas_max_correct": "True",
+        "gas_mean_correct": "True",
+        "gas_std_correct": "True",
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_mean_correct": "True",
+        "year_2000_gas_correct": "True"
+    },
+    {
+        "year_min_valid": "True",
+        "earliest_year_min_miles": "True",
+        "latest_year_max_miles": "False",
+        "early_trend_positive": "True",
+        "later_trend_fluctuate": "False"
+    },
+    {
+        "gas_miles_negative_correlation": "True"
+    },
+    {
+        "gas_price_1973": 1.9,
+        "gas_price_1972": 1.87,
+        "miles_1973": 6154.0,
+        "miles_1974": 5943.0,
+        "gas_rise_1973": "True",
+        "miles_drop_1974": "True",
+        "has_1973": "True",
+        "has_1974": "True"
+    },
+    {
+        "mean_miles_per_side": {
+            "bottom": 6581.0,
+            "left": 8090.0,
+            "right": 7089.1578947368425,
+            "top": 7202.714285714285
+        },
+        "std_miles_per_side": {
+            "bottom": 2198.601856862674,
+            "left": 2010.9141747428755,
+            "right": 2160.332748628165,
+            "top": 2234.0898008126796
+        },
+        "mean_gas_per_side": {
+            "bottom": 1.9976470588235296,
+            "left": 2.3475,
+            "right": 2.26,
+            "top": 2.0014285714285713
+        },
+        "std_gas_per_side": {
+            "bottom": 0.3107959421341578,
+            "left": 0.5787938084735123,
+            "right": 0.49575979846875223,
+            "top": 0.27027323035702044
+        },
+        "variation_present": true
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "year_1931": false,
+        "year_1932": false
+    },
+    {
+        "fluctuation_between_years": "True",
+        "varieties_with_improvement": 0,
+        "varieties_with_decline": 10
+    },
+    {
+        "top_sites": [
+            "Waseca",
+            "University Farm"
+        ],
+        "valid_varieties": 2,
+        "total_varieties": 10,
+        "majority_valid": false
+    },
+    {
+        "valid": false,
+        "per_site_std": {
+            "Crookston": 8.089372559250204,
+            "Duluth": 4.037033852946075,
+            "Grand Rapids": 6.598109178115151,
+            "Morris": 8.186352417679508,
+            "University Farm": 6.1593441608048485,
+            "Waseca": 9.464096041989029
+        }
+    },
+    {
+        "varieties_present": "True",
+        "max_yield_achieved_by_varieties": "False",
+        "sites_match": "False"
+    }
+]

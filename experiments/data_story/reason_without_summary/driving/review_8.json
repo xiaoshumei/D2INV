@@ -1,0 +1,39 @@
+[
+    {
+        "increasing_trend": false,
+        "dip_in_1973": "False",
+        "positive_correlation": "True"
+    },
+    {
+        "Gasoline prices fluctuated significantly": "True",
+        "Sharp spike in 1974": "True",
+        "General decline from the 1950s to the 1970s": "True",
+        "Stabilization in the late 1970s and early 1980s with high prices compared to earlier decades": "True"
+    },
+    {
+        "correlation_gas_miles": -0.17433205594404674,
+        "inverse_relationship": "True",
+        "miles_decrease_at_max_gas": "False",
+        "miles_increase_at_min_gas": "True",
+        "high_gas_in_1974": "True",
+        "low_miles_in_1974": "True"
+    },
+    {
+        "side_counts": {
+            "right": 19,
+            "bottom": 17,
+            "left": 12,
+            "top": 7
+        },
+        "top_two_sides": [
+            "right",
+            "bottom"
+        ],
+        "counts_match_data_summary": true,
+        "num_unique_sides": 4
+    },
+    {
+        "gas_price_spike_1974": "False",
+        "miles_decrease_1974": "False"
+    }
+]

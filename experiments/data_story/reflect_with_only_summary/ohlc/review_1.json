@@ -1,0 +1,41 @@
+[
+    {
+        "short_avg_return": 3.29,
+        "long_avg_return": -0.96,
+        "neutral_avg_return": 0.0,
+        "short_vs_long_valid": "False",
+        "neutral_significant": "True"
+    },
+    {
+        "max_ret_correct": "True",
+        "min_ret_correct": "True",
+        "max_date_correct": true,
+        "min_date_correct": true
+    },
+    {
+        "short_positive": "17",
+        "short_negative": "7",
+        "long_positive": "8",
+        "long_negative": "9",
+        "neutral_positive": "0",
+        "neutral_negative": "0",
+        "short_check": "False",
+        "long_check": "False",
+        "neutral_check": "True"
+    },
+    {
+        "total_return": 60.855373929203104,
+        "june_contributions": {
+            "long": 5.06935727055302,
+            "short": 35.91176347572056
+        },
+        "max_contributor_june": "short"
+    },
+    {
+        "short_signal_count": "24",
+        "long_abs_return_mean_july": 4.592706777967366,
+        "short_abs_return_mean_july": 5.931092102692743,
+        "fact1": "True",
+        "fact2": "False"
+    }
+]

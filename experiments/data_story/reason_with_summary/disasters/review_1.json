@@ -1,0 +1,36 @@
+[
+    {
+        "2004_earthquake": "True",
+        "peaks_early_20th": "False",
+        "decline_recent_decades": "True"
+    },
+    {
+        "earthquake_share_over_20": "False",
+        "drought_in_years": false,
+        "drought_max_year_in_1931_1928": true,
+        "combined_sum_largest": "False"
+    },
+    {
+        "max_death_correct": "True",
+        "drought_1931_correct": "False",
+        "epidemic_1917_correct": "True",
+        "earthquake_2004_correct": "True",
+        "earthquake_1976_correct": "True"
+    },
+    {
+        "early_20th_century_avg_deaths": 1025442.8979591837,
+        "late_20th_century_avg_deaths": 220111.73529411765,
+        "extreme_weather_early_20th": 1.0,
+        "extreme_weather_late_20th": 1.0,
+        "extreme_weather_increasing": "False",
+        "early_20th_over_a_million": "True",
+        "late_20th_over_100k": "False"
+    },
+    {
+        "extreme_weather_deaths": "1396601",
+        "flood_deaths": "6954992",
+        "drought_deaths": "11731294",
+        "extreme_temp_21st_century_deaths": "161136",
+        "extreme_temp_pre_21st_century_deaths": "21468"
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "overall_mean": 34.42055533333334,
+        "max_yield": 65.7667,
+        "max_variety": "No. 462",
+        "max_site": "Waseca",
+        "max_year": "1931",
+        "trebi_mean": 39.399993333333335,
+        "wisconsin_mean": 39.39444583333333,
+        "trebi_above_avg": "True",
+        "wisconsin_above_avg": "True"
+    },
+    {
+        "waseca_average_yields_1931": 54.346666000000006,
+        "university_farm_average_yields_1931": 35.826666,
+        "grand_rapids_average_yields_1931": 29.053335000000004,
+        "duluth_average_yields_1931": 30.293333,
+        "waseca_average_yields_match_fact": "False",
+        "university_farm_higher_than_others": "False",
+        "grand_rapids_lower_than_overall_mean": "True",
+        "duluth_lower_than_overall_mean": "True",
+        "grand_rapids_lower_than_waseca": "True",
+        "duluth_lower_than_waseca": "True"
+    },
+    {
+        "most_varieties_declined": true,
+        "manchuria_declined": "True",
+        "svansota_declined": "True",
+        "trebi_resilient": "False"
+    },
+    {
+        "yield_std_matches": "False",
+        "yield_min_matches": "True"
+    },
+    {
+        "max_yield": "True",
+        "min_yield": "True",
+        "max_combination": true,
+        "min_combination": false
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "has_trebi_waseca_1931_63_83": "False",
+        "max_yield_in_1931_waseca": 65.7667,
+        "is_trebi_max_in_1931_waseca": "False"
+    },
+    {
+        "Glabron": "False",
+        "Manchuria": "False",
+        "No. 457": "False",
+        "No. 462": "False",
+        "No. 475": "True",
+        "Peatland": "False",
+        "Svansota": "False",
+        "Trebi": "False",
+        "Velvet": "True",
+        "Wisconsin No. 38": "False"
+    },
+    {
+        "Wisconsin No. 38": {
+            "valid": "False",
+            "value": -1.0770918367346833,
+            "expected": 35
+        },
+        "Manchuria": {
+            "valid": "False",
+            "value": -31.514322543361352,
+            "expected": -14
+        }
+    },
+    {
+        "yield_max_correct": "True",
+        "yield_min_correct": "True",
+        "yield_std_correct": "True",
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_mean_correct": "False",
+        "site_unique_correct": true,
+        "waseca_count_correct": true,
+        "max_std_site_correct": true,
+        "trebi_condition": false,
+        "wisconsin_condition": false,
+        "grand_rapids_lower_correct": "True"
+    },
+    {
+        "svansota_variance": 75.26693552593665,
+        "min_variance": 50.60028733334668,
+        "is_valid": "False"
+    }
+]

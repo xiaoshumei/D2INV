@@ -10,7 +10,7 @@ import json
 class LLM:
     def __init__(
         self,
-        llm_vendor="kimi",
+        llm_vendor="vllm",
         content_length=256,
     ):
         assert llm_vendor in ["kimi", "deepseek", "openai", "vllm"]

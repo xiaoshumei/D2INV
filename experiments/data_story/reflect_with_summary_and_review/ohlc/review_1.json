@@ -1,0 +1,40 @@
+[
+    {
+        "short": {
+            "expected": 3.2946,
+            "actual": 3.294586302264926,
+            "valid": "True"
+        },
+        "long": {
+            "expected": -0.9587,
+            "actual": -0.9586682802713222,
+            "valid": "True"
+        },
+        "neutral": {
+            "expected": 0,
+            "actual": 0.0,
+            "valid": "True"
+        }
+    },
+    {
+        "max_return_valid": "True",
+        "min_return_valid": "True",
+        "max_return_date_valid": true,
+        "min_return_date_valid": true
+    },
+    {
+        "short_signals_no_positive_returns": "False",
+        "long_signals_no_positive_returns": "False",
+        "neutral_signals_no_directional_movement": "True"
+    },
+    {
+        "total_return_percentage": 60.855373929203104,
+        "short_contribution_max": "True"
+    },
+    {
+        "short_count": "24",
+        "long_mean_july": -1.7910811227467802,
+        "short_mean_july": 5.394788472329709,
+        "long_higher_abs": "False"
+    }
+]

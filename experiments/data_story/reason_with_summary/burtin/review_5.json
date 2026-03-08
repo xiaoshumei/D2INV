@@ -1,0 +1,73 @@
+[
+    {
+        "Penicillin_max_valid": "True",
+        "Penicillin_min_valid": "True",
+        "Penicillin_mean_valid": "True",
+        "Aerobacter_aerogenes_valid": "True",
+        "Klebsiella_pneumoniae_valid": "True",
+        "Bacillus_anthracis_valid": "True",
+        "Bacteria_names_present": "True"
+    },
+    {
+        "penicillin_range_negative_greater": "True",
+        "neomycin_range_negative_greater": "False",
+        "penicillin_std_negative_greater": "True",
+        "neomycin_std_negative_greater": "False"
+    },
+    {
+        "bacteria_unique_count": 16,
+        "penicillin_std": 373.49506012805915,
+        "penicillin_min": 0.001,
+        "penicillin_max": 870.0,
+        "penicillin_mean": 217.8780625,
+        "streptomycin_std": 4.5026910472146175,
+        "streptomycin_min": 0.01,
+        "streptomycin_max": 14.0,
+        "streptomycin_mean": 3.065,
+        "neomycin_std": 10.13316450880474,
+        "neomycin_min": 0.001,
+        "neomycin_max": 40.0,
+        "neomycin_mean": 4.0891875,
+        "gram_staining_unique_count": 2,
+        "gram_staining_distribution": {
+            "negative": 9,
+            "positive": 7
+        },
+        "genus_unique_count": 4,
+        "genus_distribution": {
+            "other": 9,
+            "Streptococcus": 3,
+            "Salmonella": 2,
+            "Staphylococcus": 2
+        },
+        "salmonella_count": 2,
+        "staphylococcus_count": 2,
+        "salmonella_penicillin_mean": 5.5,
+        "staphylococcus_penicillin_mean": 0.0185,
+        "salmonella_streptomycin_mean": 0.6000000000000001,
+        "staphylococcus_streptomycin_mean": 0.065,
+        "salmonella_neomycin_mean": 0.049,
+        "staphylococcus_neomycin_mean": 0.001
+    },
+    {
+        "Neomycin_max_value": 40.0,
+        "Neomycin_min_value": 0.001,
+        "Neomycin_mean": 4.0891875,
+        "Neomycin_std": 10.13316450880474,
+        "Neomycin_max_outlier": "True",
+        "Neomycin_min_outlier": "False",
+        "Neomycin_any_outliers": "True"
+    },
+    {
+        "max_streptomycin": 14.0,
+        "min_streptomycin": 0.01,
+        "mean_streptomycin": 3.065,
+        "std_streptomycin": 4.5026910472146175,
+        "has_high_resistance": "True",
+        "has_low_susceptibility": "True",
+        "max_streptomycin_correct": "True",
+        "min_streptomycin_correct": "True",
+        "mean_streptomycin_correct": "True",
+        "std_streptomycin_correct": "False"
+    }
+]

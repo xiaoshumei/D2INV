@@ -1,0 +1,52 @@
+[
+    {
+        "officer_percent": 12.048192771084338,
+        "homicide_percent": 43.373493975903614,
+        "death_not_riot_percent": 20.481927710843372,
+        "fact_officer_percent": 33,
+        "fact_homicide_percent": 41,
+        "fact_death_not_riot_percent": 26,
+        "match": false
+    },
+    {
+        "Latino": {
+            "actual_percent": 30.16,
+            "expected_percent": 37,
+            "valid": "False"
+        },
+        "Black": {
+            "actual_percent": 44.44,
+            "expected_percent": 35,
+            "valid": "False"
+        },
+        "White": {
+            "actual_percent": 22.22,
+            "expected_percent": 23,
+            "valid": "True"
+        },
+        "Asian": {
+            "actual_percent": 3.17,
+            "expected_percent": 5,
+            "valid": "False"
+        }
+    },
+    {
+        "percentage_under_30": 46.774193548387096,
+        "percentage_under_18": 8.064516129032258
+    },
+    {
+        "Compton_incidents": "False",
+        "Watts_incidents": "False",
+        "Koreatown_incidents": "False",
+        "Hollywood_incidents": "False",
+        "South_Park_incidents": "False"
+    },
+    {
+        "percentage_of_incidents_in_april_29_30": 57.14285714285714,
+        "number_of_incidents_in_nov_1993": 1,
+        "total_incidents": 63,
+        "april_29_count": 8,
+        "april_30_count": 28,
+        "total_april_count": 36
+    }
+]

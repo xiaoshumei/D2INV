@@ -1,0 +1,34 @@
+[
+    {
+        "short_return_mean_valid": "False",
+        "long_return_mean_valid": "False",
+        "neutral_return_mean_valid": "True",
+        "signal_unique_count_valid": true
+    },
+    {
+        "max_return_valid": "True",
+        "max_return_date_valid": true,
+        "max_return_signal_valid": true,
+        "min_return_valid": "True",
+        "min_return_date_valid": true,
+        "min_return_signal_valid": true
+    },
+    {
+        "mean_ret_valid": "True",
+        "std_ret_valid": "True",
+        "skewness_valid": "False",
+        "positive_returns_valid": "True",
+        "outliers_valid": "True"
+    },
+    {
+        "signal_distribution_correct": true,
+        "signal_short_count": "24",
+        "signal_long_count": "19",
+        "signal_neutral_count": "1"
+    },
+    {
+        "neutral_count": 1,
+        "neutral_date": "2009-07-15",
+        "neutral_ret": 0.0
+    }
+]

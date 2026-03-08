@@ -1,0 +1,26 @@
+[
+    {
+        "max_death_correct": "True",
+        "has_max_death": false,
+        "max_20th_correct": "True"
+    },
+    {
+        "earthquake_top_deaths": false,
+        "epidemic_top_deaths": true,
+        "earthquake_count": "111",
+        "epidemic_count": "69"
+    },
+    {
+        "1900s_deaths": "8995694",
+        "valid": "False"
+    },
+    {
+        "1918_flu_pandemic_deaths": true,
+        "1976_tangshan_earthquake_deaths": true
+    },
+    {
+        "highest_deaths_flood_1931": false,
+        "haiti_earthquake_2010": false,
+        "pakistan_floods_2010": false
+    }
+]

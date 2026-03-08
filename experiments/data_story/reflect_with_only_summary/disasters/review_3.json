@@ -1,0 +1,27 @@
+[
+    {
+        "valid": true,
+        "reason": "1931 is associated with the highest death count of 3.7 million."
+    },
+    {
+        "early_1900s_average_deaths": 929216.0,
+        "2010s_average_deaths": 113736.0,
+        "early_1900s_over_one_million": "False",
+        "2010s_around_one_hundred_thousand": "False"
+    },
+    {
+        "Earthquake_deadliest": "False",
+        "Drought_massive_fatalities": "True",
+        "Epidemic_increasing_trend": "True",
+        "Extreme_weather_increasing_trend": "False"
+    },
+    {
+        "1907 Earthquake in China (1.3M deaths)": false,
+        "1942 Drought in India (1.5M deaths)": true
+    },
+    {
+        "earthquake_early_top": "False",
+        "extreme_weather_recent_top": true,
+        "epidemic_recent_top": false
+    }
+]

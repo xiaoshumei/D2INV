@@ -1,0 +1,32 @@
+[
+    {
+        "top_varieties_match": true,
+        "percentage_difference_in_range": "False"
+    },
+    {
+        "University Farm average yield in 1931": "False",
+        "Grand Rapids average yield in 1931": "False",
+        "University Farm highest average in 1931": false,
+        "Grand Rapids lowest average in 1931": true
+    },
+    {
+        "Wisconsin No. 38": {
+            "valid": "False",
+            "actual": -5.859001812771996,
+            "expected": 23.0
+        },
+        "Manchuria": {
+            "valid": "False",
+            "actual": -15.970760944223489,
+            "expected": -7.0
+        }
+    },
+    {
+        "Trebi x Waseca": "False",
+        "No. 475 x Grand Rapids": "True"
+    },
+    {
+        "wisconsin_no_38_low_variation": "False",
+        "no_475_high_variation": "False"
+    }
+]

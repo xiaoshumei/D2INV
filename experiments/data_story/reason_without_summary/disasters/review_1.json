@@ -1,0 +1,27 @@
+[
+    {
+        "entity_exists": true,
+        "deaths_match": "True",
+        "is_max_death": "False"
+    },
+    {
+        "1917_peak": "False",
+        "1907_peak": "False",
+        "2017_value": "False",
+        "trend_downward": "True"
+    },
+    {
+        "epidemic_percent": 0.1471527410399253,
+        "max_epidemic_death": "2500000"
+    },
+    {
+        "max_death_flood": false,
+        "second_death_drought": false,
+        "earthquake_max_less": "True"
+    },
+    {
+        "epidemic_decline_after_1945": "True",
+        "has_2010_extreme_temp_55k": "True",
+        "has_extreme_2015_2016_74250": "False"
+    }
+]

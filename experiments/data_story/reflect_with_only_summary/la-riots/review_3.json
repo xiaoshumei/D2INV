@@ -1,0 +1,35 @@
+[
+    {
+        "Black_count": true,
+        "Latino_count": true,
+        "White_count": true,
+        "Asian_count": true,
+        "total_incidents": true
+    },
+    {
+        "Homicide_count": "True",
+        "Officer_involved_shooting_count": "True",
+        "Not_riot_related_count": "True",
+        "Death_count": "True"
+    },
+    {
+        "age_15_24_count": 21,
+        "under_18_count": 5,
+        "count_15": 4,
+        "data_fact_correct": false
+    },
+    {
+        "neighborhoods_present": {
+            "Compton": true,
+            "Watts": true,
+            "Koreatown": true,
+            "Altadena": true,
+            "Valley Glen": true
+        },
+        "type_categories_complete": true
+    },
+    {
+        "min_date_correct": false,
+        "max_date_correct": false
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "Aerobacter aerogenes_penicillin_max": "True",
+        "Bacillus anthracis_penicillin_min": "True",
+        "Penicillin_max_value": "True",
+        "Penicillin_min_value": "True"
+    },
+    {
+        "Gram_negative_dominant": "True",
+        "Neomycin_max_40_positive": "True"
+    },
+    {
+        "Streptomycin_mean_correct": "True",
+        "Streptomycin_std_correct": "True",
+        "Neomycin_mean_correct": "True",
+        "Neomycin_std_correct": "True"
+    },
+    {
+        "Salmonella_streptomycin_mean": 0.6000000000000001,
+        "other_genera_streptomycin_mean": 3.4171428571428573,
+        "is_valid": "True"
+    },
+    {
+        "top_5_penicillin_include_Aerobacter_aerogenes_870_0": true,
+        "top_5_penicillin_include_Klebsiella_pneumoniae_850_0": true,
+        "top_5_penicillin_include_Pseudomonas_aeruginosa_850_0": true,
+        "top_5_penicillin_include_Bacillus_anthracis_0_001": false,
+        "top_5_penicillin_include_Staphylococcus_aureus_0_03": false
+    }
+]

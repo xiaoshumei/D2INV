@@ -1,0 +1,26 @@
+[
+    {
+        "gender_male_percentage": 88.88888888888889,
+        "is_fact_valid": "True"
+    },
+    {
+        "latino_percentage": 30.16,
+        "black_percentage": 44.44,
+        "white_percentage": 22.22,
+        "order_matches": false,
+        "percentages_match": "False"
+    },
+    {
+        "compton_watts_percentage": 11.11,
+        "total_fatalities": 63,
+        "compton_watts_count": 7
+    },
+    {
+        "date_range_percentage": 75.0,
+        "april_30_percentage": 37.5
+    },
+    {
+        "Officer-involved shooting percentage": 15.873015873015872,
+        "Homicide percentage": 57.14285714285714
+    }
+]

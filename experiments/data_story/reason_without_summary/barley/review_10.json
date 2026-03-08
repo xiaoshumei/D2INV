@@ -1,0 +1,29 @@
+[
+    {
+        "top_two_varieties_correct": false,
+        "trebi_max_correct": "False",
+        "trebi_site_correct": true,
+        "no475_yield_check": true
+    },
+    {
+        "waseca_highest_avg": true,
+        "grand_rapids_lowest_avg": true,
+        "no475_grand_rapids_lowest": true,
+        "manchuria_grand_rapids_lowest": false
+    },
+    {
+        "year_check": true,
+        "trebi_increase": -22.87207460682747,
+        "trebi_valid": "False",
+        "manchuria_decline": -15.970760944223498,
+        "manchuria_valid": "False"
+    },
+    {
+        "part1": false,
+        "part2": "False"
+    },
+    {
+        "university_farm_higher_1931": true,
+        "peatland_drop_1932": false
+    }
+]

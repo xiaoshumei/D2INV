@@ -1,0 +1,36 @@
+[
+    {
+        "Trebi at Waseca max yield": "False",
+        "Wisconsin No. 38 at Waseca max yield": "True",
+        "No. 475 at Grand Rapids min yield": "True",
+        "Svansota at Grand Rapids min yield": "False"
+    },
+    {
+        "overall_avg_1931": 37.07777799999999,
+        "trebi_avg_1931": 42.46666,
+        "wisconsin_avg_1931": 40.583335
+    },
+    {
+        "Manchuria decline": "False",
+        "Manchuria decline percent": null,
+        "Glabron increase": "False",
+        "Glabron increase percent": null
+    },
+    {
+        "valid": false,
+        "reason": "Max yield 44.23333 at Morris, min 15.23333 at Grand Rapids, percentage difference 190.37%",
+        "max_yield": 44.23333,
+        "min_yield": 15.23333,
+        "max_site": "Morris",
+        "min_site": "Grand Rapids",
+        "percentage_diff": 190.37203290416474
+    },
+    {
+        "fact1": false,
+        "fact2": false,
+        "fact3": false,
+        "fact4": "False",
+        "fact5": "False",
+        "fact6": "False"
+    }
+]

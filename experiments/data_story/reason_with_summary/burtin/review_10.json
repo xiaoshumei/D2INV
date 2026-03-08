@@ -1,0 +1,65 @@
+[
+    {
+        "penicillin_diff": 387.0723650793651,
+        "strep_ratio": 0.27762405460247186,
+        "neomycin_diff": "False",
+        "all_conditions_met": "False"
+    },
+    {
+        "penicillin_min_valid": "True",
+        "neomycin_max_valid": "True",
+        "bacillus_anthracis_exists": "True",
+        "strep_viridans_exists": "True"
+    },
+    {
+        "Penicillin_resistance_in_Gram_negative": "False",
+        "Streptomycin_distribution_evenness": "True"
+    },
+    {
+        "bacteria_unique": 16,
+        "penicillin_unique": 11,
+        "streptomycin_unique": 12,
+        "neomycin_unique": 12,
+        "penicillin_mean": 217.8780625,
+        "penicillin_min": 0.001,
+        "penicillin_max": 870.0,
+        "streptomycin_mean": 3.065,
+        "streptomycin_min": 0.01,
+        "streptomycin_max": 14.0,
+        "neomycin_mean": 4.0891875,
+        "neomycin_min": 0.001,
+        "neomycin_max": 40.0,
+        "salmonella_count": "2",
+        "gram_staining_counts": {
+            "negative": 9,
+            "positive": 7
+        },
+        "bacteria_samples": [
+            "Staphylococcus aureus",
+            "Staphylococcus albus",
+            "Salmonella (Eberthella) typhosa"
+        ],
+        "penicillin_samples": [
+            800.0,
+            0.005,
+            0.03
+        ],
+        "streptomycin_samples": [
+            0.1,
+            0.01,
+            0.03
+        ],
+        "neomycin_samples": [
+            0.1,
+            40.0,
+            0.02
+        ]
+    },
+    {
+        "Genus_other_percentage": 56.25,
+        "Penicillin_other_higher": "True",
+        "Streptomycin_other_higher": "False",
+        "Neomycin_other_higher": "False",
+        "Penicillin_mean_over_200": "True"
+    }
+]

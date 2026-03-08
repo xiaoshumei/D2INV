@@ -1,0 +1,48 @@
+[
+    {
+        "correlation_income_health": 0.646434542358474,
+        "mean_health_top_10_income": 80.46315789473682,
+        "mean_health_bottom_10_income": 61.7621052631579
+    },
+    {
+        "top_two_regions": [
+            "europe_central_asia",
+            "middle_east_north_africa"
+        ],
+        "bottom_region": "sub_saharan_africa",
+        "top_two_valid": false,
+        "bottom_valid": true,
+        "average_health_per_region": {
+            "europe_central_asia": 77.4606,
+            "middle_east_north_africa": 75.7895,
+            "america": 74.56470588235294,
+            "east_asia_pacific": 71.74444444444444,
+            "south_asia": 69.80375,
+            "sub_saharan_africa": 62.153124999999996
+        }
+    },
+    {
+        "top_five_correct": false
+    },
+    {
+        "regions_with_uneven_income": 5,
+        "europe_central_asia_has_uneven_income": "False",
+        "max_region_income_range": "129738",
+        "region_with_max_income_range": "middle_east_north_africa",
+        "max_region_income_std": 32966.85537036443,
+        "region_with_max_income_std": "middle_east_north_africa"
+    },
+    {
+        "top_health_countries": [
+            "Andorra",
+            "Japan",
+            "Switzerland"
+        ],
+        "bottom_health_countries": [
+            "Swaziland",
+            "Lesotho"
+        ],
+        "top_health_match": false,
+        "bottom_health_match": false
+    }
+]

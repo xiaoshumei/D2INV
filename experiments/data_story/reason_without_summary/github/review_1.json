@@ -1,0 +1,32 @@
+[
+    {
+        "max_count_54": "True",
+        "count_54_on_date1": true,
+        "count_48_on_date2": false
+    },
+    {
+        "increasing_jan_march": "False",
+        "declining_after_march": "False",
+        "trend_validated": "False"
+    },
+    {
+        "max_count_between_10_12": false,
+        "event_2015_03_30_18_00": "False",
+        "event_2015_03_27_17_00": "False"
+    },
+    {
+        "max_count_days": [
+            "Sunday"
+        ],
+        "max_count": "416",
+        "min_count_day": "Wednesday",
+        "min_count": "219",
+        "valid": false
+    },
+    {
+        "march_count": "655",
+        "april_count": "413",
+        "may_count": "406",
+        "trend_valid": "False"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "max_penicillin": "True",
+        "min_penicillin": "True",
+        "aerobacter_penicillin": "True",
+        "bacillus_penicillin": "True"
+    },
+    {
+        "streptomycin_max_correct": "True",
+        "strep_hemolyticus_has_max": "True",
+        "streptomycin_min_correct": "True",
+        "bacillus_anthracis_has_min": "True"
+    },
+    {
+        "Neomycin_max_correct": "True",
+        "Neomycin_min_correct": "True"
+    },
+    {
+        "Gram_negative_count": "True",
+        "Penicillin_max": "True",
+        "Penicillin_min": "True",
+        "Penicillin_mean": "True",
+        "Penicillin_std": "True",
+        "Penicillin_unique": true,
+        "Neomycin_max": "True",
+        "Neomycin_min": "True",
+        "Neomycin_mean": "True",
+        "Neomycin_std": "True",
+        "Neomycin_unique": true,
+        "Gram_staining_total": true
+    },
+    {
+        "other_genus_count": true,
+        "salmonella_penicillin_1_0": true,
+        "streptococcus_neomycin_40_0": true
+    }
+]

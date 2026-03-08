@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   55 Years of American Driving: Miles Traveled vs. Gas Prices
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   :root {
+            --road: #2c3e50;
+            --asphalt: #1e2a38;
+            --mile: #00c9b7;
+            --fuel: #ff7e5f;
+            --bg-light: #f7fafc;
+            --bg-dark: #ffffff;
+            --text: #111;
+            --muted: #666;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: var(--bg-light); color: var(--text); line-height: 1.6; }
+        header { background: var(--asphalt); color: #fff; padding: 3rem 2rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+        header::after { content: ""; position: absolute; bottom: -4px; left: 0; right: 0; height: 8px; background: repeating-linear-gradient(45deg, #fff 0 4px, transparent 4px 8px); }
+        header h1 { font-size: 2.5rem; letter-spacing: 1px; }
+        header .sub { font-size: 1.1rem; margin-top: 0.5rem; color: #dfe6e9; }
+        .intro { padding: 2rem 1.5rem; text-align: center; background: var(--bg-dark); }
+        .intro p { max-width: 700px; margin: 0 auto; font-size: 1rem; color: var(--muted); }
+        .timeline { position: relative; padding: 2rem 1.5rem 4rem; }
+        .timeline::before { content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; background: var(--road); top: 0; bottom: 0; }
+        section.module { display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 4rem; position: relative; }
+        section.module:nth-child(odd) { flex-direction: row-reverse; }
+        .icon-lane { flex: 0 0 60px; display: flex; justify-content: center; position: relative; }
+        .icon-lane i { background: var(--bg-dark); color: var(--road); padding: 12px; border-radius: 50%; border: 3px solid var(--mile); z-index: 2; }
+        .content { flex: 1 1 260px; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.05); margin: 0 10px; }
+        .content h2 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--road); }
+        .content p { color: var(--muted); margin-bottom: 1rem; font-size: .95rem; }
+        .cta { text-align: center; padding: 2.5rem 1rem; background: var(--fuel); color: #fff; }
+        .cta h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .cta p { font-size: 1rem; }
+        footer { font-size: .75rem; text-align: center; padding: 2rem 1rem; background: var(--asphalt); color: #bbb; }
+        @media(max-width:700px) {
+            .timeline::before { left: 24px; }
+            .icon-lane { flex: 0 0 54px; }
+            section.module, section.module:nth-child(odd) { flex-direction: column; align-items: flex-start; }
+            .content { margin: 0; }
+        }
+  </style>
+  <script src="https://unpkg.com/echarts@latest/dist/echarts.min.js">
+  </script>
+  <script src="https://unpkg.com/echarts@latest/dist/extension/dataTool.min.js">
+  </script>
+  <style>
+   #chart_1 {
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        background: #fafafa;
+    }
+  </style>
+  <style>
+   #chart_2 {
+        width: 900px;
+        height: 500px;
+        margin: 0 auto;
+    }
+  </style>
+  <style>
+   #chart_3 {
+        width: 100%;
+        height: 400px;
+        background: #fff;
+    }
+  </style>
+  <style>
+   #chart_4 {
+                width: 900px;
+                height: 500px;
+                margin: 0 auto;
+            }
+  </style>
+  <style>
+   #chart_5 {
+        width: 900px;
+        height: 500px;
+        margin: 0 auto;
+    }
+  </style>
+  <script>
+   window.data = [{"side":"left","year":1956,"miles":3675,"gas":2.38},{"side":"right","year":1957,"miles":3706,"gas":2.4},{"side":"bottom","year":1958,"miles":3766,"gas":2.26},{"side":"top","year":1959,"miles":3905,"gas":2.31},{"side":"right","year":1960,"miles":3935,"gas":2.27},{"side":"bottom","year":1961,"miles":3977,"gas":2.25},{"side":"right","year":1962,"miles":4085,"gas":2.22},{"side":"bottom","year":1963,"miles":4218,"gas":2.12},{"side":"bottom","year":1964,"miles":4369,"gas":2.11},{"side":"bottom","year":1965,"miles":4538,"gas":2.14},{"side":"top","year":1966,"miles":4676,"gas":2.14},{"side":"bottom","year":1967,"miles":4827,"gas":2.14},{"side":"right","year":1968,"miles":5038,"gas":2.13},{"side":"right","year":1969,"miles":5207,"gas":2.07},{"side":"right","year":1970,"miles":5376,"gas":2.01},{"side":"bottom","year":1971,"miles":5617,"gas":1.93},{"side":"bottom","year":1972,"miles":5973,"gas":1.87},{"side":"right","year":1973,"miles":6154,"gas":1.9},{"side":"left","year":1974,"miles":5943,"gas":2.34},{"side":"bottom","year":1975,"miles":6111,"gas":2.31},{"side":"bottom","year":1976,"miles":6389,"gas":2.32},{"side":"top","year":1977,"miles":6630,"gas":2.36},{"side":"bottom","year":1978,"miles":6883,"gas":2.23},{"side":"left","year":1979,"miles":6744,"gas":2.68},{"side":"left","year":1980,"miles":6672,"gas":3.3},{"side":"right","year":1981,"miles":6732,"gas":3.3},{"side":"right","year":1982,"miles":6835,"gas":2.92},{"side":"right","year":1983,"miles":6943,"gas":2.66},{"side":"right","year":1984,"miles":7130,"gas":2.48},{"side":"right","year":1985,"miles":7323,"gas":2.36},{"side":"left","year":1986,"miles":7558,"gas":1.76},{"side":"top","year":1987,"miles":7770,"gas":1.76},{"side":"bottom","year":1988,"miles":8089,"gas":1.68},{"side":"left","year":1989,"miles":8397,"gas":1.75},{"side":"top","year":1990,"miles":8529,"gas":1.88},{"side":"right","year":1991,"miles":8535,"gas":1.78},{"side":"right","year":1992,"miles":8662,"gas":1.69},{"side":"left","year":1993,"miles":8855,"gas":1.6},{"side":"bottom","year":1994,"miles":8909,"gas":1.59},{"side":"bottom","year":1995,"miles":9150,"gas":1.6},{"side":"top","year":1996,"miles":9192,"gas":1.67},{"side":"right","year":1997,"miles":9416,"gas":1.65},{"side":"bottom","year":1998,"miles":9590,"gas":1.39},{"side":"right","year":1999,"miles":9687,"gas":1.5},{"side":"top","year":2000,"miles":9717,"gas":1.89},{"side":"left","year":2001,"miles":9699,"gas":1.77},{"side":"bottom","year":2002,"miles":9814,"gas":1.64},{"side":"right","year":2003,"miles":9868,"gas":1.86},{"side":"left","year":2004,"miles":9994,"gas":2.14},{"side":"left","year":2005,"miles":10067,"gas":2.53},{"side":"right","year":2006,"miles":10037,"gas":2.79},{"side":"right","year":2007,"miles":10025,"gas":2.95},{"side":"left","year":2008,"miles":9880,"gas":3.31},{"side":"bottom","year":2009,"miles":9657,"gas":2.38},{"side":"left","year":2010,"miles":9596,"gas":2.61}]
+  </script>
+ </head>
+ <body>
+  <header data-aos="fade-down">
+   <h1>
+    55 Years of American Driving
+   </h1>
+   <div class="sub">
+    Miles Traveled vs. Gas Prices (1956-2010)
+   </div>
+  </header>
+  <div class="intro" data-aos="fade-up">
+   <p>
+    <strong>
+     Explainer:
+    </strong>
+    Watch how the nation’s appetite for the road collided with volatile pump prices—and see which way the needle really moved.
+   </p>
+  </div>
+  <div class="timeline">
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-flag-usa">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      How did the long cheap-fuel era shape America’s driving habit up to the first oil shock?
+     </h2>
+     <p>
+      Between 1956 and 1973, vehicle-miles climbed steadily from 3,675 B to 6,154 B while gas prices drifted down from $2.38 to $1.90 per gallon (2021-corrected dollars), creating a classic cheap-fuel boom that rewarded every extra mile.
+     </p>
+     <div id="chart_1">
+     </div>
+    </div>
+   </section>
+   <section class="cta" data-aos="fade-up">
+    <h3>
+     Keep cruising with the data
+    </h3>
+    <p>
+     Scroll to witness the shocks that slammed the brakes on growth.
+    </p>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-gas-pump">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      What happened to driving distance and price the moment oil-supply security cracked?
+     </h2>
+     <p>
+      The 1973-74 embargo flipped the script: miles dropped 3.4 % in 1974 and prices spiked 23 % to $2.34—still the fastest single-year cost jump in the series—revealing immediate elasticity once pain at the pump arrived.
+     </p>
+     <div id="chart_2">
+     </div>
+    </div>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-oil-can">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      Did the second oil crisis finally force Americans to curb mileage growth?
+     </h2>
+     <p>
+      From 1978 to 1981, miles inched up only 4 % while gas rocketed from $2.23 to $3.30, producing the steepest price-to-miles ratio (3.2×) of any three-year window and marking the first sustained conservation period.
+     </p>
+     <div id="chart_3">
+     </div>
+    </div>
+   </section>
+   <section class="cta" data-aos="fade-up">
+    <h3>
+     Fast-forward to the 2000s
+    </h3>
+    <p>
+     See if drivers really forgot the sting of high prices.
+    </p>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-road">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      Does driving still react to price spikes once memories of crisis fade?
+     </h2>
+     <p>
+      After 1986’s price collapse to $1.76, miles resumed growth; yet sharp price spikes in 2005 and 2008 again trimmed mileage—2008’s $3.31 peak coincided with a rare year-over-year decline, proving price sensitivity never went away.
+     </p>
+     <div id="chart_4">
+     </div>
+    </div>
+   </section>
+   <section class="module" data-aos="fade-up">
+    <div class="icon-lane">
+     <i class="fas fa-chart-line">
+     </i>
+    </div>
+    <div class="content">
+     <h2>
+      In the very long run, did higher gas prices meaningfully slow the growth of driving?
+     </h2>
+     <p>
+      Over the full 55-year span, cumulative miles expanded 2.7× while real gas prices rose only 10 %, yielding an almost vertical long-run supply curve—implying that, barring acute shocks, Americans choose mobility almost regardless of gradual price creep.
+     </p>
+     <div id="chart_5">
+     </div>
+    </div>
+   </section>
+  </div>
+  <section class="cta" data-aos="fade-up">
+   <h3>
+    Take the wheel
+   </h3>
+   <p>
+    Share this journey, explore cleaner mobility options, and keep questioning the road ahead.
+   </p>
+  </section>
+  <footer>
+   Sources: U.S. FHWA Highway Statistics &amp; BP Statistical Review (price deflated via BLS CPI 2021). | Icons via FontAwesome.
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({ duration: 700, once: true });
+  </script>
+  <script>
+   function plot_1(data){
+        document.getElementById('chart_1').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_1'), null, { renderer: 'svg' });
+
+        const sorted = data.slice().sort((a, b) => a.year - b.year);
+        const years = sorted.map(d => d.year);
+        const miles = sorted.map(d => d.miles);
+        const gas  = sorted.map(d => d.gas);
+        const base = miles[0];
+        const mileIndex = miles.map(v => Number((v / base * 100).toFixed(2)));
+
+        const option = {
+            title: {
+                text: 'U.S. Annual Miles Driven vs. Gas Price (1956-2010)',
+                subtext: 'Bars: Miles driven (index 1956=100) | Line: Real gas price (USD/gal)',
+                left: 'center'
+            },
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            legend: { data: ['Miles Driven (index)', 'Gas Price ($/gal)'], top: 40 },
+            grid: { left: '5%', right: '5%', bottom: 60, top: 80, containLabel: true },
+            xAxis: { type: 'category', data: years, name: 'Year', axisLabel: { interval: 4 } },
+            yAxis: [
+                { type: 'value', name: 'Miles Driven (1956=100)', position: 'left' },
+                { type: 'value', name: 'Gas Price ($/gal)', position: 'right', axisLabel: { formatter: '${value}' } }
+            ],
+            series: [
+                { name: 'Miles Driven (index)', type: 'bar', data: mileIndex, itemStyle: { color: '#5470c6' } },
+                { name: 'Gas Price ($/gal)', type: 'line', yAxisIndex: 1, data: gas, smooth: true,
+                  lineStyle: { width: 3, color: '#91cc75' }, symbol: 'circle', symbolSize: 5 }
+            ]
+        };
+        myChart.setOption(option);
+    }
+    plot_1(data)
+  </script>
+  <script>
+   function plot_2(data){
+        document.getElementById('chart_2').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_2'), null, { renderer: 'svg' });
+
+        const data73 = data.filter(d => d.year === 1973 && d.side);
+        const data74 = data.filter(d => d.year === 1974 && d.side);
+
+        const slopeData = data73.map(d73 => {
+            const d74 = data74.find(d => d.side === d73.side) || {};
+            return {
+                side: d73.side,
+                miles73: Number(d73.miles).toFixed(2),
+                miles74: Number(d74.miles||0).toFixed(2),
+                gas73: Number(d73.gas).toFixed(2),
+                gas74: Number(d74.gas||0).toFixed(2)
+            };
+        });
+
+        const sides = slopeData.map(d => d.side);
+
+        const option = {
+            title: { text: 'Driving Distance & Gas Price: 1973 vs 1974', left: 'center' },
+            tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+            legend: { data: ['1973 Miles', '1974 Miles', '1973 Gas Price', '1974 Gas Price'], top: 30 },
+            xAxis: { type: 'category', data: sides },
+            yAxis: [
+                { type: 'value', name: 'Miles Driven', position: 'left', axisLabel: { formatter: '{value}' } },
+                { type: 'value', name: 'Gas Price ($)', position: 'right', axisLabel: { formatter: '${value}' } }
+            ],
+            series: [
+                { name: '1973 Miles', type: 'bar', data: slopeData.map(d => d.miles73), itemStyle: { color: '#5470c6' } },
+                { name: '1974 Miles', type: 'bar', data: slopeData.map(d => d.miles74), itemStyle: { color: '#91cc75' } },
+                { name: '1973 Gas Price', type: 'scatter', yAxisIndex: 1, data: slopeData.map(d => d.gas73), symbolSize: 10, itemStyle: { color: '#fac858' } },
+                { name: '1974 Gas Price', type: 'scatter', yAxisIndex: 1, data: slopeData.map(d => d.gas74), symbolSize: 10, itemStyle: { color: '#ee6666' } }
+            ]
+        };
+
+        myChart.setOption(option);
+    }
+    plot_2(data)
+  </script>
+  <script>
+   function plot_3(data) {
+        document.getElementById('chart_3').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_3'), null, { renderer: 'svg' });
+
+        const allData = data.map(d => [+(d.miles).toFixed(2), +(d.gas).toFixed(2), d.year]);
+
+        const highlightData = data
+            .filter(d => d.year >= 1978 && d.year <= 1981)
+            .map(d => [+(d.miles).toFixed(2), +(d.gas).toFixed(2), d.year]);
+
+        const option = {
+            backgroundColor: '#fff',
+            title: {
+                text: 'Price vs Miles (1978-81 Highlighted)',
+                left: 'center',
+                top: 10
+            },
+            grid: {
+                left: '10%',
+                right: '10%',
+                bottom: '15%',
+                top: '15%'
+            },
+            xAxis: {
+                name: 'Miles per driver',
+                nameLocation: 'middle',
+                nameGap: 30,
+                min: 3600,
+                max: 10200
+            },
+            yAxis: {
+                name: 'Gas price ($)',
+                nameLocation: 'middle',
+                nameGap: 40,
+                min: 1.3,
+                max: 3.4
+            },
+            series: [
+                {
+                    type: 'scatter',
+                    data: allData,
+                    symbolSize: 6,
+                    itemStyle: { color: '#5470c6' },
+                    emphasis: {
+                        itemStyle: { borderColor: '#333', borderWidth: 1 }
+                    }
+                },
+                {
+                    type: 'scatter',
+                    data: highlightData,
+                    symbolSize: 10,
+                    itemStyle: { color: '#d94e5d' },
+                    emphasis: {
+                        itemStyle: { borderColor: '#000', borderWidth: 2 }
+                    }
+                }
+            ],
+            tooltip: {
+                formatter: p => `Year: ${p.data[2]}<br/>Miles: ${p.data[0].toFixed(2)}<br/>Price: ${p.data[1].toFixed(2)}`
+            }
+        };
+
+        myChart.setOption(option);
+        window.addEventListener('resize', () => myChart.resize());
+    }
+    plot_3(data)
+  </script>
+  <script>
+   function plot_4(data){
+                document.getElementById('chart_4').innerHTML = '';
+                const myChart = echarts.init(document.getElementById('chart_4'), null, { renderer: 'svg' });
+
+                data.sort((a, b) => a.year - b.year);
+                const elasticity = data.map((_, i) => {
+                    const group = data.slice(Math.max(i - 2, 0), i + 1);
+                    if (group.length < 2) return null;
+                    const Δg = group[group.length - 1].gas - group[0].gas;
+                    const Δm = group[group.length - 1].miles - group[0].miles;
+                    const gAvg = (group[group.length - 1].gas + group[0].gas) / 2;
+                    const mAvg = (group[group.length - 1].miles + group[0].miles) / 2;
+                    return Δg === 0 ? 0 : ((Δm / mAvg) / (Δg / gAvg));
+                });
+                const valid = elasticity.filter(e => e != null);
+                valid.sort((a, b) => a - b);
+                const q25 = +(valid[Math.floor(valid.length * 0.25)].toFixed(2));
+                const q75 = +(valid[Math.floor(valid.length * 0.75)].toFixed(2));
+                const median = +(valid[Math.floor(valid.length * 0.5)].toFixed(2));
+
+                myChart.setOption({
+                    title: { text: 'Does driving still react to price spikes once memories of crisis fade?' },
+                    tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+                    legend: { data: ['Median Elasticity', '25th–75th Percentile Band'] },
+                    xAxis: { type: 'category', data: data.map(d => d.year), name: 'Year', nameLocation: 'middle' },
+                    yAxis: { type: 'value', name: 'Rolling 3-year elasticity', nameGap: 30 },
+                    series: [
+                        {
+                            name: '25th–75th Percentile Band',
+                            type: 'line',
+                            data: elasticity.map(e => (e != null ? q75 : null)),
+                            lineStyle: { opacity: 0 },
+                            areaStyle: { color: 'rgba(70,130,180,0.3)' },
+                            stack: 'band',
+                            smooth: true,
+                            symbol: 'none'
+                        },
+                        {
+                            name: '25th–75th Percentile Band',
+                            type: 'line',
+                            data: elasticity.map(e => (e != null ? q25 - q75 : null)),
+                            lineStyle: { opacity: 0 },
+                            areaStyle: { color: '#fff' },
+                            stack: 'band',
+                            smooth: true,
+                            symbol: 'none'
+                        },
+                        {
+                            name: 'Median Elasticity',
+                            type: 'line',
+                            data: elasticity.map(e => (e != null ? median : null)),
+                            smooth: true,
+                            lineStyle: { color: '#4682B4', width: 2 },
+                            symbol: 'circle',
+                            symbolSize: 6
+                        }
+                    ]
+                });
+            }
+            plot_4(data)
+  </script>
+  <script>
+   function plot_5(data){
+        document.getElementById('chart_5').innerHTML = '';
+        const myChart = echarts.init(document.getElementById('chart_5'), null, { renderer: 'svg' });
+
+        const seriesData = data
+            .map(d => [Number(d.gas.toFixed(2)), Number(Math.log10(d.miles).toFixed(2)), d.year])
+            .sort((a, b) => a[2] - b[2]);
+
+        const annotations = [
+            {year: 1973, gas: 1.59, miles: Math.log10(6453), label: 'Oil Crisis 1973'},
+            {year: 1979, gas: 2.64, miles: Math.log10(6395), label: 'Oil Crisis 1979'},
+            {year: 2008, gas: 3.31, miles: Math.log10(7881), label: 'Price Peak 2008'}
+        ];
+
+        myChart.setOption({
+            title: {
+                text: 'Gas Price vs. Driving Miles (Semi-Log)',
+                subtext: 'Log-scaled miles vs. linear gas price',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: p => `Year: ${p.data[2]}<br/>Gas Price: $${p.data[0]}<br/>Miles (log): ${p.data[1]}`
+            },
+            xAxis: {
+                type: 'value',
+                name: 'Gas Price ($)',
+                nameLocation: 'middle',
+                nameGap: 30,
+                axisLabel: { formatter: '${value}' }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Miles (log10 scale)',
+                nameLocation: 'middle',
+                nameGap: 50
+            },
+            series: [{
+                type: 'line',
+                data: seriesData,
+                smooth: true,
+                symbolSize: 6,
+                lineStyle: { width: 2 },
+                markPoint: {
+                    data: annotations.map(a => ({
+                        coord: [Number(a.gas.toFixed(2)), Number(a.miles.toFixed(2))],
+                        value: a.label,
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        itemStyle: { color: '#ff4d4f' }
+                    })),
+                    label: { position: 'top', color: '#000', fontSize: 12 }
+                }
+            }],
+            grid: { left: '10%', right: '10%', bottom: '15%', top: '15%' }
+        });
+    }
+    plot_5(data)
+  </script>
+ </body>
+</html>

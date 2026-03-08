@@ -1,0 +1,25 @@
+[
+    {
+        "Penicillin_max_value": "True",
+        "Penicillin_max_bacteria": true,
+        "Penicillin_min_value": "True",
+        "Penicillin_min_bacteria": true
+    },
+    {
+        "Gram_negative_higher": false
+    },
+    {
+        "Streptomycin_variability": "True",
+        "Neomycin_max": "True",
+        "Neomycin_min": "True",
+        "Bacillus_anthro_neo": true,
+        "Strepto_viridans_neo": true
+    },
+    {
+        "Salmonella_has_max_neomycin": "False",
+        "Salmonella_has_min_neomycin": "True"
+    },
+    {
+        "majority_other_genus": "True"
+    }
+]

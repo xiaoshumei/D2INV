@@ -1,0 +1,24 @@
+[
+    {
+        "year_1931_valid": false,
+        "year_1932_valid": false
+    },
+    {
+        "year_1931_mean": 37.07777799999999,
+        "year_1932_mean": 31.76333266666667,
+        "variety_improvement_count": 0,
+        "variety_decline_count": 10
+    },
+    {
+        "top_sites_match": false,
+        "most_varieties_top": "True"
+    },
+    {
+        "Variability_in_Yields_Most_Pronounced_in_Grand_Rapids_and_Duluth": false
+    },
+    {
+        "Wisconsin No. 38": "True",
+        "Trebi": "True",
+        "overall_max": "False"
+    }
+]

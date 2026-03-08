@@ -1,0 +1,29 @@
+[
+    {
+        "trebi_1931_mean": 42.46666,
+        "trebi_1931_mean_correct": "False",
+        "trebi_1931_max": "True"
+    },
+    {
+        "Trebi": false,
+        "Glabron": "True"
+    },
+    {
+        "Manchuria_1931": "False",
+        "Manchuria_1932": "False",
+        "Wisconsin No. 38_1931": "False",
+        "Wisconsin No. 38_1932": "False"
+    },
+    {
+        "velvet_1931_grand_rapids_yield": "False",
+        "velvet_1931_waseca_yield": "False",
+        "velvet_1931_variability": true
+    },
+    {
+        "duluth_average_yields_1932": 25.700000999999997,
+        "morris_average_yields_1932": 41.513332000000005,
+        "duluth_is_min_1932": "False",
+        "morris_is_max_1932": "False",
+        "data_fact_correct": "False"
+    }
+]

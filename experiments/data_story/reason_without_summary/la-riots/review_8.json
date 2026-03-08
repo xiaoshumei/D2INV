@@ -1,0 +1,33 @@
+[
+    {
+        "total_deaths": "False",
+        "officer_involved_shooting": "False",
+        "homicide": "False",
+        "non_riot_related_or_death": "False"
+    },
+    {
+        "valid": "False",
+        "details": {
+            "Latino_percentage": 30.158730158730158,
+            "Black_percentage": 44.44444444444444,
+            "White_percentage": 22.22222222222222,
+            "Others_percentage": 3.1746031746031744
+        }
+    },
+    {
+        "majority_15_40": "True",
+        "under_20_count": "9",
+        "under_20_fact": "False"
+    },
+    {
+        "officer_involved_shootings_count": 10,
+        "neighborhoods_present": true
+    },
+    {
+        "april_percentage": 62.5,
+        "may_count": "3",
+        "april_57": "False",
+        "may_less_than_april": "True",
+        "total_1992_deaths": 8
+    }
+]

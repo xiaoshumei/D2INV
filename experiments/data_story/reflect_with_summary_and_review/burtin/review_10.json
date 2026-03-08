@@ -1,0 +1,29 @@
+[
+    {
+        "Penicillin_diff_over_200": "True",
+        "Streptomycin_ratio_over_2": "False"
+    },
+    {
+        "Streptococcus viridans Neomycin": "True",
+        "Bacillus anthracis Penicillin": "True"
+    },
+    {
+        "penicillin_high_species_count": 4,
+        "penicillin_check": true,
+        "streptomycin_std": 4.5026910472146175,
+        "streptomycin_check": "True"
+    },
+    {
+        "Streptomycin_min": "True",
+        "Neomycin_min": "True",
+        "Streptomycin_samples": false,
+        "Neomycin_samples": false,
+        "Genus_categories": true,
+        "Genus_distribution": "True"
+    },
+    {
+        "Genus_other_percentage": 56.25,
+        "Penicillin_mean_exceeds_200": "True",
+        "Genus_other_higher_resistance": false
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "Trebi_avg_yield": 39.4,
+        "No_475_avg_yield": 31.8,
+        "Trebi_avg_matches_fact": "False",
+        "No_475_avg_matches_fact": "False"
+    },
+    {
+        "decline_majority": "True",
+        "largest_drop": [
+            "No. 457",
+            -8.805555000000002
+        ],
+        "smallest_drop": [
+            "No. 475",
+            -0.1111116666666625
+        ],
+        "manchuria_drop": -5.46111333333333,
+        "waseca_drop": null
+    },
+    {
+        "University Farm average yield": 32.6666675,
+        "Grand Rapids average yield": 24.931667,
+        "University Farm is highest": "False",
+        "Grand Rapids is lowest": "True",
+        "University Farm average matches 36.4": "False",
+        "Grand Rapids average matches 27.4": "False"
+    },
+    {
+        "count_waseca_1931": 10,
+        "count_morris_1932": 6,
+        "total_varieties": 10
+    },
+    {
+        "yield_std_grand_rapids": 6.598109178115151,
+        "yield_std_university_farm": 6.1593441608048485,
+        "is_valid": "False"
+    }
+]

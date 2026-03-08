@@ -1,0 +1,27 @@
+[
+    {
+        "total_deaths_over_150m": "False",
+        "max_annual_death_over_3m": "True",
+        "year_1917_over_2_5m": "True",
+        "year_1928_over_3m": "True"
+    },
+    {
+        "drought_percentage_over_30": "False",
+        "drought_1928_3m": "True",
+        "earthquake_and_epidemic_next": false
+    },
+    {
+        "earthquake_1976_exists": true,
+        "max_earthquake_deaths": "276994",
+        "is_overall_max": "False",
+        "is_1976_max": "True"
+    },
+    {
+        "Epidemic_1918_449700": "True",
+        "Epidemic_1920_2500000": "True"
+    },
+    {
+        "2010_flood_death_count": "False",
+        "mortality_trend_increase": "False"
+    }
+]

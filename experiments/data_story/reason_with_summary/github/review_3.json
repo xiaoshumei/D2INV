@@ -1,0 +1,33 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "count_2015_05_11": "1",
+        "max_count": "54",
+        "mean_check": "False",
+        "count_check": "False",
+        "max_check": "False"
+    },
+    {
+        "std_dev_ok": "True",
+        "skewness_ok": "True",
+        "low_counts_percentage": 0.8366492146596859
+    },
+    {
+        "average_increase_in_april": "False",
+        "average_increase_in_may": "False",
+        "max_count_in_april": "False",
+        "max_count_in_may": "False",
+        "peaks_in_april": false,
+        "peaks_in_may": false,
+        "max_count_in_late_spring": false
+    },
+    {
+        "max_count_valid": "True",
+        "max_count_time_valid": false,
+        "hour_0_4_activity_higher": "False"
+    },
+    {
+        "has_outliers_count": "True",
+        "specific_outlier_date": true
+    }
+]

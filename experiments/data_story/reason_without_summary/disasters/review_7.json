@@ -1,0 +1,29 @@
+[
+    {
+        "total_deaths_over_140m": "False",
+        "avg_2010s_deaths": 90988.8,
+        "specific_years_deaths": "False",
+        "peak_in_1910s": "False"
+    },
+    {
+        "Epidemic_highest_deaths": false,
+        "Epidemic_percentage": 14.72,
+        "Epidemic_over_450k": true,
+        "Earthquake_1906": true,
+        "Drought_1928": true
+    },
+    {
+        "valid": false,
+        "reason": "Max deaths row does not match entity or year"
+    },
+    {
+        "epidemic_deaths_1917_1918": "2949700",
+        "epidemic_deaths_2017": "386",
+        "epidemic_trend": "Decreasing"
+    },
+    {
+        "decline_in_deaths": "True",
+        "2017_hurricane": false,
+        "2010_haiti": false
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "drought_deaths_1928": "3000000",
+        "drought_under_3m": "False",
+        "other_disasters_1928": true,
+        "drought_exists_1928": true
+    },
+    {
+        "high_deaths_1930s": "True",
+        "max_decade_diff": "True"
+    },
+    {
+        "earthquake_1976_exists": true,
+        "earthquake_1976_deaths_over_270k": "True",
+        "earthquake_max_deaths": "276994",
+        "valid": "True"
+    },
+    {
+        "epidemic_total_deaths": "9596463",
+        "is_total_deaths_approx_6m": "False",
+        "epidemic_min_year": "1900",
+        "epidemic_max_year": "2017",
+        "years_in_early_20th_century": "False"
+    },
+    {
+        "trend_decline": "True",
+        "exception_in_2010s": false
+    }
+]

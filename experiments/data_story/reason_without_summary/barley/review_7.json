@@ -1,0 +1,32 @@
+[
+    {
+        "is_trebi_max": "True",
+        "trebi_mean": 42.46666,
+        "max_mean": 42.46666,
+        "difference_over_10": "False",
+        "trebi_mean_equal_to_46_93": "False"
+    },
+    {
+        "max_increase": -0.1111116666666625,
+        "max_decrease": -8.805555000000002,
+        "diff_wisconsin": -2.3777783333333318,
+        "diff_no475": -0.1111116666666625,
+        "valid": "False"
+    },
+    {
+        "Glabron_max": 36.8,
+        "Trebi_max": 29.06667,
+        "Glabron_valid": "False",
+        "Trebi_valid": "False",
+        "Overall_valid": "False"
+    },
+    {
+        "max_yield_1931_waseca": "True",
+        "yield_1932_waseca": "False"
+    },
+    {
+        "fact_valid": "False",
+        "fluctuation_duluth": 149.13579837071384,
+        "fluctuation_uni_farm": 149.13579837071384
+    }
+]

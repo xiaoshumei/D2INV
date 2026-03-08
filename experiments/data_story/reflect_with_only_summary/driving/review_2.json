@@ -1,0 +1,38 @@
+[
+    {
+        "miles_max": "True",
+        "miles_min": "True",
+        "miles_mean": "False",
+        "miles_std": "False",
+        "year_max": "True",
+        "year_min": "True",
+        "year_mean": "True",
+        "year_std": "False",
+        "gas_max": "True",
+        "gas_min": "True",
+        "gas_mean": "True",
+        "gas_std": "True"
+    },
+    {
+        "max_gas_price_correct": "True",
+        "min_gas_price_correct": "True",
+        "max_gas_year_correct": true,
+        "min_gas_year_correct": true
+    },
+    {
+        "right_side_count": "19",
+        "top_side_count": "7",
+        "right_side_valid": "True",
+        "top_side_valid": "True",
+        "overall_valid": "True"
+    },
+    {
+        "miles_gas_negative_correlation": "True"
+    },
+    {
+        "declined_1970s": "True",
+        "increased_2000s": "True",
+        "min_gas_1970s": "False",
+        "max_gas_2000s": "True"
+    }
+]

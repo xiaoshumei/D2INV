@@ -1,0 +1,34 @@
+[
+    {
+        "miles_min_correct": "True",
+        "miles_max_over_10000": "True",
+        "year_min_1956": "True",
+        "year_max_2010": "True"
+    },
+    {
+        "max_gas_matches_fact": "True",
+        "min_gas_matches_fact": "False",
+        "peak_in_1980": "0     False\n1     False\n2     False\n3     False\n4     False\n5     False\n6     False\n7     False\n8     False\n9     False\n10    False\n11    False\n12    False\n13    False\n14    False\n15    False\n16    False\n17    False\n18    False\n19    False\n20    False\n21    False\n22    False\n23    False\n24     True\n25    False\n26    False\n27    False\n28    False\n29    False\n30    False\n31    False\n32    False\n33    False\n34    False\n35    False\n36    False\n37    False\n38    False\n39    False\n40    False\n41    False\n42    False\n43    False\n44    False\n45    False\n46    False\n47    False\n48    False\n49    False\n50    False\n51    False\n52    False\n53    False\n54    False\nName: year, dtype: bool",
+        "low_in_1998": "0     False\n1     False\n2     False\n3     False\n4     False\n5     False\n6     False\n7     False\n8     False\n9     False\n10    False\n11    False\n12    False\n13    False\n14    False\n15    False\n16    False\n17    False\n18    False\n19    False\n20    False\n21    False\n22    False\n23    False\n24    False\n25    False\n26    False\n27    False\n28    False\n29    False\n30    False\n31    False\n32    False\n33    False\n34    False\n35    False\n36    False\n37    False\n38    False\n39    False\n40    False\n41    False\n42     True\n43    False\n44    False\n45    False\n46    False\n47    False\n48    False\n49    False\n50    False\n51    False\n52    False\n53    False\n54    False\nName: year, dtype: bool"
+    },
+    {
+        "inverse_correlation_gas_miles": "True"
+    },
+    {
+        "side_mean_miles": {
+            "bottom": 6581.0,
+            "left": 8090.0,
+            "right": 7089.1578947368425,
+            "top": 7202.714285714285
+        },
+        "max_side_mean": 8090.0,
+        "min_side_mean": 6581.0,
+        "has_variability": "True"
+    },
+    {
+        "bottom_range_matches": false,
+        "right_range_matches": false,
+        "gas_min": 1.3900000000000001,
+        "gas_max": 3.31
+    }
+]

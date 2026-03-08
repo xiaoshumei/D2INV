@@ -1,0 +1,26 @@
+[
+    {
+        "year_min": "1956",
+        "year_max": "2010",
+        "miles_mean": 7164.909090909091,
+        "year_unique_count": 55,
+        "side_unique_count": 4
+    },
+    {
+        "max_gas_price_matches": "True",
+        "min_gas_price_matches": "True",
+        "years_1998_2008_present": "True"
+    },
+    {
+        "correlation": -0.17433205594404674,
+        "is_weak_negative": "True"
+    },
+    {
+        "side_distribution_correct": true
+    },
+    {
+        "gas_min_matches": "False",
+        "gas_max_matches": "True",
+        "variation_across_sides": true
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "dominant_source": "Fossil Fuels",
+        "is_dominant": true,
+        "mean_pre_2010": 620129.0,
+        "mean_post_2010": NaN,
+        "is_decline_after_2010": "False",
+        "fluctuation_present": false
+    },
+    {
+        "mean": 4711.941176470588,
+        "std": 470.45688837929606,
+        "min": 3853.0,
+        "max": 5321.0,
+        "mean_in_range": "True",
+        "std_low": "True",
+        "min_in_range": "False",
+        "max_in_range": "True"
+    },
+    {
+        "earliest_net_generation_2001": "True",
+        "latest_net_generation_2017": "True"
+    },
+    {
+        "peak_in_2010": "False",
+        "declined_by_2017": "True"
+    },
+    {
+        "renewables_average": 9660.0,
+        "fossil_average": 36478.17647058824,
+        "nuclear_average": 4711.941176470588,
+        "renewables_major_contributor": "False"
+    }
+]

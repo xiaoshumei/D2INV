@@ -1,0 +1,34 @@
+[
+    {
+        "deadliest_event": "All natural disasters",
+        "deadliest_deaths": "3706227",
+        "next_deadliest_deaths": "3700000",
+        "is_1931_drought_deadliest": false
+    },
+    {
+        "most_lethal_disaster_type": "All natural disasters",
+        "examples": [
+            "All natural disasters",
+            "All natural disasters"
+        ]
+    },
+    {
+        "peak_decade_20th": "1920",
+        "peak_value_20th": "17452586",
+        "total_20th": "62657774",
+        "total_21st": "2556526",
+        "is_21st_decline": "True",
+        "2004_exception": "True",
+        "2010_exception": "True"
+    },
+    {
+        "specific_decade": "1920",
+        "events": "44",
+        "number": "17452586",
+        "percentage": 26.761900380744713
+    },
+    {
+        "percentage": 30.8,
+        "description": "decreased"
+    }
+]

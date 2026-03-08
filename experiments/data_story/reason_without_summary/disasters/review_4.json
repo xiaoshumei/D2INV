@@ -1,0 +1,31 @@
+[
+    {
+        "Drought_1928_3M": false
+    },
+    {
+        "earthquake_1976_exists": true,
+        "is_most_lethal_earthquake": "True",
+        "is_most_lethal_total": "False"
+    },
+    {
+        "epidemic_deaths": "9596463",
+        "total_deaths": "65214300",
+        "other_deaths": "55617837",
+        "fact1": "False",
+        "fact2": "False"
+    },
+    {
+        "extreme_weather_2010_deaths": "1564",
+        "extreme_weather_avg_before_2010": 13353.184466019418,
+        "fact1_valid": "False",
+        "fact2_valid": "False"
+    },
+    {
+        "Flood_death_total": 0,
+        "Drought_death_total": "11731294",
+        "Earthquake_death_total": 0,
+        "Flood_rank": null,
+        "Drought_rank": 2,
+        "Earthquake_rank": null
+    }
+]

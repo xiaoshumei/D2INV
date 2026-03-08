@@ -1,0 +1,38 @@
+[
+    {
+        "qatar_exists": true,
+        "central_african_republic_exists": true,
+        "positive_correlation": "True",
+        "correlation_value": 0.646434542358474,
+        "exception_exists": "True"
+    },
+    {
+        "europe_central_asia_income": "False",
+        "europe_central_asia_health": "False",
+        "sub_saharan_africa_income": "False",
+        "sub_saharan_africa_health": "False",
+        "europe_central_asia_highest_income": "False",
+        "europe_central_asia_highest_health": "True",
+        "sub_saharan_africa_lowest_income": "True",
+        "sub_saharan_africa_lowest_health": "True"
+    },
+    {
+        "top_10_health_andorra": true,
+        "top_10_health_cyprus": true,
+        "top_10_health_switzerland": true,
+        "andorra_income_above_mean": "True",
+        "cyprus_income_above_mean": "True",
+        "switzerland_income_above_mean": "True"
+    },
+    {
+        "min_health_check": "True",
+        "region_of_min_country_check": true,
+        "bottom_10_countries_check": false,
+        "region_of_required_countries_check": true
+    },
+    {
+        "fact1_income": true,
+        "fact1_health": "False",
+        "fact2_correlation": "False"
+    }
+]

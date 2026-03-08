@@ -1,0 +1,33 @@
+[
+    {
+        "min_date": "1958-03-01 00:00:00",
+        "max_date": "2020-04-01 00:00:00",
+        "min_adj": 314.44,
+        "max_adj": 413.35,
+        "percentage_increase": 31.455921638468396
+    },
+    {
+        "mean_diff_valid": "False",
+        "min_diff_valid": "False",
+        "max_diff_valid": "False",
+        "earliest_diff_valid": "False",
+        "earliest_diff_higher": "False"
+    },
+    {
+        "monthly_mean_max_month": "April",
+        "monthly_mean_min_month": "September",
+        "std_1960s": 3.006517811622982,
+        "std_recent": 13.12354561661493,
+        "is_1960s_std_higher": "False"
+    },
+    {
+        "acceleration_difference": 79.92814078519632,
+        "expected_difference": 24.7,
+        "is_valid": "False"
+    },
+    {
+        "avg_annual_increase_1970s": 1.2229166666666687,
+        "avg_annual_increase_2010s": 2.4135000000000106,
+        "is_data_fact_valid": "False"
+    }
+]

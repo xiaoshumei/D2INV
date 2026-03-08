@@ -1,0 +1,29 @@
+[
+    {
+        "max_miles_correct": "True",
+        "max_miles_in_2005": true,
+        "no_dips_in_1973_1980s": false
+    },
+    {
+        "peak_gas_price": "True",
+        "trough_in_1990s": "True"
+    },
+    {
+        "right_count": "19",
+        "top_count": "7",
+        "right_most": "True",
+        "top_least": "True",
+        "right_count_correct": "True",
+        "top_count_correct": "True"
+    },
+    {
+        "correlation_between_miles_and_gas": -0.1743,
+        "is_negative_correlation": "True",
+        "is_correlation_close_to_given": "True"
+    },
+    {
+        "1970s_decline": false,
+        "2000s_increase": true,
+        "both_conditions_met": false
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "is_top_trebi": true,
+        "trebi_mean": 42.47,
+        "no462_mean": 39.06,
+        "wisconsin_mean": 40.58,
+        "is_trebi_mean_correct": "False",
+        "is_no462_mean_correct": "False",
+        "is_wisconsin_mean_correct": "False",
+        "is_wisconsin_lower": "True",
+        "is_no462_lower": "True"
+    },
+    {
+        "university_farm_highest": "False",
+        "waseca_crookston_lowest": "False",
+        "trebi_high_yield": "False",
+        "top_varieties": true
+    },
+    {
+        "Trebi_yield_decline_percent": 14.442702424286095,
+        "Trebi_decline_valid": "False",
+        "Wisconsin_No_38_stable": "False",
+        "years_valid": true
+    },
+    {
+        "trebi_waseca_1931_valid": true,
+        "wisconsin_waseca_1931_valid": true,
+        "no475_grandrapids_1931_valid": true,
+        "no475_outlier": false
+    },
+    {
+        "manchuria_pct_change": -15.970760944223489,
+        "glabron_pct_change": -21.357343990395727,
+        "manchuria_match": "False",
+        "glabron_match": "False"
+    }
+]

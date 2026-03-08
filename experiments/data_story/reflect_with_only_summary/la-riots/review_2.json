@@ -1,0 +1,34 @@
+[
+    {
+        "race_distribution_correct": true,
+        "total_race_count": "63"
+    },
+    {
+        "type_counts_match": true,
+        "actual_type_counts": {
+            "Homicide": 36,
+            "Officer-involved shooting": 10,
+            "Not riot-related": 9,
+            "Death": 8
+        },
+        "expected_type_counts": {
+            "Homicide": 36,
+            "Officer-involved shooting": 10,
+            "Not riot-related": 9,
+            "Death": 8
+        }
+    },
+    {
+        "min_age_check": "True",
+        "has_15_check": "True",
+        "significant_age_range": true
+    },
+    {
+        "compton_victims": 4,
+        "expected_compton_victims": 17
+    },
+    {
+        "death_incidents_april_may_1992": 59,
+        "fact_valid": false
+    }
+]

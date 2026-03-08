@@ -1,0 +1,32 @@
+[
+    {
+        "flood_count_valid": true,
+        "max_deaths_valid": "True",
+        "event_exists": false
+    },
+    {
+        "earthquake_percent": 3.9512821574409296,
+        "epidemic_percent": 14.71527410399253,
+        "earthquake_valid": "True",
+        "epidemic_valid": "True"
+    },
+    {
+        "1900s_deaths_sum": "8995694",
+        "fact_valid": "False"
+    },
+    {
+        "epidemic_1918_exists": true,
+        "earthquake_1976_exists": true,
+        "epidemic_1918_death": "449700",
+        "earthquake_1976_death": "276994",
+        "epidemic_1918_death_valid": "True",
+        "earthquake_1976_death_valid": "True"
+    },
+    {
+        "flood_entity_exists": true,
+        "earthquake_entity_exists": true,
+        "extreme_weather_entity_exists": true,
+        "max_deaths_higher_than_300k": "True",
+        "max_deaths_higher_than_276k": "True"
+    }
+]

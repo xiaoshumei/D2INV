@@ -1,0 +1,31 @@
+[
+    {
+        "max_count": "54",
+        "spike_exists": true
+    },
+    {
+        "count_mean_matches": "False",
+        "count_std_matches": "False",
+        "march_spike": "True",
+        "april_spike": "False",
+        "no_periodic_trend": "True"
+    },
+    {
+        "midnight_present": "True",
+        "early_morning_present": "True",
+        "evening_present": "True"
+    },
+    {
+        "feb_2015_avg": 2.531073446327684,
+        "mar_2015_avg": 3.291457286432161,
+        "apr_2015_avg": 2.162303664921466,
+        "feb_low": "False",
+        "mar_high": "True",
+        "apr_high": "True"
+    },
+    {
+        "high_count_days_in_april_may": 80,
+        "mean_count": 2.5958115183246075,
+        "has_high_count_in_april_may": true
+    }
+]

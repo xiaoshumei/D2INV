@@ -1,0 +1,34 @@
+[
+    {
+        "max_yield_correct": "True",
+        "no_457_waseca_1931": "0      False\n1      False\n2      False\n3      False\n4      False\n       ...  \n115    False\n116    False\n117    False\n118    False\n119    False\nLength: 120, dtype: bool",
+        "glabron_max_yield": "0      False\n1      False\n2      False\n3      False\n4      False\n       ...  \n115    False\n116    False\n117    False\n118    False\n119    False\nName: variety, Length: 120, dtype: bool"
+    },
+    {
+        "year_min_correct": "True",
+        "year_max_correct": "True",
+        "year_std_correct": "False",
+        "site_unique_correct": true,
+        "site_present": true,
+        "variety_unique_correct": true,
+        "variety_present": true
+    },
+    {
+        "all_varieties_decreased": "True",
+        "top_two_varieties": [
+            "No. 457",
+            "Glabron"
+        ],
+        "top_two_match": true
+    },
+    {
+        "velvet_lower": "True",
+        "manchuria_lower": "True",
+        "trebi_higher": "True",
+        "wisconsin_higher": "True"
+    },
+    {
+        "Grand Rapids lowest yield": true,
+        "Waseca higher variability": "True"
+    }
+]

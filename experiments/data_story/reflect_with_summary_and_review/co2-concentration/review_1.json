@@ -1,0 +1,24 @@
+[
+    {
+        "CO2_increase_over_100": "True",
+        "adjusted_CO2_std_lower": "True"
+    },
+    {
+        "seasonal_variation_minimal": "True",
+        "upward_trend": "True"
+    },
+    {
+        "adjusted_CO2_std_lower": "True",
+        "adjusted_CO2_mean_similar": "False",
+        "adjusted_CO2_min_higher": "True",
+        "adjusted_CO2_max_lower": "True"
+    },
+    {
+        "mean_1970s": 1.2610000000000015,
+        "mean_1980s": 1.5789999999999964,
+        "mean_2020s": 4.329999999999984
+    },
+    {
+        "trend_increasing": "False"
+    }
+]

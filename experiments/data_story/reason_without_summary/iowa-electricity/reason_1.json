@@ -1,0 +1,32 @@
+{
+
+"story_title": "Energy Generation Trends from 2001 to 2017", 
+"story_subtitle": "Analyzing the evolution of fossil fuels, nuclear energy, and renewables in power generation across decades", 
+"story_pieces": [
+    {
+        "narration": "Renewables experienced exponential growth from 2001 to 2017, increasing from 1,437 GWh to 21,933 GWh, while fossil fuels declined from 35,361 GWh to 28,437 GWh. Nuclear energy remained relatively stable at around 4,500-5,500 GWh.", 
+        "question": "How did the net generation of fossil fuels, nuclear energy, and renewables change over the 17-year period?", 
+        "visualization": "line chart (year vs. net generation for all sources)"
+    }, 
+    {
+        "narration": "Fossil fuels dominated energy generation in 2001 with 35,361 GWh, representing 96% of total generation. By 2017, renewables surpassed nuclear energy for the first time, contributing 21,933 GWh compared to nuclear's 5,214 GWh.", 
+        "question": "Which energy source had the highest net generation in 2001, and how did the dominance shift by 2017?", 
+        "visualization": "stacked bar chart (year vs. generation by source)"
+    }, 
+    {
+        "narration": "Nuclear energy peaked in 2008 with 5,282 GWh (15% of total generation) but declined to 5,214 GWh in 2017, while renewables increased by 1,200% since 2001. Fossil fuels declined by 18% over the period.", 
+        "question": "What were the peak generation years for each energy source, and how did their relative contributions change?", 
+        "visualization": "bar chart race (year vs. generation by source)"
+    }, 
+    {
+        "narration": "Fossil fuels showed a 1.5% annual growth from 2001 to 2008, followed by a 6.5% annual decline from 2008 to 2017. Renewables grew at a 14% annual rate from 2001 to 2017.", 
+        "question": "What were the average annual growth rates for fossil fuels, nuclear energy, and renewables between 2001 and 2017?", 
+        "visualization": "area chart (year vs. generation by source with growth lines)"
+    }, 
+    {
+        "narration": "Renewables' share of total generation increased from 3.9% in 2001 to 44.2% in 2017, while fossil fuels' share dropped from 96.1% to 55.1%. Nuclear energy remained around 12.5% of total generation.", 
+        "question": "How did the proportion of each energy source in total generation change over time?", 
+        "visualization": "donut chart (year vs. percentage of total generation by source)"
+    }
+] 
+}

@@ -1,0 +1,12 @@
+{
+
+"story_title": "Crop Yield Analysis: Varieties and Sites in 1931 and 1932", 
+"story_subtitle": "Comparing agricultural productivity across different crop varieties, sites, and years", 
+"story_pieces": [ 
+{"narration": "In 1931, the Trebi variety at Waseca site recorded the highest yield of 63.83 units, outperforming other varieties by a significant margin.", "question": "Which crop variety and site combination achieved the highest yield in 1931?", "visualization": "ranked bar chart (variety-site pairs vs. yield)"}, 
+{"narration": "The University Farm site consistently produced higher yields across most varieties in 1931, with notable exceptions such as Velvet and No. 475.", "question": "How did the University Farm site compare to other sites in terms of yield performance in 1931?", "visualization": "grouped bar chart (sites vs. yield by variety)"}, 
+{"narration": "From 1931 to 1932, the Wisconsin No. 38 variety showed a 35% increase in yield at the Waseca site, while Manchuria's yield dropped by 14% at the same location.", "question": "How did key varieties' yields change between 1931 and 1932 across different sites?", "visualization": "line chart (years vs. yield for selected varieties)"}, 
+{"narration": "The Waseca site had the most variable yields, with Trebi achieving 63.83 units in 1931 and Wisconsin No. 38 reaching 58.17 units in 1932, while other sites like Grand Rapids showed more stable performance.", "question": "Which site exhibited the greatest yield variability across the two years?", "visualization": "box plot (sites vs. yield distribution)"}, 
+{"narration": "The Svansota variety demonstrated the most consistent yield across sites in 1931, with a minimal variance of 21.6 units, making it the most reliable choice for stable production.", "question": "Which variety showed the most consistent yields across different sites in 1931?", "visualization": "area chart (sites vs. yield for Svansota)"}
+] 
+}

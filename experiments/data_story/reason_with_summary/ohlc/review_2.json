@@ -1,0 +1,36 @@
+[
+    {
+        "num_unique_dates": 44,
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "valid": true
+    },
+    {
+        "max_return_correct": "True",
+        "min_return_correct": "True",
+        "max_return_date_correct": "True",
+        "max_return_signal_correct": "True",
+        "min_return_date_correct": "True",
+        "min_return_signal_correct": "True"
+    },
+    {
+        "short_mean_positive": "False",
+        "long_mean_similar": "False",
+        "long_higher_volatility": "False"
+    },
+    {
+        "neutral_count": "1",
+        "neutral_on_date": 1,
+        "ret_zero": "True"
+    },
+    {
+        "short_std": 6.14,
+        "long_std": 5.73,
+        "short_higher": "True",
+        "short_std_match": "False",
+        "long_std_match": "False"
+    }
+]

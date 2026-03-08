@@ -1,0 +1,31 @@
+[
+    {
+        "year_1917_peak": "True",
+        "year_1931_peak": "True",
+        "epidemic_1917_contribution": "False",
+        "extreme_weather_1917_contribution": "False",
+        "epidemic_1931_contribution": "False",
+        "extreme_weather_1931_contribution": "False"
+    },
+    {
+        "epidemic_over_50_percent": "False",
+        "pandemic_over_3_7m": "False",
+        "earthquake_drought_next": false,
+        "droughts_high_mortality_early_20th": "True"
+    },
+    {
+        "tangshan_earthquake": true,
+        "indian_ocean_tsunami": false,
+        "death_counts_match": false
+    },
+    {
+        "most_disasters_fewer_100k": true,
+        "max_deaths_3_7_million": "True",
+        "has_1_5_million_plus": true
+    },
+    {
+        "decreasing_trend": "True",
+        "extreme_weather_significant": "False",
+        "epidemic_significant": "True"
+    }
+]

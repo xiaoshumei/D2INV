@@ -1,0 +1,36 @@
+[
+    {
+        "highest_income_region": "middle_east_north_africa",
+        "lowest_income_region": "sub_saharan_africa",
+        "east_asia_pacific_highest": false,
+        "sub_saharan_africa_lowest": true
+    },
+    {
+        "europe_central_asia_has_highest_health_mean": "True",
+        "sub_saharan_africa_has_lowest_health_mean": "True",
+        "sub_saharan_africa_has_health_above_europe_mean": false,
+        "max_health_above_europe_mean": "True"
+    },
+    {
+        "Andorra_exists": "True",
+        "Qatar_exists": "True",
+        "Andorra_health_not_max": "False",
+        "Qatar_health_not_max": "True",
+        "highest_health_not_top_income": true
+    },
+    {
+        "lowest_health_region": true,
+        "south_sudan_in_region": true,
+        "burundi_in_region": true,
+        "south_sudan_health_low": "True",
+        "burundi_health_low": "True",
+        "iceland_in_region": true,
+        "germany_in_region": true,
+        "iceland_health_high": "True",
+        "germany_health_high": "True"
+    },
+    {
+        "correlation_population_health": 0.016516985698437566,
+        "is_negative_correlation": "False"
+    }
+]

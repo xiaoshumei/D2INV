@@ -1,0 +1,12 @@
+{
+
+"story_title": "1992 Los Angeles: A Year of Violence and Demographic Patterns", 
+"story_subtitle": "Analyzing the distribution of fatalities, racial disparities, and geographic hotspots during a turbulent year", 
+"story_pieces": [ 
+{"narration": "Of the 83 incidents recorded, 33% involved officer-related shootings, while 41% were homicides. The remaining 26% included deaths and non-riot-related cases, highlighting varied contexts of fatal encounters.", "question": "What were the most common causes of fatal incidents in 1992 Los Angeles, and how do they compare in frequency?", "visualization": "stacked bar chart (incident types vs. percentage distribution)"}, 
+{"narration": "Latino individuals accounted for 37% of victims, followed by Black (35%) and White (23%) demographics. Asian representation was minimal at 5%, reflecting systemic disparities in vulnerability.", "question": "How did racial demographics correlate with victimization rates in 1992 Los Angeles?", "visualization": "pie chart (racial distribution of fatalities)"}, 
+{"narration": "The majority of victims (62%) were under 30 years old, with 15% under 18. This age distribution suggests disproportionate impact on younger populations.", "question": "Which age groups were most affected by fatal incidents in 1992 Los Angeles?", "visualization": "histogram (age distribution of victims)"}, 
+{"narration": "Compton, Watts, and Koreatown emerged as hotspots with 12+ incidents each. Neighborhoods like Hollywood and South Park had 6-9 incidents, indicating spatial clustering of violence.", "question": "Which neighborhoods in Los Angeles experienced the highest concentration of fatalities in 1992?", "visualization": "choropleth map (neighborhoods vs. incident counts)"}, 
+{"narration": "The vast majority (86%) of incidents occurred between April 29-30, 1992. The single outlier in November 1993 suggests a possible spike in violence during the 1992 LA riots, though the data is sparse.", "question": "Was there a temporal pattern in fatal incidents during 1992 Los Angeles?", "visualization": "line chart (monthly incident trends with date markers)"} 
+] 
+}

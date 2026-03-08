@@ -1,0 +1,30 @@
+[
+    {
+        "time_min": "2015/01/01 01:00:00",
+        "time_max": "2015/05/30 11:00:00",
+        "count_min": "1",
+        "count_max": "54",
+        "count_mean": 2.5958115183246075,
+        "count_std": 4.100414567944033,
+        "spike1_exists": true,
+        "spike2_exists": true
+    },
+    {
+        "max_count_is_54": "True",
+        "date_20150315_has_max_count": "True",
+        "date_20150106_exists": true,
+        "date_20150413_exists": true
+    },
+    {
+        "bimodal_peaks": false,
+        "peak_non_peak_ratio": 1.2937786276034915
+    },
+    {
+        "spike_date_exists": true,
+        "max_count_on_date": true
+    },
+    {
+        "percentage_bursts": 3.9790575916230364,
+        "std_bursts_per_day": 0.45675013919556984
+    }
+]

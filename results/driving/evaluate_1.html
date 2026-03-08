@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar + Ratings</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    html,body{margin:0;height:100%;font-family:Arial,Helvetica,sans-serif}
+    .wrap{display:flex;height:100%;align-items:stretch;gap:24px;padding:24px;box-sizing:border-box}
+    #radar{flex:1 1 60%;min-width:0}
+    #side{flex:1 1 40%;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+    .dim-row{display:flex;align-items:center;gap:12px;padding:8px;border-radius:6px;cursor:pointer;transition:background .2s}
+    .dim-row.active{background:#e6f4ff}
+    .dim-row:not(.active){opacity:.4}
+    .stars{font-size:20px;letter-spacing:2px;color:#ffb400}
+    .pb{flex:1;height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden}
+    .pb div{height:100%;background:#52c41a;border-radius:4px;transition:width .3s}
+    .detail{margin-top:8px;font-size:14px;color:#555;display:none}
+    .dim-row.active .detail{display:block}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="radar"></div>
+    <div id="side"></div>
+  </div>
+
+  <script>
+    // data
+    const raw = [
+      {dimension:"engagement",score:3,rationale:"Scrolling is the only real interaction; charts do not respond to hover, click, zoom, or filtering. The AOS scroll-triggered fade-in adds mild motion, but it is essentially cosmetic. Without any drill-down or user-controlled filtering, curiosity quickly plateaus."},
+      {dimension:"clarity",score:4,rationale:"Labels and legends are clear, but the lack of tooltips on charts forces users to guess values."},
+      {dimension:"aesthetics",score:5,rationale:"Clean modern palette with ample whitespace and consistent typography create a visually pleasing experience."},
+      {dimension:"performance",score:2,rationale:"Heavy images and un-optimised JS cause noticeable lag on mobile devices."},
+      {dimension:"accessibility",score:3,rationale:"Only basic alt attributes present; keyboard navigation and screen-reader labelling are missing."}
+    ];
+
+    // prepare radar dataset
+    const dims = raw.map(d=>d.dimension);
+    const scores = raw.map(d=>d.score);
+    const maxScore = 5;
+
+    // init radar
+    const radarChart = echarts.init(document.getElementById('radar'));
+    radarChart.setOption({
+      radar:{
+        indicator:dims.map(d=>({name:d,max:maxScore})),
+        radius:'70%',
+        axisName:{fontSize:14}
+      },
+      series:[{
+        type:'radar',
+        data:[{value:scores,name:'Score',areaStyle:{opacity:.3}}],
+        lineStyle:{width:2},
+        symbol:'circle',
+        symbolSize:6
+      }]
+    });
+
+    // build interactive side panel
+    const side = document.getElementById('side');
+    raw.forEach((item,idx)=>{
+      const row=document.createElement('div');
+      row.className='dim-row';
+      row.dataset.idx=idx;
+
+      const stars='★'.repeat(item.score)+'☆'.repeat(maxScore-item.score);
+      const perc=(item.score/maxScore)*100;
+
+      row.innerHTML=`
+        <span class="stars">${stars}</span>
+        <div class="pb"><div style="width:${perc}%"></div></div>
+        <div class="detail">${item.rationale}</div>
+      `;
+      side.appendChild(row);
+    });
+
+    // selection logic
+    function selectOnly(idx){
+      document.querySelectorAll('.dim-row').forEach(r=>{
+        r.classList.toggle('active', +r.dataset.idx===idx);
+      });
+    }
+    // default select first
+    selectOnly(0);
+
+    // click handlers
+    side.addEventListener('click',e=>{
+      const row=e.target.closest('.dim-row');
+      if(row) selectOnly(+row.dataset.idx);
+    });
+
+    // keep heights equal
+    function equalHeight(){
+      const h=document.getElementById('radar').clientHeight;
+      document.getElementById('side').style.maxHeight=h+'px';
+    }
+    window.addEventListener('resize',equalHeight);
+    equalHeight();
+  </script>
+</body>

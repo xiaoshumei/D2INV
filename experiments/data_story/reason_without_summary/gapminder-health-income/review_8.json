@@ -1,0 +1,33 @@
+[
+    {
+        "correlation_income_health": 0.646434542358474,
+        "mean_health_top_income": 80.91999999999999,
+        "mean_health_all": 71.67326203208557
+    },
+    {
+        "top_regions": [
+            "europe_central_asia",
+            "middle_east_north_africa"
+        ],
+        "top_health_avg": [
+            77.4606,
+            75.7895
+        ],
+        "claim_valid": false
+    },
+    {
+        "luxembourg_in_top_10": true,
+        "qatar_in_top_10": true
+    },
+    {
+        "large_pop_moderate_income": "True",
+        "small_pop_high_income": "False",
+        "overall_income_mean": 17232.24064171123,
+        "large_pop_income_mean": 15424.315789473685,
+        "small_pop_income_mean": 13803.578947368422
+    },
+    {
+        "sub_saharan_africa_has_lowest_health": "True",
+        "sub_saharan_africa_has_lowest_income": "True"
+    }
+]

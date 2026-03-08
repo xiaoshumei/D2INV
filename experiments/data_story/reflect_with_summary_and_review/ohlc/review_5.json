@@ -1,0 +1,34 @@
+[
+    {
+        "signal_distribution_correct": true,
+        "mean_return_correct": "True",
+        "std_dev_correct": "True"
+    },
+    {
+        "short_max_ret": "False",
+        "short_min_ret": "False",
+        "long_mean_ret_negative": "True",
+        "neutral_ret_zero": "True",
+        "neutral_count": true
+    },
+    {
+        "min_ret_valid": "True",
+        "max_ret_valid": "True",
+        "extreme_signal_valid": false
+    },
+    {
+        "date_exists": "True",
+        "signal_on_date": "long",
+        "signal_long": true,
+        "subsequent_short": "False"
+    },
+    {
+        "cumulative_return_peak": 89.6725451583935,
+        "cumulative_return_min_after_peak": 55.78780636163553,
+        "has_decline_after_peak": true,
+        "mean_ret": 1.3830766802091614,
+        "std_ret": 6.194040535850076,
+        "max_ret": 15.4907975460123,
+        "min_ret": -10.8433734939759
+    }
+]
