@@ -1,0 +1,38 @@
+[
+    {
+        "race_distribution_matches": true
+    },
+    {
+        "type_counts": {
+            "Homicide": 36,
+            "Officer-involved shooting": 10,
+            "Not riot-related": 9,
+            "Death": 8
+        },
+        "expected": {
+            "Homicide": 36,
+            "Officer-involved shooting": 10,
+            "Not riot-related": 9,
+            "Death": 8
+        },
+        "is_valid": true
+    },
+    {
+        "minimum_age_is_15": "True",
+        "has_age_15": "True",
+        "proportion_15_30": 49.2063492063492,
+        "proportion_valid": true
+    },
+    {
+        "Compton_count": "4",
+        "Compton_valid": "True",
+        "Watts_present": true,
+        "Koreatown_present": true
+    },
+    {
+        "april_1992_deaths": "5",
+        "may_1992_deaths": "3",
+        "total_deaths": 8,
+        "validated": "True"
+    }
+]

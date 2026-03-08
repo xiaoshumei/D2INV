@@ -1,0 +1,30 @@
+[
+    {
+        "is_max_correct": "True",
+        "is_min_correct": "True",
+        "is_max_bact_correct": true,
+        "is_min_bact_correct": true,
+        "is_aerobacter_pen_correct": "True",
+        "is_bacillus_pen_correct": "True"
+    },
+    {
+        "neomycin_max_valid": "True",
+        "neomycin_min_valid": "True",
+        "streptococcus_max_valid": "True",
+        "staphylococcus_min_valid": "True"
+    },
+    {
+        "Gram_negative_mean_higher": "False",
+        "Gram_positive_high_resistance": "True"
+    },
+    {
+        "Salmonella_Neomycin_min": 0.008,
+        "Salmonella_Neomycin_max": 0.09
+    },
+    {
+        "max_streptomycin": "True",
+        "gram_positive_has_max": true,
+        "gram_negative_has_high": true,
+        "gram_positive_high_resistance": true
+    }
+]

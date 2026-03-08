@@ -1,0 +1,33 @@
+[
+    {
+        "max_count_correct": "True",
+        "has_target_time": "True"
+    },
+    {
+        "trend_increase_jan_march": false,
+        "trend_decline_after_march": false,
+        "spikes_present": true
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "majority_1_4": true,
+        "few_gt_10": true,
+        "outlier_54": true
+    },
+    {
+        "peak_hours": [
+            12
+        ],
+        "midnight_in_peak": false,
+        "ten_pm_in_peak": false,
+        "peak_count": "175"
+    },
+    {
+        "first_half_mean": 2.446650124069479,
+        "latter_half_mean": 2.704710144927536,
+        "is_latter_higher": "True"
+    }
+]

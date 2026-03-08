@@ -1,0 +1,29 @@
+[
+    {
+        "mean_health_top_income_gt_overall_mean": "True",
+        "max_health_countries_in_top_income": true,
+        "max_health_countries_have_max_income": false
+    },
+    {
+        "sub_saharan_africa_health_min_48_5": "True",
+        "sub_saharan_africa_health_58": "True",
+        "sub_saharan_africa_count_48": true,
+        "lesotho_in_sub_saharan_africa": true,
+        "south_sudan_in_sub_saharan_africa": true
+    },
+    {
+        "europe_central_asia_income": 27714.42,
+        "sub_saharan_africa_income": 4932.77,
+        "europe_central_asia_population": "901918994",
+        "sub_saharan_africa_population": "1000528645",
+        "income_match": "False",
+        "population_similar": "True"
+    },
+    {
+        "China_population": "False",
+        "China_income": "True",
+        "China_health": "True",
+        "Andorra_health": "True"
+    },
+    {}
+]

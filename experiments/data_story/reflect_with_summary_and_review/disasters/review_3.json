@@ -1,0 +1,25 @@
+[
+    {
+        "max_deaths_value": "3706227",
+        "max_deaths_correct": "True",
+        "event_in_1931": "False"
+    },
+    {
+        "early_1900s_avg": 823614.6315789474,
+        "twenty_tens_avg": 113736.0
+    },
+    {
+        "earthquake_deaths_over_2_5_million": "True",
+        "earthquake_is_deadliest": false
+    },
+    {
+        "flood_1907_exists": false,
+        "drought_1942_exists": true
+    },
+    {
+        "early_earthquake_max": "206142",
+        "sum_extreme_epidemic": "285553",
+        "max_entity_early": "All natural disasters",
+        "sum_greater": "True"
+    }
+]

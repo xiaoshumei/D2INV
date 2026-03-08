@@ -1,0 +1,28 @@
+[
+    {
+        "Fossil Fuels peaked in 2007 with 41389 GWh": false,
+        "Fossil Fuels declined from 2008 to 2013": false,
+        "Fossil Fuels stabilized after 2013": false,
+        "Renewables grew steadily": "False",
+        "Renewables surpassed Nuclear Energy in 2017": "True"
+    },
+    {
+        "peak_2008_correct": "True",
+        "decline_2013": "False",
+        "std_nuclear_stable": "True"
+    },
+    {
+        "renewables_2001": "1437",
+        "renewables_2017": "21933",
+        "fossil_2017": "29329",
+        "nuclear_2017": "5214",
+        "fact_valid": "False"
+    },
+    {},
+    {
+        "2001_fossil_share": NaN,
+        "2017_fossil_share": NaN,
+        "2001_valid": "False",
+        "2017_valid": "False"
+    }
+]

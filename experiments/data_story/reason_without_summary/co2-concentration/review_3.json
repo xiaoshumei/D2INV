@@ -1,0 +1,49 @@
+[
+    {
+        "CO2_min_correct": "True",
+        "CO2_max_correct": "True",
+        "CO2_mean_correct": "True",
+        "CO2_std_correct": "True",
+        "CO2_unique_correct": true,
+        "Date_min_correct": true,
+        "Date_max_correct": true,
+        "Date_unique_correct": true,
+        "adjusted_CO2_min_correct": "True",
+        "adjusted_CO2_max_correct": "True",
+        "adjusted_CO2_mean_correct": "True",
+        "adjusted_CO2_std_correct": "True",
+        "adjusted_CO2_unique_correct": true
+    },
+    {
+        "mean_CO2": 355.3109311740891,
+        "mean_adjusted_CO2": 355.3041565452092,
+        "std_CO2": 28.52004862059201,
+        "std_adjusted_CO2": 28.442895350913698,
+        "min_CO2": 313.21,
+        "min_adjusted_CO2": 314.44,
+        "max_CO2": 416.18,
+        "max_adjusted_CO2": 413.35,
+        "diff_trend_negative": "False",
+        "mean_close": "True",
+        "std_lower": "True",
+        "min_max_diff": "True"
+    },
+    {
+        "monthly_pattern_valid": "False",
+        "seasonal_pattern_strength_1960s_vs_later": "False"
+    },
+    {
+        "average_growth_rate_1960s": 0.785370370370376,
+        "average_growth_rate_2010s": 2.3586111111111197
+    },
+    {
+        "adjusted_mean_close_to_original": "False",
+        "adjusted_std_close_to_original": "False",
+        "adjusted_min_within_original_range": "True",
+        "adjusted_max_within_original_range": "True",
+        "adjusted_mean_matches": "True",
+        "adjusted_std_matches": "True",
+        "adjusted_min_matches": "True",
+        "adjusted_max_matches": "True"
+    }
+]

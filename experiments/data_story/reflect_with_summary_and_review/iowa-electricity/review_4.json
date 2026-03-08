@@ -1,0 +1,27 @@
+[
+    {
+        "Fossil Fuels has highest total generation": "True",
+        "Peak year before or at 2013": true,
+        "Declining until 2013": false,
+        "Minor fluctuations after 2013": true
+    },
+    {
+        "nuclear_more_stable": "True",
+        "nuclear_peak": "False",
+        "fossil_sustained_growth": "True"
+    },
+    {
+        "Renewables_net_generation_increasing": "False",
+        "Renewables_growth_rate_increasing": "False",
+        "Renewables_last_three_growth_higher": "False"
+    },
+    {
+        "total_generation_increased": "True",
+        "renewables_share_increased": "True"
+    },
+    {
+        "most_dramatic_decrease_year": "1970-01-01 00:00:00.000002009",
+        "renewables_increase_year": "1970-01-01 00:00:00.000002009",
+        "years_different": false
+    }
+]

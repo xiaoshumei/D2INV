@@ -1,0 +1,30 @@
+[
+    {
+        "overall_trend_positive": "True",
+        "sixties_avg_increase": 0.8640000000000043,
+        "twenties_avg_increase": 2.4135000000000106
+    },
+    {
+        "adjusted_CO2_std_lower": "True"
+    },
+    {
+        "CO2_mean": "True",
+        "CO2_std": "True",
+        "CO2_min": "True",
+        "CO2_max": "True",
+        "adjusted_CO2_mean": "True",
+        "adjusted_CO2_std": "True",
+        "adjusted_CO2_min": "True",
+        "adjusted_CO2_max": "True"
+    },
+    {
+        "overall_avg_increase": 1.600060483870968,
+        "period_1998_2012_avg_increase": 2.0069999999999935,
+        "period_1998_2012_has_lower_increase": "False"
+    },
+    {
+        "max_co2_2010s": 414.83,
+        "first_year_over_400": 2014,
+        "has_over_400_in_2010s": "True"
+    }
+]

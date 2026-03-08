@@ -1,0 +1,37 @@
+[
+    {
+        "has_fluctuation": "True",
+        "spikes": "True",
+        "declines": "False",
+        "has_periodic_fluctuation": "True",
+        "has_high_values": "True",
+        "has_low_values": "False"
+    },
+    {
+        "has_high_activity": "True",
+        "has_minimal_activity": "True"
+    },
+    {
+        "count_mean_matches": "False",
+        "count_std_matches": "False",
+        "peak_hours_higher_than_mean": {
+            "12": "True",
+            "18": "True",
+            "19": "True",
+            "20": "False"
+        },
+        "any_peak_higher": true,
+        "max_hour_in_peak": true
+    },
+    {
+        "valid": true,
+        "reason": "Highest count 54 on March 15, 2015."
+    },
+    {
+        "skewness": 6.457538325087614,
+        "mean": 2.5958115183246075,
+        "median": 1.0,
+        "is_right_skewed": "True",
+        "mean_gt_median": "True"
+    }
+]

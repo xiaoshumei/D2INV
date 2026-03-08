@@ -1,0 +1,30 @@
+[
+    {
+        "is_max_death_3_7_million": "True",
+        "is_max_death_year_1931": "True",
+        "is_total_year_1931": "True",
+        "is_total_over_3_7_million": "True"
+    },
+    {
+        "early_1900s_avg_deaths": 259495.6,
+        "twenty_10s_avg_deaths": 12637.333333333334,
+        "early_1900s_avg_above_1m": "False",
+        "twenty_10s_avg_around_100k": "False"
+    },
+    {
+        "earthquake_deadliest": "False",
+        "earthquake_total_over_4m": "False",
+        "drought_less_frequent": true,
+        "epidemic_increasing_trend": false,
+        "extreme_weather_increasing_trend": false
+    },
+    {
+        "1907_Earthquake_1_3M": "False",
+        "1942_Drought_1_5M": "True"
+    },
+    {
+        "earthquake_highest_max_deaths": false,
+        "extreme_weather_increase": "True",
+        "epidemic_increase": "False"
+    }
+]

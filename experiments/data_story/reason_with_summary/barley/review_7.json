@@ -1,0 +1,40 @@
+[
+    {
+        "avg_1932_higher": false,
+        "waseca_increase": "False",
+        "univ_farm_increase": "False",
+        "overall_mean": 34.42055533333334,
+        "avg_1931": 37.077777999999995,
+        "avg_1932": 31.763332666666667
+    },
+    {
+        "Trebi_waseca_1931_63.83": false,
+        "No475_grandrapids_1932_15.23": false,
+        "Wisconsin38_above_30": "False"
+    },
+    {
+        "max_yield_correct": "True",
+        "waseca_max_correct": "True",
+        "min_yield_correct": "True",
+        "grand_rapids_min": "True",
+        "years_present": true
+    },
+    {
+        "mean_1931_greater_1932": "True",
+        "top_varieties_1931": true,
+        "no_475_min_yield": "False",
+        "svansota_min_yield": "False",
+        "glabron_stable_1932": "True",
+        "no457_stable_1932": "True"
+    },
+    {
+        "std_yield": "True",
+        "min_yield": "True",
+        "max_yield": "True",
+        "variety_462": true,
+        "variety_475": true,
+        "year_min": "True",
+        "year_max": "True",
+        "year_std": "False"
+    }
+]

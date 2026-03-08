@@ -1,0 +1,31 @@
+[
+    {
+        "trebi_variety_exists": true,
+        "waseca_site_exists": true,
+        "year_1931_exists": true,
+        "max_yield_waseca_1931": 65.7667,
+        "max_yield_correct": "False",
+        "max_variety_trebi": false,
+        "trebi_waseca_1931_has_63_8333": true
+    },
+    {
+        "year_1931_avg_higher": "True",
+        "glabron_25_percent_decline": "False"
+    },
+    {
+        "waseca_max_Trebi": "True",
+        "waseca_max_Wisconsin No. 38": "True",
+        "count_waseca_max_varieties": "10",
+        "total_varieties": 10,
+        "most_varieties": "True"
+    },
+    {
+        "variety_exists": true,
+        "specific_row_exists": "True",
+        "lowest_in_sites": "True"
+    },
+    {
+        "mean_yield_matches": "True",
+        "std_yield_matches": "True"
+    }
+]

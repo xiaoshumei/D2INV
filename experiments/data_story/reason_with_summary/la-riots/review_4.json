@@ -1,0 +1,53 @@
+[
+    {
+        "Black_count": 28,
+        "Latino_count": 19,
+        "White_count": 14,
+        "Asian_count": 2,
+        "total_fatalities": "63",
+        "race_counts_match": true,
+        "total_fatalities_match": "True"
+    },
+    {
+        "Homicide_count": "36",
+        "Death_count": "8",
+        "Not_riot_related_count": "9",
+        "Officer_involved_shooting_count": "10",
+        "Homicide_valid": "True",
+        "Death_valid": "True",
+        "Not_riot_related_valid": "True",
+        "Officer_involved_shooting_valid": "True"
+    },
+    {
+        "age_15_count": "4",
+        "age_17_count": "1",
+        "fact_valid": "True"
+    },
+    {
+        "neighborhoods_present": [
+            "Compton",
+            "Watts",
+            "Koreatown"
+        ],
+        "neighborhoods_present_all": true,
+        "death_counts": {
+            "Compton": 0,
+            "Watts": 0,
+            "Koreatown": 0
+        },
+        "counts_non_zero": false,
+        "counts_above_average": {
+            "Compton": "False",
+            "Watts": "False",
+            "Koreatown": "False"
+        }
+    },
+    {
+        "april_1992_deaths": 36,
+        "may_1992_deaths": 24,
+        "total_1992_deaths": 62,
+        "first_three_weeks_april_deaths": 0,
+        "april_may_percentage": 96.7741935483871,
+        "first_three_weeks_percentage": 0.0
+    }
+]

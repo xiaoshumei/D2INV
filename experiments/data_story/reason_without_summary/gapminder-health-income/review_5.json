@@ -1,0 +1,40 @@
+[
+    {
+        "max_income_health": 82.0,
+        "min_income_health": 53.8,
+        "max_income": "132877",
+        "min_income": "599",
+        "high_income_health_above_mean": "True",
+        "low_income_health_below_mean": "True"
+    },
+    {
+        "top_10_pop_health_ratio": 0.09819218228890761,
+        "average_top_health": 73.11444444444444,
+        "malta_health": 82.1,
+        "singapore_health": 82.1,
+        "top_health_less_than_malta": "True",
+        "top_health_less_than_singapore": "True",
+        "top_health_ratio_36": "False"
+    },
+    {
+        "east_asia_pacific_income_range": "False",
+        "east_asia_pacific_health_range": "False",
+        "sub_saharan_income_min": "False",
+        "sub_saharan_health_min": "False",
+        "east_asia_pacific_max_income": "False",
+        "east_asia_pacific_max_health": "False",
+        "sub_saharan_min_income": "True",
+        "sub_saharan_min_health": "True"
+    },
+    {
+        "top_5_countries_match": false
+    },
+    {
+        "max_population_value": "True",
+        "max_population_is_india": false,
+        "india_health_score": "True",
+        "australia_health_score": "True",
+        "germany_health_score": "True",
+        "india_health_lower_than_others": "True"
+    }
+]

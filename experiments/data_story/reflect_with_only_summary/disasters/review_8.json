@@ -1,0 +1,33 @@
+[
+    {
+        "max_deaths_correct": "True",
+        "drought_1931_exists": false
+    },
+    {
+        "Earthquakes consistently rank as the most lethal disaster type": false
+    },
+    {
+        "total_20th_century": "62624440",
+        "total_21st_century": "2589860",
+        "total_21st_less": "True",
+        "peak_20th_century_decades": [
+            1920,
+            1930
+        ],
+        "peak_20th_century_correct": false,
+        "2004_exception": "True",
+        "2010_exception": "True",
+        "21st_exceptions_valid": true
+    },
+    {
+        "is_deadliest_decade": false,
+        "is_over_5m": "False",
+        "is_15_percent": "False"
+    },
+    {
+        "extreme_weather_death_percentage": 30.79521976008329,
+        "dominance_in_recent_decades": "False",
+        "proportion_in_recent_decades": 0.24960232224460796,
+        "proportion_in_older_decades": 0.31523429823399146
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "year_min_check": "True",
+        "year_max_check": "True",
+        "year_1995_exists": "True",
+        "miles_mean_check": "False",
+        "trend_check": false
+    },
+    {
+        "gas_price_1970s_mean": 2.195,
+        "gas_price_1980s_mean": 2.397,
+        "gas_price_1980s_higher_than_1970s": "True"
+    },
+    {
+        "total_miles_per_side": {
+            "right": 134694,
+            "bottom": 111877,
+            "left": 97080,
+            "top": 50419
+        },
+        "order_match": false
+    },
+    {
+        "gas_price_stability": "True"
+    }
+]

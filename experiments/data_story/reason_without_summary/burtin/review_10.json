@@ -1,0 +1,32 @@
+[
+    {
+        "max_pen_over_800": "True",
+        "min_pen_0_001": "True",
+        "three_high_mic_bacteria_present": "True",
+        "three_high_mic_bacteria_values": true,
+        "susceptible_bacteria_present": "True",
+        "susceptible_pen_range": true
+    },
+    {
+        "gram_negative_correlation": 0.676114839336885,
+        "gram_positive_correlation": 0.6233280263073115,
+        "strong_negative_correlation": "True",
+        "weak_positive_correlation": "False"
+    },
+    {
+        "Gram_negative_percent": 44.44444444444444,
+        "Gram_positive_percent": 0.0
+    },
+    {
+        "S_typhosa_resistance": true,
+        "S_schottmuelleri_balanced": true
+    },
+    {
+        "Streptococcus viridans exists": "True",
+        "Streptococcus viridans Neomycin value is 40 \u03bcg/mL": "True",
+        "Streptococcus viridans Neomycin is extreme outlier": "True",
+        "Pseudomonas aeruginosa exists": "True",
+        "Pseudomonas aeruginosa Penicillin value is 850 \u03bcg/mL": "True",
+        "Pseudomonas aeruginosa Penicillin is extreme outlier": "False"
+    }
+]

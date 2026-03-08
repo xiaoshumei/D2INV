@@ -1,0 +1,37 @@
+[
+    {
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_earliest": 315.7,
+        "CO2_latest": 416.18,
+        "CO2_start_correct": "True",
+        "CO2_end_correct": "True"
+    },
+    {
+        "mean_difference": 0.006774628879895772,
+        "std_dev_difference": 0.0771532696783126,
+        "max_check": "True",
+        "min_check": "True",
+        "mean_check": "True",
+        "std_check": "True"
+    },
+    {
+        "positive_trend": "True",
+        "seasonal_variation": "False",
+        "has_required_columns": false,
+        "std_dev_gt_mean": "False"
+    },
+    {},
+    {
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_num_unique": 718,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "adjusted_CO2_num_unique": 709
+    }
+]

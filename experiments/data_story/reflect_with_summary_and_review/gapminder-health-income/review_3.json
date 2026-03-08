@@ -1,0 +1,37 @@
+[
+    {
+        "positive_correlation": "True",
+        "norway_exists": true,
+        "singapore_exists": true,
+        "burundi_exists": true,
+        "somalia_exists": true
+    },
+    {
+        "middle_east_north_africa_avg_income": "True",
+        "europe_central_asia_avg_income": "False",
+        "sub_saharan_africa_avg_income": "False",
+        "order": "True"
+    },
+    {
+        "correlation_population_health": 0.016516985698437566,
+        "is_weak_correlation": "True",
+        "chad_exists": true,
+        "chad_population_matches": "True",
+        "chad_health_matches": "True",
+        "japan_exists": true,
+        "japan_population_matches": "True",
+        "japan_health_matches": "True"
+    },
+    {
+        "average_health_sub_saharan": 62.153124999999996,
+        "population_variance_sub_saharan_is_highest": false,
+        "min_health": 48.5,
+        "max_health_sub_saharan": 74.6
+    },
+    {
+        "max_income_correct": "True",
+        "health_max_correct": "True",
+        "health_mean_correct": "True",
+        "income_mean_correct": "False"
+    }
+]

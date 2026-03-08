@@ -1,0 +1,39 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "mean_ret": 1.3830766802091614,
+        "std_ret": 6.194040535850076
+    },
+    {
+        "signal_counts": {
+            "short": "True",
+            "long": "True",
+            "neutral": "True"
+        },
+        "short_ret_max": "True",
+        "short_ret_min": "False",
+        "long_ret_mean_positive": "False",
+        "neutral_ret_mean_close_zero": "True",
+        "neutral_count": "True"
+    },
+    {
+        "min_ret_correct": "True",
+        "max_ret_correct": "True",
+        "min_ret_signal_short": false,
+        "max_ret_signal_short": true
+    },
+    {
+        "shift_on_2009_06_15": true,
+        "continued_short_signals": "False"
+    },
+    {
+        "max_ret": "True",
+        "min_ret": "True",
+        "date_peak": true,
+        "date_trough": true
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "year_min": "True",
+        "year_max": "True",
+        "miles_min": "True",
+        "miles_max": "True",
+        "miles_mean": "False",
+        "miles_std": "False",
+        "miles_unique": true,
+        "max_miles_year": true,
+        "year_unique": true
+    },
+    {
+        "gas_peak_correct": "True",
+        "gas_low_correct": "False",
+        "year_2008_exists": true,
+        "year_1998_exists": true,
+        "gas_201_exists": true,
+        "gas_193_exists": false,
+        "year_1970s_exists": "True"
+    },
+    {
+        "right": {
+            "expected": 7538,
+            "actual": 7089.0,
+            "matches": false
+        },
+        "left": {
+            "expected": 6859,
+            "actual": 8090.0,
+            "matches": false
+        },
+        "bottom": {
+            "expected": 6743,
+            "actual": 6581.0,
+            "matches": false
+        },
+        "top": {
+            "expected": 6834,
+            "actual": 7203.0,
+            "matches": false
+        }
+    },
+    {
+        "correlation": -0.17433205594404674,
+        "is_negative": "True"
+    },
+    {
+        "gas_1973": "True",
+        "miles_1973": "True",
+        "miles_1974": "True"
+    }
+]

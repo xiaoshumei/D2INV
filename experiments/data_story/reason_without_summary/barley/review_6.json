@@ -1,0 +1,32 @@
+[
+    {
+        "trebi_avg_1931": 42.5,
+        "no475_avg_1931": 31.8,
+        "trebi_max": "False",
+        "no475_min": "False"
+    },
+    {
+        "max_yield": 54.346666000000006,
+        "max_site": "Waseca",
+        "min_yield": 29.053335000000004,
+        "min_site": "Grand Rapids",
+        "valid": "False"
+    },
+    {
+        "most_varieties_declined": "True",
+        "manchuria_most_drop": false,
+        "glabron_most_drop": true
+    },
+    {
+        "Trebi_max_yields_1932": "False",
+        "No_457_avg_yields_1932": "False",
+        "Trebi_most_consistent": "False"
+    },
+    {
+        "increase_wisconsin": -2.3777783333333318,
+        "increase_match": "False",
+        "max_increase": -0.1111116666666625,
+        "max_increase_match": "False",
+        "has_data": true
+    }
+]

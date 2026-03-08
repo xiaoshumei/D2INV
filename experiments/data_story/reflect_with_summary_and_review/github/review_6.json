@@ -1,0 +1,31 @@
+[
+    {
+        "max_count_valid": "True",
+        "date_valid": true
+    },
+    {
+        "count_trend": 0.03333333333333344,
+        "count_variability": 1.5796272337178503,
+        "max_count": "54",
+        "min_count": "1",
+        "mean_count": 2.5958115183246075
+    },
+    {
+        "peaks_in_specified_hours": false,
+        "mean_specified_hours_higher": "True"
+    },
+    {
+        "skewness": 6.457538325087614,
+        "mean": 2.5958115183246075,
+        "median": 1.0,
+        "proportion_low_counts": 0.8366492146596859,
+        "proportion_high_counts": 0.039790575916230364
+    },
+    {
+        "march_avg": 3.29,
+        "april_avg": 2.16,
+        "may_avg": 2.28,
+        "overall_mean": 2.6,
+        "count_std": 4.1
+    }
+]

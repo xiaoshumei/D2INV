@@ -1,0 +1,59 @@
+[
+    {
+        "trebi_mean_1931": 42.46666,
+        "trebi_is_highest": "True",
+        "trebi_higher_than_glabron": "True",
+        "trebi_higher_than_no462": "True",
+        "data_fact_valid": "False"
+    },
+    {
+        "majority_waseca_max": "True",
+        "valid_trebi": "True",
+        "valid_velvet": "True"
+    },
+    {
+        "year_check": "True",
+        "glabron_check": "False",
+        "decline_check": true,
+        "glabron_1931": 37.32777666666667,
+        "glabron_1932": 29.355555,
+        "decline_count": 10,
+        "total_varieties": 10
+    },
+    {
+        "mean_yield_1931": 37.07777799999999,
+        "trebi_waseca_yield": 63.8333,
+        "no462_waseca_yield": 65.7667,
+        "top_yields": [
+            {
+                "variety": "No. 462",
+                "site": "Waseca",
+                "yield": 65.7667
+            },
+            {
+                "variety": "Trebi",
+                "site": "Waseca",
+                "yield": 63.8333
+            },
+            {
+                "variety": "Wisconsin No. 38",
+                "site": "Waseca",
+                "yield": 58.8
+            },
+            {
+                "variety": "No. 457",
+                "site": "Waseca",
+                "yield": 58.1
+            },
+            {
+                "variety": "Glabron",
+                "site": "Waseca",
+                "yield": 55.2
+            }
+        ]
+    },
+    {
+        "glabron_outlier": false,
+        "no475_outlier": false
+    }
+]

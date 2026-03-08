@@ -1,0 +1,35 @@
+[
+    {
+        "max_count_valid": "True",
+        "peak_time_valid": true
+    },
+    {
+        "morning_mean": 2.4311454311454312,
+        "night_mean": 2.217032967032967,
+        "midday_mean": 3.122227997227997,
+        "morning_lower": "True",
+        "night_lower": "True"
+    },
+    {
+        "overall_mean": 2.5958115183246075,
+        "first_week_mean": 2.709016393442623,
+        "first_week_count": "244",
+        "first_week_percentage": 25.54973821989529
+    },
+    {
+        "min_count": "1",
+        "max_count": "54",
+        "num_outliers_high": 16,
+        "num_outliers_low": 0,
+        "num_days_with_max_count": 1,
+        "num_days_with_min_count": 533
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "num_unique_count": 26,
+        "skew_count": 6.457538325087614
+    }
+]

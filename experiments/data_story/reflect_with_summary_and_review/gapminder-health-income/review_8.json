@@ -1,0 +1,33 @@
+[
+    {
+        "max_income_correct": "True",
+        "max_health_correct": "True",
+        "top_income_health_in_range": true,
+        "health_max_high_income": "False"
+    },
+    {
+        "min_health_sub_saharan_africa": 48.5,
+        "has_min_health": "True",
+        "income_range_valid": "False",
+        "region_distribution": "48"
+    },
+    {
+        "europe_central_asia_high_income": "True",
+        "sub_saharan_africa_low_income": "True"
+    },
+    {
+        "population": "False",
+        "health_max": "True",
+        "china_health": "True",
+        "andorra_health": "True",
+        "china_income": "True",
+        "andorra_income": "True"
+    },
+    {
+        "Middle_East_North_Africa_income": NaN,
+        "Middle_East_North_Africa_health": NaN,
+        "Middle_East_North_Africa_income_match": false,
+        "Middle_East_North_Africa_health_max": false,
+        "Europe_central_asia_health_missing": false
+    }
+]

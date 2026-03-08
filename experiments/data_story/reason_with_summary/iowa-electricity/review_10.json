@@ -1,0 +1,29 @@
+[
+    {
+        "dominated_each_year": "True",
+        "peak_in_2008": "False",
+        "2016_value": "True"
+    },
+    {
+        "Nuclear Energy min": "3853",
+        "Nuclear Energy max": "5321",
+        "2007 peak": "False",
+        "2011 peak": "False",
+        "min_correct": "True",
+        "max_correct": "False"
+    },
+    {
+        "2001_renewables_value": "True",
+        "2017_renewables_value": "True",
+        "outpaced_others": false
+    },
+    {
+        "share_2001": NaN,
+        "share_2017": NaN
+    },
+    {
+        "sum_fossil_fuels_2016": "0",
+        "sum_renewables_2016": "0",
+        "renewables_surpassed_fossil_2016": "False"
+    }
+]

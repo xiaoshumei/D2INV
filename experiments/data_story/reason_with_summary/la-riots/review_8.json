@@ -1,0 +1,34 @@
+[
+    {
+        "black_count": "28",
+        "total_races": "63",
+        "black_count_correct": "True",
+        "total_races_correct": "True"
+    },
+    {
+        "min_age": 15.0,
+        "max_age": 87.0,
+        "majority_15_to_35": "True",
+        "min_age_correct": "True",
+        "max_age_correct": "False"
+    },
+    {
+        "homicide_count": "36",
+        "officer_count": "10",
+        "homicide_valid": "True",
+        "officer_valid": "True"
+    },
+    {
+        "concentration_check": "False",
+        "percentage": 0.0,
+        "count": "0",
+        "total_death_incidents": 8
+    },
+    {
+        "april_may_total": "60",
+        "max_monthly_death_count": "36",
+        "after_may_min": "1",
+        "is_apr_may_max": "False",
+        "is_after_lower": "True"
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {},
+    {
+        "CO2_std_higher": "True",
+        "means_close": "True",
+        "adjusted_range_smaller": "True",
+        "unique_co2_higher": true
+    },
+    {
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35
+    },
+    {
+        "CO2_350_crossed_1980": false,
+        "CO2_400_crossed_2015": false,
+        "CO2_415_crossed_2019": false
+    },
+    {
+        "CO2_last_decade_avg_increase": 2.463666666666666,
+        "CO2_earlier_decade_avg_increase": 1.4122794117647048
+    }
+]

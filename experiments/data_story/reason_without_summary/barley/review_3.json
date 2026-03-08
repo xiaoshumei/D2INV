@@ -1,0 +1,31 @@
+[
+    {
+        "trebi_waseca_max": 63.8333,
+        "wisconsin_waseca_max": 58.8
+    },
+    {
+        "morris_trebi_avg": "False",
+        "morris_no_462_avg": "False",
+        "grand_rapids_lowest_varieties": "False"
+    },
+    {
+        "trebi_1931_avg_correct": "False",
+        "wisconsin_1932_avg_correct": "False",
+        "trebi_1931_outperformed": "False",
+        "wisconsin_1932_outperformed": "False"
+    },
+    {
+        "manchuria_decline": "False",
+        "svansota_decline": "False",
+        "wisconsin_increase": "False",
+        "most_varieties_declined": "True"
+    },
+    {
+        "no_475_max_yield": 46.76667,
+        "no_475_min_yield": 15.23333,
+        "velvet_max_yield": 50.23333,
+        "velvet_min_yield": 22.46667,
+        "fact1_valid": "False",
+        "fact2_valid": "False"
+    }
+]

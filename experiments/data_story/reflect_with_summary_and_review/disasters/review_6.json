@@ -1,0 +1,46 @@
+[
+    {
+        "max_deaths": "3706227",
+        "min_deaths": "1",
+        "std_deaths": 373705.4243788378
+    },
+    {
+        "earthquake_extreme_weather_top": false,
+        "drought_substantial": true,
+        "epidemics_massive_years": false,
+        "epidemics_varied_impact": true
+    },
+    {
+        "earthquake_1976_exists": true,
+        "top_deaths_count": 5,
+        "top_deaths_values": [
+            3706227,
+            3700000,
+            3204224,
+            3004895,
+            3000000
+        ]
+    },
+    {
+        "drought_high_death_toll": "False",
+        "epidemic_variable_contributions": "False",
+        "low_proportion_early_20th": true
+    },
+    {
+        "Extreme weather": {
+            "trend_positive": "True",
+            "trend_strength": 0.07062384343763847,
+            "death_increased": "False"
+        },
+        "Flood": {
+            "trend_positive": "False",
+            "trend_strength": -0.0737886651442515,
+            "death_increased": "True"
+        },
+        "Extreme temperature": {
+            "trend_positive": "True",
+            "trend_strength": 0.23949931293196797,
+            "death_increased": "True"
+        }
+    }
+]

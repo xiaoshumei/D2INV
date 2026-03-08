@@ -1,0 +1,52 @@
+[
+    {
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "CO2_unique": 718,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698,
+        "adjusted_CO2_unique": 709,
+        "Date_unique": 741
+    },
+    {
+        "seasonal_peak_in_may": "True",
+        "seasonal_peak_in_june": "True",
+        "is_seasonal": "True",
+        "co2_mean": 355.3109311740891,
+        "adjusted_co2_mean": 355.3041565452092,
+        "co2_std": 28.52004862059201,
+        "adjusted_co2_std": 28.442895350913698,
+        "co2_max": 416.18,
+        "adjusted_co2_max": 413.35,
+        "co2_min": 313.21,
+        "adjusted_co2_min": 314.44
+    },
+    {
+        "std_co2": 28.52004862059201,
+        "std_adj": 28.442895350913698,
+        "mean_co2": 355.3109311740891,
+        "mean_adj": 355.3041565452092,
+        "min_co2": 313.21,
+        "max_co2": 416.18,
+        "min_adj": 314.44,
+        "max_adj": 413.35,
+        "adjusted_smoothes": "True",
+        "mean_similarity": "True",
+        "min_similarity": "False",
+        "max_similarity": "False"
+    },
+    {
+        "sixties_avg_growth": 0.8811111111111118,
+        "nineties_avg_growth": 1.5322222222222246
+    },
+    {
+        "adjusted_CO2_2020_surpass_415": "False",
+        "percentage_increase_1958_2020": "False",
+        "adjusted_CO2_2020_value": 413.35,
+        "min_adjusted_CO2_1958": 314.44
+    }
+]

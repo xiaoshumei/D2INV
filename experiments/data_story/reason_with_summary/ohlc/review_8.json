@@ -1,0 +1,37 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "expected_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "is_valid": true
+    },
+    {
+        "short_mean": 3.294586302264926,
+        "long_mean": -0.9586682802713222,
+        "neutral_mean": 0.0,
+        "short_fact": false,
+        "long_fact": false,
+        "neutral_fact": true
+    },
+    {
+        "max_ret_valid": "True",
+        "min_ret_valid": "True",
+        "date_max_valid": true,
+        "date_min_valid": true
+    },
+    {
+        "std_dev_ret_matches": "True",
+        "skewness_positive": "False"
+    },
+    {
+        "short_trend_positive": "True",
+        "long_more_fluctuation": "False"
+    }
+]

@@ -1,0 +1,31 @@
+[
+    {
+        "All natural disasters": {
+            "has_1917": true,
+            "has_1928": true,
+            "1917_deaths_over_2_5M": "True",
+            "1928_deaths_over_3M": "True",
+            "max_deaths_in_category": "True",
+            "top_two_years": false
+        }
+    },
+    {
+        "earthquake_death_percentage": 3.9512821574409296,
+        "has_tangshan": false,
+        "has_valdivia": false
+    },
+    {
+        "Drought fact valid": "False",
+        "Extreme temperature fact valid": true
+    },
+    {
+        "fact1": "False",
+        "fact2": "False"
+    },
+    {
+        "Extreme weather exists": true,
+        "Number of unique entities": true,
+        "Year 2010 present": true,
+        "Max deaths for Extreme weather >= 55000": "True"
+    }
+]

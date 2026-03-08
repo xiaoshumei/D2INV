@@ -1,0 +1,32 @@
+[
+    {
+        "dominated_all_years": true,
+        "peak_value_correct": true,
+        "trend_decreasing": false
+    },
+    {
+        "mean_nuclear_gen": 4711.941176470588,
+        "std_nuclear_gen": 470.45688837929606,
+        "mean_in_range": "True",
+        "dip_in_2009": "False",
+        "recovery_after_2009": "False"
+    },
+    {
+        "min_2001_renewables": "1437",
+        "max_2017_renewables": "21933",
+        "growth_factor": 15.263048016701461,
+        "is_growth_15fold": "False",
+        "is_min_2001_correct": "True",
+        "is_max_2017_correct": "True"
+    },
+    {
+        "total_generation_2010": false,
+        "total_generation_2017": false,
+        "max_total_generation_year": false
+    },
+    {
+        "2014_net_generation": [],
+        "source_order_2014": [],
+        "is_renewables_second": false
+    }
+]

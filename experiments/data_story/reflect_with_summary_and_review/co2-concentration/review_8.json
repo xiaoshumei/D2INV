@@ -1,0 +1,49 @@
+[
+    {
+        "date_min_correct": true,
+        "date_max_correct": true,
+        "co2_min_correct": "True",
+        "co2_max_correct": "True",
+        "co2_mean_correct": "True",
+        "co2_std_correct": "True",
+        "co2_unique_correct": true,
+        "adj_co2_min_correct": "True",
+        "adj_co2_max_correct": "True",
+        "adj_co2_mean_correct": "True",
+        "adj_co2_std_correct": "True",
+        "adj_co2_unique_correct": true,
+        "co2_trend_upward": "True"
+    },
+    {
+        "winter_avg": 355.6503666490393,
+        "summer_avg": 355.48174863387976,
+        "seasonal_pattern_validated": "True"
+    },
+    {
+        "average_growth_1960_1980": 1.0963888888888906,
+        "average_growth_2000_2020": 2.2531666666666696,
+        "acceleration_valid": "True"
+    },
+    {
+        "CO2": {
+            "std": 28.52004862059201,
+            "mean": 355.3109311740891,
+            "std_matches": "True",
+            "mean_matches": "True"
+        },
+        "adjusted_CO2": {
+            "std": 28.442895350913698,
+            "mean": 355.3041565452092,
+            "std_matches": "True",
+            "mean_matches": "True"
+        },
+        "volatility": {
+            "is_adjusted_less_volatile": "True"
+        }
+    },
+    {
+        "milestone_350_crossed_1990": false,
+        "milestone_400_reached_2015": false,
+        "milestone_417_record_2020": "False"
+    }
+]

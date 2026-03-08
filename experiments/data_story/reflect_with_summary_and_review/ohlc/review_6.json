@@ -1,0 +1,32 @@
+[
+    {
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "average_return": 1.3830766802091614,
+        "signal_valid": true,
+        "return_valid": "True"
+    },
+    {
+        "max_ret": "True",
+        "min_ret": "True",
+        "max_date": true,
+        "min_date": true
+    },
+    {
+        "short_more_frequent_than_long": "True",
+        "short_mean_return_higher_than_overall": "True",
+        "long_mean_return_lower_than_overall": "True",
+        "neutral_mean_return_close_to_zero": "True"
+    },
+    {
+        "std_ret_matches": "True",
+        "min_ret_matches": "True"
+    },
+    {
+        "ret_std_matches": "True",
+        "ret_min_matches": "True"
+    }
+]

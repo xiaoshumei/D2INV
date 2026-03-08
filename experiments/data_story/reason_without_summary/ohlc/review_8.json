@@ -1,0 +1,27 @@
+[
+    {
+        "short_higher_returns": "True",
+        "max_return_date_correct": true,
+        "max_return_value_correct": "False"
+    },
+    {
+        "transition_short_to_long_june15": true,
+        "late_june_short_gains": false,
+        "reason_transition_short_to_long_june15": "Transition from short to long with upward trend",
+        "reason_late_june_short_gains": "No short signals in late June"
+    },
+    {
+        "dates_match": false,
+        "ret_exceed_8": true
+    },
+    {
+        "short_signal_peak": "False",
+        "long_signal_declining": false
+    },
+    {
+        "short_percentage": 54.54545454545454,
+        "long_percentage": 43.18181818181818,
+        "neutral_percentage": 2.272727272727273,
+        "data_fact_valid": "False"
+    }
+]

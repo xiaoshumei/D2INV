@@ -1,0 +1,32 @@
+[
+    {
+        "signal_unique_values_correct": true,
+        "signal_counts_correct": "True",
+        "signal_short_predominant": "True"
+    },
+    {
+        "overall_mean": 1.383,
+        "short_mean": 3.295,
+        "long_mean": -0.959,
+        "neutral_mean": 0.0,
+        "short_close_to_overall": "False",
+        "long_close_to_overall": "False",
+        "neutral_close_to_zero": "True"
+    },
+    {
+        "max_ret_value": 15.4907975460123,
+        "max_ret_date_signal": "True",
+        "min_ret_value": -10.8433734939759,
+        "min_ret_date_signal": "True"
+    },
+    {
+        "mean_positive": "True",
+        "std_high": "True",
+        "july_higher": "False",
+        "max_in_july": false
+    },
+    {
+        "standard_deviation_matches": "True",
+        "outliers_detected": "True"
+    }
+]

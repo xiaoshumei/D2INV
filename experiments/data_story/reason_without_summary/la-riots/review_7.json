@@ -1,0 +1,43 @@
+[
+    {
+        "neighborhood_check": false,
+        "black_male_disproportionate": true,
+        "latino_male_disproportionate": true,
+        "gender_disproportionate": "True"
+    },
+    {
+        "latino_percent_fatalities": 30.158730158730158,
+        "latino_percent_homicide_officer": 78.94736842105263,
+        "black_percent_homicide_officer": 60.71428571428571,
+        "white_percent_homicide_officer": 85.71428571428571,
+        "first_fact_valid": false,
+        "second_fact_valid": false
+    },
+    {
+        "officer_involved_shooting_total": 10,
+        "male_officer_involved_shooting": "10",
+        "age_15_to_30_officer_involved_shooting": 8,
+        "gender_majority": "True",
+        "age_majority": true,
+        "data_fact_validated": true
+    },
+    {
+        "homicide_count": 36,
+        "top_neighborhoods": [
+            "Koreatown",
+            "Vermont Square",
+            "Green Meadows",
+            "Gramercy Park",
+            "Compton"
+        ],
+        "mentioned_neighborhood_counts": {
+            "Vermont Square": "3",
+            "Watts": 0,
+            "Compton": "2"
+        }
+    },
+    {
+        "male_female_ratio_3_1": "False",
+        "black_largest_race": true
+    }
+]

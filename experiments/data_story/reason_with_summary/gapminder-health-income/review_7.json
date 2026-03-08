@@ -1,0 +1,12 @@
+[
+    {
+        "countries_exist": true,
+        "japan_income_health_valid": "True",
+        "sweden_income_health_valid": "True",
+        "equatorial_guinea_income_health_valid": "False",
+        "malawi_income_health_valid": "False",
+        "income_stats_valid": "False",
+        "health_stats_valid": "True",
+        "population_stats_valid": "False"
+    }
+]

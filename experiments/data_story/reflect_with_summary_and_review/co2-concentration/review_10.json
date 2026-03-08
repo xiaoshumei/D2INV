@@ -1,0 +1,38 @@
+[
+    {
+        "Date_min": true,
+        "Date_max": true,
+        "Date_unique": true,
+        "CO2_min": "True",
+        "CO2_max": "True",
+        "CO2_mean": "True",
+        "CO2_std": "True",
+        "CO2_unique": true,
+        "adjusted_CO2_min": "True",
+        "adjusted_CO2_max": "True",
+        "adjusted_CO2_mean": "True",
+        "adjusted_CO2_std": "True",
+        "adjusted_CO2_unique": true
+    },
+    {
+        "std_CO2_higher_than_adjusted": "True",
+        "range_CO2_higher_than_adjusted": "True"
+    },
+    {
+        "adjusted_std_less": "True",
+        "adjusted_min_higher": "True",
+        "adjusted_max_lower": "True",
+        "mean_similarity": "True"
+    },
+    {
+        "CO2_350_crossed": "True",
+        "CO2_400_reached": "True",
+        "CO2_415_crossed": "True",
+        "adjusted_CO2_415_crossed": "False"
+    },
+    {
+        "accelerated_increase": "True",
+        "slope_full": 1.5821451439558805,
+        "slope_recent": 2.4765530303030356
+    }
+]

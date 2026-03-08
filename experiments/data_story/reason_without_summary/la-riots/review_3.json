@@ -1,0 +1,38 @@
+[
+    {
+        "black_percentage": 100.0,
+        "latino_percentage": 0.0,
+        "white_percentage": 0.0,
+        "total_deaths": "8",
+        "expected_total_deaths": 102,
+        "data_fact_valid": "False"
+    },
+    {
+        "under_25_percentage": 62.9,
+        "15_24_percentage": 33.87,
+        "25_34_percentage": 29.03
+    },
+    {
+        "compton_watts_percentage": 0.0,
+        "south_central_percentage": 0.0,
+        "valid": false
+    },
+    {
+        "officer_incidents": "10",
+        "officer_percent": 15.87,
+        "homicide_incidents": "36",
+        "homicide_percent": 57.14,
+        "rest_incidents": "17",
+        "rest_percent": 26.98,
+        "total_incidents": "63"
+    },
+    {
+        "neighborhoods_exist": {
+            "Compton": true,
+            "Watts": true,
+            "South Park": true
+        },
+        "total_deaths_match": true,
+        "deaths_in_named_areas": 3
+    }
+]

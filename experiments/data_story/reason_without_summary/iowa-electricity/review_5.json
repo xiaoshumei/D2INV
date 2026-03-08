@@ -1,0 +1,28 @@
+[
+    {
+        "dominated": "True",
+        "peak_2008": "True",
+        "decline_2017": "False"
+    },
+    {
+        "2001_value": "1437",
+        "2017_value": "21933",
+        "growth_ratio": 15.263048016701461,
+        "is_fact_valid": "False"
+    },
+    {
+        "has_2008_max": "True",
+        "has_2008_value": true,
+        "fluctuating": "False"
+    },
+    {
+        "Renewables share over 35% in 2017": "True",
+        "Nuclear share is 12.5% in 2017": "False"
+    },
+    {
+        "valid": false,
+        "max_percentage_change": 68.83629191321499,
+        "year_of_increase": null,
+        "calculated_percentage": null
+    }
+]

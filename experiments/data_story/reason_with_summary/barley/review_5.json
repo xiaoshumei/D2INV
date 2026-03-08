@@ -1,0 +1,28 @@
+[
+    {
+        "Trebi_1931": "False",
+        "Trebi_1932": "False",
+        "No_475_1931": "False",
+        "No_475_1932": "False"
+    },
+    {
+        "valid": false,
+        "message": "Validation failed"
+    },
+    {
+        "num_varieties_increased": "0",
+        "num_varieties_decreased": "10",
+        "num_varieties_no_change": "0",
+        "most_varieties_increased": "False",
+        "glabron_diff": -7.972221666666673,
+        "no_457_diff": -8.805555000000002
+    },
+    {
+        "Waseca_highest": true,
+        "Grand_Rapids_lowest": true
+    },
+    {
+        "Trebi_1932_range": 0.0,
+        "No_475_1931_range": 0.0
+    }
+]

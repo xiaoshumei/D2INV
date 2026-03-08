@@ -1,0 +1,32 @@
+[
+    {
+        "num_unique_dates": 44,
+        "signal_counts": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        }
+    },
+    {
+        "average_return": 1.38,
+        "return_min": -10.84,
+        "return_max": 15.49,
+        "return_std": 6.194
+    },
+    {
+        "max_ret_value_correct": "True",
+        "max_ret_date_correct": true,
+        "min_ret_value_correct": "True",
+        "min_ret_date_correct": true
+    },
+    {
+        "short_return_mean": 3.294586302264926,
+        "long_return_mean": -0.9586682802713222,
+        "fact_short_return": "False",
+        "fact_long_return": "False"
+    },
+    {
+        "transition_short_to_long_on_june_15": false,
+        "ret_value_3_49_percent": "False"
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "overall_correlation": 0.646434542358474,
+        "region_correlation": 0.7511783361906359,
+        "regions_of_interest": [
+            "europe_central_asia",
+            "east_asia_pacific"
+        ]
+    },
+    {
+        "income_eur_higher": "True",
+        "income_east_higher": "True",
+        "health_eur_higher": "True",
+        "health_east_higher": "True",
+        "income_top_regions": false,
+        "health_top_regions": false,
+        "sub_sahara_income_lowest": "True",
+        "sub_sahara_health_lowest": "True"
+    },
+    {
+        "Qatar_income": "True",
+        "Cyprus_health": "True",
+        "Burundi_income": "True",
+        "Lesotho_health": "True",
+        "income_max": "True",
+        "income_min": "True",
+        "health_max": "True",
+        "health_min": "True"
+    },
+    {
+        "correlation_population_income": -0.038490148006576706,
+        "correlation_population_health": 0.016516985698437566,
+        "most_populous_health": 76.9,
+        "least_populous_income": "3661",
+        "least_populous_health": 65.1
+    },
+    {
+        "top_20_income_percentage": 0.556417224398117,
+        "validates_data_fact": "True"
+    }
+]

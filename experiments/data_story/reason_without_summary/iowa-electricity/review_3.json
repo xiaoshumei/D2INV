@@ -1,0 +1,27 @@
+[
+    {
+        "peak_in_2008": "False",
+        "dominated_each_year": true,
+        "decline_after_2008": false
+    },
+    {
+        "highest_generation_year": "2013",
+        "highest_generation_value": "5321",
+        "dip_in_2009": "True",
+        "consistent_output_after_2009": "False"
+    },
+    {
+        "Renewables_2001_value": "True",
+        "Renewables_2017_value": "True",
+        "Renewables_2017_outpaced": "False"
+    },
+    {
+        "peak_2008": "False",
+        "value_2017": "False"
+    },
+    {
+        "renewables_surpassed_nuclear_2015": "True",
+        "renewables_40_percent_2017": "True",
+        "accelerated_after_2010": "True"
+    }
+]

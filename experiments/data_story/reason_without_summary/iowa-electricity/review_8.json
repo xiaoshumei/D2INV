@@ -1,0 +1,21 @@
+[
+    {
+        "dominated_all_years": "True",
+        "peak_2008_correct": false,
+        "declined_2017_correct": "True"
+    },
+    {
+        "peak_in_2008": "False",
+        "dip_in_2009": "True",
+        "stable_after_2009": "False"
+    },
+    {
+        "min_2001_renewables": false,
+        "max_2017_renewables": false
+    },
+    {
+        "fossil_outpaced_others": true,
+        "renewables_closed_gap": "True"
+    },
+    {}
+]

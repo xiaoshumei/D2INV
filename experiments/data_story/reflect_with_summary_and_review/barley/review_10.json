@@ -1,0 +1,36 @@
+[
+    {
+        "trebi_1931_avg_yield": "True",
+        "trebi_outperforms_no462": "True",
+        "trebi_outperforms_glabron": "True"
+    },
+    {
+        "most_varieties": true,
+        "trebi_valid": "True",
+        "velvet_valid": "True"
+    },
+    {
+        "most_varieties_declined": "True",
+        "top_two_varieties": false,
+        "glabron_values_match": "False",
+        "glabron_percentage_change": "False"
+    },
+    {
+        "varieties_with_max_yield_in_1931": [
+            [
+                "No. 462"
+            ],
+            [
+                "Waseca"
+            ]
+        ],
+        "trebi_waseca_has_max_yield": "False",
+        "no462_waseca_has_max_yield": "True",
+        "trebi_waseca_exists": "True",
+        "no462_waseca_exists": "True"
+    },
+    {
+        "yield_min_correct": "True",
+        "outlier_exists": true
+    }
+]

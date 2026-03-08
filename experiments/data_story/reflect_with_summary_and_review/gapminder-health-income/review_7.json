@@ -1,0 +1,18 @@
+[
+    {
+        "Japan exists": "True",
+        "Japan income": "True",
+        "Japan health": "True",
+        "Sweden exists": "True",
+        "Sweden income": "True",
+        "Sweden health": "True",
+        "Malawi exists": "True",
+        "Malawi income": "True",
+        "Malawi health": "False",
+        "Equatorial Guinea exists": "True",
+        "Equatorial Guinea income": "True",
+        "Equatorial Guinea health": "False",
+        "Equatorial Guinea income > Malawi income": "True",
+        "Equatorial Guinea health < Malawi health": "False"
+    }
+]

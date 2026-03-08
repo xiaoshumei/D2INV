@@ -1,0 +1,31 @@
+[
+    {
+        "Renewables_2001": "1437",
+        "Renewables_2017": "21933",
+        "Nuclear_2017": "5214"
+    },
+    {
+        "peak_value": "42750",
+        "peak_year": "2010",
+        "generation_2016": "28437",
+        "percentage_decrease": 33.48,
+        "peak_valid": "True",
+        "generation_2016_valid": "True",
+        "percentage_valid": "True"
+    },
+    {
+        "Nuclear energy net generation range": {
+            "min": "4152",
+            "max": "5321",
+            "valid": "False"
+        }
+    },
+    {
+        "combined_fossil_renewables_over_95_percent": "False",
+        "nuclear_25_percent_of_combined_total": "False"
+    },
+    {
+        "renewables_growth_rate": 0.1960936980191355,
+        "fossil_fuels_growth_rate": -0.009396717433262872
+    }
+]

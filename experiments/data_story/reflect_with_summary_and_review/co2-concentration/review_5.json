@@ -1,0 +1,34 @@
+[
+    {
+        "earliest_date": "1958-03-01 00:00:00",
+        "latest_date": "2020-04-01 00:00:00",
+        "earliest_co2": 314.44,
+        "latest_co2": 413.35,
+        "co2_min": 314.44,
+        "co2_max": 413.35,
+        "percentage_increase": 31.455921638468396,
+        "increase_over_30": "True"
+    },
+    {
+        "annual_increase": 1.605458333333334,
+        "is_fact_valid": "True"
+    },
+    {
+        "amplitude_correct": "True",
+        "peak_months_correct": false,
+        "trough_months_correct": true
+    },
+    {
+        "rate_1960_1980": 1.089,
+        "rate_2000_2020": 2.253,
+        "data_fact_rate_1960_1980": 1.041,
+        "data_fact_rate_2000_2020": 2.3,
+        "accelerated": "True"
+    },
+    {
+        "adjusted_CO2_max": 413.35,
+        "CO2_mean": 355.3109311740891,
+        "CO2_min": 313.21,
+        "adjusted_CO2_min": 314.44
+    }
+]

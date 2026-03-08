@@ -1,0 +1,36 @@
+[
+    {
+        "Penicillin_min_valid": "True",
+        "Penicillin_max_valid": "True",
+        "Aerobacter_aerogenes_max": "True",
+        "Bacillus_anthracis_min": "True"
+    },
+    {
+        "Streptomycin_min": 0.01,
+        "Streptomycin_max": 14.0,
+        "Streptomycin_mean": 3.065,
+        "Streptomycin_std": 4.5026910472146175,
+        "Bacillus_streptomycin": 0.01,
+        "Streptococcus_streptomycin": 14.0
+    },
+    {
+        "Gram_Staining_Neomycin_mean_negative": 0.5908888888888889,
+        "Gram_Staining_Neomycin_mean_positive": 8.587,
+        "Gram_Staining_Neomycin_std_negative": 0.7587997832835163,
+        "Gram_Staining_Neomycin_std_positive": 14.62790750586016,
+        "fact_valid": "True"
+    },
+    {
+        "Neomycin_mean": 4.0891875,
+        "Neomycin_std": 10.13316450880474,
+        "Neomycin_min": 0.001,
+        "Neomycin_max": 40.0,
+        "Neomycin_num_unique": 12
+    },
+    {
+        "Streptomycin_11_0_present": true,
+        "Streptomycin_40_0_present": false,
+        "Streptomycin_11_0_outlier": "False",
+        "Streptomycin_40_0_outlier": "True"
+    }
+]

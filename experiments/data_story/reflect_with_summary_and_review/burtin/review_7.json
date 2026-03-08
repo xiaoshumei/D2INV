@@ -1,0 +1,35 @@
+[
+    {
+        "Aerobacter aerogenes Penicillin MIC": true,
+        "Klebsiella pneumoniae Penicillin MIC": true,
+        "Bacillus anthracis Penicillin MIC": true
+    },
+    {
+        "Gram_negative_mean": "True",
+        "Gram_positive_mean": "False",
+        "Streptococcus_viridans_MIC_10": true
+    },
+    {
+        "neomycin_min": "True",
+        "neomycin_max": "True",
+        "staphylococcus_count": true,
+        "salmonella_count": true,
+        "streptococcus_count": true,
+        "neomycin_sample_001": true,
+        "neomycin_sample_40": true
+    },
+    {
+        "min_neomycin": 0.001,
+        "max_neomycin": 40.0,
+        "has_0_09": "True",
+        "has_40": "True",
+        "order_of_magnitude": "True"
+    },
+    {
+        "Penicillin_Streptomycin_correlation": -0.12062635476347876,
+        "Neomycin_Penicillin_correlation": -0.17723209784159608,
+        "Neomycin_Streptomycin_correlation": 0.676991883300273,
+        "Penicillin_Streptomycin_weak_negative": "True",
+        "Neomycin_weak_associations": "False"
+    }
+]

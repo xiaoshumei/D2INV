@@ -1,0 +1,39 @@
+[
+    {
+        "overall_correlation": 0.646434542358474,
+        "region_correlation_europe_central_asia": 0.7218676763147829,
+        "region_correlation_east_asia_pacific": 0.7454867092714637,
+        "region_correlations": {
+            "america": 0.5241123927758606,
+            "east_asia_pacific": 0.7454867092714637,
+            "europe_central_asia": 0.7218676763147829,
+            "middle_east_north_africa": 0.5879723369948272,
+            "south_asia": 0.7918092446784343,
+            "sub_saharan_africa": 0.31247942308034843
+        }
+    },
+    {
+        "europe_mean_income": 27714.42,
+        "europe_mean_health": 77.4606,
+        "east_asia_mean_income": 16327.222222222223,
+        "east_asia_mean_health": 71.74444444444444,
+        "sub_saharan_mean_income": 4932.770833333333,
+        "sub_saharan_mean_health": 62.153124999999996,
+        "data_fact_validated": "True"
+    },
+    {
+        "Qatar_income_correct": "True",
+        "Cyprus_health_correct": "True",
+        "Burundi_income_correct": "True",
+        "Lesotho_health_correct": "True"
+    },
+    {
+        "population_income_correlation": -0.038490148006576706,
+        "population_health_correlation": 0.016516985698437566,
+        "valid": "True"
+    },
+    {
+        "top_20_income_percentage": 55.6417224398117,
+        "fact_valid": "False"
+    }
+]

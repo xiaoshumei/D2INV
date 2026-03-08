@@ -1,0 +1,38 @@
+[
+    {
+        "race_distribution_correct": true
+    },
+    {
+        "gender_male_count": "56",
+        "gender_female_count": "7",
+        "gender_total": "63",
+        "gender_male_percentage": 88.88888888888889,
+        "gender_female_percentage": 11.11111111111111,
+        "gender_male_match": "True",
+        "gender_female_match": "True",
+        "gender_total_match": "True"
+    },
+    {
+        "Homicide_count": "True",
+        "Officer_involved_count": "True",
+        "Not_riot_related_count": "True",
+        "Death_count": "True",
+        "total_incidents": "True"
+    },
+    {
+        "death_count": 8,
+        "death_count_valid": true,
+        "deaths_per_neighborhood": {
+            "South Park": 3,
+            "Hollywood": 3,
+            "Harvard Park": 1,
+            "Chesterfield Square": 1
+        }
+    },
+    {
+        "sum_young_victims": "13",
+        "percentage_young_victims": 20.6,
+        "sum_young_ok": "True",
+        "percentage_ok": "True"
+    }
+]

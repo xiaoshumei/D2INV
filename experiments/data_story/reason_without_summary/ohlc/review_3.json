@@ -1,0 +1,31 @@
+[
+    {
+        "short_positive_june": "True",
+        "short_negative_july": "False",
+        "long_positive_june": "True",
+        "long_negative_july": "True",
+        "short_valid": "False",
+        "long_valid": "True"
+    },
+    {
+        "highest_return_correct": "False",
+        "lowest_return_correct": "False"
+    },
+    {
+        "neutral_count": 1,
+        "neutral_date": "2009-07-15 00:00:00",
+        "neutral_ret": 0.0,
+        "neutral_date_check": false,
+        "neutral_ret_check": "True",
+        "neutral_count_check": true
+    },
+    {
+        "short_percentage": 54.54545454545454,
+        "june_higher": false
+    },
+    {
+        "peak_return_correct": "False",
+        "peak_date_correct": false,
+        "late_july_drop_correct": "True"
+    }
+]

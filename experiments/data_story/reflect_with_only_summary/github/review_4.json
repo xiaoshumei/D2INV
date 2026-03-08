@@ -1,0 +1,34 @@
+[
+    {
+        "max_count": "True",
+        "max_count_time": "True"
+    },
+    {
+        "early_morning_avg": 2.4311454311454312,
+        "late_night_avg": 2.217032967032967,
+        "midday_avg": 3.122227997227997,
+        "is_valid": "True"
+    },
+    {
+        "weekly_trend_week1_mean": 2.709016393442623,
+        "weekly_trend_other_weeks_mean": 2.5990677730251326,
+        "weekly_trend_week1_higher": "True"
+    },
+    {
+        "has_high_outliers": "True",
+        "has_low_outliers": "False",
+        "has_48_count": "True",
+        "has_low_activity": "True",
+        "high_outliers_count": "32",
+        "low_outliers_count": "0"
+    },
+    {
+        "skewness": 6.457538325087614,
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "unique_count_values": 26,
+        "low_count_percent": 83.66492146596859
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "max_count": "True",
+        "mean_count": "False",
+        "spike_date": true
+    },
+    {
+        "early_morning_mean": 2.5111713279487367,
+        "evening_mean": 2.666327561327561,
+        "late_afternoon_mean": 2.4495652629373557,
+        "pattern_validated": "False"
+    },
+    {
+        "hourly_mean_22": 1.69,
+        "hourly_mean_04": 2.2,
+        "overall_mean_count": 2.6,
+        "fact_22_valid": "False",
+        "fact_04_valid": "False",
+        "overall_mean_valid": "False"
+    },
+    {
+        "min_count": "1",
+        "max_count": "54",
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "percent_1_5": 91.30890052356021,
+        "skewness": 6.457538325087614,
+        "num_unique_counts": 26
+    },
+    {
+        "mean_before": 2.660377358490566,
+        "mean_after": 2.5313807531380754
+    }
+]

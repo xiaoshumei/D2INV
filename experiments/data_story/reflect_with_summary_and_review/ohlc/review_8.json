@@ -1,0 +1,24 @@
+[
+    {
+        "short_count": "24",
+        "long_count": "19",
+        "neutral_count": "1"
+    },
+    {
+        "short_mean": 3.2946,
+        "long_mean": -0.9587,
+        "neutral_mean": 0.0
+    },
+    {
+        "lowest_return_is_min": "True"
+    },
+    {
+        "std_ok": "True",
+        "mean_positive": "True"
+    },
+    {
+        "short_cumulative_std": 29.201136914387636,
+        "long_cumulative_std": 9.764988624534862,
+        "short_cumulative_std_greater": "True"
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "data_fact": "Aerobacter aerogenes, Klebsiella pneumoniae, and Pseudomonas aeruginosa exhibit the highest Penicillin resistance with MIC values exceeding 800.0, indicating potential treatment challenges for these pathogens.",
+        "valid": true,
+        "reason": ""
+    },
+    {
+        "Streptomycin_max": "True",
+        "Streptomycin_min": "True",
+        "Streptomycin_11": true,
+        "Streptomycin_2": true,
+        "Bacteria_streptococcus_hemolyticus": true,
+        "Bacteria_diplococcus_pneumoniae": true,
+        "Bacteria_bacillus_anthracis": true,
+        "Bacteria_brucella_abortus": true,
+        "Streptomycin_streptococcus_hemolyticus": "True",
+        "Streptomycin_diplococcus_pneumoniae": "True",
+        "Streptomycin_bacillus_anthracis": "True",
+        "Streptomycin_brucella_abortus": "True"
+    },
+    {
+        "neomycin_max_correct": "True",
+        "neomycin_min_correct": "True",
+        "neomycin_mean_correct": "True",
+        "genus_samples_present": true,
+        "genus_distribution_negative": false,
+        "genus_distribution_positive": false,
+        "bacteria_unique_count": true
+    },
+    {
+        "Penicillin_negative_higher": "True",
+        "Streptomycin_negative_higher": "False",
+        "Neomycin_negative_higher": "False",
+        "all_antibiotics_negative_higher": "False"
+    },
+    {
+        "Salmonella schottmuelleri exists": "True",
+        "Salmonella schottmuelleri Penicillin 10.0 and Streptomycin 0.8": "True",
+        "Salmonella typhosa exists": "False",
+        "Salmonella typhosa Neomycin 0.008": "False",
+        "Both Salmonella species present": "False"
+    }
+]

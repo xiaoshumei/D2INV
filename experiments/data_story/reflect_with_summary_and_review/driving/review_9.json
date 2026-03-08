@@ -1,0 +1,38 @@
+[
+    {
+        "miles_max_valid": "True",
+        "year_range_valid": "True",
+        "miles_mean_valid": "False",
+        "miles_std_valid": "False"
+    },
+    {
+        "max_gas": "True",
+        "min_gas": "True",
+        "mean_gas": "True"
+    },
+    {
+        "side_counts": {
+            "right": 19,
+            "bottom": 17,
+            "left": 12,
+            "top": 7
+        },
+        "valid": true
+    },
+    {
+        "correlation": 0.7447564773970964,
+        "valid": "True"
+    },
+    {
+        "left_avg_higher": "True",
+        "bottom_avg_lower": "False",
+        "left_avg_value": 8090.0,
+        "bottom_avg_value": 6581.0,
+        "grouped_means": {
+            "bottom": 6581.0,
+            "left": 8090.0,
+            "right": 7089.1578947368425,
+            "top": 7202.714285714285
+        }
+    }
+]

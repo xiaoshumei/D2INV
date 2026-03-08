@@ -1,0 +1,33 @@
+[
+    {
+        "Penicillin_min_valid": true,
+        "Penicillin_max_valid": true,
+        "Penicillin_850_klebsiella": true
+    },
+    {
+        "Penicillin_range_negative_greater": "True",
+        "Neomycin_range_negative_greater": "False"
+    },
+    {
+        "Salmonella_Streptomycin_Higher": "True",
+        "Salmonella_Neomycin_Higher": "True",
+        "Staphylococcus_Penicillin_Moderate": "True"
+    },
+    {
+        "Neomycin_mean": 4.0891875,
+        "Neomycin_std": 10.13316450880474,
+        "Neomycin_max": 40.0,
+        "Neomycin_min": 0.001,
+        "Neomycin_samples": [
+            0.001,
+            0.09,
+            1.6
+        ],
+        "Neomycin_outlier": "True"
+    },
+    {
+        "Streptomycin_statistics_match": "True",
+        "specific_bacteria_values_present": true,
+        "required_bacteria_names_present": true
+    }
+]

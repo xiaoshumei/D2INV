@@ -1,0 +1,32 @@
+[
+    {
+        "huanghe_flood_exists": false,
+        "max_deaths": "3706227",
+        "is_max": "False"
+    },
+    {
+        "Drought_deaths": 11731294,
+        "Earthquake_deaths": 2576801,
+        "Epidemic_deaths": 9596463,
+        "Drought_over_10m": true,
+        "Earthquake_close_to_8m": false,
+        "Epidemic_close_to_7m": false
+    },
+    {
+        "earthquake_1920s_peak": "False",
+        "2011_tohoku_death": "False",
+        "earthquake_2010s_decline": "False",
+        "2011_in_top10_21st": false
+    },
+    {
+        "epidemic_total_deaths_higher": "False",
+        "epidemic_max_year_included": true,
+        "epidemic_top_two_years": false
+    },
+    {
+        "mean_deaths_before_1990": 11953.036144578313,
+        "mean_deaths_after_1990": 14446.392857142857,
+        "count_before_1990": 83,
+        "count_after_1990": 28
+    }
+]

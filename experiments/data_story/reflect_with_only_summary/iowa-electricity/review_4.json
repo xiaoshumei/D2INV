@@ -1,0 +1,18 @@
+[
+    {},
+    {
+        "stable_generation": "True",
+        "peak_2008": false,
+        "no_growth": "False"
+    },
+    {
+        "2001_value": false,
+        "2017_value": false,
+        "growth_after_2009": false
+    },
+    {},
+    {
+        "Fossil Fuels_2016_decrease": false,
+        "Renewables_2017_increase": false
+    }
+]

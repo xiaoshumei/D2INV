@@ -1,0 +1,53 @@
+[
+    {
+        "num_unique_countries": 187,
+        "qatar_exists": true,
+        "andorra_exists": true,
+        "afghanistan_exists": true,
+        "lesotho_exists": true,
+        "qatar_income": "132877",
+        "andorra_income": "46577",
+        "afghanistan_income": "1925",
+        "lesotho_income": "2598",
+        "qatar_health": 82.0,
+        "afghanistan_health": 57.63,
+        "min_income": "599",
+        "max_income": "132877",
+        "min_health": 48.5,
+        "max_health": 84.1,
+        "max_income_corresponds_to_qatar": "True",
+        "andorra_income_correct": "True",
+        "afghanistan_income_correct": "False",
+        "lesotho_income_correct": "True",
+        "afghanistan_health_correct": "False",
+        "max_health_corresponds_to_qatar": "False"
+    },
+    {
+        "europe_central_asia_high_income": false,
+        "europe_central_asia_high_health": true,
+        "sub_saharan_africa_low_income": true,
+        "sub_saharan_africa_low_health": true,
+        "east_asia_pacific_china": "True",
+        "east_asia_pacific_brunei": "True"
+    },
+    {
+        "top_10_income_regions": false,
+        "bottom_10_health_regions": "False"
+    },
+    {
+        "monaco_exists": false,
+        "bulgaria_exists": true,
+        "equatorial_guinea_exists": false,
+        "sub_saharan_disparities": false
+    },
+    {
+        "population_health_corr_negative": "False",
+        "sub_saharan_health_mean_lower": "True",
+        "sub_saharan_income_mean_lower": "True",
+        "andorra_health_max": "True",
+        "china_population": "False",
+        "china_health": "True",
+        "india_population": "True",
+        "india_health": "True"
+    }
+]

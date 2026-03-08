@@ -1,0 +1,27 @@
+[
+    {
+        "black_death_count": "8",
+        "latino_death_count": 0,
+        "total_death_cases": 8,
+        "fact_valid": "False"
+    },
+    {
+        "age_15_to_25_count": "23",
+        "age_over_50_count": "7",
+        "data_fact_matches": "False"
+    },
+    {
+        "homicide_count": "36",
+        "officer_involved_shooting_count": "10",
+        "valid": "True"
+    },
+    {
+        "compton_death_count": 0,
+        "expected_compton_death_count": 5,
+        "is_valid": false
+    },
+    {
+        "spike_in_april_1992": "False",
+        "decline_in_may_1992": false
+    }
+]

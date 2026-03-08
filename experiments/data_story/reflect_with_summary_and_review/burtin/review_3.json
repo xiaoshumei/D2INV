@@ -1,0 +1,33 @@
+[
+    {
+        "gram_negative_count": "9",
+        "gram_positive_count": "7",
+        "total_gram_samples": "16",
+        "gram_negative_dominate": "True",
+        "gram_negative_count_correct": "True",
+        "gram_positive_count_correct": "True",
+        "total_gram_samples_correct": "True"
+    },
+    {
+        "Salmonella_mean": 0.049,
+        "Streptococcus_mean": 16.7,
+        "Salmonella_lower": "True"
+    },
+    {
+        "Penicillin_min_correct": "True",
+        "Penicillin_max_correct": "True",
+        "Penicillin_range_orders_magnitude": "True"
+    },
+    {
+        "Streptomycin_high_resistance_in_Streptococcus": "False",
+        "Streptomycin_low_resistance_in_Staphylococcus": "True",
+        "Streptomycin_10_in_Streptococcus": true,
+        "Streptomycin_0_03_in_Staphylococcus": true
+    },
+    {
+        "max_pen_value_correct": "True",
+        "max_pen_bacteria_correct": true,
+        "min_pen_value_correct": "True",
+        "min_pen_bacteria_correct": true
+    }
+]

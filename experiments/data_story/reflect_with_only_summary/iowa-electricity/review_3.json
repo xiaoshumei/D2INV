@@ -1,0 +1,24 @@
+[
+    {
+        "renew_2001_correct": "True",
+        "renew_2017_correct": "True",
+        "renew_2017_outpaces_nuclear": "True",
+        "renew_2017_not_outpaces_fossil": "True"
+    },
+    {},
+    {
+        "percentage_less_than_15": "True",
+        "min_nuclear_generation": "3853",
+        "max_nuclear_generation": "5321",
+        "expected_min": 3853,
+        "expected_max": 5282
+    },
+    {
+        "2001_renewables_share": NaN,
+        "2001_fossil_share": NaN,
+        "2017_renewables_share": NaN,
+        "2017_fossil_share": NaN,
+        "valid": "False"
+    },
+    {}
+]

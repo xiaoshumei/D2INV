@@ -1,0 +1,36 @@
+[
+    {
+        "co2_min_valid": "True",
+        "co2_max_valid": "True",
+        "trend_valid": "True"
+    },
+    {
+        "seasonal_pattern": "True",
+        "spring_avg": 357.65849462365594,
+        "fall_avg": 352.45839150361365,
+        "spring_months": [
+            "March",
+            "April",
+            "May"
+        ],
+        "fall_months": [
+            "September",
+            "October",
+            "November"
+        ]
+    },
+    {
+        "adjusted_CO2_std_less_than_CO2": "True",
+        "adjusted_CO2_mean_close_to_CO2_mean": "True"
+    },
+    {
+        "overall_avg_increase": 1.600060483870968,
+        "recent_avg_increase": 2.470681818181824,
+        "is_accelerated": "True"
+    },
+    {
+        "steady_increase": false,
+        "most_increase_in_2010s": "False",
+        "positive_trend": "True"
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "max_count_is_54": "True",
+        "peak_54_at_2015_03_15_05_00_00": true,
+        "peak_48_at_2015_05_11_12_00_00": true
+    },
+    {
+        "time_min_correct": true,
+        "time_max_correct": true,
+        "count_mean_correct": "False",
+        "count_std_correct": "False",
+        "count_min_correct": "True",
+        "count_max_correct": "True",
+        "count_unique_correct": true,
+        "time_unique_correct": true
+    },
+    {
+        "range1_avg": 2.5264942683547336,
+        "range2_avg": 2.666327561327561,
+        "overall_mean": 2.5958115183246075
+    },
+    {
+        "trend_positive": "False",
+        "may_higher": "False",
+        "last_higher": "False",
+        "increase_in_last_five": "True"
+    },
+    {
+        "has_sustained_high_activity": true,
+        "period_2015-03-14_2015-03-15": "True",
+        "period_2015-04-13_2015-04-14": "True"
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "latino_percent": 30.16,
+        "black_percent": 44.44,
+        "white_percent": 22.22,
+        "data_fact_valid": false
+    },
+    {
+        "Officer-involved shooting_percent": 15.87,
+        "Homicide_percent": 57.14,
+        "Other_causes_percent": 26.98,
+        "valid": {
+            "Officer-involved shooting": "False",
+            "Homicide": "False",
+            "Other causes": "False"
+        }
+    },
+    {
+        "percent_under_30": 46.774193548387096,
+        "median_age": 30.5
+    },
+    {
+        "neighborhood_presence": {
+            "Compton": true,
+            "Koreatown": true,
+            "South Park": true
+        },
+        "neighborhood_counts": {
+            "Compton": 4,
+            "Koreatown": 4,
+            "South Park": 3
+        },
+        "has_clustering": true
+    },
+    {
+        "april_1992_deaths": true,
+        "may_1992_deaths": true,
+        "nov_1993_deaths": false
+    }
+]

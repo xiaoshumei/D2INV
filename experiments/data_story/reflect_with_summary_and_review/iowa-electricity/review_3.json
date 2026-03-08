@@ -1,0 +1,23 @@
+[
+    {},
+    {
+        "peaked_2010": false,
+        "2017_value": false,
+        "percentage_reduction": false
+    },
+    {
+        "min_nuclear_generation": "3853",
+        "max_nuclear_generation": "5321",
+        "all_ratios_less_15": "True",
+        "min_nuclear_correct": "True",
+        "max_nuclear_correct": "False",
+        "all_ratios_correct": "True"
+    },
+    {
+        "renewables_2001_share": NaN,
+        "fossil_2001_share": NaN,
+        "renewables_2017_share": NaN,
+        "fossil_2017_share": NaN
+    },
+    {}
+]

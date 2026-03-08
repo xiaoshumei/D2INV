@@ -1,0 +1,41 @@
+[
+    {
+        "Penicillin_min_correct": "True",
+        "Penicillin_max_correct": "True",
+        "Penicillin_std_correct": "True",
+        "Penicillin_unique_correct": true,
+        "Aerobacter_penicillin_max": "True",
+        "Bacillus_penicillin_min": "True"
+    },
+    {
+        "gram_negative_count": "9",
+        "gram_negative_correct": "True",
+        "max_neomycin": 40.0,
+        "max_neomycin_correct": "True",
+        "neomycin_correct": true
+    },
+    {
+        "Streptomycin_mean": 3.065,
+        "Streptomycin_std": 4.5026910472146175,
+        "Neomycin_mean": 4.0891875,
+        "Neomycin_std": 10.13316450880474,
+        "Streptomycin_mean_match": "True",
+        "Streptomycin_std_match": "True",
+        "Neomycin_mean_match": "True",
+        "Neomycin_std_match": "True",
+        "fact_validated": "True"
+    },
+    {
+        "Salmonella_streptomycin_mean": 0.6000000000000001,
+        "Other_genera_streptomycin_mean": 3.4171428571428573,
+        "Salmonella_mean_within_range": "True",
+        "Other_genera_mean_higher": "True"
+    },
+    {
+        "Aerobacter aerogenes": "True",
+        "Klebsiella pneumoniae": "True",
+        "Pseudomonas aeruginosa": "True",
+        "Staphylococcus aureus": false,
+        "Enterococcus faecalis": false
+    }
+]

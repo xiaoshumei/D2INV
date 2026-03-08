@@ -1,0 +1,31 @@
+[
+    {
+        "total_deaths_1900_over_1_2_million": "True",
+        "total_deaths_2017_around_100k": "False",
+        "deadliest_year_1931_drought": "False"
+    },
+    {
+        "drought_highest_deaths": false,
+        "earthquake_extreme_weather_next": false,
+        "epidemic_in_1918": true
+    },
+    {
+        "drought_1931": false,
+        "epidemic_1918": false,
+        "earthquake_1976": true
+    },
+    {
+        "total_epidemic_deaths_greater": "False",
+        "early_20th_epidemic_higher": "True",
+        "epidemic_proportion_decreased": "True",
+        "drought_deaths_higher_than_mean": "True"
+    },
+    {
+        "extreme_weather_trend": "True",
+        "flood_trend": "False",
+        "extreme_temperature_trend": "True",
+        "extreme_weather_late_increase": "False",
+        "flood_late_increase": "False",
+        "extreme_temperature_late_increase": "True"
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "date_exists": "True",
+        "count_on_date": "True",
+        "max_count": "True"
+    },
+    {
+        "data_fact_valid": false
+    },
+    {
+        "percentage_in_1_to_3": 83.66492146596859
+    },
+    {
+        "high_count_days_in_period": 1
+    },
+    {
+        "min_count_valid": "True",
+        "num_dates_with_min_count": 149,
+        "specific_dates_present": false
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "short_signal_return": "False",
+        "long_signal_return": "False",
+        "neutral_signal_return": "True"
+    },
+    {
+        "max_return_valid": "False",
+        "min_return_valid": "False"
+    },
+    {
+        "short_count_correct": false,
+        "long_count_correct": false,
+        "neutral_count_correct": true,
+        "overall_correct": false
+    },
+    {
+        "peak_date_correct": false,
+        "sharp_drop_on_june24": false
+    },
+    {
+        "neutral_return_mean": 0.0,
+        "neutral_count": 1,
+        "neutral_return_zero": "True",
+        "neutral_signal_count_valid": true
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "average_annual_increase": 1.5821451439558747,
+        "is_consistent_trend": "True",
+        "matches_fact": "True"
+    },
+    {
+        "adjusted_co2_max_less_than_co2_max": "True",
+        "adjusted_co2_min_greater_than_co2_min": "True",
+        "adjusted_co2_mean_close_to_co2_mean": "True",
+        "adjusted_co2_std_less_than_co2_std": "True"
+    },
+    {
+        "co2_std_higher_than_adj": "True",
+        "co2_mean_adj_mean_similar": "True",
+        "date_unique_count_correct": true
+    },
+    {
+        "avg_1960s_increase": 0.8569444444444483,
+        "avg_2010s_increase": 2.399351851851855
+    },
+    {
+        "mean_co2_post_1975": 368.144097744361,
+        "mean_adj_post_1975": 368.12887218045114,
+        "std_co2_post_1975": 23.1932128549834,
+        "std_adj_post_1975": 23.103246929554356,
+        "mean_diff_post_1975": -0.015225563909837092,
+        "std_diff_post_1975": 0.003878976405363102
+    }
+]

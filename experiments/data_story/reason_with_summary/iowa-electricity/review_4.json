@@ -1,0 +1,19 @@
+[
+    {
+        "Fossil Fuels dominated electricity generation": "True",
+        "Peak in 2007 with 41,389 GWh": "True",
+        "Declining from 2007 to 2013": false,
+        "Minor fluctuations after 2013": "False"
+    },
+    {
+        "stable": "True",
+        "peak_in_2008": "True",
+        "no_growth_after_2008": "False"
+    },
+    {
+        "renewables_min_2001": true,
+        "renewables_max_2017": true
+    },
+    {},
+    {}
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "dominated_each_year": true,
+        "peak_2010": true,
+        "declined_after_2010": false
+    },
+    {
+        "2011_peak": "True",
+        "increasing_till_2011": false,
+        "dip_2016": "True",
+        "decreasing_after_2011": false
+    },
+    {
+        "renewables_2001_value": "True",
+        "renewables_2017_value": "True",
+        "renewables_growth": "True"
+    },
+    {
+        "peak_2010": "False",
+        "value_2017": "False",
+        "peak_year_correct": "False"
+    },
+    {
+        "Fossil Fuels_over_80_percent_most_years": "False",
+        "Renewables_surpass_Nuclear_in_2014": "True"
+    }
+]

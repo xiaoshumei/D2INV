@@ -1,0 +1,33 @@
+[
+    {
+        "race_distribution_correct": true,
+        "total_fatalities": "63",
+        "total_fatalities_expected": 63
+    },
+    {
+        "Homicide_count_correct": "True",
+        "Death_count_correct": "True",
+        "Not_riot_related_count_correct": "True",
+        "Officer_involved_shooting_count_correct": "True"
+    },
+    {
+        "age_15_count": "4",
+        "age_17_count": "1",
+        "age_15_and_17_count": "5",
+        "age_15_and_17_fact_valid": "True"
+    },
+    {
+        "neighborhoods_present": true,
+        "death_in_neighborhoods": [
+            0,
+            0,
+            0
+        ],
+        "total_death": 8,
+        "any_death_in_neighborhoods": false
+    },
+    {
+        "april_may_majority_1992": true,
+        "april_majority_within_april_may": true
+    }
+]

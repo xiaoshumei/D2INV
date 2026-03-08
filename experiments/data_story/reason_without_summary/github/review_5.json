@@ -1,0 +1,33 @@
+[
+    {
+        "has_max_count_on_20150315": true,
+        "has_48_count_on_20150511": true,
+        "max_count_valid": "True",
+        "max_count_hour_valid": "False",
+        "hourly_pattern_valid": "False"
+    },
+    {
+        "std_count": "False",
+        "max_count_in_march_or_april": true,
+        "trend_increasing": false
+    },
+    {
+        "weekly_cycle": "False",
+        "peak_weekdays": "False",
+        "date1_valid": false,
+        "date2_valid": false,
+        "date1_peak": "True",
+        "date2_peak": "False"
+    },
+    {
+        "bimodal_distribution": true,
+        "median_14_18_higher": "False",
+        "march_april_higher": "True"
+    },
+    {
+        "num_outliers": 32,
+        "has_54": "True",
+        "has_48": "True",
+        "max_count": "54"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "max_death_correct": "True",
+        "entity_match": false,
+        "year_match": "True",
+        "fact_valid": false
+    },
+    {
+        "Drought_total_deaths": "11731294",
+        "Drought_is_deadliest": "False",
+        "Drought_over_10m": "True",
+        "Earthquake_total_deaths": "2576801",
+        "Earthquake_8m": "False",
+        "Epidemic_total_deaths": "9596463",
+        "Epidemic_7m": "False"
+    },
+    {
+        "earthquake_max_death_1923": "False",
+        "tohoku_2011_death": false,
+        "max_death_in_1920s": "False",
+        "decline_from_1920s_to_2010s": "True"
+    },
+    {
+        "epidemic_highest_total": false,
+        "epidemic_1917_and_1918_present": true,
+        "max_epidemic_death_in_1917_1918": "True"
+    },
+    {
+        "trend_increase": "False",
+        "events_2010": "False",
+        "total_1990s": "211146",
+        "total_2000s": "193353",
+        "sum_2010": "1564"
+    }
+]

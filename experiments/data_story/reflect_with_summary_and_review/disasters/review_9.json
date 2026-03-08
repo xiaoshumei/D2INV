@@ -1,0 +1,27 @@
+[
+    {
+        "max_death_in_1917": "False",
+        "second_max_death_in_1928": "False"
+    },
+    {
+        "earthquake_death_percentage": 3.95,
+        "is_valid": "True"
+    },
+    {
+        "Drought_fact": "True",
+        "Extreme_temperature_fact": "True"
+    },
+    {
+        "epd_1918_deaths": "449700",
+        "epd_1917_deaths": "2500000",
+        "fact1_valid": "False",
+        "fact2_valid": "True",
+        "fact3_valid": "False"
+    },
+    {
+        "Extreme weather deaths increase from 1900 to 2017": {
+            "calculated_percentage_increase": -93.43,
+            "matches_fact": "False"
+        }
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "race_total": "63",
+        "black_count": "28",
+        "race_total_correct": "True",
+        "black_count_correct": "True"
+    },
+    {
+        "majority_15_35": "True",
+        "max_age_87": "True"
+    },
+    {
+        "homicide_count": "36",
+        "officer_shooting_count": "10",
+        "homicide_is_largest": "True",
+        "officer_shooting_is_second": "True"
+    },
+    {
+        "num_death_incidents": 8,
+        "num_neighborhoods_with_deaths": 4,
+        "death_counts": {
+            "South Park": 3,
+            "Hollywood": 3,
+            "Harvard Park": 1,
+            "Chesterfield Square": 1
+        }
+    },
+    {
+        "most_deaths_april_may_1992": true,
+        "april_may_count": 60,
+        "total_deaths": 63,
+        "sharp_decline_after_may_1992": true,
+        "count_after_may_1992": 3
+    }
+]

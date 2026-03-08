@@ -1,0 +1,31 @@
+[
+    {
+        "mean_count": 2.5958115183246075,
+        "max_count": "54",
+        "max_count_dates": [
+            "2015-03-15"
+        ]
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "min_count": "1",
+        "max_count": "54",
+        "skew_count": 6.457538325087614
+    },
+    {
+        "april_mean_count": 2.162303664921466,
+        "may_mean_count": 2.2808988764044944,
+        "overall_mean_count": 2.5958115183246075,
+        "num_peaks_above_threshold": 32
+    },
+    {
+        "mean_early_hours": 2.451776649746193,
+        "mean_other_hours": 2.633245382585752,
+        "is_elevated": "False"
+    },
+    {
+        "max_count": "True",
+        "outliers_above_20": "True"
+    }
+]

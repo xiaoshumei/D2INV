@@ -1,0 +1,36 @@
+[
+    {
+        "CO2": {
+            "min": 313.21,
+            "max": 416.18,
+            "mean": 355.3109311740891,
+            "std": 28.52004862059201,
+            "num_unique_values": 718
+        },
+        "adjusted_CO2": {
+            "min": 314.44,
+            "max": 413.35,
+            "mean": 355.3041565452092,
+            "std": 28.442895350913698,
+            "num_unique_values": 709
+        }
+    },
+    {
+        "std_first_half": 11.122047713053071,
+        "std_second_half": 17.96679342893077,
+        "seasonal_diff": 5.200103120042286
+    },
+    {
+        "first_increase_in_1980s": "False"
+    },
+    {
+        "mean_diff": -0.006774628879895772,
+        "data_fact_valid": "False"
+    },
+    {
+        "year_with_max_increase": "2020",
+        "max_increase": 4.329999999999984,
+        "is_year_2020": "True",
+        "is_increase_2_1": "False"
+    }
+]

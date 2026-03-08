@@ -1,0 +1,169 @@
+[
+    {
+        "Black_count": "True",
+        "Latino_count": "True",
+        "White_count": "True",
+        "Asian_count": "True",
+        "total_fatality": true
+    },
+    {
+        "Homicide": "True",
+        "Death": "True",
+        "Not riot-related": "True",
+        "Officer-involved shooting": "True"
+    },
+    {
+        "age_15_count": "4",
+        "age_17_count": "1",
+        "valid": "False"
+    },
+    {
+        "fatality_counts_per_neighborhood": [
+            {
+                "neighborhood": "Altadena",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Central-Alameda",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Chesterfield Square",
+                "fatality_count": 2
+            },
+            {
+                "neighborhood": "Compton",
+                "fatality_count": 2
+            },
+            {
+                "neighborhood": "Del Rey",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Downtown",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "East Hollywood",
+                "fatality_count": 2
+            },
+            {
+                "neighborhood": "Florence",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Gramercy Park",
+                "fatality_count": 2
+            },
+            {
+                "neighborhood": "Green Meadows",
+                "fatality_count": 2
+            },
+            {
+                "neighborhood": "Harvard Heights",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Harvard Park",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Hawthorne",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Historic South-Central",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Hollywood",
+                "fatality_count": 4
+            },
+            {
+                "neighborhood": "Huntington Park",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Hyde Park",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Koreatown",
+                "fatality_count": 4
+            },
+            {
+                "neighborhood": "Ladera Heights",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Long Beach",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Mission Hills",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Pacoima",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Pomona",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Sawtelle",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Silver Lake",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "South Park",
+                "fatality_count": 3
+            },
+            {
+                "neighborhood": "Valley Glen",
+                "fatality_count": 1
+            },
+            {
+                "neighborhood": "Vermont Square",
+                "fatality_count": 3
+            },
+            {
+                "neighborhood": "Vermont-Slauson",
+                "fatality_count": 1
+            }
+        ],
+        "top_neighborhoods_with_most_fatalities": [
+            {
+                "neighborhood": "Hollywood",
+                "fatality_count": 4
+            },
+            {
+                "neighborhood": "Koreatown",
+                "fatality_count": 4
+            },
+            {
+                "neighborhood": "South Park",
+                "fatality_count": 3
+            },
+            {
+                "neighborhood": "Vermont Square",
+                "fatality_count": 3
+            },
+            {
+                "neighborhood": "Chesterfield Square",
+                "fatality_count": 2
+            }
+        ],
+        "average_black_proportion_in_top_neighborhoods": NaN,
+        "average_latino_proportion_in_top_neighborhoods": NaN,
+        "correlation_between_fatalities_and_race_proportions": NaN
+    },
+    {
+        "predominant_months": true,
+        "april_first_three_weeks": false
+    }
+]

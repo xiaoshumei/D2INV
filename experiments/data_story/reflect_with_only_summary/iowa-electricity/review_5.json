@@ -1,0 +1,24 @@
+[
+    {
+        "Fossil Fuels_2010": "True",
+        "Renewables_2001": true,
+        "Renewables_2017": true,
+        "Renewables_15fold": false
+    },
+    {
+        "Fossil Fuels decline percentage": -33.48070175438597,
+        "Renewables growth percentage": 106.06325184322856
+    },
+    {
+        "Renewables surpassed Nuclear Energy in 2014": "True"
+    },
+    {
+        "2008_peak_value": "True",
+        "2016_value": "True",
+        "percentage_decrease": "True"
+    },
+    {
+        "fact1_correct": "False",
+        "fact2_correct": "False"
+    }
+]

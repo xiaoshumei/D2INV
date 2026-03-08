@@ -1,0 +1,40 @@
+[
+    {
+        "correlation_positive": "True",
+        "max_income_value": "True",
+        "max_health_value": "True",
+        "min_income_value": "True",
+        "min_health_value": "True",
+        "central_african_republic_income": "False",
+        "lesotho_income": "True"
+    },
+    {
+        "europe_central_asia_high_income": false,
+        "europe_central_asia_high_health": true,
+        "sub_saharan_africa_low_income": true,
+        "sub_saharan_africa_low_health": true,
+        "china_region_east_asia_pacific": true,
+        "china_income_13334": "True",
+        "brunei_region_east_asia_pacific": true,
+        "brunei_income_73003": "True"
+    },
+    {
+        "top_10_income_fact": "False",
+        "bottom_10_health_fact": false
+    },
+    {
+        "monaco_europe_central_asia": "False",
+        "bulgaria_europe_central_asia": "True",
+        "sub_saharan_health_disparities_less_extreme": "True"
+    },
+    {
+        "population_income_correlation": "True",
+        "population_health_correlation": "True",
+        "china_population": "False",
+        "china_health": "True",
+        "india_population": "False",
+        "india_health": "True",
+        "andorra_population": "True",
+        "andorra_health": "True"
+    }
+]

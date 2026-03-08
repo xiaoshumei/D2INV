@@ -1,0 +1,35 @@
+[
+    {
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "percentage_increase": 31.5,
+        "date_min": "1958-03-01",
+        "date_max": "2020-04-01",
+        "is_monotonic_increasing": false
+    },
+    {
+        "min_difference": -3.6299999999999955,
+        "max_difference": 3.409999999999968,
+        "first_earliest_difference": 1.259999999999991,
+        "earliest_diff_valid": "True",
+        "earliest_dates_top_diffs": "False"
+    },
+    {
+        "seasonal_peak_may": "False",
+        "seasonal_trough_sept_oct": true,
+        "variation_1960s_higher": "False"
+    },
+    {
+        "period1_mean": 320.77589147286824,
+        "period2_mean": 400.70403225806456,
+        "difference": 79.92814078519632,
+        "expected_diff": 24.7,
+        "is_valid": "False"
+    },
+    {
+        "avg_1970s": 1.2410185185185203,
+        "avg_2010s": 2.399351851851855,
+        "valid_1970s": "False",
+        "valid_2010s": "False"
+    }
+]

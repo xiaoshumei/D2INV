@@ -1,0 +1,38 @@
+[
+    {
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "CO2_num_unique": 718,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698,
+        "adjusted_CO2_num_unique": 709
+    },
+    {
+        "winter_mean": 355.6503666490393,
+        "summer_mean": 355.48174863387976,
+        "winter_mean_greater_than_summer": "True",
+        "winter_peak": false,
+        "summer_trough": false
+    },
+    {
+        "average_annual_growth_1960s_1980s": 1.0887500000000017,
+        "average_annual_growth_21st_century": 2.2531666666666696,
+        "acceleration_21st_century": "True"
+    },
+    {
+        "raw_range": 6.829999999999984,
+        "adjusted_range": 1.5,
+        "raw_std": 1.9303044739933768,
+        "adjusted_std": 0.42629831529480217,
+        "is_smoothed": "True"
+    },
+    {
+        "max_co2_416_2020": true,
+        "350_crossed_1980s": true,
+        "400_reached_2015": "True"
+    }
+]

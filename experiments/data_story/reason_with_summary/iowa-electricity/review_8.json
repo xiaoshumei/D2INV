@@ -1,0 +1,27 @@
+[
+    {
+        "fossil_dominated": true,
+        "max_fossil": "True",
+        "fossil_2008": "True",
+        "fossil_2016": "True",
+        "renewables_min": "True",
+        "renewables_max": "True",
+        "renewables_2017": "True"
+    },
+    {
+        "renewables_more_than_triple": "True",
+        "renewables_growth_higher": "True",
+        "renewables_ratio": 15.263048016701461,
+        "fossil_ratio": 0.8294165888973728,
+        "nuclear_ratio": 1.3532312483778874,
+        "renewables_growth": 1426.3048016701462,
+        "fossil_growth": -17.058341110262717,
+        "nuclear_growth": 35.32312483778874
+    },
+    {
+        "nuclear_output_range_valid": "False",
+        "nuclear_contribution_valid": "False"
+    },
+    {},
+    {}
+]

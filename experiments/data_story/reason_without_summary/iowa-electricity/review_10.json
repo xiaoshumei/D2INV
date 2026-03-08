@@ -1,0 +1,20 @@
+[
+    {
+        "dominated": true,
+        "peak_2007": "True",
+        "decline_2008_2013": false,
+        "fluctuations_after_2013": false
+    },
+    {
+        "nuclear_min_generation": "3853",
+        "nuclear_max_generation": "5321",
+        "nuclear_ratio_within_10_percent": false
+    },
+    {},
+    {
+        "fossil_fuel_over_80_most_years": false,
+        "renewables_10_percent_2017": false,
+        "nuclear_energy_around_10_percent": false
+    },
+    {}
+]

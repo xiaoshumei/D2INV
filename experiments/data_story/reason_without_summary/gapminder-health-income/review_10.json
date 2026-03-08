@@ -1,0 +1,51 @@
+[
+    {
+        "high_income_health_max": "True",
+        "sub_saharan_health_min": "True",
+        "positive_correlation": "True"
+    },
+    {
+        "total_health": 13402.900000000001,
+        "top_10_health": 1528.7999999999997,
+        "proportion": 0.1140648665587298,
+        "is_fact_true": "False"
+    },
+    {
+        "sub_saharan_africa_low_health_mean": "False",
+        "sub_saharan_africa_high_population_countries": false
+    },
+    {
+        "east_asia_pacific_health_mean": 71.74444444444444,
+        "matches_fact": "False"
+    },
+    {
+        "top_5_mean_income": 19707.2,
+        "overall_mean_income": 17232.24064171123,
+        "top_5_mean_health": 73.85999999999999,
+        "overall_mean_health": 71.67326203208557,
+        "correlation_income": -0.038490148006576706,
+        "correlation_health": 0.016516985698437566,
+        "top_5_countries": [
+            "China",
+            "India",
+            "United States",
+            "Indonesia",
+            "Brazil"
+        ],
+        "top_5_income_values": [
+            13334,
+            5903,
+            53354,
+            10504,
+            15441
+        ],
+        "top_5_health_values": [
+            76.9,
+            66.8,
+            79.1,
+            70.9,
+            75.6
+        ],
+        "fact_support": "False"
+    }
+]

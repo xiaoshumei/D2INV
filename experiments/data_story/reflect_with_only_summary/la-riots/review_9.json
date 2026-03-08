@@ -1,0 +1,25 @@
+[
+    {
+        "Black_count": "28",
+        "Latino_count": "19",
+        "total_deaths": 63
+    },
+    {
+        "age_15_25_count": "1",
+        "is_valid": "False"
+    },
+    {
+        "homicide_count": "36",
+        "officer_shooting_count": "10",
+        "homicide_valid": "True",
+        "officer_shooting_valid": "True"
+    },
+    {
+        "compton_death_count": 0,
+        "fact_valid": false
+    },
+    {
+        "spike_in_april": "False",
+        "decline_through_may": "False"
+    }
+]

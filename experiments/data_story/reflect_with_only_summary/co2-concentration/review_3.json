@@ -1,0 +1,35 @@
+[
+    {
+        "min_co2": 313.21,
+        "max_co2": 416.18,
+        "first_co2": 315.7,
+        "last_co2": 416.18,
+        "min_co2_ok": "False",
+        "max_co2_ok": "True"
+    },
+    {
+        "seasonal_peak_in_late_spring": "False",
+        "decline_in_summer_months": "True",
+        "mean_CO2_matches": true,
+        "mean_CO2": 355.3109311740891,
+        "std_CO2": 28.52004862059201,
+        "min_CO2": 313.21,
+        "max_CO2": 416.18,
+        "num_unique_CO2": 718
+    },
+    {
+        "mean_close": "True",
+        "std_lower": "True",
+        "min_max_within_range": "True",
+        "unique_similar": true
+    },
+    {
+        "sixties_growth_rate": 0.8640000000000043,
+        "nineties_growth_rate": 1.5403333333333364
+    },
+    {
+        "adjusted_CO2_max_matches_fact": "True",
+        "adjusted_CO2_min_matches_fact": "True",
+        "percentage_increase_matches_fact": "False"
+    }
+]

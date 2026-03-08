@@ -1,0 +1,38 @@
+[
+    {
+        "max_count": "54",
+        "max_count_date": "2015-03-15 05:00:00",
+        "is_valid": "True"
+    },
+    {
+        "basic_valid": {
+            "count_min_valid": "True",
+            "count_max_valid": "True",
+            "count_mean_valid": "False",
+            "count_std_valid": "False"
+        },
+        "spikes_present": true,
+        "trend_increases_jan_mar": "False",
+        "trend_declines_after_mar": "True"
+    },
+    {
+        "mean": "False",
+        "std": "False",
+        "min": "True",
+        "max": "True",
+        "majority_1_to_4": "True",
+        "few_gt_10": "True",
+        "has_outlier_54": "True"
+    },
+    {
+        "mean_0": 2.5813953488372094,
+        "mean_22": 1.6904761904761905,
+        "max_other": 4.375,
+        "valid": "False"
+    },
+    {
+        "group1_avg": 2.455547346692566,
+        "group2_avg": 2.717976740927561,
+        "is_weekly_pattern_valid": "True"
+    }
+]

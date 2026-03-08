@@ -1,0 +1,28 @@
+[
+    {
+        "april_1992_deaths": 5,
+        "may_1992_deaths": 3,
+        "data_fact_matches": false
+    },
+    {
+        "Latino_percentage": 30.16,
+        "Black_percentage": 44.44,
+        "White_percentage": 22.22,
+        "data_fact_valid": "False"
+    },
+    {
+        "officer_shooting_count_correct": "False",
+        "homicide_count_correct": "False",
+        "not_riot_death_percentage_correct": "False"
+    },
+    {
+        "top_three_death_neighborhoods_match": false,
+        "compton_death_count": 0,
+        "watts_death_count": 0,
+        "compton_watts_death_counts_match": false
+    },
+    {
+        "under_30_percent": 46.774193548387096,
+        "under_18_percent": 8.064516129032258
+    }
+]

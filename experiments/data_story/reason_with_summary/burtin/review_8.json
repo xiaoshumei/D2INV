@@ -1,0 +1,51 @@
+[
+    {
+        "Penicillin_max": "True",
+        "Penicillin_min": "True",
+        "Aerobacter_aerogenes_Penicillin": "True",
+        "Bacillus_anthracis_Penicillin": "True"
+    },
+    {
+        "Neomycin_min_correct": "True",
+        "Neomycin_max_correct": "True",
+        "Streptococcus_viridans_high_susceptibility": "True",
+        "Staphylococcus_aureus_min_response": "True"
+    },
+    {
+        "gram_negative_count": "9",
+        "gram_negative_fact": "True",
+        "penicillin_min": 0.001,
+        "penicillin_min_fact": "True",
+        "penicillin_max": 870.0,
+        "penicillin_max_fact": "True",
+        "penicillin_mean": 217.8780625,
+        "penicillin_mean_fact": "True",
+        "penicillin_std": 373.49506012805915,
+        "penicillin_std_fact": "True"
+    },
+    {
+        "Bacteria_unique": true,
+        "Penicillin_min": "True",
+        "Penicillin_max": "True",
+        "Penicillin_mean": "True",
+        "Penicillin_std": "True",
+        "Streptomycin_min": "True",
+        "Streptomycin_max": "True",
+        "Streptomycin_mean": "True",
+        "Streptomycin_std": "True",
+        "Neomycin_min": "True",
+        "Neomycin_max": "True",
+        "Neomycin_mean": "True",
+        "Neomycin_std": "True",
+        "Gram_Staining_unique": true,
+        "Gram_Staining_distribution": true,
+        "Genus_unique": true,
+        "Genus_distribution": true
+    },
+    {
+        "max_neomycin_correct": "True",
+        "strep_gram_staining": false,
+        "strep_neomycin_variation": "True",
+        "has_10_neomycin": "True"
+    }
+]

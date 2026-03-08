@@ -1,0 +1,29 @@
+[
+    {
+        "black_count": "28",
+        "total_fatalities": 63,
+        "black_percentage": 44.4,
+        "fact_valid": "True"
+    },
+    {
+        "18-29": 38.70967741935484,
+        "30-39": 30.64516129032258,
+        "50+": 11.29032258064516
+    },
+    {
+        "total_incidents": 63,
+        "homicide_count": "36",
+        "officer_count": "10",
+        "homicide_percent": 57.14285714285714,
+        "officer_percent": 15.873015873015872
+    },
+    {
+        "spatial_distribution_percentage": 17.46,
+        "is_valid": false
+    },
+    {
+        "april_1992_percent": 60.0,
+        "may_1992_percent": 40.0,
+        "fact_valid": false
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "Aerobacter aerogenes": "True",
+        "Klebsiella pneumoniae": "True",
+        "Bacillus anthracis": "True"
+    },
+    {
+        "gram_positive_mean_matches": "False",
+        "gram_negative_mean_matches": "False",
+        "strep_viridans_check": true
+    },
+    {
+        "Staphylococcus_mean_correct": "True",
+        "Salmonella_mean_correct": "False",
+        "Streptococcus_has_40_MIC": true
+    },
+    {
+        "Neomycin_max_valid": "True",
+        "Neomycin_min_valid": "True",
+        "Neomycin_mean_valid": "True",
+        "Neomycin_std_valid": "True",
+        "Neomycin_unique_valid": true,
+        "Neomycin_has_0_09_valid": true
+    },
+    {
+        "penicillin_streptomycin_correlation": -0.12062635476347881,
+        "neomycin_correlation_with_penicillin": -0.17723209784159608,
+        "neomycin_correlation_with_streptomycin": 0.676991883300273,
+        "penicillin_streptomycin_valid": "False",
+        "neomycin_weaker_associations": "True"
+    }
+]

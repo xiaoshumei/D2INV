@@ -1,0 +1,40 @@
+[
+    {
+        "total_fatalities": 63,
+        "black_fatalities": "28",
+        "latino_fatalities": "19",
+        "homicides": "36",
+        "officer_shootings": "10",
+        "black_homicides": 11,
+        "latino_officer_shootings": 4,
+        "latino_homicides": 11,
+        "expected_latino_officer_shootings": 3.015873015873016,
+        "expected_latino_homicides": 10.857142857142856,
+        "is_latino_officer_shootings_disproportionate": "True",
+        "is_latino_homicides_disproportionate": "True"
+    },
+    {
+        "percentage_under_20": 14.29,
+        "incidents_15_or_younger": 4,
+        "officer_shooting_proportion": 40.0,
+        "homicide_proportion": 11.11111111111111,
+        "not_riot_related_proportion": 11.11111111111111,
+        "death_proportion": 12.5
+    },
+    {
+        "compton_watts_fatalities": 5,
+        "total_fatalities": 54,
+        "percentage": 9.25925925925926,
+        "is_valid": false
+    },
+    {
+        "percentage_deaths_may_1992": 100.0,
+        "has_final_fatality_nov_1993": false,
+        "is_majority_59_percent": false
+    },
+    {
+        "percent_male_fatalities": 88.88888888888889,
+        "percent_male_homicides": 94.44444444444444,
+        "percent_male_officer_shootings": 100.0
+    }
+]

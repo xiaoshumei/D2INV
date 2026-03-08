@@ -1,0 +1,26 @@
+[
+    {
+        "is_valid": false,
+        "reason": "No matching row for the specified disaster"
+    },
+    {
+        "earthquake_count_correct": true,
+        "earthquake_most_lethal": false
+    },
+    {
+        "century_deaths_trend": "True",
+        "peak_decades_20th": false,
+        "exception_years_21st": "True"
+    },
+    {
+        "over_5m_deaths_1930s": "True",
+        "nearly_15_percent_total": "False",
+        "sum_1930s": "9402048",
+        "total_deaths": "65214300",
+        "percentage": 14.41715697324053
+    },
+    {
+        "extreme_weather_death_percentage_over_40": "False",
+        "extreme_weather_dominance_in_recent_decades": "False"
+    }
+]

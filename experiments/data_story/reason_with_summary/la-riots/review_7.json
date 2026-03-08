@@ -1,0 +1,33 @@
+[
+    {
+        "Black_count": true,
+        "Latino_count": true,
+        "Homicide_count": true,
+        "Officer_count": true,
+        "Black_homicide": false,
+        "Latino_officer_disproportionate": true,
+        "Latino_homicide_disproportionate": true
+    },
+    {
+        "percentage_under_20": 14.29,
+        "count_15_or_younger": 4,
+        "officer_involved_shooting_highest": "True",
+        "percentage_matches_fact": false,
+        "count_15_matches_fact": true
+    },
+    {
+        "percentage_compton_watts_fatalities": 9.25925925925926,
+        "total_fatalities": "54",
+        "compton_watts_fatalities": "5",
+        "fact_validated": "False"
+    },
+    {
+        "death_percentage": 100.0,
+        "final_fatality_november_1993": false
+    },
+    {
+        "overall_male_percentage": 88.88888888888889,
+        "homicide_male_percentage": 94.44444444444444,
+        "officer_male_percentage": 100.0
+    }
+]

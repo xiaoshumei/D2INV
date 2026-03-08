@@ -1,0 +1,29 @@
+[
+    {
+        "Fossil_Fuels_dominated_each_year": true,
+        "peak_in_2010": false,
+        "Fossil_Fuels_declined_2010_2017": true,
+        "Renewables_increased_2010_2017": true,
+        "max_net_generation_42750": true
+    },
+    {},
+    {
+        "min_net_generation": "1437",
+        "max_net_generation": "21933",
+        "min_net_equals_fact": "True",
+        "max_net_equals_fact": "True",
+        "min_year": "1970-01-01 00:00:00.000002001",
+        "max_year": "1970-01-01 00:00:00.000002017",
+        "min_year_equals_2001": false,
+        "max_year_equals_2017": false
+    },
+    {
+        "peak_2010": false,
+        "decline_2017": false,
+        "overall_max": "True"
+    },
+    {
+        "Fossil_Fuels_over_80_percent": false,
+        "Renewables_surpass_Nuclear_2014": "False"
+    }
+]

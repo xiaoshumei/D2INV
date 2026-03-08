@@ -1,0 +1,27 @@
+[
+    {
+        "Trebi_highest_yield": "False",
+        "No475_lowest_yield": false
+    },
+    {
+        "Waseca_max_yield_matches_overall_max": "True",
+        "Grand_Rapids_max_yield_19_47": "False"
+    },
+    {
+        "manchuria_percentage_change_matches": "True",
+        "wisconsin_percentage_change_matches": "True",
+        "most_varieties_declined": true
+    },
+    {
+        "mean_yield": 34.42055533333334,
+        "std_yield": 10.334706218846057,
+        "skewness_yield": 0.6548533043388775,
+        "mean_valid": "True",
+        "std_valid": "True",
+        "skew_valid": "True"
+    },
+    {
+        "percentage_yield_advantage": 16.680558796516742,
+        "is_valid": "True"
+    }
+]

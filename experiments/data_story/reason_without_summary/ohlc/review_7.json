@@ -1,0 +1,49 @@
+[
+    {
+        "short_return": 3.294586302264926,
+        "long_return": -0.9586682802713222,
+        "neutral_return": 0.0,
+        "short_return_matches": "False",
+        "long_return_matches": "False",
+        "neutral_return_matches": "True"
+    },
+    {
+        "max_ret_check": "False",
+        "date_check": "True",
+        "signal_check": "True",
+        "open_check": "True",
+        "close_check": "True",
+        "all_conditions_met": "True"
+    },
+    {
+        "valid": false
+    },
+    {
+        "counts": {
+            "short": "24",
+            "long": "19",
+            "neutral": "1"
+        },
+        "percentages": {
+            "short": 54.54545454545454,
+            "long": 43.18181818181818,
+            "neutral": 2.272727272727273
+        },
+        "valid": {
+            "counts": {
+                "short": "False",
+                "long": "False",
+                "neutral": "True"
+            },
+            "percentages": {
+                "short": "False",
+                "long": "False",
+                "neutral": true
+            }
+        }
+    },
+    {
+        "cumulative_return": "False",
+        "mixed_signals": true
+    }
+]

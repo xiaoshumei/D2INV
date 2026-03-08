@@ -1,0 +1,28 @@
+[
+    {
+        "renewables_2001": "1437",
+        "renewables_2017": "21933",
+        "nuclear_2017": "5214",
+        "renewables_2001_matches": "True",
+        "renewables_2017_matches": "True",
+        "nuclear_2017_matches": "True"
+    },
+    {},
+    {
+        "min_net_generation": NaN,
+        "max_net_generation": NaN,
+        "min_valid": false,
+        "max_valid": false
+    },
+    {
+        "combined_percentage": NaN,
+        "nuclear_percentage": NaN,
+        "total_generation_2017": "0",
+        "is_valid": "False"
+    },
+    {
+        "renewables_dip_2015": false,
+        "renewables_upward_trend": "True",
+        "fossil_fuels_downward_trend": "True"
+    }
+]

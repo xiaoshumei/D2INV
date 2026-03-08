@@ -1,0 +1,24 @@
+[
+    {
+        "max_mile_in_2005": "True",
+        "2010_lower_than_max": "True",
+        "max_mile_matches_summary": "True"
+    },
+    {
+        "gas_max_valid": "True",
+        "gas_min_valid": "True"
+    },
+    {
+        "correlation_gas_miles": -0.17433205594404674,
+        "is_negative": "True"
+    },
+    {
+        "side_distribution_matches": true
+    },
+    {
+        "gas_min_valid": "True",
+        "gas_max_valid": "True",
+        "percentage_increase": 138.13,
+        "years_present": "True"
+    }
+]

@@ -1,0 +1,45 @@
+[
+    {
+        "max_count": "54",
+        "next_max_count": "48",
+        "max_time_valid": true,
+        "next_max_time_valid": true
+    },
+    {
+        "bimodal_pattern": false
+    },
+    {
+        "median_count": 1.0,
+        "median_valid": "True",
+        "high_activity_days": 422,
+        "high_activity_valid": true
+    },
+    {
+        "time_unique": 955,
+        "count_unique": 26,
+        "count_min": "1",
+        "count_max": "54",
+        "count_mean": 2.5958115183246075,
+        "count_std": 4.100414567944033,
+        "monthly_averages": {
+            "1": 2.6523809523809523,
+            "2": 2.531073446327684,
+            "3": 3.291457286432161,
+            "4": 2.162303664921466,
+            "5": 2.2808988764044944
+        }
+    },
+    {
+        "date1_exists": "True",
+        "date2_exists": "True",
+        "count_date1": "48",
+        "count_date2": "13",
+        "count1_correct": "True",
+        "count2_correct": "True",
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "threshold": 10.796640654212673,
+        "count1_anomaly": "True",
+        "count2_anomaly": "True"
+    }
+]

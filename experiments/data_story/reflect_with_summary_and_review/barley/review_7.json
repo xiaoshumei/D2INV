@@ -1,0 +1,51 @@
+[
+    {
+        "avg_1931": 37.07777799999999,
+        "avg_1932": 31.76333266666667,
+        "avg_equal": "False",
+        "waseca_increase": "False",
+        "university_increase": "False",
+        "other_sites_decline": false
+    },
+    {
+        "Trebi_max_yield_1931_Waseca": "False",
+        "No_475_min_yield_1932_Grand_Rapids": "False",
+        "Wisconsin_No_38_1931_above_30": "False",
+        "Wisconsin_No_38_1932_below_30": "False"
+    },
+    {
+        "max_yield_matches": "True",
+        "min_yield_matches": "True",
+        "waseca_exists": true,
+        "no462_exists": true,
+        "year_min_max": "True",
+        "grand_rapids_exists": true,
+        "unique_sites_count": true,
+        "unique_varieties_count": true,
+        "max_year_1931": "True",
+        "max_site_waseca": true,
+        "max_variety_no462": true
+    },
+    {
+        "year_min": "True",
+        "year_max": "True",
+        "year_unique": true,
+        "variety_unique": true,
+        "trebi_in_variety": true,
+        "wisconsin_no_38_in_variety": true,
+        "no_475_in_variety": true,
+        "svansota_in_variety": true,
+        "glabron_in_variety": true,
+        "no_457_in_variety": true,
+        "yield_mean": "True",
+        "yield_std": "True",
+        "site_unique": true
+    },
+    {
+        "std_dev_valid": "True",
+        "min_max_valid": "False",
+        "no_462_range_valid": "False",
+        "no_475_min_valid": "False",
+        "no_475_year_valid": "False"
+    }
+]

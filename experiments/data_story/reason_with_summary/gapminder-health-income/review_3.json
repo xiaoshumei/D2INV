@@ -1,0 +1,56 @@
+[
+    {
+        "correlation_positive": "True",
+        "high_income_higher_health": "True"
+    },
+    {
+        "mean_income_meena": 29392.8,
+        "mean_income_eca": 27714.42,
+        "mean_income_ssa": 4932.770833333333,
+        "meena_first": true,
+        "eca_second": true,
+        "ssa_last": true,
+        "meena_correct": "False",
+        "eca_correct": "False",
+        "ssa_correct": "False"
+    },
+    {
+        "correlation": 0.016516985698437566,
+        "max_population_health": 76.9,
+        "min_population_health": 65.1,
+        "max_health_population": "70473",
+        "min_health_population": "2135022"
+    },
+    {
+        "sub_saharan_africa_avg_health_match": "False",
+        "sub_saharan_africa_min_health_match": "True",
+        "has_south_africa_health_63_7": "False",
+        "sub_saharan_africa_population_var_is_max": false
+    },
+    {
+        "high_income_health_mean": 78.14515625000001,
+        "overall_health_mean": 71.67326203208557,
+        "health_max": 84.1,
+        "income_max": "132877",
+        "region_distribution": {
+            "europe_central_asia": 50,
+            "sub_saharan_africa": 48,
+            "america": 34,
+            "east_asia_pacific": 27,
+            "middle_east_north_africa": 20,
+            "south_asia": 8
+        },
+        "top_health_countries": [
+            84.1,
+            83.5,
+            82.9,
+            82.8,
+            82.6,
+            82.4,
+            82.1,
+            82.1,
+            82.1,
+            82.0
+        ]
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "Trebi_high_yield": "False",
+        "No475_low_yield": "False"
+    },
+    {
+        "waseca_max_y": 65.7667,
+        "waseca_variety": "No. 462",
+        "grand_rapids_max_y": 34.7,
+        "grand_rapids_variety": "Peatland"
+    },
+    {
+        "year_values_correct": true,
+        "varieties_exist": true,
+        "manchuria_decline_correct": "False",
+        "wisconsin_decline_correct": "False"
+    },
+    {
+        "mean_correct": "True",
+        "std_correct": "True",
+        "skewness_right_skewed": "True"
+    },
+    {
+        "average_percentage_difference": 17.739680073933943
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "long_higher_return": "False",
+        "short_lower_return": "False",
+        "neutral_zero_return": "True"
+    },
+    {
+        "max_return_date_correct": "True",
+        "max_return_signal_correct": "True",
+        "min_return_date_correct": "True",
+        "min_return_signal_correct": "True"
+    },
+    {
+        "mean_ret_correct": "True",
+        "std_ret_correct": "True",
+        "skewness_significant": "False",
+        "negative_outliers_present": "True"
+    },
+    {
+        "signal_distribution": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "expected_distribution": {
+            "short": 24,
+            "long": 19,
+            "neutral": 1
+        },
+        "is_valid": true
+    },
+    {
+        "neutral_count": 1,
+        "neutral_ret": 0.0,
+        "neutral_ret_0_percent": "True"
+    }
+]

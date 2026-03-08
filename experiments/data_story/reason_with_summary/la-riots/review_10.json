@@ -1,0 +1,29 @@
+[
+    {
+        "black_count": "28",
+        "total_fatalities": 63,
+        "percentage_black": 44.4,
+        "fact_valid": "True"
+    },
+    {
+        "percent_20_to_39": 61.904761904761905,
+        "percent_18_to_29": 38.095238095238095,
+        "percent_over_50": 11.11111111111111
+    },
+    {
+        "homicide_count": "36",
+        "homicide_percent": 57.14285714285714,
+        "shooting_count": "10",
+        "shooting_percent": 15.873015873015872,
+        "total_incidents": 63
+    },
+    {
+        "individual_counts_match": "False",
+        "percentage_match": "False",
+        "actual_percentage": 0.1746031746031746
+    },
+    {
+        "april_percentage": 60.0,
+        "may_percentage": 40.0
+    }
+]

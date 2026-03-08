@@ -1,0 +1,38 @@
+[
+    {
+        "short_count": "24",
+        "long_count": "19",
+        "neutral_count": "1",
+        "is_valid": "True"
+    },
+    {
+        "short_mean_valid": "False",
+        "long_mean_valid": "False",
+        "overall_mean_valid": "True",
+        "std_valid": "True",
+        "range_valid": "True"
+    },
+    {
+        "max_ret_value_correct": "False",
+        "max_ret_date_correct": "True",
+        "max_ret_signal_correct": "True",
+        "min_ret_value_correct": "False",
+        "min_ret_date_correct": "True",
+        "min_ret_signal_correct": "True",
+        "overall_valid": "False"
+    },
+    {
+        "date_exists": true,
+        "range_on_target_date": 5.41,
+        "is_range_correct": "True",
+        "max_range": 5.41,
+        "max_range_date": "2009-06-08 00:00:00",
+        "is_max_on_target_date": true,
+        "is_max_range_correct": "True"
+    },
+    {
+        "neutral_date_exists": true,
+        "ret_zero": "True",
+        "price_movement_minimal": "False"
+    }
+]

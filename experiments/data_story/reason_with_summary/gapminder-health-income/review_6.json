@@ -1,0 +1,56 @@
+[
+    {
+        "max_income_correct": "True",
+        "max_health_correct": "True",
+        "max_countries_same": false,
+        "min_income_correct": "True",
+        "min_health_correct": "True",
+        "min_countries_same": false,
+        "correlation_positive": "True"
+    },
+    {
+        "europe_central_asia_avg_income": "False",
+        "europe_central_asia_avg_health": "False",
+        "sub_saharan_africa_avg_income": "False",
+        "sub_saharan_africa_avg_health": "False",
+        "east_asia_pacific_has_max_income": false
+    },
+    {
+        "top_10_income_europe_central_asia_count": 3,
+        "luxembourg_in_top_income": true,
+        "qatar_in_top_income": true,
+        "bottom_10_health_all_sub_saharan": "False",
+        "south_sudan_in_bottom_health": true,
+        "somalia_in_bottom_health": false
+    },
+    {
+        "europe_central_asia_high_income_high_health": true,
+        "europe_central_asia_low_income_low_health": true,
+        "sub_saharan_africa_high_income_low_health": true,
+        "sub_saharan_africa_health_std_higher_than_global": "False",
+        "sub_saharan_africa_low_health_countries": true
+    },
+    {
+        "health_mean": 71.67326203208557,
+        "health_std": 7.748959108094907,
+        "health_min": 48.5,
+        "health_max": 84.1,
+        "health_unique": 140,
+        "income_mean": 17232.24064171123,
+        "income_std": 19310.632882242568,
+        "income_min": "599",
+        "income_max": "132877",
+        "income_unique": 187,
+        "population_mean": 39088869.51871658,
+        "population_std": 143289835.8663455,
+        "population_min": "52993",
+        "population_max": "1376048943",
+        "population_unique": 187,
+        "sub_saharan_africa_count": "48",
+        "sub_saharan_africa_health_mean": 62.153124999999996,
+        "sub_saharan_africa_income_mean": 4932.770833333333,
+        "china_health": 76.9,
+        "india_health": 66.8,
+        "andorra_health": 84.1
+    }
+]

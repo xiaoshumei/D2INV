@@ -1,0 +1,37 @@
+[
+    {
+        "short_predominant_june": "True",
+        "long_predominant_post_june": "True",
+        "neutral_in_mid_july": true
+    },
+    {
+        "total_returns": {
+            "short": 79.07,
+            "long": -18.21,
+            "neutral": 0.0
+        },
+        "std_returns": {
+            "short": 6.135575589404347,
+            "long": 5.725697160251627,
+            "neutral": NaN
+        },
+        "has_negative_short": "True"
+    },
+    {
+        "max_ret_is_15_49": "False",
+        "max_ret_date_june_22_short_signal": false,
+        "min_short_ret_is_8_37": "False",
+        "min_short_ret_date_june_11": false
+    },
+    {
+        "overall_volatility_mean": 1.8529545454545449,
+        "mid_june_volatility_mean": 3.41,
+        "late_june_volatility_mean": 2.169999999999998,
+        "volatility_ret_correlation": 0.21769795889009116
+    },
+    {
+        "min_ret": -10.8433734939759,
+        "max_ret": 15.4907975460123,
+        "percentage_between_-5_and_10": 77.27272727272727
+    }
+]

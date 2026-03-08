@@ -1,0 +1,32 @@
+[
+    {
+        "max_count_correct": "True",
+        "has_54_at_time": true,
+        "has_26_at_time": true,
+        "has_48_at_time": true
+    },
+    {
+        "num_unique_days": 150,
+        "max_daily_total": "71",
+        "max_daily_total_date": "2015-03-15",
+        "min_daily_total": "2",
+        "min_daily_total_date": "2015-03-30"
+    },
+    {
+        "peak_hours_percentage": 27.874142799515933
+    },
+    {
+        "anomaly_2015_02_14_19_00_count": "26",
+        "anomaly_2015_03_15_05_00_count": "54",
+        "anomaly_2015_02_14_19_00_above_threshold": "False",
+        "anomaly_2015_03_15_05_00_above_threshold": "False",
+        "anomaly_2015_02_14_19_00_count_matches": "True",
+        "anomaly_2015_03_15_05_00_count_matches": "True",
+        "percentile_95": 8.299999999999955
+    },
+    {
+        "skewness_positive": "True",
+        "q75_equals_4": "False",
+        "q95_equals_20": "False"
+    }
+]

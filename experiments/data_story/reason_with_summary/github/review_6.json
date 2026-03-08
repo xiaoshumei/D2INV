@@ -1,0 +1,55 @@
+[
+    {
+        "max_count_correct": "True",
+        "specific_time_occurrence": false
+    },
+    {
+        "avg_early_jan": 2.5970149253731343,
+        "avg_mid_mar": 2.660377358490566,
+        "avg_after_mid_mar": 2.5313807531380754,
+        "increase_to_mid_mar": "True",
+        "decline_after_mid_mar": "True"
+    },
+    {
+        "mean_count_specified_hours": 2.678714859437751,
+        "mean_count_other_hours": 2.5665722379603397,
+        "is_peak_in_ranges": "True",
+        "top_hours": [
+            12,
+            18,
+            21,
+            5,
+            14
+        ],
+        "top_hours_in_ranges": [
+            false,
+            true,
+            false,
+            false,
+            false
+        ]
+    },
+    {
+        "skewness": 6.457538325087614,
+        "mean": 2.5958115183246075,
+        "median": 1.0,
+        "low_counts_ratio": 0.8366492146596859,
+        "high_counts_ratio": 0.039790575916230364,
+        "is_right_skewed": "True",
+        "is_mean_greater_median": "True"
+    },
+    {
+        "March_highest": "True",
+        "April_next": "False",
+        "May_third": "False",
+        "Jan_Feb_lower": "False",
+        "top_three_order": false,
+        "monthly_averages": {
+            "2015-03": 3.291457286432161,
+            "2015-01": 2.6523809523809523,
+            "2015-02": 2.531073446327684,
+            "2015-05": 2.2808988764044944,
+            "2015-04": 2.162303664921466
+        }
+    }
+]

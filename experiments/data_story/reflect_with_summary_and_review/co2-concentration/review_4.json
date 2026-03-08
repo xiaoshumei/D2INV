@@ -1,0 +1,27 @@
+[
+    {
+        "adjusted_std_lower": "True",
+        "positive_correlation_co2": "True",
+        "positive_correlation_adjusted": "True"
+    },
+    {
+        "min_month": "9",
+        "max_month": "4",
+        "is_min_may": "False",
+        "is_max_nov": "False"
+    },
+    {
+        "slope_original": 0.13139774584467154,
+        "slope_adjusted": 0.1314050031597248,
+        "fact_supported": "False"
+    },
+    {
+        "slope_1958_2000": 1.3215206624886646,
+        "slope_2000_2020": 2.204161698230847,
+        "accelerated_rate": "True"
+    },
+    {
+        "CO2_increasing_recent_years": false,
+        "adjusted_CO2_close_to_original": "True"
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "deadliest_year": "False",
+        "epidemic_drought_sum": "False"
+    },
+    {
+        "Drought_1928_max_deaths": "3000000",
+        "Drought_1928_surpassed_others": "False",
+        "Earthquake_1923_max_deaths": "152362",
+        "Earthquake_1923_surpassed_others": false
+    },
+    {
+        "earthquake_1976_deaths": true,
+        "epidemic_1918_deaths": true
+    },
+    {
+        "Extreme weather deaths in 1970": "304495",
+        "Exceeded 300k": "True"
+    },
+    {
+        "is_leading_cause": false,
+        "has_over_449k": "True",
+        "has_over_2500k": "True"
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "correlation_income_health": 0.646434542358474
+    },
+    {
+        "europe_central_asia_income_mean": 27714.42,
+        "europe_central_asia_health_mean": 77.46,
+        "east_asia_pacific_income_mean": 16327.22,
+        "east_asia_pacific_health_mean": 71.74,
+        "sub_saharan_africa_income_mean": 4932.77,
+        "sub_saharan_africa_health_mean": 62.15,
+        "europe_central_asia_income_ok": "True",
+        "europe_central_asia_health_ok": "True",
+        "east_asia_pacific_income_ok": "False",
+        "east_asia_pacific_health_ok": "False",
+        "sub_saharan_africa_income_ok": "True",
+        "sub_saharan_africa_health_ok": "True"
+    },
+    {
+        "correlation_sub_saharan": -0.015150657559364365,
+        "correlation_south_asia": -0.22704234824371347,
+        "is_outlier_sub_saharan": "True",
+        "is_outlier_south_asian": "True"
+    },
+    {
+        "luxembourg_income_max": "False",
+        "japan_health": "True",
+        "south_sudan_income": "True",
+        "south_africa_income": "True",
+        "andorra_health_max": "True",
+        "malta_health": "True",
+        "lesotho_health_min": "True",
+        "swaziland_health": "True"
+    },
+    {
+        "east_asia_pacific_income_mean_higher": "False",
+        "east_asia_pacific_health_mean_higher": "True",
+        "europe_central_asia_income_mean_higher": "True",
+        "europe_central_asia_health_mean_higher": "True",
+        "middle_east_north_africa_high_income_high_health": true,
+        "middle_east_north_africa_low_income_low_health": true
+    }
+]

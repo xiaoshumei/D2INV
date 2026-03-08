@@ -1,0 +1,33 @@
+[
+    {
+        "dominated_all_years": true,
+        "peak_in_2008": false,
+        "twenty16_value": "True"
+    },
+    {
+        "min_net_generation": "3853",
+        "max_net_generation": "5321",
+        "peak_years": [
+            2013,
+            2008
+        ],
+        "min_match": "True",
+        "max_match": "False",
+        "peak_match": false
+    },
+    {
+        "renew_min_valid": "True",
+        "renew_max_valid": "True",
+        "renew_higher_2017": "False"
+    },
+    {
+        "2001_share": 86.98678999286611,
+        "2017_share": 51.931794036404845,
+        "fact_2001_valid": "True",
+        "fact_2017_valid": "False",
+        "fact_overall_valid": "False"
+    },
+    {
+        "renewables_surpass_fossil_fuels_in_2016": "False"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "total_fatalities": 8,
+        "black_fatalities": "8",
+        "total_fatalities_check": true,
+        "black_fatalities_check": "False"
+    },
+    {
+        "homicide_count": "36",
+        "officer_involved_count": "10",
+        "death_count": "8",
+        "fact_valid": "False"
+    },
+    {
+        "No fatalities in Vermont Square or Watts": false
+    },
+    {
+        "under_25_count": 21,
+        "males_15_30_count": 30
+    },
+    {
+        "87_black_female_exists": false,
+        "68_white_male_exists": false,
+        "elderly_count_small": true
+    }
+]

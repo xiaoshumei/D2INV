@@ -1,0 +1,35 @@
+[
+    {
+        "co2_trend_upward": "True",
+        "adjusted_co2_trend_upward": "True",
+        "adjusted_co2_smaller_std": "True",
+        "adjusted_co2_within_co2_range": "True",
+        "means_close": "True"
+    },
+    {
+        "seasonal_pattern": "False",
+        "min_in_spring": false,
+        "max_in_autumn": false
+    },
+    {
+        "adjusted_co2_slower_rate": "False"
+    },
+    {
+        "annual_increase_pre_2000": 1.3007317073170728,
+        "annual_increase_post_2000": 2.2942857142857145,
+        "acceleration_observed": "True"
+    },
+    {
+        "latest_date": "2020-04-01",
+        "max_date": "2020-04-01 00:00:00",
+        "max_co2": 416.18,
+        "mean_co2": 355.3109311740891,
+        "std_co2": 28.52004862059201,
+        "latest_co2": 416.18,
+        "max_adj_co2": 413.35,
+        "mean_adj_co2": 355.3041565452092,
+        "std_adj_co2": 28.442895350913698,
+        "latest_adj_co2": 413.35,
+        "co2_adj_diff": 2.829999999999984
+    }
+]

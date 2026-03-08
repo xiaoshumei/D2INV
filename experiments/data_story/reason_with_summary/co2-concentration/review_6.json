@@ -1,0 +1,40 @@
+[
+    {
+        "CO2_min": 313.21,
+        "CO2_max": 416.18,
+        "CO2_mean": 355.3109311740891,
+        "CO2_std": 28.52004862059201,
+        "adjusted_CO2_min": 314.44,
+        "adjusted_CO2_max": 413.35,
+        "adjusted_CO2_mean": 355.3041565452092,
+        "adjusted_CO2_std": 28.442895350913698,
+        "CO2_min_matches": "True",
+        "CO2_max_matches": "True",
+        "CO2_mean_matches": "True",
+        "CO2_std_matches": "True",
+        "adjusted_CO2_min_matches": "True",
+        "adjusted_CO2_max_matches": "True",
+        "adjusted_CO2_mean_matches": "True",
+        "adjusted_CO2_std_matches": "True",
+        "adjusted_CO2_min_higher_than_CO2_min": "True",
+        "adjusted_CO2_max_lower_than_CO2_max": "True",
+        "adjusted_CO2_mean_lower_than_CO2_mean": "True"
+    },
+    {
+        "seasonal_variation": "True"
+    },
+    {
+        "1960s_avg_growth": 0.8640000000000043,
+        "2010s_avg_growth": 2.4135000000000106
+    },
+    {
+        "mean_diff": 0.006774628879895772,
+        "min_diff": -1.2300000000000182,
+        "max_diff": 2.829999999999984,
+        "is_consistent_offset": "False"
+    },
+    {
+        "co2_increase_1990_2010": 42.26000000000005,
+        "is_dramatic_increase": "True"
+    }
+]

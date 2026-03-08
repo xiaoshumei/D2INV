@@ -1,0 +1,35 @@
+[
+    {
+        "Black_fatalities_count": "28",
+        "Black_fatalities_total": 63,
+        "Black_fatalities_percentage": 44.44444444444444,
+        "fact_valid": true
+    },
+    {
+        "majority_age_range": 62.9,
+        "youngest_age_range": 38.7,
+        "over_50_percentage": 11.3
+    },
+    {
+        "Homicides_count": "36",
+        "Officer_shooting_count": "10",
+        "Homicides_percent": 57.14285714285714,
+        "Officer_shooting_percent": 15.873015873015872,
+        "Homicides_count_correct": "True",
+        "Officer_shooting_count_correct": "True",
+        "Homicides_percent_correct": "False",
+        "Officer_shooting_percent_correct": "False"
+    },
+    {
+        "cluster_count": "11",
+        "percentage": 17.46,
+        "expected_cluster_count": 11,
+        "expected_percentage": 17.46
+    },
+    {
+        "april_percentage": 58.06451612903226,
+        "may_percentage": 38.70967741935484,
+        "april_matches_fact": "True",
+        "may_matches_fact": "True"
+    }
+]

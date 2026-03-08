@@ -1,0 +1,33 @@
+[
+    {
+        "peak_year": "1931",
+        "peak_deaths": "7412454",
+        "lowest_year": "1914",
+        "lowest_deaths": "578",
+        "peak_year_match": "False",
+        "peak_deaths_match": "False",
+        "lowest_year_match": "False",
+        "lowest_deaths_match": "False",
+        "overall_match": false
+    },
+    {
+        "Drought deaths in 1921 and 1928": "False",
+        "Earthquake in 1976 deaths": "True",
+        "Epidemic 1917 and 1909 deaths": "False"
+    },
+    {
+        "Extreme_weather_1970_deaths": "True",
+        "Extreme_weather_1973_deaths": "False",
+        "Flood_1931_deaths": "False"
+    },
+    {
+        "epidemic_percentage_1900_1920": 38.580592956670785,
+        "epidemic_percentage_up_to_2010": 14.738921177093628
+    },
+    {
+        "drought_deaths_1900_1940_avg": 1015000.0,
+        "drought_deaths_1960_2017_avg": 73709.8,
+        "fact1_valid": "False",
+        "fact2_valid": "False"
+    }
+]

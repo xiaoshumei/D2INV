@@ -1,0 +1,49 @@
+[
+    {
+        "europe_central_asia_high_income": "False",
+        "east_asia_pacific_high_income": "False",
+        "sub_saharan_africa_low_income": "True",
+        "europe_leads_in_income": false
+    },
+    {
+        "health_regions_max": {
+            "europe_central_asia": "True",
+            "east_asia_pacific": "True"
+        },
+        "sub_saharan_africa_min": "True",
+        "health_income_correlation": 0.6464345423584741
+    },
+    {
+        "min_health": "True",
+        "max_health": "True",
+        "lesotho_health": "True",
+        "south_sudan_health": "True",
+        "top_countries": false
+    },
+    {
+        "negative_regions": [
+            "europe_central_asia",
+            "middle_east_north_africa",
+            "south_asia",
+            "sub_saharan_africa"
+        ],
+        "has_negative_corr": true,
+        "max_pop_health": 76.9,
+        "min_pop_health": 65.1,
+        "max_min_health_diff": "False"
+    },
+    {
+        "top_income_regions": [
+            "middle_east_north_africa",
+            "europe_central_asia"
+        ],
+        "top_health_regions": [
+            "europe_central_asia",
+            "middle_east_north_africa"
+        ],
+        "bottom_income_region": "sub_saharan_africa",
+        "bottom_health_region": "sub_saharan_africa",
+        "top_regions_match": false,
+        "bottom_match": true
+    }
+]

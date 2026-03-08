@@ -1,0 +1,39 @@
+[
+    {
+        "earliest_date": "1958-03-01",
+        "value_at_earliest": 314.44,
+        "latest_date": "2020-04-01",
+        "value_at_latest": 413.35,
+        "percentage_increase": 31.455921638468396,
+        "increase_over_30": "True"
+    },
+    {
+        "adjusted_std_lower": "True",
+        "average_annual_increase": 1.605458333333334,
+        "trend_positive": "True"
+    },
+    {
+        "seasonal_peak_months": [
+            4,
+            6
+        ],
+        "seasonal_trough_months": [
+            9,
+            10
+        ],
+        "seasonal_peak_match_fact": false,
+        "seasonal_trough_match_fact": true,
+        "annual_cycle_amplitude": 6.639999999999986,
+        "annual_cycle_match_fact": "False"
+    },
+    {
+        "rate_1960_1980": 0.0,
+        "rate_2000_2020": 0.0,
+        "valid": "False"
+    },
+    {
+        "date_max": true,
+        "adjusted_CO2_max": "True",
+        "CO2_since_1990_above_350": true
+    }
+]

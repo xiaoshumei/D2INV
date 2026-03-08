@@ -1,0 +1,39 @@
+[
+    {
+        "race_distribution_correct": true,
+        "race_unique_values_correct": true,
+        "total_race_entries": 63
+    },
+    {
+        "gender_male_count": "56",
+        "gender_female_count": "7",
+        "gender_male_percent": 88.88888888888889,
+        "gender_female_percent": 11.11111111111111
+    },
+    {
+        "Homicide_count": "36",
+        "Officer_involved_shooting_count": "10",
+        "Death_count": "8",
+        "Not_riot_related_count": "9",
+        "total_rows": 63,
+        "total_count": "63",
+        "homicide_correct": "True",
+        "officer_shooting_correct": "True",
+        "death_correct": "True",
+        "not_riot_correct": "True",
+        "total_correct": "True"
+    },
+    {
+        "death_type_count": 8,
+        "compton_incidents": 0,
+        "watts_incidents": 0,
+        "koreatown_incidents": 0,
+        "neighborhoods_exist": true
+    },
+    {
+        "youth_age_count": "13",
+        "total_fatalities": 63,
+        "youth_percentage": 20.634920634920633,
+        "fact_valid": "False"
+    }
+]

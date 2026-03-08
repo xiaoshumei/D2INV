@@ -1,0 +1,29 @@
+[
+    {
+        "trebi_has_higher_yield": "True",
+        "wisconsin_has_higher_yield": "False",
+        "no_475_has_lower_yield": "False"
+    },
+    {
+        "waseca_higher": "True",
+        "university_farm_higher": "False",
+        "max_other_yield": 37.4199985
+    },
+    {
+        "increases": "0",
+        "decreases": "10",
+        "no_change": "0",
+        "most_increased": "False",
+        "some_decreased": "True"
+    },
+    {
+        "variety_distribution": "pass",
+        "reason": "All conditions met"
+    },
+    {
+        "max_yield_correct": "True",
+        "min_yield_correct": "True",
+        "trebi_waseca_1931_entry_exists": "False",
+        "glabron_grandrapids_1932_entry_exists": "True"
+    }
+]

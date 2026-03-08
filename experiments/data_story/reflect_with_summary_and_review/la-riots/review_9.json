@@ -1,0 +1,36 @@
+[
+    {
+        "total_deaths": 63,
+        "black_count": "28",
+        "latino_count": "19"
+    },
+    {
+        "age_range_15_25_count": 23,
+        "age_range_50_plus_count": 7,
+        "disproportionate_young": true,
+        "death_count_15_25": 1,
+        "death_count_50_plus": 2
+    },
+    {
+        "homicide_count_correct": "True",
+        "officer_shooting_count_correct": "True",
+        "total_deaths_correct": true
+    },
+    {
+        "total_deaths": 8,
+        "compton_deaths": 0,
+        "unique_neighborhoods_with_deaths": 4,
+        "death_count_valid": true,
+        "compton_valid": true,
+        "concentration_valid": true
+    },
+    {
+        "april_29_deaths": 2,
+        "april_30_deaths": 3,
+        "april_deaths": 5,
+        "may_deaths": 3,
+        "is_declining": true,
+        "is_earliest_april_29": true,
+        "total_death": 8
+    }
+]

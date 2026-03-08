@@ -1,0 +1,25 @@
+[
+    {
+        "co2_min_valid": "True",
+        "co2_max_valid": "True",
+        "co2_mean_valid": "True",
+        "co2_std_valid": "True",
+        "co2_unique_valid": true,
+        "co2_samples_valid": true
+    },
+    {
+        "seasonal_fluctuation": "True"
+    },
+    {
+        "adjusted_CO2_has_lower_std": "True"
+    },
+    {
+        "acceleration_observed": "True",
+        "avg_increase_2010_2020": 2.463666666666666,
+        "avg_increase_1958_2010": 1.4339823717948723
+    },
+    {
+        "is_increasing": true,
+        "is_2010s_max_increase": "True"
+    }
+]

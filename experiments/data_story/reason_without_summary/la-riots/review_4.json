@@ -1,0 +1,25 @@
+[
+    {
+        "over_60_percent": true,
+        "latino_largest": false
+    },
+    {
+        "officer_count_matches_summary": true,
+        "percent_officer": 15.873015873015872,
+        "has_compton_or_watts": "True"
+    },
+    {
+        "percentage_under_30": 46.77,
+        "is_valid": "True"
+    },
+    {
+        "majority_april_1992": "True",
+        "single_outlier_nov_1993": "True"
+    },
+    {
+        "homicide_percentage": 57.14285714285714,
+        "homicide_nearly_50": "True",
+        "koreatown_exists": true,
+        "vermont_square_exists": true
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "max_count": "54",
+        "max_count_valid": "True",
+        "max_count_time": "2015-03-15 12:00:00",
+        "max_count_time_valid": "False"
+    },
+    {
+        "highest_daily_total": "71",
+        "date_of_highest_total": "2015-03-15",
+        "midday_concentration": "False"
+    },
+    {
+        "hour_2am_count": "94",
+        "hour_3am_count": "92",
+        "hour_4am_count": "88",
+        "hour_12pm_count": "175",
+        "is_2am_lower": "True",
+        "is_3am_lower": "True",
+        "is_4am_lower": "True",
+        "is_12pm_higher": "True"
+    },
+    {
+        "max_count": "54",
+        "has_54_spike_on_march15": "True"
+    },
+    {
+        "mean_count": 2.5958115183246075,
+        "std_count": 4.100414567944033,
+        "percent_counts_1_to_5": 91.30890052356021,
+        "percent_counts_above_5": 8.691099476439792,
+        "num_unique_counts": 26
+    }
+]

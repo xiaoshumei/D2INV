@@ -1,0 +1,37 @@
+[
+    {
+        "num_trading_days": true,
+        "signal_counts": "True"
+    },
+    {
+        "mean_ret": 1.3830766802091614,
+        "min_ret": -10.8433734939759,
+        "max_ret": 15.4907975460123,
+        "std_ret": 6.194040535850076,
+        "mean_match": "True",
+        "min_match": "True",
+        "max_match": "True",
+        "std_match": "True"
+    },
+    {
+        "max_ret_value": 15.4907975460123,
+        "max_ret_date": "2009-06-22",
+        "max_ret_valid": "False",
+        "min_ret_value": -10.8433734939759,
+        "min_ret_date": "2009-07-17",
+        "min_ret_valid": "False"
+    },
+    {
+        "short_mean_return": 3.29,
+        "long_mean_return": -0.96,
+        "short_valid": false,
+        "long_valid": false,
+        "overall_valid": false
+    },
+    {
+        "date_exists": true,
+        "signal_long": true,
+        "prev_signal_short": false,
+        "ret_3_49": "False"
+    }
+]

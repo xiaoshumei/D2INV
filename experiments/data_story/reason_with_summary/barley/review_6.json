@@ -1,0 +1,47 @@
+[
+    {
+        "top_varieties": [
+            "Trebi",
+            "Wisconsin No. 38"
+        ],
+        "highest_avg_yield": 39.399993333333335,
+        "second_highest_avg_yield": 39.39444583333333,
+        "lowest_avg_yield": 30.377777499999997,
+        "lowest_variety": "Svansota",
+        "trebi_in_top": true,
+        "wisconsin_in_top": true,
+        "no_475_lowest": false
+    },
+    {
+        "waseca_mean": 48.108331500000006,
+        "uni_mean": 32.6666675,
+        "waseca_higher_all": "True",
+        "uni_higher_all": "False",
+        "both_higher_all": "False"
+    },
+    {
+        "increased": "0",
+        "decreased": "10",
+        "same": "0",
+        "most_increased": "False",
+        "some_declined": "True"
+    },
+    {
+        "variety_distribution_even": "True",
+        "total_entries": 120,
+        "expected_total": 120,
+        "percentages_equal": false
+    },
+    {
+        "max_yield_valid": "False",
+        "min_yield_valid": "True",
+        "trebi_in_variety": true,
+        "glabron_in_variety": true,
+        "waseca_in_site": true,
+        "grand_rapids_in_site": true,
+        "year_1931_valid": true,
+        "year_1932_valid": true,
+        "max_row_valid": false,
+        "min_row_valid": "True"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "max_pen_correct": "True",
+        "min_pen_correct": "True",
+        "max_bact_correct": "True",
+        "min_bact_correct": "True"
+    },
+    {
+        "Streptococcus hemolyticus has the highest Streptomycin MIC of 14.0": "True",
+        "Bacillus anthracis demonstrates extreme susceptibility with a Streptomycin MIC of 0.01": "True"
+    },
+    {
+        "Streptococcus viridans has highest Neomycin MIC of 40.0": true,
+        "Staphylococcus albus has lowest Neomycin MIC of 0.001": true
+    },
+    {
+        "gram_negative_count": "9",
+        "penicillin_mean": 217.8780625,
+        "penicillin_std": 373.49506012805915,
+        "penicillin_max": 870.0,
+        "penicillin_min": 0.001,
+        "streptomycin_mean": 3.065,
+        "streptomycin_std": 4.5026910472146175,
+        "neomycin_mean": 4.0891875,
+        "neomycin_std": 10.13316450880474,
+        "neomycin_max": 40.0,
+        "neomycin_min": 0.001
+    },
+    {
+        "total_rows": 16,
+        "other_genus_count": 9,
+        "salmonella_penicillin_1_0": "True",
+        "streptococcus_neomycin_40_0": "True"
+    }
+]

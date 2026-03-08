@@ -1,0 +1,19 @@
+[
+    {
+        "Fossil Fuels peak in 2008": "False",
+        "Fossil Fuels in 2016": "True",
+        "Renewables in 2001": "True",
+        "Renewables in 2017": "True"
+    },
+    {},
+    {
+        "nuclear_output_range_valid": "False",
+        "nuclear_contribution_percentage_valid": "False"
+    },
+    {},
+    {
+        "renewables_2017_sum": "0",
+        "nuclear_2017_sum": "0",
+        "fact_valid": "False"
+    }
+]

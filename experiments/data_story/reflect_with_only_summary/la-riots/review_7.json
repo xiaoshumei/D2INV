@@ -1,0 +1,25 @@
+[
+    {
+        "total_fatalities_correct": true,
+        "black_homicide_correct": false,
+        "latino_officer_correct": "True",
+        "latino_homicide_correct": "True"
+    },
+    {
+        "under_20_percentage": 14.52,
+        "under_15_count": 4,
+        "officer_involving_under_20_count": 3
+    },
+    {
+        "Compton and Watts fatality percentage": 9.25925925925926
+    },
+    {
+        "majority_death_percentage": 100.0,
+        "has_nov_1993_death": false
+    },
+    {
+        "percentage_males_all": 88.88888888888889,
+        "percentage_males_homicide": 94.44444444444444,
+        "percentage_males_officer_shooting": 100.0
+    }
+]

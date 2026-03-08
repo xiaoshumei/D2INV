@@ -1,0 +1,41 @@
+[
+    {
+        "deadliest_year_valid": false,
+        "total_1900": "2534720",
+        "total_2017": "4174",
+        "decline_valid": "False"
+    },
+    {
+        "Droughts_highest_deaths": false,
+        "Earthquake_second": false,
+        "Extreme_weather_third": false,
+        "Epidemics_1918": true
+    },
+    {
+        "1931 flood (3.7M deaths)": true,
+        "1918 epidemic (50M deaths)": false,
+        "1976 earthquake (276,994 deaths)": true
+    },
+    {
+        "epidemic_share_early_20th": 0.38580592956670784,
+        "epidemic_share_later_20th": 0.0012762847605011262,
+        "avg_drought_deaths": 300802.41025641025,
+        "max_drought_deaths": "3000000",
+        "overall_avg_deaths": 81213.32503113325,
+        "overall_max_deaths": "3706227"
+    },
+    {
+        "Extreme weather": {
+            "valid": "False",
+            "reason": "Trend increasing with sharp rise in late 20th century"
+        },
+        "Flood": {
+            "valid": "False",
+            "reason": "Trend increasing with sharp rise in late 20th century"
+        },
+        "Extreme temperature": {
+            "valid": "True",
+            "reason": "Trend increasing with sharp rise in late 20th century"
+        }
+    }
+]
