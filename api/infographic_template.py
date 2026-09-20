@@ -91,16 +91,11 @@ class InfographicTemplate:
         self.result = soup.prettify()
 
     def write(self):
-        dist = f"./results/{self.dataset_name}"
-        exist_count = len(
-            list(
-                filter(
-                    lambda x: x.startswith("infographic_template_"), os.listdir(dist)
-                )
-            )
-        )
+        dataset_stem = os.path.splitext(self.dataset_name)[0]
+        dist = f"./results/{dataset_stem}"
+        os.makedirs(dist, exist_ok=True)
         with open(
-            f"{dist}/infographic_template_{exist_count+1}.html",
+            f"{dist}/infographic_template.html",
             "w",
             encoding="utf-8",
         ) as f:

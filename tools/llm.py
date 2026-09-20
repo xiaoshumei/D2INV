@@ -11,26 +11,25 @@ class LLM:
     def __init__(
         self,
         llm_vendor="vllm",
-        content_length=256,
     ):
-        assert llm_vendor in ["kimi", "deepseek", "openai", "vllm"]
+        assert llm_vendor in ["kimi", "deepseek", "openai","qwen", "vllm"]
+        print(f"Using LLM vendor: {llm_vendor}")
         self.llm_vendor = llm_vendor
         if llm_vendor == "kimi":
-            self.base_url = "https://api.moonshot.cn/v1"
-            self.model = "kimi-k2-0905-preview"
-            self.max_tokens = 256 * 1024
+            self.base_url = "http://i-nhi.zhejianglab.org/maas/v1"
+            self.model = "Kimi-K3"
         elif llm_vendor == "deepseek":
-            self.base_url = "https://api.deepseek.com"
-            self.model = "deepseek-chat"
-            self.max_tokens = 128 * 1024
+            self.base_url = "http://i-nhi.zhejianglab.org/maas/v1"
+            self.model = "DeepSeek-V4-Flash"
+        elif llm_vendor == "qwen":
+            self.base_url = "http://i-nhi.zhejianglab.org/maas/v1"
+            self.model = "Qwen3.5-397B-A17B"
         elif llm_vendor == "openai":
-            self.base_url = ""
-            self.model = "gpt-5.2"
-            self.max_tokens = 400000
+            self.base_url = "http://43.159.131.233:3001/v1"
+            self.model = "gpt-5.6-sol"
         else:
-            self.base_url = "http://jb-aionlineinferenceservice-149881696782669824-8000-default.incluster-prod.dros-new.zhejianglab.cn/v1"
-            self.max_tokens = content_length * 1024
-            self.model = "Qwen3-8B"
+            self.base_url = "http://jb-aionlineinferenceservice-157166493733771136-8000-nhss-job.v5000-prod.nhss.zhejianglab.com/v1"
+            self.model = "Qwen3.6-27B"
 
         self.client = OpenAI(
             api_key=os.getenv("LLM_API_KEY") if llm_vendor != "vllm" else "",

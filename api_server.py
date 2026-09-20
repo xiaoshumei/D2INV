@@ -12,13 +12,23 @@ from flask import (
 from flask_cors import CORS
 import json
 from api.app import d2inv
+from agent.core import Agent
+from agent.session import SessionManager
+from dotenv import load_dotenv
 import os
 import re
+
+# Load environment variables from .env before any LLM client is created
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 app.static_folder = "web"
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
+
+# Global agent session manager (in-memory for Phase 1)
+session_manager = SessionManager()
+agent = Agent(session_manager=session_manager)
 
 
 @app.route("/api/d2inv_stream", methods=["GET"])
@@ -37,6 +47,159 @@ def d2inv_stream():
         return Response(generate(), mimetype="text/event-stream")
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/agent/chat", methods=["POST"])
+def agent_chat():
+    """
+    Agent conversational endpoint (non-streaming).
+
+    Body: {"message": "...", "session_id": "..." (optional)}
+    Returns the agent's final answer as JSON.
+    """
+    try:
+        data = request.get_json(force=True)
+        message = data.get("message", "").strip()
+        session_id = data.get("session_id", None)
+
+        if not message:
+            return jsonify({"error": "Empty message"}), 400
+
+        final_answer = ""
+        html_parts = []
+
+        for chunk in agent.stream(message, session_id):
+            event_data = json.loads(chunk)
+            kind = event_data["event"]
+            payload = event_data.get("data", {})
+
+            if kind == "done":
+                final_answer = payload.get("answer", "")
+            elif kind == "tool_result":
+                d = payload.get("data", {})
+                if isinstance(d, dict):
+                    html = d.get("html_length") or d.get("chart")
+                    if html:
+                        html_parts.append(str(html))
+                        final_answer = html_parts[-1]  # return latest artifact
+
+        response = {"answer": final_answer}
+        if html_parts:
+            response["artifacts"] = html_parts
+        response["session_id"] = agent._current_session.session_id if agent._current_session else ""
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/agent/chat_stream", methods=["GET"])
+def agent_chat_stream():
+    """
+    Agent conversational endpoint (streaming SSE).
+
+    Query params: message=<string>, session_id=<string optional>
+    Returns SSE stream of agent think/act/observe steps.
+    """
+    try:
+        message = request.args.get("message", "").strip()
+        session_id = request.args.get("session_id", None)
+
+        if not message:
+            return jsonify({"error": "No message provided"}), 400
+
+        def generate():
+            for chunk in agent.stream(message, session_id):
+                yield f"data: {chunk}\n\n"
+
+        return Response(generate(), mimetype="text/event-stream")
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/agent/artifact", methods=["GET"])
+def agent_artifact():
+    """Return a full pipeline artifact (html_template, data_story, inv, ...)
+    stored on the session. The streaming tool_result events only carry a
+    truncated summary, so the frontend fetches full content here."""
+    try:
+        sid = request.args.get("session_id", "")
+        key = request.args.get("key", "")
+        session = session_manager.get_session(sid)
+        if session is None:
+            return jsonify({"error": "Session not found"}), 404
+        value = session.get_state(key)
+        if value is None:
+            return jsonify({"error": f"artifact '{key}' not found"}), 404
+        return jsonify({"key": key, "value": value})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/results/artifacts", methods=["GET"])
+def results_artifacts():
+    """Read the latest generated pipeline artifacts for a dataset straight
+    from the results/<dataset>/ folder (data_story, template, inv, evaluate).
+    This does not depend on any in-memory session state."""
+    try:
+        dataset = request.args.get("dataset", "")
+        if not dataset:
+            return jsonify({"error": "No dataset provided"}), 400
+
+        # Normalize: strip path separators and file extension.
+        base = os.path.splitext(os.path.basename(dataset))[0]
+        dataset_dir = os.path.join(RESULTS_DIR, base)
+        artifacts = {"dataset": base}
+
+        if not os.path.isdir(dataset_dir):
+            return jsonify(artifacts)
+
+        def _read_file(filename, as_json=False):
+            path = os.path.join(dataset_dir, filename)
+            if not os.path.isfile(path):
+                return None
+            try:
+                with open(path, "r", encoding="utf-8") as fh:
+                    content = fh.read()
+                if as_json:
+                    try:
+                        return json.loads(content)
+                    except Exception:
+                        return content
+                return content
+            except Exception as e:
+                print(f"[artifacts] failed to read {path}: {e}")
+                return None
+
+        # Stable filenames written by the generation modules.
+        artifacts["data_summary"] = _read_file("data_summary.json", as_json=True)
+        artifacts["data_story"] = _read_file("data_story.json", as_json=True)
+        artifacts["html_template"] = _read_file("infographic_template.html")
+        artifacts["inv"] = _read_file("inv.html")
+        artifacts["evaluation"] = _read_file("evaluate.html")
+        return jsonify(artifacts)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/agent/session", methods=["GET"])
+def agent_session():
+    """
+    Return info about an agent session.
+
+    Query: session_id=<string>
+    """
+    sid = request.args.get("session_id", "")
+    session = session_manager.get_session(sid)
+    if session is None:
+        return jsonify({"error": "Session not found"}), 404
+    return jsonify(session.to_dict())
+
+
+@app.route("/api/agent/sessions", methods=["GET"])
+def agent_sessions():
+    """List all active session ids."""
+    return jsonify({"sessions": session_manager.list_sessions()})
 
 
 @app.route("/api/list_datasets", methods=["GET"])

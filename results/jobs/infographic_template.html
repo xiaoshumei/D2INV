@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   A Century of Work: The Evolution of American Occupations by Gender
+  </title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   :root {
+      --primary: #1e3a8a;
+      --secondary: #b45309;
+      --accent: #0ea5e9;
+      --bg-light: #f8fafc;
+      --bg-dark: #0f172a;
+      --text-main: #334155;
+      --text-light: #f1f5f9;
+      --card-bg: #ffffff;
+      --timeline-color: #cbd5e1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, var(--bg-light) 0%, #e2e8f0 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    .infographic-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+    .backbone {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, transparent, var(--timeline-color) 10%, var(--timeline-color) 90%, transparent);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin: 0 0 10px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--secondary);
+      margin: 0 0 20px;
+      font-weight: 500;
+    }
+    .explainer {
+      display: inline-block;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .story-section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 35px 30px;
+      margin: 40px 0;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+    .story-section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: var(--primary);
+      border-radius: 16px 0 0 16px;
+    }
+    .story-section:nth-child(even)::before { background: var(--secondary); }
+    .story-section:hover { transform: translateY(-3px); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+    .section-icon { font-size: 1.6rem; color: var(--accent); }
+    h2 {
+      font-size: 1.4rem;
+      color: var(--bg-dark);
+      margin: 0;
+      font-weight: 700;
+    }
+    .narration {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin: 0 0 25px;
+      text-align: justify;
+    }
+    .chart-container {
+      width: 100%;
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 30px 20px;
+      position: relative;
+    }
+    .cta-banner {
+      text-align: center;
+      padding: 18px 20px;
+      margin: 30px 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    }
+    .cta-banner:hover { transform: scale(1.02); box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4); }
+    .cta-icon { margin-left: 8px; animation: bounce 1.5s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      margin-top: 40px;
+      border-top: 2px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sources-title { font-weight: 700; margin-bottom: 8px; color: var(--bg-dark); display: flex; align-items: center; justify-content: center; gap: 8px; }
+    @media (max-width: 768px) {
+      .backbone { display: none; }
+      .infographic-container { padding: 10px; }
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.2rem; }
+      .story-section { margin: 25px 0; padding: 25px 20px; }
+    }
+  </style>
+ </head>
+ <body>
+  <div class="infographic-container">
+   <div class="backbone">
+   </div>
+   <header data-aos="fade-down">
+    <h1>
+     A Century of Work: The Evolution of American Occupations by Gender
+    </h1>
+    <p class="subtitle">
+     Tracing the rise, fall, and gender integration of 255 professions from 1850 to 2000
+    </p>
+    <span class="explainer">
+     150 Years of Labor • 255 Professions • Shifting Demographics
+    </span>
+   </header>
+   <div class="story-section" data-aos="fade-up">
+    <div class="section-header">
+     <i class="fas fa-users section-icon">
+     </i>
+     <h2>
+      How did the overall distribution of workers across genders evolve over 150 years?
+     </h2>
+    </div>
+    <p class="narration">
+     From 1850 to 2000, the American workforce underwent a structural metamorphosis, with occupational counts shifting from millions in industrial and agricultural roles to a diversified service and knowledge economy. Throughout this period, gender distribution remained a defining characteristic, with men and women occupying distinct occupational niches that gradually converged in certain sectors while remaining starkly divided in others.
+    </p>
+    <div class="chart-container">
+     <div id="chart_1">
+     </div>
+    </div>
+   </div>
+   <div class="cta-banner" data-aos="zoom-in">
+    Explore professional growth trajectories
+    <i class="fas fa-arrow-down cta-icon">
+    </i>
+   </div>
+   <div class="story-section" data-aos="fade-up">
+    <div class="section-header">
+     <i class="fas fa-briefcase section-icon">
+     </i>
+     <h2>
+      Which professional occupations experienced the most rapid growth between 1850 and 1950?
+     </h2>
+    </div>
+    <p class="narration">
+     The late 19th and early 20th centuries witnessed the explosive growth of professional and administrative roles. Occupations like Accountant/Auditor, Lawyer/Judge, and Engineer saw exponential increases in headcount, reflecting industrialization, urbanization, and the expanding regulatory landscape. By 1920, specialized knowledge work had permanently altered the occupational hierarchy, with certain professions surpassing 100,000 workers.
+    </p>
+    <div class="chart-container">
+     <div id="chart_2">
+     </div>
+    </div>
+   </div>
+   <div class="cta-banner" data-aos="zoom-in">
+    Analyze shifts in manual trades
+    <i class="fas fa-arrow-down cta-icon">
+    </i>
+   </div>
+   <div class="story-section" data-aos="fade-up">
+    <div class="section-header">
+     <i class="fas fa-hammer section-icon">
+     </i>
+     <h2>
+      How did the prevalence of traditional manual and agricultural occupations change over the dataset's timeline?
+     </h2>
+    </div>
+    <p class="narration">
+     Conversely, traditional manual and agricultural roles experienced highly divergent trajectories rather than a uniform decline. While specialized trades like Blacksmith vanished entirely, others such as Farm Laborer and Locomotive Engineer actually saw their absolute headcounts increase significantly over the period. These mixed trends reflect a complex economic restructuring, as certain foundational roles adapted to changing industrial demands alongside broader shifts toward service-oriented sectors.
+    </p>
+    <div class="chart-container">
+     <div id="chart_3">
+     </div>
+    </div>
+   </div>
+   <div class="cta-banner" data-aos="zoom-in">
+    Witness the push toward gender parity
+    <i class="fas fa-arrow-down cta-icon">
+    </i>
+   </div>
+   <div class="story-section" data-aos="fade-up">
+    <div class="section-header">
+     <i class="fas fa-venus-mars section-icon">
+     </i>
+     <h2>
+      In which occupations did the gender ratio shift most dramatically toward parity between 1850 and 2000?
+     </h2>
+    </div>
+    <p class="narration">
+     While some fields remained heavily gendered, others saw remarkable integration over the 150-year span. Teaching, nursing, and clerical work gradually attracted more men, while women made significant inroads into engineering, law, and management. The data reveals a continuous, though uneven, erosion of occupational gender barriers across different decades, reflecting long-term shifts in social norms and labor market dynamics rather than a single period of rapid change.
+    </p>
+    <div class="chart-container">
+     <div id="chart_4">
+     </div>
+    </div>
+   </div>
+   <div class="cta-banner" data-aos="zoom-in">
+    Examine the modern workforce snapshot
+    <i class="fas fa-arrow-down cta-icon">
+    </i>
+   </div>
+   <div class="story-section" data-aos="fade-up">
+    <div class="section-header">
+     <i class="fas fa-layer-group section-icon">
+     </i>
+     <h2>
+      What does the final snapshot of 2000 reveal about the structural composition of the modern workforce?
+     </h2>
+    </div>
+    <p class="narration">
+     By 2000, the relative prominence and demographic composition of the tracked occupations had shifted dramatically from 1850. While the dataset follows the exact same 255 occupational titles throughout the timeline, their absolute sizes and gender distributions evolved substantially. This longitudinal view captures how technological innovation and demographic changes reshaped the scale and social structure of established professions, offering a clear picture of how work adapted within a consistent occupational framework.
+    </p>
+    <div class="chart-container">
+     <div id="chart_5">
+     </div>
+    </div>
+   </div>
+   <footer data-aos="fade-up">
+    <p class="sources-title">
+     <i class="fas fa-book-open">
+     </i>
+     Sources &amp; Methodology
+    </p>
+    <p>
+     Data sourced from US Census Bureau occupational classifications (1850-2000). Analytical framework adapted from historical labor economics research. Visualization generated for narrative data exploration.
+    </p>
+   </footer>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+  </script>
+ </body>
+</html>

@@ -47,6 +47,28 @@ class INV:
         script_tag.string = f"window.data = {data}"
         soup.head.append(script_tag)
 
+        # Bootstrap: some charts may be initialized while their container is
+        # hidden (e.g. an iframe loaded before its preview tab is shown), in
+        # which case ECharts measures 0x0 and renders nothing. Re-layout every
+        # registered chart once the window actually has size, on window resize,
+        # and when the parent app asks us to re-render (D2INV_RESIZE message).
+        bootstrap = """
+window.__d2inv_render = function () {
+    var charts = window.__d2inv_charts || [];
+    for (var i = 0; i < charts.length; i++) {
+        try { charts[i].resize(); } catch (e) {}
+    }
+};
+window.addEventListener('load', window.__d2inv_render);
+window.addEventListener('resize', window.__d2inv_render);
+window.addEventListener('message', function (e) {
+    if (e.data && e.data.type === 'D2INV_RESIZE') window.__d2inv_render();
+});
+"""
+        script_tag = soup.new_tag("script")
+        script_tag.string = bootstrap
+        soup.head.append(script_tag)
+
         complete_inv = soup.prettify()
 
         return [
@@ -55,12 +77,11 @@ class INV:
         ]
 
     def write(self, result):
-        dist = f"./results/{self.dataset_name}"
-        exist_count = len(
-            list(filter(lambda x: x.startswith("inv_"), os.listdir(dist)))
-        )
+        dataset_stem = os.path.splitext(self.dataset_name)[0]
+        dist = f"./results/{dataset_stem}"
+        os.makedirs(dist, exist_ok=True)
         with open(
-            f"{dist}/inv_{exist_count+1}.html",
+            f"{dist}/inv.html",
             "w",
             encoding="utf-8",
         ) as f:

@@ -1,4 +1,5 @@
 import json
+import os
 import warnings
 from json import JSONEncoder
 
@@ -115,6 +116,7 @@ class CustomEncoder(JSONEncoder):
 def write_summary(dataset_name, result):
     data_summary = json.dumps(result, cls=CustomEncoder)
     dist = f"./results/{dataset_name}"
+    os.makedirs(dist, exist_ok=True)
     with open(
         f"{dist}/data_summary.json",
         "w",

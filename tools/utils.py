@@ -167,3 +167,62 @@ def fix_json(json_string):
         return json.dumps(ast.literal_eval(json_string))
     except:
         return json_string
+
+
+def _find_balanced_objects(text):
+    """Yield maximal balanced JSON-object spans (starting at each '{')."""
+    n = len(text)
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
+        depth = 0
+        in_str = False
+        escape = False
+        for j in range(i, n):
+            c = text[j]
+            if in_str:
+                if escape:
+                    escape = False
+                elif c == "\\":
+                    escape = True
+                elif c == '"':
+                    in_str = False
+                continue
+            if c == '"':
+                in_str = True
+            elif c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+                if depth == 0:
+                    yield text[i:j + 1]
+                    break
+
+
+def extract_json_object(raw):
+    """
+    Robustly extract the first valid JSON object from a noisy LLM string.
+
+    Handles: leading/trailing prose, code fences, stray message fields,
+    duplicated keys and unparseable single-quoted variants.
+    """
+    if not raw:
+        return None
+    text = postprocess_response(raw)
+    for candidate in _find_balanced_objects(text):
+        try:
+            return json.loads(candidate)
+        except Exception:
+            pass
+    # If nothing parsed with double quotes, try the single-quote fix on each span
+    for candidate in _find_balanced_objects(text):
+        try:
+            fixed = fix_json(candidate)
+            return json.loads(fixed)
+        except Exception:
+            pass
+    try:
+        fixed = fix_json(text)
+        return json.loads(fixed)
+    except Exception:
+        return None

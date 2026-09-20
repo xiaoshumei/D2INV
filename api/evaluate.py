@@ -68,12 +68,11 @@ class Evaluate:
         return result
 
     def write(self, result):
-        dist = f"./results/{self.dataset_name}"
-        exist_count = len(
-            list(filter(lambda x: x.startswith("evaluate_"), os.listdir(dist)))
-        )
+        dataset_stem = os.path.splitext(self.dataset_name)[0]
+        dist = f"./results/{dataset_stem}"
+        os.makedirs(dist, exist_ok=True)
         with open(
-            f"{dist}/evaluate_{exist_count + 1}.html",
+            f"{dist}/evaluate.html",
             "w",
             encoding="utf-8",
         ) as f:

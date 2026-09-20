@@ -52,32 +52,103 @@ class DataStory:
             "content": "You are a data analyst who excels at mining data insights and data stories from datasets. When given a dataset, you just return a json and don't explain anything. Do not include any comments or additional text in json.",
         }
 
-    def reason(self, data_summary=None):
+    def _schema_ok(self, parsed) -> bool:
+        """True if the parsed story is in the required JSON schema."""
+        if not isinstance(parsed, dict):
+            return False
+        pieces = parsed.get("story_pieces")
+        if not isinstance(pieces, list) or not pieces:
+            return False
+        return all(
+            isinstance(p, dict)
+            and p.get("narration")
+            and p.get("question")
+            and p.get("visualization")
+            for p in pieces
+        )
+
+    def reason(self, data_summary=None, force_schema_hint: str = ""):
         """
         Generate a data story from the provided dataset using reasoning llm.
+
+        When force_schema_hint is provided (after a schema violation), the model
+        is asked again to return exactly the required JSON structure.
         """
-        # First, analyze the dataset and identify potential user concerns. Then, recommend a suitable visualization for each question. Finally, extract the most critical data facts for each question.
+        template = json.dumps(
+            {
+                "story_title": "string",
+                "story_subtitle": "string",
+                "story_pieces": [
+                    {
+                        "narration": "string",
+                        "question": "string",
+                        "visualization": "string",
+                    }
+                ],
+            },
+            indent=2,
+        )
+        # Compact dataset preview: don't inline the full dataset into the prompt
+        # (large payloads can stall large models or hit request limits).
+        df = self.data
+        preview = (
+            {"num_rows": int(len(df)), "columns": list(df.columns)[:50]}
+            if df is not None
+            else {}
+        )
+        head_json = (
+            df.head(8).to_dict(orient="records") if df is not None else []
+        )
+        user_content = (
+            f"Generate a data story for the following dataset as a JSON object.\n"
+            f"Dataset overview:\n{json.dumps(preview, ensure_ascii=False)}\n"
+            f"First rows:\n{json.dumps(head_json, ensure_ascii=False, default=str)}\n"
+            f"Dataset summary:\n{json.dumps(data_summary, ensure_ascii=False) if data_summary else ''}\n\n"
+            f"The JSON MUST contain exactly these fields: story_title (string), "
+            f"story_subtitle (string), and story_pieces, an array of exactly 5 objects, "
+            f"each with narration (string), question (string), visualization (string).\n"
+            f"Use a clear, data-driven narrative. For visualization, prefer complex chart "
+            f"types (e.g. bar chart race) when the underlying narration fits.\n\n"
+            f"Required JSON shape (fill in values, keep this exact structure):\n{template}\n\n"
+            f"Return ONLY the JSON object. No code fences, no extra text, no message fields "
+            f"such as role/content/messages, no 'authors' field."
+        )
+        if force_schema_hint:
+            user_content += (
+                "\n\nYour previous answer did NOT follow the required JSON schema. "
+                "Return a JSON object with EXACTLY these keys: "
+                "\"story_title\" (string), \"story_subtitle\" (string), \"story_pieces\" "
+                "(array of exactly 5 objects, each with string keys "
+                "\"narration\", \"question\", \"visualization\"). "
+                "Do NOT return a freeform 'story'/'sections' text field. Return only valid JSON."
+            )
         messages = [
             self.reason_system_prompt,
             {
                 "role": "user",
-                "content": f"Generate a data story in json format for the following dataset:\n{json.dumps(self.data.to_dict(orient='records'), ensure_ascii=False)}\n A summary of the dataset is \n{json.dumps(data_summary,ensure_ascii=False) if data_summary else ''}\n The data story must includes story_title, story_subtitle, and five story_pieces. Each story_piece contains narration (the discovered data facts), question (the question posed about the data fact), and visualization (the chart type that best visualizes the data fact for the question). For example,\n{self.example}\nFor visualization, when the underlying narrations are suitable, prioritize attempting to use complex chart types. For example, bar chart races are suitable for dynamically showing changes over a temporal axis.",
+                "content": user_content,
             },
         ]
         completion = self.llm.client.chat.completions.create(
             model=self.llm.model,
             messages=messages,
             stream=False,
-            temperature=1.0,
+            temperature=0.7,
             response_format={"type": "json_object"},
         )
         content = completion.choices[0].message.content
         print("reason:\n", content)
-        content = postprocess_response(content)
-        content = fix_json(content)
-        self.reason_results = content
-        self.result = content
-        return content
+        # Robustly extract the first valid JSON object from whatever the model returned.
+        from tools.utils import extract_json_object
+
+        parsed = extract_json_object(content)
+        if parsed is None:
+            # Fall back to the original string so downstream code can still see it.
+            self.reason_results = postprocess_response(content)
+        else:
+            self.reason_results = json.dumps(parsed, ensure_ascii=False)
+        self.result = self.reason_results
+        return self.reason_results
 
     def check_data_fact(self, narration):
         try_max = 3
@@ -184,28 +255,68 @@ class DataStory:
         self.result = content
         return content
 
+    def _parse_normalized_story(self, raw):
+        """Vend a well-formed story dict even when the LLM returns a freeform
+        narrative (e.g. `{"story": "..."}`) instead of the required
+        `story_pieces` schema. This prevents `KeyError: 'story_pieces'` from
+        crashing the 4R pipeline."""
+        try:
+            parsed = json.loads(raw)
+        except Exception:
+            parsed = {}
+
+        if not isinstance(parsed, dict):
+            parsed = {}
+
+        # Already well-formed: has a non-empty story_pieces list.
+        pieces = parsed.get("story_pieces")
+        if isinstance(pieces, list) and pieces:
+            return parsed
+
+        # Freeform narrative: upgrade it into a single story piece so the rest
+        # of the pipeline (data-fact check, reflection, refine, write) can run.
+        if "story" in parsed and isinstance(parsed["story"], str) and parsed["story"].strip():
+            narrative = parsed["story"].strip()
+            return {
+                "story_title": parsed.get("story_title", "Data Story"),
+                "story_subtitle": parsed.get("story_subtitle", ""),
+                "story_pieces": [
+                    {
+                        "narration": narrative,
+                        "question": "What does this dataset reveal?",
+                        "visualization": "bar chart",
+                    }
+                ],
+            }
+
+        # Last resort: keep the original payload so nothing crashes.
+        return parsed
+
     def write(self):
-        dist = f"./results/{self.dataset_name}"
-        exist_count = len(
-            list(filter(lambda x: x.startswith("data_story_"), os.listdir(dist)))
-        )
+        # dataset_name may carry a file extension; always derive the stem so
+        # we write into ./results/<name> (matching api/app.py and the other
+        # downstream modules). Files use stable names so existing results can
+        # be re-read and served without regenerating.
+        dataset_stem = os.path.splitext(self.dataset_name)[0]
+        dist = f"./results/{dataset_stem}"
+        os.makedirs(dist, exist_ok=True)
         if "refine" in self.write_stages:
             with open(
-                f"{dist}/data_story_{exist_count + 1}.json",
+                f"{dist}/data_story.json",
                 "w",
                 encoding="utf-8",
             ) as f:
                 f.write(self.result)
         if "reason" in self.write_stages:
             with open(
-                f"{dist}/data_story_{exist_count + 1}_reason.json",
+                f"{dist}/data_story_reason.json",
                 "w",
                 encoding="utf-8",
             ) as f:
                 f.write(self.reason_results)
         if "reflect" in self.write_stages:
             with open(
-                f"{dist}/data_story_{exist_count + 1}_reflect.json",
+                f"{dist}/data_story_reflect.json",
                 "w",
                 encoding="utf-8",
             ) as f:
@@ -215,10 +326,18 @@ class DataStory:
         print(
             f"dataset_name:{self.dataset_name}, module: data story generation, phase:4R start"
         )
+        # Generate the story, but if the model returns a freeform narrative
+        # (e.g. {"story": ...}) instead of the required structured schema,
+        # ask once more with an explicit corrective hint.
         self.reason(self.data_summary)
+        parsed = self._parse_normalized_story(self.reason_results)
+        if not self._schema_ok(parsed):
+            print("reason output missing required story_pieces schema; re-asking once")
+            self.reason(self.data_summary, force_schema_hint=True)
+            parsed = self._parse_normalized_story(self.reason_results)
         data_fact_check_results = []
-        for story_piece in json.loads(self.reason_results)["story_pieces"]:
-            check_result = self.check_data_fact(story_piece["narration"])
+        for story_piece in parsed.get("story_pieces", []):
+            check_result = self.check_data_fact(story_piece.get("narration", ""))
             data_fact_check_results.append(check_result)
         print("data fact check results: ", data_fact_check_results)
         self.data_fact_check_results = data_fact_check_results
@@ -229,7 +348,7 @@ class DataStory:
             f"dataset_name:{self.dataset_name}, module: data story generation, phase:4R finish"
         )
         self.write()
-        return json.loads(self.result)
+        return self._parse_normalized_story(self.result)
 
     def edit(self, prompts):
         """

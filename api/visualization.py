@@ -41,6 +41,12 @@ class Visualization:
                 const myChart = {self.library}.init(document.getElementById('chart_{index + 1}'), null, {{ renderer: 'svg' }});
 
                 <stub> // The third `<stub>` section
+
+                // Register this chart so the document can resize/redraw it
+                // once the container becomes visible (e.g. inside an iframe that
+                // starts hidden). Without this, charts initialized at 0x0 stay blank.
+                window.__d2inv_charts = window.__d2inv_charts || [];
+                window.__d2inv_charts.push(myChart);
             }}
             plot_{index + 1}(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
         </script>
@@ -48,11 +54,10 @@ class Visualization:
         self.messages += [
             {
                 "role": "system",
-                "content": f"""Please generate a piece of HTML code that only contains a script tag and a style tag. Based on the given code template and data summary, use {self.library} to generate visualization code. The code template has three <stub> placeholders. Only add new code where the placeholders are and remove them. Don't modify any other part of the code. The data required for the chart has been extracted and injected into the `window.data` variable. Please carefully read the provided data summary, which includes information such as the data's columns, data type, theme, and so on.""",
-            },
-            {
-                "role": "system",
-                "content": f"The data summary is\n:{data_summary}\n The code template is: {template} \n All mathematical calculation results must retain only two decimal places. When generating code that requires any map, you must load the corresponding GeoJSON file only from:\n ```js\nfetch('/maps/<filename>')\nwhere <filename> is one of the exact names listed below:\n{os.listdir('./web/maps')}\nDo not use any other path, CDN, or additional checks/explanations.\n",
+                "content": (
+                    f"""Please generate a piece of HTML code that only contains a script tag and a style tag. Based on the given code template and data summary, use {self.library} to generate visualization code. The code template has three <stub> placeholders. Only add new code where the placeholders are and remove them. Don't modify any other part of the code. The data required for the chart has been extracted and injected into the `window.data` variable. Please carefully read the provided data summary, which includes information such as the data's columns, data type, theme, and so on.\n\n"""
+                    f"The data summary is\n:{data_summary}\n The code template is: {template} \n All mathematical calculation results must retain only two decimal places. When generating code that requires any map, you must load the corresponding GeoJSON file only from:\n ```js\nfetch('/maps/<filename>')\nwhere <filename> is one of the exact names listed below:\n{os.listdir('./web/maps')}\nDo not use any other path, CDN, or additional checks/explanations.\n"
+                ),
             },
             {
                 "role": "user",
