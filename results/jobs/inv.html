@@ -169,17 +169,17 @@
             }
   </style>
 <style>
-   #chart_2 {
+ #chart_2 {
                 width: 100%;
                 height: 600px;
             }
-  </style>
+</style>
 <style>
-   #chart_3 {
+ #chart_3 {
                 width: 100%;
                 height: 800px;
             }
-  </style>
+</style>
 <style>
    #chart_4 {
                 width: 100%;
@@ -366,7 +366,7 @@
             plot_1(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
   </script>
 <script>
-function plot_2(data){
+ function plot_2(data){
     document.getElementById('chart_2').innerHTML = '';
     const myChart = echarts.init(document.getElementById('chart_2'), null, { renderer: 'svg' });
 
@@ -379,7 +379,7 @@ function plot_2(data){
             if (!years.includes(item.year)) return;
             const job = item.job;
             if (!aggregated[job]) aggregated[job] = {};
-            aggregated[job][item.year] = (aggregated[job][item.year] || 0) + item.count;
+            aggregated[job][item.year] = parseFloat(((aggregated[job][item.year] || 0) + item.count).toFixed(2));
         });
     }
 
@@ -388,73 +388,102 @@ function plot_2(data){
         profKeywords.some(kw => job.includes(kw))
     );
 
-    const jobsWithGrowth = professionalJobs.map(job => {
-        const s = aggregated[job][1850] || 0;
-        const e = aggregated[job][1950] || 0;
-        let g = 0;
-        if (s > 0) g = ((e - s) / s) * 100;
-        else if (e > 0) g = 9999;
-        return { job, growth: g, endCount: e };
+    const jobsBy1950 = professionalJobs.map(job => ({
+        job,
+        count1950: aggregated[job][1950] || 0
+    })).sort((a, b) => b.count1950 - a.count1950);
+
+    const topJobs = jobsBy1950.slice(0, 10).map(x => x.job);
+
+    const colors = ['#4f86c6','#6aa6e0','#89c4e8','#a8d8f0','#c5e8f7','#5b9bd5','#70ad47','#ffc000','#ed7d31','#a5a5a5'];
+    const jobColorMap = {};
+    topJobs.forEach((job, idx) => {
+        jobColorMap[job] = colors[idx % colors.length];
     });
 
-    jobsWithGrowth.sort((a, b) => b.growth - a.growth);
-    const top10 = jobsWithGrowth.slice(0, 10);
-    const top10Jobs = top10.map(x => x.job);
-    const values = top10Jobs.map(job => aggregated[job][1950] || 0);
+    let currentYearIndex = 0;
+    let timer = null;
 
-    const option = {
-        title: {
-            text: 'Top 10 Fastest-Growing Professions (1850–1950)',
-            subtext: 'Ranked by growth rate; bar sized by 1950 headcount',
-            left: 'center'
-        },
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: { type: 'shadow' },
-            formatter: function(params) {
-                const it = params[0];
-                const g = top10.find(j => j.job === it.name);
-                return '<b>' + it.name + '</b><br/>1950 count: ' + it.value.toLocaleString() +
-                    '<br/>Growth: ' + (g ? g.growth.toFixed(2) + '%' : '') +
-                    '<br/>Rank: #' + (it.dataIndex + 1);
-            }
-        },
-        grid: { left: 60, right: 90, top: 90, bottom: 40, containLabel: true },
-        xAxis: {
-            type: 'value',
-            name: 'Workers in 1950',
-            axisLabel: { formatter: function(v) { return v >= 1000 ? (v / 1000) + 'k' : v; } }
-        },
-        yAxis: { type: 'category', data: top10Jobs, inverse: true },
-        series: [{
-            name: '1950 Count',
-            type: 'bar',
-            barWidth: '55%',
-            data: values,
-            itemStyle: {
-                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                    { offset: 0, color: '#4f86c6' },
-                    { offset: 1, color: '#6aa6e0' }
-                ])
+    function getSortedData(year) {
+        return topJobs.map(job => ({
+            name: job,
+            value: aggregated[job][year] || 0
+        })).sort((a, b) => b.value - a.value);
+    }
+
+    function updateChart(year) {
+        const sorted = getSortedData(year);
+        const yAxisData = sorted.map(x => x.name);
+        const seriesData = sorted;
+
+        const option = {
+            title: {
+                text: '职业排名竞赛',
+                subtext: String(year),
+                subtextStyle: { fontSize: 64, fontWeight: 'bold', color: '#4f86c6' },
+                left: 'center',
+                top: 10
             },
-            label: {
-                show: true,
-                position: 'right',
-                formatter: function(p) {
-                    const g = top10.find(j => j.job === p.name);
-                    return p.value.toLocaleString() + '  (' + (g ? g.growth.toFixed(0) + '%' : '') + ')';
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: { type: 'shadow' },
+                formatter: function(params) {
+                    return params[0].name + '<br/>' + year + '年: ' + parseFloat(params[0].value.toFixed(2)).toLocaleString();
                 }
-            }
-        }]
-    };
+            },
+            grid: { left: 60, right: 40, top: 120, bottom: 20, containLabel: true },
+            xAxis: {
+                type: 'value',
+                name: '人数',
+                axisLabel: { formatter: function(v) { return parseFloat(v.toFixed(2)) >= 1000 ? (v / 1000).toFixed(2) + 'k' : v.toFixed(2); } }
+            },
+            yAxis: {
+                type: 'category',
+                data: yAxisData,
+                inverse: true,
+                axisLabel: { fontSize: 12 }
+            },
+            series: [{
+                type: 'bar',
+                data: seriesData,
+                barWidth: '60%',
+                itemStyle: {
+                    color: function(params) {
+                        return jobColorMap[params.name] || '#ccc';
+                    }
+                },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter: function(p) {
+                        return parseFloat(p.value.toFixed(2)).toLocaleString();
+                    }
+                },
+                animationDuration: 0,
+                animationDurationUpdate: 1000,
+                animationEasingUpdate: 'cubicInOut',
+                universalTransition: true,
+                transitionDuration: 1000
+            }]
+        };
 
-    myChart.setOption(option);
+        myChart.setOption(option, { replaceMerge: ['series', 'yAxis', 'title'] });
+    }
+
+    updateChart(years[0]);
+
+    timer = setInterval(() => {
+        currentYearIndex = (currentYearIndex + 1) % years.length;
+        updateChart(years[currentYearIndex]);
+    }, 2000);
+
     window.addEventListener('resize', function(){ try { myChart.resize(); } catch(e){} });
+    myChart._raceTimer = timer;
 }
 plot_2(data)
 </script>
 <script>
-   function plot_3(data){
+ function plot_3(data){
                 document.getElementById('chart_3').innerHTML = '';
                 const myChart = echarts.init(document.getElementById('chart_3'), null, { renderer: 'svg' });
 
@@ -466,92 +495,159 @@ plot_2(data)
                     'Apprentice - Electrician', 'Apprentice - Metal Working', 'Apprentice - Construction'
                 ];
 
-                const jobStats = {};
-                targetJobs.forEach(job => {
-                    jobStats[job] = { 1850: 0, 2000: 0 };
-                });
+                // Collect stats for all years
+                const jobStatsByYear = {};
+                const allYears = new Set();
 
                 data.forEach(row => {
-                    if (targetJobs.includes(row.job) && (row.year === 1850 || row.year === 2000)) {
-                        jobStats[row.job][row.year] += row.count;
+                    if (targetJobs.includes(row.job)) {
+                        if (!jobStatsByYear[row.year]) {
+                            jobStatsByYear[row.year] = {};
+                        }
+                        if (!jobStatsByYear[row.year][row.job]) {
+                            jobStatsByYear[row.year][row.job] = 0;
+                        }
+                        jobStatsByYear[row.year][row.job] += row.count;
+                        allYears.add(row.year);
                     }
                 });
 
-                const sortedJobs = Object.keys(jobStats).sort((a, b) => {
-                    return jobStats[b]['1850'] - jobStats[a]['1850'];
-                });
+                const sortedYears = Array.from(allYears).sort((a, b) => a - b);
 
-                const seriesData = sortedJobs.map((job) => {
-                    const count1850 = Number((jobStats[job]['1850']).toFixed(2));
-                    const count2000 = Number((jobStats[job]['2000']).toFixed(2));
-                    const isGrowth = count2000 > count1850;
-                    const color = isGrowth ? '#4caf50' : '#f44336';
+                // Determine colors based on start vs end year trend
+                const jobColors = {};
+                if (sortedYears.length > 0) {
+                    const startYear = sortedYears[0];
+                    const endYear = sortedYears[sortedYears.length - 1];
+                    
+                    targetJobs.forEach(job => {
+                        const cStart = (jobStatsByYear[startYear] && jobStatsByYear[startYear][job]) || 0;
+                        const cEnd = (jobStatsByYear[endYear] && jobStatsByYear[endYear][job]) || 0;
+                        jobColors[job] = cEnd > cStart ? '#4caf50' : '#f44336';
+                    });
+                } else {
+                     targetJobs.forEach(job => jobColors[job] = '#5470c6');
+                }
 
-                    return {
+                if (sortedYears.length === 0) {
+                    myChart.setOption({
+                        title: { text: 'No Data', left: 'center' }
+                    });
+                    return;
+                }
+
+                // Prepare data for a specific year
+                const getYearData = (year) => {
+                    const stats = jobStatsByYear[year] || {};
+                    const currentStats = {};
+                    targetJobs.forEach(job => {
+                        currentStats[job] = stats[job] || 0;
+                    });
+
+                    // Sort jobs by count descending
+                    const sortedJobs = Object.keys(currentStats).sort((a, b) => {
+                        return currentStats[b] - currentStats[a];
+                    });
+
+                    const seriesData = sortedJobs.map(job => ({
                         name: job,
-                        type: 'line',
-                        data: [count1850, count2000],
-                        lineStyle: {
-                            color: color,
-                            width: 2
-                        },
-                        symbol: 'circle',
-                        symbolSize: 8,
+                        value: Number(currentStats[job].toFixed(2)),
                         itemStyle: {
-                            color: color
+                            color: jobColors[job]
                         }
-                    };
-                });
+                    }));
+                    
+                    return { sortedJobs, seriesData };
+                };
 
-                const option = {
-                    title: {
-                        text: 'Manual & Agricultural Occupational Counts (1850 vs 2000)',
-                        left: 'center',
-                        top: 10
-                    },
+                const baseOption = {
                     tooltip: {
                         trigger: 'item',
-                        formatter: function (params) {
-                            const val = params.value.toFixed(2);
-                            const year = params.name === '1850' ? 1850 : 2000;
-                            return `${params.seriesName}<br/>${year}: ${val}`;
-                        }
-                    },
-                    legend: {
-                        show: false
+                        formatter: '{b}: {c}'
                     },
                     grid: {
-                        left: '10%',
-                        right: '10%',
-                        bottom: '5%',
-                        top: '15%',
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        top: '10%',
                         containLabel: true
                     },
                     xAxis: {
-                        type: 'category',
-                        data: ['1850', '2000'],
-                        boundaryGap: false,
-                        axisLine: {
-                            onZero: false
+                        type: 'value',
+                        name: 'Count',
+                        splitLine: {
+                            show: true,
+                            lineStyle: { type: 'dashed' }
                         }
                     },
                     yAxis: {
-                        type: 'value',
-                        name: 'Occupational Count',
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                type: 'dashed'
-                            }
-                        }
+                        type: 'category',
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        inverse: true, // Rank 1 at top
+                        animationDuration: 0,
+                        animationDurationUpdate: 1000,
+                        animationEasing: 'cubicInOut',
+                        animationEasingUpdate: 'cubicInOut'
                     },
-                    series: seriesData
+                    animationDuration: 0,
+                    animationDurationUpdate: 1000,
+                    animationEasing: 'cubicInOut',
+                    animationEasingUpdate: 'cubicInOut'
                 };
 
-                myChart.setOption(option);
+                // Initial render with first year
+                const firstYear = sortedYears[0];
+                const firstYearData = getYearData(firstYear);
+
+                myChart.setOption({
+                    ...baseOption,
+                    title: {
+                        text: `Occupational Counts (${firstYear})`,
+                        left: 'center',
+                        top: 10,
+                        textStyle: { fontSize: 24, fontWeight: 'bold' }
+                    },
+                    yAxis: {
+                        ...baseOption.yAxis,
+                        data: firstYearData.sortedJobs
+                    },
+                    series: [{
+                        type: 'bar',
+                        data: firstYearData.seriesData,
+                        barWidth: '60%',
+                        label: { show: true, position: 'right', formatter: '{c}' }
+                    }]
+                });
+
+                // Animate through years
+                let currentIndex = 0;
+                const raceInterval = setInterval(() => {
+                    currentIndex++;
+                    if (currentIndex >= sortedYears.length) {
+                        clearInterval(raceInterval);
+                        return;
+                    }
+
+                    const currentYear = sortedYears[currentIndex];
+                    const currentData = getYearData(currentYear);
+
+                    myChart.setOption({
+                        title: {
+                            text: `Occupational Counts (${currentYear})`
+                        },
+                        yAxis: {
+                            data: currentData.sortedJobs
+                        },
+                        series: [{
+                            data: currentData.seriesData
+                        }]
+                    });
+
+                }, 1500); // 1.5 seconds per year
             }
-            plot_3(data) // data already contains the data to be plotted. Always include this line. No additional code beyond this line.
-  </script>
+            plot_3(data)
+</script>
 <script>
    function plot_4(data){
                 document.getElementById('chart_4').innerHTML = '';

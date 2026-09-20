@@ -118,6 +118,53 @@ class Visualization:
         self.refine()
         return self.result
 
+    def edit_code(self, current_code, prompt):
+        """
+        Modify an existing inline script/style chart fragment based on a user prompt.
+
+        Returns the updated HTML fragment (still containing exactly one <style> and
+        one <script> block, preserving the chart_<n> container id and the final
+        ``plot_<n>(data)`` invocation).
+        """
+        messages = [
+            {
+                "role": "system",
+                "content": (
+                    "You are an ECharts visualization editor. You receive an existing "
+                    "inline HTML chart fragment (one <style> block and one <script> "
+                    "block) and a user's change request. Modify ONLY the chart code "
+                    "to satisfy the request, keeping: (1) the same chart container id, "
+                    "(2) a single <style> tag, (3) a single <script> tag, and (4) the "
+                    "final invocation `plot_{index}(data)` with the global `data`. "
+                    "Stick to the data columns already present; never invent columns. "
+                    "Round every mathematical result to two decimal places. "
+                    "Return ONLY the raw HTML fragment with no markdown fences, no "
+                    "explanations, and no comments."
+                ),
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"Current chart HTML fragment:\n{current_code}\n\n"
+                    f"User change request:\n{prompt}\n\n"
+                    "Return the updated HTML fragment."
+                ),
+            },
+        ]
+        completion = self.llm.client.chat.completions.create(
+            model=self.llm.model,
+            messages=messages,
+            stream=False,
+            temperature=0.6,
+        )
+        content = completion.choices[0].message.content
+        print("edit-chart\n", content)
+        new_code = postprocess_response(content)
+        # Append the shared invocation if the model dropped it.
+        if f"plot_{self.index + 1}(data)" not in new_code:
+            new_code = new_code.rstrip() + f"\nplot_{self.index + 1}(data)\n"
+        return new_code
+
 
 def visualize_data_story(data_story, data_summary):
     visualization_codes = []

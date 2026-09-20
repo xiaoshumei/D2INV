@@ -7,9 +7,9 @@ Supports Phases 1+2 tools with category-based organisation.
 
 from agent.tools.base import BaseTool, ToolRegistry, Action, ActionResult
 from agent.tools.summarize import SummarizeDatasetTool, ListDatasetsTool
-from agent.tools.story import GenerateStoryTool
-from agent.tools.template import GenerateTemplateTool
-from agent.tools.charts import GenerateChartsTool
+from agent.tools.story import GenerateStoryTool, EditStoryTool
+from agent.tools.template import GenerateTemplateTool, EditTemplateTool
+from agent.tools.charts import GenerateChartsTool, EditChartTool
 from agent.tools.assemble import AssembleINVTool
 from agent.tools.evaluate import EvaluateINVTool
 from agent.tools.clear_results import ClearResultsTool
@@ -40,8 +40,11 @@ def create_tool_registry(session, enable_phase2: bool = True) -> ToolRegistry:
         ListDatasetsTool(),
         SummarizeDatasetTool(session),
         GenerateStoryTool(session),
+        EditStoryTool(session),
         GenerateTemplateTool(session),
+        EditTemplateTool(session),
         GenerateChartsTool(session),
+        EditChartTool(session),
         AssembleINVTool(session),
         EvaluateINVTool(session),
         ClearResultsTool(session),
